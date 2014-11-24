@@ -4,6 +4,7 @@ http://zhou-dong.github.io/atom.xml
 http://zhou-dong.github.io/categories.html
 http://zhou-dong.github.io/index.html
 http://zhou-dong.github.io/pages.html
+http://zhou-dong.github.io/reading.html
 http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
