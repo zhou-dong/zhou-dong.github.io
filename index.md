@@ -1,7 +1,7 @@
 ---
 layout: page
-title: BlOG OF DONG ZHOU
-tagline: Just do it, it will pay! 
+title: WELCOME TO BlOG OF DONG ZHOU
+tagline: 
 ---
 {% include JB/setup %}
 

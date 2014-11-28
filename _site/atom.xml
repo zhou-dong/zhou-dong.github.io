@@ -4,13 +4,209 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2014-11-24T18:30:25+08:00</updated>
+ <updated>2014-11-28T23:18:53+08:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>我的书架</title>
+   <link href="http://zhou-dong.github.io/2014/11/27/list"/>
+   <updated>2014-11-27T00:00:00+08:00</updated>
+   <id>http://zhou-dong.github.io/2014/11/27/list</id>
+   <content type="html">
+&lt;ol&gt;
+  &lt;li&gt;鸟哥的Linux私房菜服务器架设篇（第二版）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;牧羊少年奇幻之旅&lt;/strong&gt; &lt;/li&gt;
+  &lt;li&gt;小王子&lt;/li&gt;
+  &lt;li&gt;精通CSS：高级Web标准解决方案（第2版）&lt;/li&gt;
+  &lt;li&gt;Java编程思想（第4版）&lt;/li&gt;
+  &lt;li&gt;操作系统：精髓与设计原理（原书第6版）&lt;/li&gt;
+  &lt;li&gt;人月神话（32周年中文纪念版）&lt;/li&gt;
+  &lt;li&gt;编译原理（第2版）&lt;/li&gt;
+  &lt;li&gt;程序员修炼之道——从小工到专家&lt;/li&gt;
+  &lt;li&gt;代码大全&lt;/li&gt;
+  &lt;li&gt;设计模式 可复用面向对象软件的基础&lt;/li&gt;
+  &lt;li&gt;计算机程序的构造和解释：原书第2版&lt;/li&gt;
+  &lt;li&gt;追风筝的人&lt;/li&gt;
+  &lt;li&gt;算法导论(原书第2版)&lt;/li&gt;
+  &lt;li&gt;魔术的耳语&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;大卫的伤疤&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;浪潮之巅&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;美国种族简史&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;世界上的另一个你&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lucene实战(第2版)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;这个历史挺靠谱·全三册&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;数学之美&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;如丧——我们终于老得可以谈谈未来&lt;/li&gt;
+  &lt;li&gt;百年孤独&lt;/li&gt;
+  &lt;li&gt;美国怎么了：一个自由主义者的良知&lt;/li&gt;
+  &lt;li&gt;《虎妈战歌》&lt;/li&gt;
+  &lt;li&gt;孤独天使&lt;/li&gt;
+  &lt;li&gt;傲慢与偏见-Pride and Prejudice（典藏英文原版）&lt;/li&gt;
+  &lt;li&gt;生猛的进化心理学&lt;/li&gt;
+  &lt;li&gt;带着鲑鱼去旅行&lt;/li&gt;
+  &lt;li&gt;宇宙简史—霍金系列讲座精华&lt;/li&gt;
+  &lt;li&gt;李敖快意恩仇录&lt;/li&gt;
+  &lt;li&gt;霍乱时期的爱情&lt;/li&gt;
+  &lt;li&gt;算法竞赛入门经典&lt;/li&gt;
+  &lt;li&gt;自控力&lt;/li&gt;
+  &lt;li&gt;走进搜索引擎（第2版）&lt;/li&gt;
+  &lt;li&gt;拖延心理学&lt;/li&gt;
+  &lt;li&gt;编程之美&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;这就是搜索引擎&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;暗时间&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;禅与摩托车维修艺术&lt;/li&gt;
+  &lt;li&gt;Hadoop实战&lt;/li&gt;
+  &lt;li&gt;Hadoop权威指南&lt;/li&gt;
+  &lt;li&gt;MongoDB 权威指南&lt;/li&gt;
+  &lt;li&gt;畅游英国&lt;/li&gt;
+  &lt;li&gt;不减20斤就别说你瘦了&lt;/li&gt;
+  &lt;li&gt;世界通史（彩图）&lt;/li&gt;
+  &lt;li&gt;1988——我想和这个世界谈谈&lt;/li&gt;
+  &lt;li&gt;人类群星闪耀时&lt;/li&gt;
+  &lt;li&gt;《朝圣》&lt;/li&gt;
+  &lt;li&gt;牛奶可乐经济学（完整版）&lt;/li&gt;
+  &lt;li&gt;不能承受的生命之轻（百万纪念版）&lt;/li&gt;
+  &lt;li&gt;算法竞赛入门经典&lt;/li&gt;
+  &lt;li&gt;编程珠玑（第2版）&lt;/li&gt;
+  &lt;li&gt;正能量&lt;/li&gt;
+  &lt;li&gt;史蒂夫·乔布斯传 精装版&lt;/li&gt;
+  &lt;li&gt;上帝掷骰子吗？&lt;/li&gt;
+  &lt;li&gt;淘宝技术这十年&lt;/li&gt;
+  &lt;li&gt;1984.动物庄园&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;三体3：死神永生&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;三体2：黑暗森林&lt;/li&gt;
+  &lt;li&gt;三体1：地球往事&lt;/li&gt;
+  &lt;li&gt;信息检索导论&lt;/li&gt;
+  &lt;li&gt;搜索引擎技术基础&lt;/li&gt;
+  &lt;li&gt;Head First 设计模式（中文版）&lt;/li&gt;
+  &lt;li&gt;时间简史（插图本）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;构建高性能Web站点&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Effective Java中文版(第2版)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;挪威的森林（村上春树经典著作）&lt;/li&gt;
+  &lt;li&gt;把你的英语用起来&lt;/li&gt;
+  &lt;li&gt;数据挖掘导论(完整版)&lt;/li&gt;
+  &lt;li&gt;机器学习（决战大数据时代！IT技术人员不得不读！）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;历史深处的忧虑：近距离看美国之一&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;总统是靠不住的：近距离看美国之二&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;我也有一个梦想：近距离看美国之三&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;如彗星划过夜空：近距离看美国之四&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;算法（第4版）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Java并发编程实战&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;像自由一样美丽&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;西班牙旅行笔记&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一路走来一路读&lt;/li&gt;
+  &lt;li&gt;离散数学&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Effective Java中文版(第2版)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;从一到无穷大&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;扫起落叶好过冬(林达著)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;黑客与画家&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;重来（更为简单有效的商业思维 ）&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;物理世界奇遇记(中译本）&lt;/li&gt;
+  &lt;li&gt;啊哈，灵机一动&lt;/li&gt;
+  &lt;li&gt;银河帝国&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;深入浅出Node.js&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;大话处理器&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;七周七语言&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;JavaScript高级程序设计&lt;/li&gt;
+  &lt;li&gt;GRE词汇精选&lt;/li&gt;
+  &lt;li&gt;深入理解计算机系统&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;重构：改善既有代码的设计&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;TCP/IP 详解(卷1:协议)&lt;/li&gt;
+  &lt;li&gt;巴西：未来之国&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;汇编语言(第3版）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;深入理解Java虚拟机&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;推荐系统实践&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;社交网站的数据挖掘与分析&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;信息简史&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;计算机程序设计艺术 卷4A&lt;/li&gt;
+  &lt;li&gt;敏捷软件开发——原则、模式与实践&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;维罗妮卡决定去死&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;少女布莱达灵修之旅&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;魔鬼与普里姆小姐&lt;/li&gt;
+  &lt;li&gt;波多贝罗的女巫&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;大型网站技术架构&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;大规模分布式存储系统&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;机器学习实战&lt;/li&gt;
+  &lt;li&gt;统计自然语言处理&lt;/li&gt;
+  &lt;li&gt;啊哈C！思考快你一步&lt;/li&gt;
+  &lt;li&gt;统计学习方法&lt;/li&gt;
+  &lt;li&gt;大数据日知录：架构与算法&lt;/li&gt;
+  &lt;li&gt;大型网站系统与Java中间件实践&lt;/li&gt;
+  &lt;li&gt;编程珠玑：续&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;把信送给加西亚&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;万物简史&lt;/li&gt;
+  &lt;li&gt;《大设计》&lt;/li&gt;
+  &lt;li&gt;量子宇宙&lt;/li&gt;
+  &lt;li&gt;啊哈！算法&lt;/li&gt;
+  &lt;li&gt;我的简史&lt;/li&gt;
+  &lt;li&gt;少有人走的路&lt;/li&gt;
+  &lt;li&gt;如何阅读一本书&lt;/li&gt;
+  &lt;li&gt;模式识别（第四版）&lt;/li&gt;
+  &lt;li&gt;概率论与数理统计习题全解指南 浙大第四版&lt;/li&gt;
+  &lt;li&gt;线性代数(原书第7版)&lt;/li&gt;
+  &lt;li&gt;高效程序员的45个习惯：敏捷开发修炼之道&lt;/li&gt;
+  &lt;li&gt;高等数学 同济第六版(上册)&lt;/li&gt;
+  &lt;li&gt;高等数学 同济第六版（下册）&lt;/li&gt;
+  &lt;li&gt;数据挖掘导论(完整版)&lt;/li&gt;
+  &lt;li&gt;概率论与数理统计 浙大第四版（新版）&lt;/li&gt;
+  &lt;li&gt;C++ Primer中文版（第5版）&lt;/li&gt;
+  &lt;li&gt;More Effective C++&lt;/li&gt;
+  &lt;li&gt;Effective C++&lt;/li&gt;
+  &lt;li&gt;Web 前端黑客技术揭秘&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;深入浅出统计学&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;从你的全世界路过：让所有人心动的故事(电子书)&lt;/li&gt;
+  &lt;li&gt;向前一步(电子书)&lt;/li&gt;
+  &lt;li&gt;全球最美的地方精华特辑.走遍美国(电子书)&lt;/li&gt;
+  &lt;li&gt;卡耐基当众演讲的艺术(电子书)&lt;/li&gt;
+  &lt;li&gt;你一定爱读的极简欧洲史(电子书) &lt;/li&gt;
+  &lt;li&gt;UNIX编程艺术&lt;/li&gt;
+  &lt;li&gt;英语阅读参考手册&lt;/li&gt;
+  &lt;li&gt;深入浅出数据分析&lt;/li&gt;
+  &lt;li&gt;谁说菜鸟不会数据分析&lt;/li&gt;
+  &lt;li&gt;果壳中的宇宙·霍金（插图本） &lt;/li&gt;
+  &lt;li&gt;文明之光 1-2 套装全2册 &lt;/li&gt;
+  &lt;li&gt;线性代数及其应用（原书第3版） &lt;/li&gt;
+  &lt;li&gt;Vim实用技巧 &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;信息简史&lt;/strong&gt; &lt;/li&gt;
+  &lt;li&gt;MacTalk 人生元编程 &lt;/li&gt;
+  &lt;li&gt;Mahout实战 &lt;/li&gt;
+  &lt;li&gt;程序员的数学 &lt;/li&gt;
+  &lt;li&gt;CPU自制入门 &lt;/li&gt;
+  &lt;li&gt;Aha!Gotcha啊哈!原来如此&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;代码整洁之道&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Head First Python（中文版）&lt;/li&gt;
+  &lt;li&gt;鸟哥的Linux私房菜 基础学习篇(第三版)&lt;/li&gt;
+  &lt;li&gt;此生未完成：一个母亲、妻子、女儿的生命日记&lt;/li&gt;
+  &lt;li&gt;白鹿原&lt;/li&gt;
+  &lt;li&gt;看见&lt;/li&gt;
+  &lt;li&gt;重口味心理学&lt;/li&gt;
+  &lt;li&gt;偷影子的人&lt;/li&gt;
+  &lt;li&gt;沃顿商学院最受欢迎的谈判课&lt;/li&gt;
+  &lt;li&gt;天才在左疯子在右 &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Jekyll Introduction</title>
