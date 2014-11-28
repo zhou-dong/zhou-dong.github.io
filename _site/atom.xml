@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2014-11-28T23:18:53+08:00</updated>
+ <updated>2014-11-29T00:02:47+08:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,10 +13,68 @@
 
  
  <entry>
+   <title>Study List</title>
+   <link href="http://zhou-dong.github.io/2014/11/28/study-list"/>
+   <updated>2014-11-28T00:00:00+08:00</updated>
+   <id>http://zhou-dong.github.io/2014/11/28/study-list</id>
+   <content type="html">
+&lt;h3 id=&quot;program-language&quot;&gt;Program Language&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;C&lt;/li&gt;
+  &lt;li&gt;C++&lt;/li&gt;
+  &lt;li&gt;Java&lt;/li&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+  &lt;li&gt;Node.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;english-study&quot;&gt;English Study&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;TOEFL&lt;/li&gt;
+  &lt;li&gt;GRE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;master-course&quot;&gt;Master Course&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Natural Language Process&lt;/li&gt;
+  &lt;li&gt;Machine Learning&lt;/li&gt;
+  &lt;li&gt;Deep Learning&lt;/li&gt;
+  &lt;li&gt;Neural Networks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fedora&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;other&quot;&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;School Transfer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;american-life&quot;&gt;American Life&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Credit card apply&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;basic-course&quot;&gt;Basic Course&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;高等数学-上&lt;/li&gt;
+  &lt;li&gt;高等数学-下&lt;/li&gt;
+  &lt;li&gt;概率论与数理统计&lt;/li&gt;
+  &lt;li&gt;算法&lt;/li&gt;
+  &lt;li&gt;矩阵计算&lt;/li&gt;
+  &lt;li&gt;离散数学&lt;/li&gt;
+  &lt;li&gt;信息论&lt;/li&gt;
+  &lt;li&gt;凸优化	&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>我的书架</title>
-   <link href="http://zhou-dong.github.io/2014/11/27/list"/>
+   <link href="http://zhou-dong.github.io/2014/11/27/book-list"/>
    <updated>2014-11-27T00:00:00+08:00</updated>
-   <id>http://zhou-dong.github.io/2014/11/27/list</id>
+   <id>http://zhou-dong.github.io/2014/11/27/book-list</id>
    <content type="html">
 &lt;ol&gt;
   &lt;li&gt;鸟哥的Linux私房菜服务器架设篇（第二版）&lt;/li&gt;

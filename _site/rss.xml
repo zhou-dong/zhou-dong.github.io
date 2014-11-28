@@ -5,10 +5,68 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2014-11-28T23:18:53+08:00</lastBuildDate>
-        <pubDate>2014-11-28T23:18:53+08:00</pubDate>
+        <lastBuildDate>2014-11-29T00:02:47+08:00</lastBuildDate>
+        <pubDate>2014-11-29T00:02:47+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Study List</title>
+                <description>
+&lt;h3 id=&quot;program-language&quot;&gt;Program Language&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;C&lt;/li&gt;
+  &lt;li&gt;C++&lt;/li&gt;
+  &lt;li&gt;Java&lt;/li&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+  &lt;li&gt;Node.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;english-study&quot;&gt;English Study&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;TOEFL&lt;/li&gt;
+  &lt;li&gt;GRE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;master-course&quot;&gt;Master Course&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Natural Language Process&lt;/li&gt;
+  &lt;li&gt;Machine Learning&lt;/li&gt;
+  &lt;li&gt;Deep Learning&lt;/li&gt;
+  &lt;li&gt;Neural Networks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fedora&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;other&quot;&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;School Transfer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;american-life&quot;&gt;American Life&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Credit card apply&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;basic-course&quot;&gt;Basic Course&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;高等数学-上&lt;/li&gt;
+  &lt;li&gt;高等数学-下&lt;/li&gt;
+  &lt;li&gt;概率论与数理统计&lt;/li&gt;
+  &lt;li&gt;算法&lt;/li&gt;
+  &lt;li&gt;矩阵计算&lt;/li&gt;
+  &lt;li&gt;离散数学&lt;/li&gt;
+  &lt;li&gt;信息论&lt;/li&gt;
+  &lt;li&gt;凸优化	&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2014/11/28/study-list</link>
+                <guid>http://zhou-dong.github.io/2014/11/28/study-list</guid>
+                <pubDate>2014-11-28T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>我的书架</title>
@@ -201,8 +259,8 @@
   &lt;li&gt;天才在左疯子在右 &lt;/li&gt;
 &lt;/ol&gt;
 </description>
-                <link>http://zhou-dong.github.io/2014/11/27/list</link>
-                <guid>http://zhou-dong.github.io/2014/11/27/list</guid>
+                <link>http://zhou-dong.github.io/2014/11/27/book-list</link>
+                <guid>http://zhou-dong.github.io/2014/11/27/book-list</guid>
                 <pubDate>2014-11-27T00:00:00+08:00</pubDate>
         </item>
 

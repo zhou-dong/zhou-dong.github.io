@@ -9,5 +9,6 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
-http://zhou-dong.github.io/2014/11/27/list
+http://zhou-dong.github.io/2014/11/28/study-list
+http://zhou-dong.github.io/2014/11/27/book-list
 http://zhou-dong.github.io/lessons/2011/12/29/jekyll-introduction
