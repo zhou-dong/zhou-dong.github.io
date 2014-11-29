@@ -5,39 +5,5 @@ tagline:
 ---
 {% include JB/setup %}
 
-### Program Language
-- C
-- C++
-- Java
-- Python
-- Node.js
-
-
-### English Study
-- TOEFL
-- GRE
-
-### Master Course
-- Natural Language Process
-- Machine Learning
-- Deep Learning
-- Neural Networks
-
-### Tools
-- Fedora
-
-### Other
-- School Transfer
-
-### American Life
-- Credit card apply
-
-### Basic Course
-- 高等数学-上
-- 高等数学-下
-- 概率论与数理统计
-- 算法
-- 矩阵计算
-- 离散数学
-- 信息论
-- 凸优化	
+## 但行好事，莫问前程。
+## 越努力，越幸运。
