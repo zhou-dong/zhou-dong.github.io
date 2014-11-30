@@ -34,7 +34,7 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 
 ### 消息中间件
 - [Kafka](http://kafka.apache.org/)
-- [ZeroMQ](http://www.rabbitmq.com/)
+- ZeroMQ
 - RocketMQ
 - Netty
 - [RabbitMQ](http://www.rabbitmq.com/)
@@ -85,10 +85,12 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 - Mahout
 
 ### 爬虫系统
-- 动态ADSL切换(家庭网络)
-- PhantomJs + Node.js
-- Webkit C++ 内核
-- Java Httputil
+- 防屏蔽
+  + 动态ADSL切换(家庭网络)
+- 程序开发
+  + PhantomJs + Node.js
+  +  Webkit C++ 内核
+  +  Java Httputil
 
 ### 系统运维和监控
 - Cacti
@@ -118,13 +120,14 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 - CRFPP
 
 ### 版本控制
-- Gitpages + Jekyll + markdown
+- Git + GitHub
 
 ### 博客
-- Git + GitHub + Jekll + Markdown
+- Gitpages + Jekyll + markdown
 
-### LANGUAGE
+### 开发语言
 - Java
 - Javscript
 - Python
+- C++
 
