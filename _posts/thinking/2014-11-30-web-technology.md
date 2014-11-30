@@ -10,7 +10,7 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 - www.name.com
 
 ### CDN服务商
-蓝汛、网宿、Webluker、帝联、阿里云、安全宝、加速乐、快网、17CDN...
+- 蓝汛、网宿、Webluker、帝联、阿里云、安全宝、加速乐、快网、17CDN
 
 ### 负载均衡
 - LVS
@@ -42,22 +42,22 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 - [twitter/jestrel](https://github.com/twitter/kestrel)
 
 ### 存储系统
-- 程序内存储
+* 程序内存储
  + Ehcache
  + LRU
  + [Bigqueue](https://github.com/bulldog2011/bigqueue.git)
-- 传统关系型数据库
+* 传统关系型数据库
  + Mqsql
-- 嵌入式数据库
+* 嵌入式数据库
  + LevelDB（LSM）
-- 分布式数据库
+* 分布式数据库
  + MongoDB
  + CouchDB
  + Hbase
-- 内存数据库
+* 内存数据库
  + OceanBase
  + Redis
-- 分布式图片存储
+* 分布式图片存储
  + TFS
  + FASTDFS
  + MOGILEFS
