@@ -42,25 +42,25 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 - [twitter/jestrel](https://github.com/twitter/kestrel)
 
 ### 存储系统
-* 程序内存储
- + Ehcache
- + LRU
- + [Bigqueue](https://github.com/bulldog2011/bigqueue.git)
-* 传统关系型数据库
- + Mqsql
-* 嵌入式数据库
- + LevelDB（LSM）
-* 分布式数据库
- + MongoDB
- + CouchDB
- + Hbase
-* 内存数据库
- + OceanBase
- + Redis
-* 分布式图片存储
- + TFS
- + FASTDFS
- + MOGILEFS
+- 程序内存储
+  + Ehcache
+  + LRU
+  + [Bigqueue](https://github.com/bulldog2011/bigqueue.git)
+- 传统关系型数据库
+  + Mqsql
+- 嵌入式数据库
+  + LevelDB（LSM）
+- 分布式数据库
+  + MongoDB
+  + CouchDB
+  + Hbase
+- 内存数据库
+  + OceanBase
+  + Redis
+- 分布式图片存储
+  + TFS
+  + FASTDFS
+  + MOGILEFS
 
 ### 搜索产品
 - Solr
@@ -72,10 +72,10 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 
 ### 公共产品开发
 - 分布式session共享
- + Redis
- + Jetty
+  + Redis
+  + Jetty
 - 分布式Scheduler
- + quartz+LevelDB/MongoDB+Zookeeper
+  + quartz+LevelDB/MongoDB+Zookeeper
 
 ### 数据收集和分析
 - Flume + Log4J
@@ -101,13 +101,13 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 
 ### 操作系统
 - 服务器操作系统
-  + CentOS
+   + CentOS
 - 开发操作系统
-  + Macbook
-  + Fedora
-  + Ubuntu
-  + openSUSE
-  + Debian
+   + Macbook
+   + Fedora
+   + Ubuntu
+   + openSUSE
+   + Debian
 
 ### VPS提供商
 - AWS
