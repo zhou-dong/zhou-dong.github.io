@@ -101,13 +101,13 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
 
 ### 操作系统
 - 服务器操作系统
- + CentOS
+  + CentOS
 - 开发操作系统
- + Macbook
- + Fedora
- + Ubuntu
- + openSUSE
- + Debian
+  + Macbook
+  + Fedora
+  + Ubuntu
+  + openSUSE
+  + Debian
 
 ### VPS提供商
 - AWS
