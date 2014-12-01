@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 网站技术点
-tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
+tagline: -- 自己网站架构的设想，按照这个目标慢慢来。
 ---
 {% include JB/setup %}
 
