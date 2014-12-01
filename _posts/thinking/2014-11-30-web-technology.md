@@ -131,4 +131,5 @@ tagline: -- 自己网站架构的设想，按照这个目标慢慢来。
 - Javscript
 - Python
 - C++
+- C Language
 
