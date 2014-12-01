@@ -54,8 +54,8 @@ tagline: -- 我自己网站架构的设想，按照这个目标慢慢来。
   + MongoDB
   + CouchDB
   + Hbase
-- 内存数据库
   + OceanBase
+- 内存数据库
   + Redis
 - 分布式图片存储
   + TFS
