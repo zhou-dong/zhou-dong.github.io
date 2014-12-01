@@ -4,13 +4,267 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2014-11-29T00:02:47+08:00</updated>
+ <updated>2014-12-01T15:38:07+08:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>网站技术点</title>
+   <link href="http://zhou-dong.github.io/2014/11/30/web-technology"/>
+   <updated>2014-11-30T00:00:00+08:00</updated>
+   <id>http://zhou-dong.github.io/2014/11/30/web-technology</id>
+   <content type="html">
+&lt;h4 id=&quot;dns&quot;&gt;DNS供应商&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;www.godaddy.com&lt;/li&gt;
+  &lt;li&gt;www.name.com&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;cdn&quot;&gt;CDN服务商&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;蓝汛、网宿、Webluker、帝联、阿里云、安全宝、加速乐、快网、17CDN&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;负载均衡&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;LVS&lt;/li&gt;
+  &lt;li&gt;NGIX&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;静态文件代理/缓存&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Squid&lt;/li&gt;
+  &lt;li&gt;Varnish&lt;/li&gt;
+  &lt;li&gt;Ngix&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;前端&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap&lt;/li&gt;
+  &lt;li&gt;AngularJS&lt;/li&gt;
+  &lt;li&gt;Jquery&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;后端&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Express.js&lt;/li&gt;
+  &lt;li&gt;Node.js&lt;/li&gt;
+  &lt;li&gt;Tomcat + apr&lt;/li&gt;
+  &lt;li&gt;Appserver&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;消息中间件&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://kafka.apache.org/&quot;&gt;Kafka&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;ZeroMQ&lt;/li&gt;
+  &lt;li&gt;RocketMQ&lt;/li&gt;
+  &lt;li&gt;Netty&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.rabbitmq.com/&quot;&gt;RabbitMQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://activemq.apache.org/&quot;&gt;ActiveMQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/twitter/kestrel&quot;&gt;twitter/jestrel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;存储系统&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;程序内存储
+    &lt;ul&gt;
+      &lt;li&gt;Ehcache&lt;/li&gt;
+      &lt;li&gt;LRU&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/bulldog2011/bigqueue.git&quot;&gt;Bigqueue&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;传统关系型数据库
+    &lt;ul&gt;
+      &lt;li&gt;Mqsql&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;嵌入式数据库
+    &lt;ul&gt;
+      &lt;li&gt;LevelDB（LSM）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分布式数据库
+    &lt;ul&gt;
+      &lt;li&gt;MongoDB&lt;/li&gt;
+      &lt;li&gt;CouchDB&lt;/li&gt;
+      &lt;li&gt;Hbase&lt;/li&gt;
+      &lt;li&gt;OceanBase&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;内存数据库
+    &lt;ul&gt;
+      &lt;li&gt;Redis&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分布式图片存储
+    &lt;ul&gt;
+      &lt;li&gt;TFS&lt;/li&gt;
+      &lt;li&gt;FASTDFS&lt;/li&gt;
+      &lt;li&gt;MOGILEFS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-6&quot;&gt;搜索产品&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Solr&lt;/li&gt;
+  &lt;li&gt;Elasticsearch&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;分布式任务控制&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Zookeeper&lt;/li&gt;
+  &lt;li&gt;Dubbo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-8&quot;&gt;公共产品开发&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;分布式session共享
+    &lt;ul&gt;
+      &lt;li&gt;Redis&lt;/li&gt;
+      &lt;li&gt;Jetty&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分布式Scheduler
+    &lt;ul&gt;
+      &lt;li&gt;quartz + LevelDB/MongoDB + Zookeeper&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-9&quot;&gt;数据收集和分析&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Flume + Log4J&lt;/li&gt;
+  &lt;li&gt;Hadoop&lt;/li&gt;
+  &lt;li&gt;Spark&lt;/li&gt;
+  &lt;li&gt;Strom&lt;/li&gt;
+  &lt;li&gt;Mahout&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-10&quot;&gt;爬虫系统&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;防屏蔽
+    &lt;ul&gt;
+      &lt;li&gt;动态ADSL切换(家庭网络)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;程序开发
+    &lt;ul&gt;
+      &lt;li&gt;PhantomJs + Node.js&lt;/li&gt;
+      &lt;li&gt;Webkit C++ 内核&lt;/li&gt;
+      &lt;li&gt;Java Httputil&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-11&quot;&gt;系统运维和监控&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cacti&lt;/li&gt;
+  &lt;li&gt;Zabbix&lt;/li&gt;
+  &lt;li&gt;Ganglia&lt;/li&gt;
+  &lt;li&gt;Zookeepr监控&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-12&quot;&gt;服务器虚拟化&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Docker&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-13&quot;&gt;操作系统&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;服务器操作系统
+    &lt;ul&gt;
+      &lt;li&gt;CentOS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;开发操作系统
+    &lt;ul&gt;
+      &lt;li&gt;Macbook&lt;/li&gt;
+      &lt;li&gt;Fedora&lt;/li&gt;
+      &lt;li&gt;Ubuntu&lt;/li&gt;
+      &lt;li&gt;openSUSE&lt;/li&gt;
+      &lt;li&gt;Debian&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;vps&quot;&gt;VPS提供商&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;AWS&lt;/li&gt;
+  &lt;li&gt;阿里云&lt;/li&gt;
+  &lt;li&gt;linode(linux node)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-14&quot;&gt;自然语言处理&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;CRFPP&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.nltk.org/&quot;&gt;NLTK&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-15&quot;&gt;版本控制&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Git + GitHub&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-16&quot;&gt;博客&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gitpages + Jekyll + markdown&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-17&quot;&gt;开发语言&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Java&lt;/li&gt;
+  &lt;li&gt;Javscript&lt;/li&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+  &lt;li&gt;C++&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>English Vocabulary Thinking</title>
+   <link href="http://zhou-dong.github.io/2014/11/30/english-vocabulary"/>
+   <updated>2014-11-30T00:00:00+08:00</updated>
+   <id>http://zhou-dong.github.io/2014/11/30/english-vocabulary</id>
+   <content type="html">
+&lt;h4 id=&quot;section&quot;&gt;不只是长篇的文学作品，&lt;code&gt;文字&lt;/code&gt;或者&lt;code&gt;单词&lt;/code&gt;才是一个名族文化的浓缩和核心。如：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Odyssey：漫长而艰苦的旅程。来自于：特洛伊战争后，奥迪赛和他的小伙伴们经历种种困难终于回到家乡的故事。&lt;/li&gt;
+  &lt;li&gt;exodus ：大批的离去。 来自于：圣经故事中的出埃及记。&lt;/li&gt;
+  &lt;li&gt;narcissus：水仙花。源于希腊神话中一个叫Narcissus的青年，他因眷恋自己在水中的形象而死去，死后变成了花，人们称之为水仙花。&lt;/li&gt;
+  &lt;li&gt;narcissism：自恋，自我陶醉。自恋的Narcissus。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;英语单词就像汉字一样，也是有边旁部首的，只不过英语中叫做&lt;code&gt;词根&lt;/code&gt;、&lt;code&gt;前缀&lt;/code&gt;、&lt;code&gt;后缀&lt;/code&gt;。&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;orthodox：正统的人或事。 ortho：right；dox：opinion。&lt;/li&gt;
+  &lt;li&gt;heterodox：异端的、非正统的。hetero：不同的；dox：opinion。&lt;/li&gt;
+  &lt;li&gt;paradox：悖论。para：高于、反面；dox：opinion。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;与跟汉字一样，造词和读音是两个系统。&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;metabolism：新陈代谢。读音：[mɪ’tæbəlɪz(ə)m]；造词：mata[改变] + bolism。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;目的：&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;从理论上明确单词的组成。&lt;/li&gt;
+  &lt;li&gt;让自己背单词的过程不那么的枯燥。&lt;/li&gt;
+  &lt;li&gt;总结自己的收获。&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Study List</title>
