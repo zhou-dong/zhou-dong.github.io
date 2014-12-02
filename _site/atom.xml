@@ -4,13 +4,31 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2014-12-01T18:38:54+08:00</updated>
+ <updated>2014-12-02T19:22:07+08:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Machine Learning</title>
+   <link href="http://zhou-dong.github.io/2014/12/02/machinel-learning"/>
+   <updated>2014-12-02T00:00:00+08:00</updated>
+   <id>http://zhou-dong.github.io/2014/12/02/machinel-learning</id>
+   <content type="html">
+&lt;p&gt;&lt;a href=&quot;http://ufldl.stanford.edu/wiki/index.php/UFLDL_Tutorial&quot;&gt;UFLDL&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B&quot;&gt;UFLDL教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning&quot;&gt;Machine Learning - Andrew Ng&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.holehouse.org/mlclass/index.html&quot;&gt;Stanford Machine Learning&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.zhihu.com/question/20691338&quot;&gt;机器学习该怎么入门&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>网站技术点</title>
@@ -221,6 +239,7 @@
   &lt;li&gt;Javscript&lt;/li&gt;
   &lt;li&gt;Python&lt;/li&gt;
   &lt;li&gt;C++&lt;/li&gt;
+  &lt;li&gt;C Language&lt;/li&gt;
 &lt;/ul&gt;
 
 </content>
@@ -321,6 +340,7 @@
   &lt;li&gt;信息论&lt;/li&gt;
   &lt;li&gt;凸优化	&lt;/li&gt;
 &lt;/ul&gt;
+
 </content>
  </entry>
  

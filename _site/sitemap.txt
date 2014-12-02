@@ -9,6 +9,7 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2014/12/02/machinel-learning
 http://zhou-dong.github.io/2014/11/30/web-technology
 http://zhou-dong.github.io/2014/11/30/english-vocabulary
 http://zhou-dong.github.io/2014/11/28/study-list

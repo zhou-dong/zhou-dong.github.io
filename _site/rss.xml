@@ -5,10 +5,28 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2014-12-01T18:38:54+08:00</lastBuildDate>
-        <pubDate>2014-12-01T18:38:54+08:00</pubDate>
+        <lastBuildDate>2014-12-02T19:22:07+08:00</lastBuildDate>
+        <pubDate>2014-12-02T19:22:07+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Machine Learning</title>
+                <description>
+&lt;p&gt;&lt;a href=&quot;http://ufldl.stanford.edu/wiki/index.php/UFLDL_Tutorial&quot;&gt;UFLDL&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B&quot;&gt;UFLDL教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning&quot;&gt;Machine Learning - Andrew Ng&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.holehouse.org/mlclass/index.html&quot;&gt;Stanford Machine Learning&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.zhihu.com/question/20691338&quot;&gt;机器学习该怎么入门&lt;/a&gt;&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/2014/12/02/machinel-learning</link>
+                <guid>http://zhou-dong.github.io/2014/12/02/machinel-learning</guid>
+                <pubDate>2014-12-02T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>网站技术点</title>
@@ -216,6 +234,7 @@
   &lt;li&gt;Javscript&lt;/li&gt;
   &lt;li&gt;Python&lt;/li&gt;
   &lt;li&gt;C++&lt;/li&gt;
+  &lt;li&gt;C Language&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -316,6 +335,7 @@
   &lt;li&gt;信息论&lt;/li&gt;
   &lt;li&gt;凸优化	&lt;/li&gt;
 &lt;/ul&gt;
+
 </description>
                 <link>http://zhou-dong.github.io/2014/11/28/study-list</link>
                 <guid>http://zhou-dong.github.io/2014/11/28/study-list</guid>
