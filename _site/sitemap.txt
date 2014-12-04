@@ -9,6 +9,9 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2014/12/04/totem-router-shell
+http://zhou-dong.github.io/2014/12/04/totem-appserver-shell
+http://zhou-dong.github.io/2014/12/04/beanstalk-shell
 http://zhou-dong.github.io/2014/12/02/machinel-learning
 http://zhou-dong.github.io/2014/11/30/web-technology
 http://zhou-dong.github.io/2014/11/30/english-vocabulary

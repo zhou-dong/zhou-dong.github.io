@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Archive</title>
+    <title>Shell of Totem Beanstalk</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -69,7 +69,7 @@
     
       
       	
-      	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+      	<li><a href="/archive.html">Archive</a></li>
       	
       
     
@@ -138,162 +138,78 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>Shell of Totem Beanstalk  <small>-- details of beanstalk.sh</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
+<h4 id="startsh">start.sh</h4>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#!/bin/sh</span>
+<span class="nv">LOG_DIR</span><span class="o">=</span>/app/logs/beanstalk
+
+<span class="nv">PID</span><span class="o">=</span><span class="sb">`</span>ps aux <span class="p">|</span>grep beanstalkd <span class="p">|</span>grep -v grep <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+
+start<span class="o">()</span>
+<span class="o">{</span>
+	<span class="nv">PID</span><span class="o">=</span><span class="sb">`</span>ps aux <span class="p">|</span>grep beanstalkd <span class="p">|</span>grep -v grep <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+
+	<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;$PID&quot;</span> <span class="o">]</span><span class="p">;</span>
+		<span class="k">then</span> 
+			<span class="nb">echo</span> <span class="s2">&quot;.....address already in use......&quot;</span>
+			<span class="nb">exit</span>
+<span class="nb">	</span><span class="k">fi</span>
 
 
+	<span class="k">if</span> <span class="o">[</span> -d /app/logs/beanstalk <span class="o">]</span><span class="p">;</span>
+  		<span class="k">then</span>
+			<span class="nb">echo</span> <span class="s2">&quot;begin to start...&quot;</span>
+	  	<span class="k">else</span> 
+			<span class="nb">echo</span> <span class="s2">&quot;begin to make log file and start...&quot;</span>
+			mkdir -p /app/logs/beanstalk
+	<span class="k">fi</span> 
 
+	nohup ./beanstalkd -z <span class="m">52428800</span> -l 0.0.0.0 -p <span class="m">11300</span>  -V &gt;<span class="nv">$LOG_DIR</span>/start.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> &lt;/dev/null <span class="p">&amp;</span>
 
+	<span class="nb">echo</span> <span class="s2">&quot;beanstalkd is running...&quot;</span>
+<span class="o">}</span>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>December</h3>
-      <ul>
-    
-  
-    <li><span>December  4, 2014</span> &raquo; <a href="/2014/12/04/totem-router-shell">Shell of Totem Router</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December  4, 2014</span> &raquo; <a href="/2014/12/04/totem-appserver-shell">Shell of Totem Appserver</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December  4, 2014</span> &raquo; <a href="/2014/12/04/beanstalk-shell">Shell of Totem Beanstalk</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December  2, 2014</span> &raquo; <a href="/2014/12/02/machinel-learning">Machine Learning</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>November</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 30, 2014</span> &raquo; <a href="/2014/11/30/web-technology">网站技术点</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 30, 2014</span> &raquo; <a href="/2014/11/30/english-vocabulary">English Vocabulary Thinking</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 28, 2014</span> &raquo; <a href="/2014/11/28/study-list">Study List</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 27, 2014</span> &raquo; <a href="/2014/11/27/book-list">我的书架</a></li>
-  
-    
-      
-        </ul>
-        <h2>2011</h2>
-        <h3>December</h3>
-        <ul>
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December 29, 2011</span> &raquo; <a href="/lessons/2011/12/29/jekyll-introduction">Jekyll Introduction</a></li>
-  
-    
-      </ul>
-    
-  
+stop<span class="o">()</span>
+<span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;$PID&quot;</span> <span class="o">]</span><span class="p">;</span>
+                <span class="k">then</span>
+                        <span class="nb">echo</span> <span class="s2">&quot;stop ...&quot;</span>
+			<span class="nb">kill</span> -9 <span class="nv">$PID</span>
+        <span class="k">fi</span>	
+<span class="o">}</span>
+
+info<span class="o">()</span>
+<span class="o">{</span>
+	<span class="nb">echo</span> <span class="sb">`</span>tail -n <span class="m">2</span> <span class="nv">$LOG_DIR</span>/start.log<span class="sb">`</span>
+	<span class="nb">exit</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="s2">&quot;$1&quot;</span> in
+	<span class="s1">&#39;start&#39;</span><span class="o">)</span>
+		start
+		<span class="p">;;</span>
+	<span class="s1">&#39;stop&#39;</span><span class="o">)</span>
+		stop
+		<span class="p">;;</span>
+	<span class="s1">&#39;restart&#39;</span><span class="o">)</span>
+		stop
+		start
+		<span class="p">;;</span>
+	<span class="s1">&#39;info&#39;</span><span class="o">)</span>
+		info
+		<span class="p">;;</span>
+	*<span class="o">)</span>
+		<span class="nb">echo</span> <span class="s2">&quot;pls type $0 {start|stop|restart|info}&quot;</span>
+
+	<span class="nb">exit </span>1
+<span class="k">esac</span></code></pre></div>
 
 
   </div>

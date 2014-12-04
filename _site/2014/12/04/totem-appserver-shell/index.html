@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Shell of Totem Appserver</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">DONG-ZHOU</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading.html">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Shell of Totem Appserver  <small>-- details of  appserer.sh</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<h4 id="appserversh">appserver.sh</h4>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">UNNING_USER</span><span class="o">=</span>root
+<span class="nv">APP_HOME</span><span class="o">=</span>/workspace/totem
+<span class="nv">APP_MAINCLASS</span><span class="o">=</span>org.x.server.app.AppServer
+
+<span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">$APP_HOME</span>
+<span class="k">for</span> i in <span class="s2">&quot;$APP_HOME&quot;</span>/lib/*.jar<span class="p">;</span> <span class="k">do</span>
+<span class="nv">CLASSPATH</span><span class="o">=</span><span class="s2">&quot;$CLASSPATH&quot;</span>:<span class="s2">&quot;$i&quot;</span>
+<span class="k">done</span>
+
+<span class="nb">export </span><span class="nv">MALLOC_CHECK_</span><span class="o">=</span>0
+
+<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>free -g <span class="p">|</span>grep Mem <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span> -ge  <span class="m">70</span> <span class="o">]</span>
+   <span class="k">then</span> 
+     <span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;-server -Xms65536m -Xmx65536m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&quot;</span>
+   <span class="k">else</span>
+     <span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;-server -Xms24576m -Xmx24576m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&quot;</span>
+<span class="k">fi</span>
+
+<span class="nv">psid</span><span class="o">=</span>0
+
+checkpid<span class="o">()</span>
+<span class="o">{</span>
+<span class="nv">javaps</span><span class="o">=</span><span class="sb">`</span><span class="nv">$JAVA_HOME</span>/bin/jps -l <span class="p">|</span> grep <span class="nv">$APP_MAINCLASS</span><span class="sb">`</span>
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;$javaps&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nv">psid</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$javaps</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="sb">`</span>
+<span class="k">else</span>
+<span class="nv">psid</span><span class="o">=</span>0
+<span class="k">fi</span>
+<span class="nb">echo</span> <span class="s2">&quot;psid=$psid&quot;</span>
+<span class="o">}</span>
+
+
+start<span class="o">()</span>
+<span class="o">{</span>
+checkpid
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;warn: $APP_MAINCLASS already started! (pid=$psid)&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
+<span class="k">else</span>
+<span class="nb">echo</span> -n <span class="s2">&quot;Starting $APP_MAINCLASS ...&quot;</span>
+<span class="nv">JAVA_CMD</span><span class="o">=</span><span class="s2">&quot;nohup java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS &gt; /app/logs/appserver.log 2&gt;&amp;1 &lt;/dev/null &amp;&quot;</span>
+su -c <span class="s2">&quot;$JAVA_CMD&quot;</span>
+checkpid
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;(pid=$psid) [OK]&quot;</span>
+<span class="k">else</span>
+<span class="nb">echo</span> <span class="s2">&quot;[Failed]&quot;</span>
+<span class="k">fi</span>
+<span class="k">fi</span>
+<span class="o">}</span>
+
+stop<span class="o">()</span>
+<span class="o">{</span>
+checkpid
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nb">echo</span> -n <span class="s2">&quot;Stopping $APP_MAINCLASS ...(pid=$psid) &quot;</span>
+<span class="nb">kill</span> -9 <span class="nv">$psid</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;[OK]&quot;</span>
+<span class="k">else</span>
+<span class="nb">echo</span> <span class="s2">&quot;[Failed]&quot;</span>
+<span class="k">fi</span>
+checkpid
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+stop
+<span class="k">fi</span>
+<span class="k">else</span>
+<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;warn: $APP_MAINCLASS is not running&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
+<span class="k">fi</span>
+<span class="nb">echo</span> <span class="s2">&quot;===remove index lock tlog bigqueue&quot;</span>
+rm -f /server/solr/product/data/index/*.lock
+rm -rf /server/bigqueue/logs/ModuleQueue/*
+rm -rf /server/bigqueue/logs/schedule/*
+rm -rf /server/bigqueue/logs/searchlogs/*
+<span class="o">}</span>
+
+status<span class="o">()</span>
+<span class="o">{</span>
+checkpid
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
+<span class="nb">echo</span> <span class="s2">&quot;$APP_MAINCLASS is running! (pid=$psid)&quot;</span>
+<span class="k">else</span>
+<span class="nb">echo</span> <span class="s2">&quot;$APP_MAINCLASS is not running&quot;</span>
+<span class="k">fi</span>
+<span class="o">}</span>
+
+info<span class="o">()</span>
+<span class="o">{</span>
+<span class="nb">echo</span> <span class="s2">&quot;System Information:&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;****************************&quot;</span>
+<span class="nb">echo</span> <span class="sb">`</span>head -n <span class="m">1</span> /etc/issue<span class="sb">`</span>
+<span class="nb">echo</span> <span class="sb">`</span>uname -a<span class="sb">`</span>
+<span class="nb">echo</span>
+<span class="nb">echo</span> <span class="s2">&quot;JAVA_HOME=$JAVA_HOME&quot;</span>
+<span class="nb">echo</span> <span class="sb">`</span><span class="nv">$JAVA_HOME</span>/bin/java -version<span class="sb">`</span>
+<span class="nb">echo</span>
+<span class="nb">echo</span> <span class="s2">&quot;APP_HOME=$APP_HOME&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;APP_MAINCLASS=$APP_MAINCLASS&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;****************************&quot;</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="s2">&quot;$1&quot;</span> in
+<span class="s1">&#39;start&#39;</span><span class="o">)</span>
+start
+<span class="p">;;</span>
+<span class="s1">&#39;stop&#39;</span><span class="o">)</span>
+stop
+<span class="p">;;</span>
+<span class="s1">&#39;restart&#39;</span><span class="o">)</span>
+stop
+start
+<span class="p">;;</span>
+<span class="s1">&#39;status&#39;</span><span class="o">)</span>
+status
+<span class="p">;;</span>
+<span class="s1">&#39;info&#39;</span><span class="o">)</span>
+info
+<span class="p">;;</span>
+*<span class="o">)</span>
+<span class="nb">echo</span> <span class="s2">&quot;Usage: $0 {start|stop|restart|status|info}&quot;</span>
+<span class="nb">exit </span>1
+<span class="k">esac</span>
+<span class="nb">exit </span>0</code></pre></div>
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2014 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
