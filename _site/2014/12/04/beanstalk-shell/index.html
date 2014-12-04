@@ -21,6 +21,8 @@
     
     <!-- Custom styles -->
     <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" >
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +42,7 @@
     <!-- atom & rss feed -->
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-
+    <style>.operative { font-weight: bold; border:1px solid yellow }</style>
   </head>
 
   <body>
@@ -145,72 +147,73 @@
   <div class="col-xs-12">
     
 <h4 id="startsh">start.sh</h4>
+<pre class="prettyprint linenums">
+#!/bin/sh
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="c">#!/bin/sh</span>
-<span class="nv">LOG_DIR</span><span class="o">=</span>/app/logs/beanstalk
+LOG_DIR=/app/logs/beanstalk
+PID=`ps aux |grep beanstalkd |grep -v grep |awk '{print $2}'`
 
-<span class="nv">PID</span><span class="o">=</span><span class="sb">`</span>ps aux <span class="p">|</span>grep beanstalkd <span class="p">|</span>grep -v grep <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+start()
+{
+	PID=`ps aux |grep beanstalkd |grep -v grep |awk '{print $2}'`
 
-start<span class="o">()</span>
-<span class="o">{</span>
-	<span class="nv">PID</span><span class="o">=</span><span class="sb">`</span>ps aux <span class="p">|</span>grep beanstalkd <span class="p">|</span>grep -v grep <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
-
-	<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;$PID&quot;</span> <span class="o">]</span><span class="p">;</span>
-		<span class="k">then</span> 
-			<span class="nb">echo</span> <span class="s2">&quot;.....address already in use......&quot;</span>
-			<span class="nb">exit</span>
-<span class="nb">	</span><span class="k">fi</span>
+	if [ -n "$PID" ];
+		then 
+			echo ".....address already in use......"
+			exit
+	fi
 
 
-	<span class="k">if</span> <span class="o">[</span> -d /app/logs/beanstalk <span class="o">]</span><span class="p">;</span>
-  		<span class="k">then</span>
-			<span class="nb">echo</span> <span class="s2">&quot;begin to start...&quot;</span>
-	  	<span class="k">else</span> 
-			<span class="nb">echo</span> <span class="s2">&quot;begin to make log file and start...&quot;</span>
+	if [ -d /app/logs/beanstalk ];
+  		then
+			echo "begin to start..."
+	  	else 
+			echo "begin to make log file and start..."
 			mkdir -p /app/logs/beanstalk
-	<span class="k">fi</span> 
+	fi 
 
-	nohup ./beanstalkd -z <span class="m">52428800</span> -l 0.0.0.0 -p <span class="m">11300</span>  -V &gt;<span class="nv">$LOG_DIR</span>/start.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> &lt;/dev/null <span class="p">&amp;</span>
+	nohup ./beanstalkd -z 52428800 -l 0.0.0.0 -p 11300  -V &gt;$LOG_DIR/start.log 2&gt;&amp;1 &lt;/dev/null &amp;
 
-	<span class="nb">echo</span> <span class="s2">&quot;beanstalkd is running...&quot;</span>
-<span class="o">}</span>
+	echo "beanstalkd is running..."
+}
 
-stop<span class="o">()</span>
-<span class="o">{</span>
+stop()
+{
 
-        <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;$PID&quot;</span> <span class="o">]</span><span class="p">;</span>
-                <span class="k">then</span>
-                        <span class="nb">echo</span> <span class="s2">&quot;stop ...&quot;</span>
-			<span class="nb">kill</span> -9 <span class="nv">$PID</span>
-        <span class="k">fi</span>	
-<span class="o">}</span>
+        if [ -n "$PID" ];
+                then
+                        echo "stop ..."
+			kill -9 $PID
+        fi	
+}
 
-info<span class="o">()</span>
-<span class="o">{</span>
-	<span class="nb">echo</span> <span class="sb">`</span>tail -n <span class="m">2</span> <span class="nv">$LOG_DIR</span>/start.log<span class="sb">`</span>
-	<span class="nb">exit</span>
-<span class="o">}</span>
+info()
+{
+	echo `tail -n 2 $LOG_DIR/start.log`
+	exit
+}
 
-<span class="k">case</span> <span class="s2">&quot;$1&quot;</span> in
-	<span class="s1">&#39;start&#39;</span><span class="o">)</span>
+case "$1" in
+	'start')
 		start
-		<span class="p">;;</span>
-	<span class="s1">&#39;stop&#39;</span><span class="o">)</span>
+		;;
+	'stop')
 		stop
-		<span class="p">;;</span>
-	<span class="s1">&#39;restart&#39;</span><span class="o">)</span>
+		;;
+	'restart')
 		stop
 		start
-		<span class="p">;;</span>
-	<span class="s1">&#39;info&#39;</span><span class="o">)</span>
+		;;
+	'info')
 		info
-		<span class="p">;;</span>
-	*<span class="o">)</span>
-		<span class="nb">echo</span> <span class="s2">&quot;pls type $0 {start|stop|restart|info}&quot;</span>
+		;;
+	*)
+		echo "pls type $0 {start|stop|restart|info}"
 
-	<span class="nb">exit </span>1
-<span class="k">esac</span></code></pre></div>
+	exit 1
+esac
 
+</pre>
 
   </div>
 </div>
@@ -235,7 +238,10 @@ info<span class="o">()</span>
     <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    <!--google code prettify -->
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
   </body>
 </html>
 

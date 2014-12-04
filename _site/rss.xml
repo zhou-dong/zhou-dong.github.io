@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2014-12-04T19:34:27+08:00</lastBuildDate>
-        <pubDate>2014-12-04T19:34:27+08:00</pubDate>
+        <lastBuildDate>2014-12-04T21:38:54+08:00</lastBuildDate>
+        <pubDate>2014-12-04T21:38:54+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -285,72 +285,73 @@ info
                 <title>Shell of Totem Beanstalk</title>
                 <description>
 &lt;h4 id=&quot;startsh&quot;&gt;start.sh&lt;/h4&gt;
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+#!/bin/sh
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;LOG_DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/app/logs/beanstalk
+LOG_DIR=/app/logs/beanstalk
+PID=`ps aux |grep beanstalkd |grep -v grep |awk '{print $2}'`
 
-&lt;span class=&quot;nv&quot;&gt;PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;ps aux &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;grep beanstalkd &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;grep -v grep &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+start()
+{
+	PID=`ps aux |grep beanstalkd |grep -v grep |awk '{print $2}'`
 
-start&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nv&quot;&gt;PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;ps aux &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;grep beanstalkd &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;grep -v grep &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$PID&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; 
-			&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;.....address already in use......&amp;quot;&lt;/span&gt;
-			&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;	&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+	if [ -n &quot;$PID&quot; ];
+		then 
+			echo &quot;.....address already in use......&quot;
+			exit
+	fi
 
 
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -d /app/logs/beanstalk &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  		&lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-			&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;begin to start...&amp;quot;&lt;/span&gt;
-	  	&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; 
-			&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;begin to make log file and start...&amp;quot;&lt;/span&gt;
+	if [ -d /app/logs/beanstalk ];
+  		then
+			echo &quot;begin to start...&quot;
+	  	else 
+			echo &quot;begin to make log file and start...&quot;
 			mkdir -p /app/logs/beanstalk
-	&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt; 
+	fi 
 
-	nohup ./beanstalkd -z &lt;span class=&quot;m&quot;&gt;52428800&lt;/span&gt; -l 0.0.0.0 -p &lt;span class=&quot;m&quot;&gt;11300&lt;/span&gt;  -V &amp;gt;&lt;span class=&quot;nv&quot;&gt;$LOG_DIR&lt;/span&gt;/start.log 2&amp;gt;&lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &amp;lt;/dev/null &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;
+	nohup ./beanstalkd -z 52428800 -l 0.0.0.0 -p 11300  -V &amp;gt;$LOG_DIR/start.log 2&amp;gt;&amp;amp;1 &amp;lt;/dev/null &amp;amp;
 
-	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;beanstalkd is running...&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	echo &quot;beanstalkd is running...&quot;
+}
 
-stop&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+stop()
+{
 
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$PID&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-                        &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;stop ...&amp;quot;&lt;/span&gt;
-			&lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -9 &lt;span class=&quot;nv&quot;&gt;$PID&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;	
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        if [ -n &quot;$PID&quot; ];
+                then
+                        echo &quot;stop ...&quot;
+			kill -9 $PID
+        fi	
+}
 
-info&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;tail -n &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$LOG_DIR&lt;/span&gt;/start.log&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-	&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+info()
+{
+	echo `tail -n 2 $LOG_DIR/start.log`
+	exit
+}
 
-&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt; in
-	&lt;span class=&quot;s1&quot;&gt;&amp;#39;start&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+case &quot;$1&quot; in
+	'start')
 		start
-		&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;&amp;#39;stop&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+		;;
+	'stop')
 		stop
-		&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;&amp;#39;restart&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+		;;
+	'restart')
 		stop
 		start
-		&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;&amp;#39;info&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+		;;
+	'info')
 		info
-		&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-	*&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-		&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;pls type $0 {start|stop|restart|info}&amp;quot;&lt;/span&gt;
+		;;
+	*)
+		echo &quot;pls type $0 {start|stop|restart|info}&quot;
 
-	&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
-&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	exit 1
+esac
 
+&lt;/pre&gt;
 </description>
                 <link>http://zhou-dong.github.io/2014/12/04/beanstalk-shell</link>
                 <guid>http://zhou-dong.github.io/2014/12/04/beanstalk-shell</guid>

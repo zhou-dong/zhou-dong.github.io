@@ -7,11 +7,10 @@ tagline: -- details of beanstalk.sh
 {% include JB/setup %}
 
 #### start.sh
-
-{% highlight sh %}  
+<pre class="prettyprint linenums">
 #!/bin/sh
-LOG_DIR=/app/logs/beanstalk
 
+LOG_DIR=/app/logs/beanstalk
 PID=`ps aux |grep beanstalkd |grep -v grep |awk '{print $2}'`
 
 start()
@@ -74,4 +73,4 @@ case "$1" in
 	exit 1
 esac
 
-{% endhighlight %} 
+</pre>
