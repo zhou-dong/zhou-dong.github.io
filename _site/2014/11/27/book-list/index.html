@@ -22,7 +22,10 @@
     <!-- Custom styles -->
     <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
     <!--google code prettify -->
-    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" >
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +45,6 @@
     <!-- atom & rss feed -->
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-    <style>.operative { font-weight: bold; border:1px solid yellow }</style>
   </head>
 
   <body>
@@ -360,7 +362,19 @@
     <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
     <!--google code prettify -->
     <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+
+<!--
     <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
   </body>
 </html>
 
