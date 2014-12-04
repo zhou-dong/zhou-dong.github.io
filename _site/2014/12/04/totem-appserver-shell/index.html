@@ -149,133 +149,136 @@
   <div class="col-xs-12">
     
 <h4 id="appserversh">appserver.sh</h4>
+<pre class="prettyprint linenums"> 
+#!/bin/sh
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">UNNING_USER</span><span class="o">=</span>root
-<span class="nv">APP_HOME</span><span class="o">=</span>/workspace/totem
-<span class="nv">APP_MAINCLASS</span><span class="o">=</span>org.x.server.app.AppServer
+UNNING_USER=root
+APP_HOME=/workspace/totem
+APP_MAINCLASS=org.x.server.app.AppServer
 
-<span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">$APP_HOME</span>
-<span class="k">for</span> i in <span class="s2">&quot;$APP_HOME&quot;</span>/lib/*.jar<span class="p">;</span> <span class="k">do</span>
-<span class="nv">CLASSPATH</span><span class="o">=</span><span class="s2">&quot;$CLASSPATH&quot;</span>:<span class="s2">&quot;$i&quot;</span>
-<span class="k">done</span>
+CLASSPATH=$APP_HOME
+for i in "$APP_HOME"/lib/*.jar; do
+CLASSPATH="$CLASSPATH":"$i"
+done
 
-<span class="nb">export </span><span class="nv">MALLOC_CHECK_</span><span class="o">=</span>0
+export MALLOC_CHECK_=0
 
-<span class="k">if</span> <span class="o">[</span> <span class="sb">`</span>free -g <span class="p">|</span>grep Mem <span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span> -ge  <span class="m">70</span> <span class="o">]</span>
-   <span class="k">then</span> 
-     <span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;-server -Xms65536m -Xmx65536m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&quot;</span>
-   <span class="k">else</span>
-     <span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;-server -Xms24576m -Xmx24576m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&quot;</span>
-<span class="k">fi</span>
+if [ `free -g |grep Mem |awk '{print $2}'` -ge  70 ]
+   then 
+     JAVA_OPTS="-server -Xms65536m -Xmx65536m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m"
+   else
+     JAVA_OPTS="-server -Xms24576m -Xmx24576m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m"
+fi
 
-<span class="nv">psid</span><span class="o">=</span>0
+psid=0
 
-checkpid<span class="o">()</span>
-<span class="o">{</span>
-<span class="nv">javaps</span><span class="o">=</span><span class="sb">`</span><span class="nv">$JAVA_HOME</span>/bin/jps -l <span class="p">|</span> grep <span class="nv">$APP_MAINCLASS</span><span class="sb">`</span>
-<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;$javaps&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="nv">psid</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$javaps</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="sb">`</span>
-<span class="k">else</span>
-<span class="nv">psid</span><span class="o">=</span>0
-<span class="k">fi</span>
-<span class="nb">echo</span> <span class="s2">&quot;psid=$psid&quot;</span>
-<span class="o">}</span>
+checkpid()
+{
+javaps=`$JAVA_HOME/bin/jps -l | grep $APP_MAINCLASS`
+if [ -n "$javaps" ]; then
+psid=`echo $javaps | awk '{print $1}'`
+else
+psid=0
+fi
+echo "psid=$psid"
+}
 
 
-start<span class="o">()</span>
-<span class="o">{</span>
+start()
+{
 checkpid
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;warn: $APP_MAINCLASS already started! (pid=$psid)&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
-<span class="k">else</span>
-<span class="nb">echo</span> -n <span class="s2">&quot;Starting $APP_MAINCLASS ...&quot;</span>
-<span class="nv">JAVA_CMD</span><span class="o">=</span><span class="s2">&quot;nohup java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS &gt; /app/logs/appserver.log 2&gt;&amp;1 &lt;/dev/null &amp;&quot;</span>
-su -c <span class="s2">&quot;$JAVA_CMD&quot;</span>
+if [ $psid -ne 0 ]; then
+echo "================================"
+echo "warn: $APP_MAINCLASS already started! (pid=$psid)"
+echo "================================"
+else
+echo -n "Starting $APP_MAINCLASS ..."
+JAVA_CMD="nohup java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS &gt; /app/logs/appserver.log 2&gt;&amp;1 &lt;/dev/null &amp;"
+su -c "$JAVA_CMD"
 checkpid
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="nb">echo</span> <span class="s2">&quot;(pid=$psid) [OK]&quot;</span>
-<span class="k">else</span>
-<span class="nb">echo</span> <span class="s2">&quot;[Failed]&quot;</span>
-<span class="k">fi</span>
-<span class="k">fi</span>
-<span class="o">}</span>
+if [ $psid -ne 0 ]; then
+echo "(pid=$psid) [OK]"
+else
+echo "[Failed]"
+fi
+fi
+}
 
-stop<span class="o">()</span>
-<span class="o">{</span>
+stop()
+{
 checkpid
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="nb">echo</span> -n <span class="s2">&quot;Stopping $APP_MAINCLASS ...(pid=$psid) &quot;</span>
-<span class="nb">kill</span> -9 <span class="nv">$psid</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="nb">echo</span> <span class="s2">&quot;[OK]&quot;</span>
-<span class="k">else</span>
-<span class="nb">echo</span> <span class="s2">&quot;[Failed]&quot;</span>
-<span class="k">fi</span>
+if [ $psid -ne 0 ]; then
+echo -n "Stopping $APP_MAINCLASS ...(pid=$psid) "
+kill -9 $psid
+if [ $? -eq 0 ]; then
+echo "[OK]"
+else
+echo "[Failed]"
+fi
 checkpid
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+if [ $psid -ne 0 ]; then
 stop
-<span class="k">fi</span>
-<span class="k">else</span>
-<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;warn: $APP_MAINCLASS is not running&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;================================&quot;</span>
-<span class="k">fi</span>
-<span class="nb">echo</span> <span class="s2">&quot;===remove index lock tlog bigqueue&quot;</span>
+fi
+else
+echo "================================"
+echo "warn: $APP_MAINCLASS is not running"
+echo "================================"
+fi
+echo "===remove index lock tlog bigqueue"
 rm -f /server/solr/product/data/index/*.lock
 rm -rf /server/bigqueue/logs/ModuleQueue/*
 rm -rf /server/bigqueue/logs/schedule/*
 rm -rf /server/bigqueue/logs/searchlogs/*
-<span class="o">}</span>
+}
 
-status<span class="o">()</span>
-<span class="o">{</span>
+status()
+{
 checkpid
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$psid</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span>  <span class="k">then</span>
-<span class="nb">echo</span> <span class="s2">&quot;$APP_MAINCLASS is running! (pid=$psid)&quot;</span>
-<span class="k">else</span>
-<span class="nb">echo</span> <span class="s2">&quot;$APP_MAINCLASS is not running&quot;</span>
-<span class="k">fi</span>
-<span class="o">}</span>
+if [ $psid -ne 0 ];  then
+echo "$APP_MAINCLASS is running! (pid=$psid)"
+else
+echo "$APP_MAINCLASS is not running"
+fi
+}
 
-info<span class="o">()</span>
-<span class="o">{</span>
-<span class="nb">echo</span> <span class="s2">&quot;System Information:&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;****************************&quot;</span>
-<span class="nb">echo</span> <span class="sb">`</span>head -n <span class="m">1</span> /etc/issue<span class="sb">`</span>
-<span class="nb">echo</span> <span class="sb">`</span>uname -a<span class="sb">`</span>
-<span class="nb">echo</span>
-<span class="nb">echo</span> <span class="s2">&quot;JAVA_HOME=$JAVA_HOME&quot;</span>
-<span class="nb">echo</span> <span class="sb">`</span><span class="nv">$JAVA_HOME</span>/bin/java -version<span class="sb">`</span>
-<span class="nb">echo</span>
-<span class="nb">echo</span> <span class="s2">&quot;APP_HOME=$APP_HOME&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;APP_MAINCLASS=$APP_MAINCLASS&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;****************************&quot;</span>
-<span class="o">}</span>
+info()
+{
+echo "System Information:"
+echo "****************************"
+echo `head -n 1 /etc/issue`
+echo `uname -a`
+echo
+echo "JAVA_HOME=$JAVA_HOME"
+echo `$JAVA_HOME/bin/java -version`
+echo
+echo "APP_HOME=$APP_HOME"
+echo "APP_MAINCLASS=$APP_MAINCLASS"
+echo "****************************"
+}
 
-<span class="k">case</span> <span class="s2">&quot;$1&quot;</span> in
-<span class="s1">&#39;start&#39;</span><span class="o">)</span>
+case "$1" in
+'start')
 start
-<span class="p">;;</span>
-<span class="s1">&#39;stop&#39;</span><span class="o">)</span>
+;;
+'stop')
 stop
-<span class="p">;;</span>
-<span class="s1">&#39;restart&#39;</span><span class="o">)</span>
+;;
+'restart')
 stop
 start
-<span class="p">;;</span>
-<span class="s1">&#39;status&#39;</span><span class="o">)</span>
+;;
+'status')
 status
-<span class="p">;;</span>
-<span class="s1">&#39;info&#39;</span><span class="o">)</span>
+;;
+'info')
 info
-<span class="p">;;</span>
-*<span class="o">)</span>
-<span class="nb">echo</span> <span class="s2">&quot;Usage: $0 {start|stop|restart|status|info}&quot;</span>
-<span class="nb">exit </span>1
-<span class="k">esac</span>
-<span class="nb">exit </span>0</code></pre></div>
+;;
+*)
+echo "Usage: $0 {start|stop|restart|status|info}"
+exit 1
+esac
+exit 0
+</pre>
 
 
   </div>

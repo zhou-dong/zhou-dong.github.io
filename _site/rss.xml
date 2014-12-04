@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2014-12-04T22:32:39+08:00</lastBuildDate>
-        <pubDate>2014-12-04T22:32:39+08:00</pubDate>
+        <lastBuildDate>2014-12-04T22:44:11+08:00</lastBuildDate>
+        <pubDate>2014-12-04T22:44:11+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -14,129 +14,130 @@
                 <title>Shell of Totem Router</title>
                 <description>
 &lt;h4 id=&quot;routersh&quot;&gt;router.sh&lt;/h4&gt;
+&lt;pre class=&quot;prettyprint linenums&quot;&gt; 
+#!/bin/sh
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
+RUNNING_USER=root
+APP_HOME=/workspace/totem
+APP_MAINCLASS=org.x.server.router.RouterServer
 
-&lt;span class=&quot;nv&quot;&gt;RUNNING_USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;root
-&lt;span class=&quot;nv&quot;&gt;APP_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/workspace/totem
-&lt;span class=&quot;nv&quot;&gt;APP_MAINCLASS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;org.x.server.router.RouterServer
+CLASSPATH=$APP_HOME
+for i in &quot;$APP_HOME&quot;/lib/*.jar; do
+CLASSPATH=&quot;$CLASSPATH&quot;:&quot;$i&quot;
+done
 
-&lt;span class=&quot;nv&quot;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$APP_HOME&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; i in &lt;span class=&quot;s2&quot;&gt;&amp;quot;$APP_HOME&amp;quot;&lt;/span&gt;/lib/*.jar&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$CLASSPATH&amp;quot;&lt;/span&gt;:&lt;span class=&quot;s2&quot;&gt;&amp;quot;$i&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+export MALLOC_CHECK_=0
 
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;MALLOC_CHECK_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+JAVA_OPTS=&quot;-server -Xms8192m -Xmx8192m -Xmn1024m -Djava.awt.headless=true -XX:MaxPermSize=128m&quot;
 
-&lt;span class=&quot;nv&quot;&gt;JAVA_OPTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;-server -Xms8192m -Xmx8192m -Xmn1024m -Djava.awt.headless=true -XX:MaxPermSize=128m&amp;quot;&lt;/span&gt;
+psid=0
 
-&lt;span class=&quot;nv&quot;&gt;psid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
-
-checkpid&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;javaps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin/jps -l &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;nv&quot;&gt;$APP_MAINCLASS&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$javaps&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;psid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$javaps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; awk &lt;span class=&quot;s1&quot;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;psid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;psid=$psid&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+checkpid()
+{
+javaps=`$JAVA_HOME/bin/jps -l | grep $APP_MAINCLASS`
+if [ -n &quot;$javaps&quot; ]; then
+psid=`echo $javaps | awk '{print $1}'`
+else
+psid=0
+fi
+echo &quot;psid=$psid&quot;
+}
 
 
-start&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+start()
+{
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;warn: $APP_MAINCLASS already started! (pid=$psid)&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;Starting $APP_MAINCLASS ...&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;JAVA_CMD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;nohup java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS &amp;gt; /app/logs/router.log 2&amp;gt;&amp;amp;1 &amp;lt;/dev/null &amp;amp;&amp;quot;&lt;/span&gt;
-su -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;$JAVA_CMD&amp;quot;&lt;/span&gt;
+if [ $psid -ne 0 ]; then
+echo &quot;================================&quot;
+echo &quot;warn: $APP_MAINCLASS already started! (pid=$psid)&quot;
+echo &quot;================================&quot;
+else
+echo -n &quot;Starting $APP_MAINCLASS ...&quot;
+JAVA_CMD=&quot;nohup java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS &amp;gt; /app/logs/router.log 2&amp;gt;&amp;amp;1 &amp;lt;/dev/null &amp;amp;&quot;
+su -c &quot;$JAVA_CMD&quot;
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;(pid=$psid) [OK]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;[Failed]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+if [ $psid -ne 0 ]; then
+echo &quot;(pid=$psid) [OK]&quot;
+else
+echo &quot;[Failed]&quot;
+fi
+fi
+}
 
-stop&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+stop()
+{
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;Stopping $APP_MAINCLASS ...(pid=$psid) &amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -9 &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; -eq &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;[OK]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;[Failed]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+if [ $psid -ne 0 ]; then
+echo -n &quot;Stopping $APP_MAINCLASS ...(pid=$psid) &quot;
+kill -9 $psid
+if [ $? -eq 0 ]; then
+echo &quot;[OK]&quot;
+else
+echo &quot;[Failed]&quot;
+fi
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+if [ $psid -ne 0 ]; then
 stop
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;warn: $APP_MAINCLASS is not running&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;===remove bigqueue&amp;quot;&lt;/span&gt;
+fi
+else
+echo &quot;================================&quot;
+echo &quot;warn: $APP_MAINCLASS is not running&quot;
+echo &quot;================================&quot;
+fi
+echo &quot;===remove bigqueue&quot;
 rm -rf /server/bigqueue/logs/indexlogs/*
 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+}
 
-status&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+status()
+{
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$APP_MAINCLASS is running! (pid=$psid)&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$APP_MAINCLASS is not running&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+if [ $psid -ne 0 ];  then
+echo &quot;$APP_MAINCLASS is running! (pid=$psid)&quot;
+else
+echo &quot;$APP_MAINCLASS is not running&quot;
+fi
+}
 
-info&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;System Information:&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;****************************&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;head -n &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; /etc/issue&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;uname -a&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;JAVA_HOME=$JAVA_HOME&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin/java -version&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;APP_HOME=$APP_HOME&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;APP_MAINCLASS=$APP_MAINCLASS&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;****************************&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+info()
+{
+echo &quot;System Information:&quot;
+echo &quot;****************************&quot;
+echo `head -n 1 /etc/issue`
+echo `uname -a`
+echo
+echo &quot;JAVA_HOME=$JAVA_HOME&quot;
+echo `$JAVA_HOME/bin/java -version`
+echo
+echo &quot;APP_HOME=$APP_HOME&quot;
+echo &quot;APP_MAINCLASS=$APP_MAINCLASS&quot;
+echo &quot;****************************&quot;
+}
 
-&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt; in
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;start&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+case &quot;$1&quot; in
+'start')
 start
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;stop&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'stop')
 stop
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;restart&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'restart')
 stop
 start
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;status&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'status')
 status
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;info&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'info')
 info
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-*&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Usage: $0 {start|stop|restart|status|info}&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
-&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+;;
+*)
+echo &quot;Usage: $0 {start|stop|restart|status|info}&quot;
+exit 1
+esac
+exit 0
 
+&lt;/pre&gt;
 </description>
                 <link>http://zhou-dong.github.io/2014/12/04/totem-router-shell</link>
                 <guid>http://zhou-dong.github.io/2014/12/04/totem-router-shell</guid>
@@ -147,133 +148,136 @@ info
                 <title>Shell of Totem Appserver</title>
                 <description>
 &lt;h4 id=&quot;appserversh&quot;&gt;appserver.sh&lt;/h4&gt;
+&lt;pre class=&quot;prettyprint linenums&quot;&gt; 
+#!/bin/sh
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;UNNING_USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;root
-&lt;span class=&quot;nv&quot;&gt;APP_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/workspace/totem
-&lt;span class=&quot;nv&quot;&gt;APP_MAINCLASS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;org.x.server.app.AppServer
+UNNING_USER=root
+APP_HOME=/workspace/totem
+APP_MAINCLASS=org.x.server.app.AppServer
 
-&lt;span class=&quot;nv&quot;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$APP_HOME&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; i in &lt;span class=&quot;s2&quot;&gt;&amp;quot;$APP_HOME&amp;quot;&lt;/span&gt;/lib/*.jar&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;CLASSPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$CLASSPATH&amp;quot;&lt;/span&gt;:&lt;span class=&quot;s2&quot;&gt;&amp;quot;$i&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+CLASSPATH=$APP_HOME
+for i in &quot;$APP_HOME&quot;/lib/*.jar; do
+CLASSPATH=&quot;$CLASSPATH&quot;:&quot;$i&quot;
+done
 
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;MALLOC_CHECK_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+export MALLOC_CHECK_=0
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;free -g &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;grep Mem &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; -ge  &lt;span class=&quot;m&quot;&gt;70&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; 
-     &lt;span class=&quot;nv&quot;&gt;JAVA_OPTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;-server -Xms65536m -Xmx65536m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&amp;quot;&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-     &lt;span class=&quot;nv&quot;&gt;JAVA_OPTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;-server -Xms24576m -Xmx24576m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+if [ `free -g |grep Mem |awk '{print $2}'` -ge  70 ]
+   then 
+     JAVA_OPTS=&quot;-server -Xms65536m -Xmx65536m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&quot;
+   else
+     JAVA_OPTS=&quot;-server -Xms24576m -Xmx24576m -Xmn2048m -Djava.awt.headless=true -XX:MaxPermSize=256m&quot;
+fi
 
-&lt;span class=&quot;nv&quot;&gt;psid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+psid=0
 
-checkpid&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;javaps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin/jps -l &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; grep &lt;span class=&quot;nv&quot;&gt;$APP_MAINCLASS&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$javaps&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;psid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$javaps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; awk &lt;span class=&quot;s1&quot;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;psid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;psid=$psid&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+checkpid()
+{
+javaps=`$JAVA_HOME/bin/jps -l | grep $APP_MAINCLASS`
+if [ -n &quot;$javaps&quot; ]; then
+psid=`echo $javaps | awk '{print $1}'`
+else
+psid=0
+fi
+echo &quot;psid=$psid&quot;
+}
 
 
-start&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+start()
+{
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;warn: $APP_MAINCLASS already started! (pid=$psid)&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;Starting $APP_MAINCLASS ...&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;JAVA_CMD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;nohup java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS &amp;gt; /app/logs/appserver.log 2&amp;gt;&amp;amp;1 &amp;lt;/dev/null &amp;amp;&amp;quot;&lt;/span&gt;
-su -c &lt;span class=&quot;s2&quot;&gt;&amp;quot;$JAVA_CMD&amp;quot;&lt;/span&gt;
+if [ $psid -ne 0 ]; then
+echo &quot;================================&quot;
+echo &quot;warn: $APP_MAINCLASS already started! (pid=$psid)&quot;
+echo &quot;================================&quot;
+else
+echo -n &quot;Starting $APP_MAINCLASS ...&quot;
+JAVA_CMD=&quot;nohup java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS &amp;gt; /app/logs/appserver.log 2&amp;gt;&amp;amp;1 &amp;lt;/dev/null &amp;amp;&quot;
+su -c &quot;$JAVA_CMD&quot;
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;(pid=$psid) [OK]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;[Failed]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+if [ $psid -ne 0 ]; then
+echo &quot;(pid=$psid) [OK]&quot;
+else
+echo &quot;[Failed]&quot;
+fi
+fi
+}
 
-stop&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+stop()
+{
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;Stopping $APP_MAINCLASS ...(pid=$psid) &amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -9 &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; -eq &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;[OK]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;[Failed]&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+if [ $psid -ne 0 ]; then
+echo -n &quot;Stopping $APP_MAINCLASS ...(pid=$psid) &quot;
+kill -9 $psid
+if [ $? -eq 0 ]; then
+echo &quot;[OK]&quot;
+else
+echo &quot;[Failed]&quot;
+fi
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+if [ $psid -ne 0 ]; then
 stop
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;warn: $APP_MAINCLASS is not running&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;================================&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;===remove index lock tlog bigqueue&amp;quot;&lt;/span&gt;
+fi
+else
+echo &quot;================================&quot;
+echo &quot;warn: $APP_MAINCLASS is not running&quot;
+echo &quot;================================&quot;
+fi
+echo &quot;===remove index lock tlog bigqueue&quot;
 rm -f /server/solr/product/data/index/*.lock
 rm -rf /server/bigqueue/logs/ModuleQueue/*
 rm -rf /server/bigqueue/logs/schedule/*
 rm -rf /server/bigqueue/logs/searchlogs/*
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+}
 
-status&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+status()
+{
 checkpid
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$psid&lt;/span&gt; -ne &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$APP_MAINCLASS is running! (pid=$psid)&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$APP_MAINCLASS is not running&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+if [ $psid -ne 0 ];  then
+echo &quot;$APP_MAINCLASS is running! (pid=$psid)&quot;
+else
+echo &quot;$APP_MAINCLASS is not running&quot;
+fi
+}
 
-info&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;System Information:&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;****************************&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;head -n &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; /etc/issue&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;uname -a&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;JAVA_HOME=$JAVA_HOME&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$JAVA_HOME&lt;/span&gt;/bin/java -version&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;APP_HOME=$APP_HOME&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;APP_MAINCLASS=$APP_MAINCLASS&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;****************************&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+info()
+{
+echo &quot;System Information:&quot;
+echo &quot;****************************&quot;
+echo `head -n 1 /etc/issue`
+echo `uname -a`
+echo
+echo &quot;JAVA_HOME=$JAVA_HOME&quot;
+echo `$JAVA_HOME/bin/java -version`
+echo
+echo &quot;APP_HOME=$APP_HOME&quot;
+echo &quot;APP_MAINCLASS=$APP_MAINCLASS&quot;
+echo &quot;****************************&quot;
+}
 
-&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt; in
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;start&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+case &quot;$1&quot; in
+'start')
 start
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;stop&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'stop')
 stop
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;restart&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'restart')
 stop
 start
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;status&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'status')
 status
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;&amp;#39;info&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+;;
+'info')
 info
-&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-*&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Usage: $0 {start|stop|restart|status|info}&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
-&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+;;
+*)
+echo &quot;Usage: $0 {start|stop|restart|status|info}&quot;
+exit 1
+esac
+exit 0
+&lt;/pre&gt;
 
 </description>
                 <link>http://zhou-dong.github.io/2014/12/04/totem-appserver-shell</link>

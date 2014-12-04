@@ -2,12 +2,12 @@
 layout: page
 title: Shell of Totem Appserver
 tagline: -- details of  appserer.sh
-
 ---
 {% include JB/setup %}
 
 #### appserver.sh
-{% highlight sh %}
+<pre class="prettyprint linenums"> 
+#!/bin/sh
 
 UNNING_USER=root
 APP_HOME=/workspace/totem
@@ -135,9 +135,5 @@ echo "Usage: $0 {start|stop|restart|status|info}"
 exit 1
 esac
 exit 0
-
-{% endhighlight %}
-
-
-
+</pre>
 
