@@ -15,3 +15,5 @@ tagline: -- Just do it, it will pay!
 [Stanford Machine Learning](http://www.holehouse.org/mlclass/index.html)
 
 [机器学习该怎么入门](http://www.zhihu.com/question/20691338)
+
+[上海交通大学-开发课程]()
