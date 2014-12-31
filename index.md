@@ -18,3 +18,5 @@ tagline:
 6. ### 努力就是让你知道，自己到底有没有运气。
 
 7. ### 越努力，越幸运。
+
+8. A schedule a day keeps stree away.
