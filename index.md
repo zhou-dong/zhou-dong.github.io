@@ -19,4 +19,4 @@ tagline:
 
 7. ### 越努力，越幸运。
 
-8. A schedule a day keeps stree away.
+8. ### A schedule a day keeps stree away.
