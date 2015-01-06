@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-06T13:52:03-06:00</lastBuildDate>
-        <pubDate>2015-01-06T13:52:03-06:00</pubDate>
+        <lastBuildDate>2015-01-06T14:31:01-06:00</lastBuildDate>
+        <pubDate>2015-01-06T14:31:01-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -20,7 +20,7 @@
         </item>
 
         <item>
-                <title>Introduction of Linear Algebra and Vectoy space</title>
+                <title>Introduction of Linear Algebra and Vector space</title>
                 <description>
 &lt;h4 id=&quot;definiton-of-linear-algebra&quot;&gt;Definiton of Linear algebra&lt;/h4&gt;
 
@@ -59,7 +59,7 @@
 
 &lt;h4 id=&quot;example-1&quot;&gt;Example 1:&lt;/h4&gt;
 
-&lt;h5 id=&quot;definition&quot;&gt;Definition:&lt;/h5&gt;
+&lt;h5 id=&quot;definiton-of-two-dimensional-vector&quot;&gt;Definiton of Two dimensional vector:&lt;/h5&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
 a = (x_1, y_1) ;
 b = (x_2, y_2) ;
@@ -77,7 +77,7 @@ a + b  = (x_1 + x_1, y_1 + y_2) ;
 
 &lt;h4 id=&quot;example-2&quot;&gt;Example 2:&lt;/h4&gt;
 
-&lt;h5 id=&quot;definition-1&quot;&gt;Definition:&lt;/h5&gt;
+&lt;h5 id=&quot;definition-of-mulit-dimensional-vector&quot;&gt;Definition of Mulit dimensional vector:&lt;/h5&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
 V = 
  \begin{Bmatrix}
@@ -87,7 +87,77 @@ V =
    a_n
   \end{pmatrix}  
   a \in R, 1 \ll i \ll n; 
- \end{Bmatrix}
+ \end{Bmatrix} ;
+a, b \in V;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;plus-1&quot;&gt;Plus:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+a + b = 
+ \begin{pmatrix}
+  a_1 + b _1 \\
+  \vdots \\
+  a_n + b_n
+ \end{pmatrix}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;multiply&quot;&gt;Multiply:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+\alpha \cdot a = 
+ \begin{pmatrix}
+  \alpha \cdot a_1 \\
+  \vdots \\
+  \alpha \cdot a_n
+ \end{pmatrix}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;example-3&quot;&gt;Example 3:&lt;/h4&gt;
+
+&lt;h5 id=&quot;definiton-of-matrix&quot;&gt;Definiton of Matrix:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+V = 
+ \begin{Bmatrix}
+  \begin{pmatrix}
+   a_{11} \cdots a_{1n} \\
+   \vdots \ddots \vdots \\
+   a_{m1} \cdots a_{mn}
+  \end{pmatrix} ;
+  a_{ij} \in R; 1 \ll i \ll n; 1 \ll j \ll m; 
+ \end{Bmatrix} 
+ ; A = (a_{ij}), B = (b_{ij}) \in V ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;plus-2&quot;&gt;Plus:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+A + B = (a_{ij} + b_{ij}) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;multiply-1&quot;&gt;Multiply:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+\alpha \cdot A = (\alpha \cdot a_{ij}) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;example-4&quot;&gt;Example 4:&lt;/h4&gt;
+
+&lt;h5 id=&quot;definition-of-function-in-a-vector-space&quot;&gt;Definition of Function in a vector space:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+v = {f(f:S--&gt;F)}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;plus-3&quot;&gt;Plus:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+f + g = h &lt;==&gt; h(x) = f(x) + g(x);
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;mutiply-1&quot;&gt;Mutiply:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+\alpha \in F, f \in V;  (\alpha \cdot f)(s) = \alpha \cdot (f(s)); 
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;theme&quot;&gt;Theme:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+-(ax) = (-a)x = a(-x)
 &lt;/script&gt;&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/01/04/intro-vector-space</link>
