@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-06T13:34:13-06:00</lastBuildDate>
-        <pubDate>2015-01-06T13:34:13-06:00</pubDate>
+        <lastBuildDate>2015-01-06T13:52:03-06:00</lastBuildDate>
+        <pubDate>2015-01-06T13:52:03-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -54,6 +54,41 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h4 id=&quot;vector-space&quot;&gt;Vector space&lt;/h4&gt;
+
+&lt;h4 id=&quot;example-1&quot;&gt;Example 1:&lt;/h4&gt;
+
+&lt;h5 id=&quot;definition&quot;&gt;Definition:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+a = (x_1, y_1) ;
+b = (x_2, y_2) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;plus&quot;&gt;Plus:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+a + b  = (x_1 + x_1, y_1 + y_2) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;mutiply&quot;&gt;Mutiply:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+\alpha \cdot a = (\alpha \cdot x_1, \alpha \cdot y_1) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;example-2&quot;&gt;Example 2:&lt;/h4&gt;
+
+&lt;h5 id=&quot;definition-1&quot;&gt;Definition:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+V = 
+ \begin{Bmatrix}
+  \begin{pmatrix}
+   a_1 \\
+   \vdots \\
+   a_n
+  \end{pmatrix}  
+  a \in R, 1 \ll i \ll n; 
+ \end{Bmatrix}
+&lt;/script&gt;&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/01/04/intro-vector-space</link>
                 <guid>http://zhou-dong.github.io/2015/01/04/intro-vector-space</guid>

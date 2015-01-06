@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-06T13:34:13-06:00</updated>
+ <updated>2015-01-06T13:52:03-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -59,6 +59,41 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h4 id=&quot;vector-space&quot;&gt;Vector space&lt;/h4&gt;
+
+&lt;h4 id=&quot;example-1&quot;&gt;Example 1:&lt;/h4&gt;
+
+&lt;h5 id=&quot;definition&quot;&gt;Definition:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+a = (x_1, y_1) ;
+b = (x_2, y_2) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;plus&quot;&gt;Plus:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+a + b  = (x_1 + x_1, y_1 + y_2) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;mutiply&quot;&gt;Mutiply:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+\alpha \cdot a = (\alpha \cdot x_1, \alpha \cdot y_1) ;
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;example-2&quot;&gt;Example 2:&lt;/h4&gt;
+
+&lt;h5 id=&quot;definition-1&quot;&gt;Definition:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+V = 
+ \begin{Bmatrix}
+  \begin{pmatrix}
+   a_1 \\
+   \vdots \\
+   a_n
+  \end{pmatrix}  
+  a \in R, 1 \ll i \ll n; 
+ \end{Bmatrix}
+&lt;/script&gt;&lt;/p&gt;
 </content>
  </entry>
  
