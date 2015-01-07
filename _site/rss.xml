@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-07T14:30:23-06:00</lastBuildDate>
-        <pubDate>2015-01-07T14:30:23-06:00</pubDate>
+        <lastBuildDate>2015-01-07T14:54:44-06:00</lastBuildDate>
+        <pubDate>2015-01-07T14:54:44-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -83,12 +83,43 @@ V= R^2 \\
 \beta = \{(1, 0), (0, 1),(1,1)\}
 &lt;/script&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;section&quot;&gt;基底&lt;/h4&gt;
+&lt;h4 id=&quot;section&quot;&gt;基底：&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;线性独立是基底的必要条件，但不是充分条件。基底中的各个向量一定线性独立。&lt;/li&gt;
   &lt;li&gt;基底是向量空间最具代表性的一些集，这些集合中的元素不多不少：向量空间中的任何元素都可以用基底&lt;code&gt;唯一&lt;/code&gt;的表达出来。&lt;/li&gt;
   &lt;li&gt;一项向量空间可以有不同的基底。&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;理解&lt;code&gt;基底&lt;/code&gt;的选择：&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;需要在向量空间中的每个维度，需要一个向量来代表这个维度
+    &lt;ul&gt;
+      &lt;li&gt;如果有两个向量、或者多个向量、或者向量乘以某个实数以后，之和为0，那么这些个向量为非线性独立。&lt;/li&gt;
+      &lt;li&gt;为了保证用基底&lt;code&gt;唯一&lt;/code&gt;的表示一个向量空间中的元素，每个维度只应该有一个向量。&lt;/li&gt;
+      &lt;li&gt;线性独立或者非独立是需找某个维度向量的方法。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;线性独立的向量可能没有覆盖向量空间的所有维度，线性独立的向量集合不一定是&lt;code&gt;基底&lt;/code&gt;。
+    &lt;ul&gt;
+      &lt;li&gt;基底中的各个向量之间都线性独立。&lt;/li&gt;
+      &lt;li&gt;线性独立的向量集合不一定是基底。 &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一个向量空间可以有不同的基底。&lt;/li&gt;
+  &lt;li&gt;非线性独立的例子：
+    &lt;ul&gt;
+      &lt;li&gt;{(1,1),(2,2)}，用这两个向量不能表达二维空间的所有元素。&lt;/li&gt;
+      &lt;li&gt;它的性质是：(1,1)*2 - (2,2) = 0 ;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;线性独立的例子：
+    &lt;ul&gt;
+      &lt;li&gt;{(0,1),(1,0)}，用这两个向量可以表示集合空间中的所元素。&lt;/li&gt;
+      &lt;li&gt;它的性质是：(0,1)n + (1,0)m != 0 ;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
 </description>
                 <link>http://zhou-dong.github.io/2015/01/07/bases-and-dimension</link>
                 <guid>http://zhou-dong.github.io/2015/01/07/bases-and-dimension</guid>
