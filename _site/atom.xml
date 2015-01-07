@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-07T14:18:15-06:00</updated>
+ <updated>2015-01-07T14:30:23-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -88,7 +88,12 @@ V= R^2 \\
 \beta = \{(1, 0), (0, 1),(1,1)\}
 &lt;/script&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;section&quot;&gt;线性独立是基地的必要条件，但不是充分条件。基地中的各个向量一定线性独立。&lt;/h5&gt;
+&lt;h4 id=&quot;section&quot;&gt;基底&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;线性独立是基底的必要条件，但不是充分条件。基底中的各个向量一定线性独立。&lt;/li&gt;
+  &lt;li&gt;基底是向量空间最具代表性的一些集，这些集合中的元素不多不少：向量空间中的任何元素都可以用基底&lt;code&gt;唯一&lt;/code&gt;的表达出来。&lt;/li&gt;
+  &lt;li&gt;一项向量空间可以有不同的基底。&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
