@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-07T11:41:52-06:00</lastBuildDate>
-        <pubDate>2015-01-07T11:41:52-06:00</pubDate>
+        <lastBuildDate>2015-01-07T14:18:15-06:00</lastBuildDate>
+        <pubDate>2015-01-07T14:18:15-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -18,6 +18,72 @@
 a_1v_1 + a_2v_2 + \cdots + a_nv_n = 0 ; \\
 \textstyle \sum_{i=1}^n a_iv_i = 0 ;
 &lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;bases-and-dimension&quot;&gt;Bases and dimension&lt;/h4&gt;
+
+&lt;h5 id=&quot;linearly-idependent-example1&quot;&gt;Linearly Idependent Example1:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+V= R^2 \\
+\beta = \{(1, 0), (0, 1)\} \\
+\beta = \{(1, 0), (1, 1)\} \\
+dim(v) = 2
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;linearly-idependent-example2&quot;&gt;Linearly Idependent Example2:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+V = M_{2 \times 3}(R) \\
+\beta = 
+ \begin{Bmatrix}
+  \begin{pmatrix}
+   1 &amp; 0 &amp; 0 \\
+   0 &amp; 0 &amp; 0 
+  \end{pmatrix},
+ \begin{pmatrix}
+   0 &amp; 1 &amp; 0 \\
+   0 &amp; 0 &amp; 0
+  \end{pmatrix},
+ \begin{pmatrix}
+   0 &amp; 0 &amp; 1 \\
+   0 &amp; 0 &amp; 0
+  \end{pmatrix},
+ \begin{pmatrix}
+   0 &amp; 0 &amp; 0 \\
+   1 &amp; 0 &amp; 0
+  \end{pmatrix},
+ \begin{pmatrix}
+   0 &amp; 0 &amp; 0 \\
+   0 &amp; 1 &amp; 0
+  \end{pmatrix},
+ \begin{pmatrix}
+   0 &amp; 0 &amp; 0 \\
+   0 &amp; 0 &amp; 1
+  \end{pmatrix}
+ \end{Bmatrix} \\
+dim(v) = 6
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;linearly-independent-example3&quot;&gt;Linearly Independent Example3:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+V = \{0\} \\
+\beta = \Phi
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;linearly-independent-example4&quot;&gt;Linearly Independent Example4:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+P_2(R) = V \\
+\beta = \{1, x, x^2\} \\
+\beta = \{1, x+1, 2x^2\} \\
+dim(V) = 3 
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;linearly-dependent-example5&quot;&gt;Linearly &lt;code&gt;Dependent&lt;/code&gt; Example5:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+V= R^2 \\
+\beta = \{(1, 0), (0, 1),(1,1)\}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;section&quot;&gt;线性独立是基地的必要条件，但不是充分条件。基地中的各个向量一定线性独立。&lt;/h5&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/01/07/bases-and-dimension</link>
                 <guid>http://zhou-dong.github.io/2015/01/07/bases-and-dimension</guid>
