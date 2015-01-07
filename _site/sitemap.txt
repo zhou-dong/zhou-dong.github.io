@@ -9,6 +9,7 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/01/07/bases-and-dimension
 http://zhou-dong.github.io/2015/01/06/linear-combination
 http://zhou-dong.github.io/2015/01/04/intro-vector-space
 http://zhou-dong.github.io/2014/12/25/merry-christmas

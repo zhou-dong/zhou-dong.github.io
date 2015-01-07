@@ -4,13 +4,27 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-07T00:11:27-06:00</updated>
+ <updated>2015-01-07T11:41:52-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Bases and Dimension</title>
+   <link href="http://zhou-dong.github.io/2015/01/07/bases-and-dimension"/>
+   <updated>2015-01-07T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/01/07/bases-and-dimension</id>
+   <content type="html">
+&lt;h4 id=&quot;linearly-dependent&quot;&gt;Linearly dependent&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+a_1v_1 + a_2v_2 + \cdots + a_nv_n = 0 ; \\
+\textstyle \sum_{i=1}^n a_iv_i = 0 ;
+&lt;/script&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Gauss Elimination</title>
@@ -102,9 +116,9 @@ x_1
 0 &amp; 0 &amp; 0 &amp; 7 &amp; -2 &amp; 3
 \end{array}\right]
 \Rightarrow \\
-7x_4 - 2x_5 = 3 \\
-2x_3 - 4x_4 + 14x_5 = 2 \\
-x_1 - 2x_2 + 2x_4 - 3x_5 = 2
+1). \ 7x_4 - 2x_5 = 3 \\
+2). \ 2x_3 - 4x_4 + 14x_5 = 2 \\
+3). \ x_1 - 2x_2 + 2x_4 - 3x_5 = 2
  %]]&gt;&lt;/script&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;example-2&quot;&gt;Example 2:&lt;/h4&gt;
@@ -138,8 +152,8 @@ process: \\
  0 &amp; 0 &amp; 0 &amp; 17
  \end{array}\right]
 \Rightarrow \\
-x_2 = 2 \\
-x_1 + 3x_2 = 2
+1). \ x_2 = 2 \\
+2). \ x_1 + 3x_2 = 2
  %]]&gt;&lt;/script&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;the-first-has-sollution-the-second-not&quot;&gt;The first has sollution the second not.&lt;/h4&gt;
@@ -197,7 +211,7 @@ b = (x_2, y_2) ;
 
 &lt;h5 id=&quot;plus&quot;&gt;Plus:&lt;/h5&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
-a + b  = (x_1 + x_1, y_1 + y_2) ;
+a + b  = (x_1 + x_2, y_1 + y_2) ;
 &lt;/script&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;mutiply&quot;&gt;Mutiply:&lt;/h5&gt;
