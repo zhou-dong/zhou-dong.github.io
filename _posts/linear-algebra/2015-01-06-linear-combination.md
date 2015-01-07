@@ -88,9 +88,9 @@ x_1
 0 & 0 & 0 & 7 & -2 & 3
 \end{array}\right]
 \Rightarrow \\
-7x_4 - 2x_5 = 3 \\
-2x_3 - 4x_4 + 14x_5 = 2 \\
-x_1 - 2x_2 + 2x_4 - 3x_5 = 2
+1). \ 7x_4 - 2x_5 = 3 \\
+2). \ 2x_3 - 4x_4 + 14x_5 = 2 \\
+3). \ x_1 - 2x_2 + 2x_4 - 3x_5 = 2
 $$
  
 #### Example 2:
@@ -123,8 +123,8 @@ process: \\
  0 & 0 & 0 & 17
  \end{array}\right]
 \Rightarrow \\
-x_2 = 2 \\
-x_1 + 3x_2 = 2
+1). \ x_2 = 2 \\
+2). \ x_1 + 3x_2 = 2
 $$
 
 #### The first has sollution the second not. 
