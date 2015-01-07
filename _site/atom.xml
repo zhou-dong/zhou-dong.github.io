@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-06T14:31:01-06:00</updated>
+ <updated>2015-01-07T00:03:06-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,11 +13,136 @@
 
  
  <entry>
-   <title>Subspace</title>
-   <link href="http://zhou-dong.github.io/2015/01/06/subspace"/>
+   <title>Gauss Elimination</title>
+   <link href="http://zhou-dong.github.io/2015/01/06/linear-combination"/>
    <updated>2015-01-06T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/06/subspace</id>
+   <id>http://zhou-dong.github.io/2015/01/06/linear-combination</id>
    <content type="html">
+&lt;h4 id=&quot;subspace&quot;&gt;Subspace&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+V = p(F) = \{a_nx^n + \cdots + a_1x^1 + a_0 : n \in N, a_i \in F, i = 0,1 \cdots n \} \\
+W = p_n(F) = \{a_nx^n + \cdots + a_0: n-is-fixed , a_i \in F, i=0,1 \cdots n \} \\
+W \in V
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;example-1&quot;&gt;Example 1:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+define: \\
+u_1 = (1,2,1) \\
+u_2 = (-2,-4,-2) \\
+u_3 = (0,2,3) \\ 
+u_4 = (2,0,3) \\
+u_5 = (-3,8,16) \\
+v = (2,6,8) \\
+result: \\
+x_1u_1 + x_2u_2 + x_3u_3 + x_4u_4 + x_5u_5 = v \\ 
+method 1: \\
+x_1 - 2x_2 + 0x_3 + 2x_4 - 3x_5 = 2 \\
+2x_1 - 4x_2 + 2x_3 + 0x_4 - 8x_5 = 6 \\
+x_1 - 2x_2 + 3x_3 + 3x_4 + 16x_5 = 8 \\
+method 2: \\
+x_1
+\begin{pmatrix}
+ 1 \\
+ 2 \\
+ 1
+\end{pmatrix}
++ x_2
+\begin{pmatrix}
+ -2 \\
+ -4 \\
+ -2
+\end{pmatrix}
++ x_3
+\begin{pmatrix}
+ 0 \\
+ 2 \\
+ 3
+\end{pmatrix}
++ x_4
+\begin{pmatrix}
+ 2 \\
+ 0 \\
+ 3
+\end{pmatrix}
++ x_5
+\begin{pmatrix}
+ -3 \\
+ 8 \\
+ 16
+\end{pmatrix}
+= 
+\begin{pmatrix}
+ 2 \\
+ 6 \\
+ 8
+\end{pmatrix} \\
+\left[\begin{array}{rrrrr|r}
+1 &amp; -2 &amp; 0 &amp; 2 &amp; -3 &amp; 2 \\
+2 &amp; -4 &amp; 2 &amp; 0 &amp; 8 &amp; 6 \\
+1 &amp; -2 &amp; 3 &amp; 3 &amp; 16 &amp; 8
+\end{array}\right] 
+\Rightarrow 
+\left[\begin{array}{rrrrr|r}
+1 &amp; -2 &amp; 0 &amp; 2 &amp; -3 &amp; 2 \\
+0 &amp; 0 &amp; 2 &amp; -4 &amp; 14 &amp; 2 \\
+1 &amp; -2 &amp; 3 &amp; 3 &amp; 16 &amp; 8
+\end{array}\right] 
+\Rightarrow 
+\left[\begin{array}{rrrrr|r}
+1 &amp; -2 &amp; 0 &amp; 2 &amp; -3 &amp; 2 \\
+0 &amp; 0 &amp; 2 &amp; -4 &amp; 14 &amp; 2 \\
+0 &amp; 0 &amp; 3 &amp; 1 &amp; 19 &amp; 6
+\end{array}\right]
+\Rightarrow
+\left[\begin{array}{rrrrr|r}
+1 &amp; -2 &amp; 0 &amp; 2 &amp; -3 &amp; 2 \\
+0 &amp; 0 &amp; 2 &amp; -4 &amp; 14 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 7 &amp; -2 &amp; 3
+\end{array}\right]
+\Rightarrow \\
+7x_4 - 2x_5 = 3 \\
+2x_3 - 4x_4 + 14x_5 = 2 \\
+x_1 - 2x_2 + 2x_4 - 3x_5 = 2
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;example-2&quot;&gt;Example 2:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+u_1 = x^3 -2x^2 - 5x -3 \\
+u_2 = 3x^3 - 5x^2 - 4x - 9 \\
+v = 2x^3 - 2x^2 + 12x -6 \\
+v = 3x^3 - 2x^2 + 7x + 8 \\
+result: \\
+x_1u_1 + x_2u_2 = v \\
+process: \\
+\left[\begin{array}{rr|rr}
+ 1 &amp; 3 &amp; 2 &amp; 3 \\
+ -2 &amp; -5 &amp; -2 &amp; -2 \\
+ -5 &amp; -4 &amp; 12 &amp; 7 \\
+ -3 &amp; -9 &amp; -6 &amp; 8
+ \end{array}\right]
+\Rightarrow 
+\left[\begin{array}{rr|rr}
+ 1 &amp; 3 &amp; 2 &amp; 3 \\
+ 0 &amp; 1 &amp; 2 &amp; 4 \\
+ 0 &amp; 11 &amp; 22 &amp; 22 \\
+ 0 &amp; 0 &amp; 0 &amp; 17
+ \end{array}\right]
+\Rightarrow
+\left[\begin{array}{rr|rr}
+ 1 &amp; 3 &amp; 2 &amp; 3 \\
+ 0 &amp; 1 &amp; 2 &amp; 4 \\
+ 0 &amp; 0 &amp; 0 &amp; -22 \\
+ 0 &amp; 0 &amp; 0 &amp; 17
+ \end{array}\right]
+\Rightarrow \\
+x_2 = 2 \\
+x_1 + 3x_2 = 2
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;the-first-has-sollution-the-second-not&quot;&gt;The first has sollution the second not.&lt;/h4&gt;
 </content>
  </entry>
  
