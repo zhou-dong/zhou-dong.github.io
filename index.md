@@ -20,3 +20,5 @@ tagline:
 7. ### 越努力，越幸运。
 
 8. ### A schedule a day keeps stree away.
+
+9. ### 手中有书，心里有光。
