@@ -487,7 +487,7 @@
     </tr>
     <tr>
       <td><script type="math/tex"> \lg^* n </script></td>
-      <td>=</td>
+      <td>&gt;</td>
       <td><script type="math/tex"> \lg^* (\lg n) </script></td>
       <td>&gt;</td>
       <td><script type="math/tex"> \lg(\lg^* n) </script></td>
@@ -525,13 +525,20 @@
     <p><script type="math/tex"> n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} </script> ;</p>
   </li>
   <li>
-    <p><script type="math/tex"> n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 </script> ;</p>
-  </li>
-  <li>
     <p><script type="math/tex"> n = 2^{\lg n} </script> ; </p>
   </li>
   <li>
+    <p><script type="math/tex">\lim_{n \to \infty} \frac{\sqrt{\lg n}}{\ln n} \approx \lim_{n \to \infty} \frac{1/2 \ln \lg n}{\ln \ln n} \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln \ln n} \approx \lim_{n \to \infty} \frac{\lg n}{\ln n} = 0 </script> ;  </p>
+  </li>
+  <li>
     <p><script type="math/tex"> (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}</script> ;  </p>
+  </li>
+  <li>
+    <p><script type="math/tex">\lim_{n \to \infty} \lg(\lg^*n) = \lim_{n \to \infty} \lg 5</script> less than 3 ;   <br />
+<script type="math/tex">\lim_{n \to \infty} \lg^* (\lg n) = \lim_{n \to \infty} \lg^* \lg n </script> could be 4 or 5 ;    </p>
+  </li>
+  <li>
+    <p><script type="math/tex"> n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 </script> ;</p>
   </li>
 </ul>
 

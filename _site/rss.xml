@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-21T14:13:26-06:00</lastBuildDate>
-        <pubDate>2015-01-21T14:13:26-06:00</pubDate>
+        <lastBuildDate>2015-01-21T14:57:58-06:00</lastBuildDate>
+        <pubDate>2015-01-21T14:57:58-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -359,7 +359,7 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^* n &lt;/script&gt;&lt;/td&gt;
-      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^* (\lg n) &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(\lg^* n) &lt;/script&gt;&lt;/td&gt;
@@ -397,13 +397,20 @@
     &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} &lt;/script&gt; ;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 &lt;/script&gt; ;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
     &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n = 2^{\lg n} &lt;/script&gt; ; &lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{\sqrt{\lg n}}{\ln n} \approx \lim_{n \to \infty} \frac{1/2 \ln \lg n}{\ln \ln n} \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln \ln n} \approx \lim_{n \to \infty} \frac{\lg n}{\ln n} = 0 &lt;/script&gt; ;  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}&lt;/script&gt; ;  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \lg(\lg^*n) = \lim_{n \to \infty} \lg 5&lt;/script&gt; less than 3 ;   &lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \lg^* (\lg n) = \lim_{n \to \infty} \lg^* \lg n &lt;/script&gt; could be 4 or 5 ;    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 &lt;/script&gt; ;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 

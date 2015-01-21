@@ -110,7 +110,7 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 | $$ \lg(n!) $$ | > | $$ n^3 $$ | > | $$ n^2 $$ | = | $$ 4^{\lg n}$$ | > | $$ n \lg n $$ | =  |  
 | $$ (\lg n)! $$ | > | $$ 2^{\lg n}$$ | = | $$ n $$ | > | $$ (\sqrt{2})^{\lg n} $$ | > | $$ 2^{\sqrt{2\lg n}} $$ | > | 
 | $$ \lg^2 n $$ | > | $$ \ln n $$ | > | $$ \sqrt{\lg n}$$ |  > | $$ \ln\ln n $$ | >  | $$  2^{\lg^* n} $$ | > | 
-| $$ \lg^* n $$ | = | $$ \lg^* (\lg n) $$ | > | $$ \lg(\lg^* n) $$ | > | $$ n^{1/\lg n}$$ | > | 1 |
+| $$ \lg^* n $$ | > | $$ \lg^* (\lg n) $$ | > | $$ \lg(\lg^* n) $$ | > | $$ n^{1/\lg n}$$ | > | 1 |
 
 ##### Detail:  
  - $$ \lim_{n \to \infty} \frac{(n+1)!}{2^{2^n}} \approx \lim_{n \to \infty} \frac{\lg (n+1)!}{\lg 2^{2^n}} = \lim_{n \to \infty} \frac{(n+1) + n + \cdots + 1}{2^n} = \lim_{n \to \infty} \frac{(n+1)(n+2)}{2^{n-1}} \le \lim_{n \to \infty} \frac{(n+2)^2}{2^{n-1}} \approx \lim_{n \to \infty} \frac{\lg (n+2)^2}{\lg 2^{n-1}} = \lim_{n \to \infty} \frac{2\lg (n+2)}{n-1}$$ ,  
@@ -128,11 +128,16 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 
  - $$ n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} $$ ;
 
- - $$ n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 $$ ;
-
  - $$ n = 2^{\lg n} $$ ; 
 
+ - $$\lim_{n \to \infty} \frac{\sqrt{\lg n}}{\ln n} \approx \lim_{n \to \infty} \frac{1/2 \ln \lg n}{\ln \ln n} \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln \ln n} \approx \lim_{n \to \infty} \frac{\lg n}{\ln n} = 0 $$ ;  
+
  - $$ (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}$$ ;  
+
+ - $$\lim_{n \to \infty} \lg(\lg^*n) = \lim_{n \to \infty} \lg 5$$ less than 3 ;     
+   $$\lim_{n \to \infty} \lg^* (\lg n) = \lim_{n \to \infty} \lg^* \lg n $$ could be 4 or 5 ;    
+
+ - $$ n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 $$ ;
 
 **b. Give an example of a single nonnegative function $$ f(n) $$ such that for all functions $$ g_i(n) $$ in part $$ (a) $$, $$ f(n)$$ is neither $$ O(g_i(n))$$  nor $$ \Omega(g_i(n)) $$**
 
