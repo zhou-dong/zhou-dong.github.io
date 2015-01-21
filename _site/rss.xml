@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-21T01:42:20-06:00</lastBuildDate>
-        <pubDate>2015-01-21T01:42:20-06:00</pubDate>
+        <lastBuildDate>2015-01-21T02:03:42-06:00</lastBuildDate>
+        <pubDate>2015-01-21T02:03:42-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -165,6 +165,11 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h5 id=&quot;b-compare-between--nk--and--cn-&quot;&gt;b. compare between &lt;script type=&quot;math/tex&quot;&gt; n^k &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; c^n &lt;/script&gt;&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{n^k}{c^n} \approx \lim_{n \to \infty} \frac{\ln n^k}{\ln c^n} = \lim_{n \to \infty} \frac{k\ln n}{n\ln c} =  \lim_{n \to \infty} (\frac{k}{\ln c} \cdot \frac{\ln n}{n}) \approx  \lim_{n \to \infty} \frac{\ln n}{n} = 0 &lt;/script&gt; .  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h5 id=&quot;c-compare-between--sqrtn--and--nsin-n-&quot;&gt;c. compare between &lt;script type=&quot;math/tex&quot;&gt; \sqrt{n} &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; n^{\sin n} &lt;/script&gt;&lt;/h5&gt;
 &lt;ul&gt;

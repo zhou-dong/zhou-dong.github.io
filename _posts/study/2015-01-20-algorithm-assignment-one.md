@@ -43,6 +43,9 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 | e. | $$ n^{\lg c} $$ | $$ c^{\lg n} $$ | yes | no | yes | no | yes | 
 | f. | $$ \lg(n!) $$ | $$ \lg(n^n) $$ | yes | no | yes | no | yes |
 
+##### b. compare between $$ n^k $$ and $$ c^n $$
+ - $$\lim_{n \to \infty} \frac{n^k}{c^n} \approx \lim_{n \to \infty} \frac{\ln n^k}{\ln c^n} = \lim_{n \to \infty} \frac{k\ln n}{n\ln c} =  \lim_{n \to \infty} (\frac{k}{\ln c} \cdot \frac{\ln n}{n}) \approx  \lim_{n \to \infty} \frac{\ln n}{n} = 0 $$ .  
+
 ##### c. compare between $$ \sqrt{n} $$ and $$ n^{\sin n} $$  
  - $$\sin n $$ in range [-1, 1]  
  - when $$\sin n = 1, \lim_{n \to \infty} \frac{n}{n^{1/2}} = \lim_{n \to \infty} n^{1/2} = \infty $$  ,
