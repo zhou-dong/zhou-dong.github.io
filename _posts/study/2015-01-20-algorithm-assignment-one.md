@@ -66,7 +66,7 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 | f. | $$ \lg(n!) $$ | $$ \lg(n^n) $$ | yes | no | yes | no | yes |
 
 ##### a. compare between $$ \lg^kn $$ and $$ n^\epsilon $$
- - $$\lim_{n \to \infty} \frac{\lg^k n}{n^\epsilon} = \lim_{n \to \infty} \frac{(\lg n)^k}{n^\epsilon} \approx \lim_{n \to \infty} \frac{\ln (\lg n)^k}{\ln n^\epsilon} = \lim_{n \to \infty} \frac{k \ln(\lg n)}{\epsilon\ln n} = \lim_{n \to \infty} (\frac{k}{\epsilon} \cdot \frac{\ln lg n}{\ln n})  \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln n} \approx \lim_{n \to \infty} \frac{\lg n}{ n} = 0 $$ .
+ - $$\lim_{n \to \infty} \frac{\lg^k n}{n^\epsilon} = \lim_{n \to \infty} \frac{(\lg n)^k}{n^\epsilon} \approx \lim_{n \to \infty} \frac{\ln (\lg n)^k}{\ln n^\epsilon} = \lim_{n \to \infty} \frac{k \ln(\lg n)}{\epsilon\ln n} = \lim_{n \to \infty} (\frac{k}{\epsilon} \cdot \frac{\ln \lg n}{\ln n})  \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln n} \approx \lim_{n \to \infty} \frac{\lg n}{ n} = 0 $$ .
 
 ##### b. compare between $$ n^k $$ and $$ c^n $$
  - $$\lim_{n \to \infty} \frac{n^k}{c^n} \approx \lim_{n \to \infty} \frac{\ln n^k}{\ln c^n} = \lim_{n \to \infty} \frac{k\ln n}{n\ln c} =  \lim_{n \to \infty} (\frac{k}{\ln c} \cdot \frac{\ln n}{n}) \approx  \lim_{n \to \infty} \frac{\ln n}{n} = 0 $$ .  

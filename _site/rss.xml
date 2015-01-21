@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-21T17:39:15-06:00</lastBuildDate>
-        <pubDate>2015-01-21T17:39:15-06:00</pubDate>
+        <lastBuildDate>2015-01-21T17:46:15-06:00</lastBuildDate>
+        <pubDate>2015-01-21T17:46:15-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -195,7 +195,7 @@
 
 &lt;h5 id=&quot;a-compare-between--lgkn--and--nepsilon-&quot;&gt;a. compare between &lt;script type=&quot;math/tex&quot;&gt; \lg^kn &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; n^\epsilon &lt;/script&gt;&lt;/h5&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{\lg^k n}{n^\epsilon} = \lim_{n \to \infty} \frac{(\lg n)^k}{n^\epsilon} \approx \lim_{n \to \infty} \frac{\ln (\lg n)^k}{\ln n^\epsilon} = \lim_{n \to \infty} \frac{k \ln(\lg n)}{\epsilon\ln n} = \lim_{n \to \infty} (\frac{k}{\epsilon} \cdot \frac{\ln lg n}{\ln n})  \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln n} \approx \lim_{n \to \infty} \frac{\lg n}{ n} = 0 &lt;/script&gt; .&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{\lg^k n}{n^\epsilon} = \lim_{n \to \infty} \frac{(\lg n)^k}{n^\epsilon} \approx \lim_{n \to \infty} \frac{\ln (\lg n)^k}{\ln n^\epsilon} = \lim_{n \to \infty} \frac{k \ln(\lg n)}{\epsilon\ln n} = \lim_{n \to \infty} (\frac{k}{\epsilon} \cdot \frac{\ln \lg n}{\ln n})  \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln n} \approx \lim_{n \to \infty} \frac{\lg n}{ n} = 0 &lt;/script&gt; .&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;b-compare-between--nk--and--cn-&quot;&gt;b. compare between &lt;script type=&quot;math/tex&quot;&gt; n^k &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; c^n &lt;/script&gt;&lt;/h5&gt;
