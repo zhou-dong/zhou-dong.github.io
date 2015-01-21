@@ -5,8 +5,8 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-21T01:40:37-06:00</lastBuildDate>
-        <pubDate>2015-01-21T01:40:37-06:00</pubDate>
+        <lastBuildDate>2015-01-21T01:42:20-06:00</lastBuildDate>
+        <pubDate>2015-01-21T01:42:20-06:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -24,7 +24,7 @@
         <item>
                 <title>Algorithm Assignment One</title>
                 <description>
-&lt;h4 id=&quot;natations&quot;&gt;Natations:&lt;/h4&gt;
+&lt;h4 id=&quot;notations&quot;&gt;Notations:&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; O &lt;/script&gt; : Less than (Worst Situation)&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; o &lt;/script&gt; : Less or Equal&lt;/li&gt;

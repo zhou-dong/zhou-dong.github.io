@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Algorithm Assignment One
-tagline: Recursion, Big O Natation, Logarithm
+tagline: Recursion, Big O Notation, Logarithm
 ---
 {% include JB/setup %}
 
 
-#### Natations:   
+#### Notations:   
  - $$ O $$ : Less than (Worst Situation)
  - $$ o $$ : Less or Equal
  - $$ \Omega $$ : Bigger than (Best Situation)

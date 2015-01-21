@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-21T01:40:37-06:00</updated>
+ <updated>2015-01-21T01:42:20-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -29,7 +29,7 @@
    <updated>2015-01-20T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/2015/01/20/algorithm-assignment-one</id>
    <content type="html">
-&lt;h4 id=&quot;natations&quot;&gt;Natations:&lt;/h4&gt;
+&lt;h4 id=&quot;notations&quot;&gt;Notations:&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; O &lt;/script&gt; : Less than (Worst Situation)&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; o &lt;/script&gt; : Less or Equal&lt;/li&gt;
