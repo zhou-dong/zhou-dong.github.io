@@ -5,10 +5,310 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-07T14:54:44-06:00</lastBuildDate>
-        <pubDate>2015-01-07T14:54:44-06:00</pubDate>
+        <lastBuildDate>2015-01-20T19:22:55-06:00</lastBuildDate>
+        <pubDate>2015-01-20T19:22:55-06:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Function Merge</title>
+                <description>
+&lt;h4 id=&quot;two-funcitons-can-not-be-multiply-with-each-other-but-can-be-merge&quot;&gt;Two funcitons can not be multiply with each other, but can be merge.&lt;/h4&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/2015/01/20/function-merge</link>
+                <guid>http://zhou-dong.github.io/2015/01/20/function-merge</guid>
+                <pubDate>2015-01-20T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Algorithm Assignment One</title>
+                <description>
+&lt;h4 id=&quot;natations&quot;&gt;Natations:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; O &lt;/script&gt; : Less than (Worst Situation)&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; o &lt;/script&gt; : Less or Equal&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \Omega &lt;/script&gt; : Bigger than (Best Situation)&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \omega &lt;/script&gt; : Big or Equal &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta &lt;/script&gt; : Between { &lt;script type=&quot;math/tex&quot;&gt; O,\ \ \Omega &lt;/script&gt; }  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;assignment-zero&quot;&gt;Assignment Zero:&lt;/h4&gt;
+
+&lt;h5 id=&quot;tn--atnb--fn-&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = aT(n/b) + f(n) &lt;/script&gt;&lt;/h5&gt;
+
+&lt;h5 id=&quot;example-&quot;&gt;Example :&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Let:&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt; a=2, \ b=2, \ f(n) = 1 &lt;/script&gt;   &lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Step&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Function One&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Equal&lt;/th&gt;
+      &lt;th&gt;Functin Two&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 2T(n/2) + 1 &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^1T(n/2^1) + \log_{2}0 &lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 4T(n/4) + 1 + 1 &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^2T(n/2^2) + \log_{2}1 &lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 8T(n/8) + 1 + 1 + 1 &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^3T(n/2^3) + \log_{2}2 &lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = \ \ \ \ \ \ \  \vdots &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \ \ \ \ \ \ \  \vdots &lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = nT(n/n) + \log_{2}(n-1) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2}(n-1) &lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&quot;step1--step2---cdots---step5-&quot;&gt;Step1 + Step2 + &lt;script type=&quot;math/tex&quot;&gt; \cdots &lt;/script&gt; + Step5 :&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i &lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;assignment-one&quot;&gt;Assignment One:&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Indicate, for each pair of expressions(A, B) in the table below, whether A is &lt;script type=&quot;math/tex&quot;&gt; O, o, \Omega, \omega \ or \ \Theta &lt;/script&gt; of B. Assume that &lt;script type=&quot;math/tex&quot;&gt; k \geq 1, \epsilon &gt; 0, and \ c &gt; 1 &lt;/script&gt; are constants. Your answer should be in the form of the table with “yes” or “no” written in each box.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;   &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;    A    &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;    B    &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;    &lt;script type=&quot;math/tex&quot;&gt; O &lt;/script&gt;    &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;    &lt;script type=&quot;math/tex&quot;&gt; o &lt;/script&gt;    &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;    &lt;script type=&quot;math/tex&quot;&gt; \Omega &lt;/script&gt;    &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;    &lt;script type=&quot;math/tex&quot;&gt; \omega &lt;/script&gt;    &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;    &lt;script type=&quot;math/tex&quot;&gt; \Theta &lt;/script&gt;    &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;a.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^kn &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^\epsilon &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;b.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^k &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; c^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;c.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \sqrt{n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\sin n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;d.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{n/2} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;e.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\lg c} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; c^{\lg n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;f.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(n!) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(n^n) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;yes&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;assigement-two&quot;&gt;Assigement Two:&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;a. Rank the following functions by order of growth; that is, find an arrangement &lt;script type=&quot;math/tex&quot;&gt; g_1, g_2, \cdots ,g_{30} &lt;/script&gt; of the functions satisfying &lt;script type=&quot;math/tex&quot;&gt; g_1 = \Omega(g_2), g_2 = \Omega(g_3), \cdots , g_{29} = \Omega(g_{30}) &lt;/script&gt;. Partition your list into equivalence classes such that functions &lt;script type=&quot;math/tex&quot;&gt; f(n) &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; g(n) &lt;/script&gt; are in the same class if and only if &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Theta(g(n)) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;            &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;            &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;            &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;            &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;            &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;            &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(\lg^* n) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;  2^{\lg^* n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; (\sqrt{2})^{\lg n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^2 &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n! &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; (\lg n)! &lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; (\frac{3}{2})^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^3 &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^2 n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(n!) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{2^n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/\lg n}&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \ln\ln n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^* n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n2^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\lg\lg n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \ln n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\lg n}&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; (\lg n)^{\lg n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; e^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 4^{\lg n}&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; (n+1)! &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \sqrt{\lg n}&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^*(\lg n) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\sqrt{2\lg n}} &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; n \lg n &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{2^{n+1}}&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&quot;answer&quot;&gt;Answer:&lt;/h5&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{2n+1} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;  2^{2n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;  (n+1)! &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n! &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; e^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n2^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; (\frac{3}{2})^n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\lg\lg n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; (\lg n)^{\lg n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(n!) &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n^3 &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n^2 &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 4^{\lg n}&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n \lg n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; (\lg n)! &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\lg n}&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; (\sqrt{2})^{\lg n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\sqrt{2\lg n}} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^2 n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \ln n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \sqrt{\lg n}&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \ln\ln n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;  2^{\lg^* n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^*(\lg n) &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^* n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(\lg^* n) &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/\lg n}&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;b. Give an example of a single nonnegative function &lt;script type=&quot;math/tex&quot;&gt; f(n) &lt;/script&gt; such that for all functions &lt;script type=&quot;math/tex&quot;&gt; g_i(n) &lt;/script&gt; in part &lt;script type=&quot;math/tex&quot;&gt; (a) &lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt; f(n)&lt;/script&gt; is neither &lt;script type=&quot;math/tex&quot;&gt; O(g_i(n))&lt;/script&gt;  nor &lt;script type=&quot;math/tex&quot;&gt; \Omega(g_i(n)) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/20/algorithm-assignment-one</link>
+                <guid>http://zhou-dong.github.io/2015/01/20/algorithm-assignment-one</guid>
+                <pubDate>2015-01-20T00:00:00-06:00</pubDate>
+        </item>
 
         <item>
                 <title>Bases and Dimension</title>
