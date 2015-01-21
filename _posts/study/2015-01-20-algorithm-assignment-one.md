@@ -146,3 +146,4 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
  - **$$ f(n) = 2^{3n+1}(1 + \sin n) $$ or**  
  - **$$ f(n) = 2^{2n+3}(1 + \cos n) $$**
 
+##### i am reading thing in here!
