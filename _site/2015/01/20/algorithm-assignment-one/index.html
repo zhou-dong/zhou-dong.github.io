@@ -146,7 +146,7 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Algorithm Assignment One  <small>Recursion, Big O Notation, Logarithm</small></h1>
+  <h1>Algorithm Assignment One  <small>Class 5549, Recursion, Big O Notation, Logarithm</small></h1>
 </div>
 
 <div class="row">
@@ -159,6 +159,33 @@
   <li><script type="math/tex"> \Omega </script> : Bigger than (Best Situation)</li>
   <li><script type="math/tex"> \omega </script> : Big or Equal </li>
   <li><script type="math/tex"> \Theta </script> : Between { <script type="math/tex"> O,\ \ \Omega </script> }  </li>
+</ul>
+
+<!-- PDF page 77 -->
+
+<h4 id="definition-from-book-page-56">Definition from book (page 56):</h4>
+<ul>
+  <li><script type="math/tex">\lg n = \log_{2} n </script> (binary logarithm) ,  </li>
+  <li><script type="math/tex">\ln n = \log_{e} n </script> (natural logarithm) ,  </li>
+  <li><script type="math/tex">\lg^k n = (\lg n)^k </script> (exponentiation) ,</li>
+  <li><script type="math/tex">\lg \lg n = \lg(\lg n) </script> (composition) .  </li>
+</ul>
+
+<!-- PDF page 79 -->
+
+<h4 id="definition-of---lg-n---from-book-page-58">Definition of [ <script type="math/tex"> \lg^* n </script> ] from book (page 58):</h4>
+<ul>
+  <li><script type="math/tex">\lg^* 2 = 1 </script> ,</li>
+  <li><script type="math/tex">\lg^* 4 = 2 </script> ,  </li>
+  <li><script type="math/tex">\lg^* 16 = 3 </script> ,  </li>
+  <li><script type="math/tex">\lg^* 65536 = 4 </script> ,  </li>
+  <li><script type="math/tex">\lg^* 2^{65536} = 5 </script> .  </li>
+  <li><strong>Translated from book by me(Dong Zhou)</strong>:  </li>
+  <li><script type="math/tex">\lg^* 2^{2^0} = 1 </script> ,  </li>
+  <li><script type="math/tex">\lg^* 2^{2^1} = 2 </script> ,  </li>
+  <li><script type="math/tex">\lg^* 2^{2^2} = 4 </script> ,</li>
+  <li><script type="math/tex">\lg^* 2^{2^4} = 4 </script> ,</li>
+  <li><script type="math/tex">\lg^* 2^{2^{16}} = 5 </script> .</li>
 </ul>
 
 <h4 id="assignment-zero">Assignment Zero:</h4>
@@ -294,6 +321,11 @@
   </tbody>
 </table>
 
+<h5 id="a-compare-between--lgkn--and--nepsilon-">a. compare between <script type="math/tex"> \lg^kn </script> and <script type="math/tex"> n^\epsilon </script></h5>
+<ul>
+  <li><script type="math/tex">\lim_{n \to \infty} \frac{\lg^k n}{n^\epsilon} = \lim_{n \to \infty} \frac{(\lg n)^k}{n^\epsilon} \approx \lim_{n \to \infty} \frac{\ln (\lg n)^k}{\ln n^\epsilon} = \lim_{n \to \infty} \frac{k \ln(\lg n)}{\epsilon\ln n} = \lim_{n \to \infty} (\frac{k}{\epsilon} \cdot \frac{\ln lg n}{\ln n})  \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln n} \approx \lim_{n \to \infty} \frac{\lg n}{ n} = 0 </script> .</li>
+</ul>
+
 <h5 id="b-compare-between--nk--and--cn-">b. compare between <script type="math/tex"> n^k </script> and <script type="math/tex"> c^n </script></h5>
 <ul>
   <li><script type="math/tex">\lim_{n \to \infty} \frac{n^k}{c^n} \approx \lim_{n \to \infty} \frac{\ln n^k}{\ln c^n} = \lim_{n \to \infty} \frac{k\ln n}{n\ln c} =  \lim_{n \to \infty} (\frac{k}{\ln c} \cdot \frac{\ln n}{n}) \approx  \lim_{n \to \infty} \frac{\ln n}{n} = 0 </script> .  </li>
@@ -394,9 +426,9 @@
 <table>
   <tbody>
     <tr>
-      <td><script type="math/tex"> 2^{2n+1} </script></td>
+      <td><script type="math/tex"> 2^{2^{n+1}} </script></td>
       <td>&gt;</td>
-      <td><script type="math/tex">  2^{2n} </script></td>
+      <td><script type="math/tex">  2^{2^n} </script></td>
       <td>&gt;</td>
       <td><script type="math/tex">  (n+1)! </script></td>
       <td>&gt;</td>
@@ -451,12 +483,12 @@
       <td><script type="math/tex"> \ln\ln n </script></td>
       <td>&gt;</td>
       <td><script type="math/tex">  2^{\lg^* n} </script></td>
-      <td>=</td>
+      <td>&gt;</td>
     </tr>
     <tr>
-      <td><script type="math/tex"> \lg^*(\lg n) </script></td>
-      <td>=</td>
       <td><script type="math/tex"> \lg^* n </script></td>
+      <td>=</td>
+      <td><script type="math/tex"> \lg^* (\lg n) </script></td>
       <td>&gt;</td>
       <td><script type="math/tex"> \lg(\lg^* n) </script></td>
       <td>&gt;</td>
@@ -470,20 +502,48 @@
 
 <h5 id="detail">Detail:</h5>
 <ul>
-  <li><script type="math/tex"> n = 2^{\lg n} </script> ; </li>
-  <li><script type="math/tex"> 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 </script> ;</li>
-  <li><script type="math/tex"> n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}</script> ;</li>
-  <li><script type="math/tex"> n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} </script> ;</li>
-  <li><script type="math/tex"> n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 </script> ;</li>
-  <li><script type="math/tex"> (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}</script> ;  </li>
+  <li>
+    <p><script type="math/tex"> \lim_{n \to \infty} \frac{(n+1)!}{2^{2^n}} \approx \lim_{n \to \infty} \frac{\lg (n+1)!}{\lg 2^{2^n}} = \lim_{n \to \infty} \frac{(n+1) + n + \cdots + 1}{2^n} = \lim_{n \to \infty} \frac{(n+1)(n+2)}{2^{n-1}} \le \lim_{n \to \infty} \frac{(n+2)^2}{2^{n-1}} \approx \lim_{n \to \infty} \frac{\lg (n+2)^2}{\lg 2^{n-1}} = \lim_{n \to \infty} \frac{2\lg (n+2)}{n-1}</script> ,<br />
+ <script type="math/tex"> \approx \lim_{n \to \infty} \frac{\lg (n + 2)}{n-1}  \approx \lim_{n \to \infty} \frac{\lg n}{n} = 0  </script>  ;    </p>
+  </li>
+  <li>
+    <p><script type="math/tex"> \lim_{n \to \infty} \frac{n2^n}{e^n} \approx  \lim_{n \to \infty} \frac{\ln n2^n}{\ln e^n} = \lim_{n \to \infty} \frac{\ln n + n\ln 2}{n} = \lim_{n \to \infty} (\frac{\ln n}{n} + \ln 2) \approx \lim_{n \to \infty} \frac{\ln n}{n} = 0 </script> ;  </p>
+  </li>
+  <li>
+    <p><script type="math/tex">\lim_{n \to \infty} \frac{(\lg n)^{\lg n}}{(3/2)^n} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n \lg (3/2)} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n} = \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{\sqrt{n}\sqrt{n}} \le \lim_{n \to \infty} \frac{(\lg n)^2}{\sqrt{n}\sqrt{n}} \approx \lim_{n \to \infty} \frac{\lg n}{\sqrt{n}} \approx \lim_{n \to \infty} \frac{2\lg \lg n}{1/2 \lg n} = \lim_{n \to \infty} \frac{4\lg \lg n}{\lg n} = 0 </script>  ; </p>
+  </li>
+  <li>
+    <p><script type="math/tex"> n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}</script> ;</p>
+  </li>
+  <li>
+    <p><script type="math/tex"> \lim_{n \to \infty} \frac{\lg (n!)}{(\lg n)^{\lg n}} \le \lim_{n \to \infty} \frac{\lg n^n}{(\lg n)^{\lg n}} = \lim_{n \to \infty} \frac{n\lg n}{(\lg n)^{\lg n}} \approx \lim_{n \to \infty} \frac{\lg n + \lg \lg n}{\lg n \lg \lg n} = \lim_{n \to \infty} (\frac{1}{\lg \lg n} + \frac{1}{\lg n}) = 0 </script> ;  </p>
+  </li>
+  <li>
+    <p><script type="math/tex"> 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 </script> ;</p>
+  </li>
+  <li>
+    <p><script type="math/tex"> n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} </script> ;</p>
+  </li>
+  <li>
+    <p><script type="math/tex"> n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 </script> ;</p>
+  </li>
+  <li>
+    <p><script type="math/tex"> n = 2^{\lg n} </script> ; </p>
+  </li>
+  <li>
+    <p><script type="math/tex"> (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}</script> ;  </p>
+  </li>
 </ul>
 
 <p><strong>b. Give an example of a single nonnegative function <script type="math/tex"> f(n) </script> such that for all functions <script type="math/tex"> g_i(n) </script> in part <script type="math/tex"> (a) </script>, <script type="math/tex"> f(n)</script> is neither <script type="math/tex"> O(g_i(n))</script>  nor <script type="math/tex"> \Omega(g_i(n)) </script></strong></p>
 
 <h5 id="answer-1">Answer:</h5>
-<p><strong>Could be bigger than <script type="math/tex"> 2^{2n+1} </script> and less than 1</strong><br />
-<strong><script type="math/tex"> f(n) = 2^{3n+1}(1 + \sin n) </script></strong><br />
-<strong><script type="math/tex"> f(n) = 2^{2n+3}(1 + \cos n) </script></strong></p>
+<ul>
+  <li><strong>Could be bigger than <script type="math/tex"> 2^{2n+1} </script> and less than 1</strong>  </li>
+  <li><strong><script type="math/tex"> f(n) = 2^{3n+1}(1 + \sin n) </script> or</strong>  </li>
+  <li><strong><script type="math/tex"> f(n) = 2^{2n+3}(1 + \cos n) </script></strong></li>
+</ul>
+
 
   </div>
 </div>

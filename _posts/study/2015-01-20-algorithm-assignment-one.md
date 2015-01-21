@@ -1,10 +1,9 @@
 ---
 layout: page
 title: Algorithm Assignment One
-tagline: Recursion, Big O Notation, Logarithm
+tagline: Class 5549, Recursion, Big O Notation, Logarithm
 ---
 {% include JB/setup %}
-
 
 #### Notations:   
  - $$ O $$ : Less than (Worst Situation)
@@ -12,6 +11,29 @@ tagline: Recursion, Big O Notation, Logarithm
  - $$ \Omega $$ : Bigger than (Best Situation)
  - $$ \omega $$ : Big or Equal 
  - $$ \Theta $$ : Between { $$ O,\ \ \Omega $$ }  
+
+<!-- PDF page 77 -->  
+
+#### Definition from book (page 56):  
+ - $$\lg n = \log_{2} n $$ (binary logarithm) ,  
+ - $$\ln n = \log_{e} n $$ (natural logarithm) ,  
+ - $$\lg^k n = (\lg n)^k $$ (exponentiation) ,
+ - $$\lg \lg n = \lg(\lg n) $$ (composition) .  
+
+<!-- PDF page 79 -->
+
+#### Definition of [ $$ \lg^* n $$ ] from book (page 58):  
+ - $$\lg^* 2 = 1 $$ ,
+ - $$\lg^* 4 = 2 $$ ,  
+ - $$\lg^* 16 = 3 $$ ,  
+ - $$\lg^* 65536 = 4 $$ ,  
+ - $$\lg^* 2^{65536} = 5 $$ .  
+ - **Translated from book by me(Dong Zhou)**:  
+ - $$\lg^* 2^{2^0} = 1 $$ ,  
+ - $$\lg^* 2^{2^1} = 2 $$ ,  
+ - $$\lg^* 2^{2^2} = 4 $$ ,
+ - $$\lg^* 2^{2^4} = 4 $$ ,
+ - $$\lg^* 2^{2^{16}} = 5 $$ .
 
 #### Assignment Zero:  
 
@@ -43,6 +65,9 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 | e. | $$ n^{\lg c} $$ | $$ c^{\lg n} $$ | yes | no | yes | no | yes | 
 | f. | $$ \lg(n!) $$ | $$ \lg(n^n) $$ | yes | no | yes | no | yes |
 
+##### a. compare between $$ \lg^kn $$ and $$ n^\epsilon $$
+ - $$\lim_{n \to \infty} \frac{\lg^k n}{n^\epsilon} = \lim_{n \to \infty} \frac{(\lg n)^k}{n^\epsilon} \approx \lim_{n \to \infty} \frac{\ln (\lg n)^k}{\ln n^\epsilon} = \lim_{n \to \infty} \frac{k \ln(\lg n)}{\epsilon\ln n} = \lim_{n \to \infty} (\frac{k}{\epsilon} \cdot \frac{\ln lg n}{\ln n})  \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln n} \approx \lim_{n \to \infty} \frac{\lg n}{ n} = 0 $$ .
+
 ##### b. compare between $$ n^k $$ and $$ c^n $$
  - $$\lim_{n \to \infty} \frac{n^k}{c^n} \approx \lim_{n \to \infty} \frac{\ln n^k}{\ln c^n} = \lim_{n \to \infty} \frac{k\ln n}{n\ln c} =  \lim_{n \to \infty} (\frac{k}{\ln c} \cdot \frac{\ln n}{n}) \approx  \lim_{n \to \infty} \frac{\ln n}{n} = 0 $$ .  
 
@@ -50,7 +75,6 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
  - $$\sin n $$ in range [-1, 1]  
  - when $$\sin n = 1, \lim_{n \to \infty} \frac{n}{n^{1/2}} = \lim_{n \to \infty} n^{1/2} = \infty $$  ,
  - when $$\sin n = -1, \lim_{n \to \infty} \frac{n^{-1}}{n^{1/2}} = \lim_{n \to \infty} \frac{1}{n^{3/2}} = 0 $$  ,
-
 
 ##### d. compare between $$ 2^n $$ and $$ 2^{n/2} $$
  - $$\lim_{n \to \infty} \frac{2^n}{2^{n/2}}  = \lim_{n \to \infty} 2^{n/2} = \infty $$  .
@@ -81,24 +105,39 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 
 ##### Answer:
 
-| $$ 2^{2n+1} $$ |  > | $$  2^{2n} $$ | > | $$  (n+1)! $$|  > |  $$ n! $$ | > | $$ e^n $$ | > | 
+| $$ 2^{2^{n+1}} $$ |  > | $$  2^{2^n} $$ | > | $$  (n+1)! $$|  > |  $$ n! $$ | > | $$ e^n $$ | > | 
 | $$ n2^n $$ | > | $$ 2^n $$ | > | $$ (\frac{3}{2})^n $$ | > | $$ n^{\lg\lg n} $$ | = | $$ (\lg n)^{\lg n} $$ | > |
 | $$ \lg(n!) $$ | > | $$ n^3 $$ | > | $$ n^2 $$ | = | $$ 4^{\lg n}$$ | > | $$ n \lg n $$ | =  |  
 | $$ (\lg n)! $$ | > | $$ 2^{\lg n}$$ | = | $$ n $$ | > | $$ (\sqrt{2})^{\lg n} $$ | > | $$ 2^{\sqrt{2\lg n}} $$ | > | 
-| $$ \lg^2 n $$ | > | $$ \ln n $$ | > | $$ \sqrt{\lg n}$$ |  > | $$ \ln\ln n $$ | >  | $$  2^{\lg^* n} $$ |  = | 
-| $$ \lg^*(\lg n) $$ | = | $$ \lg^* n $$ | > | $$ \lg(\lg^* n) $$ | > | $$ n^{1/\lg n}$$ | > | 1 |
+| $$ \lg^2 n $$ | > | $$ \ln n $$ | > | $$ \sqrt{\lg n}$$ |  > | $$ \ln\ln n $$ | >  | $$  2^{\lg^* n} $$ | > | 
+| $$ \lg^* n $$ | = | $$ \lg^* (\lg n) $$ | > | $$ \lg(\lg^* n) $$ | > | $$ n^{1/\lg n}$$ | > | 1 |
 
 ##### Detail:  
- - $$ n = 2^{\lg n} $$ ; 
- - $$ 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 $$ ;
+ - $$ \lim_{n \to \infty} \frac{(n+1)!}{2^{2^n}} \approx \lim_{n \to \infty} \frac{\lg (n+1)!}{\lg 2^{2^n}} = \lim_{n \to \infty} \frac{(n+1) + n + \cdots + 1}{2^n} = \lim_{n \to \infty} \frac{(n+1)(n+2)}{2^{n-1}} \le \lim_{n \to \infty} \frac{(n+2)^2}{2^{n-1}} \approx \lim_{n \to \infty} \frac{\lg (n+2)^2}{\lg 2^{n-1}} = \lim_{n \to \infty} \frac{2\lg (n+2)}{n-1}$$ ,  
+ $$ \approx \lim_{n \to \infty} \frac{\lg (n + 2)}{n-1}  \approx \lim_{n \to \infty} \frac{\lg n}{n} = 0  $$  ;    
+
+ - $$ \lim_{n \to \infty} \frac{n2^n}{e^n} \approx  \lim_{n \to \infty} \frac{\ln n2^n}{\ln e^n} = \lim_{n \to \infty} \frac{\ln n + n\ln 2}{n} = \lim_{n \to \infty} (\frac{\ln n}{n} + \ln 2) \approx \lim_{n \to \infty} \frac{\ln n}{n} = 0 $$ ;  
+
+ - $$\lim_{n \to \infty} \frac{(\lg n)^{\lg n}}{(3/2)^n} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n \lg (3/2)} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n} = \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{\sqrt{n}\sqrt{n}} \le \lim_{n \to \infty} \frac{(\lg n)^2}{\sqrt{n}\sqrt{n}} \approx \lim_{n \to \infty} \frac{\lg n}{\sqrt{n}} \approx \lim_{n \to \infty} \frac{2\lg \lg n}{1/2 \lg n} = \lim_{n \to \infty} \frac{4\lg \lg n}{\lg n} = 0 $$  ; 
+
  - $$ n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}$$ ;
+
+ - $$ \lim_{n \to \infty} \frac{\lg (n!)}{(\lg n)^{\lg n}} \le \lim_{n \to \infty} \frac{\lg n^n}{(\lg n)^{\lg n}} = \lim_{n \to \infty} \frac{n\lg n}{(\lg n)^{\lg n}} \approx \lim_{n \to \infty} \frac{\lg n + \lg \lg n}{\lg n \lg \lg n} = \lim_{n \to \infty} (\frac{1}{\lg \lg n} + \frac{1}{\lg n}) = 0 $$ ;  
+
+ - $$ 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 $$ ;
+
  - $$ n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} $$ ;
+
  - $$ n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 $$ ;
+
+ - $$ n = 2^{\lg n} $$ ; 
+
  - $$ (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}$$ ;  
 
 **b. Give an example of a single nonnegative function $$ f(n) $$ such that for all functions $$ g_i(n) $$ in part $$ (a) $$, $$ f(n)$$ is neither $$ O(g_i(n))$$  nor $$ \Omega(g_i(n)) $$**
 
 ##### Answer:   
-**Could be bigger than $$ 2^{2n+1} $$ and less than 1**  
-**$$ f(n) = 2^{3n+1}(1 + \sin n) $$**  
-**$$ f(n) = 2^{2n+3}(1 + \cos n) $$**
+ - **Could be bigger than $$ 2^{2n+1} $$ and less than 1**  
+ - **$$ f(n) = 2^{3n+1}(1 + \sin n) $$ or**  
+ - **$$ f(n) = 2^{2n+3}(1 + \cos n) $$**
+

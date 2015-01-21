@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-21T02:03:42-06:00</updated>
+ <updated>2015-01-21T14:13:26-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -36,6 +36,33 @@
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \Omega &lt;/script&gt; : Bigger than (Best Situation)&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \omega &lt;/script&gt; : Big or Equal &lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta &lt;/script&gt; : Between { &lt;script type=&quot;math/tex&quot;&gt; O,\ \ \Omega &lt;/script&gt; }  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- PDF page 77 --&gt;
+
+&lt;h4 id=&quot;definition-from-book-page-56&quot;&gt;Definition from book (page 56):&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg n = \log_{2} n &lt;/script&gt; (binary logarithm) ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\ln n = \log_{e} n &lt;/script&gt; (natural logarithm) ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^k n = (\lg n)^k &lt;/script&gt; (exponentiation) ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg \lg n = \lg(\lg n) &lt;/script&gt; (composition) .  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- PDF page 79 --&gt;
+
+&lt;h4 id=&quot;definition-of---lg-n---from-book-page-58&quot;&gt;Definition of [ &lt;script type=&quot;math/tex&quot;&gt; \lg^* n &lt;/script&gt; ] from book (page 58):&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2 = 1 &lt;/script&gt; ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 4 = 2 &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 16 = 3 &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 65536 = 4 &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{65536} = 5 &lt;/script&gt; .  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Translated from book by me(Dong Zhou)&lt;/strong&gt;:  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^0} = 1 &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^1} = 2 &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^2} = 4 &lt;/script&gt; ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^4} = 4 &lt;/script&gt; ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^{16}} = 5 &lt;/script&gt; .&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;assignment-zero&quot;&gt;Assignment Zero:&lt;/h4&gt;
@@ -171,6 +198,11 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;h5 id=&quot;a-compare-between--lgkn--and--nepsilon-&quot;&gt;a. compare between &lt;script type=&quot;math/tex&quot;&gt; \lg^kn &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; n^\epsilon &lt;/script&gt;&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{\lg^k n}{n^\epsilon} = \lim_{n \to \infty} \frac{(\lg n)^k}{n^\epsilon} \approx \lim_{n \to \infty} \frac{\ln (\lg n)^k}{\ln n^\epsilon} = \lim_{n \to \infty} \frac{k \ln(\lg n)}{\epsilon\ln n} = \lim_{n \to \infty} (\frac{k}{\epsilon} \cdot \frac{\ln lg n}{\ln n})  \approx \lim_{n \to \infty} \frac{\ln \lg n}{\ln n} \approx \lim_{n \to \infty} \frac{\lg n}{ n} = 0 &lt;/script&gt; .&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h5 id=&quot;b-compare-between--nk--and--cn-&quot;&gt;b. compare between &lt;script type=&quot;math/tex&quot;&gt; n^k &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; c^n &lt;/script&gt;&lt;/h5&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{n^k}{c^n} \approx \lim_{n \to \infty} \frac{\ln n^k}{\ln c^n} = \lim_{n \to \infty} \frac{k\ln n}{n\ln c} =  \lim_{n \to \infty} (\frac{k}{\ln c} \cdot \frac{\ln n}{n}) \approx  \lim_{n \to \infty} \frac{\ln n}{n} = 0 &lt;/script&gt; .  &lt;/li&gt;
@@ -271,9 +303,9 @@
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{2n+1} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{2^{n+1}} &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;  2^{2n} &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;  2^{2^n} &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;  (n+1)! &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
@@ -328,12 +360,12 @@
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \ln\ln n &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;  2^{\lg^* n} &lt;/script&gt;&lt;/td&gt;
-      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^*(\lg n) &lt;/script&gt;&lt;/td&gt;
-      &lt;td&gt;=&lt;/td&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^* n &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg^* (\lg n) &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(\lg^* n) &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
@@ -347,20 +379,48 @@
 
 &lt;h5 id=&quot;detail&quot;&gt;Detail:&lt;/h5&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n = 2^{\lg n} &lt;/script&gt; ; &lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 &lt;/script&gt; ;&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}&lt;/script&gt; ;&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} &lt;/script&gt; ;&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 &lt;/script&gt; ;&lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}&lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; \lim_{n \to \infty} \frac{(n+1)!}{2^{2^n}} \approx \lim_{n \to \infty} \frac{\lg (n+1)!}{\lg 2^{2^n}} = \lim_{n \to \infty} \frac{(n+1) + n + \cdots + 1}{2^n} = \lim_{n \to \infty} \frac{(n+1)(n+2)}{2^{n-1}} \le \lim_{n \to \infty} \frac{(n+2)^2}{2^{n-1}} \approx \lim_{n \to \infty} \frac{\lg (n+2)^2}{\lg 2^{n-1}} = \lim_{n \to \infty} \frac{2\lg (n+2)}{n-1}&lt;/script&gt; ,&lt;br /&gt;
+ &lt;script type=&quot;math/tex&quot;&gt; \approx \lim_{n \to \infty} \frac{\lg (n + 2)}{n-1}  \approx \lim_{n \to \infty} \frac{\lg n}{n} = 0  &lt;/script&gt;  ;    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; \lim_{n \to \infty} \frac{n2^n}{e^n} \approx  \lim_{n \to \infty} \frac{\ln n2^n}{\ln e^n} = \lim_{n \to \infty} \frac{\ln n + n\ln 2}{n} = \lim_{n \to \infty} (\frac{\ln n}{n} + \ln 2) \approx \lim_{n \to \infty} \frac{\ln n}{n} = 0 &lt;/script&gt; ;  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{(\lg n)^{\lg n}}{(3/2)^n} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n \lg (3/2)} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n} = \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{\sqrt{n}\sqrt{n}} \le \lim_{n \to \infty} \frac{(\lg n)^2}{\sqrt{n}\sqrt{n}} \approx \lim_{n \to \infty} \frac{\lg n}{\sqrt{n}} \approx \lim_{n \to \infty} \frac{2\lg \lg n}{1/2 \lg n} = \lim_{n \to \infty} \frac{4\lg \lg n}{\lg n} = 0 &lt;/script&gt;  ; &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}&lt;/script&gt; ;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; \lim_{n \to \infty} \frac{\lg (n!)}{(\lg n)^{\lg n}} \le \lim_{n \to \infty} \frac{\lg n^n}{(\lg n)^{\lg n}} = \lim_{n \to \infty} \frac{n\lg n}{(\lg n)^{\lg n}} \approx \lim_{n \to \infty} \frac{\lg n + \lg \lg n}{\lg n \lg \lg n} = \lim_{n \to \infty} (\frac{1}{\lg \lg n} + \frac{1}{\lg n}) = 0 &lt;/script&gt; ;  &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 &lt;/script&gt; ;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} &lt;/script&gt; ;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 &lt;/script&gt; ;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n = 2^{\lg n} &lt;/script&gt; ; &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}&lt;/script&gt; ;  &lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;b. Give an example of a single nonnegative function &lt;script type=&quot;math/tex&quot;&gt; f(n) &lt;/script&gt; such that for all functions &lt;script type=&quot;math/tex&quot;&gt; g_i(n) &lt;/script&gt; in part &lt;script type=&quot;math/tex&quot;&gt; (a) &lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt; f(n)&lt;/script&gt; is neither &lt;script type=&quot;math/tex&quot;&gt; O(g_i(n))&lt;/script&gt;  nor &lt;script type=&quot;math/tex&quot;&gt; \Omega(g_i(n)) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;answer-1&quot;&gt;Answer:&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;Could be bigger than &lt;script type=&quot;math/tex&quot;&gt; 2^{2n+1} &lt;/script&gt; and less than 1&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = 2^{3n+1}(1 + \sin n) &lt;/script&gt;&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = 2^{2n+3}(1 + \cos n) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Could be bigger than &lt;script type=&quot;math/tex&quot;&gt; 2^{2n+1} &lt;/script&gt; and less than 1&lt;/strong&gt;  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = 2^{3n+1}(1 + \sin n) &lt;/script&gt; or&lt;/strong&gt;  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = 2^{2n+3}(1 + \cos n) &lt;/script&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 </content>
  </entry>
  
