@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Algorithm Assignment One
-tagline: Recursion, Big O natation
+tagline: Recursion, Big O Natation, Logarithm
 ---
 {% include JB/setup %}
 
@@ -28,7 +28,7 @@ tagline: Recursion, Big O natation
 | 4 | $$ T(n) = \ \ \ \ \ \ \  \vdots $$ | = | $$ \ \ \ \ \ \ \  \vdots $$ |
 | 5 | $$ T(n) = nT(n/n) + \log_{2}(n-1) $$ | = | $$ 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2}(n-1) $$ |
 
-##### Step1 + Step2 + $$ \cdots $$ + Step5 : 
+##### Step1 + Step2 + $$ \cdots $$ + Step5 :  
 $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 
 #### Assignment One:
@@ -42,6 +42,28 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 | d. | $$ 2^n $$ | $$ 2^{n/2} $$ | no | no | yes | yes | no | 
 | e. | $$ n^{\lg c} $$ | $$ c^{\lg n} $$ | yes | no | yes | no | yes | 
 | f. | $$ \lg(n!) $$ | $$ \lg(n^n) $$ | yes | no | yes | no | yes |
+
+##### c. compare between $$ \sqrt{n} $$ and $$ n^{\sin n} $$  
+ - $$\sin n $$ in range [-1, 1]  
+ - when $$\sin n = 1, \lim_{n \to \infty} \frac{n}{n^{1/2}} = \lim_{n \to \infty} n^{1/2} = \infty $$  ,
+ - when $$\sin n = -1, \lim_{n \to \infty} \frac{n^{-1}}{n^{1/2}} = \lim_{n \to \infty} \frac{1}{n^{3/2}} = 0 $$  ,
+
+
+##### d. compare between $$ 2^n $$ and $$ 2^{n/2} $$
+ - $$\lim_{n \to \infty} \frac{2^n}{2^{n/2}}  = \lim_{n \to \infty} 2^{n/2} = \infty $$  .
+
+##### e. compare between $$ n^{\lg c} $$ adn  $$ c^{\lg n} $$  
+ - assume $$ n^{\lg c} = c^{\lg n} $$ both side lg  
+ - $$(\lg n)^{\lg c}  = (\lg c)^{\lg n}$$  ,
+ - $$(\lg c)(\lg n) = (\lg n)(\lg c)$$ ,   
+
+##### f. compare between $$ \lg(n!) $$ and $$ \lg(n^n) $$  
+1. $$\lg n^n = n\lg n$$ ;
+2. $$\lg (n!) = \lg n + \lg (n-1) + \cdots + \lg 1 = \sum_{i=1}^n \lg i $$ ;
+  - $$\sum_{i=1}^n \lg i \le \sum_{i=1}^n \lg n  = n\lg n$$ ;   
+  - $$ \lg (n!) = O(n\lg n) $$ ;
+  - $$\sum_{i=1}^n \lg i \ge \sum_{i=1 + n/2}^n \lg n/2  = (n/2)\lg (n/2) $$ ;
+  - $$ \lg (n!) = \Omega(n\lg n) $$ ;
 
 #### Assigement Two:
 **a. Rank the following functions by order of growth; that is, find an arrangement $$ g_1, g_2, \cdots ,g_{30} $$ of the functions satisfying $$ g_1 = \Omega(g_2), g_2 = \Omega(g_3), \cdots , g_{29} = \Omega(g_{30}) $$. Partition your list into equivalence classes such that functions $$ f(n) $$ and $$ g(n) $$ are in the same class if and only if $$ f(n) = \Theta(g(n)) $$**
@@ -61,6 +83,19 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 | $$ \lg(n!) $$ | > | $$ n^3 $$ | > | $$ n^2 $$ | = | $$ 4^{\lg n}$$ | > | $$ n \lg n $$ | =  |  
 | $$ (\lg n)! $$ | > | $$ 2^{\lg n}$$ | = | $$ n $$ | > | $$ (\sqrt{2})^{\lg n} $$ | > | $$ 2^{\sqrt{2\lg n}} $$ | > | 
 | $$ \lg^2 n $$ | > | $$ \ln n $$ | > | $$ \sqrt{\lg n}$$ |  > | $$ \ln\ln n $$ | >  | $$  2^{\lg^* n} $$ |  = | 
-| $$ \lg^*(\lg n) $$ | = | $$ \lg^* n $$ | > | $$ \lg(\lg^* n) $$ | > | $$ n^{1/\lg n}$$ |  = | 1 |
+| $$ \lg^*(\lg n) $$ | = | $$ \lg^* n $$ | > | $$ \lg(\lg^* n) $$ | > | $$ n^{1/\lg n}$$ | > | 1 |
+
+##### Detail:  
+ - $$ n = 2^{\lg n} $$ ; 
+ - $$ 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 $$ ;
+ - $$ n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}$$ ;
+ - $$ n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} $$ ;
+ - $$ n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 $$ ;
+ - $$ (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}$$ ;  
 
 **b. Give an example of a single nonnegative function $$ f(n) $$ such that for all functions $$ g_i(n) $$ in part $$ (a) $$, $$ f(n)$$ is neither $$ O(g_i(n))$$  nor $$ \Omega(g_i(n)) $$**
+
+##### Answer:   
+**Could be bigger than $$ 2^{2n+1} $$ and less than 1**  
+**$$ f(n) = 2^{3n+1}(1 + \sin n) $$**  
+**$$ f(n) = 2^{2n+3}(1 + \cos n) $$**

@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-20T19:22:55-06:00</updated>
+ <updated>2015-01-21T01:31:30-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -18,7 +18,7 @@
    <updated>2015-01-20T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/2015/01/20/function-merge</id>
    <content type="html">
-&lt;h4 id=&quot;two-funcitons-can-not-be-multiply-with-each-other-but-can-be-merge&quot;&gt;Two funcitons can not be multiply with each other, but can be merge.&lt;/h4&gt;
+&lt;h5 id=&quot;two-funcitons-can-not-be-multiply-with-each-other-but-can-be-merge&quot;&gt;Two funcitons can not be multiply with each other, but can be merge.&lt;/h5&gt;
 
 </content>
  </entry>
@@ -171,6 +171,38 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;h5 id=&quot;c-compare-between--sqrtn--and--nsin-n-&quot;&gt;c. compare between &lt;script type=&quot;math/tex&quot;&gt; \sqrt{n} &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; n^{\sin n} &lt;/script&gt;&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\sin n &lt;/script&gt; in range [-1, 1]  &lt;/li&gt;
+  &lt;li&gt;when &lt;script type=&quot;math/tex&quot;&gt;\sin n = 1, \lim_{n \to \infty} \frac{n}{n^{1/2}} = \lim_{n \to \infty} n^{1/2} = \infty &lt;/script&gt;  ,&lt;/li&gt;
+  &lt;li&gt;when &lt;script type=&quot;math/tex&quot;&gt;\sin n = -1, \lim_{n \to \infty} \frac{n^{-1}}{n^{1/2}} = \lim_{n \to \infty} \frac{1}{n^{3/2}} = 0 &lt;/script&gt;  ,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;d-compare-between--2n--and--2n2-&quot;&gt;d. compare between &lt;script type=&quot;math/tex&quot;&gt; 2^n &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; 2^{n/2} &lt;/script&gt;&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{2^n}{2^{n/2}}  = \lim_{n \to \infty} 2^{n/2} = \infty &lt;/script&gt;  .&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;e-compare-between--nlg-c--adn---clg-n-&quot;&gt;e. compare between &lt;script type=&quot;math/tex&quot;&gt; n^{\lg c} &lt;/script&gt; adn  &lt;script type=&quot;math/tex&quot;&gt; c^{\lg n} &lt;/script&gt;&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;assume &lt;script type=&quot;math/tex&quot;&gt; n^{\lg c} = c^{\lg n} &lt;/script&gt; both side lg  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(\lg n)^{\lg c}  = (\lg c)^{\lg n}&lt;/script&gt;  ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(\lg c)(\lg n) = (\lg n)(\lg c)&lt;/script&gt; ,   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;f-compare-between--lgn--and--lgnn-&quot;&gt;f. compare between &lt;script type=&quot;math/tex&quot;&gt; \lg(n!) &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; \lg(n^n) &lt;/script&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg n^n = n\lg n&lt;/script&gt; ;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg (n!) = \lg n + \lg (n-1) + \cdots + \lg 1 = \sum_{i=1}^n \lg i &lt;/script&gt; ;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\sum_{i=1}^n \lg i \le \sum_{i=1}^n \lg n  = n\lg n&lt;/script&gt; ;   &lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg (n!) = O(n\lg n) &lt;/script&gt; ;&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\sum_{i=1}^n \lg i \ge \sum_{i=1 + n/2}^n \lg n/2  = (n/2)\lg (n/2) &lt;/script&gt; ;&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg (n!) = \Omega(n\lg n) &lt;/script&gt; ;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;h4 id=&quot;assigement-two&quot;&gt;Assigement Two:&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;a. Rank the following functions by order of growth; that is, find an arrangement &lt;script type=&quot;math/tex&quot;&gt; g_1, g_2, \cdots ,g_{30} &lt;/script&gt; of the functions satisfying &lt;script type=&quot;math/tex&quot;&gt; g_1 = \Omega(g_2), g_2 = \Omega(g_3), \cdots , g_{29} = \Omega(g_{30}) &lt;/script&gt;. Partition your list into equivalence classes such that functions &lt;script type=&quot;math/tex&quot;&gt; f(n) &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; g(n) &lt;/script&gt; are in the same class if and only if &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Theta(g(n)) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
 
@@ -301,14 +333,29 @@
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg(\lg^* n) &lt;/script&gt;&lt;/td&gt;
       &lt;td&gt;&amp;gt;&lt;/td&gt;
       &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/\lg n}&lt;/script&gt;&lt;/td&gt;
-      &lt;td&gt;=&lt;/td&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
       &lt;td&gt;1&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;h5 id=&quot;detail&quot;&gt;Detail:&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n = 2^{\lg n} &lt;/script&gt; ; &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; 4^{\lg n} = (2^2)^{\lg n} = 2^{2\lg n} =  2^{\lg^{n^2}} = n^2 &lt;/script&gt; ;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}&lt;/script&gt; ;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\sqrt{2/\lg n}} = (2^{\lg n})^{\sqrt{2/\lg n}} = 2^{\lg n \sqrt{2/\lg n}} = 2^{\sqrt{2\lg n}} &lt;/script&gt; ;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{1/{\lg n}} = (2^{\lg n})^{1/{\lg n}} = 2^1 = 2 &lt;/script&gt; ;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; (\sqrt{2})^{\lg n} = 2^{1/2 \lg n} = (2^{\lg n})^{1/2} = n^{1/2} = \sqrt{n}&lt;/script&gt; ;  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;&lt;strong&gt;b. Give an example of a single nonnegative function &lt;script type=&quot;math/tex&quot;&gt; f(n) &lt;/script&gt; such that for all functions &lt;script type=&quot;math/tex&quot;&gt; g_i(n) &lt;/script&gt; in part &lt;script type=&quot;math/tex&quot;&gt; (a) &lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt; f(n)&lt;/script&gt; is neither &lt;script type=&quot;math/tex&quot;&gt; O(g_i(n))&lt;/script&gt;  nor &lt;script type=&quot;math/tex&quot;&gt; \Omega(g_i(n)) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;answer-1&quot;&gt;Answer:&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Could be bigger than &lt;script type=&quot;math/tex&quot;&gt; 2^{2n+1} &lt;/script&gt; and less than 1&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = 2^{3n+1}(1 + \sin n) &lt;/script&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = 2^{2n+3}(1 + \cos n) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
 </content>
  </entry>
  
