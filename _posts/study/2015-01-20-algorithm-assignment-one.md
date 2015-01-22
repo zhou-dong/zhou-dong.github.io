@@ -31,7 +31,7 @@ tagline: Class 5549, Recursion, Big O Notation, Logarithm
  - **Translated from book by me(Dong Zhou)**:  
  - $$\lg^* 2^{2^0} = 1 $$ ,  
  - $$\lg^* 2^{2^1} = 2 $$ ,  
- - $$\lg^* 2^{2^2} = 4 $$ ,
+ - $$\lg^* 2^{2^2} = 3 $$ ,
  - $$\lg^* 2^{2^4} = 4 $$ ,
  - $$\lg^* 2^{2^{16}} = 5 $$ .
 
