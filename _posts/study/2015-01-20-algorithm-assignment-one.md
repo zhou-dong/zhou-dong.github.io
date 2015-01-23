@@ -81,7 +81,7 @@ $$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
 
 ##### e. compare between $$ n^{\lg c} $$ adn  $$ c^{\lg n} $$  
  - assume $$ n^{\lg c} = c^{\lg n} $$ both side lg  
- - $$(\lg n)^{\lg c}  = (\lg c)^{\lg n}$$  ,
+ - $$\lg n^{\lg c}  = \lg c^{\lg n}$$  ,
  - $$(\lg c)(\lg n) = (\lg n)(\lg c)$$ ,   
 
 ##### f. compare between $$ \lg(n!) $$ and $$ \lg(n^n) $$  
