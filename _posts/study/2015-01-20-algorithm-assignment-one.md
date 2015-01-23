@@ -44,14 +44,14 @@ tagline: Class 5549, Recursion, Big O Notation, Logarithm
 
 |Step| Function One | Equal | Functin Two |
 |:---:| :--- | :---: | : --- |
-| 1 | $$ T(n) = 2T(n/2) + 1 $$ | = |  $$ 2^1T(n/2^1) + \log_{2}0 $$ |  
-| 2 | $$ T(n) = 4T(n/4) + 1 + 1 $$ | = | $$ 2^2T(n/2^2) + \log_{2}1 $$ |
-| 3 | $$ T(n) = 8T(n/8) + 1 + 1 + 1 $$ | = | $$ 2^3T(n/2^3) + \log_{2}2 $$ | 
+| 1 | $$ T(n) = 2T(n/2) + 1 $$ | = |  $$ 2^1T(n/2^1) + 1 $$ |  
+| 2 | $$ T(n) = 4T(n/4) + 1 + 1 $$ | = | $$ 2^2T(n/2^2) + 2 $$ |
+| 3 | $$ T(n) = 8T(n/8) + 1 + 1 + 1 $$ | = | $$ 2^3T(n/2^3) + 3 $$ | 
 | 4 | $$ T(n) = \ \ \ \ \ \ \  \vdots $$ | = | $$ \ \ \ \ \ \ \  \vdots $$ |
-| 5 | $$ T(n) = nT(n/n) + \log_{2}(n-1) $$ | = | $$ 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2}(n-1) $$ |
+| 5 | $$ T(n) = nT(n/n) + \log_{2} n $$ | = | $$ 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2} n $$ |
 
 ##### Step1 + Step2 + $$ \cdots $$ + Step5 :  
-$$ T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i $$
+$$ T(n) = n(T)  + \sum_{i=0}^{\log_{2}n} i $$
 
 #### Assignment One:
 **Indicate, for each pair of expressions(A, B) in the table below, whether A is $$ O, o, \Omega, \omega \ or \ \Theta $$ of B. Assume that $$ k \geq 1, \epsilon > 0, and \ c > 1 $$ are constants. Your answer should be in the form of the table with “yes” or “no” written in each box.**
