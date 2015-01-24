@@ -51,7 +51,7 @@ tagline: Class 5549, Recursion, Big O Notation, Logarithm
 | 5 | $$ T(n) = nT(n/n) + \log_{2} n $$ | = | $$ 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2} n $$ |
 
 ##### Step1 + Step2 + $$ \cdots $$ + Step5 :  
-$$ T(n) = n(T)  + \sum_{i=0}^{\log_{2}n} i $$
+$$ T(n) = nT(1)  + \sum_{i=0}^{\log_{2}n} i $$
 
 #### Assignment One:
 **Indicate, for each pair of expressions(A, B) in the table below, whether A is $$ O, o, \Omega, \omega \ or \ \Theta $$ of B. Assume that $$ k \geq 1, \epsilon > 0, and \ c > 1 $$ are constants. Your answer should be in the form of the table with “yes” or “no” written in each box.**
