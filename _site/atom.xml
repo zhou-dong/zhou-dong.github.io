@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-01-21T17:46:15-06:00</updated>
+ <updated>2015-01-27T17:27:25-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,13 +13,174 @@
 
  
  <entry>
+   <title>Algorithm Assignment Two</title>
+   <link href="http://zhou-dong.github.io/2015/01/23/algorithm-assignment-two"/>
+   <updated>2015-01-23T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/01/23/algorithm-assignment-two</id>
+   <content type="html">
+&lt;h4 id=&quot;master-theorem&quot;&gt;Master Theorem&lt;/h4&gt;
+
+&lt;p&gt;Let a &lt;script type=&quot;math/tex&quot;&gt; \ge &lt;/script&gt; 1 and b &amp;gt; 1 be constants, let f(n) be a function. &lt;code&gt;T(n) = aT(n/b) + f(n)&lt;/code&gt; ;  &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = O(n^{\log_{b} a - \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a })&lt;/script&gt;.  &lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Theta(n^{\log_{b} a}) &lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a} \lg n) &lt;/script&gt;.        &lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Omega(n^{\log_{b} a + \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, and if &lt;script type=&quot;math/tex&quot;&gt; af(n/b) \le cf(n)&lt;/script&gt; for some constant c &amp;lt; 1 and all sufficiently large n, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(f(n))&lt;/script&gt;.    &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;recurrence-examples&quot;&gt;4-1 Recurrence examples&lt;/h4&gt;
+&lt;p&gt;Give asymptotic upper and lower bounds for T(n) in each of the following recurrences. Assume that T(n) is constant for n &lt;script type=&quot;math/tex&quot;&gt; \le &lt;/script&gt; 2. Make your bounds as tight as possible, and justify your answers.&lt;/p&gt;
+
+&lt;h5 id=&quot;a--tn----2tn2--n4-&quot;&gt;a. &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  2T(n/2) + n^4 &lt;/script&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; a = 2, \ b = 2, \ f(n) = n^4 &lt;/script&gt; ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\log_{b} a} = n^{\log_{2} 2} = n^1 &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = n^4 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{1 + 3}) &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \epsilon = 3  &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \therefore \  T(n) = \Theta(n^4) &lt;/script&gt; .  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;b--tn----tn710--n-&quot;&gt;b. &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  T(n7/10) + n &lt;/script&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  a = 1, \ b = 10/7, \ f(n) = n &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  n^{\log_{b} a} = n^{\log_{10/7} 1} = n^{0} &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  f(n) = n^1 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{0 + 1}) &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \epsilon = 1 &lt;/script&gt; ,  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \therefore \  T(n) = \Theta(n) &lt;/script&gt; .  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;c--tn----16tn4--n2-&quot;&gt;c. &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  16T(n/4) + n^2 &lt;/script&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  a = 16, \ b = 4, \ f(n) = n^2 &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  n^{\log_{b} a} = n^{\log_{4} 16} = n^2 &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  f(n) = n^2 &lt;/script&gt;  ; &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \therefore T(n) = \Theta(n^2 \lg n) &lt;/script&gt;. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;d--tn----7tn3--n2-&quot;&gt;d. &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  7T(n/3) + n^2 &lt;/script&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  a = 7, \ b = 3, \ f(n) = n^2 &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  n^{\log_{b} a} = n^{\log_{3} 7} = n^{1.772} &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  f(n) = n^2 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{1.772 + 0.228}) &lt;/script&gt; ;   &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \epsilon = 0.228 &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \therefore T(n) = \Theta(n^2) &lt;/script&gt; .  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;e--tn----7tn2--n2-&quot;&gt;e. &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  7T(n/2) + n^2 &lt;/script&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  a = 7, \ b = 2, \ f(n) = n^2 &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  n^{\log_{b} a} = n^{\log_{2} 7} = n^{2.8074} &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  f(n) = n^2 = \Omega(n^{\log_{b}a - \epsilon})  = \Omega(n^{2.8074 - 0.8074}) &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \epsilon = 0.8074 &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \therefore T(n) = \Theta(n^{\log_{2} 7}) &lt;/script&gt; .  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;f--tn----2tn4--sqrtn-&quot;&gt;f. &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  2T(n/4) + \sqrt{n} &lt;/script&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  a = 2, \ b = 4, \ f(n) = 1/2 &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  n^{\log_{b} a} = n^{\log_{4} 2} = n^{1/2} &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  f(n) = n^{1/2} &lt;/script&gt; ;  &lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;  \therefore T(n) = \Theta(n^{1/2} \lg n) = \Theta(\sqrt{n} \lg n) &lt;/script&gt; .  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;g--tn----tn-2--n2-&quot;&gt;g. &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  T(n-2) + n^2 &lt;/script&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+\ \ \ \ T(n)  =  T(n-2) + n^2  \\
+\ \ \ \ \ \ \ \ \ \ \ = T(n-4) + (n-2)^2 + n^2 \\
+\ \ \ \ \ \ \ \ \ \ \ = T(n-6) + (n-4)^2 + (n-2)^2 + n^2 \\
+\ \ \ \ \ \ \ \ \ \ \ = T(n-2k) + \sum_{i=0}^{2k-1} (n-2i)^2 ; \ \ (k=n/2) \\
+\ \ \ \ \ \ \ \ \ \ \ = T(0) + \sum_{i=0}^{n/2-1} (n^2-4ni-4i^2)^2 \\
+\ \ \ \ \therefore T(n) = \Theta(n^3)
+&lt;/script&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>Function Merge</title>
    <link href="http://zhou-dong.github.io/2015/01/20/function-merge"/>
    <updated>2015-01-20T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/2015/01/20/function-merge</id>
    <content type="html">
+&lt;h4 id=&quot;ordered-basis&quot;&gt;Ordered Basis&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; \beta &lt;/script&gt; is an &lt;code&gt;ordered basis&lt;/code&gt; for V, which means that: 
+&lt;script type=&quot;math/tex&quot;&gt; \beta = \{u_1, u_2, u_3, \cdots , u_n\}  \ne \beta&#39;\{u_2, u_3, u_1, \cdots, u_n\} &lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;example-1&quot;&gt;Example 1:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; 
+ V = P_2(R) \\ 
+ \beta = \{1,x,x^2\} \\
+ \beta&#39; = \{1, x^2,x\} \\
+ v = -2 + 3x + x^2 \in P_2(R) \\
+ [v]_{\beta} = \begin{pmatrix} -2 \\ 3 \\1 \end{pmatrix} \\
+ [v]_{\beta&#39;} = \begin{pmatrix} -2 \\ 1 \\ 3 \end{pmatrix}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;matrix-repretation&quot;&gt;Matrix Repretation&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+ T(v_j) = \sum_{i=1}^m a_{ij}v_i, \ \ j=1, 2, \cdots, n
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;example-2&quot;&gt;Example 2:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; 
+  T: \ \ P_2(R) \rightarrow R \ \  and \ \ T(f(x)) = f(2) \\ 
+  f(x) = x^2 \\
+  T(x) = 4
+&lt;/script&gt;  &lt;/p&gt;
+
+&lt;h4 id=&quot;function--function&quot;&gt;Function + Function&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+(U +T)_x = (U)_x + (T)_x \\
+U + T = T + U \\
+(U + T)(x) = (T + U)(x)
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;function--times---r-&quot;&gt;Function &lt;script type=&quot;math/tex&quot;&gt; \times  \ R &lt;/script&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+(\alpha T)(x) = \alpha T(x)
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;function-merge&quot;&gt;Function Merge&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+ U \circ T = UT \\
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;definition&quot;&gt;Definition:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+ X \rightarrow  T(x) \rightarrow U(T(x))\\
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;V&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \rightarrow &lt;/script&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;W&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;  \rightarrow &lt;/script&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Z&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;T&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;U&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; x&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(x)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;U(T(x))&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
 &lt;h5 id=&quot;two-funcitons-can-not-be-multiply-with-each-other-but-can-be-merge&quot;&gt;Two funcitons can not be multiply with each other, but can be merge.&lt;/h5&gt;
 
+&lt;h4 id=&quot;i-wanna-have-a-test-in-here&quot;&gt;I wanna have a test in here!&lt;/h4&gt;
 </content>
  </entry>
  
@@ -60,7 +221,7 @@
   &lt;li&gt;&lt;strong&gt;Translated from book by me(Dong Zhou)&lt;/strong&gt;:  &lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^0} = 1 &lt;/script&gt; ,  &lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^1} = 2 &lt;/script&gt; ,  &lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^2} = 4 &lt;/script&gt; ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^2} = 3 &lt;/script&gt; ,&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^4} = 4 &lt;/script&gt; ,&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg^* 2^{2^{16}} = 5 &lt;/script&gt; .&lt;/li&gt;
 &lt;/ul&gt;
@@ -86,19 +247,19 @@
       &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
       &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 2T(n/2) + 1 &lt;/script&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^1T(n/2^1) + \log_{2}0 &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^1T(n/2^1) + 1 &lt;/script&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
       &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 4T(n/4) + 1 + 1 &lt;/script&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^2T(n/2^2) + \log_{2}1 &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^2T(n/2^2) + 2 &lt;/script&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
       &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 8T(n/8) + 1 + 1 + 1 &lt;/script&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^3T(n/2^3) + \log_{2}2 &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^3T(n/2^3) + 3 &lt;/script&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
@@ -108,15 +269,15 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = nT(n/n) + \log_{2}(n-1) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = nT(n/n) + \log_{2} n &lt;/script&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
-      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2}(n-1) &lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2} n &lt;/script&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
 &lt;h5 id=&quot;step1--step2---cdots---step5-&quot;&gt;Step1 + Step2 + &lt;script type=&quot;math/tex&quot;&gt; \cdots &lt;/script&gt; + Step5 :&lt;/h5&gt;
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i &lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = nT(1)  + \sum_{i=0}^{\log_{2}n} i &lt;/script&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;assignment-one&quot;&gt;Assignment One:&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Indicate, for each pair of expressions(A, B) in the table below, whether A is &lt;script type=&quot;math/tex&quot;&gt; O, o, \Omega, \omega \ or \ \Theta &lt;/script&gt; of B. Assume that &lt;script type=&quot;math/tex&quot;&gt; k \geq 1, \epsilon &gt; 0, and \ c &gt; 1 &lt;/script&gt; are constants. Your answer should be in the form of the table with “yes” or “no” written in each box.&lt;/strong&gt;&lt;/p&gt;
@@ -223,7 +384,7 @@
 &lt;h5 id=&quot;e-compare-between--nlg-c--adn---clg-n-&quot;&gt;e. compare between &lt;script type=&quot;math/tex&quot;&gt; n^{\lg c} &lt;/script&gt; adn  &lt;script type=&quot;math/tex&quot;&gt; c^{\lg n} &lt;/script&gt;&lt;/h5&gt;
 &lt;ul&gt;
   &lt;li&gt;assume &lt;script type=&quot;math/tex&quot;&gt; n^{\lg c} = c^{\lg n} &lt;/script&gt; both side lg  &lt;/li&gt;
-  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(\lg n)^{\lg c}  = (\lg c)^{\lg n}&lt;/script&gt;  ,&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\lg n^{\lg c}  = \lg c^{\lg n}&lt;/script&gt;  ,&lt;/li&gt;
   &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;(\lg c)(\lg n) = (\lg n)(\lg c)&lt;/script&gt; ,   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -387,7 +548,7 @@
     &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; \lim_{n \to \infty} \frac{n2^n}{e^n} \approx  \lim_{n \to \infty} \frac{\ln n2^n}{\ln e^n} = \lim_{n \to \infty} \frac{\ln n + n\ln 2}{n} = \lim_{n \to \infty} (\frac{\ln n}{n} + \ln 2) \approx \lim_{n \to \infty} \frac{\ln n}{n} = 0 &lt;/script&gt; ;  &lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{(\lg n)^{\lg n}}{(3/2)^n} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n \lg (3/2)} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n} = \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{\sqrt{n}\sqrt{n}} \le \lim_{n \to \infty} \frac{(\lg n)^2}{\sqrt{n}\sqrt{n}} \approx \lim_{n \to \infty} \frac{\lg n}{\sqrt{n}} \approx \lim_{n \to \infty} \frac{2\lg \lg n}{1/2 \lg n} = \lim_{n \to \infty} \frac{4\lg \lg n}{\lg n} = 0 &lt;/script&gt;  ; &lt;/p&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} \frac{(\lg n)^{\lg n}}{(3/2)^n} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n \lg (3/2)} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n} \le \lim_{n \to \infty} \frac{(\lg n)^2}{n} \approx \lim_{n \to \infty} \frac{2\lg \lg n}{\lg n} \approx \lim_{n \to \infty} \frac{\lg \lg n}{\lg n} \approx \lim_{n \to \infty} \frac{\lg n}{n} = 0 &lt;/script&gt;  ; &lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}&lt;/script&gt; ;&lt;/p&gt;

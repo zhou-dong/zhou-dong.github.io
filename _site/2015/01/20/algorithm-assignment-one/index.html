@@ -183,7 +183,7 @@
   <li><strong>Translated from book by me(Dong Zhou)</strong>:  </li>
   <li><script type="math/tex">\lg^* 2^{2^0} = 1 </script> ,  </li>
   <li><script type="math/tex">\lg^* 2^{2^1} = 2 </script> ,  </li>
-  <li><script type="math/tex">\lg^* 2^{2^2} = 4 </script> ,</li>
+  <li><script type="math/tex">\lg^* 2^{2^2} = 3 </script> ,</li>
   <li><script type="math/tex">\lg^* 2^{2^4} = 4 </script> ,</li>
   <li><script type="math/tex">\lg^* 2^{2^{16}} = 5 </script> .</li>
 </ul>
@@ -209,19 +209,19 @@
       <td style="text-align: center">1</td>
       <td style="text-align: left"><script type="math/tex"> T(n) = 2T(n/2) + 1 </script></td>
       <td style="text-align: center">=</td>
-      <td><script type="math/tex"> 2^1T(n/2^1) + \log_{2}0 </script></td>
+      <td><script type="math/tex"> 2^1T(n/2^1) + 1 </script></td>
     </tr>
     <tr>
       <td style="text-align: center">2</td>
       <td style="text-align: left"><script type="math/tex"> T(n) = 4T(n/4) + 1 + 1 </script></td>
       <td style="text-align: center">=</td>
-      <td><script type="math/tex"> 2^2T(n/2^2) + \log_{2}1 </script></td>
+      <td><script type="math/tex"> 2^2T(n/2^2) + 2 </script></td>
     </tr>
     <tr>
       <td style="text-align: center">3</td>
       <td style="text-align: left"><script type="math/tex"> T(n) = 8T(n/8) + 1 + 1 + 1 </script></td>
       <td style="text-align: center">=</td>
-      <td><script type="math/tex"> 2^3T(n/2^3) + \log_{2}2 </script></td>
+      <td><script type="math/tex"> 2^3T(n/2^3) + 3 </script></td>
     </tr>
     <tr>
       <td style="text-align: center">4</td>
@@ -231,15 +231,15 @@
     </tr>
     <tr>
       <td style="text-align: center">5</td>
-      <td style="text-align: left"><script type="math/tex"> T(n) = nT(n/n) + \log_{2}(n-1) </script></td>
+      <td style="text-align: left"><script type="math/tex"> T(n) = nT(n/n) + \log_{2} n </script></td>
       <td style="text-align: center">=</td>
-      <td><script type="math/tex"> 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2}(n-1) </script></td>
+      <td><script type="math/tex"> 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2} n </script></td>
     </tr>
   </tbody>
 </table>
 
 <h5 id="step1--step2---cdots---step5-">Step1 + Step2 + <script type="math/tex"> \cdots </script> + Step5 :</h5>
-<p><script type="math/tex"> T(n) = \sum_{i=1}^{\log_{2}n}2^iT(n/2^i)  + \sum_{i=0}^{\log_{2}(n-1)}i </script></p>
+<p><script type="math/tex"> T(n) = nT(1)  + \sum_{i=0}^{\log_{2}n} i </script></p>
 
 <h4 id="assignment-one">Assignment One:</h4>
 <p><strong>Indicate, for each pair of expressions(A, B) in the table below, whether A is <script type="math/tex"> O, o, \Omega, \omega \ or \ \Theta </script> of B. Assume that <script type="math/tex"> k \geq 1, \epsilon > 0, and \ c > 1 </script> are constants. Your answer should be in the form of the table with “yes” or “no” written in each box.</strong></p>
@@ -346,7 +346,7 @@
 <h5 id="e-compare-between--nlg-c--adn---clg-n-">e. compare between <script type="math/tex"> n^{\lg c} </script> adn  <script type="math/tex"> c^{\lg n} </script></h5>
 <ul>
   <li>assume <script type="math/tex"> n^{\lg c} = c^{\lg n} </script> both side lg  </li>
-  <li><script type="math/tex">(\lg n)^{\lg c}  = (\lg c)^{\lg n}</script>  ,</li>
+  <li><script type="math/tex">\lg n^{\lg c}  = \lg c^{\lg n}</script>  ,</li>
   <li><script type="math/tex">(\lg c)(\lg n) = (\lg n)(\lg c)</script> ,   </li>
 </ul>
 
@@ -510,7 +510,7 @@
     <p><script type="math/tex"> \lim_{n \to \infty} \frac{n2^n}{e^n} \approx  \lim_{n \to \infty} \frac{\ln n2^n}{\ln e^n} = \lim_{n \to \infty} \frac{\ln n + n\ln 2}{n} = \lim_{n \to \infty} (\frac{\ln n}{n} + \ln 2) \approx \lim_{n \to \infty} \frac{\ln n}{n} = 0 </script> ;  </p>
   </li>
   <li>
-    <p><script type="math/tex">\lim_{n \to \infty} \frac{(\lg n)^{\lg n}}{(3/2)^n} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n \lg (3/2)} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n} = \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{\sqrt{n}\sqrt{n}} \le \lim_{n \to \infty} \frac{(\lg n)^2}{\sqrt{n}\sqrt{n}} \approx \lim_{n \to \infty} \frac{\lg n}{\sqrt{n}} \approx \lim_{n \to \infty} \frac{2\lg \lg n}{1/2 \lg n} = \lim_{n \to \infty} \frac{4\lg \lg n}{\lg n} = 0 </script>  ; </p>
+    <p><script type="math/tex">\lim_{n \to \infty} \frac{(\lg n)^{\lg n}}{(3/2)^n} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n \lg (3/2)} \approx \lim_{n \to \infty} \frac{\lg n(\lg \lg n)}{n} \le \lim_{n \to \infty} \frac{(\lg n)^2}{n} \approx \lim_{n \to \infty} \frac{2\lg \lg n}{\lg n} \approx \lim_{n \to \infty} \frac{\lg \lg n}{\lg n} \approx \lim_{n \to \infty} \frac{\lg n}{n} = 0 </script>  ; </p>
   </li>
   <li>
     <p><script type="math/tex"> n^{\lg \lg n} = (2^{\lg n })^{\lg \lg n} = 2^{\lg n \lg \lg n} = (2^{\lg \lg n})^{\lg n} = (\lg n)^{\lg n}</script> ;</p>

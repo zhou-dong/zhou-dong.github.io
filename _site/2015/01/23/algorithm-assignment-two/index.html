@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Archive</title>
+    <title>Algorithm Assignment Two</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -77,7 +77,7 @@
     
       
       	
-      	<li class="active"><a href="/archive.html" class="active">Archive</a></li>
+      	<li><a href="/archive.html">Archive</a></li>
       	
       
     
@@ -146,282 +146,86 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Archive </h1>
+  <h1>Algorithm Assignment Two  <small>Class 5549, Master Theorem</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
+<h4 id="master-theorem">Master Theorem</h4>
 
+<p>Let a <script type="math/tex"> \ge </script> 1 and b &gt; 1 be constants, let f(n) be a function. <code>T(n) = aT(n/b) + f(n)</code> ;  </p>
 
+<ol>
+  <li>If <script type="math/tex"> f(n) = O(n^{\log_{b} a - \epsilon}) </script> for some constant <script type="math/tex"> \epsilon > 0 </script>, then <script type="math/tex"> T(n) = \Theta(n^{\log_{b} a })</script>.  </li>
+  <li>If <script type="math/tex"> f(n) = \Theta(n^{\log_{b} a}) </script> then <script type="math/tex"> T(n) = \Theta(n^{\log_{b} a} \lg n) </script>.        </li>
+  <li>If <script type="math/tex"> f(n) = \Omega(n^{\log_{b} a + \epsilon}) </script> for some constant <script type="math/tex"> \epsilon > 0 </script>, and if <script type="math/tex"> af(n/b) \le cf(n)</script> for some constant c &lt; 1 and all sufficiently large n, then <script type="math/tex"> T(n) = \Theta(f(n))</script>.    </li>
+</ol>
 
+<h4 id="recurrence-examples">4-1 Recurrence examples</h4>
+<p>Give asymptotic upper and lower bounds for T(n) in each of the following recurrences. Assume that T(n) is constant for n <script type="math/tex"> \le </script> 2. Make your bounds as tight as possible, and justify your answers.</p>
 
+<h5 id="a--tn----2tn2--n4-">a. <script type="math/tex"> T(n)  =  2T(n/2) + n^4 </script></h5>
+<ol>
+  <li><script type="math/tex"> a = 2, \ b = 2, \ f(n) = n^4 </script> ,</li>
+  <li><script type="math/tex"> n^{\log_{b} a} = n^{\log_{2} 2} = n^1 </script> ,  </li>
+  <li><script type="math/tex"> f(n) = n^4 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{1 + 3}) </script> ,  </li>
+  <li><script type="math/tex"> \epsilon = 3  </script> ,  </li>
+  <li><script type="math/tex"> \therefore \  T(n) = \Theta(n^4) </script> .  </li>
+</ol>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2015</h2>
-      <h3>January</h3>
-      <ul>
-    
-  
-    <li><span>January 23, 2015</span> &raquo; <a href="/2015/01/23/algorithm-assignment-two">Algorithm Assignment Two</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January 20, 2015</span> &raquo; <a href="/2015/01/20/function-merge">Function Merge</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January 20, 2015</span> &raquo; <a href="/2015/01/20/algorithm-assignment-one">Algorithm Assignment One</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January  7, 2015</span> &raquo; <a href="/2015/01/07/bases-and-dimension">Bases and Dimension</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January  6, 2015</span> &raquo; <a href="/2015/01/06/linear-combination">Gauss Elimination</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January  4, 2015</span> &raquo; <a href="/2015/01/04/intro-vector-space">Introduction of Linear Algebra and Vector space</a></li>
-  
-    
-      
-        </ul>
-        <h2>2014</h2>
-        <h3>December</h3>
-        <ul>
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December 25, 2014</span> &raquo; <a href="/2014/12/25/merry-christmas">I am back</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December 24, 2014</span> &raquo; <a href="/2014/12/24/stack-in-dalls">Stuck in Dallas</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December 23, 2014</span> &raquo; <a href="/2014/12/23/transfer-chicago">First day in USA</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December  4, 2014</span> &raquo; <a href="/2014/12/04/totem-router-shell">Shell of Totem Router</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December  4, 2014</span> &raquo; <a href="/2014/12/04/totem-appserver-shell">Shell of Totem Appserver</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December  4, 2014</span> &raquo; <a href="/2014/12/04/beanstalk-shell">Shell of Totem Beanstalk</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>December  2, 2014</span> &raquo; <a href="/2014/12/02/machinel-learning">Machine Learning</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>November</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 30, 2014</span> &raquo; <a href="/2014/11/30/web-technology">网站技术点</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 30, 2014</span> &raquo; <a href="/2014/11/30/english-vocabulary">English Vocabulary Thinking</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 28, 2014</span> &raquo; <a href="/2014/11/28/study-list">Study List</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>November 27, 2014</span> &raquo; <a href="/2014/11/27/book-list">我的书架</a></li>
-  
-    
-      </ul>
-    
-  
+<h5 id="b--tn----tn710--n-">b. <script type="math/tex"> T(n)  =  T(n7/10) + n </script></h5>
+<ol>
+  <li><script type="math/tex">  a = 1, \ b = 10/7, \ f(n) = n </script> ,  </li>
+  <li><script type="math/tex">  n^{\log_{b} a} = n^{\log_{10/7} 1} = n^{0} </script> ,  </li>
+  <li><script type="math/tex">  f(n) = n^1 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{0 + 1}) </script> ,  </li>
+  <li><script type="math/tex">  \epsilon = 1 </script> ,  </li>
+  <li><script type="math/tex">  \therefore \  T(n) = \Theta(n) </script> .  </li>
+</ol>
+
+<h5 id="c--tn----16tn4--n2-">c. <script type="math/tex"> T(n)  =  16T(n/4) + n^2 </script></h5>
+<ol>
+  <li><script type="math/tex">  a = 16, \ b = 4, \ f(n) = n^2 </script> ;  </li>
+  <li><script type="math/tex">  n^{\log_{b} a} = n^{\log_{4} 16} = n^2 </script> ;  </li>
+  <li><script type="math/tex">  f(n) = n^2 </script>  ; </li>
+  <li><script type="math/tex">  \therefore T(n) = \Theta(n^2 \lg n) </script>. </li>
+</ol>
+
+<h5 id="d--tn----7tn3--n2-">d. <script type="math/tex"> T(n)  =  7T(n/3) + n^2 </script></h5>
+<ol>
+  <li><script type="math/tex">  a = 7, \ b = 3, \ f(n) = n^2 </script> ;  </li>
+  <li><script type="math/tex">  n^{\log_{b} a} = n^{\log_{3} 7} = n^{1.772} </script> ;  </li>
+  <li><script type="math/tex">  f(n) = n^2 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{1.772 + 0.228}) </script> ;   </li>
+  <li><script type="math/tex">  \epsilon = 0.228 </script> ;  </li>
+  <li><script type="math/tex">  \therefore T(n) = \Theta(n^2) </script> .  </li>
+</ol>
+
+<h5 id="e--tn----7tn2--n2-">e. <script type="math/tex"> T(n)  =  7T(n/2) + n^2 </script></h5>
+<ol>
+  <li><script type="math/tex">  a = 7, \ b = 2, \ f(n) = n^2 </script> ;  </li>
+  <li><script type="math/tex">  n^{\log_{b} a} = n^{\log_{2} 7} = n^{2.8074} </script> ;  </li>
+  <li><script type="math/tex">  f(n) = n^2 = \Omega(n^{\log_{b}a - \epsilon})  = \Omega(n^{2.8074 - 0.8074}) </script> ;  </li>
+  <li><script type="math/tex">  \epsilon = 0.8074 </script> ;  </li>
+  <li><script type="math/tex">  \therefore T(n) = \Theta(n^{\log_{2} 7}) </script> .  </li>
+</ol>
+
+<h5 id="f--tn----2tn4--sqrtn-">f. <script type="math/tex"> T(n)  =  2T(n/4) + \sqrt{n} </script></h5>
+<ol>
+  <li><script type="math/tex">  a = 2, \ b = 4, \ f(n) = 1/2 </script> ;  </li>
+  <li><script type="math/tex">  n^{\log_{b} a} = n^{\log_{4} 2} = n^{1/2} </script> ;  </li>
+  <li><script type="math/tex">  f(n) = n^{1/2} </script> ;  </li>
+  <li><script type="math/tex">  \therefore T(n) = \Theta(n^{1/2} \lg n) = \Theta(\sqrt{n} \lg n) </script> .  </li>
+</ol>
+
+<h5 id="g--tn----tn-2--n2-">g. <script type="math/tex"> T(n)  =  T(n-2) + n^2 </script></h5>
+<p><script type="math/tex">
+\ \ \ \ T(n)  =  T(n-2) + n^2  \\
+\ \ \ \ \ \ \ \ \ \ \ = T(n-4) + (n-2)^2 + n^2 \\
+\ \ \ \ \ \ \ \ \ \ \ = T(n-6) + (n-4)^2 + (n-2)^2 + n^2 \\
+\ \ \ \ \ \ \ \ \ \ \ = T(n-2k) + \sum_{i=0}^{2k-1} (n-2i)^2 ; \ \ (k=n/2) \\
+\ \ \ \ \ \ \ \ \ \ \ = T(0) + \sum_{i=0}^{n/2-1} (n^2-4ni-4i^2)^2 \\
+\ \ \ \ \therefore T(n) = \Theta(n^3)
+</script></p>
 
 
   </div>

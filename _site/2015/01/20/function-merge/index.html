@@ -146,14 +146,91 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Function Merge </h1>
+  <h1>Function Merge  <small>Ordered Basis, Matrix Repretation,</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
+<h4 id="ordered-basis">Ordered Basis</h4>
+<p><script type="math/tex"> \beta </script> is an <code>ordered basis</code> for V, which means that: 
+<script type="math/tex"> \beta = \{u_1, u_2, u_3, \cdots , u_n\}  \ne \beta'\{u_2, u_3, u_1, \cdots, u_n\} </script></p>
+
+<h5 id="example-1">Example 1:</h5>
+<p><script type="math/tex"> 
+ V = P_2(R) \\ 
+ \beta = \{1,x,x^2\} \\
+ \beta' = \{1, x^2,x\} \\
+ v = -2 + 3x + x^2 \in P_2(R) \\
+ [v]_{\beta} = \begin{pmatrix} -2 \\ 3 \\1 \end{pmatrix} \\
+ [v]_{\beta'} = \begin{pmatrix} -2 \\ 1 \\ 3 \end{pmatrix}
+</script></p>
+
+<h4 id="matrix-repretation">Matrix Repretation</h4>
+<p><script type="math/tex">
+ T(v_j) = \sum_{i=1}^m a_{ij}v_i, \ \ j=1, 2, \cdots, n
+</script></p>
+
+<h5 id="example-2">Example 2:</h5>
+<p><script type="math/tex"> 
+  T: \ \ P_2(R) \rightarrow R \ \  and \ \ T(f(x)) = f(2) \\ 
+  f(x) = x^2 \\
+  T(x) = 4
+</script>  </p>
+
+<h4 id="function--function">Function + Function</h4>
+<p><script type="math/tex">
+(U +T)_x = (U)_x + (T)_x \\
+U + T = T + U \\
+(U + T)(x) = (T + U)(x)
+</script></p>
+
+<h4 id="function--times---r-">Function <script type="math/tex"> \times  \ R </script></h4>
+<p><script type="math/tex">
+(\alpha T)(x) = \alpha T(x)
+</script></p>
+
+<h4 id="function-merge">Function Merge</h4>
+<p><script type="math/tex">
+ U \circ T = UT \\
+</script></p>
+
+<h5 id="definition">Definition:</h5>
+<p><script type="math/tex">
+ X \rightarrow  T(x) \rightarrow U(T(x))\\
+</script></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">V</th>
+      <th style="text-align: center"><script type="math/tex"> \rightarrow </script></th>
+      <th style="text-align: center">W</th>
+      <th style="text-align: center"><script type="math/tex">  \rightarrow </script></th>
+      <th style="text-align: center">Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">U</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><script type="math/tex"> x</script></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"><script type="math/tex"> T(x)</script></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"><script type="math/tex">U(T(x))</script></td>
+    </tr>
+  </tbody>
+</table>
+
 <h5 id="two-funcitons-can-not-be-multiply-with-each-other-but-can-be-merge">Two funcitons can not be multiply with each other, but can be merge.</h5>
 
+<h4 id="i-wanna-have-a-test-in-here">I wanna have a test in here!</h4>
 
   </div>
 </div>

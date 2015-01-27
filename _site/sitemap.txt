@@ -9,6 +9,7 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/01/23/algorithm-assignment-two
 http://zhou-dong.github.io/2015/01/20/function-merge
 http://zhou-dong.github.io/2015/01/20/algorithm-assignment-one
 http://zhou-dong.github.io/2015/01/07/bases-and-dimension
