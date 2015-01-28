@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Bases and Dimension 
+title: Basis and Dimension 
 tagline:  
 ---
 {% include JB/setup %}
