@@ -44,13 +44,14 @@ $$
 $$
 
 #### Function Merge
+**Funcitons can not multiply with each other, they can merge.**  
 $$
- U \circ T = UT \\
+ U \circ T = UT
 $$
 
 ##### Definition:  
 $$
- X \rightarrow  T(x) \rightarrow U(T(x))\\
+ X \rightarrow  T(x) \rightarrow U(T(x))
 $$
 
 | V | $$ \rightarrow $$ | W | $$  \rightarrow $$ | Z |
@@ -58,6 +59,9 @@ $$
 |  | T | | U | |
 |$$ x$$ | |$$ T(x)$$| |$$U(T(x))$$|
 
-##### Two funcitons can not be multiply with each other, but can be merge.
-
-#### I wanna have a test in here!
+##### Some Equation  
+$$
+(T_1 + T_2)U = T_1U + T_2U \\
+T(U_1 + U_2) = TU_1 + TU_2 \\
+(TU_1)U_2 = T(U_1U_2)
+$$
