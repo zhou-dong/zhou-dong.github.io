@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Function Merge 
-tagline: Ordered Basis, Matrix Repretation,  
+tagline: Ordered Basis, Matrix Repretation  
 ---
 {% include JB/setup %}
 
