@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Matrices
-tagline: Matrix Transpose
+tagline: Matrix Multiply, Matrix Transpose 
 ---
 {% include JB/setup %}
 
@@ -34,7 +34,7 @@ $$
 I_n = \begin{pmatrix} 1 & \cdots & 1 \\ \vdots & \ddots & \vdots \\ 1 &  \cdots & 1 \end{pmatrix}_{n \times n}
 $$
 
-#### Matrix tanspose
+#### Matrix tanspose:  
 $$
 A = \begin{pmatrix} 1 & 3 & 5 \\ 4 & 2 & 7 \end{pmatrix}_{2 \times 3} \\
 A^t = \begin{pmatrix} 1 & 4 \\ 3 & 2 \\ 5 & 7 \end{pmatrix}_{3 \times 2}
