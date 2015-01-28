@@ -31,7 +31,7 @@ $$
 
 #### Square Matrix:  
 $$
-I_n = \begin{pmatrix} 1 & \cdots & 1 \\ \vdots & \ddots & \vdots \\ 1 &  \cdots & 1 \end{pmatrix}_{n \times n}
+I_n = \begin{pmatrix} 1 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 &  \cdots & 1 \end{pmatrix}_{n \times n}
 $$
 
 #### Matrix tanspose:  
