@@ -26,7 +26,7 @@ Let a $$ \ge $$ 1 and b > 1 be constants, let f(n) be a function. `T(n) = aT(n/b
 2. If $$ f(n) = \Theta(n^{\log_{b} a}) $$ then $$ T(n) = \Theta(n^{\log_{b} a} \lg n) $$.  
 3. If $$ f(n) = \Omega(n^{\log_{b} a + \epsilon}) $$ for some constant $$ \epsilon > 0 $$, and if $$ af(n/b) \le cf(n)$$ for some constant c < 1 and all sufficiently large n, then $$ T(n) = \Theta(f(n))$$.  
 
-#### Evaluation with Mater Theorem:  
+#### Evaluation with Master Theorem:  
 
 - The most balance cast: pivot is the middle large of the array
 - Prove: $$
