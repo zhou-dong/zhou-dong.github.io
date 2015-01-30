@@ -20,7 +20,7 @@ tagline: QuickSort, Master Theorem
  - QuickSort every time change two place of elements meanwhile fixed one position of the element, it is brilliant.
 
 #### Master Theorem:  
-Let a $$ \ge $$ 1 and b > 1 be constants, let f(n) be a function. `T(n) = aT(n/b) + f(n)` ;    
+Let a $$ \ge $$ 1 and b > 1 be constants, let f(n) be a function. `T(n) = aT(n/b) + f(n)` ;  
 
 1. If $$ f(n) = O(n^{\log_{b} a - \epsilon}) $$ for some constant $$ \epsilon > 0 $$, then $$ T(n) = \Theta(n^{\log_{b} a })$$.  
 2. If $$ f(n) = \Theta(n^{\log_{b} a}) $$ then $$ T(n) = \Theta(n^{\log_{b} a} \lg n) $$.  
