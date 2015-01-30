@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>WELCOME TO BlOG OF DONG ZHOU</title>
+    <title>QuickSort Performance</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,41 +146,68 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>WELCOME TO BlOG OF DONG ZHOU </h1>
+  <h1>QuickSort Performance  <small>QuickSort, Master Theorem</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
+<h4 id="description-of-quicksort">Description of QuickSort:</h4>
 <ol>
-  <li>
-    <h3 id="just-do-it-it-will-pay">Just do it, it will pay.</h3>
-  </li>
-  <li>
-    <h3 id="section">但行好事，莫问前程。</h3>
-  </li>
-  <li>
-    <h3 id="you-can-either-travel-or-read-but-either-your-body-or-soul-must-be-on-the-way">You can either travel or read, but either your body or soul must be on the way.</h3>
-  </li>
-  <li>
-    <h3 id="section-1">要么旅行，要么读书，身体和灵魂，必须有一个在路上。</h3>
-  </li>
-  <li>
-    <h3 id="section-2">生活不止眼前的苟且，还有诗和远方。</h3>
-  </li>
-  <li>
-    <h3 id="section-3">努力就是让你知道，自己到底有没有运气。</h3>
-  </li>
-  <li>
-    <h3 id="section-4">越努力，越幸运。</h3>
-  </li>
-  <li>
-    <h3 id="a-schedule-a-day-keeps-stree-away">A schedule a day keeps stree away.</h3>
-  </li>
-  <li>
-    <h3 id="section-5">手中有书，心里有光。</h3>
-  </li>
+  <li>Find a pivot.</li>
+  <li>Scan the elements of array from the end, and compare each with pivot if it is bigger than pivot stop remember element.</li>
+  <li>Scan the elements of array from the begin, and compare each with pivot if it is smaller than pivot stop and remember element.</li>
+  <li>Switch two elements of step 2 and step 3.</li>
+  <li>keep doing step 2-4 until pivot in the middle, which means all the elements in the left of pivot smaller than pivot and all the elements in the right side of pivot bigger than pivot.</li>
+  <li>Recursive doing the 1-5, until all the number sorted.</li>
 </ol>
+
+<h4 id="summary">Summary:</h4>
+<ul>
+  <li>It is kind of <code>divide and conquer</code> method.</li>
+  <li>I think it is similar with ShellSort but more effiency.</li>
+  <li>ShellSort every time change two place of elements, so it is better than sort one element by one time.</li>
+  <li>QuickSort every time change two place of elements meanwhile fixed one position of the element, it is brilliant.</li>
+</ul>
+
+<h4 id="master-theorem">Master Theorem:</h4>
+<p>Let a <script type="math/tex"> \ge </script> 1 and b &gt; 1 be constants, let f(n) be a function. <code>T(n) = aT(n/b) + f(n)</code> ;    </p>
+
+<ol>
+  <li>If <script type="math/tex"> f(n) = O(n^{\log_{b} a - \epsilon}) </script> for some constant <script type="math/tex"> \epsilon > 0 </script>, then <script type="math/tex"> T(n) = \Theta(n^{\log_{b} a })</script>.  </li>
+  <li>If <script type="math/tex"> f(n) = \Theta(n^{\log_{b} a}) </script> then <script type="math/tex"> T(n) = \Theta(n^{\log_{b} a} \lg n) </script>.  </li>
+  <li>If <script type="math/tex"> f(n) = \Omega(n^{\log_{b} a + \epsilon}) </script> for some constant <script type="math/tex"> \epsilon > 0 </script>, and if <script type="math/tex"> af(n/b) \le cf(n)</script> for some constant c &lt; 1 and all sufficiently large n, then <script type="math/tex"> T(n) = \Theta(f(n))</script>.  </li>
+</ol>
+
+<h4 id="evaluation-with-master-theorem">Evaluation with Master Theorem:</h4>
+
+<ul>
+  <li>The most balance cast: pivot is the middle large of the array</li>
+  <li>
+    <p>Prove: <script type="math/tex">
+   T(n) = aT(n/b) + f(n) \\ 
+   a = 2 \\
+   b = 2 \\
+   f(n) = n \\
+   T(n) = 2T(n/2) + n \\
+   n^{\log_b a} = n^{\log_2 2} = n ^1 = n \\
+   f(n) = n^{\log_b a} \\
+   T(n) = \Theta(n \log_n)
+</script></p>
+  </li>
+  <li>Already sorted cast: pivot is the smallest or biggest of the array</li>
+  <li>Prove: <script type="math/tex">
+   T(n) = T(n-1) + f(n) \\
+   T(n) = O(n^2)
+</script></li>
+</ul>
+
+<h4 id="improvement">Improvement:</h4>
+<ul>
+  <li>Every time choose there elments.</li>
+  <li>Choose middle one to be the pivot.</li>
+  <li>Just can improve, but can not avoid worst cast.</li>
+</ul>
 
   </div>
 </div>

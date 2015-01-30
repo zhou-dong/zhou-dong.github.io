@@ -9,6 +9,10 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/01/29/heapsort-performance
+http://zhou-dong.github.io/2015/01/28/quicksort-performance
+http://zhou-dong.github.io/2015/01/28/invertible-matrix
+http://zhou-dong.github.io/2015/01/27/matrix-mutiply
 http://zhou-dong.github.io/2015/01/23/algorithm-assignment-two
 http://zhou-dong.github.io/2015/01/20/function-merge
 http://zhou-dong.github.io/2015/01/20/algorithm-assignment-one

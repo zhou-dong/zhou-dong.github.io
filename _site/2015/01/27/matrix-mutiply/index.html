@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>WELCOME TO BlOG OF DONG ZHOU</title>
+    <title>Matrices</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,41 +146,49 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>WELCOME TO BlOG OF DONG ZHOU </h1>
+  <h1>Matrices  <small>Matrix Multiply, Matrix Transpose</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<ol>
-  <li>
-    <h3 id="just-do-it-it-will-pay">Just do it, it will pay.</h3>
-  </li>
-  <li>
-    <h3 id="section">但行好事，莫问前程。</h3>
-  </li>
-  <li>
-    <h3 id="you-can-either-travel-or-read-but-either-your-body-or-soul-must-be-on-the-way">You can either travel or read, but either your body or soul must be on the way.</h3>
-  </li>
-  <li>
-    <h3 id="section-1">要么旅行，要么读书，身体和灵魂，必须有一个在路上。</h3>
-  </li>
-  <li>
-    <h3 id="section-2">生活不止眼前的苟且，还有诗和远方。</h3>
-  </li>
-  <li>
-    <h3 id="section-3">努力就是让你知道，自己到底有没有运气。</h3>
-  </li>
-  <li>
-    <h3 id="section-4">越努力，越幸运。</h3>
-  </li>
-  <li>
-    <h3 id="a-schedule-a-day-keeps-stree-away">A schedule a day keeps stree away.</h3>
-  </li>
-  <li>
-    <h3 id="section-5">手中有书，心里有光。</h3>
-  </li>
-</ol>
+<h4 id="definition">Definition:</h4>
+<p><script type="math/tex">
+  A = (A_{ij})_{mn} \\
+  B = (B_{ij})_{np} \\
+  AB = C = (C_{ij})_{mp} \\
+  C_{ij} = \sum_{k=1}^n A_{ik}B_{kj} \  (A的第i行和B的第j列的内积)  
+</script>  </p>
+
+<h4 id="example">Example:</h4>
+<p><script type="math/tex">% <![CDATA[
+
+ A = \begin{pmatrix} 1 & 3 & 5 \\ 4 & 2 & 7 \end{pmatrix}_{2 \times 3} \\
+ B = \begin{pmatrix} 2 & 8 & 7 \\ 3 & 6 & 12 \\ 9 & 4 & 10 \end{pmatrix}_{3 \times 3} \\
+ AB = \begin{pmatrix}56 & 46 & 93 \\ 77 & 72 & 122 \end{pmatrix}_{2 \times 3}
+ %]]></script></p>
+
+<h4 id="properties-of-the-product-of-the-matrix">Properties of the product of the Matrix:</h4>
+<p><script type="math/tex">
+(AB)^t = B^tA^t \\
+A(B_1 + B_2) = AB_1 + AB_2 \\
+(A_1 + A_2)B = A_1B + A_2B \\
+\alpha(AB) = A \alpha B = AB \alpha \\
+I_mA_{mn} = A_{mn}I_n = A
+</script></p>
+
+<h4 id="square-matrix">Square Matrix:</h4>
+<p><script type="math/tex">% <![CDATA[
+
+I_n = \begin{pmatrix} 1 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 &  \cdots & 1 \end{pmatrix}_{n \times n}
+ %]]></script></p>
+
+<h4 id="matrix-tanspose">Matrix tanspose:</h4>
+<p><script type="math/tex">% <![CDATA[
+
+A = \begin{pmatrix} 1 & 3 & 5 \\ 4 & 2 & 7 \end{pmatrix}_{2 \times 3} \\
+A^t = \begin{pmatrix} 1 & 4 \\ 3 & 2 \\ 5 & 7 \end{pmatrix}_{3 \times 2}
+ %]]></script></p>
 
   </div>
 </div>

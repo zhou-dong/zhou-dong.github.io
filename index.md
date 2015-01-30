@@ -22,6 +22,3 @@ tagline:
 8. ### A schedule a day keeps stree away.
 
 9. ### 手中有书，心里有光。
-
-
-10. #### Nice to meet you!

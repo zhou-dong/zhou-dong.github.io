@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>WELCOME TO BlOG OF DONG ZHOU</title>
+    <title>HeapSort Performance</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,40 +146,36 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>WELCOME TO BlOG OF DONG ZHOU </h1>
+  <h1>HeapSort Performance  <small>HeapSort, Master Theorem</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
+<h4 id="steps-of-heapsort">Steps of HeapSort:</h4>
 <ol>
-  <li>
-    <h3 id="just-do-it-it-will-pay">Just do it, it will pay.</h3>
-  </li>
-  <li>
-    <h3 id="section">但行好事，莫问前程。</h3>
-  </li>
-  <li>
-    <h3 id="you-can-either-travel-or-read-but-either-your-body-or-soul-must-be-on-the-way">You can either travel or read, but either your body or soul must be on the way.</h3>
-  </li>
-  <li>
-    <h3 id="section-1">要么旅行，要么读书，身体和灵魂，必须有一个在路上。</h3>
-  </li>
-  <li>
-    <h3 id="section-2">生活不止眼前的苟且，还有诗和远方。</h3>
-  </li>
-  <li>
-    <h3 id="section-3">努力就是让你知道，自己到底有没有运气。</h3>
-  </li>
-  <li>
-    <h3 id="section-4">越努力，越幸运。</h3>
-  </li>
-  <li>
-    <h3 id="a-schedule-a-day-keeps-stree-away">A schedule a day keeps stree away.</h3>
-  </li>
-  <li>
-    <h3 id="section-5">手中有书，心里有光。</h3>
-  </li>
+  <li>Create a CompleteBinaryTree Meanwhile heapify the tree.</li>
+  <li>Remove the root from the tree.</li>
+  <li>Switch the last leaf to the root.</li>
+  <li>Heapify the tree.</li>
+  <li>Recurisive the steps from 2 to 4 until tree is empty.</li>
+</ol>
+
+<h4 id="master-theorem">Master Theorem</h4>
+<p>Let a <script type="math/tex"> \ge </script> 1 and b &gt; 1 be constants, let f(n) be a function. <code>T(n) = aT(n/b) + f(n)</code> ;</p>
+
+<ol>
+  <li>If <script type="math/tex"> f(n) = O(n^{\log_{b} a - \epsilon}) </script> for some constant <script type="math/tex"> \epsilon > 0 </script>, then <script type="math/tex"> T(n) = \Theta(n^{\log_{b} a })</script>.</li>
+  <li>If <script type="math/tex"> f(n) = \Theta(n^{\log_{b} a}) </script> then <script type="math/tex"> T(n) = \Theta(n^{\log_{b} a} \lg n) </script>.</li>
+  <li>If <script type="math/tex"> f(n) = \Omega(n^{\log_{b} a + \epsilon}) </script> for some constant <script type="math/tex"> \epsilon > 0 </script>, and if <script type="math/tex"> af(n/b) \le cf(n)</script> for some constant c &lt; 1 and all sufficiently large n, then <script type="math/tex"> T(n) = \Theta(f(n))</script>.</li>
+</ol>
+
+<h4 id="evaluation-with-master-theorem">Evaluation with Master Theorem:</h4>
+<ol>
+  <li>Heapify the n elements tree from the laste leaf will cost steps n.</li>
+  <li>EveryTime change the position from leaf to root will cost steps 1.</li>
+  <li>EveryTime Heapify the tree from root to leaf will cost step <script type="math/tex"> \lg n</script>.</li>
+  <li>Result: <script type="math/tex"> T(n) = \Theta(n \lg n) </script></li>
 </ol>
 
   </div>

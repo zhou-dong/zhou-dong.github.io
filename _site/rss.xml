@@ -5,10 +5,195 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-27T17:27:25-06:00</lastBuildDate>
-        <pubDate>2015-01-27T17:27:25-06:00</pubDate>
+        <lastBuildDate>2015-01-29T20:26:11-06:00</lastBuildDate>
+        <pubDate>2015-01-29T20:26:11-06:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>HeapSort Performance</title>
+                <description>
+&lt;h4 id=&quot;steps-of-heapsort&quot;&gt;Steps of HeapSort:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create a CompleteBinaryTree Meanwhile heapify the tree.&lt;/li&gt;
+  &lt;li&gt;Remove the root from the tree.&lt;/li&gt;
+  &lt;li&gt;Switch the last leaf to the root.&lt;/li&gt;
+  &lt;li&gt;Heapify the tree.&lt;/li&gt;
+  &lt;li&gt;Recurisive the steps from 2 to 4 until tree is empty.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;master-theorem&quot;&gt;Master Theorem&lt;/h4&gt;
+&lt;p&gt;Let a &lt;script type=&quot;math/tex&quot;&gt; \ge &lt;/script&gt; 1 and b &amp;gt; 1 be constants, let f(n) be a function. &lt;code&gt;T(n) = aT(n/b) + f(n)&lt;/code&gt; ;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = O(n^{\log_{b} a - \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a })&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Theta(n^{\log_{b} a}) &lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a} \lg n) &lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Omega(n^{\log_{b} a + \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, and if &lt;script type=&quot;math/tex&quot;&gt; af(n/b) \le cf(n)&lt;/script&gt; for some constant c &amp;lt; 1 and all sufficiently large n, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(f(n))&lt;/script&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;evaluation-with-master-theorem&quot;&gt;Evaluation with Master Theorem:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Heapify the n elements tree from the laste leaf will cost steps n.&lt;/li&gt;
+  &lt;li&gt;EveryTime change the position from leaf to root will cost steps 1.&lt;/li&gt;
+  &lt;li&gt;EveryTime Heapify the tree from root to leaf will cost step &lt;script type=&quot;math/tex&quot;&gt; \lg n&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Result: &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n \lg n) &lt;/script&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/29/heapsort-performance</link>
+                <guid>http://zhou-dong.github.io/2015/01/29/heapsort-performance</guid>
+                <pubDate>2015-01-29T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>QuickSort Performance</title>
+                <description>
+&lt;h4 id=&quot;description-of-quicksort&quot;&gt;Description of QuickSort:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Find a pivot.&lt;/li&gt;
+  &lt;li&gt;Scan the elements of array from the end, and compare each with pivot if it is bigger than pivot stop remember element.&lt;/li&gt;
+  &lt;li&gt;Scan the elements of array from the begin, and compare each with pivot if it is smaller than pivot stop and remember element.&lt;/li&gt;
+  &lt;li&gt;Switch two elements of step 2 and step 3.&lt;/li&gt;
+  &lt;li&gt;keep doing step 2-4 until pivot in the middle, which means all the elements in the left of pivot smaller than pivot and all the elements in the right side of pivot bigger than pivot.&lt;/li&gt;
+  &lt;li&gt;Recursive doing the 1-5, until all the number sorted.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;summary&quot;&gt;Summary:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;It is kind of &lt;code&gt;divide and conquer&lt;/code&gt; method.&lt;/li&gt;
+  &lt;li&gt;I think it is similar with ShellSort but more effiency.&lt;/li&gt;
+  &lt;li&gt;ShellSort every time change two place of elements, so it is better than sort one element by one time.&lt;/li&gt;
+  &lt;li&gt;QuickSort every time change two place of elements meanwhile fixed one position of the element, it is brilliant.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;master-theorem&quot;&gt;Master Theorem:&lt;/h4&gt;
+&lt;p&gt;Let a &lt;script type=&quot;math/tex&quot;&gt; \ge &lt;/script&gt; 1 and b &amp;gt; 1 be constants, let f(n) be a function. &lt;code&gt;T(n) = aT(n/b) + f(n)&lt;/code&gt; ;    &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = O(n^{\log_{b} a - \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a })&lt;/script&gt;.  &lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Theta(n^{\log_{b} a}) &lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a} \lg n) &lt;/script&gt;.  &lt;/li&gt;
+  &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Omega(n^{\log_{b} a + \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, and if &lt;script type=&quot;math/tex&quot;&gt; af(n/b) \le cf(n)&lt;/script&gt; for some constant c &amp;lt; 1 and all sufficiently large n, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(f(n))&lt;/script&gt;.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;evaluation-with-master-theorem&quot;&gt;Evaluation with Master Theorem:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The most balance cast: pivot is the middle large of the array&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Prove: &lt;script type=&quot;math/tex&quot;&gt;
+   T(n) = aT(n/b) + f(n) \\ 
+   a = 2 \\
+   b = 2 \\
+   f(n) = n \\
+   T(n) = 2T(n/2) + n \\
+   n^{\log_b a} = n^{\log_2 2} = n ^1 = n \\
+   f(n) = n^{\log_b a} \\
+   T(n) = \Theta(n \log_n)
+&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Already sorted cast: pivot is the smallest or biggest of the array&lt;/li&gt;
+  &lt;li&gt;Prove: &lt;script type=&quot;math/tex&quot;&gt;
+   T(n) = T(n-1) + f(n) \\
+   T(n) = O(n^2)
+&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;improvement&quot;&gt;Improvement:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Every time choose there elments.&lt;/li&gt;
+  &lt;li&gt;Choose middle one to be the pivot.&lt;/li&gt;
+  &lt;li&gt;Just can improve, but can not avoid worst cast.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/28/quicksort-performance</link>
+                <guid>http://zhou-dong.github.io/2015/01/28/quicksort-performance</guid>
+                <pubDate>2015-01-28T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Invertible Matrix</title>
+                <description>
+&lt;h4 id=&quot;definition&quot;&gt;Definition:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; AB = BA = I_n &lt;/script&gt;  &lt;/p&gt;
+
+&lt;h5 id=&quot;identity-matrix--identity-matrix-is-an-square-matrix-&quot;&gt;Identity Matrix ( Identity Matrix is an Square Matrix ):&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+ I_n = \begin{pmatrix} 1 &amp; \cdots &amp; 0 \\ \vdots &amp; \ddots &amp; \vdots \\ 0 &amp;  \cdots &amp; 1 \end{pmatrix}_{n \times n} \\
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;properties&quot;&gt;Properties:&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+ I_mA_{mn} = A_{mn}I_n = A \\
+ (T_1 T_2)^{-1} = T_2^{-1} T_1^{-1} \\
+ [T^{-1}]_{\gamma}^{\beta} = ([T]_{\gamma}^{\beta})^{-1}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;such-that-&quot;&gt;Such that :&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+ T = I_{V} \\
+ U = I_{W} \\
+ [UT]_{\beta} = [U]_{\gamma}^{\beta} [T]_{\beta}^{\gamma}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;总结：&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;只要是维度相同，那么可以看成是同类的矩阵。&lt;/li&gt;
+  &lt;li&gt;只有方正才有逆矩阵，但不一定所有的方正都有你矩阵。&lt;/li&gt;
+  &lt;li&gt;如果存在逆矩阵，就把这举证叫做可逆矩阵或者非奇异矩阵。&lt;/li&gt;
+  &lt;li&gt;两个矩阵相乘的几何意义可以理解为，把一个矩阵的元素表达在另一个矩阵里。&lt;/li&gt;
+  &lt;li&gt;个人觉得可逆矩阵可以理解为在两个维度相同的矩阵中，用不同的基底把元素表达出来。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/28/invertible-matrix</link>
+                <guid>http://zhou-dong.github.io/2015/01/28/invertible-matrix</guid>
+                <pubDate>2015-01-28T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Matrices</title>
+                <description>
+&lt;h4 id=&quot;definition&quot;&gt;Definition:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+  A = (A_{ij})_{mn} \\
+  B = (B_{ij})_{np} \\
+  AB = C = (C_{ij})_{mp} \\
+  C_{ij} = \sum_{k=1}^n A_{ik}B_{kj} \  (A的第i行和B的第j列的内积)  
+&lt;/script&gt;  &lt;/p&gt;
+
+&lt;h4 id=&quot;example&quot;&gt;Example:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+ A = \begin{pmatrix} 1 &amp; 3 &amp; 5 \\ 4 &amp; 2 &amp; 7 \end{pmatrix}_{2 \times 3} \\
+ B = \begin{pmatrix} 2 &amp; 8 &amp; 7 \\ 3 &amp; 6 &amp; 12 \\ 9 &amp; 4 &amp; 10 \end{pmatrix}_{3 \times 3} \\
+ AB = \begin{pmatrix}56 &amp; 46 &amp; 93 \\ 77 &amp; 72 &amp; 122 \end{pmatrix}_{2 \times 3}
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;properties-of-the-product-of-the-matrix&quot;&gt;Properties of the product of the Matrix:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+(AB)^t = B^tA^t \\
+A(B_1 + B_2) = AB_1 + AB_2 \\
+(A_1 + A_2)B = A_1B + A_2B \\
+\alpha(AB) = A \alpha B = AB \alpha \\
+I_mA_{mn} = A_{mn}I_n = A
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;square-matrix&quot;&gt;Square Matrix:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+I_n = \begin{pmatrix} 1 &amp; \cdots &amp; 0 \\ \vdots &amp; \ddots &amp; \vdots \\ 0 &amp;  \cdots &amp; 1 \end{pmatrix}_{n \times n}
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;matrix-tanspose&quot;&gt;Matrix tanspose:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+A = \begin{pmatrix} 1 &amp; 3 &amp; 5 \\ 4 &amp; 2 &amp; 7 \end{pmatrix}_{2 \times 3} \\
+A^t = \begin{pmatrix} 1 &amp; 4 \\ 3 &amp; 2 \\ 5 &amp; 7 \end{pmatrix}_{3 \times 2}
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/27/matrix-mutiply</link>
+                <guid>http://zhou-dong.github.io/2015/01/27/matrix-mutiply</guid>
+                <pubDate>2015-01-27T00:00:00-06:00</pubDate>
+        </item>
 
         <item>
                 <title>Algorithm Assignment Two</title>
@@ -136,13 +321,14 @@ U + T = T + U \\
 &lt;/script&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;function-merge&quot;&gt;Function Merge&lt;/h4&gt;
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
- U \circ T = UT \\
+&lt;p&gt;&lt;strong&gt;Funcitons can not multiply with each other, they can merge.&lt;/strong&gt;&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;
+ U \circ T = UT
 &lt;/script&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;definition&quot;&gt;Definition:&lt;/h5&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
- X \rightarrow  T(x) \rightarrow U(T(x))\\
+ X \rightarrow  T(x) \rightarrow U(T(x))
 &lt;/script&gt;&lt;/p&gt;
 
 &lt;table&gt;
@@ -173,9 +359,12 @@ U + T = T + U \\
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h5 id=&quot;two-funcitons-can-not-be-multiply-with-each-other-but-can-be-merge&quot;&gt;Two funcitons can not be multiply with each other, but can be merge.&lt;/h5&gt;
-
-&lt;h4 id=&quot;i-wanna-have-a-test-in-here&quot;&gt;I wanna have a test in here!&lt;/h4&gt;
+&lt;h5 id=&quot;some-equation&quot;&gt;Some Equation&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+(T_1 + T_2)U = T_1U + T_2U \\
+T(U_1 + U_2) = TU_1 + TU_2 \\
+(TU_1)U_2 = T(U_1U_2)
+&lt;/script&gt;&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/01/20/function-merge</link>
                 <guid>http://zhou-dong.github.io/2015/01/20/function-merge</guid>
@@ -591,7 +780,7 @@ U + T = T + U \\
         </item>
 
         <item>
-                <title>Bases and Dimension</title>
+                <title>Basis and Dimension</title>
                 <description>
 &lt;h4 id=&quot;linearly-dependent&quot;&gt;Linearly dependent&lt;/h4&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
