@@ -50,3 +50,4 @@ $$
 - Every time choose there elments.
 - Choose middle one to be the pivot.
 - Just can improve, but can not avoid worst cast.
+- Best middle elements, the performance wiill be $$ n \lg n $$.
