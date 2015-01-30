@@ -51,3 +51,5 @@ $$
 - Choose middle one to be the pivot.
 - Just can improve, but can not avoid worst cast.
 - Best middle elements, the performance wiill be $$ n \lg n $$.
+- One method: we can random pick the pivot, so in chance, we can avoid the bad case.
+- There are some methods to find the middle, we will be talk later.
