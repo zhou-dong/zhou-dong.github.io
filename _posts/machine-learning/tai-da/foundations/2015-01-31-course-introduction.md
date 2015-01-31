@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introduction of Machine Learning
+title: Introduction of ML Course
 tagline: Theory Oriented 
 ---
 {% include JB/setup %}
