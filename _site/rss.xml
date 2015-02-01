@@ -5,10 +5,168 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-01-29T20:26:11-06:00</lastBuildDate>
-        <pubDate>2015-01-29T20:26:11-06:00</pubDate>
+        <lastBuildDate>2015-02-01T15:28:44-06:00</lastBuildDate>
+        <pubDate>2015-02-01T15:28:44-06:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Elementary Matrix Operations and Elementary Matrix</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations</link>
+                <guid>http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations</guid>
+                <pubDate>2015-02-01T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Change of Coordinate Matrix</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/01/change-of-coordinate-matrix</link>
+                <guid>http://zhou-dong.github.io/2015/02/01/change-of-coordinate-matrix</guid>
+                <pubDate>2015-02-01T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>What is Machine Learning</title>
+                <description>
+&lt;h4 id=&quot;machine-learning-acquiring-skill&quot;&gt;Machine Learning: acquiring skill&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;observations –&amp;gt; learning –&amp;gt; skill&lt;/li&gt;
+  &lt;li&gt;date –&amp;gt; ML –&amp;gt; skil&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;skill&quot;&gt;Skill:&lt;/h4&gt;
+&lt;p&gt;Improving some performance measure with experience computed from data.&lt;/p&gt;
+
+&lt;h4 id=&quot;use-scenarios&quot;&gt;Use Scenarios:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Can not progam the system manually
+    &lt;ul&gt;
+      &lt;li&gt;Navigation of Mars&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Human can not define the solution easily
+    &lt;ul&gt;
+      &lt;li&gt;speech/visual recognition&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Need rapid decisions than human can not do
+    &lt;ul&gt;
+      &lt;li&gt;high-frequency trading&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;need to be user-oriented in massive scale
+    &lt;ul&gt;
+      &lt;li&gt;consumer-targeted marketing (different consumer use different strategy)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;key-essecnce-of-machine-learning&quot;&gt;Key Essecnce of Machine Learning&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Some &lt;code&gt;underlying pattern&lt;/code&gt; to be learned&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;No&lt;/code&gt; programmable (easy) definition&lt;/li&gt;
+  &lt;li&gt;Somehow there is &lt;code&gt;data&lt;/code&gt; about the pattern&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/31/what-is-machine-learning</link>
+                <guid>http://zhou-dong.github.io/2015/01/31/what-is-machine-learning</guid>
+                <pubDate>2015-01-31T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Machine Learning with Other Fields</title>
+                <description>
+&lt;h5 id=&quot;definition-of-machine-learning&quot;&gt;Definition of Machine Learning:&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Use &lt;code&gt;data&lt;/code&gt; to compute &lt;code&gt;hypothesis&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; that approximates &lt;code&gt;target&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt;\ f&lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;relation-with-data-mining&quot;&gt;Relation with Data Mining&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;use &lt;code&gt;huge&lt;/code&gt; data to find property that is interesting.&lt;/li&gt;
+  &lt;li&gt;ML = DM (usually what KDD cups does).&lt;/li&gt;
+  &lt;li&gt;DM can help ML, and vice versa.&lt;/li&gt;
+  &lt;li&gt;Traditional DM also focus on &lt;code&gt;efficent computation in large database&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;relation-with-artifical-intelligence&quot;&gt;Relation with Artifical Intelligence&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;AI: Compute something that show intelligent behavior.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ML can realize AI&lt;/code&gt;, among other routers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;relation-with-statistics&quot;&gt;Relation With Statistics&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;Statistics: use data to make inference about unknown process.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; is an inference outcome; &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is something unknown.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Statistics can be used to achieve ML&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Traditional statistics also focus on &lt;code&gt;provable results with math assumption&lt;/code&gt;, and care less about &lt;code&gt;computation&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/31/machine-learning-with-other-fields</link>
+                <guid>http://zhou-dong.github.io/2015/01/31/machine-learning-with-other-fields</guid>
+                <pubDate>2015-01-31T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Introduction of ML Course</title>
+                <description>
+&lt;h4 id=&quot;study-informantion&quot;&gt;Study Informantion:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Begin with Basic knowledge and mixture of:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;Philosophical illustrations&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;Math calculaton&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Key theory&lt;/li&gt;
+      &lt;li&gt;Core techniques&lt;/li&gt;
+      &lt;li&gt;Usage in practice&lt;/li&gt;
+      &lt;li&gt;Hopefully joke&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Others
+    &lt;ul&gt;
+      &lt;li&gt;Let students feel the environments of TAI DA&lt;/li&gt;
+      &lt;li&gt;Story like (enjoy)&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;Improved with Quiz&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/31/course-introduction</link>
+                <guid>http://zhou-dong.github.io/2015/01/31/course-introduction</guid>
+                <pubDate>2015-01-31T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Compontents of Machine Learning</title>
+                <description>
+&lt;h4 id=&quot;basic-notations&quot;&gt;Basic Notations:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;input: &lt;script type=&quot;math/tex&quot;&gt; x \in X&lt;/script&gt; (customer application)&lt;/li&gt;
+  &lt;li&gt;output: &lt;script type=&quot;math/tex&quot;&gt; y \in Y&lt;/script&gt; (good/bad after approving credit card)&lt;/li&gt;
+  &lt;li&gt;target function: 
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; f: X \rightarrow Y &lt;/script&gt; (&lt;code&gt;ideal&lt;/code&gt; credit approval formula)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;hypothesis: &amp;lt;=&amp;gt; skill with hopefully good performance:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; g: X \rightarrow Y &lt;/script&gt; (&lt;code&gt;learned&lt;/code&gt; formula to be used)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; \{(x_n,y_n)\} \ \ from \ \ f \rightarrow [ML] \rightarrow g &lt;/script&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;final-hypothsis--g-approx-f-&quot;&gt;Final hypothsis: &lt;script type=&quot;math/tex&quot;&gt; g \approx f &lt;/script&gt;&lt;/h4&gt;
+
+&lt;h4 id=&quot;definiton&quot;&gt;Definiton:&lt;/h4&gt;
+&lt;p&gt;Trainint examples(&lt;code&gt;data&lt;/code&gt;) –&amp;gt; learning algorithm(&lt;code&gt;A&lt;/code&gt;) –&amp;gt; &lt;code&gt;final hypothsis&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt; g \approx f &lt;/script&gt;&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/01/31/components-machine-learning</link>
+                <guid>http://zhou-dong.github.io/2015/01/31/components-machine-learning</guid>
+                <pubDate>2015-01-31T00:00:00-06:00</pubDate>
+        </item>
 
         <item>
                 <title>HeapSort Performance</title>
@@ -66,7 +224,7 @@
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;master-theorem&quot;&gt;Master Theorem:&lt;/h4&gt;
-&lt;p&gt;Let a &lt;script type=&quot;math/tex&quot;&gt; \ge &lt;/script&gt; 1 and b &amp;gt; 1 be constants, let f(n) be a function. &lt;code&gt;T(n) = aT(n/b) + f(n)&lt;/code&gt; ;    &lt;/p&gt;
+&lt;p&gt;Let a &lt;script type=&quot;math/tex&quot;&gt; \ge &lt;/script&gt; 1 and b &amp;gt; 1 be constants, let f(n) be a function. &lt;code&gt;T(n) = aT(n/b) + f(n)&lt;/code&gt; ;  &lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = O(n^{\log_{b} a - \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a })&lt;/script&gt;.  &lt;/li&gt;
@@ -102,6 +260,9 @@
   &lt;li&gt;Every time choose there elments.&lt;/li&gt;
   &lt;li&gt;Choose middle one to be the pivot.&lt;/li&gt;
   &lt;li&gt;Just can improve, but can not avoid worst cast.&lt;/li&gt;
+  &lt;li&gt;Best middle elements, the performance wiill be &lt;script type=&quot;math/tex&quot;&gt; n \lg n &lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;One method: we can random pick the pivot, so in chance, we can avoid the bad case.&lt;/li&gt;
+  &lt;li&gt;There are some methods to find the middle, we will be talk later.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/01/28/quicksort-performance</link>

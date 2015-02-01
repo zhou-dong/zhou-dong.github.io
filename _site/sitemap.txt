@@ -9,6 +9,12 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations
+http://zhou-dong.github.io/2015/02/01/change-of-coordinate-matrix
+http://zhou-dong.github.io/2015/01/31/what-is-machine-learning
+http://zhou-dong.github.io/2015/01/31/machine-learning-with-other-fields
+http://zhou-dong.github.io/2015/01/31/course-introduction
+http://zhou-dong.github.io/2015/01/31/components-machine-learning
 http://zhou-dong.github.io/2015/01/29/heapsort-performance
 http://zhou-dong.github.io/2015/01/28/quicksort-performance
 http://zhou-dong.github.io/2015/01/28/invertible-matrix

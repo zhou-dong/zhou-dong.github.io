@@ -171,7 +171,7 @@
 </ul>
 
 <h4 id="master-theorem">Master Theorem:</h4>
-<p>Let a <script type="math/tex"> \ge </script> 1 and b &gt; 1 be constants, let f(n) be a function. <code>T(n) = aT(n/b) + f(n)</code> ;    </p>
+<p>Let a <script type="math/tex"> \ge </script> 1 and b &gt; 1 be constants, let f(n) be a function. <code>T(n) = aT(n/b) + f(n)</code> ;  </p>
 
 <ol>
   <li>If <script type="math/tex"> f(n) = O(n^{\log_{b} a - \epsilon}) </script> for some constant <script type="math/tex"> \epsilon > 0 </script>, then <script type="math/tex"> T(n) = \Theta(n^{\log_{b} a })</script>.  </li>
@@ -207,6 +207,9 @@
   <li>Every time choose there elments.</li>
   <li>Choose middle one to be the pivot.</li>
   <li>Just can improve, but can not avoid worst cast.</li>
+  <li>Best middle elements, the performance wiill be <script type="math/tex"> n \lg n </script>.</li>
+  <li>One method: we can random pick the pivot, so in chance, we can avoid the bad case.</li>
+  <li>There are some methods to find the middle, we will be talk later.</li>
 </ul>
 
   </div>
