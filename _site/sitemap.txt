@@ -9,6 +9,7 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/02/02/decision-tree-analysis
 http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations
 http://zhou-dong.github.io/2015/02/01/change-of-coordinate-matrix
 http://zhou-dong.github.io/2015/01/31/what-is-machine-learning

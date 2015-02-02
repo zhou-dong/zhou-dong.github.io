@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-02-01T15:28:44-06:00</updated>
+ <updated>2015-02-02T15:29:55-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,11 +13,93 @@
 
  
  <entry>
+   <title>Analysis of Decision Tree</title>
+   <link href="http://zhou-dong.github.io/2015/02/02/decision-tree-analysis"/>
+   <updated>2015-02-02T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/02/02/decision-tree-analysis</id>
+   <content type="html">
+&lt;h4 id=&quot;definition-of-decision-tree-from-wikipedia&quot;&gt;Definition of Decision Tree (From Wikipedia):&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;A decision tree is a decision support tool that uses a tree-like graph or model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility. It is one way to display an algorithm.&lt;/li&gt;
+  &lt;li&gt;Decision trees are commonly used in operations research, specifically in decision analysis, to help identify a strategy most likely to reach a goal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;sort-preformance&quot;&gt;Sort Preformance:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n! &lt;/script&gt; ;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;search-performance&quot;&gt;Search Performance:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \lg n &lt;/script&gt; ;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Elementary Matrix Operations and Elementary Matrix</title>
    <link href="http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations"/>
    <updated>2015-02-01T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations</id>
    <content type="html">
+&lt;h4 id=&quot;elementary-matrix-operations-and-systems-of-linear-equations&quot;&gt;Elementary Matrix operations and Systems of Linear Equations&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; A_{m \times n} x_{n \times 1} = b_{m \times 1} &lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;elementary-rowcolumn-operations&quot;&gt;Elementary row(column) operations:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;列（行）交换&lt;/li&gt;
+  &lt;li&gt;列（行）乘 - 非0纯量&lt;/li&gt;
+  &lt;li&gt;某列（行）非0纯量加到另一列（行）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;ex&quot;&gt;EX:&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+A = \begin{pmatrix} 1 &amp; 3 &amp; 5 \\ 2 &amp; 4 &amp; 6 \end{pmatrix} \\
+A_1 = \begin{pmatrix} 2 &amp; 4 &amp; 6 \\ 1 &amp; 3 &amp; 5 \end{pmatrix} \\
+A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;elementary-matrix-from-wikipedia&quot;&gt;Elementary matrix (From Wikipedia):&lt;/h4&gt;
+&lt;p&gt;In mathematics, an elementary matrix is a matrix which differs from the identity matrix by one single elementary row operation. The elementary matrices generate the general linear group of invertible matrices. Left multiplication (pre-multiplication) by an elementary matrix represents elementary row operations, while right multiplication (post-multiplication) represents elementary column operations. &lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;基本矩阵或者初等矩阵&lt;/h4&gt;
+&lt;p&gt;线性代数中，初等矩阵（又称为基本矩阵）是一个与单位矩阵只有微小区别的矩阵。具体来说，一个n阶单位矩阵E经过一次初等行变换或一次初等列变换所得矩阵称为n阶初等矩阵。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;若一矩陣可由單位矩陣經過一次基本列運算而得，則稱此矩陣為基本矩陣。&lt;/li&gt;
+  &lt;li&gt;必須進行超過1次基本列運算才能得到的矩陣，就不算是基本矩陣了。&lt;/li&gt;
+  &lt;li&gt;它是由&lt;code&gt;單位矩陣&lt;/code&gt;來的，所以必須是個 n*n 的方陣。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;operations&quot;&gt;Operations:&lt;/h4&gt;
+&lt;p&gt;初等矩阵分为3种类型，分别对应着3种不同的行/列变换。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;两行（列）互换: (&lt;script type=&quot;math/tex&quot;&gt; R_i \leftrightarrow R_j &lt;/script&gt;)&lt;/li&gt;
+  &lt;li&gt;把某行（列）乘以一非零常数: (&lt;script type=&quot;math/tex&quot;&gt; kR_i \rightarrow R_i \ \  k \ne 0 &lt;/script&gt;)&lt;/li&gt;
+  &lt;li&gt;把第i行（列）加上第j行（列）的k倍(&lt;script type=&quot;math/tex&quot;&gt; R_i + kR_j = R_i &lt;/script&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;operation-one-&quot;&gt;Operation One 性质：&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;逆矩阵即自身：&lt;script type=&quot;math/tex&quot;&gt; T_{ij}^{-1} = T_{ij} &lt;/script&gt;。&lt;/li&gt;
+  &lt;li&gt;因为单位矩阵的行列式为1，故 &lt;script type=&quot;math/tex&quot;&gt; \vert T_{ij}\vert =-1&lt;/script&gt;。与其他相同大小的方阵A亦有一下性质：&lt;script type=&quot;math/tex&quot;&gt; \vert T_{ij}A \vert = - \vert A \vert  &lt;/script&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;operation-two-&quot;&gt;Operation Two 性质：&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;逆矩阵为&lt;script type=&quot;math/tex&quot;&gt; T_{i}(m)^{-1} = T_{i}(\frac{1}{m})&lt;/script&gt;。&lt;/li&gt;
+  &lt;li&gt;此矩阵及其逆矩阵均为对角矩阵。&lt;/li&gt;
+  &lt;li&gt;其行列式&lt;script type=&quot;math/tex&quot;&gt; \vert T_{i}(m) \vert =m&lt;/script&gt;。故对于一等大方阵A有&lt;script type=&quot;math/tex&quot;&gt; \vert T_{i}(m)A \vert =m \vert A \vert&lt;/script&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;operation-three-&quot;&gt;Operation Three 性质：&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;逆矩阵具有性质&lt;script type=&quot;math/tex&quot;&gt;T_{ij}(m)^{-1}=T_{ij}(-m)&lt;/script&gt;。&lt;/li&gt;
+  &lt;li&gt;此矩阵及其逆矩阵均为三角矩阵。&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \vert T_{ij}(m)\vert=1&lt;/script&gt;。故对于一等大方阵A有：&lt;script type=&quot;math/tex&quot;&gt; \vert T_{ij}(m)A \vert = \vert A \vert &lt;/script&gt;。&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
@@ -27,6 +109,20 @@
    <updated>2015-02-01T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/2015/02/01/change-of-coordinate-matrix</id>
    <content type="html">
+&lt;h4 id=&quot;section&quot;&gt;个人的理解：&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;我自己的理解是，在同一个向量空间中，使用&lt;code&gt;不同的基底&lt;/code&gt;来表示同一个&lt;code&gt;线性函数&lt;/code&gt;或者&lt;code&gt;向量&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;注意，在同一个向量空间中，使用&lt;code&gt;不同的基底&lt;/code&gt;，对函数表达的结果是不一样的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;数学公式表示：&lt;/h4&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+ \dbinom{x&#39;}{y&#39;} = \begin{pmatrix} \cos{\theta} &amp; \sin{\theta} \\ -\sin{\theta} &amp; \cos{\theta} \end{pmatrix} \dbinom{x}{y} \\
+ [I]_{\beta}^{\beta&#39;}  = \begin{pmatrix} \cos{\theta} &amp; \sin{\theta} \\ -\sin{\theta} &amp; \cos{\theta} \end{pmatrix} \\
+ x&#39; = x\cos{\theta} + y\sin{\theta} \\
+ y&#39; = -x\sin{\theta} + y\cos{\theta}
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
 </content>
  </entry>
  
