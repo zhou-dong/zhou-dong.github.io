@@ -34,6 +34,20 @@ In mathematics, an elementary matrix is a matrix which differs from the identity
 #### Operations:
 初等矩阵分为3种类型，分别对应着3种不同的行/列变换。
 
-- 两行（列）互换: ($$ R_i \leftrightarrow R_j $$)
-- 把某行（列）乘以一非零常数: ($$ kR_i \rightarrow R_i \ \  k \ne 0 $$)
-- 把第i行（列）加上第j行（列）的k倍($$ R_i + kR_j = R_i $$)
+1. 两行（列）互换: ($$ R_i \leftrightarrow R_j $$)
+2. 把某行（列）乘以一非零常数: ($$ kR_i \rightarrow R_i \ \  k \ne 0 $$)
+3. 把第i行（列）加上第j行（列）的k倍($$ R_i + kR_j = R_i $$)
+
+#### Operation One 性质：
+- 逆矩阵即自身：$$ T_{ij}^{-1} = T_{ij} $$。
+- 因为单位矩阵的行列式为1，故 $$ \vert T_{ij}\vert =-1$$。与其他相同大小的方阵A亦有一下性质：$$ \vert T_{ij}A \vert = - \vert A \vert  $$。
+
+#### Operation Two 性质：
+- 逆矩阵为$$ T_{i}(m)^{-1} = T_{i}(\frac{1}{m})$$。
+- 此矩阵及其逆矩阵均为对角矩阵。
+- 其行列式$$ \vert T_{i}(m) \vert =m$$。故对于一等大方阵A有$$ \vert T_{i}(m)A \vert =m \vert A \vert$$。
+
+#### Operation Three 性质：
+- 逆矩阵具有性质$$T_{ij}(m)^{-1}=T_{ij}(-m)$$。
+- 此矩阵及其逆矩阵均为三角矩阵。
+- $$ \vert T_{ij}(m)\vert=1$$。故对于一等大方阵A有：$$ \vert T_{ij}(m)A \vert = \vert A \vert $$。
