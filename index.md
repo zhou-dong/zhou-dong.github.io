@@ -26,4 +26,4 @@ tagline:
 
 10. ##### **耐得住寂寞，才经得起繁华。**
 
-11. #### man is cool!
+11. #### man is not cool!

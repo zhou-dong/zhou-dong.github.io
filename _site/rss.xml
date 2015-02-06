@@ -5,16 +5,22 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-02-05T18:14:39-06:00</lastBuildDate>
-        <pubDate>2015-02-05T18:14:39-06:00</pubDate>
+        <lastBuildDate>2015-02-05T23:26:43-06:00</lastBuildDate>
+        <pubDate>2015-02-05T23:26:43-06:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
                 <title>B Tree</title>
                 <description>
-&lt;p&gt;&lt;img src=&quot;http://zhou-dong.github.io/images/b-tree.jpp&quot; alt=&quot;build a b tree photo&quot; title=&quot;how to build a b tree&quot; /&gt;&lt;/p&gt;
+&lt;div style=&quot;width:100%&quot;&gt;
 
+  &lt;img alt=&quot;b-tree&quot; style=&quot;width:100%&quot; src=&quot;http://zhou-dong.github.io/images/b-tree.jpg&quot; /&gt;
+
+&lt;div&gt;
+
+
+&lt;/div&gt;&lt;/div&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/02/05/b-tree</link>
                 <guid>http://zhou-dong.github.io/2015/02/05/b-tree</guid>

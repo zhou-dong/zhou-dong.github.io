@@ -4,7 +4,7 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-02-05T18:14:39-06:00</updated>
+ <updated>2015-02-05T23:26:43-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -18,8 +18,14 @@
    <updated>2015-02-05T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/2015/02/05/b-tree</id>
    <content type="html">
-&lt;p&gt;&lt;img src=&quot;http://zhou-dong.github.io/images/b-tree.jpp&quot; alt=&quot;build a b tree photo&quot; title=&quot;how to build a b tree&quot; /&gt;&lt;/p&gt;
+&lt;div style=&quot;width:100%&quot;&gt;
 
+  &lt;img alt=&quot;b-tree&quot; style=&quot;width:100%&quot; src=&quot;http://zhou-dong.github.io/images/b-tree.jpg&quot; /&gt;
+
+&lt;div&gt;
+
+
+&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
  
