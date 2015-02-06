@@ -4,13 +4,24 @@
  <title>DONG-ZHOU</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-02-02T15:29:55-06:00</updated>
+ <updated>2015-02-05T18:14:39-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>B Tree</title>
+   <link href="http://zhou-dong.github.io/2015/02/05/b-tree"/>
+   <updated>2015-02-05T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/02/05/b-tree</id>
+   <content type="html">
+&lt;p&gt;&lt;img src=&quot;http://zhou-dong.github.io/images/b-tree.jpp&quot; alt=&quot;build a b tree photo&quot; title=&quot;how to build a b tree&quot; /&gt;&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Analysis of Decision Tree</title>

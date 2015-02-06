@@ -5,10 +5,21 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-02-02T15:29:55-06:00</lastBuildDate>
-        <pubDate>2015-02-02T15:29:55-06:00</pubDate>
+        <lastBuildDate>2015-02-05T18:14:39-06:00</lastBuildDate>
+        <pubDate>2015-02-05T18:14:39-06:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>B Tree</title>
+                <description>
+&lt;p&gt;&lt;img src=&quot;http://zhou-dong.github.io/images/b-tree.jpp&quot; alt=&quot;build a b tree photo&quot; title=&quot;how to build a b tree&quot; /&gt;&lt;/p&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/2015/02/05/b-tree</link>
+                <guid>http://zhou-dong.github.io/2015/02/05/b-tree</guid>
+                <pubDate>2015-02-05T00:00:00-06:00</pubDate>
+        </item>
 
         <item>
                 <title>Analysis of Decision Tree</title>
