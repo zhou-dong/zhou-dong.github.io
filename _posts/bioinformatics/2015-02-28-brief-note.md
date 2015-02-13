@@ -22,3 +22,7 @@ tagline: --
         + pip install nose
         + pip install numpy
         + pip install -U ProDy 
+
+3. [VMD](http://www.ks.uiuc.edu/Research/vmd/)
+    - VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.
+    - [Download Page](http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD)
