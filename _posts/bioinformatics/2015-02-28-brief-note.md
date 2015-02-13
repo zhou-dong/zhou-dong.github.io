@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS-6649 Brief Note of Bioinformatics Project
-tagline: --
+tagline: 
 ---
 {% include JB/setup %}
 
