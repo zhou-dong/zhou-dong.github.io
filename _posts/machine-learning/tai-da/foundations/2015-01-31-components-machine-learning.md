@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Compontents of Machine Learning
+title: ML-NTU-F-03 Compontents of Machine Learning
 tagline: Basic Notation, Hypothsis
 ---
 {% include JB/setup %}

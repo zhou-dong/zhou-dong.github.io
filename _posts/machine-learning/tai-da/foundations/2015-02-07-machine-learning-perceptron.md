@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Perceptron Hypothesis
+title: ML-NTU-F-05 Perceptron Hypothesis
 tagline: Machine Learning, Linear Classifier, Perceptron Learning Algorithm 
 ---
 {% include JB/setup %}

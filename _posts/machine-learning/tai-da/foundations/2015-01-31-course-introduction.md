@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Introduction of ML Course
+title: ML-NTU-F-01 Introduction of ML Course
 tagline: Theory Oriented 
 ---
 {% include JB/setup %}
