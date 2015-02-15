@@ -18,6 +18,12 @@ tagline:
 
 #### Edex:
 
+#### Youtube:
+1. 線性代數 (Not Finished All, Just lec01-lec-13)
+    - [URL](https://www.youtube.com/playlist?list=PLe94oLfiYuBCN-1N9aHJVjqO0K_Ug0VwZ)
+    - Start Date: Jan 04, 2015
+    - End Date: Feb 10, 2015
+
 ---
 
 ### Colledge
