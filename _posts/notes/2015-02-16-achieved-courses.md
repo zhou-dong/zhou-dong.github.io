@@ -5,7 +5,7 @@ tagline:
 ---
 {% include JB/setup %}
 
-### Online
+### Online Courses
 
 #### Coursera:
 1. R Programming
