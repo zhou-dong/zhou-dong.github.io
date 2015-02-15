@@ -39,3 +39,5 @@ tagline:
     + truth - **very hard to avoid**, unless being extrnmely honest
     + extremely honest: **lock your test data in safe**
     + less honest: **reserve validation and use cautiously**
+    + be blind: avoid making modeling decision by data
+    + be suspicious: interpret research results (including your own)
