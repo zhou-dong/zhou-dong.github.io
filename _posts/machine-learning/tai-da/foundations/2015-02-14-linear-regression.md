@@ -33,4 +33,23 @@ Matrix: $$ min E_{in}(W) = \frac{1}{N} \begin{Vmatrix} Xw - y \end{Vmatrix}^2 $$
 
 #### Logistic Regression
 
+It is kind of soft binary classification.
 
+linear regression的数据可以看成是logistic regression有noise的数据。
+
+Dcription: 预测某件事发生的概率。
+
+Convert the score to estimated probability by logistic function.
+
+把值转化成概率的函数。
+$$ 
+\theta(s) = \frac{e^s}{1+ e^s} = \frac{1}{1+e^{-s}}
+$$
+
+Gradient Descent
+
+1. greedy approch
+2. Taylor Expansion
+3. choise of n: don't **too smally**, don't **too large**, **just right**
+
+Stochastic gradient descent: random pick a gradient
