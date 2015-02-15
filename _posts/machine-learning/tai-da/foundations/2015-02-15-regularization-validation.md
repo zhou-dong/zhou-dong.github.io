@@ -7,7 +7,20 @@ tagline:
 
 #### Regularization
 
+- Regression with Constraint
+
+- Weight Decay Regularization
+
+- Regularization and VC Theory
+
+- General Regularizers
+
 ---
 
 #### Validation
+
+- Model selection problem
+- Validation
+- Leave-one-out Cross Validation
+- V-Flod Cross Validation 
 
