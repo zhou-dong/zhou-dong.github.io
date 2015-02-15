@@ -15,6 +15,7 @@ tagline:
 2. 機器學習基石 (Machine Learning Foundations)
     - Start Date: Jan 31, 2015
     - End Date: Feb 15, 2015
+    - [Simple Roadmap](http://zhou-dong.github.io/2015/02/15/revised-all/)
 
 #### Edex:
 
