@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BTree Graph</title>
+    <title>ML-NTU-F-07 Training, Generaliztion, VC</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,24 +146,68 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>BTree Graph </h1>
+  <h1>ML-NTU-F-07 Training, Generaliztion, VC  <small>Effective Lines, Dichotomy, VC Dimension</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<div style="width:100%">
+<h4 id="traing-versus-testing">1. Traing versus Testing</h4>
 
-<!--
-  <img alt="b-tree" style="width:100%" src="http://zhou-dong.github.io/images/b-tree.jpg"/>
--->
+<ol>
+  <li>Effective number of Lines:
+    <ul>
+      <li>some time we can not dichot a set</li>
+      <li>how many lines can dichot a set</li>
+    </ul>
+  </li>
+  <li>Dichotomies: Mini-hypotheses
+    <ul>
+      <li>dichotomy set: depend on inputs</li>
+      <li>growth function: remove dependence by taking max of all possible</li>
+      <li>finite, upper-bounded by <script type="math/tex"> 2^n </script></li>
+      <li>growth function for positive pays</li>
+      <li>Convex set</li>
+    </ul>
+  </li>
+  <li>Break Point
+    <ul>
+      <li>growth function: max number of dichotmies</li>
+    </ul>
+  </li>
+</ol>
 
-  <img alt="b-tree" style="width:100%" src="/images/b-tree.jpg" />
+<hr />
 
-<div>
+<h4 id="theory-of-generaliztion">2. Theory of Generaliztion</h4>
 
+<p>Description: 举一反三</p>
 
-</div></div>
+<p>Detail:</p>
+
+<ol>
+  <li>REstriction of Break Point
+    <ul>
+      <li>bounding function: maximum number of length-N vectors with(o,x) while “no shatter” any length-k subvectors</li>
+    </ul>
+  </li>
+  <li>Pictorial Proof</li>
+</ol>
+
+<hr />
+
+<h4 id="vc-dimension">3. VC Dimension</h4>
+
+<p>Description: maximum non-break point. 一个集合，在vc dimension在这个点上可以shatter某N个点</p>
+
+<p>Example:</p>
+
+<ul>
+  <li>positive rays: <script type="math/tex"> d_{vc} = 1 </script></li>
+  <li>positive intervals: <script type="math/tex"> d_{vc} = 2 </script></li>
+  <li>positive convex sets: <script type="math/tex"> d_{vc} = \infty </script></li>
+  <li>2D perceptrons: <script type="math/tex"> d_{vc} = 3 </script></li>
+</ul>
 
   </div>
 </div>

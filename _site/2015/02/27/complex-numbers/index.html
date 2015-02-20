@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BTree Graph</title>
+    <title>CM-02 Introduction to complex numbers</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,24 +146,42 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>BTree Graph </h1>
+  <h1>CM-02 Introduction to complex numbers  <small>Note Two of Coding the Matrix</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<div style="width:100%">
+<p>Solutions to <script type="math/tex"> x^2 = -1 </script> ?<br />
+Mathematicians invented <em>i</em> to be one solution.</p>
 
-<!--
-  <img alt="b-tree" style="width:100%" src="http://zhou-dong.github.io/images/b-tree.jpg"/>
--->
+<p>Example: <script type="math/tex"> x^2 = -1 </script> <em>solution is</em> <script type="math/tex"> x = 3i </script></p>
 
-  <img alt="b-tree" style="width:100%" src="/images/b-tree.jpg" />
+<p>Numbers such as <script type="math/tex"> i, -i, 3i, 2.17i </script> are called <strong>imaginary</strong> numbers.</p>
 
-<div>
+<p>Solution to <script type="math/tex"> (x-1)^2  = -9 ? \ x = 1 + 3i </script></p>
 
+<p>A real number plus an imaginary number is a <strong>complex number</strong>.<br />
+A real number has <strong>real part</strong> and an <strong>imgianary part</strong>.</p>
 
-</div></div>
+<pre class="prettyprint linenums">
+# (x-1)**2 = -9, x = 1 + 3j
+x = 1 + 3j
+
+print x
+print (x-1)**2
+print type(x)
+
+# ax + b = c
+def solve(a, b, c):
+    return (c-b)/a
+
+# 10x + 5 = 30
+print solve(10.0, 5.0, 30.0)
+
+# (10 + 5i)x + 5 = 20
+print solve(10+5j, 5.0, 20.0)
+</pre>
 
   </div>
 </div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BTree Graph</title>
+    <title>ML-NTU-F-10 Regularization, Validation</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,24 +146,79 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>BTree Graph </h1>
+  <h1>ML-NTU-F-10 Regularization, Validation </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<div style="width:100%">
+<h3 id="regularization">Regularization</h3>
 
-<!--
-  <img alt="b-tree" style="width:100%" src="http://zhou-dong.github.io/images/b-tree.jpg"/>
--->
+<ul>
+  <li>Description:
+    <ol>
+      <li>我们可以把<script type="math/tex">E(in)</script>和regularizer加在一起</li>
+      <li>minimizes augmented error, where the added regularizer effectively limits model complexity</li>
+    </ol>
+  </li>
+  <li>Regression with Constraint
+    <ol>
+      <li>Constraint</li>
+      <li>Softer constraint</li>
+    </ol>
+  </li>
+</ul>
 
-  <img alt="b-tree" style="width:100%" src="/images/b-tree.jpg" />
+<hr />
 
-<div>
+<h3 id="validation">Validation</h3>
 
+<h4 id="model-selection-problemi-so-many-models">Model selection problemi, so many models:</h4>
 
-</div></div>
+<ul>
+  <li>Classification:
+    <ul>
+      <li>PLA</li>
+      <li>pocket</li>
+      <li>linear regression</li>
+      <li>logistic regression</li>
+    </ul>
+  </li>
+  <li>transform:
+    <ul>
+      <li>linear</li>
+      <li>quadratic</li>
+      <li>poly-10</li>
+      <li>Legendre-poly-10</li>
+    </ul>
+  </li>
+  <li>regularizer
+    <ul>
+      <li>L2 regularizer</li>
+      <li>L1 regularizer</li>
+      <li>symmetry regularizer </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="validation-1">Validation</h4>
+
+<ul>
+  <li>Description:
+    <ul>
+      <li>留一份手中的资料做测试集。</li>
+      <li>legeal cheeting</li>
+      <li><script type="math/tex"> E_{val}(h) </script>.</li>
+    </ul>
+  </li>
+  <li>Method: 
+    <ul>
+      <li>Leave-one-out Cross Validation</li>
+      <li>V-Flod Cross Validation </li>
+    </ul>
+  </li>
+</ul>
+
 
   </div>
 </div>

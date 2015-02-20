@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BTree Graph</title>
+    <title>ML-NTU-F-11 Three Learning Principles</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,24 +146,73 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>BTree Graph </h1>
+  <h1>ML-NTU-F-11 Three Learning Principles </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<div style="width:100%">
+<h4 id="occams-razor">Occam’s Razor</h4>
 
-<!--
-  <img alt="b-tree" style="width:100%" src="http://zhou-dong.github.io/images/b-tree.jpg"/>
--->
+<ul>
+  <li>History:
+    <ul>
+      <li>An explanation of the data should be made as simple as possible, but no simpler. –Albert Einstein<strong>?</strong>(1879-1955)</li>
+      <li>entia non sunt mutiplicanda praeter necessitatem (entities must not be mutiplied <strong>beyond necessity</strong>) –William of Occam (1287-1347)</li>
+    </ul>
+  </li>
+  <li>Definition:
+    <ul>
+      <li><strong>Occam’s razor</strong> for trimming down unnessary explanation</li>
+    </ul>
+  </li>
+  <li>Explain:
+    <ul>
+      <li>The simplest model that fits the data is aslo the most plausible.</li>
+    </ul>
+  </li>
+  <li>One word:
+    <ul>
+      <li><strong>Simple is Better</strong></li>
+    </ul>
+  </li>
+</ul>
 
-  <img alt="b-tree" style="width:100%" src="/images/b-tree.jpg" />
+<h4 id="sampling-bias">Sampling Bias</h4>
 
-<div>
+<ul>
+  <li>Description:
+    <ul>
+      <li>If the data is sampled in a <strong>biased</strong> way, learning will produce a similarly biased outcome.</li>
+    </ul>
+  </li>
+  <li>Practical rule of thumb:
+    <ul>
+      <li>match test scenario as much as possible</li>
+    </ul>
+  </li>
+</ul>
 
+<h4 id="data-snooping">Data Snooping</h4>
 
-</div></div>
+<ul>
+  <li>Data snooping
+    <ul>
+      <li>careful about <strong>your brain’s “model complexity”</strong>.</li>
+      <li>shall be decided <strong>without “snooping” data</strong></li>
+      <li>If data set has affected any step in the learning process, its ability to assess the outcome has been compromised.</li>
+    </ul>
+  </li>
+  <li>Dealing with data snooping
+    <ul>
+      <li>truth - <strong>very hard to avoid</strong>, unless being extrnmely honest</li>
+      <li>extremely honest: <strong>lock your test data in safe</strong></li>
+      <li>less honest: <strong>reserve validation and use cautiously</strong></li>
+      <li>be blind: avoid making modeling decision by data</li>
+      <li>be suspicious: interpret research results (including your own)</li>
+    </ul>
+  </li>
+</ul>
 
   </div>
 </div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BTree Graph</title>
+    <title>CM-04 Play with Galois Field</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,24 +146,43 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>BTree Graph </h1>
+  <h1>CM-04 Play with Galois Field  <small>Note four of Coding the Matrix</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<div style="width:100%">
+<h4 id="decsciption">Decsciption:</h4>
 
-<!--
-  <img alt="b-tree" style="width:100%" src="http://zhou-dong.github.io/images/b-tree.jpg"/>
--->
+<p>Galois Field 2: has just two element 0 and 1</p>
 
-  <img alt="b-tree" style="width:100%" src="/images/b-tree.jpg" />
+<p>Addition is like exclusive-or:
+<script type="math/tex">% <![CDATA[
+ 
+    \begin{array}{c | c c } + & 0 & 1 \\
+        \hline 
+        0 & 0 & 1 \\
+        1 & 1 & 0 \\
+    \end{array}
+ %]]></script></p>
 
-<div>
+<p>Multiplication is like ordinary mutipication:
+<script type="math/tex">% <![CDATA[
+ 
+    \begin{array}{c | c c } \times & 0 & 1 \\
+        \hline 
+        0 & 0 & 0 \\
+        1 & 0 & 1 \\
+    \end{array}
+ %]]></script></p>
 
+<p>And: <script type="math/tex"> a \cdot (b + c) = a \cdot b + a \cdot c </script></p>
 
-</div></div>
+<h4 id="application">Application:</h4>
+<ul>
+  <li>Encription</li>
+  <li>Network coding</li>
+</ul>
 
   </div>
 </div>

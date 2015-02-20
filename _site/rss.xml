@@ -5,17 +5,1069 @@
         <description>DONG-ZHOU - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-02-07T12:31:22-06:00</lastBuildDate>
-        <pubDate>2015-02-07T12:31:22-06:00</pubDate>
+        <lastBuildDate>2015-02-20T10:41:41-06:00</lastBuildDate>
+        <pubDate>2015-02-20T10:41:41-06:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
-                <title>B Tree</title>
+                <title>CM-04 Play with Galois Field</title>
+                <description>
+&lt;h4 id=&quot;decsciption&quot;&gt;Decsciption:&lt;/h4&gt;
+
+&lt;p&gt;Galois Field 2: has just two element 0 and 1&lt;/p&gt;
+
+&lt;p&gt;Addition is like exclusive-or:
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ 
+    \begin{array}{c | c c } + &amp; 0 &amp; 1 \\
+        \hline 
+        0 &amp; 0 &amp; 1 \\
+        1 &amp; 1 &amp; 0 \\
+    \end{array}
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Multiplication is like ordinary mutipication:
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ 
+    \begin{array}{c | c c } \times &amp; 0 &amp; 1 \\
+        \hline 
+        0 &amp; 0 &amp; 0 \\
+        1 &amp; 0 &amp; 1 \\
+    \end{array}
+ %]]&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;And: &lt;script type=&quot;math/tex&quot;&gt; a \cdot (b + c) = a \cdot b + a \cdot c &lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;application&quot;&gt;Application:&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Encription&lt;/li&gt;
+  &lt;li&gt;Network coding&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/03/01/galois-field</link>
+                <guid>http://zhou-dong.github.io/2015/03/01/galois-field</guid>
+                <pubDate>2015-03-01T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>CM-03 Play with complex numbers</title>
+                <description>
+&lt;h4 id=&quot;complex-number-as-points-in-the-complex-plane&quot;&gt;Complex number as points in the complex plane&lt;/h4&gt;
+
+&lt;p&gt;Can interpret &lt;em&gt;real&lt;/em&gt; and &lt;em&gt;imaginary&lt;/em&gt; parts of a complex number as &lt;em&gt;x&lt;/em&gt; and &lt;em&gt;y&lt;/em&gt; coordinates.
+Thus can interpret a complex number as a &lt;em&gt;point&lt;/em&gt; in the plane.&lt;/p&gt;
+
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+import matplotlib.pyplot as plt
+import numpy as np
+
+number_list = [2+2j, 3+2j, 1.75+1j, 2+1j, 2.25+1j, 2.5+1j, 2.75+1j, 3+1j, 3.25+1j]
+for number in number_list:
+    plt.scatter(number.real, number.imag)
+plt.title(&quot;Interpert Complex Number&quot;)
+plt.xlabel(&quot;Real number&quot;)
+plt.ylabel(&quot;Imaginary number&quot;)
+plt.show()
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;complex-numbers-as-arrows&quot;&gt;Complex numbers as arrows&lt;/h4&gt;
+
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+z = -6 + 5j
+plt.title(&quot;Complex as Arrow&quot;)
+plt.xlabel(&quot;Real Number&quot;)
+plt.ylabel(&quot;Imaginary Number&quot;)
+plt.arrow(0, 0, z.real, z.imag)
+plt.xlim(-10,10)
+plt.ylim(-10,10)
+plt.grid(True)
+plt.show()
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;add-two-complex-numbers&quot;&gt;Add two complex numbers&lt;/h4&gt;
+
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+z = x + y
+plt.title(&quot;Complex Composition&quot;)
+plt.xlabel(&quot;Real Number&quot;)
+plt.ylabel(&quot;Imaginary Number&quot;)
+plt.arrow(0, 0, x.real, x.imag, color=&#39;g&#39;)
+plt.arrow(0, 0, y.real, y.imag, color=&#39;b&#39;)
+plt.arrow(0, 0, z.real, z.imag, color=&#39;r&#39;)
+plt.xlim(-3,6)
+plt.ylim(-3,6)
+plt.grid(True)
+plt.show()
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;multiply-complex-numbers&quot;&gt;Multiply complex numbers&lt;/h4&gt;
+
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+z = time * complex_number
+plt.title(&quot;Multiply Complex&quot;)
+plt.xlabel(&quot;Real Number&quot;)
+plt.ylabel(&quot;Imaginary Number&quot;)
+plt.arrow(0, 0, complex_number.real, complex_number.imag, color=&#39;b&#39;)
+plt.arrow(0, 0, z.real, z.imag, color=&#39;y&#39;)
+plt.xlim(-3,6)
+plt.ylim(-3,6)
+plt.grid(True)
+plt.show()
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;rotate-ninty-degree&quot;&gt;Rotate ninty degree&lt;/h4&gt;
+
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+ z = 1j * complex_number
+plt.title(&quot;Multiply Complex&quot;)
+plt.xlabel(&quot;Real Number&quot;)
+plt.ylabel(&quot;Imaginary Number&quot;)
+plt.arrow(0, 0, complex_number.real, complex_number.imag, color=&#39;b&#39;)
+plt.arrow(0, 0, z.real, z.imag, color=&#39;y&#39;)
+plt.xlim(-3,3)
+plt.ylim(-3,3)
+plt.grid(True)
+plt.show()
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;rotate-with-theta-degree&quot;&gt;Rotate with &lt;script type=&quot;math/tex&quot;&gt;\Theta&lt;/script&gt; degree&lt;/h4&gt;
+&lt;p&gt;Use: &lt;strong&gt;Euler’s formula&lt;/strong&gt;&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/28/playing-with-complex-number</link>
+                <guid>http://zhou-dong.github.io/2015/02/28/playing-with-complex-number</guid>
+                <pubDate>2015-02-28T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>CS-6649 Brief Note of Bioinformatics Project</title>
+                <description>
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.scipy.org/&quot;&gt;SciPy&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Description: &lt;a href=&quot;http://www.scipy.org/&quot;&gt;SciPy&lt;/a&gt; (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering. Some core packages: 
+        &lt;ul&gt;
+          &lt;li&gt;NumPy: Base N-dimensional array package&lt;/li&gt;
+          &lt;li&gt;SciPy library: Fundamental library for scientific computing&lt;/li&gt;
+          &lt;li&gt;Matplotlib: Comprehensive 2D Plotting&lt;/li&gt;
+          &lt;li&gt;IPython: Enhanced Interactive Console&lt;/li&gt;
+          &lt;li&gt;Sympy: Symbolic mathematics&lt;/li&gt;
+          &lt;li&gt;pandas: Data structures &amp;amp; analysis&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://prody.csb.pitt.edu/&quot;&gt;ProDy&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://prody.csb.pitt.edu/&quot;&gt;ProDy&lt;/a&gt; is a free and open-source Python package for protein structural dynamics analysis.
+        &lt;ul&gt;
+          &lt;li&gt;Structure analysis&lt;/li&gt;
+          &lt;li&gt;Dynamics analysis&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Use pip to install
+        &lt;ul&gt;
+          &lt;li&gt;pip install nose&lt;/li&gt;
+          &lt;li&gt;pip install numpy&lt;/li&gt;
+          &lt;li&gt;pip install -U ProDy &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ks.uiuc.edu/Research/vmd/&quot;&gt;VMD&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD&quot;&gt;Download Page&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/28/brief-note</link>
+                <guid>http://zhou-dong.github.io/2015/02/28/brief-note</guid>
+                <pubDate>2015-02-28T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>CM-02 Introduction to complex numbers</title>
+                <description>
+&lt;p&gt;Solutions to &lt;script type=&quot;math/tex&quot;&gt; x^2 = -1 &lt;/script&gt; ?&lt;br /&gt;
+Mathematicians invented &lt;em&gt;i&lt;/em&gt; to be one solution.&lt;/p&gt;
+
+&lt;p&gt;Example: &lt;script type=&quot;math/tex&quot;&gt; x^2 = -1 &lt;/script&gt; &lt;em&gt;solution is&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt; x = 3i &lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Numbers such as &lt;script type=&quot;math/tex&quot;&gt; i, -i, 3i, 2.17i &lt;/script&gt; are called &lt;strong&gt;imaginary&lt;/strong&gt; numbers.&lt;/p&gt;
+
+&lt;p&gt;Solution to &lt;script type=&quot;math/tex&quot;&gt; (x-1)^2  = -9 ? \ x = 1 + 3i &lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;A real number plus an imaginary number is a &lt;strong&gt;complex number&lt;/strong&gt;.&lt;br /&gt;
+A real number has &lt;strong&gt;real part&lt;/strong&gt; and an &lt;strong&gt;imgianary part&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+# (x-1)**2 = -9, x = 1 + 3j
+x = 1 + 3j
+
+print x
+print (x-1)**2
+print type(x)
+
+# ax + b = c
+def solve(a, b, c):
+    return (c-b)/a
+
+# 10x + 5 = 30
+print solve(10.0, 5.0, 30.0)
+
+# (10 + 5i)x + 5 = 20
+print solve(10+5j, 5.0, 20.0)
+&lt;/pre&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/27/complex-numbers</link>
+                <guid>http://zhou-dong.github.io/2015/02/27/complex-numbers</guid>
+                <pubDate>2015-02-27T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>CM-01 The Function and the Field</title>
+                <description>
+&lt;h4 id=&quot;set-terminology-and-notation&quot;&gt;Set terminology and Notation&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set: and unordered collection of objects. Example: &lt;script type=&quot;math/tex&quot;&gt; \{ X, Y, Z \}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \in &lt;/script&gt;: indicates than an object belong to a set (equivalently, that the set contains the object). For example, &lt;script type=&quot;math/tex&quot;&gt; X \in \{X, Y, Z\}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A \subseteq B &lt;/script&gt;: Read this as “A is a subset of B”. This measn A and B are sets, and every element of A is aslo an element of B.&lt;/li&gt;
+  &lt;li&gt;A = B: Two sets are equal if they contain the exactly the same elements. (There is no order among elements of a set.)
+    &lt;ul&gt;
+      &lt;li&gt;A convenient way to prove that A and B are equal is to prove that each is a subset of the other. The proof often consists two parts:
+        &lt;ol&gt;
+          &lt;li&gt;a proof that &lt;script type=&quot;math/tex&quot;&gt; A \subseteq B, &lt;/script&gt; and&lt;/li&gt;
+          &lt;li&gt;a proof that &lt;script type=&quot;math/tex&quot;&gt; B \subseteq A &lt;/script&gt;.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;set-expressions&quot;&gt;Set expressions:&lt;/h4&gt;
+
+&lt;p&gt;In Mathese, we could write “the set of nonegative numbers” like that: &lt;script type=&quot;math/tex&quot;&gt; \{ x \in R: \  x \ge 0 \} &lt;/script&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The colon(“:”) stands for “such that”.&lt;/li&gt;
+  &lt;li&gt;There are two parts of this expression:
+    &lt;ul&gt;
+      &lt;li&gt;the part before the colon: This part specifies where the elements of the set come from, and introduces a variable or variables that can be used in the second part.&lt;/li&gt;
+      &lt;li&gt;the part after the colon: This gives a rule that restricts which elements specified in the first part actually get to make it into the set. &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The analogous python expression is set &lt;code&gt;comprehension&lt;/code&gt;:&lt;/li&gt;
+  &lt;li&gt;Python code:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+    S = {-4, 4, -3, 3, -2, 2, -1, 1, 0}
+    result = {x for x in S if x &amp;gt;= 0}
+    print result
+    result: set([0, 1, 2, 3, 4])
+&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;you might see just &lt;script type=&quot;math/tex&quot;&gt; \{ x: x \ge 0 \}&lt;/script&gt;. For example: 
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \{ x: (x+1)(x-2) = 0 \}&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;This time, the set consists of just two numbers, -1 and 2.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;set-terminology-and-notation-cartesian-product&quot;&gt;Set terminology and notation: Cartesian product&lt;/h4&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; A \times B&lt;/script&gt; is the set of all pairs &lt;script type=&quot;math/tex&quot;&gt; (a, b) &lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt; a \in A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; b \in B&lt;/script&gt;&lt;br /&gt;
+Example: for &lt;script type=&quot;math/tex&quot;&gt; A = \{ 1, 2 \}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; B = \{ x, y \}, A \times B&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;\{(1,x),(2,x)(1,y)(2,y)\} &lt;/script&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;tuples-in-set-expressions&quot;&gt;Tuples in set expressions&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \{ (x,y) \in R \times R: y = x^2 &lt;/script&gt; } &lt;code&gt;equal&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt; \{ (x,y): y = x^2\} &lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \{(x,y,z) \in R \times R \times R: x \ge 0, y \ge 0, z \ge 0 \} &lt;/script&gt;. &lt;code&gt;equal&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt; \{(x,y,z): x \ge 0, y \ge 0, z \ge 0\} &lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;the-function&quot;&gt;The function&lt;/h4&gt;
+
+&lt;p&gt;Informally, for each input element in a set A, a function assigns a single output element from another set B.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A is called the &lt;code&gt;domain&lt;/code&gt; of the function&lt;/li&gt;
+  &lt;li&gt;B is called the &lt;code&gt;co-domain&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: The output of a given input is called the &lt;em&gt;image&lt;/em&gt; of the input. The image of &lt;em&gt;q&lt;/em&gt; under &lt;em&gt;a&lt;/em&gt; function &lt;em&gt;f&lt;/em&gt; is denoted &lt;em&gt;f(q)&lt;/em&gt;.&lt;br /&gt;
+If &lt;em&gt;f(q) = r&lt;/em&gt;, we say &lt;em&gt;q&lt;/em&gt; maps to &lt;em&gt;r&lt;/em&gt; under &lt;em&gt;f&lt;/em&gt;. In Mathese, we write this as &lt;script type=&quot;math/tex&quot;&gt; q \mapsto r &lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The set from which all the outputs are chosen is called the co-domain.&lt;br /&gt;
+We write: &lt;script type=&quot;math/tex&quot;&gt; f: D \to F &lt;/script&gt;&lt;br /&gt;
+when we want to say that &lt;strong&gt;f&lt;/strong&gt; is a function with domain &lt;strong&gt;D&lt;/strong&gt; and co-domain &lt;strong&gt;F&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: The &lt;em&gt;image&lt;/em&gt; of a function is the set of all images of inputs. Mathese: Im &lt;em&gt;f&lt;/em&gt;.&lt;br /&gt;
+Example: Cosine Function &lt;strong&gt;cos(x)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;cos: &lt;script type=&quot;math/tex&quot;&gt; R \to R &lt;/script&gt;, which means that domain is &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt; and the co-domain is &lt;script type=&quot;math/tex&quot;&gt;R&lt;/script&gt;&lt;br /&gt;
+The image of &lt;em&gt;cos(x)&lt;/em&gt;, Im &lt;em&gt;cos&lt;/em&gt;, is &lt;script type=&quot;math/tex&quot;&gt; \{ x \in R: -1 \le x \le 1\}&lt;/script&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: For sets F and D, &lt;script type=&quot;math/tex&quot;&gt;F^D&lt;/script&gt; denotes all functions from D to F.&lt;/p&gt;
+
+&lt;h4 id=&quot;identity-function-and-composition&quot;&gt;Identity function and composition&lt;/h4&gt;
+
+&lt;p&gt;Indentity function: for any domain &lt;script type=&quot;math/tex&quot;&gt; D, id_D: D \to D&lt;/script&gt;, maps each domain element &lt;em&gt;d&lt;/em&gt; to itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: For functions &lt;script type=&quot;math/tex&quot;&gt; f: A \to B &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; g: B \to C &lt;/script&gt;, the &lt;em&gt;functional composition&lt;/em&gt; of &lt;em&gt;f&lt;/em&gt; and &lt;em&gt;g&lt;/em&gt; is the function:&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt; (g \ o \ f) : A \to C &lt;/script&gt; defined by &lt;script type=&quot;math/tex&quot;&gt; (g \ o \ f)(x) = g(f(x))&lt;/script&gt;.&lt;br /&gt;
+Example: Composition of &lt;script type=&quot;math/tex&quot;&gt; g(y) = y^2 &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; f(x) = x +1 &lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt; (g \ o \ f)(x) = (x+1)^2&lt;/script&gt;.&lt;br /&gt;
+Proposition: &lt;script type=&quot;math/tex&quot;&gt; h \ o \ (g \ o \ f) = (h \ o \ g ) \ o \ f&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;functional-inverse&quot;&gt;Functional inverse&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: Functions &lt;em&gt;f&lt;/em&gt; and &lt;em&gt;g&lt;/em&gt; are functional inverses if &lt;em&gt;f o g&lt;/em&gt; and &lt;em&gt;g o f&lt;/em&gt; are defined and are indentity functions.&lt;br /&gt;
+Invertible functions are &lt;strong&gt;one-to-one&lt;/strong&gt;.&lt;br /&gt;
+Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
+&lt;strong&gt;Function Invertibility Theorem:&lt;/strong&gt; A function &lt;em&gt;f&lt;/em&gt; is invertible if and only if it is one-to-one and onto.&lt;/p&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/2015/02/26/basic-math-intro</link>
+                <guid>http://zhou-dong.github.io/2015/02/26/basic-math-intro</guid>
+                <pubDate>2015-02-26T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>LA-07 Vector Spaces (Linear Spaces)</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/24/vector-space</link>
+                <guid>http://zhou-dong.github.io/2015/02/24/vector-space</guid>
+                <pubDate>2015-02-24T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>LA-06 Orthogonality</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/22/orthogonality</link>
+                <guid>http://zhou-dong.github.io/2015/02/22/orthogonality</guid>
+                <pubDate>2015-02-22T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>LA-05 Eigenvalues, Eigenvectors, and Diagonaliztion</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/20/eigenvalues</link>
+                <guid>http://zhou-dong.github.io/2015/02/20/eigenvalues</guid>
+                <pubDate>2015-02-20T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>CS-5549 Assignment 4</title>
+                <description>
+&lt;h4 id=&quot;question-&quot;&gt;Question :&lt;/h4&gt;
+&lt;p&gt;Show the R-B trees that result after successively inserting the keys 41, 38, 31, 12, 19, 8 into an initially empty R-B tree. &lt;/p&gt;
+
+&lt;p&gt;Answer:&lt;/p&gt;
+
+&lt;div style=&quot;width:100%&quot;&gt;
+
+  &lt;img alt=&quot;red-black-tree&quot; style=&quot;width:100%&quot; src=&quot;/images/Red-Black-Tree.png&quot; /&gt;
+
+&lt;div&gt;
+&lt;/div&gt;&lt;/div&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/20/cs-5549-assignment-4</link>
+                <guid>http://zhou-dong.github.io/2015/02/20/cs-5549-assignment-4</guid>
+                <pubDate>2015-02-20T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>LA-04 Subspaces</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/18/subspaces</link>
+                <guid>http://zhou-dong.github.io/2015/02/18/subspaces</guid>
+                <pubDate>2015-02-18T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>LA-02 Matrices and Linear Transformations</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/16/matrices-and-linear-transformations</link>
+                <guid>http://zhou-dong.github.io/2015/02/16/matrices-and-linear-transformations</guid>
+                <pubDate>2015-02-16T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>LA-03 Determinants</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/16/determinants</link>
+                <guid>http://zhou-dong.github.io/2015/02/16/determinants</guid>
+                <pubDate>2015-02-16T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>LA-01 Matrices, Vectors, and Systems of Linear Equations</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/02/16/definitions-in-linear-algebra</link>
+                <guid>http://zhou-dong.github.io/2015/02/16/definitions-in-linear-algebra</guid>
+                <pubDate>2015-02-16T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Achieved Courses</title>
+                <description>
+&lt;h3 id=&quot;online-courses&quot;&gt;Online Courses&lt;/h3&gt;
+
+&lt;h4 id=&quot;coursera&quot;&gt;Coursera:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;R Programming
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: Feb 01, 2015&lt;/li&gt;
+      &lt;li&gt;End Date: Feb 10, 2015&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/zhou-dong/r-study&quot;&gt;Notes and Code&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;機器學習基石 (Machine Learning Foundations)
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: Jan 31, 2015&lt;/li&gt;
+      &lt;li&gt;End Date: Feb 15, 2015&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://zhou-dong.github.io/2015/02/15/revised-all/&quot;&gt;Simple Roadmap&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
+
+&lt;h4 id=&quot;youtube&quot;&gt;Youtube:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;線性代數 (Not Finished All, Just lec01-lec-13)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLe94oLfiYuBCN-1N9aHJVjqO0K_Ug0VwZ&quot;&gt;URL&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Start Date: Jan 04, 2015&lt;/li&gt;
+      &lt;li&gt;End Date: Feb 10, 2015&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;colledge&quot;&gt;Colledge&lt;/h3&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/16/achieved-courses</link>
+                <guid>http://zhou-dong.github.io/2015/02/16/achieved-courses</guid>
+                <pubDate>2015-02-16T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-11 Three Learning Principles</title>
+                <description>
+&lt;h4 id=&quot;occams-razor&quot;&gt;Occam’s Razor&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;History:
+    &lt;ul&gt;
+      &lt;li&gt;An explanation of the data should be made as simple as possible, but no simpler. –Albert Einstein&lt;strong&gt;?&lt;/strong&gt;(1879-1955)&lt;/li&gt;
+      &lt;li&gt;entia non sunt mutiplicanda praeter necessitatem (entities must not be mutiplied &lt;strong&gt;beyond necessity&lt;/strong&gt;) –William of Occam (1287-1347)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Definition:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Occam’s razor&lt;/strong&gt; for trimming down unnessary explanation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Explain:
+    &lt;ul&gt;
+      &lt;li&gt;The simplest model that fits the data is aslo the most plausible.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;One word:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Simple is Better&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;sampling-bias&quot;&gt;Sampling Bias&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Description:
+    &lt;ul&gt;
+      &lt;li&gt;If the data is sampled in a &lt;strong&gt;biased&lt;/strong&gt; way, learning will produce a similarly biased outcome.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Practical rule of thumb:
+    &lt;ul&gt;
+      &lt;li&gt;match test scenario as much as possible&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;data-snooping&quot;&gt;Data Snooping&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data snooping
+    &lt;ul&gt;
+      &lt;li&gt;careful about &lt;strong&gt;your brain’s “model complexity”&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;shall be decided &lt;strong&gt;without “snooping” data&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;If data set has affected any step in the learning process, its ability to assess the outcome has been compromised.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Dealing with data snooping
+    &lt;ul&gt;
+      &lt;li&gt;truth - &lt;strong&gt;very hard to avoid&lt;/strong&gt;, unless being extrnmely honest&lt;/li&gt;
+      &lt;li&gt;extremely honest: &lt;strong&gt;lock your test data in safe&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;less honest: &lt;strong&gt;reserve validation and use cautiously&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;be blind: avoid making modeling decision by data&lt;/li&gt;
+      &lt;li&gt;be suspicious: interpret research results (including your own)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/15/three-learning-principles</link>
+                <guid>http://zhou-dong.github.io/2015/02/15/three-learning-principles</guid>
+                <pubDate>2015-02-15T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-12 Revised Course</title>
+                <description>
+&lt;h4 id=&quot;three-related-fields&quot;&gt;Three Related Fields&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Data mining&lt;/li&gt;
+  &lt;li&gt;Artifical Intelligence&lt;/li&gt;
+  &lt;li&gt;Statistics&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;three-theoretical-bounds&quot;&gt;Three Theoretical Bounds&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Hoeffding&lt;/li&gt;
+  &lt;li&gt;Muti-Bin Hoeffding&lt;/li&gt;
+  &lt;li&gt;VC&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;three-linear-models&quot;&gt;Three Linear Models&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;PLA, pocket&lt;/li&gt;
+  &lt;li&gt;Linear regression&lt;/li&gt;
+  &lt;li&gt;Logistic regression&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;three-key-tools&quot;&gt;Three Key Tools&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Feature Transform&lt;/li&gt;
+  &lt;li&gt;Regularization&lt;/li&gt;
+  &lt;li&gt;Validation &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;three-learning-principles&quot;&gt;Three Learning Principles&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Occam’s Razer&lt;/li&gt;
+  &lt;li&gt;Sampling Bias&lt;/li&gt;
+  &lt;li&gt;Data Snooping &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;three-future-directions&quot;&gt;Three Future Directions&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;More Transform&lt;/li&gt;
+  &lt;li&gt;More Regularization&lt;/li&gt;
+  &lt;li&gt;Less Label&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/15/revised-all</link>
+                <guid>http://zhou-dong.github.io/2015/02/15/revised-all</guid>
+                <pubDate>2015-02-15T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-10 Regularization, Validation</title>
+                <description>
+&lt;h3 id=&quot;regularization&quot;&gt;Regularization&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Description:
+    &lt;ol&gt;
+      &lt;li&gt;我们可以把&lt;script type=&quot;math/tex&quot;&gt;E(in)&lt;/script&gt;和regularizer加在一起&lt;/li&gt;
+      &lt;li&gt;minimizes augmented error, where the added regularizer effectively limits model complexity&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Regression with Constraint
+    &lt;ol&gt;
+      &lt;li&gt;Constraint&lt;/li&gt;
+      &lt;li&gt;Softer constraint&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;validation&quot;&gt;Validation&lt;/h3&gt;
+
+&lt;h4 id=&quot;model-selection-problemi-so-many-models&quot;&gt;Model selection problemi, so many models:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Classification:
+    &lt;ul&gt;
+      &lt;li&gt;PLA&lt;/li&gt;
+      &lt;li&gt;pocket&lt;/li&gt;
+      &lt;li&gt;linear regression&lt;/li&gt;
+      &lt;li&gt;logistic regression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;transform:
+    &lt;ul&gt;
+      &lt;li&gt;linear&lt;/li&gt;
+      &lt;li&gt;quadratic&lt;/li&gt;
+      &lt;li&gt;poly-10&lt;/li&gt;
+      &lt;li&gt;Legendre-poly-10&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;regularizer
+    &lt;ul&gt;
+      &lt;li&gt;L2 regularizer&lt;/li&gt;
+      &lt;li&gt;L1 regularizer&lt;/li&gt;
+      &lt;li&gt;symmetry regularizer &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;validation-1&quot;&gt;Validation&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Description:
+    &lt;ul&gt;
+      &lt;li&gt;留一份手中的资料做测试集。&lt;/li&gt;
+      &lt;li&gt;legeal cheeting&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; E_{val}(h) &lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Method: 
+    &lt;ul&gt;
+      &lt;li&gt;Leave-one-out Cross Validation&lt;/li&gt;
+      &lt;li&gt;V-Flod Cross Validation &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/2015/02/15/regularization-validation</link>
+                <guid>http://zhou-dong.github.io/2015/02/15/regularization-validation</guid>
+                <pubDate>2015-02-15T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-07 Training, Generaliztion, VC</title>
+                <description>
+&lt;h4 id=&quot;traing-versus-testing&quot;&gt;1. Traing versus Testing&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Effective number of Lines:
+    &lt;ul&gt;
+      &lt;li&gt;some time we can not dichot a set&lt;/li&gt;
+      &lt;li&gt;how many lines can dichot a set&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Dichotomies: Mini-hypotheses
+    &lt;ul&gt;
+      &lt;li&gt;dichotomy set: depend on inputs&lt;/li&gt;
+      &lt;li&gt;growth function: remove dependence by taking max of all possible&lt;/li&gt;
+      &lt;li&gt;finite, upper-bounded by &lt;script type=&quot;math/tex&quot;&gt; 2^n &lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;growth function for positive pays&lt;/li&gt;
+      &lt;li&gt;Convex set&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Break Point
+    &lt;ul&gt;
+      &lt;li&gt;growth function: max number of dichotmies&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;theory-of-generaliztion&quot;&gt;2. Theory of Generaliztion&lt;/h4&gt;
+
+&lt;p&gt;Description: 举一反三&lt;/p&gt;
+
+&lt;p&gt;Detail:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;REstriction of Break Point
+    &lt;ul&gt;
+      &lt;li&gt;bounding function: maximum number of length-N vectors with(o,x) while “no shatter” any length-k subvectors&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Pictorial Proof&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;vc-dimension&quot;&gt;3. VC Dimension&lt;/h4&gt;
+
+&lt;p&gt;Description: maximum non-break point. 一个集合，在vc dimension在这个点上可以shatter某N个点&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;positive rays: &lt;script type=&quot;math/tex&quot;&gt; d_{vc} = 1 &lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;positive intervals: &lt;script type=&quot;math/tex&quot;&gt; d_{vc} = 2 &lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;positive convex sets: &lt;script type=&quot;math/tex&quot;&gt; d_{vc} = \infty &lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;2D perceptrons: &lt;script type=&quot;math/tex&quot;&gt; d_{vc} = 3 &lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/14/traing-testing</link>
+                <guid>http://zhou-dong.github.io/2015/02/14/traing-testing</guid>
+                <pubDate>2015-02-14T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-08 Linear Regression, Logistic Regression</title>
+                <description>
+&lt;h4 id=&quot;linear-regression&quot;&gt;Linear Regression&lt;/h4&gt;
+
+&lt;p&gt;Description: 在二维空间找出一条线，或者三维空间找出一个面,分割这个Set。 &lt;/p&gt;
+
+&lt;p&gt;Mathese: &lt;script type=&quot;math/tex&quot;&gt; E_{in}(W) = \frac{1}{N} \sum_{n=1}^N (w^Tx_n - y_n)^2&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Popular/historical error measure: squared error &lt;/p&gt;
+
+&lt;p&gt;How to minimize the &lt;script type=&quot;math/tex&quot;&gt; E_{in} (W) &lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Matrix: &lt;script type=&quot;math/tex&quot;&gt; min E_{in}(W) = \frac{1}{N} \begin{Vmatrix} Xw - y \end{Vmatrix}^2 &lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;他是一个convex function，所以我们能找到极值点。&lt;/p&gt;
+
+&lt;p&gt;应该是求导值（或者梯度的意思）应该是0.&lt;/p&gt;
+
+&lt;p&gt;求导个人理解是曲线加速的方向。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;在向量空间中求出梯度为0的点&lt;/em&gt;就应该是极值点。&lt;/p&gt;
+
+&lt;h4 id=&quot;linear-classification-vs-linear-regression&quot;&gt;Linear Classification vs. Linear Regression&lt;/h4&gt;
+
+&lt;p&gt;可以用Linear Rregression来做Linear classification&lt;/p&gt;
+
+&lt;p&gt;可以现在用linear regression现在初步的分割数据，然后再用linear classification&lt;/p&gt;
+
+&lt;h4 id=&quot;logistic-regression&quot;&gt;Logistic Regression&lt;/h4&gt;
+
+&lt;p&gt;It is kind of soft binary classification.&lt;/p&gt;
+
+&lt;p&gt;linear regression的数据可以看成是logistic regression有noise的数据。&lt;/p&gt;
+
+&lt;p&gt;Dcription: 预测某件事发生的概率。&lt;/p&gt;
+
+&lt;p&gt;Convert the score to estimated probability by logistic function.&lt;/p&gt;
+
+&lt;p&gt;把值转化成概率的函数。
+&lt;script type=&quot;math/tex&quot;&gt; 
+\theta(s) = \frac{e^s}{1+ e^s} = \frac{1}{1+e^{-s}}
+&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Gradient Descent&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;greedy approch&lt;/li&gt;
+  &lt;li&gt;Taylor Expansion&lt;/li&gt;
+  &lt;li&gt;choise of n: don’t &lt;strong&gt;too smally&lt;/strong&gt;, don’t &lt;strong&gt;too large&lt;/strong&gt;, &lt;strong&gt;just right&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Stochastic gradient descent: random pick a gradient&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/14/linear-regression</link>
+                <guid>http://zhou-dong.github.io/2015/02/14/linear-regression</guid>
+                <pubDate>2015-02-14T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-09 Linear and Nonlinear Classification</title>
+                <description>
+&lt;h4 id=&quot;linear-classification&quot;&gt;Linear Classification&lt;/h4&gt;
+
+&lt;p&gt;Basic: &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;One class at a Time&lt;/li&gt;
+  &lt;li&gt;Combine Binary Classifiers&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Improve:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;One class at a Time&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Soft&lt;/strong&gt; combine Binary Classifiers&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Enhance:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Sum of all the probability equal 1&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;One class at a Time&lt;/li&gt;
+  &lt;li&gt;Soft combine Classifiers&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;One versus&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Two class&lt;/strong&gt; at a time compare&lt;/li&gt;
+  &lt;li&gt;Combine &lt;strong&gt;Pairwise&lt;/strong&gt; Classifiers&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;nonlinear-classification&quot;&gt;Nonlinear Classification&lt;/h4&gt;
+
+&lt;p&gt;Circular Separable:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Equtation:
+&lt;script type=&quot;math/tex&quot;&gt; 
+  h(x) = sign(r \ -1 \cdot x_1^2 -1 \cdot x_2^2)  \\
+  h(x) = sign(r \cdot 1 + \ (-1) \cdot x_1^2 + (-1) \cdot x_2^2) \\ 
+  h(x) = sign(w_0z_0 + w_1z_1 + w_2z_2) \\
+  h(x) = sign(w^Tz)
+&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;特征的换：可以把一个平面内的点与圆半径的距离映射到向量空间中去.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Linear hypotheses in Z-space: circle, ellipse, hyperbola, constant&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/14/linear-classification</link>
+                <guid>http://zhou-dong.github.io/2015/02/14/linear-classification</guid>
+                <pubDate>2015-02-14T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-06 Machine Learning Type</title>
+                <description>
+&lt;h4 id=&quot;learning-with-different-output-space&quot;&gt;Learning with Different Output Space&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Binary Classification&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;credit approve/disapprove&lt;/li&gt;
+      &lt;li&gt;email spam/non-spam&lt;/li&gt;
+      &lt;li&gt;patient sick/not sick&lt;/li&gt;
+      &lt;li&gt;ad profitable/not profitable&lt;/li&gt;
+      &lt;li&gt;answer correct/incorrect&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Muticlass Classification
+    &lt;ul&gt;
+      &lt;li&gt;written digits: 0, 1, …, 9&lt;/li&gt;
+      &lt;li&gt;pictures: apple, orange, strawberry&lt;/li&gt;
+      &lt;li&gt;emails: spam, primary, social, promotion, update(Google)&lt;/li&gt;
+      &lt;li&gt;recognition&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Regression&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; y \in R&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Structured Learning
+    &lt;ul&gt;
+      &lt;li&gt;natural language process (NLP)&lt;/li&gt;
+      &lt;li&gt;protein data&lt;/li&gt;
+      &lt;li&gt;speech data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;learning-with-different-data-label&quot;&gt;Learning with Different Data Label&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Supervised&lt;/li&gt;
+  &lt;li&gt;Unsupervised
+    &lt;ul&gt;
+      &lt;li&gt;articles to topics&lt;/li&gt;
+      &lt;li&gt;consumer profiles to consumer groups&lt;/li&gt;
+      &lt;li&gt;density estimation&lt;/li&gt;
+      &lt;li&gt;outlier detection&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Semi-supervised&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Reinforcement Learning&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;training ad system&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;black jack agent&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;learning-with-different-protocol&quot;&gt;Learning with Different Protocol&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Batch Learning (duck feeding)&lt;/li&gt;
+  &lt;li&gt;Online Learning (passive sequdential)&lt;/li&gt;
+  &lt;li&gt;Active Learning (question asking)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;learning-with-different-input-space&quot;&gt;Learning with Different Input Space&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;concrete&lt;/li&gt;
+  &lt;li&gt;Raw Features&lt;/li&gt;
+  &lt;li&gt;Abstract Features&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/08/type-of-machine-learning</link>
+                <guid>http://zhou-dong.github.io/2015/02/08/type-of-machine-learning</guid>
+                <pubDate>2015-02-08T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>ML-NTU-F-05 Perceptron Hypothesis</title>
+                <description>
+&lt;h4 id=&quot;lecture-1-the-learning-problem&quot;&gt;Lecture 1: The learning problem&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A &lt;/script&gt; takes &lt;script type=&quot;math/tex&quot;&gt; D &lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt; H &lt;/script&gt; to get &lt;script type=&quot;math/tex&quot;&gt; g &lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Math Sign&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Definition&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Detail&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; A &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Learning Algorithm&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;–&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; D:(x_1, y_1), \cdots, (x_n, y_n) &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;training examples&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;historical records&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; H &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Hypothesis set&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;–&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; g \approx f &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;final hypothesis&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;“learned” formula to be useds&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; f: X \rightarrow Y &lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;unknown target function&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ideal credit approval formula&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;lecture-2-learning-to-answer-yesno&quot;&gt;Lecture 2: Learning to answer &lt;strong&gt;Yes/No&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Perceptron Hyphothesis Set&lt;/li&gt;
+  &lt;li&gt;Perceptron Learning Algorithm (PLA)&lt;/li&gt;
+  &lt;li&gt;Guarantee of PLA&lt;/li&gt;
+  &lt;li&gt;Non-Separable Data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;a-simple-hypothesis-set-the-perceptron&quot;&gt;A Simple Hypothesis Set: the “perceptron”&lt;/h4&gt;
+&lt;p&gt;For &lt;script type=&quot;math/tex&quot;&gt; x = (x_1, x_2, \cdots, x_d) &lt;/script&gt; &lt;strong&gt;features of customer&lt;/strong&gt;, computer a weight &lt;code&gt;score&lt;/code&gt; and&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;approve credit if &lt;script type=&quot;math/tex&quot;&gt; \sum_{i=1}^d w_i x_i &gt; threshold &lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;deny credit if &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ \sum_{i=1}^d w_i x_i &lt;  threshold  %]]&gt;&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; y : \{ +1(good), -1(bad) \}, &lt;/script&gt; &lt;strong&gt;0&lt;/strong&gt; ignored - linear formula &lt;script type=&quot;math/tex&quot;&gt; h \in H &lt;/script&gt; are&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
+ h(x) = sign((\sum_{i=1}^d w_i x_i) - threshold ) \\
+ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + (-threshold) \cdot (+1)) \\
+ \ \ \ \ \ \ = sign((\sum_{i=1}^d w_i x_i) + w_0 \cdot x_0 ) \\
+ \ \ \ \ \ \ = sign(\sum_{i=0}^d w_i x_i) \\
+ \ \ \ \ \ \ = sign(w^T x) 
+&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; h(x) = sign(w_0 + w_1x_1 + w_2x_2 + \cdots + w_nx_n) &lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;perceptron-learning-algorithm&quot;&gt;Perceptron Learning Algorithm&lt;/h4&gt;
+&lt;p&gt;For &lt;script type=&quot;math/tex&quot;&gt; t = 0, 1, 2, \cdots &lt;/script&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;find a mistake of &lt;script type=&quot;math/tex&quot;&gt; w_t &lt;/script&gt; called &lt;script type=&quot;math/tex&quot;&gt; (x_{n(t)}, y_{n(t)}) &lt;/script&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; sign(w_{t}^T x_{n(t)}) \neq y_{n(t)}&lt;/script&gt;.&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;(try to) correct the mistake by
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; w_{t+1} \leftarrow w_{t} + y_{n(t)}x_{n(t)} &lt;/script&gt;.&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;until no more mistake
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;return last &lt;script type=&quot;math/tex&quot;&gt; w \ (called \ w_{PLA}) \ as \  g&lt;/script&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;中文解释&lt;/h4&gt;
+&lt;p&gt;在不断的循环中:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;如果在第t轮的循环中发现&lt;script type=&quot;math/tex&quot;&gt; w_t &lt;/script&gt;对一个点&lt;script type=&quot;math/tex&quot;&gt; (x_{n(t)}, y_{n(t)}) &lt;/script&gt;的判断是错误的，即：&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; sign(w_{t}^T x_{n(t)}) \neq y_{n(t)}&lt;/script&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;加入这个点&lt;script type=&quot;math/tex&quot;&gt; (x_{n(t)}, y_{n(t)}) &lt;/script&gt;对&lt;script type=&quot;math/tex&quot;&gt; w_t &lt;/script&gt;进行修正，即：&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt; w_{t+1} \leftarrow w_{t} + y_{n(t)}x_{n(t)} &lt;/script&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;直到没有错误点为止，返回结果&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt;g = \ w \ (called \ w_{PLA})&lt;/script&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;guarantee-of-pla&quot;&gt;Guarantee of PLA&lt;/h4&gt;
+
+&lt;h5 id=&quot;linear-separable--d-leftrightarrow--exists-perfect-wt-such-that-yn--signwtt-xn&quot;&gt;Linear Separable &lt;script type=&quot;math/tex&quot;&gt; D \Leftrightarrow &lt;/script&gt; &lt;strong&gt;exists perfect&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;w_t&lt;/script&gt; such that &lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt;y_n = sign(w_t^T x_n)&lt;/script&gt;&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;w_t&lt;/script&gt; perfect hence every &lt;script type=&quot;math/tex&quot;&gt;x_n&lt;/script&gt; correctly away from line:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; y_{n(t)} w_f^T x_{n(t)} \ge  min \ y_n w_f^T x_n &gt; 0 &lt;/script&gt; by updating with any &lt;script type=&quot;math/tex&quot;&gt; (x_{n(t)}, y_{n(t)}) &lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; w_f^T w_{t+1} = w_f^T(w_t + y_{n(t)} x_{n(t)}) \ge w_f^T w_t + min \ y_n w_f^T x_n &gt; w_f^T w_t + 0 &lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;wt-changed-only-when-mistake--wt--dose-not-grow-too-fast&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;w_t&lt;/script&gt; changed only when mistake (&lt;script type=&quot;math/tex&quot;&gt; w_t &lt;/script&gt; Dose Not Grow Too Fast)&lt;/h5&gt;
+
+&lt;h5 id=&quot;section-1&quot;&gt;两个向量内积越大夹角越小(长度不变的情况下)。&lt;/h5&gt;
+
+&lt;h4 id=&quot;non-separable-data&quot;&gt;Non-Separable Data&lt;/h4&gt;
+
+&lt;h5 id=&quot;learning-with-noisy-data&quot;&gt;Learning with &lt;strong&gt;Noisy Data&lt;/strong&gt;&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;Line with Noise Tolerance
+    &lt;ul&gt;
+      &lt;li&gt;找出一条犯错误最少的分割线&lt;script type=&quot;math/tex&quot;&gt;w_t&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;NP-hard to solve, unfortunately&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;使用贪心算法&lt;strong&gt;pocket&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;保存当前为止最好的分割线&lt;script type=&quot;math/tex&quot;&gt;w_t&lt;/script&gt;然后和其它策略想比较，如果更好就更新。&lt;/li&gt;
+      &lt;li&gt;不会自动停下来，所以需要设置挺下来的条件。(PLA是会自己停下来的)。&lt;/li&gt;
+      &lt;li&gt;效率比PLA要差。(PLA每次找一个点来修正，可是&lt;strong&gt;pocket&lt;/strong&gt;会每次都对比所有的点来确认哪次效果更好)。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/02/07/machine-learning-perceptron</link>
+                <guid>http://zhou-dong.github.io/2015/02/07/machine-learning-perceptron</guid>
+                <pubDate>2015-02-07T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>BTree Graph</title>
                 <description>
 &lt;div style=&quot;width:100%&quot;&gt;
 
-  &lt;img alt=&quot;b-tree&quot; style=&quot;width:100%&quot; src=&quot;http://zhou-dong.github.io/images/b-tree.jpg&quot; /&gt;
+&lt;!--
+  &lt;img alt=&quot;b-tree&quot; style=&quot;width:100%&quot; src=&quot;http://zhou-dong.github.io/images/b-tree.jpg&quot;/&gt;
+--&gt;
+
+  &lt;img alt=&quot;b-tree&quot; style=&quot;width:100%&quot; src=&quot;/images/b-tree.jpg&quot; /&gt;
 
 &lt;div&gt;
 
@@ -142,7 +1194,7 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
         </item>
 
         <item>
-                <title>What is Machine Learning</title>
+                <title>ML-NTU-F-02 What is Machine Learning</title>
                 <description>
 &lt;h4 id=&quot;machine-learning-acquiring-skill&quot;&gt;Machine Learning: acquiring skill&lt;/h4&gt;
 &lt;ul&gt;
@@ -190,7 +1242,7 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
         </item>
 
         <item>
-                <title>Machine Learning with Other Fields</title>
+                <title>ML-NTU-F-04 Machine Learning with Other Fields</title>
                 <description>
 &lt;h5 id=&quot;definition-of-machine-learning&quot;&gt;Definition of Machine Learning:&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;Use &lt;code&gt;data&lt;/code&gt; to compute &lt;code&gt;hypothesis&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; that approximates &lt;code&gt;target&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt;\ f&lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -223,7 +1275,7 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
         </item>
 
         <item>
-                <title>Introduction of ML Course</title>
+                <title>ML-NTU-F-01 Introduction of ML Course</title>
                 <description>
 &lt;h4 id=&quot;study-informantion&quot;&gt;Study Informantion:&lt;/h4&gt;
 &lt;ul&gt;
@@ -252,7 +1304,7 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
         </item>
 
         <item>
-                <title>Compontents of Machine Learning</title>
+                <title>ML-NTU-F-03 Compontents of Machine Learning</title>
                 <description>
 &lt;h4 id=&quot;basic-notations&quot;&gt;Basic Notations:&lt;/h4&gt;
 &lt;ul&gt;
