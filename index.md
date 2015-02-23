@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 感谢时光
-tagline: 
+title: Hi
+tagline: 读书、旅行、坚定、自信
 ---
 
 {% include JB/setup %}
