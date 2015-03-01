@@ -55,9 +55,35 @@ tagline: Sort method, Recursion, Dynamic Programming
         5. Similarly: at least n/4 elements $$\ge$$ x
 
 ## Recursion
-1. Telescoping
-2. 
+- **Telescoping** $$ T(n) = aT(n/b) + f(n) $$
 
+    Example: Let: $$ a=2, \ b=2, \ f(n) = 1 $$
+
+    |Step| Function One | Equal | Functin Two |
+    |:---:| :--- | :---: | : --- |
+    | 1 | $$ T(n) = 2T(n/2) + 1 $$ | = |  $$ 2^1T(n/2^1) + 1 $$ |
+    | 2 | $$ T(n) = 4T(n/4) + 1 + 1 $$ | = | $$ 2^2T(n/2^2) + 2 $$ |
+    | 3 | $$ T(n) = 8T(n/8) + 1 + 1 + 1 $$ | = | $$ 2^3T(n/2^3) + 3 $$ |
+    | 4 | $$ T(n) = \ \ \ \ \ \ \  \vdots $$ | = | $$ \ \ \ \ \ \ \  \vdots $$ |
+    | 5 | $$ T(n) = nT(n/n) + \log_{2} n $$ | = | $$ 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2} n $$ |
+
+    Step1 + Step2 + $$ \cdots $$ + Step5 :
+    $$ T(n) = nT(1)  + \sum_{i=0}^{\log_{2}n} i \le n\log_2 n = n \lg_n$$
+- **Master Theorem** 
+
+    Let a $$ \ge $$ 1 and b &gt; 1 be constants, let f(n) be a function. `T(n) = aT(n/b) + f(n)` ;
+
+    1. If $$ f(n) = O(n^{\log_{b} a - \epsilon}) $$ for some constant $$ \epsilon > 0 $$, then $$ T(n) = \Theta(n^{\log_{b} a })$$.
+    2. If $$ f(n) = \Theta(n^{\log_{b} a}) $$ then $$ T(n) = \Theta(n^{\log_{b} a} \lg n) $$.
+    3. If $$ f(n) = \Omega(n^{\log_{b} a + \epsilon}) $$ for some constant $$ \epsilon $$ &gt; 0 , and if $$ af(n/b) \le cf(n)$$ for some constant c &lt; 1 and all sufficiently large n, then $$ T(n) = \Theta(f(n))$$.
+
+    Examples: $$ T(n)  =  2T(n/2) + n^4 $$
+
+    1. $$ a = 2, \ b = 2, \ f(n) = n^4 $$ ,
+    2. $$ n^{\log_{b} a} = n^{\log_{2} 2} = n^1 $$ ,
+    3. $$ f(n) = n^4 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{1 + 3}) $$ ,
+    4. $$ \epsilon = 3  $$ ,
+    5. $$ \therefore \  T(n) = \Theta(n^4) $$ .
 
 ## Datastructure
 
@@ -94,6 +120,51 @@ tagline: Sort method, Recursion, Dynamic Programming
     + Leaf connected to next and above
 
 ## Big O Notation
-
+ - $$ O $$ : Less than (Worst Situation)
+ - $$ o $$ : Less or Equal
+ - $$ \Omega $$ : Bigger than (Best Situation)
+ - $$ \omega $$ : Big or Equal
+ - $$ \Theta $$ : Between { $$ O,\ \ \Omega $$ }
 
 ## Dynamic Programming
+
+- What situation we will use dynamic Programming
+    1. Can be divided into small parts
+    2. Small parts have `Optimal Structure`
+        + Prove or
+        + Persuade Or Convince
+    3. Equation
+    4. Build Table
+- Longest common subsequence
+    + Two Rules:
+        1. If same, shoulder += 1
+        2. If not same, choose bigger one from both sides
+    + Create Table:
+    $$
+    X = {B A D C B A B} \\
+    Y = {A C D B C A} \\
+    \begin{array}{|c|c|c|c|c|c|c|}
+    \hline
+    0 &x_i & B & A & D & C & B & A & B \\
+    \hline
+    y_i& 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    \hline
+    A  & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+    \hline
+    C  & 0 & 0 & 1 & 1 & 2 & 2 & 2 & 2 \\
+    \hline
+    D  & 0 & 0 & 1 & 2 & 2 & 2 & 2 & 2 \\
+    \hline
+    B  & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 3 \\
+    \hline
+    C  & 0 & 1 & 1 & 2 & 3 & 3 & 3 & 3 \\
+    \hline
+    A  & 0 & 1 & 2 & 2 & 3 & 3 & 4 & 4 \\
+    \hline
+    \end{array}
+    $$
+    + Decode:
+        - A D C A
+        - A D B A
+        - A C B A
+- Matrix-chain multiplication
