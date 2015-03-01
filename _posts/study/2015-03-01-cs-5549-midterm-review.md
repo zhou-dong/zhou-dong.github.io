@@ -56,7 +56,7 @@ tagline: Sort method, Recursion, Dynamic Programming
 
 ## Recursion
 1. Telescoping
-
+2. 
 
 
 ## Datastructure
