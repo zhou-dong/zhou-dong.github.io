@@ -168,3 +168,4 @@ tagline: Sort method, Recursion, Dynamic Programming
         - A D B A
         - A C B A
 - Matrix-chain multiplication
+    + i must less than j
