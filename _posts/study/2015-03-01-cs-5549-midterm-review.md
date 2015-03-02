@@ -169,3 +169,38 @@ tagline: Sort method, Recursion, Dynamic Programming
         - A C B A
 - Matrix-chain multiplication
     + i must less than j
+    + $$ A_1 = (30 \times 35) $$.
+    + $$ A_2 = (35 \times 15) $$.
+    + $$ A_3 = (15 \times 5) $$.
+    + $$ A_4 = (5 \times 10) $$.
+    + $$ A_5 = (10 \times 20) $$.
+    + $$ A_6 = (20 \times 25) $$.
+    + Tables:
+    $$
+        \begin{array}{|c|c|c|c|c|c|c|}
+         \hline
+        -- & 1 & 2 & 3 & 4 & 5 & 6  \\
+        \hline
+        6  & 15125 & 10500 & 5375 & 3500 & 5000 & 0  \\
+        \hline
+        5  & 11875 & 7125 & 2500 & 1000 & 0 & -  \\
+        \hline
+        4  & 9375 & 4375 & 750 & 0 & - & -  \\
+        \hline
+        3  & 7875 & 2625 & 0 & - & - & -  \\
+        \hline
+        2  & 15750 & 0 & - & - & - & -  \\
+        \hline
+        1  & 0 & - & - & - & - & -  \\
+        \hline
+        \end{array}
+        $$
+    + $$ min(1,2) = min(1,1) + min(2,2) + p_0 \times p_1 \times p_2 = 0 + 0 + 30 * 35 * 15 = 15750 $$.
+    + $$ min(2,3) = min(2,2) + min(3,3) + p_1 \times p_2 \times p_3 = 0 + 0 + 35 * 15 * 5 = 2625 $$.
+    + $$ min(3,4) = min(3,3) + min(4,4) + p_2 \times p_3 \times p_4 = 0 + 0 + 15 * 5 * 10 = 750 $$.
+    + $$ min(4,5) = min(4,4) + min(5,5) + p_3 \times p_4 \times p_5 = 0 + 0 + 5 * 10 * 20 = 1000 $$.
+    + $$ min(5,6) = min(5,5) + min(6,6) + p_4 \times p_5 \times p_6 = 0 + 0 + 10 * 20 * 25 = 5000 $$.
+    + $$
+         min(1,3) = min(1,1) + min(2,3) + p_0 \times p_1 \times p_3 = 0 + 2625 + 30 * 35 * 5 = 2625 + 5250 = 7875 \\
+         min(1,3) = min(1,2) + min(3,3) + p_0 \times p_2 \times p_3 = 15750 + 30 * 15 * 5 = 18000
+      $$.
