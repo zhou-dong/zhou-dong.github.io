@@ -5,10 +5,40 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-02-25T22:51:00-06:00</lastBuildDate>
-        <pubDate>2015-02-25T22:51:00-06:00</pubDate>
+        <lastBuildDate>2015-03-04T10:11:24-06:00</lastBuildDate>
+        <pubDate>2015-03-04T10:11:24-06:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Notes for people-to-people</title>
+                <description>
+&lt;h4 id=&quot;natural-language-processing&quot;&gt;Natural Language Processing:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Stop word(should we eliminate stop word)&lt;/li&gt;
+  &lt;li&gt;Word Tokenization
+    &lt;ul&gt;
+      &lt;li&gt;用自然语言分析，最归一化，如data mining == data mine, Nosql = NOSQL, &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;weight-of-the-attributes&quot;&gt;Weight of The Attributes:&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Company Name Have &lt;code&gt;negative&lt;/code&gt; Weight&lt;/li&gt;
+  &lt;li&gt;Others have the &lt;code&gt;positive&lt;/code&gt; Weight&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;cold-start-problem&quot;&gt;Cold start Problem&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;If most of the key words have the TF of 0, our result will not go will.&lt;/li&gt;
+  &lt;li&gt;Answer: We initialize all the words with small weight to smooth the data.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/03/02/people-to-people</link>
+                <guid>http://zhou-dong.github.io/2015/03/02/people-to-people</guid>
+                <pubDate>2015-03-02T00:00:00-06:00</pubDate>
+        </item>
 
         <item>
                 <title>CM-04 Play with Galois Field</title>
@@ -47,6 +77,408 @@
 </description>
                 <link>http://zhou-dong.github.io/2015/03/01/galois-field</link>
                 <guid>http://zhou-dong.github.io/2015/03/01/galois-field</guid>
+                <pubDate>2015-03-01T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>CS-5549 Midterm Review</title>
+                <description>
+&lt;h2 id=&quot;sorting-method&quot;&gt;Sorting Method&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Sort Name&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Description&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Best Case&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Worst Case&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Average Case&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;BubbleSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;比较相邻的元素，第一个比第二个大就交换位置。对每个元素重复上一个步骤&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SelectionSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;每次查找剩下元素中最小的元素，然后放在已经排序好的前面序列的最后一位&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;InsertionSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;将当前元素插入到比它大的元素前,现实中比Bubble Sort，Selection Sort更有效&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GnomeSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;比较相邻元素如果第2个比第1个小替换位置并继续与前面的元素比较直到遇到比它大的。对每个元素重复上一个步骤&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;ShellSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;比较第i个和第i+n/2个元素，并继续与前i+n/2个元素比较，重复前面步骤&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Depends on Gap Sequence&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;QuickSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;1.找出pivot 2.从数组两边找出比pivot大和小的替换位置，直到大、小元素相遇确定pivot位置，循环上面的步骤&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n^2)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;MergeSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;一半元素之间进行比较，然后合并。递归调用&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;HeapSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;先建立一棵树，然后依次从数种取出root，heapify tree，再取出root直到数为空&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(n\lg_{n})&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;BucketSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;以最大数初始化空数组，然后循环要排序的数组，把下标为元素的值设置为1，打印初始数组&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta(n+k)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta(n+k)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta(n+k)&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CountingSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Bucketsort的优化版，先bucketsort，然后查看每个元素前面有多少个元素比它小，然后排序&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta(n+k)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta(n+k)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta(n+k)&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;RadixSort&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;一次从最后一位数取模，然后放在bucket中，然后再除以10取模，重复前面步骤&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(N)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;O(kN)&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;— — —&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&quot;conclusion&quot;&gt;Conclusion:&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Heapsort、Mergesort会占用额外的空间。&lt;/li&gt;
+  &lt;li&gt;Bucketsort、Countingsort、Radixsort要占用额外的空间，尤其是bucketsort和countingsort，占用空间不可控。而且对小数和分数很难支持。&lt;/li&gt;
+  &lt;li&gt;一般排序的时候，使用的还是comparison，因为它对小数和分数有很好的支持，而且它的空间负责度也低。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;medians-and-order-statistics&quot;&gt;Medians and Order Statistics&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;同时找出最大值和最小值，有两种方法：
+    &lt;ol&gt;
+      &lt;li&gt;循环整个数组，一个元素与最大值比较一次，与最小值比较一次。&lt;/li&gt;
+      &lt;li&gt;先比较两个元素，然后小的与最小值比较，大的与最大值比较。这样每两个数比较3次。
+        &lt;ul&gt;
+          &lt;li&gt;奇数个元素，从第2个元素开始循环&lt;/li&gt;
+          &lt;li&gt;偶数个元素，从第3个元素开始循环&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Randomized Selection
+    &lt;ol&gt;
+      &lt;li&gt;与Quicksort相似，先找pivot，然后进行一轮排序&lt;/li&gt;
+      &lt;li&gt;比较pivot是否在要查找的元素的位置：
+        &lt;ul&gt;
+          &lt;li&gt;如果是返回pivot&lt;/li&gt;
+          &lt;li&gt;如果pivot的位置比要找元素的位置靠前，在后半个数组使用&lt;code&gt;Quicksort&lt;/code&gt;查找&lt;/li&gt;
+          &lt;li&gt;如果pivot的位置比要找元素的位置靠后，在前半个数组使用&lt;code&gt;Quicksort&lt;/code&gt;查找&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mideum of Mideum
+    &lt;ul&gt;
+      &lt;li&gt;作用：为了优化Quicksort和Randomized-Selection，我们需要找到中位数来做pivot&lt;/li&gt;
+      &lt;li&gt;步骤：
+        &lt;ol&gt;
+          &lt;li&gt;把数组分成最小5份&lt;/li&gt;
+          &lt;li&gt;在每份使用Insertion sort找出中位数&lt;/li&gt;
+          &lt;li&gt;在这五份中位数中找出中位数&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;做为quicksort的中位数&lt;/li&gt;
+      &lt;li&gt;Worst Case：
+        &lt;ol&gt;
+          &lt;li&gt;5份数据的第一份里面找出的是最小的20% = n/5,中位数等于 n/5/2 = 10%&lt;/li&gt;
+          &lt;li&gt;在5份数据中的中位数，最少有多少个数小于中位数：3 * 10% = 30%&lt;/li&gt;
+          &lt;li&gt;For large n, 3[n/10] &lt;script type=&quot;math/tex&quot;&gt;\le&lt;/script&gt; n/4&lt;/li&gt;
+          &lt;li&gt;So at least n/4 elements &lt;script type=&quot;math/tex&quot;&gt;\le&lt;/script&gt; x&lt;/li&gt;
+          &lt;li&gt;Similarly: at least n/4 elements &lt;script type=&quot;math/tex&quot;&gt;\ge&lt;/script&gt; x&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;recursion&quot;&gt;Recursion&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Telescoping&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt; T(n) = aT(n/b) + f(n) &lt;/script&gt;&lt;/p&gt;
+
+    &lt;p&gt;Example: Let: &lt;script type=&quot;math/tex&quot;&gt; a=2, \ b=2, \ f(n) = 1 &lt;/script&gt;&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;Step&lt;/th&gt;
+          &lt;th style=&quot;text-align: left&quot;&gt;Function One&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;Equal&lt;/th&gt;
+          &lt;th&gt;Functin Two&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 2T(n/2) + 1 &lt;/script&gt;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+          &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^1T(n/2^1) + 1 &lt;/script&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 4T(n/4) + 1 + 1 &lt;/script&gt;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+          &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^2T(n/2^2) + 2 &lt;/script&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = 8T(n/8) + 1 + 1 + 1 &lt;/script&gt;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+          &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^3T(n/2^3) + 3 &lt;/script&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = \ \ \ \ \ \ \  \vdots &lt;/script&gt;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+          &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; \ \ \ \ \ \ \  \vdots &lt;/script&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; T(n) = nT(n/n) + \log_{2} n &lt;/script&gt;&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;=&lt;/td&gt;
+          &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt; 2^{\log_{2}n}T(n/2^{\log_{2}n}) + \log_{2} n &lt;/script&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;Step1 + Step2 + &lt;script type=&quot;math/tex&quot;&gt; \cdots &lt;/script&gt; + Step5 :
+  &lt;script type=&quot;math/tex&quot;&gt; T(n) = nT(1)  + \sum_{i=0}^{\log_{2}n} i \le n\log_2 n = n \lg_n&lt;/script&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Master Theorem&lt;/strong&gt; &lt;/p&gt;
+
+    &lt;p&gt;Let a &lt;script type=&quot;math/tex&quot;&gt; \ge &lt;/script&gt; 1 and b &amp;gt; 1 be constants, let f(n) be a function. &lt;code&gt;T(n) = aT(n/b) + f(n)&lt;/code&gt; ;&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = O(n^{\log_{b} a - \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &gt; 0 &lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a })&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Theta(n^{\log_{b} a}) &lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(n^{\log_{b} a} \lg n) &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;If &lt;script type=&quot;math/tex&quot;&gt; f(n) = \Omega(n^{\log_{b} a + \epsilon}) &lt;/script&gt; for some constant &lt;script type=&quot;math/tex&quot;&gt; \epsilon &lt;/script&gt; &amp;gt; 0 , and if &lt;script type=&quot;math/tex&quot;&gt; af(n/b) \le cf(n)&lt;/script&gt; for some constant c &amp;lt; 1 and all sufficiently large n, then &lt;script type=&quot;math/tex&quot;&gt; T(n) = \Theta(f(n))&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;Examples: &lt;script type=&quot;math/tex&quot;&gt; T(n)  =  2T(n/2) + n^4 &lt;/script&gt;&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; a = 2, \ b = 2, \ f(n) = n^4 &lt;/script&gt; ,&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; n^{\log_{b} a} = n^{\log_{2} 2} = n^1 &lt;/script&gt; ,&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; f(n) = n^4 = \Omega(n^{\log_{b}a + \epsilon})  = \Omega(n^{1 + 3}) &lt;/script&gt; ,&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \epsilon = 3  &lt;/script&gt; ,&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \therefore \  T(n) = \Theta(n^4) &lt;/script&gt; .&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;datastructure&quot;&gt;Datastructure&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Binary Tree
+    &lt;ul&gt;
+      &lt;li&gt;one root&lt;/li&gt;
+      &lt;li&gt;every node has no parent&lt;/li&gt;
+      &lt;li&gt;every node can have at most two children&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Complete Binary Tree
+    &lt;ul&gt;
+      &lt;li&gt;Is Binary Tree&lt;/li&gt;
+      &lt;li&gt;In every level, except possibly the last, is completely filled&lt;/li&gt;
+      &lt;li&gt;Basic for HeapSort&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Binary Search Tree
+    &lt;ul&gt;
+      &lt;li&gt;Is Binary Tree&lt;/li&gt;
+      &lt;li&gt;Left child is small&lt;/li&gt;
+      &lt;li&gt;Right child is bigger&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Avl Tree
+    &lt;ul&gt;
+      &lt;li&gt;Is Binary Search Tree&lt;/li&gt;
+      &lt;li&gt;Balanced Tree&lt;/li&gt;
+      &lt;li&gt;left child level is less than or eq 1 to right level&lt;/li&gt;
+      &lt;li&gt;compore to Red Black Tree more balanced&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Red Black Tree
+    &lt;ul&gt;
+      &lt;li&gt;Is Binary Search Tree&lt;/li&gt;
+      &lt;li&gt;Balanced Tree&lt;/li&gt;
+      &lt;li&gt;Use 5 rules to make sure tree is Balanced&lt;/li&gt;
+      &lt;li&gt;Popular in memory, compare to Avl Tree has less rotations&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;B Tree
+    &lt;ul&gt;
+      &lt;li&gt;Not Binary Tree&lt;/li&gt;
+      &lt;li&gt;One node has more than two children&lt;/li&gt;
+      &lt;li&gt;Self balanced tree&lt;/li&gt;
+      &lt;li&gt;Popular in databases&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;B Plus Tree
+    &lt;ul&gt;
+      &lt;li&gt;Enhanced B Tree&lt;/li&gt;
+      &lt;li&gt;All value instored in leafs&lt;/li&gt;
+      &lt;li&gt;Leaf connected to next and above&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;big-o-notation&quot;&gt;Big O Notation&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; O &lt;/script&gt; : Less than (Worst Situation)&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; o &lt;/script&gt; : Less or Equal&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \Omega &lt;/script&gt; : Bigger than (Best Situation)&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \omega &lt;/script&gt; : Big or Equal&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \Theta &lt;/script&gt; : Between { &lt;script type=&quot;math/tex&quot;&gt; O,\ \ \Omega &lt;/script&gt; }&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dynamic-programming&quot;&gt;Dynamic Programming&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What situation we will use dynamic Programming
+    &lt;ol&gt;
+      &lt;li&gt;Can be divided into small parts&lt;/li&gt;
+      &lt;li&gt;Small parts have &lt;code&gt;Optimal Structure&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Prove or&lt;/li&gt;
+          &lt;li&gt;Persuade Or Convince&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Equation&lt;/li&gt;
+      &lt;li&gt;Build Table&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Longest common subsequence
+    &lt;ul&gt;
+      &lt;li&gt;Two Rules:
+        &lt;ol&gt;
+          &lt;li&gt;If same, shoulder += 1&lt;/li&gt;
+          &lt;li&gt;If not same, choose bigger one from both sides&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Create Table:
+  &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+  X = {B A D C B A B} \\
+  Y = {A C D B C A} \\
+  \begin{array}{|c|c|c|c|c|c|c|}
+  \hline
+  0 &amp;x_i &amp; B &amp; A &amp; D &amp; C &amp; B &amp; A &amp; B \\
+  \hline
+  y_i&amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+  \hline
+  A  &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+  \hline
+  C  &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 2 &amp; 2 \\
+  \hline
+  D  &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 \\
+  \hline
+  B  &amp; 0 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 3 \\
+  \hline
+  C  &amp; 0 &amp; 1 &amp; 1 &amp; 2 &amp; 3 &amp; 3 &amp; 3 &amp; 3 \\
+  \hline
+  A  &amp; 0 &amp; 1 &amp; 2 &amp; 2 &amp; 3 &amp; 3 &amp; 4 &amp; 4 \\
+  \hline
+  \end{array}
+   %]]&gt;&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;Decode:
+        &lt;ul&gt;
+          &lt;li&gt;A D C A&lt;/li&gt;
+          &lt;li&gt;A D B A&lt;/li&gt;
+          &lt;li&gt;A C B A&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Matrix-chain multiplication
+    &lt;ul&gt;
+      &lt;li&gt;i must less than j&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A_1 = (30 \times 35) &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A_2 = (35 \times 15) &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A_3 = (15 \times 5) &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A_4 = (5 \times 10) &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A_5 = (10 \times 20) &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; A_6 = (20 \times 25) &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;Tables:
+  &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+
+  \begin{array}{|c|c|c|c|c|c|c|}
+   \hline
+  -- &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6  \\
+  \hline
+  6  &amp; 15125 &amp; 10500 &amp; 5375 &amp; 3500 &amp; 5000 &amp; 0  \\
+  \hline
+  5  &amp; 11875 &amp; 7125 &amp; 2500 &amp; 1000 &amp; 0 &amp; -  \\
+  \hline
+  4  &amp; 9375 &amp; 4375 &amp; 750 &amp; 0 &amp; - &amp; -  \\
+  \hline
+  3  &amp; 7875 &amp; 2625 &amp; 0 &amp; - &amp; - &amp; -  \\
+  \hline
+  2  &amp; 15750 &amp; 0 &amp; - &amp; - &amp; - &amp; -  \\
+  \hline
+  1  &amp; 0 &amp; - &amp; - &amp; - &amp; - &amp; -  \\
+  \hline
+  \end{array}
+   %]]&gt;&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; min(1,2) = min(1,1) + min(2,2) + p_0 \times p_1 \times p_2 = 0 + 0 + 30 * 35 * 15 = 15750 &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; min(2,3) = min(2,2) + min(3,3) + p_1 \times p_2 \times p_3 = 0 + 0 + 35 * 15 * 5 = 2625 &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; min(3,4) = min(3,3) + min(4,4) + p_2 \times p_3 \times p_4 = 0 + 0 + 15 * 5 * 10 = 750 &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; min(4,5) = min(4,4) + min(5,5) + p_3 \times p_4 \times p_5 = 0 + 0 + 5 * 10 * 20 = 1000 &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; min(5,6) = min(5,5) + min(6,6) + p_4 \times p_5 \times p_6 = 0 + 0 + 10 * 20 * 25 = 5000 &lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;
+   min(1,3) = min(1,1) + min(2,3) + p_0 \times p_1 \times p_3 = 0 + 2625 + 30 * 35 * 5 = 2625 + 5250 = 7875 \\
+   min(1,3) = min(1,2) + min(3,3) + p_0 \times p_2 \times p_3 = 15750 + 30 * 15 * 5 = 18000
+&lt;/script&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/03/01/cs-5549-midterm-review</link>
+                <guid>http://zhou-dong.github.io/2015/03/01/cs-5549-midterm-review</guid>
                 <pubDate>2015-03-01T00:00:00-06:00</pubDate>
         </item>
 
