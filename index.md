@@ -52,6 +52,3 @@ tagline: 读书、旅行、坚定、自信
 - `stay foolish, stay hungry`。
 
 ##### 希望自己内心强大，始终相信自己！
-
-
-#### JUST FOR FAN
