@@ -9,6 +9,7 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/03/13/jekyll-steps
 http://zhou-dong.github.io/2015/03/02/people-to-people
 http://zhou-dong.github.io/2015/03/01/galois-field
 http://zhou-dong.github.io/2015/03/01/cs-5549-midterm-review

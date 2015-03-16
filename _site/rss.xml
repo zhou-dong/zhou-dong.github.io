@@ -5,10 +5,54 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-03-04T10:12:03-06:00</lastBuildDate>
-        <pubDate>2015-03-04T10:12:03-06:00</pubDate>
+        <lastBuildDate>2015-03-13T18:52:00-05:00</lastBuildDate>
+        <pubDate>2015-03-13T18:52:00-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Achieved Courses</title>
+                <description>
+&lt;p&gt;Create an jekyll project:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Initialize new jekyll project: 
+    &lt;ul&gt;
+      &lt;li&gt;jekyll new troy-cssa&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Start jekyll project: 
+    &lt;ul&gt;
+      &lt;li&gt;jekyll server&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Default address: 
+    &lt;ul&gt;
+      &lt;li&gt;http://localhost:4000/&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Intro to jekyll project&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;_config.yml&lt;/li&gt;
+  &lt;li&gt;_layouts&lt;/li&gt;
+  &lt;li&gt;_posts&lt;/li&gt;
+  &lt;li&gt;_site
+    &lt;ul&gt;
+      &lt;li&gt;jekyll will generate files into this folder&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;css&lt;/li&gt;
+  &lt;li&gt;index.html&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/2015/03/13/jekyll-steps</link>
+                <guid>http://zhou-dong.github.io/2015/03/13/jekyll-steps</guid>
+                <pubDate>2015-03-13T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Notes for people-to-people</title>

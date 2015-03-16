@@ -4,13 +4,57 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-03-04T10:12:03-06:00</updated>
+ <updated>2015-03-13T18:52:00-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Achieved Courses</title>
+   <link href="http://zhou-dong.github.io/2015/03/13/jekyll-steps"/>
+   <updated>2015-03-13T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/03/13/jekyll-steps</id>
+   <content type="html">
+&lt;p&gt;Create an jekyll project:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Initialize new jekyll project: 
+    &lt;ul&gt;
+      &lt;li&gt;jekyll new troy-cssa&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Start jekyll project: 
+    &lt;ul&gt;
+      &lt;li&gt;jekyll server&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Default address: 
+    &lt;ul&gt;
+      &lt;li&gt;http://localhost:4000/&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Intro to jekyll project&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;_config.yml&lt;/li&gt;
+  &lt;li&gt;_layouts&lt;/li&gt;
+  &lt;li&gt;_posts&lt;/li&gt;
+  &lt;li&gt;_site
+    &lt;ul&gt;
+      &lt;li&gt;jekyll will generate files into this folder&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;css&lt;/li&gt;
+  &lt;li&gt;index.html&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Notes for people-to-people</title>
