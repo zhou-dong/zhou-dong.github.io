@@ -4,13 +4,55 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-03-16T19:56:23-05:00</updated>
+ <updated>2015-03-17T00:37:03-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Machine Learning Techniques Course Design</title>
+   <link href="http://zhou-dong.github.io/machine/learning/2015/03/17/course-design"/>
+   <updated>2015-03-17T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine/learning/2015/03/17/course-design</id>
+   <content type="html">&lt;p&gt;Three major techniques surrouding &lt;code&gt;feature transforms&lt;/code&gt;（特征转换）:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support Vector Machine (SVM) model (支撑向量机)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Adaptive Boosting (AdaBoost) model（逐步增强法）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deep Learning model（深度学习）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Machine Learning Techniques Course Design</title>
+   <link href="http://zhou-dong.github.io/machine/learning/svm/2015/03/17/SVM"/>
+   <updated>2015-03-17T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine/learning/svm/2015/03/17/SVM</id>
+   <content type="html">&lt;p&gt;Three major techniques surrouding &lt;code&gt;feature transforms&lt;/code&gt;（特征转换）:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support Vector Machine (SVM) model (支撑向量机)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Adaptive Boosting (AdaBoost) model（逐步增强法）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deep Learning model（深度学习）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Neumann Kernal</title>

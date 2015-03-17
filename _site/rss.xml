@@ -5,10 +5,52 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-03-16T19:56:23-05:00</lastBuildDate>
-        <pubDate>2015-03-16T19:56:23-05:00</pubDate>
+        <lastBuildDate>2015-03-17T00:37:03-05:00</lastBuildDate>
+        <pubDate>2015-03-17T00:37:03-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Machine Learning Techniques Course Design</title>
+                <description>&lt;p&gt;Three major techniques surrouding &lt;code&gt;feature transforms&lt;/code&gt;（特征转换）:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support Vector Machine (SVM) model (支撑向量机)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Adaptive Boosting (AdaBoost) model（逐步增强法）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deep Learning model（深度学习）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine/learning/2015/03/17/course-design</link>
+                <guid>http://zhou-dong.github.io/machine/learning/2015/03/17/course-design</guid>
+                <pubDate>2015-03-17T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Machine Learning Techniques Course Design</title>
+                <description>&lt;p&gt;Three major techniques surrouding &lt;code&gt;feature transforms&lt;/code&gt;（特征转换）:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support Vector Machine (SVM) model (支撑向量机)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Adaptive Boosting (AdaBoost) model（逐步增强法）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deep Learning model（深度学习）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine/learning/svm/2015/03/17/SVM</link>
+                <guid>http://zhou-dong.github.io/machine/learning/svm/2015/03/17/SVM</guid>
+                <pubDate>2015-03-17T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Neumann Kernal</title>
