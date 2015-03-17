@@ -5,10 +5,39 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-03-13T18:52:00-05:00</lastBuildDate>
-        <pubDate>2015-03-13T18:52:00-05:00</pubDate>
+        <lastBuildDate>2015-03-16T19:56:23-05:00</lastBuildDate>
+        <pubDate>2015-03-16T19:56:23-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Neumann Kernal</title>
+                <description>
+&lt;p&gt;Neumann Kernal&lt;/p&gt;
+
+&lt;p&gt;NK: Diffusion Factor - Equation &amp;amp; Effect&lt;/p&gt;
+
+&lt;p&gt;Neumann Kernel defines two matrices incorporating a diffusion factor:&lt;/p&gt;
+
+&lt;p&gt;page 157&lt;/p&gt;
+
+&lt;p&gt;HITS: is special case&lt;/p&gt;
+
+&lt;p&gt;NK: is the generational&lt;/p&gt;
+
+&lt;p&gt;Shared Nearest Neighbor(SNN) K-Nearest&lt;/p&gt;
+
+&lt;p&gt;K 邻近&lt;/p&gt;
+
+&lt;p&gt;邻近算法，或者说K最近邻(kNN，k-NearestNeighbor)分类算法是数据挖掘分类技术中最简单的方法之一。所谓K最近邻，就是k个最近的邻居的意思，说的是每个样本都可以用它最接近的k个邻居来代表。&lt;/p&gt;
+
+&lt;p&gt;kNN算法的核心思想是如果一个样本在特征空间中的k个最相邻的样本中的大多数属于某一个类别，则该样本也属于这个类别，并具有这个类别上样本的特性。该方法在确定分类决策上只依据最邻近的一个或者几个样本的类别来决定待分样本所属的类别。 kNN方法在类别决策时，只与极少量的相邻样本有关。由于kNN方法主要靠周围有限的邻近的样本，而不是靠判别类域的方法来确定所属类别的，因此对于类域的交叉或重叠较多的待分样本集来说，kNN方法较其他方法更为适合。&lt;/p&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/graphical/data/mining/2015/03/16/graphical-data-mining</link>
+                <guid>http://zhou-dong.github.io/graphical/data/mining/2015/03/16/graphical-data-mining</guid>
+                <pubDate>2015-03-16T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Achieved Courses</title>
