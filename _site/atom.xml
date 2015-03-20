@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-03-20T03:02:02-05:00</updated>
+ <updated>2015-03-20T14:13:33-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -78,8 +78,13 @@
   &lt;li&gt;
     &lt;p&gt;permutation test&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;比decision tree的效果要平滑很多
-Gradient Boosted Decision Tree&lt;/li&gt;
+  &lt;li&gt;比decision tree的效果要平滑很多&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Gradient Boosted Decision Tree&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;adaboost + Decision Tree&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>

@@ -5,8 +5,8 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-03-20T03:02:02-05:00</lastBuildDate>
-        <pubDate>2015-03-20T03:02:02-05:00</pubDate>
+        <lastBuildDate>2015-03-20T14:13:33-05:00</lastBuildDate>
+        <pubDate>2015-03-20T14:13:33-05:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -73,8 +73,13 @@
   &lt;li&gt;
     &lt;p&gt;permutation test&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;比decision tree的效果要平滑很多
-Gradient Boosted Decision Tree&lt;/li&gt;
+  &lt;li&gt;比decision tree的效果要平滑很多&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Gradient Boosted Decision Tree&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;adaboost + Decision Tree&lt;/li&gt;
 &lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/machine/learning/decision/tree/random/forest/2015/03/20/forest</link>
