@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-03-18T20:33:17-05:00</updated>
+ <updated>2015-03-20T03:02:02-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,10 +13,170 @@
 
  
  <entry>
+   <title>Decision Tree and Random Forest</title>
+   <link href="http://zhou-dong.github.io/machine/learning/decision/tree/random/forest/2015/03/20/forest"/>
+   <updated>2015-03-20T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine/learning/decision/tree/random/forest/2015/03/20/forest</id>
+   <content type="html">&lt;p&gt;Decision Tree&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先要考虑tree停下来的条件&lt;/li&gt;
+  &lt;li&gt;可以用binary tree&lt;/li&gt;
+  &lt;li&gt;Build subtree&lt;/li&gt;
+  &lt;li&gt;final return&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;C &amp;amp; RT 算法&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;避免overfitting&lt;/li&gt;
+  &lt;li&gt;Regularization by Pruning&lt;/li&gt;
+  &lt;li&gt;E in 要低，而且叶子节点也不要太多&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以pruning（修剪）decision tree&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;比adaboost要有效率一些&lt;/li&gt;
+  &lt;li&gt;adaboost每次都是全部切分&lt;/li&gt;
+  &lt;li&gt;C &amp;amp; RT在局部切分，会更有效率一些&lt;/li&gt;
+  &lt;li&gt;adaboost和decision tree的切分结果可能会不同&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Random Forest&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bagging + Decision Tree&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Bagging first, then Decision Tree&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;先对资料随机抽样，比如可以从很多个特征中，抽取一定的特征做成一棵树&lt;/li&gt;
+  &lt;li&gt;通过上面，可以变成一个低纬度的subspace处理&lt;/li&gt;
+  &lt;li&gt;希望做成不一样的tree，然后再把他们合起来&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;找到low-dimensional的投影平面&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;out of bag estimate&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以用这些没有被使用的维度来判断结果好不好&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Feature Selection：怎么选择适当的特征，或者适当的输入&lt;/li&gt;
+  &lt;li&gt;从多个维度中更有效的选取资料
+    &lt;ul&gt;
+      &lt;li&gt;如，年龄和生日这两个资料重复了&lt;/li&gt;
+      &lt;li&gt;还有有些资料在我们的算法中是不需要的&lt;/li&gt;
+      &lt;li&gt;通过算法自动降维，或者自动转换&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;可以降低计算复杂度&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以更好得避免overfitting&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;选择本身是有计算复杂度的&lt;/li&gt;
+  &lt;li&gt;可能会选到不好的维度，而删除了好的维度&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果维度选择错误的话，可能会更加的overfitting&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;相当于是一个组合爆炸的问题&lt;/li&gt;
+  &lt;li&gt;可以给每个维度打一个分数，然后找出里面分值最高的维度&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;permutation test&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;比decision tree的效果要平滑很多
+Gradient Boosted Decision Tree&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Regression</title>
+   <link href="http://zhou-dong.github.io/machine/learning/regression/2015/03/19/regression"/>
+   <updated>2015-03-19T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine/learning/regression/2015/03/19/regression</id>
+   <content type="html">&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;kernel Logistic Regression&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support Vector Regression&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Kernel Ridge Regression: 利用kernel regression代替linear regression&lt;/li&gt;
+      &lt;li&gt;Support Vector Regression Primal&lt;/li&gt;
+      &lt;li&gt;即使是分割曲线相同，但是支撑点的个数可能不同，所以最后预测的复杂度也不同。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Aggregation</title>
+   <link href="http://zhou-dong.github.io/machine/learning/aggregation/adaboost/2015/03/19/aggregation"/>
+   <updated>2015-03-19T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine/learning/aggregation/adaboost/2015/03/19/aggregation</id>
+   <content type="html">&lt;p&gt;Aggregation&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;融合各种方法在一起来提高分类效果。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Blending：混合各种方法在一起. 各个算法的参数求均值。&lt;/p&gt;
+
+&lt;p&gt;Linear blending：把各个算法的结果做线性组合。
+    - LinMod + hypothesees as transform + constrains&lt;/p&gt;
+
+&lt;p&gt;Bagging：边学习，边blending&lt;/p&gt;
+
+&lt;p&gt;Adaptive Boosting&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;逐步增强，逐步添加限制条件。&lt;/li&gt;
+  &lt;li&gt;可以通过增强或者惩罚来达到。&lt;/li&gt;
+  &lt;li&gt;可以在犯过错的地方强调一下。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Diversity By Re-weighting&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;根据不同的部分给不同的weight&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Adaptive Boosting Algorithm&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一刀一刀的切，放大错误的，缩小正确的，逐渐优化分类器&lt;/li&gt;
+  &lt;li&gt;scaling factor&lt;/li&gt;
+  &lt;li&gt;放大错误的&lt;/li&gt;
+  &lt;li&gt;缩小正确的&lt;/li&gt;
+  &lt;li&gt;做成功的应用是人脸识别&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Machine Learning Techniques Course Design</title>
+   <link href="http://zhou-dong.github.io/machine/learning/svm/2015/03/18/course-design"/>
+   <updated>2015-03-18T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine/learning/svm/2015/03/18/course-design</id>
+   <content type="html">&lt;p&gt;Three major techniques surrouding &lt;code&gt;feature transforms&lt;/code&gt;（特征转换）:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support Vector Machine (SVM) model (支撑向量机)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Adaptive Boosting (AdaBoost) model（逐步增强法）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deep Learning model（深度学习）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Support Vector Machine</title>
-   <link href="http://zhou-dong.github.io/machine/learning/svm/2015/03/17/course-design"/>
-   <updated>2015-03-17T00:00:00-05:00</updated>
-   <id>http://zhou-dong.github.io/machine/learning/svm/2015/03/17/course-design</id>
+   <link href="http://zhou-dong.github.io/machine/learning/svm/2015/03/18/SVM"/>
+   <updated>2015-03-18T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine/learning/svm/2015/03/18/SVM</id>
    <content type="html">&lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Linear Support Vector Machine&lt;/p&gt;
@@ -36,41 +196,53 @@
           &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;v_1x_1 + v_2x_2 = 0&lt;/script&gt;.&lt;/li&gt;
         &lt;/ol&gt;
       &lt;/li&gt;
+      &lt;li&gt;method:
+        &lt;ul&gt;
+          &lt;li&gt;求两点之间的中锤线&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
       &lt;li&gt;steps:
-        &lt;ol&gt;
-          &lt;li&gt;把最近的两个点放在一个平面中&lt;/li&gt;
-        &lt;/ol&gt;
+        &lt;ul&gt;
+          &lt;li&gt;一个平面到一个点的距离&lt;/li&gt;
+        &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;校区&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;本科 和 研究生&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Machine Learning Techniques Course Design</title>
-   <link href="http://zhou-dong.github.io/machine/learning/svm/2015/03/17/SVM"/>
-   <updated>2015-03-17T00:00:00-05:00</updated>
-   <id>http://zhou-dong.github.io/machine/learning/svm/2015/03/17/SVM</id>
-   <content type="html">&lt;p&gt;Three major techniques surrouding &lt;code&gt;feature transforms&lt;/code&gt;（特征转换）:&lt;/p&gt;
+    &lt;p&gt;Dual Support Vector Machine&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Support Vector Machine (SVM) model (支撑向量机)&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;每个点，到平面的距离，就相当于求每个点在平面上的投影&lt;/li&gt;
+      &lt;li&gt;而且需要考虑的是对偶问题&lt;/li&gt;
+      &lt;li&gt;利用lagrange来约束计算的复杂度&lt;/li&gt;
+      &lt;li&gt;转化为解对偶的问题&lt;/li&gt;
+      &lt;li&gt;找出在边界上并且大于0的点，作为support vectors&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Adaptive Boosting (AdaBoost) model（逐步增强法）&lt;/p&gt;
+    &lt;p&gt;Kernel Support Vector Machine&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Kernel Trick: 简化计算的复杂度&lt;/li&gt;
+      &lt;li&gt;Polynomial Kernel: 二次转化的优化&lt;/li&gt;
+      &lt;li&gt;Gaussian Kernel: 在SVM上利用Gaussian kernel优化计算，泰勒展开是实现&lt;/li&gt;
+      &lt;li&gt;Comparison of Kernels&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Deep Learning model（深度学习）&lt;/p&gt;
+    &lt;p&gt;Sofe-Margin Support Vector Machine&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Motivation and Primal Problem: 为了避免overfiting，允许有杂绪。&lt;/li&gt;
+      &lt;li&gt;记录每个点，违反的程度，而不是记录违反点的个数。&lt;/li&gt;
+      &lt;li&gt;Dual Problem: 就是是soft也有可能会有overfitting&lt;/li&gt;
+      &lt;li&gt;多项式的分割会更灵活&lt;/li&gt;
+      &lt;li&gt;Message behind Soft-Margin&lt;/li&gt;
+      &lt;li&gt;Model Selection: 可以选高斯kernel，也可以用其他的kernel来修改参数的值&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
 </content>
  </entry>
  

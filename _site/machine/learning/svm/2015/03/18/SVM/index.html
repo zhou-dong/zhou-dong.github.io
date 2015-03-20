@@ -170,20 +170,53 @@
           <li><script type="math/tex">v_1x_1 + v_2x_2 = 0</script>.</li>
         </ol>
       </li>
+      <li>method:
+        <ul>
+          <li>求两点之间的中锤线</li>
+        </ul>
+      </li>
       <li>steps:
-        <ol>
-          <li>把最近的两个点放在一个平面中</li>
-        </ol>
+        <ul>
+          <li>一个平面到一个点的距离</li>
+        </ul>
       </li>
     </ul>
   </li>
   <li>
-    <p>校区</p>
+    <p>Dual Support Vector Machine</p>
+
+    <ul>
+      <li>每个点，到平面的距离，就相当于求每个点在平面上的投影</li>
+      <li>而且需要考虑的是对偶问题</li>
+      <li>利用lagrange来约束计算的复杂度</li>
+      <li>转化为解对偶的问题</li>
+      <li>找出在边界上并且大于0的点，作为support vectors</li>
+    </ul>
   </li>
   <li>
-    <p>本科 和 研究生</p>
+    <p>Kernel Support Vector Machine</p>
+
+    <ul>
+      <li>Kernel Trick: 简化计算的复杂度</li>
+      <li>Polynomial Kernel: 二次转化的优化</li>
+      <li>Gaussian Kernel: 在SVM上利用Gaussian kernel优化计算，泰勒展开是实现</li>
+      <li>Comparison of Kernels</li>
+    </ul>
+  </li>
+  <li>
+    <p>Sofe-Margin Support Vector Machine</p>
+
+    <ul>
+      <li>Motivation and Primal Problem: 为了避免overfiting，允许有杂绪。</li>
+      <li>记录每个点，违反的程度，而不是记录违反点的个数。</li>
+      <li>Dual Problem: 就是是soft也有可能会有overfitting</li>
+      <li>多项式的分割会更灵活</li>
+      <li>Message behind Soft-Margin</li>
+      <li>Model Selection: 可以选高斯kernel，也可以用其他的kernel来修改参数的值</li>
+    </ul>
   </li>
 </ol>
+
 
   </div>
 </div>

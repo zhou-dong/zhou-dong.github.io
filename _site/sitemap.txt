@@ -9,8 +9,11 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
-http://zhou-dong.github.io/machine/learning/svm/2015/03/17/course-design
-http://zhou-dong.github.io/machine/learning/svm/2015/03/17/SVM
+http://zhou-dong.github.io/machine/learning/decision/tree/random/forest/2015/03/20/forest
+http://zhou-dong.github.io/machine/learning/regression/2015/03/19/regression
+http://zhou-dong.github.io/machine/learning/aggregation/adaboost/2015/03/19/aggregation
+http://zhou-dong.github.io/machine/learning/svm/2015/03/18/course-design
+http://zhou-dong.github.io/machine/learning/svm/2015/03/18/SVM
 http://zhou-dong.github.io/graphical/data/mining/2015/03/16/graphical-data-mining
 http://zhou-dong.github.io/2015/03/13/jekyll-steps
 http://zhou-dong.github.io/2015/03/02/people-to-people
