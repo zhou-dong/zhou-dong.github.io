@@ -9,6 +9,8 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/rbf/2015/03/20/rbf
+http://zhou-dong.github.io/machine/learning/neural/deep/2015/03/20/neural-network
 http://zhou-dong.github.io/machine/learning/decision/tree/random/forest/2015/03/20/forest
 http://zhou-dong.github.io/machine/learning/regression/2015/03/19/regression
 http://zhou-dong.github.io/machine/learning/aggregation/adaboost/2015/03/19/aggregation

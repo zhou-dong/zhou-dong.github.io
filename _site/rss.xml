@@ -5,10 +5,229 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-03-20T14:13:33-05:00</lastBuildDate>
-        <pubDate>2015-03-20T14:13:33-05:00</pubDate>
+        <lastBuildDate>2015-03-21T04:18:39-05:00</lastBuildDate>
+        <pubDate>2015-03-21T04:18:39-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Radial Basis Function Network</title>
+                <description>&lt;p&gt;Radial Basis Function Network&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;radial: only depends on distance between x and ‘center’ x_n&lt;/li&gt;
+  &lt;li&gt;basis function: to be ‘combined’&lt;/li&gt;
+  &lt;li&gt;跟半径有关的预测方式&lt;/li&gt;
+  &lt;li&gt;其实中心店就是support vectors&lt;/li&gt;
+  &lt;li&gt;找到那些中心点，和中心店的系数&lt;/li&gt;
+  &lt;li&gt;可是利用kernel&lt;/li&gt;
+  &lt;li&gt;Near neighbor&lt;/li&gt;
+  &lt;li&gt;k-means algorithm: partition optimization&lt;/li&gt;
+  &lt;li&gt;RBF using k-means&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;K-Means&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;无监督的学习&lt;/li&gt;
+  &lt;li&gt;分类算法&lt;/li&gt;
+  &lt;li&gt;先找定好要分成几个点，然后逐步优化接近&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;先用k-means找出代表，然后再继续使用rbf&lt;/p&gt;
+
+&lt;p&gt;可以把高纬度的数据放到低纬度的空间来做运算&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;压缩方法转换&lt;/li&gt;
+  &lt;li&gt;投影的方法转换&lt;/li&gt;
+  &lt;li&gt;也可以通过其他的方法来降维&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最基本的最佳化的方法是：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;梯度下降 gradient descent&lt;/li&gt;
+  &lt;li&gt;牛顿法下降&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Equivalent Solution&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SVM的对偶问题&lt;/li&gt;
+  &lt;li&gt;kernel logistic regression&lt;/li&gt;
+  &lt;li&gt;PCA&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Multiple Steps&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;probabilistic SVM &lt;/li&gt;
+  &lt;li&gt;linear blending&lt;/li&gt;
+  &lt;li&gt;stacking&lt;/li&gt;
+  &lt;li&gt;RBF network&lt;/li&gt;
+  &lt;li&gt;deep learning&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Alternating optimization&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;k-means&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Divide and conquer&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;decision tree&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;overfitting elimination via regularization&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;large-margin
+    &lt;ul&gt;
+      &lt;li&gt;svm&lt;/li&gt;
+      &lt;li&gt;adaboost&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;L2 regularization
+    &lt;ul&gt;
+      &lt;li&gt;SVR&lt;/li&gt;
+      &lt;li&gt;kernel models&lt;/li&gt;
+      &lt;li&gt;nnet&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;voting/averaging
+    &lt;ul&gt;
+      &lt;li&gt;uniform blending&lt;/li&gt;
+      &lt;li&gt;bagging&lt;/li&gt;
+      &lt;li&gt;random forest&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;denosing
+    &lt;ul&gt;
+      &lt;li&gt;autoencoder&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;weight-elimination
+    &lt;ul&gt;
+      &lt;li&gt;NNET&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pruning
+    &lt;ul&gt;
+      &lt;li&gt;decision tree&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;early stopping
+    &lt;ul&gt;
+      &lt;li&gt;RBF&lt;/li&gt;
+      &lt;li&gt;auto encoder&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;constraining&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/rbf/2015/03/20/rbf</link>
+                <guid>http://zhou-dong.github.io/rbf/2015/03/20/rbf</guid>
+                <pubDate>2015-03-20T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Neural Netword & Deep Learning</title>
+                <description>&lt;p&gt;Neural Netword&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一层一层的做运算，一层的输出作为另一层的输入，层层递进。&lt;/li&gt;
+  &lt;li&gt;每一层可以用以前学的方法来执行。&lt;/li&gt;
+  &lt;li&gt;经过多层的运算，我们希望我们得到的结果是好的。&lt;/li&gt;
+  &lt;li&gt;可以用gradient descent来实现，来一步一步的做最佳化&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;其实gradient descent就是做偏微分。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;因为经过了多次的转化 ，所以可能得不到最优解。&lt;/li&gt;
+  &lt;li&gt;可能得到的是局部最优解，而不是全局最优解，所以需要
+    &lt;ul&gt;
+      &lt;li&gt;选好梯度下降的起始点&lt;/li&gt;
+      &lt;li&gt;选好梯度下降的步伐&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;同时要防止overfitting
+    &lt;ul&gt;
+      &lt;li&gt;需要regularization for neural network&lt;/li&gt;
+      &lt;li&gt;Early Stopping，在某个中间点就停下来。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deep Learning&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Deep neural network
+    &lt;ul&gt;
+      &lt;li&gt;每一层找出不同的内容，即每层做一点点的东西&lt;/li&gt;
+      &lt;li&gt;多层之间的结果合并&lt;/li&gt;
+      &lt;li&gt;给出结果&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;通过每层来做一些简单的东西，然后多层合并，最终可以做复杂的运算&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;difficult structure decisions: 
+        &lt;ul&gt;
+          &lt;li&gt;解决方法之一是加上人对某个领域的理解&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;high model complexity: 
+        &lt;ol&gt;
+          &lt;li&gt;no big worries if big enough data&lt;/li&gt;
+          &lt;li&gt;regularization towards noise-tolerant,like dropout, denoising&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;hard optimization
+        &lt;ul&gt;
+          &lt;li&gt;careful initialization to avoid bad local minimun called pre-training&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;huge computational complexity
+        &lt;ul&gt;
+          &lt;li&gt;novel hardware/architecture: like mini-batch with GPU&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Autoencoder
+    &lt;ul&gt;
+      &lt;li&gt;information-preserving encoding&lt;/li&gt;
+      &lt;li&gt;usefulness of approximating identity function&lt;/li&gt;
+      &lt;li&gt;首先先查找每一层之间维度的抽取&lt;/li&gt;
+      &lt;li&gt;然后在一层给维度编码&lt;/li&gt;
+      &lt;li&gt;在另一层给相同维度解码&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Denoising Autoencoder
+    &lt;ul&gt;
+      &lt;li&gt;this is one of regularization&lt;/li&gt;
+      &lt;li&gt;加上一些条件使得每一层之间的连接没有那么多&lt;/li&gt;
+      &lt;li&gt;可能Early stopping的效果更好&lt;/li&gt;
+      &lt;li&gt;杂絮越多，资料越少，越容易overfitting
+        &lt;ol&gt;
+          &lt;li&gt;直接的想法是，想办法删除杂絮&lt;/li&gt;
+          &lt;li&gt;另外特殊的想法是，把杂絮加到资料中&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;我们的目标是创建强壮的程序&lt;/li&gt;
+      &lt;li&gt;即使是资料中有杂絮，也能有好的输出&lt;/li&gt;
+      &lt;li&gt;所以我们可以输入有杂絮的资料，然后返回干净的资料&lt;/li&gt;
+      &lt;li&gt;所以我们可以把干净的资料变为干净的资料&lt;/li&gt;
+      &lt;li&gt;而且我们更可以把不干净的资料变为干净的资料&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;principal Component Analyze&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine/learning/neural/deep/2015/03/20/neural-network</link>
+                <guid>http://zhou-dong.github.io/machine/learning/neural/deep/2015/03/20/neural-network</guid>
+                <pubDate>2015-03-20T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Decision Tree and Random Forest</title>
@@ -1170,6 +1389,7 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
 &lt;h3 id=&quot;online-courses&quot;&gt;Online Courses&lt;/h3&gt;
 
 &lt;h4 id=&quot;coursera&quot;&gt;Coursera:&lt;/h4&gt;
+
 &lt;ol&gt;
   &lt;li&gt;R Programming
     &lt;ul&gt;
@@ -1185,11 +1405,18 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;&lt;a href=&quot;http://zhou-dong.github.io/2015/02/15/revised-all/&quot;&gt;Simple Roadmap&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;機器學習技法 (Machine Learning Techniques)
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: March 17, 2015&lt;/li&gt;
+      &lt;li&gt;End Date: March 21, 2015&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
 
 &lt;h4 id=&quot;youtube&quot;&gt;Youtube:&lt;/h4&gt;
+
 &lt;ol&gt;
   &lt;li&gt;線性代數 (Not Finished All, Just lec01-lec-13)
     &lt;ul&gt;
