@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>网站技术点</title>
+    <title>FASTA AND BLAST</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,219 +146,110 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>网站技术点  <small>-- 自己网站架构的设想，按照这个目标慢慢来。</small></h1>
+  <h1>FASTA AND BLAST </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<h4 id="dns">DNS供应商</h4>
-<ul>
-  <li>www.godaddy.com</li>
-  <li>www.name.com</li>
-</ul>
+<p>Pairwise alignment</p>
 
-<h4 id="cdn">CDN服务商</h4>
 <ul>
-  <li>蓝汛、网宿、Webluker、帝联、阿里云、安全宝、加速乐、快网、17CDN</li>
-</ul>
-
-<h4 id="section">负载均衡</h4>
-<ul>
-  <li>LVS</li>
-  <li>NGIX</li>
-</ul>
-
-<h4 id="section-1">静态文件代理/缓存</h4>
-<ul>
-  <li>Squid</li>
-  <li>Varnish</li>
-  <li>Ngix</li>
-</ul>
-
-<h4 id="section-2">前端</h4>
-<ul>
-  <li>Bootstrap</li>
-  <li>AngularJS</li>
-  <li>Jquery</li>
-</ul>
-
-<h4 id="section-3">后端</h4>
-<ul>
-  <li>Express.js</li>
-  <li>Node.js</li>
-  <li>Tomcat + apr</li>
-  <li>Appserver</li>
-</ul>
-
-<h4 id="section-4">消息中间件</h4>
-<ul>
-  <li><a href="http://kafka.apache.org/">Kafka</a></li>
-  <li>ZeroMQ</li>
-  <li>RocketMQ</li>
-  <li>Netty</li>
-  <li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li>
-  <li><a href="http://activemq.apache.org/">ActiveMQ</a></li>
-  <li><a href="https://github.com/twitter/kestrel">twitter/jestrel</a></li>
-</ul>
-
-<h4 id="section-5">存储系统</h4>
-<ul>
-  <li>程序内存储
+  <li>Global
     <ul>
-      <li>Ehcache</li>
-      <li>LRU</li>
-      <li><a href="https://github.com/bulldog2011/bigqueue.git">Bigqueue</a></li>
+      <li>Best score from among alignments of full-length sequences</li>
+      <li>Needelman-Wunch algorithm</li>
     </ul>
   </li>
-  <li>传统关系型数据库
+  <li>Local
     <ul>
-      <li>Mqsql</li>
-    </ul>
-  </li>
-  <li>嵌入式数据库
-    <ul>
-      <li>LevelDB（LSM）</li>
-      <li>RocketsDB (基于LevelDB内核做二次开发)</li>
-    </ul>
-  </li>
-  <li>分布式数据库
-    <ul>
-      <li>MongoDB</li>
-      <li>CouchDB</li>
-      <li>Hbase</li>
-      <li>OceanBase</li>
-    </ul>
-  </li>
-  <li>内存数据库
-    <ul>
-      <li>Redis</li>
-    </ul>
-  </li>
-  <li>分布式图片存储
-    <ul>
-      <li>TFS</li>
-      <li>FASTDFS</li>
-      <li>MOGILEFS</li>
+      <li>Best score form among alignments of partial sequences</li>
+      <li>Smith-Waterman algorithm</li>
     </ul>
   </li>
 </ul>
 
-<h4 id="section-6">搜索产品</h4>
+<p>FASTA: First fast sequence search algorithm for comparing query sequency against a database</p>
+
+<p>BLAST: Basic Locial Alignment Search Technique, improvement of FASTA: search speed, ease of use, statistics rigor.</p>
+
+<hr />
+
+<p>FASTA and BLAST</p>
+
+<p>Dynamic programming</p>
+
+<p>Basic idea: short lengths of exact matches:</p>
+
 <ul>
-  <li>Solr</li>
-  <li>Elasticsearch</li>
+  <li>First: identify very short exact matches</li>
+  <li>Next: the best short hits from the first step are extended to longer regions of similarity</li>
+  <li>Finally: the best hits are optimized</li>
 </ul>
 
-<h4 id="section-7">分布式任务控制</h4>
-<ul>
-  <li>Zookeeper</li>
-  <li>Dubbo</li>
-</ul>
+<hr />
 
-<h4 id="section-8">公共产品开发</h4>
-<ul>
-  <li>分布式session共享
-    <ul>
-      <li>Redis</li>
-      <li>Jetty</li>
-    </ul>
-  </li>
-  <li>分布式Scheduler
-    <ul>
-      <li>quartz + LevelDB/MongoDB + Zookeeper</li>
-    </ul>
-  </li>
-</ul>
+<p>FASTA Algorithm:</p>
 
-<h4 id="section-9">数据收集和分析</h4>
-<ul>
-  <li>Flume + Log4J</li>
-  <li>Hadoop</li>
-  <li>Spark</li>
-  <li>Strom</li>
-  <li>Mahout</li>
-</ul>
+<p>Derived from logic of dot plot</p>
 
-<h4 id="section-10">爬虫系统</h4>
 <ul>
-  <li>防屏蔽
+  <li>computer best diagonals from all frames of alignment</li>
+  <li>the method look for exact matches between words in query and test sequence
     <ul>
-      <li>动态ADSL切换(家庭网络)</li>
-    </ul>
-  </li>
-  <li>程序开发
-    <ul>
-      <li>PhantomJs + Node.js</li>
-      <li>Webkit C++ 内核</li>
-      <li>Java Httputil</li>
+      <li>DNA sequence are usually 6 nucleotides long</li>
+      <li>protein words are 2 amino acids long</li>
     </ul>
   </li>
 </ul>
 
-<h4 id="section-11">系统运维和监控</h4>
+<p>Five steps of FASTA:</p>
+
+<ol>
+  <li>idenfity common k-words between I and J （把query和Test同时放在一个matrix中）</li>
+  <li>score diagonals with k-word matches, identify 10 best diagonals （在matrix中，标记处横坐标和纵坐标相同的点，然后连城线段）</li>
+  <li>recore initial regions with a substitution of matrix (把一些较短的线段的分值调低)</li>
+  <li>join inital regions with gaps, penalise for gaps</li>
+  <li>perform dynamic programming to find final alignments</li>
+</ol>
+
+<hr />
+
+<p>BLAST Algorithm</p>
+
 <ul>
-  <li>Cacti</li>
-  <li>Zabbix</li>
-  <li>Ganglia</li>
-  <li>Zookeepr监控</li>
+  <li>BLAST can not handle gaps well</li>
 </ul>
 
-<h4 id="section-12">服务器虚拟化</h4>
-<ul>
-  <li>Docker</li>
-</ul>
+<p>Three steps of BLAST:</p>
 
-<h4 id="section-13">操作系统</h4>
-<ul>
-  <li>服务器操作系统
+<ol>
+  <li>word search method
     <ul>
-      <li>CentOS</li>
+      <li>find the list of high scoring words of length w</li>
+      <li>compare the word list to database and identify exact matches</li>
     </ul>
   </li>
-  <li>开发操作系统
+  <li>identification of exact word method
     <ul>
-      <li>Macbook</li>
-      <li>Fedora</li>
-      <li>Ubuntu</li>
-      <li>openSUSE</li>
-      <li>Debian</li>
+      <li>break the query into words</li>
+      <li>break the database sequences into words</li>
     </ul>
   </li>
-</ul>
+  <li>maximum segment pair alignment method
+    <ul>
+      <li>extend hits one base at a time</li>
+      <li>scroing of alignment</li>
+    </ul>
+  </li>
+</ol>
 
-<h4 id="vps">VPS提供商</h4>
-<ul>
-  <li>AWS</li>
-  <li>阿里云</li>
-  <li>linode(linux node)</li>
-</ul>
+<p>The result of word matching and attemps to extend the alignment are segments called HSPs:
+- high scoring segmeng pair</p>
 
-<h4 id="section-14">自然语言处理</h4>
-<ul>
-  <li>CRFPP</li>
-  <li><a href="http://www.nltk.org/">NLTK</a></li>
-</ul>
+<p>BLAST ofter product sereral short HSPs</p>
 
-<h4 id="section-15">版本控制</h4>
-<ul>
-  <li>Git + GitHub</li>
-</ul>
-
-<h4 id="section-16">博客</h4>
-<ul>
-  <li>Gitpages + Jekyll + markdown</li>
-</ul>
-
-<h4 id="section-17">开发语言</h4>
-<ul>
-  <li>Java</li>
-  <li>Javscript</li>
-  <li>Python</li>
-  <li>C++</li>
-  <li>C Language</li>
-</ul>
-
+<p>WEBSITE: www.expasy.org</p>
 
   </div>
 </div>

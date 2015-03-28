@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>网站技术点</title>
+    <title>Intro of Bioinformatics</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,218 +146,53 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>网站技术点  <small>-- 自己网站架构的设想，按照这个目标慢慢来。</small></h1>
+  <h1>Intro of Bioinformatics </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<h4 id="dns">DNS供应商</h4>
+<p>bioinformatics about：</p>
+
+<ol>
+  <li>gene：基因</li>
+  <li>genome：基因组</li>
+  <li>protein：蛋白质</li>
+  <li>cell：细胞</li>
+  <li>amino acid：氨基酸</li>
+  <li>nucleotide：核酸</li>
+</ol>
+
+<p>bioinformatics aim：</p>
+
+<ol>
+  <li>预测</li>
+  <li>建模</li>
+  <li>设计</li>
+</ol>
+
+<p>database：</p>
+
 <ul>
-  <li>www.godaddy.com</li>
-  <li>www.name.com</li>
+  <li>primary database: DNA and “amino acid” sequence</li>
+  <li>secondary database: fingerprint, profile, block</li>
+  <li>teriary database: domains, folding</li>
 </ul>
 
-<h4 id="cdn">CDN服务商</h4>
+<p>sequence alignment:</p>
+
 <ul>
-  <li>蓝汛、网宿、Webluker、帝联、阿里云、安全宝、加速乐、快网、17CDN</li>
+  <li><strong>Identify very short exact matches</strong></li>
 </ul>
 
-<h4 id="section">负载均衡</h4>
-<ul>
-  <li>LVS</li>
-  <li>NGIX</li>
-</ul>
+<ol>
+  <li>Dynamic Programming</li>
+  <li>HMM</li>
+  <li>FASTA</li>
+  <li>BLAST</li>
+</ol>
 
-<h4 id="section-1">静态文件代理/缓存</h4>
-<ul>
-  <li>Squid</li>
-  <li>Varnish</li>
-  <li>Ngix</li>
-</ul>
-
-<h4 id="section-2">前端</h4>
-<ul>
-  <li>Bootstrap</li>
-  <li>AngularJS</li>
-  <li>Jquery</li>
-</ul>
-
-<h4 id="section-3">后端</h4>
-<ul>
-  <li>Express.js</li>
-  <li>Node.js</li>
-  <li>Tomcat + apr</li>
-  <li>Appserver</li>
-</ul>
-
-<h4 id="section-4">消息中间件</h4>
-<ul>
-  <li><a href="http://kafka.apache.org/">Kafka</a></li>
-  <li>ZeroMQ</li>
-  <li>RocketMQ</li>
-  <li>Netty</li>
-  <li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li>
-  <li><a href="http://activemq.apache.org/">ActiveMQ</a></li>
-  <li><a href="https://github.com/twitter/kestrel">twitter/jestrel</a></li>
-</ul>
-
-<h4 id="section-5">存储系统</h4>
-<ul>
-  <li>程序内存储
-    <ul>
-      <li>Ehcache</li>
-      <li>LRU</li>
-      <li><a href="https://github.com/bulldog2011/bigqueue.git">Bigqueue</a></li>
-    </ul>
-  </li>
-  <li>传统关系型数据库
-    <ul>
-      <li>Mqsql</li>
-    </ul>
-  </li>
-  <li>嵌入式数据库
-    <ul>
-      <li>LevelDB（LSM）</li>
-      <li>RocketsDB (基于LevelDB内核做二次开发)</li>
-    </ul>
-  </li>
-  <li>分布式数据库
-    <ul>
-      <li>MongoDB</li>
-      <li>CouchDB</li>
-      <li>Hbase</li>
-      <li>OceanBase</li>
-    </ul>
-  </li>
-  <li>内存数据库
-    <ul>
-      <li>Redis</li>
-    </ul>
-  </li>
-  <li>分布式图片存储
-    <ul>
-      <li>TFS</li>
-      <li>FASTDFS</li>
-      <li>MOGILEFS</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="section-6">搜索产品</h4>
-<ul>
-  <li>Solr</li>
-  <li>Elasticsearch</li>
-</ul>
-
-<h4 id="section-7">分布式任务控制</h4>
-<ul>
-  <li>Zookeeper</li>
-  <li>Dubbo</li>
-</ul>
-
-<h4 id="section-8">公共产品开发</h4>
-<ul>
-  <li>分布式session共享
-    <ul>
-      <li>Redis</li>
-      <li>Jetty</li>
-    </ul>
-  </li>
-  <li>分布式Scheduler
-    <ul>
-      <li>quartz + LevelDB/MongoDB + Zookeeper</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="section-9">数据收集和分析</h4>
-<ul>
-  <li>Flume + Log4J</li>
-  <li>Hadoop</li>
-  <li>Spark</li>
-  <li>Strom</li>
-  <li>Mahout</li>
-</ul>
-
-<h4 id="section-10">爬虫系统</h4>
-<ul>
-  <li>防屏蔽
-    <ul>
-      <li>动态ADSL切换(家庭网络)</li>
-    </ul>
-  </li>
-  <li>程序开发
-    <ul>
-      <li>PhantomJs + Node.js</li>
-      <li>Webkit C++ 内核</li>
-      <li>Java Httputil</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="section-11">系统运维和监控</h4>
-<ul>
-  <li>Cacti</li>
-  <li>Zabbix</li>
-  <li>Ganglia</li>
-  <li>Zookeepr监控</li>
-</ul>
-
-<h4 id="section-12">服务器虚拟化</h4>
-<ul>
-  <li>Docker</li>
-</ul>
-
-<h4 id="section-13">操作系统</h4>
-<ul>
-  <li>服务器操作系统
-    <ul>
-      <li>CentOS</li>
-    </ul>
-  </li>
-  <li>开发操作系统
-    <ul>
-      <li>Macbook</li>
-      <li>Fedora</li>
-      <li>Ubuntu</li>
-      <li>openSUSE</li>
-      <li>Debian</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="vps">VPS提供商</h4>
-<ul>
-  <li>AWS</li>
-  <li>阿里云</li>
-  <li>linode(linux node)</li>
-</ul>
-
-<h4 id="section-14">自然语言处理</h4>
-<ul>
-  <li>CRFPP</li>
-  <li><a href="http://www.nltk.org/">NLTK</a></li>
-</ul>
-
-<h4 id="section-15">版本控制</h4>
-<ul>
-  <li>Git + GitHub</li>
-</ul>
-
-<h4 id="section-16">博客</h4>
-<ul>
-  <li>Gitpages + Jekyll + markdown</li>
-</ul>
-
-<h4 id="section-17">开发语言</h4>
-<ul>
-  <li>Java</li>
-  <li>Javscript</li>
-  <li>Python</li>
-  <li>C++</li>
-  <li>C Language</li>
-</ul>
+<p>Website: www.expasy.org</p>
 
 
   </div>

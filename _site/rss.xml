@@ -5,10 +5,460 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-03-21T04:18:39-05:00</lastBuildDate>
-        <pubDate>2015-03-21T04:18:39-05:00</pubDate>
+        <lastBuildDate>2015-03-28T00:06:46-05:00</lastBuildDate>
+        <pubDate>2015-03-28T00:06:46-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Intro of Bioinformatics</title>
+                <description>
+&lt;p&gt;bioinformatics about：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gene：基因&lt;/li&gt;
+  &lt;li&gt;genome：基因组&lt;/li&gt;
+  &lt;li&gt;protein：蛋白质&lt;/li&gt;
+  &lt;li&gt;cell：细胞&lt;/li&gt;
+  &lt;li&gt;amino acid：氨基酸&lt;/li&gt;
+  &lt;li&gt;nucleotide：核酸&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;bioinformatics aim：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;预测&lt;/li&gt;
+  &lt;li&gt;建模&lt;/li&gt;
+  &lt;li&gt;设计&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;database：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;primary database: DNA and “amino acid” sequence&lt;/li&gt;
+  &lt;li&gt;secondary database: fingerprint, profile, block&lt;/li&gt;
+  &lt;li&gt;teriary database: domains, folding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;sequence alignment:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Identify very short exact matches&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Dynamic Programming&lt;/li&gt;
+  &lt;li&gt;HMM&lt;/li&gt;
+  &lt;li&gt;FASTA&lt;/li&gt;
+  &lt;li&gt;BLAST&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Website: www.expasy.org&lt;/p&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/bioinformatics/2015/03/27/intro</link>
+                <guid>http://zhou-dong.github.io/bioinformatics/2015/03/27/intro</guid>
+                <pubDate>2015-03-27T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>FASTA AND BLAST</title>
+                <description>
+&lt;p&gt;Pairwise alignment&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Global
+    &lt;ul&gt;
+      &lt;li&gt;Best score from among alignments of full-length sequences&lt;/li&gt;
+      &lt;li&gt;Needelman-Wunch algorithm&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Local
+    &lt;ul&gt;
+      &lt;li&gt;Best score form among alignments of partial sequences&lt;/li&gt;
+      &lt;li&gt;Smith-Waterman algorithm&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;FASTA: First fast sequence search algorithm for comparing query sequency against a database&lt;/p&gt;
+
+&lt;p&gt;BLAST: Basic Locial Alignment Search Technique, improvement of FASTA: search speed, ease of use, statistics rigor.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;FASTA and BLAST&lt;/p&gt;
+
+&lt;p&gt;Dynamic programming&lt;/p&gt;
+
+&lt;p&gt;Basic idea: short lengths of exact matches:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First: identify very short exact matches&lt;/li&gt;
+  &lt;li&gt;Next: the best short hits from the first step are extended to longer regions of similarity&lt;/li&gt;
+  &lt;li&gt;Finally: the best hits are optimized&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;FASTA Algorithm:&lt;/p&gt;
+
+&lt;p&gt;Derived from logic of dot plot&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;computer best diagonals from all frames of alignment&lt;/li&gt;
+  &lt;li&gt;the method look for exact matches between words in query and test sequence
+    &lt;ul&gt;
+      &lt;li&gt;DNA sequence are usually 6 nucleotides long&lt;/li&gt;
+      &lt;li&gt;protein words are 2 amino acids long&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Five steps of FASTA:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;idenfity common k-words between I and J （把query和Test同时放在一个matrix中）&lt;/li&gt;
+  &lt;li&gt;score diagonals with k-word matches, identify 10 best diagonals （在matrix中，标记处横坐标和纵坐标相同的点，然后连城线段）&lt;/li&gt;
+  &lt;li&gt;recore initial regions with a substitution of matrix (把一些较短的线段的分值调低)&lt;/li&gt;
+  &lt;li&gt;join inital regions with gaps, penalise for gaps&lt;/li&gt;
+  &lt;li&gt;perform dynamic programming to find final alignments&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;BLAST Algorithm&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;BLAST can not handle gaps well&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Three steps of BLAST:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;word search method
+    &lt;ul&gt;
+      &lt;li&gt;find the list of high scoring words of length w&lt;/li&gt;
+      &lt;li&gt;compare the word list to database and identify exact matches&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;identification of exact word method
+    &lt;ul&gt;
+      &lt;li&gt;break the query into words&lt;/li&gt;
+      &lt;li&gt;break the database sequences into words&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;maximum segment pair alignment method
+    &lt;ul&gt;
+      &lt;li&gt;extend hits one base at a time&lt;/li&gt;
+      &lt;li&gt;scroing of alignment&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The result of word matching and attemps to extend the alignment are segments called HSPs:
+- high scoring segmeng pair&lt;/p&gt;
+
+&lt;p&gt;BLAST ofter product sereral short HSPs&lt;/p&gt;
+
+&lt;p&gt;WEBSITE: www.expasy.org&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/fasta/blast/bioinformatics/2015/03/26/fasta-blast</link>
+                <guid>http://zhou-dong.github.io/fasta/blast/bioinformatics/2015/03/26/fasta-blast</guid>
+                <pubDate>2015-03-26T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Bioinformatics</title>
+                <description>
+&lt;p&gt;Analysis of: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;gene&lt;/li&gt;
+  &lt;li&gt;genome&lt;/li&gt;
+  &lt;li&gt;protein&lt;/li&gt;
+  &lt;li&gt;cell&lt;/li&gt;
+  &lt;li&gt;ecological system&lt;/li&gt;
+  &lt;li&gt;medical information&lt;/li&gt;
+  &lt;li&gt;robots&lt;/li&gt;
+  &lt;li&gt;artifical intelligence&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Use the knowledge for:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;prediction&lt;/li&gt;
+  &lt;li&gt;modelling&lt;/li&gt;
+  &lt;li&gt;design&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;amino acid: 氨基酸&lt;/p&gt;
+
+&lt;p&gt;data type：&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;primary data&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;sequence&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;–&amp;gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;primary database&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;AATGCGTAAGTC&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;DNA&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;DMPVERILEALAVE&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;amino acid&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;secondary data&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;secondary protein structure&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;–&amp;gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;secondary db&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;“motif”&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;e.g.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;regular expressions&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;e.g.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;block&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;e.g.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;profiles&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;e.g.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;fingerprints&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;e.g.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;teriary data&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;teriary protein structure&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;–&amp;gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;teriary db&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;atomic co-ordinates&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;domains, folding units&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;databases:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Nucleotide: 核酸
+    &lt;ul&gt;
+      &lt;li&gt;primary db&lt;/li&gt;
+      &lt;li&gt;secondary db&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;tritiary db&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;EMBL [The European Molecular Boilogy Laboratory] Germany&lt;/li&gt;
+      &lt;li&gt;GenBank &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;DDBJ [DNA data bank of Janpan]&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;All together is under INSDC [International Nucleotide Sequence Databases] &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;protein
+    &lt;ul&gt;
+      &lt;li&gt;sequence
+        &lt;ul&gt;
+          &lt;li&gt;Uniprot&lt;/li&gt;
+          &lt;li&gt;PIR&lt;/li&gt;
+          &lt;li&gt;SwissProt&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;interaction
+        &lt;ul&gt;
+          &lt;li&gt;Biogrid&lt;/li&gt;
+          &lt;li&gt;STRING&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;structure
+        &lt;ul&gt;
+          &lt;li&gt;PDB&lt;/li&gt;
+          &lt;li&gt;CATH&lt;/li&gt;
+          &lt;li&gt;SCOPE&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;INSDC [International Nucleotide Sequence Databases]
+    &lt;ul&gt;
+      &lt;li&gt;EMBL (EUROPE)
+        &lt;ul&gt;
+          &lt;li&gt;EMBL&lt;/li&gt;
+          &lt;li&gt;EBI&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;DDBJ (JAPAN)
+        &lt;ul&gt;
+          &lt;li&gt;NIG&lt;/li&gt;
+          &lt;li&gt;CIB&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;GenBank (USA)
+        &lt;ul&gt;
+          &lt;li&gt;NLM&lt;/li&gt;
+          &lt;li&gt;NCBI&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;sequence alignment&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;1&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;2&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;3&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;4&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;5&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;6&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;T&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;C&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;G&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&amp;gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Sequence one&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;T&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;C&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&amp;gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Sequcece two&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;GAP&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MATCH&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MATCH&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MISMATCH&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;we wanna use that way to get maximum match&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;1&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;2&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;3&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;4&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;5&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;6&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;T&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;C&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;G&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&amp;gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Sequence one&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;T&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;C&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&amp;gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Sequcece two&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MISMATCH&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MISMATCH&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MISMATCH&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;GAP&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Score for sequcen alignment&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Match &lt;strong&gt;positive&lt;/strong&gt; score&lt;/li&gt;
+  &lt;li&gt;Mismatch &lt;strong&gt;negtive&lt;/strong&gt; score&lt;/li&gt;
+  &lt;li&gt;Gap &lt;strong&gt;negtive&lt;/strong&gt; score&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Align sequence must be more than one sequence&lt;/p&gt;
+
+&lt;p&gt;Align sequence is basic of the bioinformatics&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/bioinformatics/2015/03/26/bioinformatics</link>
+                <guid>http://zhou-dong.github.io/bioinformatics/2015/03/26/bioinformatics</guid>
+                <pubDate>2015-03-26T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Radial Basis Function Network</title>
@@ -3991,6 +4441,7 @@ esac
   &lt;li&gt;嵌入式数据库
     &lt;ul&gt;
       &lt;li&gt;LevelDB（LSM）&lt;/li&gt;
+      &lt;li&gt;RocketsDB (基于LevelDB内核做二次开发)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;分布式数据库

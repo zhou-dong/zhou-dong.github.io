@@ -50,6 +50,7 @@ tagline: -- 自己网站架构的设想，按照这个目标慢慢来。
   + Mqsql
 - 嵌入式数据库
   + LevelDB（LSM）
+  + RocketsDB (基于LevelDB内核做二次开发)
 - 分布式数据库
   + MongoDB
   + CouchDB

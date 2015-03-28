@@ -9,6 +9,9 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/bioinformatics/2015/03/27/intro
+http://zhou-dong.github.io/fasta/blast/bioinformatics/2015/03/26/fasta-blast
+http://zhou-dong.github.io/bioinformatics/2015/03/26/bioinformatics
 http://zhou-dong.github.io/rbf/2015/03/20/rbf
 http://zhou-dong.github.io/machine/learning/neural/deep/2015/03/20/neural-network
 http://zhou-dong.github.io/machine/learning/decision/tree/random/forest/2015/03/20/forest

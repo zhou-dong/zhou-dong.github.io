@@ -72,3 +72,5 @@ The result of word matching and attemps to extend the alignment are segments cal
 - high scoring segmeng pair
 
 BLAST ofter product sereral short HSPs
+
+WEBSITE: www.expasy.org
