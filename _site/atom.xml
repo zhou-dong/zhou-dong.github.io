@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-03-28T16:46:28-05:00</updated>
+ <updated>2015-03-30T13:30:53-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,11 +13,29 @@
 
  
  <entry>
-   <title>Protein Type</title>
+   <title>Protein</title>
    <link href="http://zhou-dong.github.io/protein/2015/03/28/protein-type"/>
    <updated>2015-03-28T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/protein/2015/03/28/protein-type</id>
    <content type="html">
+&lt;p&gt;Protein Structure:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;一级结构：氨基酸的序列 &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;二级结构：由氨基酸序列构成的物理结构&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;三级结构：三维的folding结构&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Protein Type:&lt;/p&gt;
+
 &lt;p&gt;肉类蛋白，豆类蛋白，乳清蛋白，奶中的蛋白，和蔬菜蛋白之间的区别：&lt;/p&gt;
 
 &lt;p&gt;动物蛋白和蔬菜蛋白之间的区别：&lt;/p&gt;
@@ -97,7 +115,33 @@
 
 &lt;ul&gt;
   &lt;li&gt;当前最好的蛋白质来源&lt;/li&gt;
-  &lt;li&gt;蛋白质的纯度可以达到90-100&lt;/li&gt;
+  &lt;li&gt;蛋白质的使用率90-100&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;鸡蛋：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In fact, the whole biological value scale is based on egg protein ranking a benchmark 100&lt;/li&gt;
+  &lt;li&gt;鸡蛋蛋白是最容易引起过敏的。&lt;/li&gt;
+  &lt;li&gt;吃整鸡蛋比光是蛋白含有更多的营养。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;豆类蛋白质：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;豆类其实不是一个有效的蛋白质的来源。&lt;/li&gt;
+  &lt;li&gt;豆类中包含很多过敏的元素，而且都会有抑制矿物质元素的吸收。&lt;/li&gt;
+  &lt;li&gt;蛋白质的包含量：70-70&lt;/li&gt;
+  &lt;li&gt;蛋白质的净利用率只有61&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;谷物&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;虽有谷物和豆类包含了人类所需的蛋白质。但是氨基酸的包含比例是不平衡的。&lt;/li&gt;
+  &lt;li&gt;所以食用纯素的时候，可能需要根据蛋白质的含量不同，食用不同比例的食物&lt;/li&gt;
+  &lt;li&gt;所以如果纯食素的话，对运动员、减肥的人、病人是不好的。&lt;/li&gt;
+  &lt;li&gt;如果需要健身的话，需要高纯度的蛋白质的，而且需要合理的氨基酸比例&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;resource from: http://www.nutribodyprotein.com/protein-types.php&lt;/p&gt;
@@ -151,7 +195,13 @@
   &lt;li&gt;BLAST&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Website: www.expasy.org&lt;/p&gt;
+&lt;p&gt;Website: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;www.expasy.org&lt;/li&gt;
+  &lt;li&gt;ncbi&lt;/li&gt;
+  &lt;li&gt;biopython&lt;/li&gt;
+&lt;/ul&gt;
 
 </content>
  </entry>
@@ -1920,11 +1970,80 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>LA-01 Matrices, Vectors, and Systems of Linear Equations</title>
-   <link href="http://zhou-dong.github.io/2015/02/16/definitions-in-linear-algebra"/>
+   <title>Introduction to Matrices, Vectors</title>
+   <link href="http://zhou-dong.github.io/matric/vector/linear/2015/02/16/definitions-in-linear-algebra"/>
    <updated>2015-02-16T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/16/definitions-in-linear-algebra</id>
+   <id>http://zhou-dong.github.io/matric/vector/linear/2015/02/16/definitions-in-linear-algebra</id>
    <content type="html">
+&lt;p&gt;&lt;strong&gt;零矩阵 != 零矩阵&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;零矩阵是有维度的，只是各个维度的值都为0&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;矩阵 乘以 0 =  零矩阵&lt;/p&gt;
+
+&lt;p&gt;A * 0 != B * 0&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;因为矩阵A和矩阵B的维度可能不一样&lt;/li&gt;
+  &lt;li&gt;所以它们生成的零矩阵可能会不一样&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;矩阵的转换：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A矩阵的transpose：A矩阵的行列转换&lt;/li&gt;
+  &lt;li&gt;两个矩阵和的转置，等于两个矩阵分别转置然后再相加&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;vectors&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;row vector&lt;/li&gt;
+  &lt;li&gt;column vector&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;向量的加减和系数积 其实和矩阵是一样的&lt;/p&gt;
+
+&lt;p&gt;Standard Vectors&lt;/p&gt;
+
+&lt;p&gt;向量空间中的标准向量&lt;/p&gt;
+
+&lt;p&gt;矩阵 * 向量&lt;/p&gt;
+
+&lt;p&gt;矩阵 向量 相乘： 结果为一个 向量&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;单位向量、单位矩阵&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在一个向量空间中，我们可以定义各个维度单位为1的向量为这个维度的单位向量。&lt;/li&gt;
+  &lt;li&gt;所以在一个N维的向量空间中，就会有个N个单位矩阵&lt;/li&gt;
+  &lt;li&gt;这N个单位矩阵，按次序组成的矩阵就叫做identity matrix&lt;/li&gt;
+  &lt;li&gt;由于我们知道，identity matrix在向量空间中的各个维度的值都为1，所以：&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;identity matrix和任何向量相乘，都会不改变向量的大小&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Stochastic Matrx&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在矩阵中，一列的值相加等于1&lt;/li&gt;
+  &lt;li&gt;[0.85 0.03]&lt;/li&gt;
+  &lt;li&gt;[0.15 0.97]&lt;/li&gt;
+  &lt;li&gt;可以用这种矩阵来表示百分比的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rotation Matrix&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用向量空间来表示一个向量空间中旋转的角度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sytem of linear equations: （联立方程式）&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;方程式可能会有多个解，这些解的集合我们叫做solution set&lt;/li&gt;
+  &lt;li&gt;Gaussian Elimination&lt;/li&gt;
+&lt;/ul&gt;
+
 </content>
  </entry>
  
@@ -1971,6 +2090,13 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLe94oLfiYuBCN-1N9aHJVjqO0K_Ug0VwZ&quot;&gt;URL&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Start Date: Jan 04, 2015&lt;/li&gt;
       &lt;li&gt;End Date: Feb 10, 2015&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bioinformatcs (Introduction to bioinformatics)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;/bioinformatics/2015/03/27/intro/&quot;&gt;URL&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Start Date: March 25 2015&lt;/li&gt;
+      &lt;li&gt;End Date: March 28 2015&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;

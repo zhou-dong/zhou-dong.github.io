@@ -32,6 +32,11 @@ tagline:
     - Start Date: Jan 04, 2015
     - End Date: Feb 10, 2015
 
+2. Bioinformatcs (Introduction to bioinformatics)
+    - [URL](/bioinformatics/2015/03/27/intro/)
+    - Start Date: March 25 2015
+    - End Date: March 28 2015
+
 ---
 
 ### Colledge

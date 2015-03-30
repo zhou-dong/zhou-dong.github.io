@@ -1,11 +1,23 @@
 ---
 layout: page
-title: Protein Type
+title: Protein
 tagline: 
 categories: protein
 ---
 
 {% include JB/setup %}
+
+Protein Structure:
+
+1. 一级结构：氨基酸的序列 
+
+2. 二级结构：由氨基酸序列构成的物理结构
+
+3. 三级结构：三维的folding结构
+
+---
+
+Protein Type:
 
 肉类蛋白，豆类蛋白，乳清蛋白，奶中的蛋白，和蔬菜蛋白之间的区别：
 
@@ -60,7 +72,28 @@ categories: protein
 乳清蛋白:
 
 - 当前最好的蛋白质来源
-- 蛋白质的纯度可以达到90-100
+- 蛋白质的使用率90-100
+
+鸡蛋：
+
+- In fact, the whole biological value scale is based on egg protein ranking a benchmark 100
+- 鸡蛋蛋白是最容易引起过敏的。
+- 吃整鸡蛋比光是蛋白含有更多的营养。
+
+豆类蛋白质：
+
+- 豆类其实不是一个有效的蛋白质的来源。
+- 豆类中包含很多过敏的元素，而且都会有抑制矿物质元素的吸收。
+- 蛋白质的包含量：70-70
+- 蛋白质的净利用率只有61
+
+谷物
+
+- 虽有谷物和豆类包含了人类所需的蛋白质。但是氨基酸的包含比例是不平衡的。
+- 所以食用纯素的时候，可能需要根据蛋白质的含量不同，食用不同比例的食物
+- 所以如果纯食素的话，对运动员、减肥的人、病人是不好的。
+- 如果需要健身的话，需要高纯度的蛋白质的，而且需要合理的氨基酸比例
+
 
 resource from: http://www.nutribodyprotein.com/protein-types.php
 
