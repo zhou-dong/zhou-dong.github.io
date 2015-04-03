@@ -34,9 +34,9 @@ http://zhou-dong.github.io/2015/02/22/orthogonality
 http://zhou-dong.github.io/2015/02/20/eigenvalues
 http://zhou-dong.github.io/2015/02/20/cs-5549-assignment-4
 http://zhou-dong.github.io/2015/02/18/subspaces
-http://zhou-dong.github.io/2015/02/16/matrices-and-linear-transformations
+http://zhou-dong.github.io/matrix/2015/02/16/matrices-and-linear-transformations
 http://zhou-dong.github.io/2015/02/16/determinants
-http://zhou-dong.github.io/matric/vector/linear/2015/02/16/definitions-in-linear-algebra
+http://zhou-dong.github.io/matric/vector/linear/set/gaussian/2015/02/16/definitions-in-linear-algebra
 http://zhou-dong.github.io/2015/02/16/achieved-courses
 http://zhou-dong.github.io/2015/02/15/three-learning-principles
 http://zhou-dong.github.io/2015/02/15/revised-all

@@ -5,8 +5,8 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-03-30T13:30:53-05:00</lastBuildDate>
-        <pubDate>2015-03-30T13:30:53-05:00</pubDate>
+        <lastBuildDate>2015-04-02T00:15:56-05:00</lastBuildDate>
+        <pubDate>2015-04-02T00:15:56-05:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -1950,11 +1950,72 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
         </item>
 
         <item>
-                <title>LA-02 Matrices and Linear Transformations</title>
+                <title>Matrices Mutiplication</title>
                 <description>
+&lt;p&gt;对角矩阵： (diagonal matrix)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对角矩阵首先是方阵&lt;/li&gt;
+  &lt;li&gt;两个对角矩阵相乘，符合交换律&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;对称矩阵：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;矩阵的转置，还是原矩阵&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;利用矩阵的反阵inverse可以实现相当于矩阵的除法&lt;/p&gt;
+
+&lt;p&gt;invertible 矩阵的反转&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ax = b&lt;/li&gt;
+  &lt;li&gt;A^-1 (Ax) = A^-1 b&lt;/li&gt;
+  &lt;li&gt;A^-1 A x = A^-1 b&lt;/li&gt;
+  &lt;li&gt;I_n x = A^-1 b&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;x = A^-1 b&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;可反转的矩阵也是方阵&lt;/li&gt;
+  &lt;li&gt;如果一个矩阵可以反转，那么它最多只有一个反转矩阵&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Elementary matrix&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In mathematics, an elementary matrix is a matrix which differs from the identity matrix by one single elementary row operation.&lt;/li&gt;
+  &lt;li&gt;利用elementary matrix和其它矩阵相乘，可以对矩阵做一些运算（个人理解为精确的运算）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;reduced row echelon form是唯一存在的&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;More inverse of Matrix&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;要判断一个矩阵是不是inverse的，可以看它的reduced row echelon是不是I_n，如果是那这个矩阵就是inverse的，反之就不是&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Invertable matrix theorem&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A in invertible&lt;/li&gt;
+  &lt;li&gt;The reduced row echelon form is I_n&lt;/li&gt;
+  &lt;li&gt;The rank of A equal n&lt;/li&gt;
+  &lt;li&gt;The span of the columns of A is R^n&lt;/li&gt;
+  &lt;li&gt;The equation Ax = b is consistant for every b in R^n&lt;/li&gt;
+  &lt;li&gt;The nullity of A is equal 0&lt;/li&gt;
+  &lt;li&gt;The column of A linear indenpendent&lt;/li&gt;
+  &lt;li&gt;The only Ax = 0 is 0&lt;/li&gt;
+  &lt;li&gt;A is a product of elementary matrix A是多个elementary matrix的相乘&lt;/li&gt;
+  &lt;li&gt;There exists an n * n matrix B such that BA = I_n&lt;/li&gt;
+  &lt;li&gt;There exists an n * n matrix C such that AC = I_n&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Linear Transformnations and Matrices&lt;/p&gt;
 </description>
-                <link>http://zhou-dong.github.io/2015/02/16/matrices-and-linear-transformations</link>
-                <guid>http://zhou-dong.github.io/2015/02/16/matrices-and-linear-transformations</guid>
+                <link>http://zhou-dong.github.io/matrix/2015/02/16/matrices-and-linear-transformations</link>
+                <guid>http://zhou-dong.github.io/matrix/2015/02/16/matrices-and-linear-transformations</guid>
                 <pubDate>2015-02-16T00:00:00-06:00</pubDate>
         </item>
 
@@ -1968,7 +2029,7 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
         </item>
 
         <item>
-                <title>Introduction to Matrices, Vectors</title>
+                <title>Intro to Matrices, Vectors, Equations, set</title>
                 <description>
 &lt;p&gt;&lt;strong&gt;零矩阵 != 零矩阵&lt;/strong&gt;&lt;/p&gt;
 
@@ -2035,13 +2096,83 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
 &lt;p&gt;Sytem of linear equations: （联立方程式）&lt;/p&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;一个方程叫做linear equation&lt;/li&gt;
+  &lt;li&gt;多个方程组合起来：system 藕粉 linear equations&lt;/li&gt;
   &lt;li&gt;方程式可能会有多个解，这些解的集合我们叫做solution set&lt;/li&gt;
-  &lt;li&gt;Gaussian Elimination&lt;/li&gt;
+  &lt;li&gt;Gaussian Elimination
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;所有的pivot position的上下都为0&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ax = b&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;Elementary Row Operations&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;interchange&lt;/li&gt;
+  &lt;li&gt;multiply nonzero scalar&lt;/li&gt;
+  &lt;li&gt;add a mutiple of one row to another&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;augmented matrix&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;把变量和结果放在同一个矩阵中求解。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Set theory&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;set中是没有顺序的&lt;/li&gt;
+  &lt;li&gt;union set 合集&lt;/li&gt;
+  &lt;li&gt;intersection set 交集&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;difference set 两个集合相减&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;有限多元素的集合&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;无限多元素的集合&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;R^2 不是 R^3 的子集&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一个判断一个向量的集合是否可以span出整个空间中的所有元素&lt;/li&gt;
+  &lt;li&gt;只要找出整个集合中的向量，无法random出空间中的一个向量就可以了&lt;/li&gt;
+  &lt;li&gt;一个集合中，如果两个向量是平行的或者是重合的，那么这两个向量在span的时候，作用是一样的&lt;/li&gt;
+  &lt;li&gt;可以证明两个集合互为对方的子集&lt;/li&gt;
+  &lt;li&gt;所以在整个集合中，每个向量都应该是独特的。&lt;/li&gt;
+  &lt;li&gt;如果在一个set中，一个向量可以是别的向量的线性组合，那么这个向量就可以被移除掉。&lt;/li&gt;
+  &lt;li&gt;判断集合中的向量是否线性相依&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Linear dependence 线性相依 L.D&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果其中的一些向量或者其实的两个向量，能组合出0向量，说明其中有的向量是线性相依的&lt;/li&gt;
+  &lt;li&gt;如果解中，有一个向量是free variable那么说明这个向量是L.D&lt;/li&gt;
+  &lt;li&gt;Ax = 0 有除了0向量外的其它解&lt;/li&gt;
+  &lt;li&gt;Ax = b 可能有许多解&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Linear Independence L.I&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;不存在一组系数，使得集合里面任何向量之间的组合都不为0向量&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;创建一组(L.I) set&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建一非零向量&lt;/li&gt;
+  &lt;li&gt;第二个向量不能与第一个向量平行&lt;/li&gt;
+  &lt;li&gt;以后添加的向量，不能是前面向量的线性组合&lt;/li&gt;
+  &lt;li&gt;向量个数最多是m个&lt;/li&gt;
+&lt;/ol&gt;
+
 </description>
-                <link>http://zhou-dong.github.io/matric/vector/linear/2015/02/16/definitions-in-linear-algebra</link>
-                <guid>http://zhou-dong.github.io/matric/vector/linear/2015/02/16/definitions-in-linear-algebra</guid>
+                <link>http://zhou-dong.github.io/matric/vector/linear/set/gaussian/2015/02/16/definitions-in-linear-algebra</link>
+                <guid>http://zhou-dong.github.io/matric/vector/linear/set/gaussian/2015/02/16/definitions-in-linear-algebra</guid>
                 <pubDate>2015-02-16T00:00:00-06:00</pubDate>
         </item>
 

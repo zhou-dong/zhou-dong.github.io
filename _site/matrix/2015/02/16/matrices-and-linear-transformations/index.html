@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Introduction to Matrices, Vectors</title>
+    <title>Matrices Mutiplication</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,81 +146,73 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Introduction to Matrices, Vectors  <small>Systems of Linear Equations</small></h1>
+  <h1>Matrices Mutiplication </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<p><strong>零矩阵 != 零矩阵</strong></p>
-
-<p><strong>零矩阵是有维度的，只是各个维度的值都为0</strong></p>
-
-<p>矩阵 乘以 0 =  零矩阵</p>
-
-<p>A * 0 != B * 0</p>
+<p>对角矩阵： (diagonal matrix)</p>
 
 <ul>
-  <li>因为矩阵A和矩阵B的维度可能不一样</li>
-  <li>所以它们生成的零矩阵可能会不一样</li>
+  <li>对角矩阵首先是方阵</li>
+  <li>两个对角矩阵相乘，符合交换律</li>
 </ul>
 
-<p>矩阵的转换：</p>
+<p>对称矩阵：</p>
 
 <ul>
-  <li>A矩阵的transpose：A矩阵的行列转换</li>
-  <li>两个矩阵和的转置，等于两个矩阵分别转置然后再相加</li>
+  <li>矩阵的转置，还是原矩阵</li>
 </ul>
 
-<p>vectors</p>
+<p>利用矩阵的反阵inverse可以实现相当于矩阵的除法</p>
+
+<p>invertible 矩阵的反转</p>
 
 <ul>
-  <li>row vector</li>
-  <li>column vector</li>
+  <li>Ax = b</li>
+  <li>A^-1 (Ax) = A^-1 b</li>
+  <li>A^-1 A x = A^-1 b</li>
+  <li>I_n x = A^-1 b</li>
+  <li>
+    <p>x = A^-1 b</p>
+  </li>
+  <li>可反转的矩阵也是方阵</li>
+  <li>如果一个矩阵可以反转，那么它最多只有一个反转矩阵</li>
 </ul>
 
-<p>向量的加减和系数积 其实和矩阵是一样的</p>
-
-<p>Standard Vectors</p>
-
-<p>向量空间中的标准向量</p>
-
-<p>矩阵 * 向量</p>
-
-<p>矩阵 向量 相乘： 结果为一个 向量</p>
-
-<p><strong>单位向量、单位矩阵</strong></p>
+<p>Elementary matrix</p>
 
 <ul>
-  <li>在一个向量空间中，我们可以定义各个维度单位为1的向量为这个维度的单位向量。</li>
-  <li>所以在一个N维的向量空间中，就会有个N个单位矩阵</li>
-  <li>这N个单位矩阵，按次序组成的矩阵就叫做identity matrix</li>
-  <li>由于我们知道，identity matrix在向量空间中的各个维度的值都为1，所以：</li>
-  <li><strong>identity matrix和任何向量相乘，都会不改变向量的大小</strong></li>
+  <li>In mathematics, an elementary matrix is a matrix which differs from the identity matrix by one single elementary row operation.</li>
+  <li>利用elementary matrix和其它矩阵相乘，可以对矩阵做一些运算（个人理解为精确的运算）</li>
 </ul>
 
-<p>Stochastic Matrx</p>
+<p><strong>reduced row echelon form是唯一存在的</strong></p>
+
+<p>More inverse of Matrix</p>
 
 <ul>
-  <li>在矩阵中，一列的值相加等于1</li>
-  <li>[0.85 0.03]</li>
-  <li>[0.15 0.97]</li>
-  <li>可以用这种矩阵来表示百分比的</li>
+  <li>要判断一个矩阵是不是inverse的，可以看它的reduced row echelon是不是I_n，如果是那这个矩阵就是inverse的，反之就不是</li>
 </ul>
 
-<p>Rotation Matrix</p>
+<p>Invertable matrix theorem</p>
 
-<ul>
-  <li>用向量空间来表示一个向量空间中旋转的角度</li>
-</ul>
+<ol>
+  <li>A in invertible</li>
+  <li>The reduced row echelon form is I_n</li>
+  <li>The rank of A equal n</li>
+  <li>The span of the columns of A is R^n</li>
+  <li>The equation Ax = b is consistant for every b in R^n</li>
+  <li>The nullity of A is equal 0</li>
+  <li>The column of A linear indenpendent</li>
+  <li>The only Ax = 0 is 0</li>
+  <li>A is a product of elementary matrix A是多个elementary matrix的相乘</li>
+  <li>There exists an n * n matrix B such that BA = I_n</li>
+  <li>There exists an n * n matrix C such that AC = I_n</li>
+</ol>
 
-<p>Sytem of linear equations: （联立方程式）</p>
-
-<ul>
-  <li>方程式可能会有多个解，这些解的集合我们叫做solution set</li>
-  <li>Gaussian Elimination</li>
-</ul>
-
+<p>Linear Transformnations and Matrices</p>
 
   </div>
 </div>
