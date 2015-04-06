@@ -55,3 +55,5 @@ Invertable matrix theorem
 11. There exists an n * n matrix C such that AC = I_n
 
 Linear Transformnations and Matrices
+
+- 找出matrix transformation or linear transformation的standard matrix，就是把单位矩阵或者说单位向量依次带进去求解。
