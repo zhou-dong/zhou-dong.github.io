@@ -5,8 +5,8 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-04-02T00:15:56-05:00</lastBuildDate>
-        <pubDate>2015-04-02T00:15:56-05:00</pubDate>
+        <lastBuildDate>2015-04-06T23:38:48-05:00</lastBuildDate>
+        <pubDate>2015-04-06T23:38:48-05:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -1903,8 +1903,54 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
         </item>
 
         <item>
-                <title>LA-06 Orthogonality</title>
+                <title>Orthogonality</title>
                 <description>
+&lt;p&gt;正交，也就是在二维空间或者三维空间的垂直&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果有正交的sub dimensional的话，那么在矩阵的运算中，就可以极大的简化计算量。&lt;/li&gt;
+  &lt;li&gt;在矩阵的运算中，就不需要高斯消去法了&lt;/li&gt;
+  &lt;li&gt;只需要在各个dimension中各自求解&lt;/li&gt;
+  &lt;li&gt;因为各个维度之间是没有影响的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;正交化的步骤&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;求linear dependent的matrix的basis&lt;/li&gt;
+  &lt;li&gt;用其中的一个vector做标准，来正交化其它的basis&lt;/li&gt;
+  &lt;li&gt;把正交化以后的新的basis做normalization，即长度都为1&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;orthogonal projection&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对subspace做orthogonal projection&lt;/li&gt;
+  &lt;li&gt;对一个向量，在某个subspace做投影&lt;/li&gt;
+  &lt;li&gt;把一个向量decomposition&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;orthogonal complement&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一个向量与两一个subspace中的所有向量都垂直&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;向量与subspace之间的orthogonality&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;即这个向量到这个平面的距离&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;求这个subspace的orthogonal basis，&lt;/li&gt;
+  &lt;li&gt;求这个向量在这些orthogonal basis上的投影&lt;/li&gt;
+  &lt;li&gt;这个向量减去在subspace上的投影，就是向量到空间的距离&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用这个方式，可以求线性回归的问题&lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/02/22/orthogonality</link>
                 <guid>http://zhou-dong.github.io/2015/02/22/orthogonality</guid>
@@ -1912,11 +1958,36 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
         </item>
 
         <item>
-                <title>LA-05 Eigenvalues, Eigenvectors, and Diagonaliztion</title>
+                <title>Eigenvalues, Eigenvectors, and Diagonaliztion</title>
                 <description>
+&lt;p&gt;(A - XI_n)v = 0&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;有些矩阵在实数的范围内没有eigenvalue&lt;/li&gt;
+  &lt;li&gt;eigenvectors之间必须是垂直的&lt;/li&gt;
+  &lt;li&gt;如果一个eigenvector不在某个eigenspace里面，那么它们之间应该是垂直的&lt;/li&gt;
+  &lt;li&gt;eigenvecotrs应该是矩阵在向量空间中，各个维度的basic vector的投影的值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;characteristic polynomial&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先建立特征多项式 characteristic polynomial&lt;/li&gt;
+  &lt;li&gt;求解特征方程式 characteristic equation&lt;/li&gt;
+  &lt;li&gt;通过方程式的答案来求出eigenvector&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;diagonalization of matrix&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对角矩阵&lt;/li&gt;
+  &lt;li&gt;通过矩阵的对角化，来简化矩阵相乘的复杂度&lt;/li&gt;
+  &lt;li&gt;如果能找到N个indenpent的矩阵，就能使这个矩阵对角化&lt;/li&gt;
+&lt;/ul&gt;
+
 </description>
-                <link>http://zhou-dong.github.io/2015/02/20/eigenvalues</link>
-                <guid>http://zhou-dong.github.io/2015/02/20/eigenvalues</guid>
+                <link>http://zhou-dong.github.io/eigenvalue/eigenvector/2015/02/20/eigenvalues</link>
+                <guid>http://zhou-dong.github.io/eigenvalue/eigenvector/2015/02/20/eigenvalues</guid>
                 <pubDate>2015-02-20T00:00:00-06:00</pubDate>
         </item>
 
@@ -1938,15 +2009,6 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
                 <link>http://zhou-dong.github.io/2015/02/20/cs-5549-assignment-4</link>
                 <guid>http://zhou-dong.github.io/2015/02/20/cs-5549-assignment-4</guid>
                 <pubDate>2015-02-20T00:00:00-06:00</pubDate>
-        </item>
-
-        <item>
-                <title>LA-04 Subspaces</title>
-                <description>
-</description>
-                <link>http://zhou-dong.github.io/2015/02/18/subspaces</link>
-                <guid>http://zhou-dong.github.io/2015/02/18/subspaces</guid>
-                <pubDate>2015-02-18T00:00:00-06:00</pubDate>
         </item>
 
         <item>
@@ -2013,18 +2075,13 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Linear Transformnations and Matrices&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;找出matrix transformation or linear transformation的standard matrix，就是把单位矩阵或者说单位向量依次带进去求解。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/matrix/2015/02/16/matrices-and-linear-transformations</link>
                 <guid>http://zhou-dong.github.io/matrix/2015/02/16/matrices-and-linear-transformations</guid>
-                <pubDate>2015-02-16T00:00:00-06:00</pubDate>
-        </item>
-
-        <item>
-                <title>LA-03 Determinants</title>
-                <description>
-</description>
-                <link>http://zhou-dong.github.io/2015/02/16/determinants</link>
-                <guid>http://zhou-dong.github.io/2015/02/16/determinants</guid>
                 <pubDate>2015-02-16T00:00:00-06:00</pubDate>
         </item>
 

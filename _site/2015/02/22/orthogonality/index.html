@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>LA-06 Orthogonality</title>
+    <title>Orthogonality</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,12 +146,58 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>LA-06 Orthogonality </h1>
+  <h1>Orthogonality </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
+<p>正交，也就是在二维空间或者三维空间的垂直</p>
+
+<ul>
+  <li>如果有正交的sub dimensional的话，那么在矩阵的运算中，就可以极大的简化计算量。</li>
+  <li>在矩阵的运算中，就不需要高斯消去法了</li>
+  <li>只需要在各个dimension中各自求解</li>
+  <li>因为各个维度之间是没有影响的</li>
+</ul>
+
+<p>正交化的步骤</p>
+
+<ol>
+  <li>求linear dependent的matrix的basis</li>
+  <li>用其中的一个vector做标准，来正交化其它的basis</li>
+  <li>把正交化以后的新的basis做normalization，即长度都为1</li>
+</ol>
+
+<p>orthogonal projection</p>
+
+<ul>
+  <li>对subspace做orthogonal projection</li>
+  <li>对一个向量，在某个subspace做投影</li>
+  <li>把一个向量decomposition</li>
+</ul>
+
+<p>orthogonal complement</p>
+
+<ul>
+  <li>一个向量与两一个subspace中的所有向量都垂直</li>
+</ul>
+
+<p>向量与subspace之间的orthogonality</p>
+
+<ul>
+  <li>即这个向量到这个平面的距离</li>
+</ul>
+
+<ol>
+  <li>求这个subspace的orthogonal basis，</li>
+  <li>求这个向量在这些orthogonal basis上的投影</li>
+  <li>这个向量减去在subspace上的投影，就是向量到空间的距离</li>
+</ol>
+
+<ul>
+  <li>用这个方式，可以求线性回归的问题</li>
+</ul>
 
   </div>
 </div>
