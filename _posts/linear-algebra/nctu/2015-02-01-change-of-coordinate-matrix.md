@@ -2,6 +2,7 @@
 layout: page
 title: Change of Coordinate Matrix
 tagline:
+categories: coordinate
 ---
 
 {% include JB/setup %}

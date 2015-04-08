@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Introduction of Linear Algebra and Vector space 
-tagline:  
+tagline:
+categories: linear-algebra vector-space
 ---
 {% include JB/setup %}
 

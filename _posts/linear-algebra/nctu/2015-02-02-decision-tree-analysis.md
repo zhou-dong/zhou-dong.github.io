@@ -2,6 +2,7 @@
 layout: page
 title: Analysis of Decision Tree
 tagline:
+categories: decision tree
 ---
 
 {% include JB/setup %}

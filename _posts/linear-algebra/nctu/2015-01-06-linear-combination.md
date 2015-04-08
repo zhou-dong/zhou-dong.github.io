@@ -2,6 +2,7 @@
 layout: page
 title: Gauss Elimination
 tagline:
+categories: guass
 ---
 {% include JB/setup %}
 

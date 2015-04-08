@@ -2,6 +2,7 @@
 layout: page
 title: Invertible Matrix
 tagline: Invertible Matrix, Isomorphic, Identity Matrix
+categories: identity-matrix
 ---
 {% include JB/setup %}
 

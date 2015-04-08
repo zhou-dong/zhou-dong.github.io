@@ -2,6 +2,7 @@
 layout: page
 title: Elementary Matrix Operations and Elementary Matrix
 tagline:
+categories: elementary matrix
 ---
 
 {% include JB/setup %}
