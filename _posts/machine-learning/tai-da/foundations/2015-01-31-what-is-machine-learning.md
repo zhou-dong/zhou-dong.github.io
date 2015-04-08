@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-02 What is Machine Learning
+title: What is Machine Learning
 tagline: 
+categories: machine-learning
 ---
 {% include JB/setup %}
 

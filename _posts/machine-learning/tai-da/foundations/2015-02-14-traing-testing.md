@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-07 Training, Generaliztion, VC
+title: Training, Generaliztion, VC
 tagline: Effective Lines, Dichotomy, VC Dimension
+categories: machine-learning vc-dimension
 ---
 {% include JB/setup %}
 

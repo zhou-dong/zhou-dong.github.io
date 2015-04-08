@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-04 Machine Learning with Other Fields
+title: Machine Learning with Other Fields
 tagline: Data Mining, Artifical Intelligence, Statistics
+categories: machine-learning
 ---
 {% include JB/setup %}
 

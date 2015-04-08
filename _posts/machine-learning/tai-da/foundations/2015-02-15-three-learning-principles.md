@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-11 Three Learning Principles
-tagline: 
+title: Three Learning Principles
+tagline:
+categories: machine-learning 
 ---
 {% include JB/setup %}
 

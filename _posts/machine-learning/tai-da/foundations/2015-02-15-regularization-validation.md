@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-10 Regularization, Validation
-tagline: 
+title: Regularization, Validation
+tagline:
+categories: regularization validation 
 ---
 {% include JB/setup %}
 

@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-08 Linear Regression, Logistic Regression
+title: Linear Regression, Logistic Regression
 tagline: 
+categories: machine-learning regression
 ---
 {% include JB/setup %}
 

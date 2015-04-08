@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-09 Linear and Nonlinear Classification
+title: Linear and Nonlinear Classification
 tagline: 
+categories: machine-learning linear classification
 ---
 {% include JB/setup %}
 

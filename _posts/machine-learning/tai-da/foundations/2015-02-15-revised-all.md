@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-12 Revised Course
+title: Revised Course
 tagline: Power of Three
+categories: machine-learning
 ---
 {% include JB/setup %}
 

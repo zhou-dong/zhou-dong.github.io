@@ -1,7 +1,8 @@
 ---
 layout: page
-title: ML-NTU-F-06 Machine Learning Type
+title: Machine Learning Type
 tagline: 
+categories: machine-learning
 ---
 {% include JB/setup %}
 
