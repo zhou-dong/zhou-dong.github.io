@@ -1,7 +1,8 @@
 ---
 layout: page
-title: CM-01 The Function and the Field
+title: The Function and the Field
 tagline: Note One of Coding the Matrix
+categories: matrix python
 ---
 
 {% include JB/setup %}

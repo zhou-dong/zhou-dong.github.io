@@ -1,7 +1,8 @@
 ---
 layout: page
-title: CM-02 Introduction to complex numbers
+title: Introduction to complex numbers
 tagline: Note Two of Coding the Matrix
+categories: python matrix
 ---
 
 {% include JB/setup %}

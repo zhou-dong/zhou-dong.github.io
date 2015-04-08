@@ -1,7 +1,8 @@
 ---
 layout: page
-title: CM-03 Play with complex numbers
+title: Play with complex numbers
 tagline: Note three of Coding the Matrix
+categories: python matrix
 ---
 
 {% include JB/setup %}

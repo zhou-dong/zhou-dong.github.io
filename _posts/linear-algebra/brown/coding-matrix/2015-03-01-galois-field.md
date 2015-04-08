@@ -1,7 +1,8 @@
 ---
 layout: page
-title: CM-04 Play with Galois Field
+title: Play with Galois Field
 tagline: Note four of Coding the Matrix
+categories: matrix python
 ---
 
 {% include JB/setup %}
