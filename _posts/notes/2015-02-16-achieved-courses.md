@@ -27,7 +27,10 @@ tagline:
     - Start Date: 02/13 2015
     - End Date: 04/10 2015
 
-5. 
+5. Coding the Matrix: Linear Algebra through Computer Science Applications
+    - Start Date: 02/02/2015
+    - End Date: 04/08/2015 
+
 #### Edex:
 
 #### Youtube:
