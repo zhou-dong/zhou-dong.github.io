@@ -13,23 +13,41 @@ tagline:
     - Start Date: Feb 01, 2015
     - End Date: Feb 10, 2015
     - [Notes and Code](https://github.com/zhou-dong/r-study)
+    - Johns Hopkins
 
 2. 機器學習基石 (Machine Learning Foundations)
     - Start Date: Jan 31, 2015
     - End Date: Feb 15, 2015
     - [Simple Roadmap](http://zhou-dong.github.io/2015/02/15/revised-all/)
+    - National Taiwan University
 
 3. 機器學習技法 (Machine Learning Techniques)
     - Start Date: March 17, 2015
     - End Date: March 21, 2015
+    - National Taiwan University
 
 4. An Introduction to Interactive Programming in Python (Part 1)
     - Start Date: 02/13 2015
     - End Date: 04/10 2015
+    - Rice University
 
 5. Coding the Matrix: Linear Algebra through Computer Science Applications
     - Start Date: 02/02/2015
-    - End Date: 04/08/2015 
+    - End Date: 04/08/2015
+    - language: python 
+    - Brown University
+
+6. Programming for Everybody (Python)
+    - Start Date: 02/02 2015
+    - End Date: 04/09 2015
+    - Some of chapters are useful
+    - University of Michigan
+
+7. An Introduction to Interactive Programming in Python (Part 2)
+    - Start Date: 04/09 2015
+    - End Date:
+    - Rice University
+    - Not finish yet
 
 #### Edex:
 
