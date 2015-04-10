@@ -51,6 +51,12 @@ tagline:
 
 #### Edex:
 
+1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
+    - Start Date: 01/07 2015
+    - End Date: 09/04 2015
+    - Almost finish all of them, some of them I think already know, so skip
+    - MIT
+
 #### Youtube:
 
 1. 線性代數 (Not Finished All, Just lec01-lec-13)
