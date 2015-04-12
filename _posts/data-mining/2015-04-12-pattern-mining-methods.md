@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Efficient Pattern Mining Methods
+title: Pattern Mining Methods
 tagline: Apriori Eclat FPgrowth
 categories: apriori Eclat fpgrowth
 
