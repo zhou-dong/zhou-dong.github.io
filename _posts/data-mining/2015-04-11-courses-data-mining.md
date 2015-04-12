@@ -24,6 +24,8 @@ categories: data-mining
         + Eclat
         + FPgrowth
     4. Pattern Evaluation
+        + Objective: By math to calculate
+        + Subjective: One man's trash could be another man's treasure
     5. Mining Diverse Frequdent Patterns
     6. Constraint-Based Pattern Mining
     7. Sequential Pattern Mining
@@ -60,7 +62,7 @@ categories: data-mining
     + Visualization
     + Algorithm
     + Database Technology
-    + Distributed/Cloud computing  
+    + Distributed/Cloud computing
 
 ---
 
