@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Achieved Courses</title>
+    <title>Introduction to complex numbers</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,123 +146,42 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Achieved Courses </h1>
+  <h1>Introduction to complex numbers  <small>Note Two of Coding the Matrix</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<h3 id="online-courses">Online Courses</h3>
+<p>Solutions to <script type="math/tex"> x^2 = -1 </script> ?<br />
+Mathematicians invented <em>i</em> to be one solution.</p>
 
-<h4 id="coursera">Coursera:</h4>
+<p>Example: <script type="math/tex"> x^2 = -1 </script> <em>solution is</em> <script type="math/tex"> x = 3i </script></p>
 
-<ol>
-  <li>R Programming
-    <ul>
-      <li>Start Date: Feb 01, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-      <li><a href="https://github.com/zhou-dong/r-study">Notes and Code</a></li>
-      <li>Johns Hopkins</li>
-    </ul>
-  </li>
-  <li>機器學習基石 (Machine Learning Foundations)
-    <ul>
-      <li>Start Date: Jan 31, 2015</li>
-      <li>End Date: Feb 15, 2015</li>
-      <li><a href="http://zhou-dong.github.io/2015/02/15/revised-all/">Simple Roadmap</a></li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>機器學習技法 (Machine Learning Techniques)
-    <ul>
-      <li>Start Date: March 17, 2015</li>
-      <li>End Date: March 21, 2015</li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 1)
-    <ul>
-      <li>Start Date: 02/13 2015</li>
-      <li>End Date: 04/10 2015</li>
-      <li>Rice University</li>
-    </ul>
-  </li>
-  <li>Coding the Matrix: Linear Algebra through Computer Science Applications
-    <ul>
-      <li>Start Date: 02/02/2015</li>
-      <li>End Date: 04/08/2015</li>
-      <li>language: python </li>
-      <li>Brown University</li>
-    </ul>
-  </li>
-  <li>Programming for Everybody (Python)
-    <ul>
-      <li>Start Date: 02/02 2015</li>
-      <li>End Date: 04/09 2015</li>
-      <li>Some of chapters are useful</li>
-      <li>University of Michigan</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 2)
-    <ul>
-      <li>Start Date: 04/09 2015</li>
-      <li>End Date:</li>
-      <li>Rice University</li>
-      <li>Not finish yet</li>
-    </ul>
-  </li>
-  <li>Pattern Discovery in Data Mining
-    <ul>
-      <li>Start Date: 04/10 2015</li>
-      <li>End Date: 04/12 2015</li>
-      <li>Not detailed enough, so don’t like so much</li>
-      <li>The University of Illinois at Urbana-Champaign</li>
-    </ul>
-  </li>
-</ol>
+<p>Numbers such as <script type="math/tex"> i, -i, 3i, 2.17i </script> are called <strong>imaginary</strong> numbers.</p>
 
-<h4 id="edex">Edex:</h4>
+<p>Solution to <script type="math/tex"> (x-1)^2  = -9 ? \ x = 1 + 3i </script></p>
 
-<ol>
-  <li>MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
-    <ul>
-      <li>Start Date: 01/07 2015</li>
-      <li>End Date: 09/04 2015</li>
-      <li>Almost finish all of them, some of them I think already know, so skip</li>
-      <li>MIT</li>
-    </ul>
-  </li>
-</ol>
+<p>A real number plus an imaginary number is a <strong>complex number</strong>.<br />
+A real number has <strong>real part</strong> and an <strong>imgianary part</strong>.</p>
 
-<h4 id="youtube">Youtube:</h4>
+<pre class="prettyprint linenums">
+# (x-1)**2 = -9, x = 1 + 3j
+x = 1 + 3j
 
-<ol>
-  <li>線性代數 (Not Finished All, Just lec01-lec-13)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLe94oLfiYuBCN-1N9aHJVjqO0K_Ug0VwZ">URL</a></li>
-      <li>Start Date: Jan 04, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-    </ul>
-  </li>
-  <li>Bioinformatcs (Introduction to bioinformatics)
-    <ul>
-      <li><a href="/bioinformatics/2015/03/27/intro/">URL</a></li>
-      <li>Start Date: March 25 2015</li>
-      <li>End Date: March 28 2015</li>
-    </ul>
-  </li>
-  <li>台大開放課程-線性代數-蘇柏青(I really like this course!)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLw7ltASAuhMTZPgepJqpj_7Dv0AmIHJyJ">URL</a></li>
-      <li>Start Date: March 31 2015</li>
-      <li>End Date: April 08 2015</li>
-    </ul>
-  </li>
-</ol>
+print x
+print (x-1)**2
+print type(x)
 
-<hr />
+# ax + b = c
+def solve(a, b, c):
+    return (c-b)/a
 
-<h3 id="colledge">Colledge</h3>
+# 10x + 5 = 30
+print solve(10.0, 5.0, 30.0)
+
+# (10 + 5i)x + 5 = 20
+print solve(10+5j, 5.0, 20.0)
+</pre>
 
   </div>
 </div>

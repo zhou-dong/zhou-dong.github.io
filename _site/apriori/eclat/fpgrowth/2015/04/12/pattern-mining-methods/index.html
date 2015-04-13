@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Achieved Courses</title>
+    <title>Pattern Mining Methods</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,123 +146,102 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Achieved Courses </h1>
+  <h1>Pattern Mining Methods  <small>Apriori Eclat FPgrowth</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<h3 id="online-courses">Online Courses</h3>
+<h3 id="apriori">Apriori</h3>
 
-<h4 id="coursera">Coursera:</h4>
+<p>Basic Knowledge:</p>
 
-<ol>
-  <li>R Programming
-    <ul>
-      <li>Start Date: Feb 01, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-      <li><a href="https://github.com/zhou-dong/r-study">Notes and Code</a></li>
-      <li>Johns Hopkins</li>
-    </ul>
-  </li>
-  <li>機器學習基石 (Machine Learning Foundations)
-    <ul>
-      <li>Start Date: Jan 31, 2015</li>
-      <li>End Date: Feb 15, 2015</li>
-      <li><a href="http://zhou-dong.github.io/2015/02/15/revised-all/">Simple Roadmap</a></li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>機器學習技法 (Machine Learning Techniques)
-    <ul>
-      <li>Start Date: March 17, 2015</li>
-      <li>End Date: March 21, 2015</li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 1)
-    <ul>
-      <li>Start Date: 02/13 2015</li>
-      <li>End Date: 04/10 2015</li>
-      <li>Rice University</li>
-    </ul>
-  </li>
-  <li>Coding the Matrix: Linear Algebra through Computer Science Applications
-    <ul>
-      <li>Start Date: 02/02/2015</li>
-      <li>End Date: 04/08/2015</li>
-      <li>language: python </li>
-      <li>Brown University</li>
-    </ul>
-  </li>
-  <li>Programming for Everybody (Python)
-    <ul>
-      <li>Start Date: 02/02 2015</li>
-      <li>End Date: 04/09 2015</li>
-      <li>Some of chapters are useful</li>
-      <li>University of Michigan</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 2)
-    <ul>
-      <li>Start Date: 04/09 2015</li>
-      <li>End Date:</li>
-      <li>Rice University</li>
-      <li>Not finish yet</li>
-    </ul>
-  </li>
-  <li>Pattern Discovery in Data Mining
-    <ul>
-      <li>Start Date: 04/10 2015</li>
-      <li>End Date: 04/12 2015</li>
-      <li>Not detailed enough, so don’t like so much</li>
-      <li>The University of Illinois at Urbana-Champaign</li>
-    </ul>
-  </li>
-</ol>
+<ul>
+  <li>Other name: Down Closure Property of Frequent Patterns</li>
+  <li>Discription: Any subset of frequent itemset must be frequent</li>
+  <li>Then: If any subset of itemset S is infrequent, then there is no change for S to be frequent</li>
+</ul>
 
-<h4 id="edex">Edex:</h4>
+<p>Steps:</p>
+
+<ul>
+  <li>先在所有的数据集中找出每个item出现的频率</li>
+  <li>删除频率低的</li>
+  <li>
+    <p>我们就得到了出现频率大于某个阀值的items</p>
+  </li>
+  <li>通过第一次得到的数据，再去数据集中去查询同时出现2个商品，并记录他们的频率</li>
+  <li>删除其中出现频率低的</li>
+  <li>
+    <p>这样我们就得到了出现频率大于某个阀值的一对items</p>
+  </li>
+  <li>通过第二次得到的数据，再去数据集中查询同时出现的3个商品，并记录他们的频率</li>
+  <li>删除其中频率低的</li>
+  <li>
+    <p>这样我们就得到了一组频率大于某个阀值的3个同时出现的items</p>
+  </li>
+  <li>通过上面的算法，继续计算更多商品同时出现的频率。</li>
+</ul>
+
+<p>Improvements:</p>
 
 <ol>
-  <li>MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
+  <li>Reduce passes of transaction database scans
     <ul>
-      <li>Start Date: 01/07 2015</li>
-      <li>End Date: 09/04 2015</li>
-      <li>Almost finish all of them, some of them I think already know, so skip</li>
-      <li>MIT</li>
+      <li>Partitioning: Scan database only twice</li>
+      <li>Partition database and find local frequent patterns</li>
+      <li>Consilidate global frequent patterns</li>
     </ul>
   </li>
-</ol>
-
-<h4 id="youtube">Youtube:</h4>
-
-<ol>
-  <li>線性代數 (Not Finished All, Just lec01-lec-13)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLe94oLfiYuBCN-1N9aHJVjqO0K_Ug0VwZ">URL</a></li>
-      <li>Start Date: Jan 04, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-    </ul>
-  </li>
-  <li>Bioinformatcs (Introduction to bioinformatics)
-    <ul>
-      <li><a href="/bioinformatics/2015/03/27/intro/">URL</a></li>
-      <li>Start Date: March 25 2015</li>
-      <li>End Date: March 28 2015</li>
-    </ul>
-  </li>
-  <li>台大開放課程-線性代數-蘇柏青(I really like this course!)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLw7ltASAuhMTZPgepJqpj_7Dv0AmIHJyJ">URL</a></li>
-      <li>Start Date: March 31 2015</li>
-      <li>End Date: April 08 2015</li>
-    </ul>
-  </li>
+  <li>Shrink the number of candidates</li>
+  <li>Exploring special data structure</li>
 </ol>
 
 <hr />
 
-<h3 id="colledge">Colledge</h3>
+<h3 id="eclat">Eclat</h3>
+
+<p>Basic info</p>
+
+<ul>
+  <li>Theory: Exploring vertical Data Format</li>
+  <li>Whole NameEquivalence Class Transformation</li>
+</ul>
+
+<p>Method:</p>
+
+<ul>
+  <li>给每个item建立索引，然后做并集</li>
+</ul>
+
+<p>Improvement：</p>
+
+<ul>
+  <li>如果他们的并集很大的话，可以用他们的并集取反来来存贮结果，这样存贮和计算效率会更高。</li>
+</ul>
+
+<hr />
+
+<h3 id="fpgrowth">FPgrowth</h3>
+
+<p>Basic info</p>
+
+<ul>
+  <li>FP-tree</li>
+  <li>Mine each conditional pattern-base recursively</li>
+</ul>
+
+<p>Steps:</p>
+
+<ul>
+  <li>需要扫描两次数据集</li>
+  <li>第一次统计所有items的出现频率，删除频率较低的，然后对所有items按出现频率排序</li>
+  <li>第二次扫描，把所有的数据生成一棵树</li>
+  <li>
+    <p>相同商品，在不同的分支之间，应该关联起来。这样在第二部分的统计的时候会方便。</p>
+  </li>
+  <li>分析生成的FP-tree，然后从下向上统计出与每个商品同时出现的商品。</li>
+</ul>
 
   </div>
 </div>

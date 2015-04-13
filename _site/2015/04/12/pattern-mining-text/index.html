@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Achieved Courses</title>
+    <title>Frequent Pattern Mining for Text Data</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,123 +146,66 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Achieved Courses </h1>
+  <h1>Frequent Pattern Mining for Text Data </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<h3 id="online-courses">Online Courses</h3>
-
-<h4 id="coursera">Coursera:</h4>
-
 <ol>
-  <li>R Programming
+  <li>Simultaneously inferring phrases and topics
     <ul>
-      <li>Start Date: Feb 01, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-      <li><a href="https://github.com/zhou-dong/r-study">Notes and Code</a></li>
-      <li>Johns Hopkins</li>
+      <li>Bigram Topic Model</li>
+      <li>Topical N-Grams</li>
+      <li>Phrase-Discovering LDA</li>
     </ul>
   </li>
-  <li>機器學習基石 (Machine Learning Foundations)
-    <ul>
-      <li>Start Date: Jan 31, 2015</li>
-      <li>End Date: Feb 15, 2015</li>
-      <li><a href="http://zhou-dong.github.io/2015/02/15/revised-all/">Simple Roadmap</a></li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>機器學習技法 (Machine Learning Techniques)
-    <ul>
-      <li>Start Date: March 17, 2015</li>
-      <li>End Date: March 21, 2015</li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 1)
-    <ul>
-      <li>Start Date: 02/13 2015</li>
-      <li>End Date: 04/10 2015</li>
-      <li>Rice University</li>
-    </ul>
-  </li>
-  <li>Coding the Matrix: Linear Algebra through Computer Science Applications
-    <ul>
-      <li>Start Date: 02/02/2015</li>
-      <li>End Date: 04/08/2015</li>
-      <li>language: python </li>
-      <li>Brown University</li>
-    </ul>
-  </li>
-  <li>Programming for Everybody (Python)
-    <ul>
-      <li>Start Date: 02/02 2015</li>
-      <li>End Date: 04/09 2015</li>
-      <li>Some of chapters are useful</li>
-      <li>University of Michigan</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 2)
-    <ul>
-      <li>Start Date: 04/09 2015</li>
-      <li>End Date:</li>
-      <li>Rice University</li>
-      <li>Not finish yet</li>
-    </ul>
-  </li>
-  <li>Pattern Discovery in Data Mining
-    <ul>
-      <li>Start Date: 04/10 2015</li>
-      <li>End Date: 04/12 2015</li>
-      <li>Not detailed enough, so don’t like so much</li>
-      <li>The University of Illinois at Urbana-Champaign</li>
-    </ul>
-  </li>
+  <li>Post Topic Modeling Phrase Construction</li>
+  <li>First Phrase Mining then Topic Modeling</li>
 </ol>
 
-<h4 id="edex">Edex:</h4>
+<p>Phrase Mining and Topic Modeling</p>
 
 <ol>
-  <li>MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
-    <ul>
-      <li>Start Date: 01/07 2015</li>
-      <li>End Date: 09/04 2015</li>
-      <li>Almost finish all of them, some of them I think already know, so skip</li>
-      <li>MIT</li>
-    </ul>
-  </li>
+  <li>Generate bag-of-words to generate sequence of tokens</li>
+  <li>Post bag-of-words model inference, visualize topics with n-grams</li>
+  <li>Prior bag-of-words model inference, ming phrases and impose to the bag-of-words model</li>
 </ol>
 
-<h4 id="youtube">Youtube:</h4>
+<p>First Phrase Mining then Topic Modeling 先找出频繁项，然后再从里面找出文章的主题</p>
 
-<ol>
-  <li>線性代數 (Not Finished All, Just lec01-lec-13)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLe94oLfiYuBCN-1N9aHJVjqO0K_Ug0VwZ">URL</a></li>
-      <li>Start Date: Jan 04, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-    </ul>
-  </li>
-  <li>Bioinformatcs (Introduction to bioinformatics)
-    <ul>
-      <li><a href="/bioinformatics/2015/03/27/intro/">URL</a></li>
-      <li>Start Date: March 25 2015</li>
-      <li>End Date: March 28 2015</li>
-    </ul>
-  </li>
-  <li>台大開放課程-線性代數-蘇柏青(I really like this course!)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLw7ltASAuhMTZPgepJqpj_7Dv0AmIHJyJ">URL</a></li>
-      <li>Start Date: March 31 2015</li>
-      <li>End Date: April 08 2015</li>
-    </ul>
-  </li>
-</ol>
+<ul>
+  <li>Perform frequent contiguous pattern mining to extract candidate phrases and their counts</li>
+  <li>bag-of-phrases</li>
+  <li>LDA</li>
+</ul>
 
-<hr />
+<p>Challenges for Data Analysis in Data Streams</p>
 
-<h3 id="colledge">Colledge</h3>
+<ul>
+  <li>Fast changing</li>
+  <li>In and out streaming</li>
+  <li>有的方式，想apriori或者FPgrowth，需要2次或者2次以上的读取数据，这些算法就不能用在data streams</li>
+</ul>
+
+<p>Spatiotemporal and Trajectory Pattern</p>
+
+<ul>
+  <li>在空间的维度上找出pattern，比如在坐标上相近的</li>
+</ul>
+
+<p>Software bug mining</p>
+
+<ul>
+  <li>Use pattern mining to find bugs in software</li>
+  <li>Static bug detection</li>
+  <li>dynamic bug detection</li>
+  <li>
+    <p>debugging</p>
+  </li>
+  <li>pattern mining</li>
+  <li>some patterns are likely bugs</li>
+</ul>
 
   </div>
 </div>

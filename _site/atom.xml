@@ -4,13 +4,394 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-04-08T12:20:20-05:00</updated>
+ <updated>2015-04-12T20:03:00-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Frequent Pattern Mining for Text Data</title>
+   <link href="http://zhou-dong.github.io/2015/04/12/pattern-mining-text"/>
+   <updated>2015-04-12T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/04/12/pattern-mining-text</id>
+   <content type="html">
+&lt;ol&gt;
+  &lt;li&gt;Simultaneously inferring phrases and topics
+    &lt;ul&gt;
+      &lt;li&gt;Bigram Topic Model&lt;/li&gt;
+      &lt;li&gt;Topical N-Grams&lt;/li&gt;
+      &lt;li&gt;Phrase-Discovering LDA&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Post Topic Modeling Phrase Construction&lt;/li&gt;
+  &lt;li&gt;First Phrase Mining then Topic Modeling&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Phrase Mining and Topic Modeling&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Generate bag-of-words to generate sequence of tokens&lt;/li&gt;
+  &lt;li&gt;Post bag-of-words model inference, visualize topics with n-grams&lt;/li&gt;
+  &lt;li&gt;Prior bag-of-words model inference, ming phrases and impose to the bag-of-words model&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First Phrase Mining then Topic Modeling 先找出频繁项，然后再从里面找出文章的主题&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Perform frequent contiguous pattern mining to extract candidate phrases and their counts&lt;/li&gt;
+  &lt;li&gt;bag-of-phrases&lt;/li&gt;
+  &lt;li&gt;LDA&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Challenges for Data Analysis in Data Streams&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fast changing&lt;/li&gt;
+  &lt;li&gt;In and out streaming&lt;/li&gt;
+  &lt;li&gt;有的方式，想apriori或者FPgrowth，需要2次或者2次以上的读取数据，这些算法就不能用在data streams&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Spatiotemporal and Trajectory Pattern&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在空间的维度上找出pattern，比如在坐标上相近的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Software bug mining&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use pattern mining to find bugs in software&lt;/li&gt;
+  &lt;li&gt;Static bug detection&lt;/li&gt;
+  &lt;li&gt;dynamic bug detection&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;debugging&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pattern mining&lt;/li&gt;
+  &lt;li&gt;some patterns are likely bugs&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Pattern Mining Methods</title>
+   <link href="http://zhou-dong.github.io/apriori/eclat/fpgrowth/2015/04/12/pattern-mining-methods"/>
+   <updated>2015-04-12T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/apriori/eclat/fpgrowth/2015/04/12/pattern-mining-methods</id>
+   <content type="html">
+&lt;h3 id=&quot;apriori&quot;&gt;Apriori&lt;/h3&gt;
+
+&lt;p&gt;Basic Knowledge:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Other name: Down Closure Property of Frequent Patterns&lt;/li&gt;
+  &lt;li&gt;Discription: Any subset of frequent itemset must be frequent&lt;/li&gt;
+  &lt;li&gt;Then: If any subset of itemset S is infrequent, then there is no change for S to be frequent&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;先在所有的数据集中找出每个item出现的频率&lt;/li&gt;
+  &lt;li&gt;删除频率低的&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;我们就得到了出现频率大于某个阀值的items&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;通过第一次得到的数据，再去数据集中去查询同时出现2个商品，并记录他们的频率&lt;/li&gt;
+  &lt;li&gt;删除其中出现频率低的&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;这样我们就得到了出现频率大于某个阀值的一对items&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;通过第二次得到的数据，再去数据集中查询同时出现的3个商品，并记录他们的频率&lt;/li&gt;
+  &lt;li&gt;删除其中频率低的&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;这样我们就得到了一组频率大于某个阀值的3个同时出现的items&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;通过上面的算法，继续计算更多商品同时出现的频率。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Improvements:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Reduce passes of transaction database scans
+    &lt;ul&gt;
+      &lt;li&gt;Partitioning: Scan database only twice&lt;/li&gt;
+      &lt;li&gt;Partition database and find local frequent patterns&lt;/li&gt;
+      &lt;li&gt;Consilidate global frequent patterns&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Shrink the number of candidates&lt;/li&gt;
+  &lt;li&gt;Exploring special data structure&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;eclat&quot;&gt;Eclat&lt;/h3&gt;
+
+&lt;p&gt;Basic info&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Theory: Exploring vertical Data Format&lt;/li&gt;
+  &lt;li&gt;Whole NameEquivalence Class Transformation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Method:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;给每个item建立索引，然后做并集&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Improvement：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果他们的并集很大的话，可以用他们的并集取反来来存贮结果，这样存贮和计算效率会更高。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;fpgrowth&quot;&gt;FPgrowth&lt;/h3&gt;
+
+&lt;p&gt;Basic info&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;FP-tree&lt;/li&gt;
+  &lt;li&gt;Mine each conditional pattern-base recursively&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;需要扫描两次数据集&lt;/li&gt;
+  &lt;li&gt;第一次统计所有items的出现频率，删除频率较低的，然后对所有items按出现频率排序&lt;/li&gt;
+  &lt;li&gt;第二次扫描，把所有的数据生成一棵树&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;相同商品，在不同的分支之间，应该关联起来。这样在第二部分的统计的时候会方便。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分析生成的FP-tree，然后从下向上统计出与每个商品同时出现的商品。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Pattern Evaluation</title>
+   <link href="http://zhou-dong.github.io/2015/04/12/pattern-evaluation"/>
+   <updated>2015-04-12T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/04/12/pattern-evaluation</id>
+   <content type="html">
+&lt;p&gt;在同一个系统的中：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;不同的level应该有不同的阀值&lt;/li&gt;
+  &lt;li&gt;不同的商品也应该有不同的阀值&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Multi-Dimensional Associations&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;single-dimensional 如果A买苹果，也买了香蕉&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Inter-dimensional 如果A是18-25岁，并且是学生，所以买coke&lt;/li&gt;
+  &lt;li&gt;Hybrid-dimensional 如果A是18-25岁，并且买popcorn，可能会买coke&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Mining Quantitative Associations&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Numberical atrributes: age and salary&lt;/li&gt;
+  &lt;li&gt;Deviation analysis: gender: male and female&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Rare Patterns vs. Negative Patterns&lt;/p&gt;
+
+&lt;p&gt;Rare Patterns&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Very low support but interesting&lt;/li&gt;
+  &lt;li&gt;How to mine them? different group-based thresholds&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nagative Patterns&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nagetively corealted &lt;/li&gt;
+  &lt;li&gt;How to define&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Constraint Based Mining&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Different kinds of constraints lead to different pruning strategies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;constraints can be categorized as&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Pattern sapce pruning (pruning某些data)
+    &lt;ul&gt;
+      &lt;li&gt;Anti-monotonic&lt;/li&gt;
+      &lt;li&gt;Monotonic&lt;/li&gt;
+      &lt;li&gt;Succinct&lt;/li&gt;
+      &lt;li&gt;Convertible&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;data space pruning (pruning 一个data的一部分)
+    &lt;ul&gt;
+      &lt;li&gt;Data succinct&lt;/li&gt;
+      &lt;li&gt;Data anti-monotonic&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Sequence Patterns&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sequence Databases&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Gapped sequential patterns (GSP)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Non-gapped sequential patterns&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Generalized Sequential Patterns&lt;/li&gt;
+  &lt;li&gt;Vertical format-based&lt;/li&gt;
+  &lt;li&gt;Pattern-growth methods&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pattern-Based Classification&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;apple pie&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;apple ipad&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pattern first, then classification&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CBA (Classification Based on Associations)&lt;/li&gt;
+  &lt;li&gt;CMAR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Discriminative Patterns&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;选取数据集中最具代表性的properties&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Courses In Data Mining</title>
+   <link href="http://zhou-dong.github.io/data-mining/2015/04/11/courses-data-mining"/>
+   <updated>2015-04-11T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/data-mining/2015/04/11/courses-data-mining</id>
+   <content type="html">
+&lt;ul&gt;
+  &lt;li&gt;Pattern Discovery in Data Mining
+    &lt;ol&gt;
+      &lt;li&gt;A Brief Introduction to Data Mining
+        &lt;ul&gt;
+          &lt;li&gt;We are drowning in Data but straving for knowledge!&lt;/li&gt;
+          &lt;li&gt;Necessity is the mother of invention&lt;/li&gt;
+          &lt;li&gt;Knowledge mining from Data&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Pattern Discovery: Basic Concepts&lt;/li&gt;
+      &lt;li&gt;Efficient Pattern Mining Methods
+        &lt;ul&gt;
+          &lt;li&gt;Down closure Property of Frequent Pattern (Apriori) &lt;/li&gt;
+          &lt;li&gt;Any subset of frequent itemset must be frequent&lt;/li&gt;
+          &lt;li&gt;If any subset of an itemset S infrequent, then there is no change for S to be frequent&lt;/li&gt;
+          &lt;li&gt;I think it is kind of Dynamic Programming&lt;/li&gt;
+          &lt;li&gt;Scalable mining methods: 3 major approaches&lt;/li&gt;
+          &lt;li&gt;Apriori&lt;/li&gt;
+          &lt;li&gt;Eclat&lt;/li&gt;
+          &lt;li&gt;FPgrowth&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Pattern Evaluation
+        &lt;ul&gt;
+          &lt;li&gt;Objective: By math to calculate&lt;/li&gt;
+          &lt;li&gt;Subjective: One man’s trash could be another man’s treasure&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Mining Diverse Frequdent Patterns&lt;/li&gt;
+      &lt;li&gt;Constraint-Based Pattern Mining&lt;/li&gt;
+      &lt;li&gt;Sequential Pattern Mining&lt;/li&gt;
+      &lt;li&gt;Graph Pattern Mining&lt;/li&gt;
+      &lt;li&gt;Pattern-Based Classification&lt;/li&gt;
+      &lt;li&gt;Pattern Analysis: Application Exploration&lt;/li&gt;
+      &lt;li&gt;Futher Topics on Pattern Analysis&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;More data mining steps:
+    &lt;ul&gt;
+      &lt;li&gt;Data Mining Process step 1
+        &lt;ul&gt;
+          &lt;li&gt;Data cleaning&lt;/li&gt;
+          &lt;li&gt;Data integration&lt;/li&gt;
+          &lt;li&gt;Data normalization&lt;/li&gt;
+          &lt;li&gt;Feature selection&lt;/li&gt;
+          &lt;li&gt;Dimension reduction&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Data Mining Process step 2
+        &lt;ul&gt;
+          &lt;li&gt;Multi-dimensional data summary&lt;/li&gt;
+          &lt;li&gt;Pattern discovery&lt;/li&gt;
+          &lt;li&gt;Association and correaltion&lt;/li&gt;
+          &lt;li&gt;Classification&lt;/li&gt;
+          &lt;li&gt;Clustering (How to group data from new categories)&lt;/li&gt;
+          &lt;li&gt;Outlier analysis (Discovery of anomalies and rare events)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Data mining Process step 3
+        &lt;ul&gt;
+          &lt;li&gt;Pattern evalution&lt;/li&gt;
+          &lt;li&gt;Pattern selection&lt;/li&gt;
+          &lt;li&gt;Pattern interpretation&lt;/li&gt;
+          &lt;li&gt;Pattern visualization &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data mining include:
+    &lt;ul&gt;
+      &lt;li&gt;Machine Learning&lt;/li&gt;
+      &lt;li&gt;Statistics&lt;/li&gt;
+      &lt;li&gt;Pattern Recognition&lt;/li&gt;
+      &lt;li&gt;Applications&lt;/li&gt;
+      &lt;li&gt;Visualization&lt;/li&gt;
+      &lt;li&gt;Algorithm&lt;/li&gt;
+      &lt;li&gt;Database Technology&lt;/li&gt;
+      &lt;li&gt;Distributed/Cloud computing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Text Retrieval and Search Engines&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cluster Analysis in Data Mining&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Text Mining and Analytics&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Data Visualization&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Data Mining Capstone&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Protein</title>
@@ -1167,10 +1548,10 @@
  </entry>
  
  <entry>
-   <title>CM-04 Play with Galois Field</title>
-   <link href="http://zhou-dong.github.io/2015/03/01/galois-field"/>
+   <title>Play with Galois Field</title>
+   <link href="http://zhou-dong.github.io/matrix/python/2015/03/01/galois-field"/>
    <updated>2015-03-01T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/03/01/galois-field</id>
+   <id>http://zhou-dong.github.io/matrix/python/2015/03/01/galois-field</id>
    <content type="html">
 &lt;h4 id=&quot;decsciption&quot;&gt;Decsciption:&lt;/h4&gt;
 
@@ -1609,10 +1990,10 @@
  </entry>
  
  <entry>
-   <title>CM-03 Play with complex numbers</title>
-   <link href="http://zhou-dong.github.io/2015/02/28/playing-with-complex-number"/>
+   <title>Play with complex numbers</title>
+   <link href="http://zhou-dong.github.io/python/matrix/2015/02/28/playing-with-complex-number"/>
    <updated>2015-02-28T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/28/playing-with-complex-number</id>
+   <id>http://zhou-dong.github.io/python/matrix/2015/02/28/playing-with-complex-number</id>
    <content type="html">
 &lt;h4 id=&quot;complex-number-as-points-in-the-complex-plane&quot;&gt;Complex number as points in the complex plane&lt;/h4&gt;
 
@@ -1746,10 +2127,10 @@ plt.show()
  </entry>
  
  <entry>
-   <title>CM-02 Introduction to complex numbers</title>
-   <link href="http://zhou-dong.github.io/2015/02/27/complex-numbers"/>
+   <title>Introduction to complex numbers</title>
+   <link href="http://zhou-dong.github.io/python/matrix/2015/02/27/complex-numbers"/>
    <updated>2015-02-27T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/27/complex-numbers</id>
+   <id>http://zhou-dong.github.io/python/matrix/2015/02/27/complex-numbers</id>
    <content type="html">
 &lt;p&gt;Solutions to &lt;script type=&quot;math/tex&quot;&gt; x^2 = -1 &lt;/script&gt; ?&lt;br /&gt;
 Mathematicians invented &lt;em&gt;i&lt;/em&gt; to be one solution.&lt;/p&gt;
@@ -1785,10 +2166,10 @@ print solve(10+5j, 5.0, 20.0)
  </entry>
  
  <entry>
-   <title>CM-01 The Function and the Field</title>
-   <link href="http://zhou-dong.github.io/2015/02/26/basic-math-intro"/>
+   <title>The Function and the Field</title>
+   <link href="http://zhou-dong.github.io/matrix/python/2015/02/26/basic-math-intro"/>
    <updated>2015-02-26T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/26/basic-math-intro</id>
+   <id>http://zhou-dong.github.io/matrix/python/2015/02/26/basic-math-intro</id>
    <content type="html">
 &lt;h4 id=&quot;set-terminology-and-notation&quot;&gt;Set terminology and Notation&lt;/h4&gt;
 
@@ -1892,15 +2273,6 @@ Invertible functions are &lt;strong&gt;one-to-one&lt;/strong&gt;.&lt;br /&gt;
 Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
 &lt;strong&gt;Function Invertibility Theorem:&lt;/strong&gt; A function &lt;em&gt;f&lt;/em&gt; is invertible if and only if it is one-to-one and onto.&lt;/p&gt;
 
-</content>
- </entry>
- 
- <entry>
-   <title>Vector Spaces (Linear Spaces)</title>
-   <link href="http://zhou-dong.github.io/2015/02/24/vector-space"/>
-   <updated>2015-02-24T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/24/vector-space</id>
-   <content type="html">
 </content>
  </entry>
  
@@ -2251,6 +2623,7 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;Start Date: Feb 01, 2015&lt;/li&gt;
       &lt;li&gt;End Date: Feb 10, 2015&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://github.com/zhou-dong/r-study&quot;&gt;Notes and Code&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Johns Hopkins&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;機器學習基石 (Machine Learning Foundations)
@@ -2258,17 +2631,69 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;Start Date: Jan 31, 2015&lt;/li&gt;
       &lt;li&gt;End Date: Feb 15, 2015&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;http://zhou-dong.github.io/2015/02/15/revised-all/&quot;&gt;Simple Roadmap&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;National Taiwan University&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;機器學習技法 (Machine Learning Techniques)
     &lt;ul&gt;
       &lt;li&gt;Start Date: March 17, 2015&lt;/li&gt;
       &lt;li&gt;End Date: March 21, 2015&lt;/li&gt;
+      &lt;li&gt;National Taiwan University&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;An Introduction to Interactive Programming in Python (Part 1)
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 02/13 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 04/10 2015&lt;/li&gt;
+      &lt;li&gt;Rice University&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Coding the Matrix: Linear Algebra through Computer Science Applications
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 02/02/2015&lt;/li&gt;
+      &lt;li&gt;End Date: 04/08/2015&lt;/li&gt;
+      &lt;li&gt;language: python &lt;/li&gt;
+      &lt;li&gt;Brown University&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Programming for Everybody (Python)
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 02/02 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 04/09 2015&lt;/li&gt;
+      &lt;li&gt;Some of chapters are useful&lt;/li&gt;
+      &lt;li&gt;University of Michigan&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;An Introduction to Interactive Programming in Python (Part 2)
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 04/09 2015&lt;/li&gt;
+      &lt;li&gt;End Date:&lt;/li&gt;
+      &lt;li&gt;Rice University&lt;/li&gt;
+      &lt;li&gt;Not finish yet&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Pattern Discovery in Data Mining
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 04/10 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 04/12 2015&lt;/li&gt;
+      &lt;li&gt;Not detailed enough, so don’t like so much&lt;/li&gt;
+      &lt;li&gt;The University of Illinois at Urbana-Champaign&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 01/07 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 09/04 2015&lt;/li&gt;
+      &lt;li&gt;Almost finish all of them, some of them I think already know, so skip&lt;/li&gt;
+      &lt;li&gt;MIT&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h4 id=&quot;youtube&quot;&gt;Youtube:&lt;/h4&gt;
 
@@ -2287,6 +2712,13 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;End Date: March 28 2015&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;台大開放課程-線性代數-蘇柏青(I really like this course!)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLw7ltASAuhMTZPgepJqpj_7Dv0AmIHJyJ&quot;&gt;URL&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Start Date: March 31 2015&lt;/li&gt;
+      &lt;li&gt;End Date: April 08 2015&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -2296,10 +2728,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-11 Three Learning Principles</title>
-   <link href="http://zhou-dong.github.io/2015/02/15/three-learning-principles"/>
+   <title>Three Learning Principles</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/02/15/three-learning-principles"/>
    <updated>2015-02-15T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/15/three-learning-principles</id>
+   <id>http://zhou-dong.github.io/machine-learning/2015/02/15/three-learning-principles</id>
    <content type="html">
 &lt;h4 id=&quot;occams-razor&quot;&gt;Occam’s Razor&lt;/h4&gt;
 
@@ -2366,10 +2798,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-12 Revised Course</title>
-   <link href="http://zhou-dong.github.io/2015/02/15/revised-all"/>
+   <title>Revised Course</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/02/15/revised-all"/>
    <updated>2015-02-15T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/15/revised-all</id>
+   <id>http://zhou-dong.github.io/machine-learning/2015/02/15/revised-all</id>
    <content type="html">
 &lt;h4 id=&quot;three-related-fields&quot;&gt;Three Related Fields&lt;/h4&gt;
 &lt;ol&gt;
@@ -2416,10 +2848,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-10 Regularization, Validation</title>
-   <link href="http://zhou-dong.github.io/2015/02/15/regularization-validation"/>
+   <title>Regularization, Validation</title>
+   <link href="http://zhou-dong.github.io/regularization/validation/2015/02/15/regularization-validation"/>
    <updated>2015-02-15T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/15/regularization-validation</id>
+   <id>http://zhou-dong.github.io/regularization/validation/2015/02/15/regularization-validation</id>
    <content type="html">
 &lt;h3 id=&quot;regularization&quot;&gt;Regularization&lt;/h3&gt;
 
@@ -2492,10 +2924,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-07 Training, Generaliztion, VC</title>
-   <link href="http://zhou-dong.github.io/2015/02/14/traing-testing"/>
+   <title>Training, Generaliztion, VC</title>
+   <link href="http://zhou-dong.github.io/machine-learning/vc-dimension/2015/02/14/traing-testing"/>
    <updated>2015-02-14T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/14/traing-testing</id>
+   <id>http://zhou-dong.github.io/machine-learning/vc-dimension/2015/02/14/traing-testing</id>
    <content type="html">
 &lt;h4 id=&quot;traing-versus-testing&quot;&gt;1. Traing versus Testing&lt;/h4&gt;
 
@@ -2557,10 +2989,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-08 Linear Regression, Logistic Regression</title>
-   <link href="http://zhou-dong.github.io/2015/02/14/linear-regression"/>
+   <title>Linear Regression, Logistic Regression</title>
+   <link href="http://zhou-dong.github.io/machine-learning/regression/2015/02/14/linear-regression"/>
    <updated>2015-02-14T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/14/linear-regression</id>
+   <id>http://zhou-dong.github.io/machine-learning/regression/2015/02/14/linear-regression</id>
    <content type="html">
 &lt;h4 id=&quot;linear-regression&quot;&gt;Linear Regression&lt;/h4&gt;
 
@@ -2616,10 +3048,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-09 Linear and Nonlinear Classification</title>
-   <link href="http://zhou-dong.github.io/2015/02/14/linear-classification"/>
+   <title>Linear and Nonlinear Classification</title>
+   <link href="http://zhou-dong.github.io/machine-learning/linear/classification/2015/02/14/linear-classification"/>
    <updated>2015-02-14T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/14/linear-classification</id>
+   <id>http://zhou-dong.github.io/machine-learning/linear/classification/2015/02/14/linear-classification</id>
    <content type="html">
 &lt;h4 id=&quot;linear-classification&quot;&gt;Linear Classification&lt;/h4&gt;
 
@@ -2673,10 +3105,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-06 Machine Learning Type</title>
-   <link href="http://zhou-dong.github.io/2015/02/08/type-of-machine-learning"/>
+   <title>Machine Learning Type</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/02/08/type-of-machine-learning"/>
    <updated>2015-02-08T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/08/type-of-machine-learning</id>
+   <id>http://zhou-dong.github.io/machine-learning/2015/02/08/type-of-machine-learning</id>
    <content type="html">
 &lt;h4 id=&quot;learning-with-different-output-space&quot;&gt;Learning with Different Output Space&lt;/h4&gt;
 &lt;ol&gt;
@@ -2748,10 +3180,10 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>ML-NTU-F-05 Perceptron Hypothesis</title>
-   <link href="http://zhou-dong.github.io/2015/02/07/machine-learning-perceptron"/>
+   <title>Perceptron Hypothesis</title>
+   <link href="http://zhou-dong.github.io/machine-learning/perceptron/2015/02/07/machine-learning-perceptron"/>
    <updated>2015-02-07T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/07/machine-learning-perceptron</id>
+   <id>http://zhou-dong.github.io/machine-learning/perceptron/2015/02/07/machine-learning-perceptron</id>
    <content type="html">
 &lt;h4 id=&quot;lecture-1-the-learning-problem&quot;&gt;Lecture 1: The learning problem&lt;/h4&gt;
 &lt;ul&gt;
@@ -2911,9 +3343,9 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  
  <entry>
    <title>Analysis of Decision Tree</title>
-   <link href="http://zhou-dong.github.io/2015/02/02/decision-tree-analysis"/>
+   <link href="http://zhou-dong.github.io/decision/tree/2015/02/02/decision-tree-analysis"/>
    <updated>2015-02-02T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/02/decision-tree-analysis</id>
+   <id>http://zhou-dong.github.io/decision/tree/2015/02/02/decision-tree-analysis</id>
    <content type="html">
 &lt;h4 id=&quot;definition-of-decision-tree-from-wikipedia&quot;&gt;Definition of Decision Tree (From Wikipedia):&lt;/h4&gt;
 &lt;ul&gt;
@@ -2935,9 +3367,9 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
  
  <entry>
    <title>Elementary Matrix Operations and Elementary Matrix</title>
-   <link href="http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations"/>
+   <link href="http://zhou-dong.github.io/elementary/matrix/2015/02/01/elementary-matrix-operations"/>
    <updated>2015-02-01T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/01/elementary-matrix-operations</id>
+   <id>http://zhou-dong.github.io/elementary/matrix/2015/02/01/elementary-matrix-operations</id>
    <content type="html">
 &lt;h4 id=&quot;elementary-matrix-operations-and-systems-of-linear-equations&quot;&gt;Elementary Matrix operations and Systems of Linear Equations&lt;/h4&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; A_{m \times n} x_{n \times 1} = b_{m \times 1} &lt;/script&gt;&lt;/p&gt;
@@ -3002,9 +3434,9 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
  
  <entry>
    <title>Change of Coordinate Matrix</title>
-   <link href="http://zhou-dong.github.io/2015/02/01/change-of-coordinate-matrix"/>
+   <link href="http://zhou-dong.github.io/coordinate/2015/02/01/change-of-coordinate-matrix"/>
    <updated>2015-02-01T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/02/01/change-of-coordinate-matrix</id>
+   <id>http://zhou-dong.github.io/coordinate/2015/02/01/change-of-coordinate-matrix</id>
    <content type="html">
 &lt;h4 id=&quot;section&quot;&gt;个人的理解：&lt;/h4&gt;
 &lt;ul&gt;
@@ -3024,10 +3456,10 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
  </entry>
  
  <entry>
-   <title>ML-NTU-F-02 What is Machine Learning</title>
-   <link href="http://zhou-dong.github.io/2015/01/31/what-is-machine-learning"/>
+   <title>What is Machine Learning</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/01/31/what-is-machine-learning"/>
    <updated>2015-01-31T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/31/what-is-machine-learning</id>
+   <id>http://zhou-dong.github.io/machine-learning/2015/01/31/what-is-machine-learning</id>
    <content type="html">
 &lt;h4 id=&quot;machine-learning-acquiring-skill&quot;&gt;Machine Learning: acquiring skill&lt;/h4&gt;
 &lt;ul&gt;
@@ -3072,10 +3504,10 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
  </entry>
  
  <entry>
-   <title>ML-NTU-F-04 Machine Learning with Other Fields</title>
-   <link href="http://zhou-dong.github.io/2015/01/31/machine-learning-with-other-fields"/>
+   <title>Machine Learning with Other Fields</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/01/31/machine-learning-with-other-fields"/>
    <updated>2015-01-31T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/31/machine-learning-with-other-fields</id>
+   <id>http://zhou-dong.github.io/machine-learning/2015/01/31/machine-learning-with-other-fields</id>
    <content type="html">
 &lt;h5 id=&quot;definition-of-machine-learning&quot;&gt;Definition of Machine Learning:&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;Use &lt;code&gt;data&lt;/code&gt; to compute &lt;code&gt;hypothesis&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt;g&lt;/script&gt; that approximates &lt;code&gt;target&lt;/code&gt; &lt;script type=&quot;math/tex&quot;&gt;\ f&lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -3105,10 +3537,10 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
  </entry>
  
  <entry>
-   <title>ML-NTU-F-01 Introduction of ML Course</title>
-   <link href="http://zhou-dong.github.io/2015/01/31/course-introduction"/>
+   <title>Introduction of ML Course</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/01/31/course-introduction"/>
    <updated>2015-01-31T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/31/course-introduction</id>
+   <id>http://zhou-dong.github.io/machine-learning/2015/01/31/course-introduction</id>
    <content type="html">
 &lt;h4 id=&quot;study-informantion&quot;&gt;Study Informantion:&lt;/h4&gt;
 &lt;ul&gt;
@@ -3134,10 +3566,10 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
  </entry>
  
  <entry>
-   <title>ML-NTU-F-03 Compontents of Machine Learning</title>
-   <link href="http://zhou-dong.github.io/2015/01/31/components-machine-learning"/>
+   <title>Compontents of Machine Learning</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/01/31/components-machine-learning"/>
    <updated>2015-01-31T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/31/components-machine-learning</id>
+   <id>http://zhou-dong.github.io/machine-learning/2015/01/31/components-machine-learning</id>
    <content type="html">
 &lt;h4 id=&quot;basic-notations&quot;&gt;Basic Notations:&lt;/h4&gt;
 &lt;ul&gt;
@@ -3267,9 +3699,9 @@ A_2 = \begin{pmatrix} -2 &amp; -6 &amp; -10 \\ 2 &amp; 4 &amp; 6 \end{pmatrix}
  
  <entry>
    <title>Invertible Matrix</title>
-   <link href="http://zhou-dong.github.io/2015/01/28/invertible-matrix"/>
+   <link href="http://zhou-dong.github.io/identity-matrix/2015/01/28/invertible-matrix"/>
    <updated>2015-01-28T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/28/invertible-matrix</id>
+   <id>http://zhou-dong.github.io/identity-matrix/2015/01/28/invertible-matrix</id>
    <content type="html">
 &lt;h4 id=&quot;definition&quot;&gt;Definition:&lt;/h4&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; AB = BA = I_n &lt;/script&gt;  &lt;/p&gt;
@@ -3437,9 +3869,9 @@ A^t = \begin{pmatrix} 1 &amp; 4 \\ 3 &amp; 2 \\ 5 &amp; 7 \end{pmatrix}_{3 \time
  
  <entry>
    <title>Function Merge</title>
-   <link href="http://zhou-dong.github.io/2015/01/20/function-merge"/>
+   <link href="http://zhou-dong.github.io/basis/2015/01/20/function-merge"/>
    <updated>2015-01-20T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/20/function-merge</id>
+   <id>http://zhou-dong.github.io/basis/2015/01/20/function-merge</id>
    <content type="html">
 &lt;h4 id=&quot;ordered-basis&quot;&gt;Ordered Basis&lt;/h4&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt; \beta &lt;/script&gt; is an &lt;code&gt;ordered basis&lt;/code&gt; for V, which means that: 
@@ -3937,9 +4369,9 @@ T(U_1 + U_2) = TU_1 + TU_2 \\
  
  <entry>
    <title>Basis and Dimension</title>
-   <link href="http://zhou-dong.github.io/2015/01/07/bases-and-dimension"/>
+   <link href="http://zhou-dong.github.io/basis/dimension/2015/01/07/bases-and-dimension"/>
    <updated>2015-01-07T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/07/bases-and-dimension</id>
+   <id>http://zhou-dong.github.io/basis/dimension/2015/01/07/bases-and-dimension</id>
    <content type="html">
 &lt;h4 id=&quot;linearly-dependent&quot;&gt;Linearly dependent&lt;/h4&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
@@ -4053,9 +4485,9 @@ V= R^2 \\
  
  <entry>
    <title>Gauss Elimination</title>
-   <link href="http://zhou-dong.github.io/2015/01/06/linear-combination"/>
+   <link href="http://zhou-dong.github.io/guass/2015/01/06/linear-combination"/>
    <updated>2015-01-06T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/06/linear-combination</id>
+   <id>http://zhou-dong.github.io/guass/2015/01/06/linear-combination</id>
    <content type="html">
 &lt;h4 id=&quot;subspace&quot;&gt;Subspace&lt;/h4&gt;
 &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;
@@ -4187,9 +4619,9 @@ process: \\
  
  <entry>
    <title>Introduction of Linear Algebra and Vector space</title>
-   <link href="http://zhou-dong.github.io/2015/01/04/intro-vector-space"/>
+   <link href="http://zhou-dong.github.io/linear-algebra/vector-space/2015/01/04/intro-vector-space"/>
    <updated>2015-01-04T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/01/04/intro-vector-space</id>
+   <id>http://zhou-dong.github.io/linear-algebra/vector-space/2015/01/04/intro-vector-space</id>
    <content type="html">
 &lt;h4 id=&quot;definiton-of-linear-algebra&quot;&gt;Definiton of Linear algebra&lt;/h4&gt;
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Achieved Courses</title>
+    <title>Compontents of Machine Learning</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -146,123 +146,33 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Achieved Courses </h1>
+  <h1>Compontents of Machine Learning  <small>Basic Notation, Hypothsis</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
-<h3 id="online-courses">Online Courses</h3>
+<h4 id="basic-notations">Basic Notations:</h4>
+<ul>
+  <li>input: <script type="math/tex"> x \in X</script> (customer application)</li>
+  <li>output: <script type="math/tex"> y \in Y</script> (good/bad after approving credit card)</li>
+  <li>target function: 
+    <ul>
+      <li><script type="math/tex"> f: X \rightarrow Y </script> (<code>ideal</code> credit approval formula)</li>
+    </ul>
+  </li>
+  <li>hypothesis: &lt;=&gt; skill with hopefully good performance:
+    <ul>
+      <li><script type="math/tex"> g: X \rightarrow Y </script> (<code>learned</code> formula to be used)</li>
+    </ul>
+  </li>
+  <li><strong><script type="math/tex"> \{(x_n,y_n)\} \ \ from \ \ f \rightarrow [ML] \rightarrow g </script></strong></li>
+</ul>
 
-<h4 id="coursera">Coursera:</h4>
+<h4 id="final-hypothsis--g-approx-f-">Final hypothsis: <script type="math/tex"> g \approx f </script></h4>
 
-<ol>
-  <li>R Programming
-    <ul>
-      <li>Start Date: Feb 01, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-      <li><a href="https://github.com/zhou-dong/r-study">Notes and Code</a></li>
-      <li>Johns Hopkins</li>
-    </ul>
-  </li>
-  <li>機器學習基石 (Machine Learning Foundations)
-    <ul>
-      <li>Start Date: Jan 31, 2015</li>
-      <li>End Date: Feb 15, 2015</li>
-      <li><a href="http://zhou-dong.github.io/2015/02/15/revised-all/">Simple Roadmap</a></li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>機器學習技法 (Machine Learning Techniques)
-    <ul>
-      <li>Start Date: March 17, 2015</li>
-      <li>End Date: March 21, 2015</li>
-      <li>National Taiwan University</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 1)
-    <ul>
-      <li>Start Date: 02/13 2015</li>
-      <li>End Date: 04/10 2015</li>
-      <li>Rice University</li>
-    </ul>
-  </li>
-  <li>Coding the Matrix: Linear Algebra through Computer Science Applications
-    <ul>
-      <li>Start Date: 02/02/2015</li>
-      <li>End Date: 04/08/2015</li>
-      <li>language: python </li>
-      <li>Brown University</li>
-    </ul>
-  </li>
-  <li>Programming for Everybody (Python)
-    <ul>
-      <li>Start Date: 02/02 2015</li>
-      <li>End Date: 04/09 2015</li>
-      <li>Some of chapters are useful</li>
-      <li>University of Michigan</li>
-    </ul>
-  </li>
-  <li>An Introduction to Interactive Programming in Python (Part 2)
-    <ul>
-      <li>Start Date: 04/09 2015</li>
-      <li>End Date:</li>
-      <li>Rice University</li>
-      <li>Not finish yet</li>
-    </ul>
-  </li>
-  <li>Pattern Discovery in Data Mining
-    <ul>
-      <li>Start Date: 04/10 2015</li>
-      <li>End Date: 04/12 2015</li>
-      <li>Not detailed enough, so don’t like so much</li>
-      <li>The University of Illinois at Urbana-Champaign</li>
-    </ul>
-  </li>
-</ol>
-
-<h4 id="edex">Edex:</h4>
-
-<ol>
-  <li>MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
-    <ul>
-      <li>Start Date: 01/07 2015</li>
-      <li>End Date: 09/04 2015</li>
-      <li>Almost finish all of them, some of them I think already know, so skip</li>
-      <li>MIT</li>
-    </ul>
-  </li>
-</ol>
-
-<h4 id="youtube">Youtube:</h4>
-
-<ol>
-  <li>線性代數 (Not Finished All, Just lec01-lec-13)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLe94oLfiYuBCN-1N9aHJVjqO0K_Ug0VwZ">URL</a></li>
-      <li>Start Date: Jan 04, 2015</li>
-      <li>End Date: Feb 10, 2015</li>
-    </ul>
-  </li>
-  <li>Bioinformatcs (Introduction to bioinformatics)
-    <ul>
-      <li><a href="/bioinformatics/2015/03/27/intro/">URL</a></li>
-      <li>Start Date: March 25 2015</li>
-      <li>End Date: March 28 2015</li>
-    </ul>
-  </li>
-  <li>台大開放課程-線性代數-蘇柏青(I really like this course!)
-    <ul>
-      <li><a href="https://www.youtube.com/playlist?list=PLw7ltASAuhMTZPgepJqpj_7Dv0AmIHJyJ">URL</a></li>
-      <li>Start Date: March 31 2015</li>
-      <li>End Date: April 08 2015</li>
-    </ul>
-  </li>
-</ol>
-
-<hr />
-
-<h3 id="colledge">Colledge</h3>
+<h4 id="definiton">Definiton:</h4>
+<p>Trainint examples(<code>data</code>) –&gt; learning algorithm(<code>A</code>) –&gt; <code>final hypothsis</code> <script type="math/tex"> g \approx f </script></p>
 
   </div>
 </div>
