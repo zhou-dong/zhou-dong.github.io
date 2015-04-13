@@ -49,6 +49,12 @@ tagline:
     - Rice University
     - Not finish yet
 
+8. Pattern Discovery in Data Mining
+    - Start Date: 04/10 2015
+    - End Date: 04/12 2015
+    - Not detailed enough, so don't like so much
+    - The University of Illinois at Urbana-Champaign
+
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
