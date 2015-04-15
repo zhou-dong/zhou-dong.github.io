@@ -39,7 +39,7 @@ tagline:
 
 6. Programming for Everybody (Python)
     - Start Date: 02/02 2015
-    - End Date: 04/09 2015
+    - End Date: 04/14 2015
     - Some of chapters are useful
     - University of Michigan
 
