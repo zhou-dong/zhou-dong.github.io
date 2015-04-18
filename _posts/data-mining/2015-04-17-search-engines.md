@@ -29,6 +29,5 @@ categories: data-mining
 
 Smoothing Methods
 
-Rocchio
-
+Rocchio Method
 
