@@ -34,3 +34,5 @@ categories: data-mining
 
 - Items Based Filtering
 - Users Based Filtering
+
+其实我以前的项目就是“协同过滤”的一种。
