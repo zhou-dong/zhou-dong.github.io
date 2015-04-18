@@ -27,7 +27,7 @@ categories: data-mining
 
 ### Basic Idea is: 
 
-Smoothing Methods
-
-Rocchio Method
+- Smoothing Methods
+- Rocchio Method
+- add sth in here
 
