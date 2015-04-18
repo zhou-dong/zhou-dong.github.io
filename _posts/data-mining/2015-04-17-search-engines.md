@@ -30,4 +30,5 @@ categories: data-mining
 - Smoothing Methods
 - Rocchio Method
 - add sth in here
+- it is cool
 
