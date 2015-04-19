@@ -8,13 +8,14 @@ categories: data-mining
 
 {% include JB/setup %}
 
-## Vector Space Model
+### Vector Space Model
 
-### Basic Idea is: Use `Dot Product` to calculate the similarity between Query and Documents
+Basic Idea is: 
 
+- Use `Dot Product` to calculate the similarity between Query and Documents
 - 两个向量求内积，通过这两个向量的内积来判断相似度。
 
-### Hard part is to calculate the weight of the terms
+Difficult part is to calculate the weight of the terms
 
 - TF
     + 词频
@@ -44,10 +45,36 @@ categories: data-mining
     + (Term在各个域中出现的频率*这个域的调节因子)/这个域的文档长度
     + Term出现在doc的不同域中，会对doc的weight做出不同大小的贡献
 
-## Probabilistic Retrieval Model 
+### Probabilistic Retrieval Model 
 
-### Basic Idea is: 
+Basic Idea is: 
 
+- 计算每个Term出现在各个doc中的概率，可通过贝叶斯规则进行计算
+- P(A,B) = P(A) * P(B|A) = P(B) * P(A|B)
+
+- d1 a, a, a, b, c, e, f, f
+- d2 a, b, b, d, f, f, f, f
+- d3 b, b, c, c, d, d, d, f
+- total_a = 4
+- total_b = 5
+- total_c = 3
+- total_d = 4
+- total_e = 1
+- total_f = 7
+
+- p(d1,a)=3/4 p(d1,b)=1/5 p(d1,c)=1/3 p(d1,d)=0/4 p(d1,e)=1/1 p(d1,f)=2/7 
+- p(d2,a)=1/4 p(d2,b)=2/5 p(d2,c)=0/3 p(d2,d)=1/4 p(d2,e)=0/1 p(d2,f)=4/7 
+- p(d3,a)=0/4 p(d3,b)=2/5 p(d3,c)=2/3 p(d3,d)=3/4 p(d3,e)=0/1 p(d3,f)=1/7
+- p(d1) = 5/6
+- p(d2) = 4/6
+- p(d3) = 4/6 
+- p(a) = 4/24 
+- p(b) = 5/24 
+- p(c) = 3/24 
+- p(d) = 4/24 
+- p(e) = 1/24 
+- p(f) = 7/24
+ 
 - Smoothing Methods
 - Rocchio Method
 
@@ -57,3 +84,8 @@ categories: data-mining
 - Users Based Filtering
 
 其实我以前的项目就是“协同过滤”的一种。
+
+## Page Rank
+
+
+## HIT
