@@ -45,9 +45,8 @@ tagline:
 
 7. An Introduction to Interactive Programming in Python (Part 2)
     - Start Date: 04/09 2015
-    - End Date:
+    - End Date: 04/18 2015
     - Rice University
-    - Not finish yet
 
 8. Pattern Discovery in Data Mining
     - Start Date: 04/10 2015
@@ -60,6 +59,12 @@ tagline:
     - End Date:04/14 2015
     - Use Ruby on rails to implement Web server
     - The University of New Mexico
+
+11. Text Retrieval and Search Engines
+    - Start Date: 15/04 2015
+    - End Date: 18/04 2015
+    - I like this course, easily understand.
+    - The University of Illinois at Urbana-Champaign
 
 #### Edex:
 
