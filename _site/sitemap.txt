@@ -9,6 +9,7 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/data-mining/2015/04/17/search-engines
 http://zhou-dong.github.io/2015/04/12/pattern-mining-text
 http://zhou-dong.github.io/apriori/eclat/fpgrowth/2015/04/12/pattern-mining-methods
 http://zhou-dong.github.io/2015/04/12/pattern-evaluation

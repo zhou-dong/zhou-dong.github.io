@@ -4,13 +4,51 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-04-12T20:03:00-05:00</updated>
+ <updated>2015-04-17T20:21:47-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Text Retrieval and Search Engines</title>
+   <link href="http://zhou-dong.github.io/data-mining/2015/04/17/search-engines"/>
+   <updated>2015-04-17T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/data-mining/2015/04/17/search-engines</id>
+   <content type="html">
+&lt;h2 id=&quot;vector-space-model&quot;&gt;Vector Space Model&lt;/h2&gt;
+
+&lt;h3 id=&quot;basic-idea-is-use-dot-product-to-calculate-the-similarity-between-query-and-documents&quot;&gt;Basic Idea is: Use &lt;code&gt;Dot Product&lt;/code&gt; to calculate the similarity between Query and Documents&lt;/h3&gt;
+
+&lt;h3 id=&quot;hard-part-is-to-calculate-the-weight-of-the-terms&quot;&gt;Hard part is to calculate the weight of the terms&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TF &lt;/li&gt;
+  &lt;li&gt;IDF&lt;/li&gt;
+  &lt;li&gt;Doc Length Normation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;BM25&lt;/li&gt;
+  &lt;li&gt;BM25F BM25 and fields&lt;/li&gt;
+  &lt;li&gt;BM25+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;probabilistic-retrieval-model&quot;&gt;Probabilistic Retrieval Model&lt;/h2&gt;
+
+&lt;h3 id=&quot;basic-idea-is&quot;&gt;Basic Idea is:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Smoothing Methods&lt;/li&gt;
+  &lt;li&gt;Rocchio Method&lt;/li&gt;
+  &lt;li&gt;add sth in here&lt;/li&gt;
+  &lt;li&gt;it is cool&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Frequent Pattern Mining for Text Data</title>
@@ -2659,7 +2697,7 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;li&gt;Programming for Everybody (Python)
     &lt;ul&gt;
       &lt;li&gt;Start Date: 02/02 2015&lt;/li&gt;
-      &lt;li&gt;End Date: 04/09 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 04/14 2015&lt;/li&gt;
       &lt;li&gt;Some of chapters are useful&lt;/li&gt;
       &lt;li&gt;University of Michigan&lt;/li&gt;
     &lt;/ul&gt;
@@ -2678,6 +2716,14 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;End Date: 04/12 2015&lt;/li&gt;
       &lt;li&gt;Not detailed enough, so don’t like so much&lt;/li&gt;
       &lt;li&gt;The University of Illinois at Urbana-Champaign&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Web Application Architectures
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 04/12 2015&lt;/li&gt;
+      &lt;li&gt;End Date:04/14 2015&lt;/li&gt;
+      &lt;li&gt;Use Ruby on rails to implement Web server&lt;/li&gt;
+      &lt;li&gt;The University of New Mexico&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
