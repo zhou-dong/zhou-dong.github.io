@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-04-17T20:21:47-05:00</updated>
+ <updated>2015-04-19T03:54:02-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -18,35 +18,243 @@
    <updated>2015-04-17T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/data-mining/2015/04/17/search-engines</id>
    <content type="html">
-&lt;h2 id=&quot;vector-space-model&quot;&gt;Vector Space Model&lt;/h2&gt;
+&lt;h3 id=&quot;vector-space-model&quot;&gt;Vector Space Model&lt;/h3&gt;
 
-&lt;h3 id=&quot;basic-idea-is-use-dot-product-to-calculate-the-similarity-between-query-and-documents&quot;&gt;Basic Idea is: Use &lt;code&gt;Dot Product&lt;/code&gt; to calculate the similarity between Query and Documents&lt;/h3&gt;
-
-&lt;h3 id=&quot;hard-part-is-to-calculate-the-weight-of-the-terms&quot;&gt;Hard part is to calculate the weight of the terms&lt;/h3&gt;
+&lt;p&gt;Basic Idea is: &lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;TF &lt;/li&gt;
-  &lt;li&gt;IDF&lt;/li&gt;
-  &lt;li&gt;Doc Length Normation&lt;/li&gt;
+  &lt;li&gt;Use &lt;code&gt;Dot Product&lt;/code&gt; to calculate the similarity between Query and Documents&lt;/li&gt;
+  &lt;li&gt;两个向量求内积，通过这两个向量的内积来判断相似度。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;BM25&lt;/li&gt;
-  &lt;li&gt;BM25F BM25 and fields&lt;/li&gt;
-  &lt;li&gt;BM25+&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;probabilistic-retrieval-model&quot;&gt;Probabilistic Retrieval Model&lt;/h2&gt;
-
-&lt;h3 id=&quot;basic-idea-is&quot;&gt;Basic Idea is:&lt;/h3&gt;
+&lt;p&gt;Difficult part is to calculate the weight of the terms&lt;/p&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;TF
+    &lt;ul&gt;
+      &lt;li&gt;词频&lt;/li&gt;
+      &lt;li&gt;Term在文档中出现的频率&lt;/li&gt;
+      &lt;li&gt;Term在文章中出现的频率越高，说明Term与这个文章的主题越接近&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;IDF
+    &lt;ul&gt;
+      &lt;li&gt;逆文档频率&lt;/li&gt;
+      &lt;li&gt;文档总数/包含这个term的文档数&lt;/li&gt;
+      &lt;li&gt;包含这个Term的文档越多，说明这个Term在整体文档库中越不重要。&lt;/li&gt;
+      &lt;li&gt;可以对这个值取log，来避免这个值太大&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Doc Length Normation
+    &lt;ul&gt;
+      &lt;li&gt;Pivoted length normalization&lt;/li&gt;
+      &lt;li&gt;以doc的平均长度作为pivot，如果长度大于pivot减分；如果长度小于pivot加分。&lt;/li&gt;
+      &lt;li&gt;K = (1-b) + b(dl/avdl)&lt;/li&gt;
+      &lt;li&gt;把K作为分母，这样就可以保证大于pivot减分，小于pivot加分。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;BM25
+    &lt;ul&gt;
+      &lt;li&gt;通过4个维度来计算weight值
+        &lt;ol&gt;
+          &lt;li&gt;IDF&lt;/li&gt;
+          &lt;li&gt;TF&lt;/li&gt;
+          &lt;li&gt;Doc Length&lt;/li&gt;
+          &lt;li&gt;Query TF&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;个人理解：
+        &lt;ul&gt;
+          &lt;li&gt;在各个维度都可以添加调节因子来计算weight的值&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;BM25F 
+    &lt;ul&gt;
+      &lt;li&gt;Name From: BM25 and Fields&lt;/li&gt;
+      &lt;li&gt;(Term在各个域中出现的频率*这个域的调节因子)/这个域的文档长度&lt;/li&gt;
+      &lt;li&gt;Term出现在doc的不同域中，会对doc的weight做出不同大小的贡献&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;probabilistic-retrieval-model&quot;&gt;Probabilistic Retrieval Model&lt;/h3&gt;
+
+&lt;p&gt;Basic Idea is: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;计算每个Term出现在各个doc中的概率，可通过贝叶斯规则进行计算&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;P(A,B) = P(A) * P(B&lt;/td&gt;
+          &lt;td&gt;A) = P(B) * P(A&lt;/td&gt;
+          &lt;td&gt;B).&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Example:&lt;/li&gt;
+  &lt;li&gt;d1 a, a, a, b, c, e, f, f&lt;/li&gt;
+  &lt;li&gt;d2 a, b, b, d, f, f, f, f&lt;/li&gt;
+  &lt;li&gt;d3 b, b, c, c, d, d, d, f&lt;/li&gt;
+  &lt;li&gt;total_a = 4&lt;/li&gt;
+  &lt;li&gt;total_b = 5&lt;/li&gt;
+  &lt;li&gt;total_c = 3&lt;/li&gt;
+  &lt;li&gt;total_d = 4&lt;/li&gt;
+  &lt;li&gt;total_e = 1&lt;/li&gt;
+  &lt;li&gt;total_f = 7&lt;/li&gt;
+  &lt;li&gt;Data:&lt;/li&gt;
+  &lt;li&gt;p(d1,a)=3/4 p(d1,b)=1/5 p(d1,c)=1/3 p(d1,d)=0/4 p(d1,e)=1/1 p(d1,f)=2/7 &lt;/li&gt;
+  &lt;li&gt;p(d2,a)=1/4 p(d2,b)=2/5 p(d2,c)=0/3 p(d2,d)=1/4 p(d2,e)=0/1 p(d2,f)=4/7 &lt;/li&gt;
+  &lt;li&gt;p(d3,a)=0/4 p(d3,b)=2/5 p(d3,c)=2/3 p(d3,d)=3/4 p(d3,e)=0/1 p(d3,f)=1/7&lt;/li&gt;
+  &lt;li&gt;p(d1) = 5/6&lt;/li&gt;
+  &lt;li&gt;p(d2) = 4/6&lt;/li&gt;
+  &lt;li&gt;p(d3) = 4/6 &lt;/li&gt;
+  &lt;li&gt;p(a) = 4/24 &lt;/li&gt;
+  &lt;li&gt;p(b) = 5/24 &lt;/li&gt;
+  &lt;li&gt;p(c) = 3/24 &lt;/li&gt;
+  &lt;li&gt;p(d) = 4/24 &lt;/li&gt;
+  &lt;li&gt;p(e) = 1/24 &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;p(f) = 7/24&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;Smoothing Methods&lt;/li&gt;
   &lt;li&gt;Rocchio Method&lt;/li&gt;
-  &lt;li&gt;add sth in here&lt;/li&gt;
-  &lt;li&gt;it is cool&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;collaborative-filtering&quot;&gt;Collaborative Filtering&lt;/h3&gt;
+
+&lt;p&gt;Basic Info： 根据相似的物或者相似的人，来推荐商品。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Items Based Filtering：基于item的协同过滤
+    &lt;ul&gt;
+      &lt;li&gt;通过商品的各个属性来求商品之间的相似度。&lt;/li&gt;
+      &lt;li&gt;可以通过余弦相似来求给个商品之间的相似度。&lt;/li&gt;
+      &lt;li&gt;通过这种方法可以返回与某个商品相似的商品。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Users Based Filtering：基于user的协同过滤
+    &lt;ul&gt;
+      &lt;li&gt;购买过这个商品的人还买过什么，是典型的协同过滤。&lt;/li&gt;
+      &lt;li&gt;通过公共感兴趣的商品，来求人人之间的相似度。&lt;/li&gt;
+      &lt;li&gt;然后根据相似的人来推荐产品。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;协同过滤的劣势是：如果一个人以前没有任何行为&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;就没有办法找到与他相似的人。&lt;/li&gt;
+  &lt;li&gt;就没法适用协同过滤推荐商品。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们PEOPLE-TP-PEOPLE项目其实使用的就是协同过滤的思想。&lt;/p&gt;
+
+&lt;h3 id=&quot;feedback&quot;&gt;Feedback&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在用户中，做调查，哪些是有效的结果，哪些是无效的结果。
+    &lt;ul&gt;
+      &lt;li&gt;可以通过这些来查找同义词&lt;/li&gt;
+      &lt;li&gt;也可以慢慢增加Term在doc中的权重&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Pseudo Feedback
+    &lt;ul&gt;
+      &lt;li&gt;假设搜索返回的前N个是相关度高的，用这些相关度高的文章来训练query的同义词。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Implicit Feedback
+    &lt;ul&gt;
+      &lt;li&gt;通过分析的对搜索结果的行为，如浏览、点击等来查找query的同义词。&lt;/li&gt;
+      &lt;li&gt;也可以增加Term在doc中的权重。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;通过query中同时出现的词，来查找query的同义词。
+    &lt;ul&gt;
+      &lt;li&gt;FP-Growth&lt;/li&gt;
+      &lt;li&gt;Aprior&lt;/li&gt;
+      &lt;li&gt;Vertical index&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Rocchio Feedback
+    &lt;ul&gt;
+      &lt;li&gt;使query逐渐与目标doc相似&lt;/li&gt;
+      &lt;li&gt;增加query的同义词&lt;/li&gt;
+      &lt;li&gt;增强正影响，减少负影响&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;二次搜索：&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;加入同义词重新搜索同一个索引库。&lt;/li&gt;
+  &lt;li&gt;建立新的索引库专门为二次搜索提供服务。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;page-rank&quot;&gt;Page Rank&lt;/h3&gt;
+
+&lt;p&gt;马尔科夫链：每行的值相加为1&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;求转移概率矩阵，假设a = 0.5&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;1 -&amp;gt; 2, 3 -&amp;gt; 2, 2 -&amp;gt; 1, 2-&amp;gt; 3&lt;/p&gt;
+
+&lt;p&gt;概率矩阵x：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;0.0 1.0 0.0&lt;/li&gt;
+  &lt;li&gt;0.5 0.0 0.5&lt;/li&gt;
+  &lt;li&gt;0.0 1.0 0.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;随机跳转矩阵y：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1/3 1/3 1/3&lt;/li&gt;
+  &lt;li&gt;1/3 1/3 1/3&lt;/li&gt;
+  &lt;li&gt;1/3 1/3 1/3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;转移概率矩阵P：&lt;/p&gt;
+
+&lt;p&gt;(1-a)x + ab = 0.5x + o.by =&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1/6 2/3 1/6&lt;/li&gt;
+  &lt;li&gt;5/12 1/6 5/12&lt;/li&gt;
+  &lt;li&gt;1/6 2/3 1/6&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;假设初始向量x_0 = (1 0 0)&lt;/p&gt;
+
+&lt;p&gt;迭代运算，直到最后的值趋于稳定为止&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;x_0*p = (1/6 2/3 1/6) = x_1&lt;/li&gt;
+  &lt;li&gt;x_1*p = (1/3 1/3 1/3) = x_2&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;x_2*p = (1/4 1/2 1/4) = x_3&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;x_n*p = (5/18 4/9 5/18) = x_{n+1}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;hit&quot;&gt;HIT&lt;/h2&gt;
+
+&lt;p&gt;对每个网页打分：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;hub值&lt;/li&gt;
+  &lt;li&gt;authority值&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
@@ -2705,9 +2913,8 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;li&gt;An Introduction to Interactive Programming in Python (Part 2)
     &lt;ul&gt;
       &lt;li&gt;Start Date: 04/09 2015&lt;/li&gt;
-      &lt;li&gt;End Date:&lt;/li&gt;
+      &lt;li&gt;End Date: 04/18 2015&lt;/li&gt;
       &lt;li&gt;Rice University&lt;/li&gt;
-      &lt;li&gt;Not finish yet&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Pattern Discovery in Data Mining
@@ -2724,6 +2931,14 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;End Date:04/14 2015&lt;/li&gt;
       &lt;li&gt;Use Ruby on rails to implement Web server&lt;/li&gt;
       &lt;li&gt;The University of New Mexico&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Text Retrieval and Search Engines
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 15/04 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 18/04 2015&lt;/li&gt;
+      &lt;li&gt;I like this course, easily understand.&lt;/li&gt;
+      &lt;li&gt;The University of Illinois at Urbana-Champaign&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
