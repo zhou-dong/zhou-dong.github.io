@@ -87,6 +87,10 @@ Multiple Source Shortest Path
 
 NP-complete
 
+**简单来说，P = NP问题问道：如果是／不是问题的正面答案可以很快验证，其答案是否也可以很快计算？**
+
+**不严格的讲，NP完全问题是NP类中“最难”的问题，也就是说它们是最可能不属于P类的。**
+
 - Some problems are intractable: as they grow large, we are unable to solve them in reasonable time.
 - What constitutes `reasonable time`? Standard working definition: `polynomial time`.
 
@@ -119,3 +123,6 @@ Example: Hamiltonian-cycle problem is in NP:
 - Not all the NP problem are p problem.
 
 NP-Complete problems are the “hardest” problems in NP.
+
+NP-Complete可以简单地理解为：那些在NP中，同时最不可能在P中的问题。
+
