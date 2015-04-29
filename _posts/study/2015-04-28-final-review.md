@@ -60,6 +60,8 @@ Single Source Shortest Path
 Multiple Source Shortest Path
 
 1. Floyd Warshall
+    - 时间复杂度是n的立方
+    - Steps: 所有点依次通过每个点，到其它点的距离做松弛。
 
 2. Johnson's Algorithm
 
