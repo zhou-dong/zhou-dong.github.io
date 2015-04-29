@@ -87,6 +87,35 @@ Multiple Source Shortest Path
 
 NP-complete
 
-1. P
+- Some problems are intractable: as they grow large, we are unable to solve them in reasonable time.
+- What constitutes `reasonable time`? Standard working definition: `polynomial time`.
 
-2. NP
+- Polynomial time: $$ O(n^2), O(n^3), O(1), O(n \log n) $$
+- Not in polynomial time: $$ O(2^n), O(n^n), O(n!) $$
+
+Polynomial-Time Algorithms
+
+- We define P to be the class of problems solvable in polynomial time.
+
+NP-Complete Problems
+
+- The NP-Complete problems are an interesting class of problems whose status is unknown.
+- NP (nondeterministic polynomial time) is the set of problems that can be solved in polynomial time by a nondeterministic computer.
+
+- NP = problems verifiable in polynomial time
+
+1. P: problems that can be solved in polynomial time
+
+2. NP: problems for which a solution can be verified in polynomial time
+
+3. Unknown whether P = NP (most suspect not)
+
+Example: Hamiltonian-cycle problem is in NP:
+
+- Cannot solve in polynomial time
+- Easy to verify solution in polynomial time (How?)
+
+- All the P problem is NP problem.
+- Not all the NP problem are p problem.
+
+NP-Complete problems are the “hardest” problems in NP.
