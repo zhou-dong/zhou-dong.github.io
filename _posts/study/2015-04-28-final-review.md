@@ -12,8 +12,11 @@ Greddy Algorithm
 Search Tree or Map
 
 1. Breadth First Search
+    - 先建立priori queue
+    - 先进先出，然后遍历所有的的结点。
 
 2. Depth First Search
+    - 朝一个方向深度遍历。
 
 Minimum Spanning Tree
 
@@ -37,6 +40,13 @@ Minimum Spanning Tree
 Single Source Shortest Path
 
 1. Bellman Ford
+    - Specical: can work on negative edge weight graph
+    - Description: 多次松弛。
+    - Steps:
+        1. 设置开始结点离所有点的距离都为无穷大。
+        2. 遍历所开始结点相邻的所有点，并且更新距离。
+        3. 依次遍历，剩下的结点，如果通过剩下的结点，可以使到开始结点的距离变短，更新结点，并更新父结点。
+        4. 重复上面的步骤n(结点的个数)次。
 
 2. Dijkstra:
     - [教学视频](https://www.youtube.com/watch?v=5GT5hYzjNoo)
