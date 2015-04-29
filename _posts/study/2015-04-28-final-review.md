@@ -69,6 +69,9 @@ Single Source Shortest Path
         2. 通过最短的点来做松弛。并标记松弛点的来源。
         3. 在剩下的点中，找出最短的点，并通过这个点做松弛。
         4. 重复第3步，直到使用完所有的点做松弛。
+    - More：
+        + 可以用堆做优化，来找出距离最短的电
+        + 可以继续优化成斐波那契堆，可以更高的提高效率。
 
 Multiple Source Shortest Path
 
@@ -77,6 +80,10 @@ Multiple Source Shortest Path
     - Steps: 所有点依次通过每个点，到其它点的距离做松弛。
 
 2. Johnson's Algorithm
+    1. 在图的外边添加另一个顶点q，并初始化q到其它点的距离为0
+    2. 使用Bellman Ford算法，求q到其它点的距离。
+    3. reweight各个点之间的距离。
+    4. 使用Dijkstra算法，分别求出每个点到其它点的最短距离。
 
 NP-complete
 
