@@ -105,6 +105,10 @@ NP-Complete Problems
 
 - The NP-Complete problems are an interesting class of problems whose status is unknown.
 - NP (nondeterministic polynomial time) is the set of problems that can be solved in polynomial time by a nondeterministic computer.
+- NP-hard Problem：对于这一类问题，用一句话概括他们的特征就是“at least as hard as the hardest problems in NP Problem”， 就是NP-hard问题至少和NP问题一样难。
+- NP-complete Problem: 对于这一类问题，他们满足两个性质:
+    1. **一个就是在polynomial时间内可以验证一个candidate answer是不是真正的解。**
+    2. **另一个性质就是我们可以把任何一个NP问题在polynomial的时间内把他的input转化，使之成为一个NP-complete问题。**
 
 - NP = problems verifiable in polynomial time
 
