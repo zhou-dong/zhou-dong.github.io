@@ -103,6 +103,6 @@ tagline:
     - 2015 Spring Semester
     - Dr. Zhong
 
-3. Graphical Data Mining
+3. Special Topics CS6649-TXAA (Graphical Data Mining)
     - 2015 Spring Semester
     - Dr. Mago
