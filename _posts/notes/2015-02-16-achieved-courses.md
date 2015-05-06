@@ -94,3 +94,15 @@ tagline:
 ---
 
 ### Colledge
+
+1. CS3329/CS5549-TBAA (Analysis of Algorithms)
+    - 2015 Spring Semester
+    - Dr. Zhong
+
+2. Speical Topics CS6649-TXAD (Bioinformatics Algorithm)
+    - 2015 Spring Semester
+    - Dr. Zhong
+
+3. Graphical Data Mining
+    - 2015 Spring Semester
+    - Dr. Mago
