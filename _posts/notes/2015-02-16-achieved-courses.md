@@ -61,10 +61,16 @@ tagline:
     - The University of New Mexico
 
 11. Text Retrieval and Search Engines
-    - Start Date: 15/04 2015
-    - End Date: 18/04 2015
+    - Start Date: 04/15 2015
+    - End Date: 04/18 2015
     - I like this course, easily understand.
     - The University of Illinois at Urbana-Champaign
+
+12. Introduction to Recommender Systems
+    - Start Date: 05/11 2015
+    - End Date: 05/11 2015
+    - No coding thing, just basic thing of Recommender System
+    - The University of Minnesota 
 
 #### Edex:
 
