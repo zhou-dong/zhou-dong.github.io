@@ -5,10 +5,96 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-04-29T17:08:57-05:00</lastBuildDate>
-        <pubDate>2015-04-29T17:08:57-05:00</pubDate>
+        <lastBuildDate>2015-05-11T22:25:51-05:00</lastBuildDate>
+        <pubDate>2015-05-11T22:25:51-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Introduction to NLP</title>
+                <description>
+&lt;p&gt;分析一段句子的步骤&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Tagging（词性标注）
+    &lt;ul&gt;
+      &lt;li&gt;单词词性的标注。
+        &lt;ul&gt;
+          &lt;li&gt;Verb&lt;/li&gt;
+          &lt;li&gt;Noun&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;命名体识别，几个单词组成一个词，如：
+        &lt;ul&gt;
+          &lt;li&gt;人名：John Hopkins&lt;/li&gt;
+          &lt;li&gt;地点：Wall Street&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Phase（句子划分）
+    &lt;ul&gt;
+      &lt;li&gt;Definition:
+        &lt;ul&gt;
+          &lt;li&gt;根据英语语法的规则来切分句子&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;method：
+        &lt;ul&gt;
+          &lt;li&gt;Parse Tree&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;例子:
+        &lt;ul&gt;
+          &lt;li&gt;主谓宾&lt;/li&gt;
+          &lt;li&gt;定状补&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Context Free Grammer
+        &lt;ul&gt;
+          &lt;li&gt;与具体的单词意思无关&lt;/li&gt;
+          &lt;li&gt;根据单词的词性，以及在上下文中的位置&lt;/li&gt;
+          &lt;li&gt;来切分句子&lt;/li&gt;
+          &lt;li&gt;在不同的切分中，找到概率最高的&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Probabilistic Context-Free Grammars(PCFG)
+        &lt;ul&gt;
+          &lt;li&gt;CKY (one of dynamic programming)&lt;/li&gt;
+          &lt;li&gt;Use dynamic programming to find the max probalities&lt;/li&gt;
+          &lt;li&gt;Chomsky Normal Form&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Weaknesses of PCFGs
+        &lt;ul&gt;
+          &lt;li&gt;Lack of sensitivity of lexical information&lt;/li&gt;
+          &lt;li&gt;Lack of sensitivity of structural frequencies&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Lexical of PCFGs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Machine Translation&lt;/p&gt;
+
+&lt;p&gt;First genereaion&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;IBM Model&lt;/li&gt;
+  &lt;li&gt;EM Algorithm for IBM Model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Second generation&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;phase based translation&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/05/10/intro</link>
+                <guid>http://zhou-dong.github.io/2015/05/10/intro</guid>
+                <pubDate>2015-05-10T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>CS-5549 Final Review</title>
@@ -170,8 +256,13 @@
 
 &lt;ul&gt;
   &lt;li&gt;The NP-Complete problems are an interesting class of problems whose status is unknown.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;NP (nondeterministic polynomial time) is the set of problems that can be solved in polynomial time by a nondeterministic computer.&lt;/p&gt;
+  &lt;li&gt;NP (nondeterministic polynomial time) is the set of problems that can be solved in polynomial time by a nondeterministic computer.&lt;/li&gt;
+  &lt;li&gt;NP-hard Problem：对于这一类问题，用一句话概括他们的特征就是“at least as hard as the hardest problems in NP Problem”， 就是NP-hard问题至少和NP问题一样难。&lt;/li&gt;
+  &lt;li&gt;NP-complete Problem: 对于这一类问题，他们满足两个性质:
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;一个就是在polynomial时间内可以验证一个candidate answer是不是真正的解。&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;另一个性质就是我们可以把任何一个NP问题在polynomial的时间内把他的input转化，使之成为一个NP-complete问题。&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ol&gt;
   &lt;/li&gt;
   &lt;li&gt;NP = problems verifiable in polynomial time&lt;/li&gt;
 &lt;/ul&gt;
@@ -3129,10 +3220,18 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;/li&gt;
   &lt;li&gt;Text Retrieval and Search Engines
     &lt;ul&gt;
-      &lt;li&gt;Start Date: 15/04 2015&lt;/li&gt;
-      &lt;li&gt;End Date: 18/04 2015&lt;/li&gt;
+      &lt;li&gt;Start Date: 04/15 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 04/18 2015&lt;/li&gt;
       &lt;li&gt;I like this course, easily understand.&lt;/li&gt;
       &lt;li&gt;The University of Illinois at Urbana-Champaign&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Introduction to Recommender Systems
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 05/11 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 05/11 2015&lt;/li&gt;
+      &lt;li&gt;No coding thing, just basic thing of Recommender System&lt;/li&gt;
+      &lt;li&gt;The University of Minnesota &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -3179,6 +3278,27 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;colledge&quot;&gt;Colledge&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;CS3329/CS5549-TBAA (Analysis of Algorithms)
+    &lt;ul&gt;
+      &lt;li&gt;2015 Spring Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Zhong&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Speical Topics CS6649-TXAD (Bioinformatics Algorithm)
+    &lt;ul&gt;
+      &lt;li&gt;2015 Spring Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Zhong&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Special Topics CS6649-TXAA (Graphical Data Mining)
+    &lt;ul&gt;
+      &lt;li&gt;2015 Spring Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Mago&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/02/16/achieved-courses</link>
                 <guid>http://zhou-dong.github.io/2015/02/16/achieved-courses</guid>
@@ -6198,8 +6318,11 @@ esac
   &lt;li&gt;C++ Primer Plus(第6版)中文版&lt;/li&gt;
   &lt;li&gt;机器学习：实用案例解析&lt;/li&gt;
   &lt;li&gt;具体数学&lt;/li&gt;
+  &lt;li&gt;文明之光（三）&lt;/li&gt;
+  &lt;li&gt;数学之美（第二版）&lt;/li&gt;
+  &lt;li&gt;你不可不知道50个数学知识&lt;/li&gt;
+  &lt;li&gt;算法帝国&lt;/li&gt;
 &lt;/ol&gt;
-
 </description>
                 <link>http://zhou-dong.github.io/2014/11/27/book-list</link>
                 <guid>http://zhou-dong.github.io/2014/11/27/book-list</guid>
