@@ -54,3 +54,6 @@ tagline: 读书、旅行、坚定、自信
 ##### 希望自己内心强大，始终相信自己！
 - Have courage and be kind.
 - Time passed and pain become momory.
+
+##### 关于知识
+- 知识不是记忆的结果，知识是带着渴望去寻找的结果。
