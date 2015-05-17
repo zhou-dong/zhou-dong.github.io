@@ -112,3 +112,9 @@ tagline:
 3. Special Topics CS6649-TXAA (Graphical Data Mining)
     - 2015 Spring Semester
     - Dr. Mago
+
+### Codecademy
+
+1. Python
+
+2. HTML & CSS
