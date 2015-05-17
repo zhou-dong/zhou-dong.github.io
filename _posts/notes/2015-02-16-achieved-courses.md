@@ -97,6 +97,12 @@ tagline:
     - Start Date: March 31 2015
     - End Date: April 08 2015
 
+#### Codecademy
+
+1. Python
+
+2. HTML & CSS
+
 ---
 
 ### Colledge
@@ -113,8 +119,3 @@ tagline:
     - 2015 Spring Semester
     - Dr. Mago
 
-### Codecademy
-
-1. Python
-
-2. HTML & CSS
