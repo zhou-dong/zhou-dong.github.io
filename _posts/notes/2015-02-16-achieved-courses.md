@@ -103,6 +103,8 @@ tagline:
 
 2. HTML & CSS
 
+3. JavaScript
+
 ---
 
 ### Colledge
