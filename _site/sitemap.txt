@@ -9,6 +9,8 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/javascript/2015/05/25/js-note
+http://zhou-dong.github.io/machine-learning/2015/05/24/reviews
 http://zhou-dong.github.io/2015/05/10/intro
 http://zhou-dong.github.io/2015/04/28/final-review
 http://zhou-dong.github.io/data-mining/2015/04/17/search-engines

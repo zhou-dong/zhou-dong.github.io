@@ -5,10 +5,167 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-05-11T22:25:51-05:00</lastBuildDate>
-        <pubDate>2015-05-11T22:25:51-05:00</pubDate>
+        <lastBuildDate>2015-05-25T16:38:24-05:00</lastBuildDate>
+        <pubDate>2015-05-25T16:38:24-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Javascript Notes</title>
+                <description>
+&lt;h4 id=&quot;section&quot;&gt;原型：&lt;/h4&gt;
+
+&lt;p&gt;参考地址： http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html&lt;/p&gt;
+
+&lt;p&gt;javascript 使用&lt;strong&gt;构造函数&lt;/strong&gt;来构造一个对象，如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+function Person(name, age){  
+    this.name = name;
+    this.age = age;
+};
+var person1 = new Person(&quot;Linda&quot;, 28) ;
+var person2 = new Person(&quot;Snow&quot;, 24) ;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样的缺点是，那就是无法共享属性和方法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+function Female(name, age){
+    this.name = name ;
+    this.age = age ;
+    this.gender = &#39;female&#39; ;
+};
+var person1 = new Female(&quot;Linda&quot;, 28) ;
+var person2 = new Female(&quot;Snow&quot;, 24) ;
+person1.gender = &#39;male&#39; ;
+console.log(person1.gender) // male
+console.log(person2.gender) //female
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;每一个实例对象，都有自己的属性和方法的副本。这不仅无法做到数据共享，也是极大的资源浪费。&lt;/p&gt;
+
+&lt;p&gt;考虑到这一点，Brendan Eich决定为构造函数设置一个prototype属性。&lt;/p&gt;
+
+&lt;p&gt;这个属性包含一个对象（以下简称”prototype对象”），所有实例对象需要共享的属性和方法，都放在这个对象里面；那些不需要共享的属性和方法，就放在构造函数里面。&lt;/p&gt;
+
+&lt;p&gt;实例对象一旦创建，将自动引用prototype对象的属性和方法。也就是说，实例对象的属性和方法，分成两种，一种是本地的，另一种是引用的。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+function Female(name, age){
+    this.name = name ;
+    this.age = age ;
+};
+Female.prototype = {gender: &#39;female&#39;} ;
+var person1 = new Female(&quot;Linda&quot;, 28) ;
+var person2 = new Female(&quot;Snow&quot;, 24) ;
+console.log(person1.gender) // female
+console.log(person2.gender) //female
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;总结&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;
+由于所有的实例对象共享同一个prototype对象，那么从外界看起来，prototype对象就好像是实例对象的原型，而实例对象则好像&quot;继承&quot;了prototype对象一样。
+&lt;/code&gt;&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/javascript/2015/05/25/js-note</link>
+                <guid>http://zhou-dong.github.io/javascript/2015/05/25/js-note</guid>
+                <pubDate>2015-05-25T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Review Machine learning in action</title>
+                <description>
+&lt;h4 id=&quot;supervised-learning-method&quot;&gt;Supervised Learning method&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;KNN (k nearest neighbor)
+    &lt;ol&gt;
+      &lt;li&gt;Calculate the distance will all the data.&lt;/li&gt;
+      &lt;li&gt;Find the nearest k data&lt;/li&gt;
+      &lt;li&gt;From this k nearest data find the most frequent category&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Decision Tree
+    &lt;ol&gt;
+      &lt;li&gt;Find the most efficient propercity to divided the datas&lt;/li&gt;
+      &lt;li&gt;Check if all the sub tree has been divied&lt;/li&gt;
+      &lt;li&gt;If not recurive steps 1 and 2&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Naive Bayes
+    &lt;ul&gt;
+      &lt;li&gt;根据朴素贝叶斯概率模型来计算一个目标可能出现在哪个分类中&lt;/li&gt;
+      &lt;li&gt;如果出现在分来A的概率大于出现在分类B的概率，则结果为A反之为B&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Regression
+    &lt;ul&gt;
+      &lt;li&gt;找出或者画出一条可以拟合数据走向的线&lt;/li&gt;
+      &lt;li&gt;最小二乘&lt;/li&gt;
+      &lt;li&gt;logistic regression&lt;/li&gt;
+      &lt;li&gt;CART Classification-and-Regression-Trees&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SVM (support vector machine)
+    &lt;ul&gt;
+      &lt;li&gt;找出支撑点&lt;/li&gt;
+      &lt;li&gt;利用kernel把地位的数据映射到高维求解&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Adaboost
+    &lt;ul&gt;
+      &lt;li&gt;可以多次重复同一函数，也可用不同函数&lt;/li&gt;
+      &lt;li&gt;每次计算以后，增加错误数据的权重，减小正确数据的权重&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;unsupervised-learning-method&quot;&gt;Unsupervised Learning method&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;K means
+    &lt;ul&gt;
+      &lt;li&gt;首先定义K个中心店，然后计算所有点到这些点的距离&lt;/li&gt;
+      &lt;li&gt;把里这些点最近的点合成一簇，&lt;/li&gt;
+      &lt;li&gt;找出簇内的中心店，继续迭代&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Apriori
+    &lt;ul&gt;
+      &lt;li&gt;原理是认为如果一项不频繁，那些包含它的集合也不是频繁项&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;FP-Growth
+    &lt;ul&gt;
+      &lt;li&gt;先构建FP tree&lt;/li&gt;
+      &lt;li&gt;扫描FP tree，获得频繁项&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;other-optimize&quot;&gt;Other optimize&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PCA
+    &lt;ul&gt;
+      &lt;li&gt;找出最能表现数据的维度作为坐标轴&lt;/li&gt;
+      &lt;li&gt;通过这种方式来降维&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SVD
+    &lt;ul&gt;
+      &lt;li&gt;把一个大的系数矩阵，切分为几个矩阵来运算&lt;/li&gt;
+      &lt;li&gt;通过上面的方法来达到降维的目的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/05/24/reviews</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/05/24/reviews</guid>
+                <pubDate>2015-05-24T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Introduction to NLP</title>
@@ -3275,6 +3432,17 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;h4 id=&quot;codecademy&quot;&gt;Codecademy&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Python&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTML &amp;amp; CSS&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;colledge&quot;&gt;Colledge&lt;/h3&gt;
@@ -3299,6 +3467,7 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
 </description>
                 <link>http://zhou-dong.github.io/2015/02/16/achieved-courses</link>
                 <guid>http://zhou-dong.github.io/2015/02/16/achieved-courses</guid>
