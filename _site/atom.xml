@@ -4,13 +4,179 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-05-25T16:38:24-05:00</updated>
+ <updated>2015-06-03T13:19:02-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Javascript Notes</title>
+   <link href="http://zhou-dong.github.io/javascript%20jquery/2015/05/29/js"/>
+   <updated>2015-05-29T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/javascript%20jquery/2015/05/29/js</id>
+   <content type="html">
+&lt;p&gt;javascript:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ECMAscript&lt;/li&gt;
+  &lt;li&gt;DOM&lt;/li&gt;
+  &lt;li&gt;BOM&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;defer=’defer’: 立即下载，但是页面渲染完以后再执行
+asyn=’asyn’: 立即下载，但是不阻断页面的渲染，也不能保证javascript的执行顺序&lt;/p&gt;
+
+&lt;p&gt;JQuery&lt;/p&gt;
+
+&lt;p&gt;Javascript原生的方法就是可以把function当做参数来传递，jquery继承了这个方式&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+$(document).ready(function(){
+    $(&#39;div&#39;).click(function(){
+        $(this).hover(
+            function(){
+                //do some thing
+            };
+            function(){
+                //do some thing
+            } ;
+        );
+    });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;JQuery selector&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;原生的DOM对象直接用引号&lt;/li&gt;
+  &lt;li&gt;. # 选择class和id&lt;/li&gt;
+  &lt;li&gt;可以使用CSS的选择器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;
+var $p = $(&quot;p&quot;);
+var $div = $(&#39;div&#39;);
+var $ol = $(&#39;ol&#39;) ;
+var $cls = $(&quot;.class-name&quot;) ;
+var $id = $(&quot;#id-name&quot;);
+var $name = $(&#39;input[name=name-attr]&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;JQuery UI&lt;/p&gt;
+
+&lt;p&gt;JQuery UI添加了各种动画效果的实现和更多的内置样式。&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Statistics</title>
+   <link href="http://zhou-dong.github.io/2015/05/28/statistics"/>
+   <updated>2015-05-28T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/05/28/statistics</id>
+   <content type="html">
+&lt;h2 id=&quot;section&quot;&gt;统计学习方法笔记&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;统计学习方法概论&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;感知机&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;k邻近法&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;朴素贝叶斯法&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;决策树&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;逻辑斯蒂回归与最大熵模型&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;支持向量机&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;提升方法&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;EM算法及其推广&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;隐含马尔科夫模型&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;条件随机场&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>HTML CSS Bootstrap</title>
+   <link href="http://zhou-dong.github.io/2015/05/26/html-css"/>
+   <updated>2015-05-26T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/05/26/html-css</id>
+   <content type="html">
+&lt;h4 id=&quot;bootstrap&quot;&gt;Bootstrap&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bootstrap把页面分为12列，称为grid&lt;/li&gt;
+  &lt;li&gt;class=”container” 是正文部分，包含了边距等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;html&quot;&gt;HTML&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导航栏应该有ul + li&lt;/li&gt;
+  &lt;li&gt;好像差不多也没啥可说的&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;css&quot;&gt;CSS&lt;/h4&gt;
+
+&lt;p&gt;display&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;block: 重新起一行&lt;/li&gt;
+  &lt;li&gt;inline: 在原有行&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;position &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;relative: 与&lt;strong&gt;本应该在的位置&lt;/strong&gt;的相对位置&lt;/li&gt;
+  &lt;li&gt;absolute：在页面的中的绝对位置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;background-attachment: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;fixed: 背景不随下来框移动&lt;/li&gt;
+  &lt;li&gt;scroll: 默认值。背景图像会随着页面其余部分的滚动而移动。&lt;/li&gt;
+  &lt;li&gt;inherit: 规定应该从父元素继承 background-attachment 属性的设置。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;margin:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;margin-left: auto 最大限度的向右&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;margin-right: auto 最大限度的向左&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;同时margin-left:auto, margin-right:auto&lt;/li&gt;
+  &lt;li&gt;或者margin: auto&lt;/li&gt;
+  &lt;li&gt;向左和向右中和了，所以居中&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;border-redius: 100% 圆圈&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Javascript Notes</title>
@@ -3445,6 +3611,15 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;HTML &amp;amp; CSS&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JavaScript&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make a Website (HTML css Bootstrap)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jQuery&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
