@@ -107,6 +107,8 @@ tagline:
 
 4. Make a Website (HTML css Bootstrap)
 
+5. jQuery
+
 ---
 
 ### Colledge
