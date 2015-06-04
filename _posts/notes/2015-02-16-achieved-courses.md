@@ -109,6 +109,8 @@ tagline:
 
 5. jQuery
 
+6. Make an Interactive Website(Javascript and JQuery)
+
 ---
 
 ### Colledge
