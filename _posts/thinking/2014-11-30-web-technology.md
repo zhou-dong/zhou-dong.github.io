@@ -126,6 +126,7 @@ tagline: -- 自己网站架构的设想，按照这个目标慢慢来。
 
 #### 博客
 - Gitpages + Jekyll + markdown
+- Ruby
 
 #### 开发语言
 - Java
@@ -133,4 +134,6 @@ tagline: -- 自己网站架构的设想，按照这个目标慢慢来。
 - Python
 - C++
 - C Language
-
+- Ruby
+- R
+- Scala
