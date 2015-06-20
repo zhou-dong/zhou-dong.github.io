@@ -31,6 +31,7 @@ tagline: -- 自己网站架构的设想，按照这个目标慢慢来。
 - Node.js
 - Tomcat + apr
 - Appserver
+- Ruby on Rails
 
 #### 消息中间件
 - [Kafka](http://kafka.apache.org/)
