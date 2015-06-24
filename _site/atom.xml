@@ -4,13 +4,60 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-06-04T17:02:07-05:00</updated>
+ <updated>2015-06-24T12:23:53-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>CS6648 TBAA Notes Optimization Modeling</title>
+   <link href="http://zhou-dong.github.io/2015/06/24/cs-6648"/>
+   <updated>2015-06-24T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/06/24/cs-6648</id>
+   <content type="html">
+&lt;ol&gt;
+  &lt;li&gt;LaTeX
+    &lt;ul&gt;
+      &lt;li&gt;Download&lt;a href=&quot;http://miktex.org/&quot;&gt;MiKTeX&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;or use Sublime to write LaTex&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Download&lt;a href=&quot;https://tug.org/mactex/&quot;&gt;MacTex&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Travelling_salesman_problem&quot;&gt;Travelling salesman problem&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linear Programming&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;install Latex In Mac with Sublime text 2&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Down Sublime text 2&lt;/li&gt;
+  &lt;li&gt;install &lt;a href=&quot;https://packagecontrol.io/installation#st2&quot;&gt;Package control for sublmit&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Command+Shift+P to install LaTexTools&lt;/li&gt;
+  &lt;li&gt;download skim for look pdf for sublime&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+x_1 + x_2 \le 3 \\
+
+x_1 + x_2 + \theta_1 = 3 \\
+
+2x_1 + x_2 + \theta_1 + A =  6 \\
+
+2x_1 \ and \ x_2 slack variable \\
+
+A \ artifical variable
+
+&lt;/script&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Javascript Notes</title>
@@ -68,6 +115,99 @@ var $name = $(&#39;input[name=name-attr]&#39;)
 &lt;p&gt;JQuery UI&lt;/p&gt;
 
 &lt;p&gt;JQuery UI添加了各种动画效果的实现和更多的内置样式。&lt;/p&gt;
+
+&lt;p&gt;JavaScript变量可以用来保存两种类型的值：基本类型和引用类型。&lt;/p&gt;
+
+&lt;p&gt;基本类型：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Undefined&lt;/li&gt;
+  &lt;li&gt;Null&lt;/li&gt;
+  &lt;li&gt;Boolean&lt;/li&gt;
+  &lt;li&gt;Number&lt;/li&gt;
+  &lt;li&gt;String&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;基本类型在内存中占据固定大小的空间，因此会被保存在栈内存中&lt;/li&gt;
+  &lt;li&gt;从一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本&lt;/li&gt;
+  &lt;li&gt;引用类型的值是对象，会保存在堆中&lt;/li&gt;
+  &lt;li&gt;包含引用类型值的变量实际上包含的并不是对象本身，而是指向该对象的一个指针&lt;/li&gt;
+  &lt;li&gt;从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两个变量最终指向同一个对象&lt;/li&gt;
+  &lt;li&gt;确定一个值是哪种基本类型可以使用typeof，而确定一个值是哪种引用类型可以使用instanceof&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;JavaScript 可以使用变量来访问属性&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+    var propertyName = &quot;name&quot; ;
+    console.log(person[propertyName]) ;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Function在javascript中也是一个对象，所以Function在Javascript中有了更多神奇的使用方法&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;function作为一个对象，可以作为属性，在其它对象之间传递&lt;/li&gt;
+  &lt;li&gt;可以return function&lt;/li&gt;
+  &lt;li&gt;javascript的function没有重载，因为后一个会替换前一个对象的引用&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;在JavaScript中，Array有更多的内置方法，可以更加方便的操作array&lt;/p&gt;
+
+&lt;p&gt;Global对象跟Java中的global对象是不一样的：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Java中global对象是全局的父对象&lt;/li&gt;
+  &lt;li&gt;而JavaScript中，global对象只是有别于其它对象的一个对象，所以不属于其它对象的属性，都属于global对象&lt;/li&gt;
+  &lt;li&gt;在浏览器中，常常使用window对象来实现global对象&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在JavaScript中，也有针对基本类型的包装类型，包装类型在处理完操作以后，就会被释放&lt;/p&gt;
+
+&lt;p&gt;eval() 是个特别强大的函数，会把里面的字符串当做javascript语法来处理，所以使用eval()时需要特别小心，防止被代码注入!&lt;/p&gt;
+
+&lt;p&gt;越来越感觉到，JavaScript、Ruby这些语言比Java要更符合“万物皆对象！”&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在Java中，有string、function、class这些东西都不放在heap中，而在“永久带”中&lt;/li&gt;
+  &lt;li&gt;但是JavaScript中，向function、prototype，都是对象。（连构造函数本身也对对象）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;JavaScript没有块级作用域的概念。如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+for (var i=0; i&amp;lt;10; i++){
+    console.log(i);
+}
+console.log(i) //9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是可以使用另一种方法来模拟块级作用域&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+(function(){
+    for (var i=0; i&amp;lt;10; i++){
+        console.log(i)
+    }
+})() ;
+console.log(i) //error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面代码的意思是：创建一个匿名函数，并且立即调用它。&lt;/p&gt;
+
+&lt;p&gt;JavaScript的闭包真的是个比较有趣的概念！&lt;/p&gt;
+
+&lt;p&gt;用了那么就的JSON，今天在明白了JSON的由来。&lt;/p&gt;
+
+&lt;p&gt;JSON: (JavaScript object notation)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JSON的格式，就是javascript定义对象的格式&lt;/li&gt;
+  &lt;li&gt;只是JSON对象的属性也在引号里面&lt;/li&gt;
+  &lt;li&gt;所以在一开始的时候，才用eval()来解析json对象（会有安全问题，不建议使用）&lt;/li&gt;
+  &lt;li&gt;使用JSON.stringify(object,”数组”/函数,”缩进”)来javascript对象转成成JSON对象&lt;/li&gt;
+  &lt;li&gt;使用JSON.parse(object,函数) 来把JSON对象转换成javascript对象&lt;/li&gt;
+&lt;/ul&gt;
+
 </content>
  </entry>
  
@@ -3651,6 +3791,9 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;p&gt;145-146-413:1234&lt;/p&gt;
+
+&lt;p&gt;singer-eminme&lt;/p&gt;
 </content>
  </entry>
  
@@ -6182,6 +6325,7 @@ esac
   &lt;li&gt;Node.js&lt;/li&gt;
   &lt;li&gt;Tomcat + apr&lt;/li&gt;
   &lt;li&gt;Appserver&lt;/li&gt;
+  &lt;li&gt;Ruby on Rails&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;section-4&quot;&gt;消息中间件&lt;/h4&gt;
@@ -6341,6 +6485,7 @@ esac
 &lt;h4 id=&quot;section-16&quot;&gt;博客&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Gitpages + Jekyll + markdown&lt;/li&gt;
+  &lt;li&gt;Ruby&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;section-17&quot;&gt;开发语言&lt;/h4&gt;
@@ -6350,8 +6495,10 @@ esac
   &lt;li&gt;Python&lt;/li&gt;
   &lt;li&gt;C++&lt;/li&gt;
   &lt;li&gt;C Language&lt;/li&gt;
+  &lt;li&gt;Ruby&lt;/li&gt;
+  &lt;li&gt;R&lt;/li&gt;
+  &lt;li&gt;Scala&lt;/li&gt;
 &lt;/ul&gt;
-
 </content>
  </entry>
  
