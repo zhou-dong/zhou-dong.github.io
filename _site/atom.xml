@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-06-24T12:23:53-05:00</updated>
+ <updated>2015-06-26T15:17:00-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -56,6 +56,12 @@ x_1 + x_2 + \theta_1 = 3 \\
 A \ artifical variable
 
 &lt;/script&gt;
+
+&lt;p&gt;NP-hard&lt;/p&gt;
+
+&lt;p&gt;Row operation&lt;/p&gt;
+
+&lt;p&gt;Rank of Matrix&lt;/p&gt;
 </content>
  </entry>
  

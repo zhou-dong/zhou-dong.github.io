@@ -5,8 +5,8 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-06-24T12:23:53-05:00</lastBuildDate>
-        <pubDate>2015-06-24T12:23:53-05:00</pubDate>
+        <lastBuildDate>2015-06-26T15:17:00-05:00</lastBuildDate>
+        <pubDate>2015-06-26T15:17:00-05:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -51,6 +51,12 @@ x_1 + x_2 + \theta_1 = 3 \\
 A \ artifical variable
 
 &lt;/script&gt;
+
+&lt;p&gt;NP-hard&lt;/p&gt;
+
+&lt;p&gt;Row operation&lt;/p&gt;
+
+&lt;p&gt;Rank of Matrix&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/06/24/cs-6648</link>
                 <guid>http://zhou-dong.github.io/2015/06/24/cs-6648</guid>
