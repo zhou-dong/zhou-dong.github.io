@@ -5,10 +5,40 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-06-27T14:26:32-05:00</lastBuildDate>
-        <pubDate>2015-06-27T14:26:32-05:00</pubDate>
+        <lastBuildDate>2015-07-08T11:56:36-05:00</lastBuildDate>
+        <pubDate>2015-07-08T11:56:36-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Test LateX</title>
+                <description>
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Q1: Solve \: the \:following\:linear\:programming\:problem:\\ \textbf{Min}\:\: f(x_1,x_2):\:\:x_1+x_2\\ \textbf{Subject to:}\: 3x_1-x_2\leq3\\ x_1+2x_2\leq5\\ x_1+x_2\leq4\\ x_1\ge0; x_2\: unrestricted\: in\:sign. \:\:\:\:\:\:\:\:\:\:\:\:\textbf{(8)}&lt;/script&gt;
+
+&lt;p&gt;Transportation&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;formula&lt;/li&gt;
+  &lt;li&gt;matrix&lt;/li&gt;
+  &lt;li&gt;visualization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Intergrate with apple watch&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Support XMPP&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Find other imformation for client(like something of watch) &lt;/li&gt;
+  &lt;li&gt;Add UDp or TCP/IP&lt;/li&gt;
+  &lt;li&gt;NDN&lt;/li&gt;
+  &lt;li&gt;Naming scheme(extend naming scheme)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;moto 360&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;suman.kumaar@gmail.com&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/07/05/test</link>
+                <guid>http://zhou-dong.github.io/2015/07/05/test</guid>
+                <pubDate>2015-07-05T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>CS6648 TBAA Notes Optimization Modeling</title>
