@@ -97,6 +97,10 @@ tagline:
     - Start Date: March 31 2015
     - End Date: April 08 2015
 
+4. Node.js Tutorial for Beginners
+    - https://www.youtube.com/watch?v=IW2M8G8uJ6o&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_&index=1
+    - Start Date: July 13 2015
+
 #### Codecademy
 
 1. Python
