@@ -5,10 +5,76 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-07-08T11:56:36-05:00</lastBuildDate>
-        <pubDate>2015-07-08T11:56:36-05:00</pubDate>
+        <lastBuildDate>2015-07-15T20:24:47-05:00</lastBuildDate>
+        <pubDate>2015-07-15T20:24:47-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Meeting online One</title>
+                <description>
+&lt;ol&gt;
+  &lt;li&gt;Dong’s Question: Do I need have the right to use the AWS of PHINet application?
+    &lt;ul&gt;
+      &lt;li&gt;Richard suggested Dong should has him own AWS test account.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Richard Question: What is the business model of app?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Rechard suggest: First sencor is free, the other sencors are charged.&lt;/li&gt;
+      &lt;li&gt;Kumar suggest: Like Facebook:  don’t pay for application but  pay for the analyze.&lt;/li&gt;
+      &lt;li&gt;Dong suggest: Everythings is free, and First thing is make our project useful and let people like our app.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Doctor Kumar will introduce more people to our project, first is his elder cousin, who is working in AT&amp;amp;T and have more experience on bussiness.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/07/11/kumar-meeting</link>
+                <guid>http://zhou-dong.github.io/2015/07/11/kumar-meeting</guid>
+                <pubDate>2015-07-11T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>First Meeting</title>
+                <description>&lt;h1 id=&quot;first-meeing-of-phinet&quot;&gt;First meeing of PHINet&lt;/h1&gt;
+
+&lt;p&gt;Date 07/11/2015&lt;/p&gt;
+
+&lt;p&gt;People: 
+- Kumar
+- Richard
+- Dong&lt;/p&gt;
+
+&lt;h2 id=&quot;content&quot;&gt;Content:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Dong’s Question: Do I need have the right to use the AWS of PHINet application?
+    &lt;ul&gt;
+      &lt;li&gt;Richard suggested: Dong should has him own AWS test account.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Richard Question: What is the business model of app?&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Rechard suggest: First censor is free, the other censors are charged.&lt;/li&gt;
+      &lt;li&gt;Kumar suggest: Like Facebook:  don’t pay for application, but pay for the analyze.&lt;/li&gt;
+      &lt;li&gt;Dong suggest: Everythings is free, and First thing is make our project useful and let people like our app.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Doctor Kumar will introduce more people to our project, first one is his elder cousin, who is working in AT&amp;amp;T and have more experience on bussiness.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;More: Richard has sent me an email to suggest me start with let user to view their data on the website, I will do that first.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/07/11/first-meeting</link>
+                <guid>http://zhou-dong.github.io/2015/07/11/first-meeting</guid>
+                <pubDate>2015-07-11T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Test LateX</title>
@@ -87,6 +153,23 @@ A \ artifical variable
 &lt;p&gt;Row operation&lt;/p&gt;
 
 &lt;p&gt;Rank of Matrix&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+2^{n=3} = 8 \\
+
+n_0, n_1, n_2 \\
+0 \ 0 \ 0 \\
+0 \ 0 \ 1 \\
+0 \ 1 \ 0 \\
+0 \ 1 \ 1 \\
+1 \ 0 \ 0 \\
+1 \ 0 \ 1 \\
+1 \ 1 \ 0 \\
+1 \ 1 \ 1 \\
+
+
+&lt;/script&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/06/24/cs-6648</link>
                 <guid>http://zhou-dong.github.io/2015/06/24/cs-6648</guid>
@@ -3770,6 +3853,12 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLw7ltASAuhMTZPgepJqpj_7Dv0AmIHJyJ&quot;&gt;URL&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Start Date: March 31 2015&lt;/li&gt;
       &lt;li&gt;End Date: April 08 2015&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Node.js Tutorial for Beginners
+    &lt;ul&gt;
+      &lt;li&gt;https://www.youtube.com/watch?v=IW2M8G8uJ6o&amp;amp;list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_&amp;amp;index=1&lt;/li&gt;
+      &lt;li&gt;Start Date: July 13 2015&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;

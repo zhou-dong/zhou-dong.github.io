@@ -9,6 +9,8 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/07/11/kumar-meeting
+http://zhou-dong.github.io/2015/07/11/first-meeting
 http://zhou-dong.github.io/2015/07/05/test
 http://zhou-dong.github.io/2015/06/24/cs-6648
 http://zhou-dong.github.io/javascript%20jquery/2015/05/29/js
