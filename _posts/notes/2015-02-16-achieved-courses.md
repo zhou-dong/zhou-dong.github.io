@@ -72,6 +72,10 @@ tagline:
     - No coding thing, just basic thing of Recommender System
     - The University of Minnesota 
 
+13. Practical Machine Learning
+    - Start Date: 07/17 2015
+    - End Date:
+
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
