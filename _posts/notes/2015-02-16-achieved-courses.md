@@ -116,6 +116,8 @@ tagline:
 
 6. Make an Interactive Website(Javascript and JQuery)
 
+7. Learn Ruby on Rails
+
 ---
 
 ### Colledge
