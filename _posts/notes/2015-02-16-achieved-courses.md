@@ -98,7 +98,7 @@ tagline:
     - End Date: April 08 2015
 
 4. Node.js Tutorial for Beginners
-    - https://www.youtube.com/watch?v=IW2M8G8uJ6o&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_&index=1
+    - [URL](https://www.youtube.com/watch?v=IW2M8G8uJ6o&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_&index=1)
     - Start Date: July 13 2015
     - End Date: July 15 2015
 
