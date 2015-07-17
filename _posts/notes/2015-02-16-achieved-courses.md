@@ -118,6 +118,8 @@ tagline:
 
 7. Learn Ruby on Rails
 
+8. Learn the Command Line
+
 ---
 
 ### Colledge
