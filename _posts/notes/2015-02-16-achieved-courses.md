@@ -73,7 +73,11 @@ tagline:
     - The University of Minnesota 
 
 13. Practical Machine Learning
-    - Start Date: 07/17 2015
+    - Start Date: 17/07 2015
+    - End Date: 18/07 2015
+
+14. Data Visualization
+    - Start Date: 23/07 2015
     - End Date:
 
 #### Edex:
