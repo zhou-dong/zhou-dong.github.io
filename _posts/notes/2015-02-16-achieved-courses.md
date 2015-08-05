@@ -80,6 +80,12 @@ tagline:
     - Start Date: 23/07 2015
     - End Date:
 
+15. 计算导论与C语言基础
+    - Start Date: 07/24 2015
+    - End Date:
+    - 确实是非常好的一门课程。
+    - 授课学校：北京大学
+
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
