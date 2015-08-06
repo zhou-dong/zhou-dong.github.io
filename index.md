@@ -8,6 +8,13 @@ tagline: 读书、旅行、坚定、自信
 
 #### Before 2015
 
+##### 关于爱好
+- 贪玩的人类
+
+##### 逻辑思维
+- 文明的起点
+- 也是文明的基础
+
 ##### 诗和远方
 - **生活不止眼前的苟且，还有诗和远方。**
 - **You can either travel or read, but either your body or soul must be on the way.**
