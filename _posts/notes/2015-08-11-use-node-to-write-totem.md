@@ -10,6 +10,7 @@ I think may be it is the time to use the Node.js to rewrite the core of totem pr
 2. Create a prototype of the totem App
 
 pre:
+
 1. Study the node.js again
 2. To know what is the express of nodejs
 3. To know what is grunt.
