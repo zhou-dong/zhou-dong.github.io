@@ -155,6 +155,9 @@ tagline:
     - 2015 Spring Semester
     - Dr. Mago
 
+4. Speical Topics CS-6648-TBAA (Optimization Modeling)
+    - 2015 Summer Semester
+    - Dr. Mago
 
 145-146-413:1234
 
