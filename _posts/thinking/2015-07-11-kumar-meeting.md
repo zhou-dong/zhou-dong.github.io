@@ -17,3 +17,14 @@ tagline:
     - Dong suggest: Everythings is free, and First thing is make our project useful and let people like our app.
 
 3. Doctor Kumar will introduce more people to our project, first is his elder cousin, who is working in AT&T and have more experience on bussiness.
+
+
+1. integate censor data first
+2. 
+
+precalcute first in the 
+
+compress first
+restruct work
+
+最长使用的数据
