@@ -4,4 +4,5 @@ title: Notes of Maching Learning
 categories: machine-learning
 ---
 
-1. Regression
+1. Linear Regression
+2. Gradient Descent
