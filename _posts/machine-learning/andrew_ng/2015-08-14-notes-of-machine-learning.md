@@ -7,5 +7,7 @@ categories: machine-learning
 1. Linear Regression
 2. Gradient Descent
 3. Multivariate Linear Regression
+4. Normal Equation
 
+为了梯度下降的效率更高，可以按比例的归一化数据
 mohammed.alsafi313@gmail.com
