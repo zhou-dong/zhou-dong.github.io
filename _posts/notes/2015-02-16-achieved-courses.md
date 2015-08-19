@@ -91,6 +91,11 @@ tagline:
     - End Date: 08/09/2015
     - 授课学校：北京大学
 
+17. Android 手持系统的移动应用
+    - Start Date: 08/18 2015
+    - University of Maryland, College Park
+
+18. Machine Learning
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
