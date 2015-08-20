@@ -93,9 +93,14 @@ tagline:
 
 17. Android 手持系统的移动应用
     - Start Date: 08/18 2015
+    - End Date: 08/20 2015
     - University of Maryland, College Park
 
 18. Machine Learning
+    - Start Date: 08/15 2015
+    - Standford University
+    - Andrwe Ng
+
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
