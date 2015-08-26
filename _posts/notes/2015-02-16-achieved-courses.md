@@ -131,6 +131,11 @@ tagline:
     - Start Date: July 13 2015
     - End Date: July 15 2015
 
+5. android开发零基础入门教程
+    - 高明鑫
+    - Start Date: Aug 26 2015
+    - End Date
+
 #### Codecademy
 
 1. Python
