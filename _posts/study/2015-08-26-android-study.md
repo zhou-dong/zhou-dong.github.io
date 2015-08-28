@@ -5,7 +5,7 @@ tagline:
 
 ---
 
-iqqqqqq{% include JB/setup %}
+{% include JB/setup %}
 
 
 Activity: Like JavaScript
