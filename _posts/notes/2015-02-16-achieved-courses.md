@@ -134,7 +134,8 @@ tagline:
 5. android开发零基础入门教程
     - 高明鑫
     - Start Date: Aug 26 2015
-    - End Date
+    - End Date: Aug 29 2015
+    - 非常适合有一定web开发基础的人学习
 
 #### Codecademy
 
