@@ -11,6 +11,8 @@ categories: machine-learning
 5. Logstic Regression
 6. 在计算logistic Regression的cost function的时候，需要使用极大似然
 
+7. Regulation
+
 software: octave
 
 为了梯度下降的效率更高，可以按比例的归一化数据
