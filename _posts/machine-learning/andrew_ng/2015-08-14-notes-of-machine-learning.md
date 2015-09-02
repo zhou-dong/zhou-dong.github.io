@@ -13,6 +13,7 @@ categories: machine-learning
 
 7. Regularzation
 
+参数越小，cursive就越平滑
 software: octave
 
 为了梯度下降的效率更高，可以按比例的归一化数据
