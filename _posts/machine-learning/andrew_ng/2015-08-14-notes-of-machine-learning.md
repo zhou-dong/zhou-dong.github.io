@@ -11,7 +11,7 @@ categories: machine-learning
 5. Logstic Regression
 6. 在计算logistic Regression的cost function的时候，需要使用极大似然
 
-7. Regulation
+7. Regularzation
 
 software: octave
 
