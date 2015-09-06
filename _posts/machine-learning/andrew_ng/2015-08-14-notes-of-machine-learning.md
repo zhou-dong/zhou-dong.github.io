@@ -22,3 +22,6 @@ mohammed.alsafi313@gmail.com
 
 
 Aug 25, 2015
+
+1. 神经网络
+    分层次逐渐求解
