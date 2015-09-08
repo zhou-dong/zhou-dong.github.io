@@ -20,8 +20,9 @@ software: octave
 logstic regression是分类算法，而不是回归算法。
 mohammed.alsafi313@gmail.com
 
-
 Aug 25, 2015
 
 1. 神经网络
-    分层次逐渐求解
+    - 分层次逐渐求解
+2. 神经网络的应用
+    - 
