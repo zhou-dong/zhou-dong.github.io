@@ -27,6 +27,9 @@ Aug 25, 2015
 2. 神经网络的应用
 
 
+Support Vector machine
+
+
 255 - 256
 
 13.14
