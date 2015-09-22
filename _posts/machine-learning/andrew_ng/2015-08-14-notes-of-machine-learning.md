@@ -49,3 +49,8 @@ Support Vector machine
 13.14
 
 A and B
+
+
+- CPI (cycle per instruction)
+- MIPS ()
+-
