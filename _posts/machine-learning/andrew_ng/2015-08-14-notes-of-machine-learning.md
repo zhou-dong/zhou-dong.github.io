@@ -52,5 +52,5 @@ A and B
 
 
 - CPI (cycle per instruction)
-- MIPS ()
+- MIPS (millions of instructions per second)
 - Throughput
