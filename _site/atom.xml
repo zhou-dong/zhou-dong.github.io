@@ -4,13 +4,266 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-07-15T20:24:47-05:00</updated>
+ <updated>2015-10-06T00:33:48-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Data Stream Analyze</title>
+   <link href="http://zhou-dong.github.io/2015/10/05/data-stream"/>
+   <updated>2015-10-05T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/10/05/data-stream</id>
+   <content type="html">&lt;h4 id=&quot;section&quot;&gt;流式计算的特殊性:&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;数据实时到达;&lt;/li&gt;
+  &lt;li&gt;数据到达次序独立,不受应用系统所控制;&lt;/li&gt;
+  &lt;li&gt;数据规模宏大且不能预知其最大值;&lt;/li&gt;
+  &lt;li&gt;数据一经处理,除非特意保存,否则不能被再次取出处理,或者再次提取数据代价昂贵(one pass).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;我们觉得流计算的技术难点不是算法：&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;而是怎样在低成本、高可用的环境下快速的处理和存储流数据。&lt;/li&gt;
+  &lt;li&gt;在不同的应用场景之下，使用一些经过优化以后的数据挖掘算法，或者普通的算法。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先所有的算法，只要效率够高，都可以使用在流计算中。&lt;/li&gt;
+  &lt;li&gt;而真正的问题是分布式该工程的实现上。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;算法的关键在于设计一个远小于数据集规模的结构,从而可以在内存中处理数据.相对于数据流的规模而言,这种名为概要数据结构(synopsis data structure)的规模至多应该是次线性的.即如果流的长度为 N,则概要数据结构大小不超过 O(polylog(N)),并且处理流上每一组数据的时间不超过 O(polylog(N)).&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;可以用到一些方法或者是指导思想:&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Histogram
+    &lt;ul&gt;
+      &lt;li&gt;直方图技术就是将一个大数据集划分为很多个连续的桶(bucket),也就是小数据集,每个桶都由一个数字来代表其特征&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sampling
+    &lt;ul&gt;
+      &lt;li&gt;抽样方法也是生成概要数据结构的常用手段.它从数据集中抽取小部分数据代表整个数据集,并根据该样本集合获得查询结果.抽样方法可以分成均匀抽样(uniform sampling)和偏倚抽样(biased sampling)两种.&lt;/li&gt;
+      &lt;li&gt;(Wavelet)小波分析方法是一种通用的数字信号处理技术.类似于傅立叶变换,小波分析根据输入的模拟量,变换成一系列的小波参数,并且少数几个小波参数就拥有大部分能量&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Hash Method
+    &lt;ul&gt;
+      &lt;li&gt;Bloom Filter&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;科研界的成果：&lt;/h4&gt;
+
+&lt;p&gt;Data stream managerment system(DSMS)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;STREAM [Stanford University] http://infolab.stanford.edu/stream/&lt;/li&gt;
+  &lt;li&gt;Telegraph [berkeley] http://telegraph.cs.berkeley.edu/&lt;/li&gt;
+  &lt;li&gt;Aurora [Brown University] http://cs.brown.edu/research/aurora/&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;工业界的成果：&lt;/h4&gt;
+
+&lt;p&gt;PlatForm for Data Strem:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apache Storm https://storm.apache.org/
+    &lt;ul&gt;
+      &lt;li&gt;在Storm中，先要设计一个用于实时计算的图状结构，我们称之为拓扑（topology）。这个拓扑将会被提交给集群，由集群中的主控节点（master node）分发代码，将任务分配给工作节点（worker node）执行。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Apache Spark https://spark.apache.org/streaming/
+    &lt;ul&gt;
+      &lt;li&gt;Spark Streaming是核心Spark API的一个扩展，它并不会像Storm那样一次一个地处理数据流，而是在处理前按时间间隔预先将其切分为一段一段的批处理作业。Spark针对持续性数据流的抽象称为DStream（DiscretizedStream），一个DStream是一个微批处理（micro-batching）的RDD（弹性分布式数据集）；而RDD则是一种分布式数据集，能够以两种方式并行运作，分别是任意函数和滑动窗口数据的转换。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Apache Samza http://samza.apache.org/
+    &lt;ul&gt;
+      &lt;li&gt;Samza处理数据流时，会分别按次处理每条收到的消息。Samza的流单位既不是元组，也不是Dstream，而是一条条消息。在Samza中，数据流被切分开来，每个部分都由一组只读消息的有序数列构成，而这些消息每条都有一个特定的ID（offset）。该系统还支持批处理，即逐次处理同一个数据流分区的多条消息。Samza的执行与数据流模块都是可插拔式的，尽管Samza的特色是依赖Hadoop的Yarn（另一种资源调度器）和Apache Kafka。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;流式应用的相关组件&lt;/h4&gt;
+
+&lt;p&gt;Distributed Queue:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apache Kafka http://kafka.apache.org/&lt;/li&gt;
+  &lt;li&gt;Beanstalkd http://kr.github.io/beanstalkd/&lt;/li&gt;
+  &lt;li&gt;Apache Flume https://flume.apache.org/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Reference&lt;/p&gt;
+
+&lt;p&gt;Finding frequent items in data streams
+http://www.sciencedirect.com/science/article/pii/S0304397503004006&lt;/p&gt;
+
+&lt;p&gt;Counting Distinct Elements in a Data Stream
+http://link.springer.com/chapter/10.1007/3-540-45726-7_1&lt;/p&gt;
+
+&lt;p&gt;http://www.jos.org.cn/ch/reader/create_pdf.aspx?file_no=20040809&amp;amp;journal_id=jos&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notes of Android</title>
+   <link href="http://zhou-dong.github.io/2015/08/26/android-study"/>
+   <updated>2015-08-26T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/08/26/android-study</id>
+   <content type="html">
+&lt;p&gt;Activity: Like JavaScript&lt;/p&gt;
+
+&lt;p&gt;Layout: Like HTML&lt;/p&gt;
+
+&lt;p&gt;DDMS: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Log the monitor debug info into Eclipse&lt;/li&gt;
+  &lt;li&gt;Send message into monitor&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Notes of Maching Learning</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/08/14/notes-of-machine-learning"/>
+   <updated>2015-08-14T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/08/14/notes-of-machine-learning</id>
+   <content type="html">&lt;ol&gt;
+  &lt;li&gt;Linear Regression&lt;/li&gt;
+  &lt;li&gt;Gradient Descent&lt;/li&gt;
+  &lt;li&gt;Multivariate Linear Regression&lt;/li&gt;
+  &lt;li&gt;Normal Equation&lt;/li&gt;
+  &lt;li&gt;Logstic Regression&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在计算logistic Regression的cost function的时候，需要使用极大似然&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Regularzation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;参数越小，cursive就越平滑
+software: octave&lt;/p&gt;
+
+&lt;p&gt;为了梯度下降的效率更高，可以按比例的归一化数据
+logstic regression是分类算法，而不是回归算法。
+mohammed.alsafi313@gmail.com&lt;/p&gt;
+
+&lt;p&gt;Aug 25, 2015&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;神经网络
+    &lt;ul&gt;
+      &lt;li&gt;分层次逐渐求解&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;神经网络的应用&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;神经网路：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;逐层的求解&lt;/li&gt;
+  &lt;li&gt;计算出cost function，是训练最优值，
+    &lt;ul&gt;
+      &lt;li&gt;可以使用逻辑回归、&lt;/li&gt;
+      &lt;li&gt;梯度下降&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;使用back propagation，来计算梯度的值&lt;/li&gt;
+  &lt;li&gt;最常用的神经网络是三层神经网络：
+    &lt;ol&gt;
+      &lt;li&gt;输入层&lt;/li&gt;
+      &lt;li&gt;隐含层&lt;/li&gt;
+      &lt;li&gt;输出层&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;如果有多个“隐含层”，那各个隐含层的变量数目相同。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Support Vector machine&lt;/p&gt;
+
+&lt;p&gt;无监督学习&lt;/p&gt;
+
+&lt;p&gt;255 - 256&lt;/p&gt;
+
+&lt;p&gt;13.14&lt;/p&gt;
+
+&lt;p&gt;A and B&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CPI (cycle per instruction)&lt;/li&gt;
+  &lt;li&gt;MIPS (millions of instructions per second)&lt;/li&gt;
+  &lt;li&gt;Throughput&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>CS6649</title>
+   <link href="http://zhou-dong.github.io/2015/08/12/cs6649"/>
+   <updated>2015-08-12T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/08/12/cs6649</id>
+   <content type="html">&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cloud assisted delivering of health services over Health IoT&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sofeware defined virtual caching machanism over NDN&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Creation of Social network of IoTs&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Traffic aware rescource allocation and scheduring over GEO distribution cloud.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Use node.js to rewrite totem project</title>
+   <link href="http://zhou-dong.github.io/2015/08/11/use-node-to-write-totem"/>
+   <updated>2015-08-11T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/08/11/use-node-to-write-totem</id>
+   <content type="html">&lt;p&gt;I think may be it is the time to use the Node.js to rewrite the core of totem project.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I should name my project.&lt;/li&gt;
+  &lt;li&gt;Create a prototype of the totem App&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;pre:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Study the node.js again&lt;/li&gt;
+  &lt;li&gt;To know what is the express of nodejs&lt;/li&gt;
+  &lt;li&gt;To know what is grunt.&lt;/li&gt;
+  &lt;li&gt;to know how to export and require node module.&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Meeting online One</title>
@@ -33,8 +286,19 @@
       &lt;li&gt;Dong suggest: Everythings is free, and First thing is make our project useful and let people like our app.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Doctor Kumar will introduce more people to our project, first is his elder cousin, who is working in AT&amp;amp;T and have more experience on bussiness.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Doctor Kumar will introduce more people to our project, first is his elder cousin, who is working in AT&amp;amp;T and have more experience on bussiness.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;integate censor data first&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;precalcute first in the &lt;/p&gt;
+
+&lt;p&gt;compress first
+restruct work&lt;/p&gt;
+
+&lt;p&gt;最长使用的数据&lt;/p&gt;
 </content>
  </entry>
  
@@ -3821,6 +4085,47 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;The University of Minnesota &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;Practical Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 17/07 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 18/07 2015&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data Visualization
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 23/07 2015&lt;/li&gt;
+      &lt;li&gt;End Date:&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;计算导论与C语言基础
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 07/24 2015&lt;/li&gt;
+      &lt;li&gt;End Date:08/09 2015&lt;/li&gt;
+      &lt;li&gt;确实是非常好的一门课程,尤其是刚开始对计算机的历史的介绍，和图灵机院里的介绍！&lt;/li&gt;
+      &lt;li&gt;授课学校：北京大学&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;C程序设计进阶
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 08/06 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 08/09/2015&lt;/li&gt;
+      &lt;li&gt;授课学校：北京大学&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Android 手持系统的移动应用
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 08/18 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 08/20 2015&lt;/li&gt;
+      &lt;li&gt;University of Maryland, College Park&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 08/15 2015&lt;/li&gt;
+      &lt;li&gt;Standford University&lt;/li&gt;
+      &lt;li&gt;Andrwe Ng&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
@@ -3862,8 +4167,17 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;/li&gt;
   &lt;li&gt;Node.js Tutorial for Beginners
     &lt;ul&gt;
-      &lt;li&gt;https://www.youtube.com/watch?v=IW2M8G8uJ6o&amp;amp;list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_&amp;amp;index=1&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=-u-j7uqU7sI&amp;amp;index=1&amp;amp;list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_&quot;&gt;URL&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Start Date: July 13 2015&lt;/li&gt;
+      &lt;li&gt;End Date: July 15 2015&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;android开发零基础入门教程
+    &lt;ul&gt;
+      &lt;li&gt;高明鑫&lt;/li&gt;
+      &lt;li&gt;Start Date: Aug 26 2015&lt;/li&gt;
+      &lt;li&gt;End Date: Aug 29 2015&lt;/li&gt;
+      &lt;li&gt;非常适合有一定web开发基础的人学习&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -3889,6 +4203,12 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;li&gt;
     &lt;p&gt;Make an Interactive Website(Javascript and JQuery)&lt;/p&gt;
   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learn Ruby on Rails&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Learn the Command Line&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -3911,6 +4231,12 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;li&gt;Special Topics CS6649-TXAA (Graphical Data Mining)
     &lt;ul&gt;
       &lt;li&gt;2015 Spring Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Mago&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Speical Topics CS-6648-TBAA (Optimization Modeling)
+    &lt;ul&gt;
+      &lt;li&gt;2015 Summer Semester&lt;/li&gt;
       &lt;li&gt;Dr. Mago&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -6865,7 +7191,7 @@ esac
   &lt;li&gt;
     &lt;p&gt;把信送给加西亚&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;万物简史&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;万物简史&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;《大设计》&lt;/li&gt;
   &lt;li&gt;量子宇宙&lt;/li&gt;
   &lt;li&gt;啊哈！算法&lt;/li&gt;
