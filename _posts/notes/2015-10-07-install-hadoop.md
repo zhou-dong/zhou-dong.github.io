@@ -188,5 +188,9 @@ Ip Address: 10.33.1.74
 5. Start Hadoop
     - start-dfs.sh
 
-6. stop hadoop
+6. Check run status in master
+    - hdfs dfsadmin -report
+
+7. stop hadoop
     - stop-dfs.sh
+
