@@ -231,4 +231,4 @@ Ip Address: 10.33.1.74
 
 - ssh root@172.17.0.29
 
-Thany you
+Thank you!
