@@ -4,7 +4,13 @@ title: Install Hadoop for Computer Lab
 
 ---
 
-Reference: http://tashan10.com/yong-dockerda-jian-hadoopwei-fen-bu-shi-ji-qun/
+Universal USB Installer
+
+http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/#button
+
+Set up hadoop Reference
+
+ http://tashan10.com/yong-dockerda-jian-hadoopwei-fen-bu-shi-ji-qun/
 
 Operating System: 
 
