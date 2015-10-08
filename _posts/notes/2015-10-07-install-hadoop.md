@@ -101,7 +101,7 @@ Ip Address: 10.33.1.74
 - vim ~/.bashrc
 - export JAVA_HOME=/workspace/jdk1.8.0_60
 - export PATH=$JAVA_HOME/bin:$PATH
-- source /etc/profile
+- source ~/.bashrc
 
 ##### Commit change of docker
 
