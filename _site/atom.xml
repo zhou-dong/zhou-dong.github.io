@@ -4,13 +4,401 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-10-06T00:33:48-05:00</updated>
+ <updated>2015-10-08T17:13:44-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Install Hadoop for Computer Lab</title>
+   <link href="http://zhou-dong.github.io/2015/10/07/install-hadoop"/>
+   <updated>2015-10-07T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/10/07/install-hadoop</id>
+   <content type="html">&lt;p&gt;Universal USB Installer&lt;/p&gt;
+
+&lt;p&gt;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/#button&lt;/p&gt;
+
+&lt;p&gt;Set up hadoop Reference&lt;/p&gt;
+
+&lt;p&gt;http://tashan10.com/yong-dockerda-jian-hadoopwei-fen-bu-shi-ji-qun/&lt;/p&gt;
+
+&lt;p&gt;Operating System: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ubuntu 14.04.1 LTS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;User:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Username: hadoop&lt;/li&gt;
+  &lt;li&gt;Password: hadoop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ip Address: 10.33.1.74&lt;/p&gt;
+
+&lt;h4 id=&quot;configurate-ubuntu&quot;&gt;Configurate Ubuntu&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install SSH
+    &lt;ul&gt;
+      &lt;li&gt;sudo apt-get install openssh-server&lt;/li&gt;
+      &lt;li&gt;sudo apt-get install openssh-client&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Update
+    &lt;ul&gt;
+      &lt;li&gt;sudo apt-get update&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Update vim
+    &lt;ul&gt;
+      &lt;li&gt;sudo apt-get install vim&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create folder of workspace
+    &lt;ul&gt;
+      &lt;li&gt;mkdir workspace&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install Java
+    &lt;ol&gt;
+      &lt;li&gt;Download JDK
+        &lt;ul&gt;
+          &lt;li&gt;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;copy to ubuntu
+        &lt;ul&gt;
+          &lt;li&gt;scp ~/Downloads/jdk-8u60-linux-x64.gz hadoop@10.33.1.74:/home/hadoop/workspace/download/.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;upzip jdk
+        &lt;ul&gt;
+          &lt;li&gt;tar -xzvf jdk-8u60-linux-x64.gz&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;config jdk environment
+        &lt;ul&gt;
+          &lt;li&gt;vim ~/.profile&lt;/li&gt;
+          &lt;li&gt;export JAVA_HOME=/home/hadoop/workspace/jdk1.8.0_60&lt;/li&gt;
+          &lt;li&gt;export PATH=$JAVA_HOME/bin:$PATH&lt;/li&gt;
+          &lt;li&gt;source ~/.profile&lt;/li&gt;
+          &lt;li&gt;java -version&lt;/li&gt;
+          &lt;li&gt;javac -version&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;install-docker&quot;&gt;Install Docker&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sudo apt-get install apt-transport-https&lt;/li&gt;
+  &lt;li&gt;sudo apt-key adv &lt;code&gt;--keyserver&lt;/code&gt; hkp://keyserver.ubuntu.com:80 &lt;code&gt;--recv-keys&lt;/code&gt; 36A1D7869245C8950F966E92D8576A8BA88D21E9&lt;/li&gt;
+  &lt;li&gt;sudo bash -c “echo deb https://get.docker.io/ubuntu docker main &amp;gt; /etc/apt/sources.list.d/docker.list”&lt;/li&gt;
+  &lt;li&gt;sudo apt-get update&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sudo apt-get install lxc-docker&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sudo service docker start&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;add-user-into-docker&quot;&gt;Add user into docker&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a docker group
+    &lt;ul&gt;
+      &lt;li&gt;sudo groupadd docker&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Adding user &lt;code&gt;hadoop&lt;/code&gt; to group docker
+    &lt;ul&gt;
+      &lt;li&gt;sudo gpasswd -a hadoop docker&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Restart Docker
+    &lt;ul&gt;
+      &lt;li&gt;sudo service docker restart&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Test Docker
+    &lt;ul&gt;
+      &lt;li&gt;docker version&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;docker-common-command&quot;&gt;Docker common command&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;docker images：列出所有镜像(images)&lt;/li&gt;
+  &lt;li&gt;docker ps：列出正在运行的(容器)containers&lt;/li&gt;
+  &lt;li&gt;docker pull ubuntu：下载镜像&lt;/li&gt;
+  &lt;li&gt;docker run -i -t ubuntu /bin/bash：运行ubuntu镜像&lt;/li&gt;
+  &lt;li&gt;docker commit 3a09b2588478 ubuntu:mynewimage：提交你的变更，并且把容器保存成Tag为mynewimage的新的ubuntu镜像.(注意，这里提交只是提交到本地仓库，类似git)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;download-ubuntu-mirror-by-docker&quot;&gt;Download ubuntu mirror by docker&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;docker pull ubuntu:14.04&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;start-ubuntu-in-docker&quot;&gt;start ubuntu in docker&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;docker run -ti ubuntu&lt;/li&gt;
+  &lt;li&gt;docker run -ti ubuntu:14.04&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;test-docker-then-exit&quot;&gt;Test docker then exit&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;docker run ubuntu /bin/echo ‘Hello world’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;install-ssh-in-docker&quot;&gt;Install SSH In docker&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sudo apt-get install openssh-server&lt;/li&gt;
+  &lt;li&gt;sudo apt-get install openssh-client&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;install-java-in-docker&quot;&gt;Install Java In docker&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;vim ~/.bashrc&lt;/li&gt;
+  &lt;li&gt;export JAVA_HOME=/workspace/jdk1.8.0_60&lt;/li&gt;
+  &lt;li&gt;export PATH=$JAVA_HOME/bin:$PATH&lt;/li&gt;
+  &lt;li&gt;source ~/.bashrc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;commit-change-of-docker&quot;&gt;Commit change of docker&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;docker commit -m “java install” 122a2cecdd14 ubuntu:java&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;install-hadoop&quot;&gt;Install Hadoop&lt;/h4&gt;
+
+&lt;h5 id=&quot;install-wget&quot;&gt;Install wget&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;apt-get install wget&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;download-hadoop&quot;&gt;Download Hadoop&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;mkdir -p soft/apache/hadoop&lt;/li&gt;
+  &lt;li&gt;cd /root/soft/apache/hadoop&lt;/li&gt;
+  &lt;li&gt;wget http://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;config-hadoop-in-bashrc&quot;&gt;Config Hadoop in ./bashrc&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;export HADOOP_HOME=/root/soft/apache/hadoop/hadoop-2.6.0&lt;/li&gt;
+  &lt;li&gt;export HADOOP_CONFIG_HOME=$HADOOP_HOME/etc/hadoop&lt;/li&gt;
+  &lt;li&gt;export PATH=$PATH:$HADOOP_HOME/bin&lt;/li&gt;
+  &lt;li&gt;export PATH=$PATH:$HADOOP_HOME/sbin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;config-hadoop&quot;&gt;Config Hadoop&lt;/h5&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create three folder
+    &lt;ul&gt;
+      &lt;li&gt;mkdir tmp&lt;/li&gt;
+      &lt;li&gt;mkdir namenode&lt;/li&gt;
+      &lt;li&gt;mkdir datanode&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Config 
+    &lt;ul&gt;
+      &lt;li&gt;cd $HADOOP_CONFIG_HOME/&lt;/li&gt;
+      &lt;li&gt;cp mapred-site.xml.template mapred-site.xml&lt;/li&gt;
+      &lt;li&gt;.core-site.xml&lt;/li&gt;
+      &lt;li&gt;.hdfs-site.xml&lt;/li&gt;
+      &lt;li&gt;.mapred-site.xml&lt;/li&gt;
+      &lt;li&gt;hadoop-env.sh (export JAVA_HOME=/workspace/jdk1.8.0_60)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Format namenode
+    &lt;ul&gt;
+      &lt;li&gt;hadoop namenode -format&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install ssh
+    &lt;ul&gt;
+      &lt;li&gt;apt-get install ssh&lt;/li&gt;
+      &lt;li&gt;/var/run/sshd&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add ssh to barshrc
+    &lt;ul&gt;
+      &lt;li&gt;vim ~/.bashrc&lt;/li&gt;
+      &lt;li&gt;/usr/sbin/sshd&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create key
+    &lt;ul&gt;
+      &lt;li&gt;ssh-keygen -t rsa -P ‘’ -f ~/.ssh/id_dsa&lt;/li&gt;
+      &lt;li&gt;cd .ssh&lt;/li&gt;
+      &lt;li&gt;cat id_dsa.pub » authorized_keys&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;config-master-and-slave&quot;&gt;Config Master and Slave&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Start up all the master and slave
+    &lt;ul&gt;
+      &lt;li&gt;docker run -ti -h master ubuntu&lt;/li&gt;
+      &lt;li&gt;docker run -ti -h slave1 ubuntu&lt;/li&gt;
+      &lt;li&gt;docker run -ti -h slave2 ubuntu&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;check the ip of the machine
+    &lt;ul&gt;
+      &lt;li&gt;ifconfig&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;config host
+    &lt;ul&gt;
+      &lt;li&gt;vim /etc/hosts&lt;/li&gt;
+      &lt;li&gt;172.17.0.15 master&lt;/li&gt;
+      &lt;li&gt;172.17.0.16 slave1&lt;/li&gt;
+      &lt;li&gt;172.17.0.17 slave2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Config slave
+    &lt;ol&gt;
+      &lt;li&gt;go to master machine&lt;/li&gt;
+      &lt;li&gt;cd $HADOOP_CONFIG_HOME/&lt;/li&gt;
+      &lt;li&gt;vim slaves
+        &lt;ul&gt;
+          &lt;li&gt;slave1&lt;/li&gt;
+          &lt;li&gt;slave2&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Start Hadoop
+    &lt;ul&gt;
+      &lt;li&gt;start-dfs.sh&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Check run status in master
+    &lt;ul&gt;
+      &lt;li&gt;hdfs dfsadmin -report&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;stop hadoop
+    &lt;ul&gt;
+      &lt;li&gt;stop-dfs.sh&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Start stop docker
+    &lt;ul&gt;
+      &lt;li&gt;docker start bob_the_container&lt;/li&gt;
+      &lt;li&gt;docker start aa3f365f0f4e&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Start demaon docker
+    &lt;ul&gt;
+      &lt;li&gt;docker run -ti -d ubuntu&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;运行镜像，并让生成的容器一直在后台运行：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一个-d表示让容器在后台运行&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;末尾的-D表示启动ssh的daemon模式，不然容器启动后立刻就变为停止状态了&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;docker run -d NAME/VERSION /etc/init.d/ssh start -D&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ssh&quot;&gt;现在，便可以ssh登陆容器了。&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;查询容器IP
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;docker inspect CONTAINER_ID&lt;/td&gt;
+              &lt;td&gt;grep IP&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;登入
+    &lt;ul&gt;
+      &lt;li&gt;ssh root@IP&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;start-docker-as-deman&quot;&gt;start docker as deman&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;docker run -d &lt;code&gt;--name master&lt;/code&gt; &lt;code&gt;-h master&lt;/code&gt; ubuntu /etc/init.d/ssh start -D&lt;/li&gt;
+  &lt;li&gt;docker run -d &lt;code&gt;--name slave1&lt;/code&gt; &lt;code&gt;-h slave1&lt;/code&gt; ubuntu /etc/init.d/ssh start -D&lt;/li&gt;
+  &lt;li&gt;docker run -d &lt;code&gt;--name slave2&lt;/code&gt; &lt;code&gt;-h slave2&lt;/code&gt; ubuntu /etc/init.d/ssh start -D&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;find-ip-of-docker&quot;&gt;Find IP of docker&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;docker inspect master&lt;/td&gt;
+          &lt;td&gt;grep IP&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;docker inspect slave1&lt;/td&gt;
+          &lt;td&gt;grep IP&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;docker inspect slave2&lt;/td&gt;
+          &lt;td&gt;grep IP&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ssh root@172.17.0.29&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thank you!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Data Stream Analyze</title>

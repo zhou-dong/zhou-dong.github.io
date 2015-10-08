@@ -9,6 +9,7 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags.html
 
+http://zhou-dong.github.io/2015/10/07/install-hadoop
 http://zhou-dong.github.io/2015/10/05/data-stream
 http://zhou-dong.github.io/2015/08/26/android-study
 http://zhou-dong.github.io/machine-learning/2015/08/14/notes-of-machine-learning
