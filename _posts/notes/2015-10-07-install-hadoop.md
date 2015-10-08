@@ -55,13 +55,11 @@ Ip Address: 10.33.1.74
 
 #### Install Docker
 
-<pre>
-    sudo apt-get install apt-transport-https
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-    sudo bash -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
-    sudo apt-get update
-    sudo apt-get install lxc-docker
-</pre>
+- sudo apt-get install apt-transport-https
+- sudo apt-key adv `--keyserver` hkp://keyserver.ubuntu.com:80 `--recv-keys` 36A1D7869245C8950F966E92D8576A8BA88D21E9
+- sudo bash -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+- sudo apt-get update
+- sudo apt-get install lxc-docker
 
 - sudo service docker start
 
@@ -194,3 +192,43 @@ Ip Address: 10.33.1.74
 7. stop hadoop
     - stop-dfs.sh
 
+8. Start stop docker
+    - docker start bob_the_container
+    - docker start aa3f365f0f4e
+
+9. Start demaon docker
+    - docker run -ti -d ubuntu
+
+
+#### 运行镜像，并让生成的容器一直在后台运行：
+
+- 第一个-d表示让容器在后台运行
+- 末尾的-D表示启动ssh的daemon模式，不然容器启动后立刻就变为停止状态了
+
+- docker run -d NAME/VERSION /etc/init.d/ssh start -D
+
+
+#### 现在，便可以ssh登陆容器了。
+
+-  查询容器IP
+    + docker inspect CONTAINER_ID | grep IP
+
+- 登入
+    + ssh root@IP
+
+---
+
+##### start docker as deman
+
+- docker run -d `--name master` `-h master` ubuntu /etc/init.d/ssh start -D
+- docker run -d `--name slave1` `-h slave1` ubuntu /etc/init.d/ssh start -D
+- docker run -d `--name slave2` `-h slave2` ubuntu /etc/init.d/ssh start -D
+
+##### Find IP of docker
+- docker inspect master | grep IP
+- docker inspect slave1 | grep IP
+- docker inspect slave2 | grep IP
+
+- ssh root@172.17.0.29
+
+Thany you
