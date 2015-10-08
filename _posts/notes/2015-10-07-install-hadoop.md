@@ -165,5 +165,25 @@ Ip Address: 10.33.1.74
 #### Config Master and Slave
 
 1. Start up all the master and slave
+    - docker run -ti -h master ubuntu
+    - docker run -ti -h slave1 ubuntu
+    - docker run -ti -h slave2 ubuntu
 
+2. check the ip of the machine
+    - ifconfig
 
+3. config host
+    - vim /etc/hosts
+    - 172.17.0.15 master
+    - 172.17.0.16 slave1
+    - 172.17.0.17 slave2
+
+4. Config slave
+    1. go to master machine
+    2. cd $HADOOP_CONFIG_HOME/
+    3. vim slaves
+        - slave1
+        - slave2
+
+5. Start Hadoop
+    - start-all.sh
