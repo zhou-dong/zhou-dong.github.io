@@ -186,4 +186,7 @@ Ip Address: 10.33.1.74
         - slave2
 
 5. Start Hadoop
-    - start-all.sh
+    - start-dfs.sh
+
+6. stop hadoop
+    - stop-dfs.sh
