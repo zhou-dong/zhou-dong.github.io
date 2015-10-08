@@ -98,7 +98,7 @@ Ip Address: 10.33.1.74
 
 ##### Install Java In docker
 
-- vim /etc/profile
+- vim ~/.bashrc
 - export JAVA_HOME=/workspace/jdk1.8.0_60
 - export PATH=$JAVA_HOME/bin:$PATH
 - source /etc/profile
