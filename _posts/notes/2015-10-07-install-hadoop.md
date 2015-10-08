@@ -162,3 +162,8 @@ Ip Address: 10.33.1.74
     - cd .ssh
     - cat id_dsa.pub >> authorized_keys
 
+#### Config Master and Slave
+
+1. Start up all the master and slave
+
+
