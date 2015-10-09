@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-10-08T17:13:44-05:00</updated>
+ <updated>2015-10-09T13:04:35-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -395,6 +395,8 @@
   &lt;/li&gt;
   &lt;li&gt;ssh root@172.17.0.29&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h5 id=&quot;add-user-into-server&quot;&gt;add user into server&lt;/h5&gt;
 
 &lt;p&gt;Thank you!&lt;/p&gt;
 </content>
