@@ -233,4 +233,32 @@ Ip Address: 10.33.1.74
 
 ##### add user into server
 
+- sudo useradd userone
+- sudo passwd userone
+
+##### create foler of userone
+- sudo mkdir /home/userone
+
+- sudo useradd -d /home/usertwo -m usertwo
+
+##### Add user to docker group
+
+- sudo gpasswd -a userone docker
+
+- userone 157432
+- usertwo 17728
+- userthree 15062
+- userfour 17743
+- userfive 96574
+- usersix 45732
+- userseven 66843
+- usereight 57832
+- usernine 44573
+- userten 35762
+- usereleven 24876
+- userthirteen 13249
+
+
+
+
 Thank you!
