@@ -262,4 +262,12 @@ Ip Address: 10.33.1.74
 
 ---
 
+##### Virtual Machine IP is:
+
+- master: 172.17.0.33
+- slave1: 172.17.0.34
+- slave2: 172.17.0.35
+
+---
+
 Thank you!
