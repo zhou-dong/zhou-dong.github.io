@@ -245,6 +245,8 @@ Ip Address: 10.33.1.74
 
 - sudo gpasswd -a userone docker
 
+##### password of user
+
 - userone 157432
 - usertwo 17728
 - userthree 15062
@@ -258,7 +260,6 @@ Ip Address: 10.33.1.74
 - usereleven 24876
 - userthirteen 13249
 
-
-
+---
 
 Thank you!
