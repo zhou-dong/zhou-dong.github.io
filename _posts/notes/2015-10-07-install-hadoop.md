@@ -271,4 +271,6 @@ Ip Address: 10.33.1.74
 
 ---
 
+/home/hadoop/workspace/authorized_keyspub
+
 Thank you!
