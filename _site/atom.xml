@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-10-09T13:04:35-05:00</updated>
+ <updated>2015-10-09T15:35:55-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -397,6 +397,59 @@
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;add-user-into-server&quot;&gt;add user into server&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sudo useradd userone&lt;/li&gt;
+  &lt;li&gt;sudo passwd userone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;create-foler-of-userone&quot;&gt;create foler of userone&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;sudo mkdir /home/userone&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sudo useradd -d /home/usertwo -m usertwo&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;add-user-to-docker-group&quot;&gt;Add user to docker group&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sudo gpasswd -a userone docker&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;password-of-user&quot;&gt;password of user&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;userone 157432&lt;/li&gt;
+  &lt;li&gt;usertwo 17728&lt;/li&gt;
+  &lt;li&gt;userthree 15062&lt;/li&gt;
+  &lt;li&gt;userfour 17743&lt;/li&gt;
+  &lt;li&gt;userfive 96574&lt;/li&gt;
+  &lt;li&gt;usersix 45732&lt;/li&gt;
+  &lt;li&gt;userseven 66843&lt;/li&gt;
+  &lt;li&gt;usereight 57832&lt;/li&gt;
+  &lt;li&gt;usernine 44573&lt;/li&gt;
+  &lt;li&gt;userten 35762&lt;/li&gt;
+  &lt;li&gt;usereleven 24876&lt;/li&gt;
+  &lt;li&gt;usertwelve 567432&lt;/li&gt;
+  &lt;li&gt;userthirteen 13249&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;virtual-machine-ip-is&quot;&gt;Virtual Machine IP is:&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;master: 172.17.0.33&lt;/li&gt;
+  &lt;li&gt;slave1: 172.17.0.34&lt;/li&gt;
+  &lt;li&gt;slave2: 172.17.0.35&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;/home/hadoop/workspace/authorized_keyspub&lt;/p&gt;
 
 &lt;p&gt;Thank you!&lt;/p&gt;
 </content>
