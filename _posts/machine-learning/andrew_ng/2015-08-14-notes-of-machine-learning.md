@@ -43,6 +43,7 @@ Aug 25, 2015
 - Support Vector machine
 - Nerual Networks
 - K-Means
+- Principal Component Analysis(PCA)
 
 255 - 256
 
@@ -54,3 +55,4 @@ A and B
 - CPI (cycle per instruction)
 - MIPS (millions of instructions per second)
 - Throughput
+
