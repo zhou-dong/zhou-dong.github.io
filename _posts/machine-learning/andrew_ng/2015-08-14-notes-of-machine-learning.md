@@ -40,9 +40,9 @@ Aug 25, 2015
     3. 输出层
 5. 如果有多个“隐含层”，那各个隐含层的变量数目相同。
 
-Support Vector machine
-
-无监督学习
+- Support Vector machine
+- Nerual Networks
+- K-Means
 
 255 - 256
 
