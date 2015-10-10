@@ -43,7 +43,8 @@ Aug 25, 2015
 - Support Vector machine
 - Nerual Networks
 - K-Means
-- Principal Component Analysis(PCA)
+- DIMENSIONALITY REDUCTION
+    - Principal Component Analysis(PCA)
 
 255 - 256
 
