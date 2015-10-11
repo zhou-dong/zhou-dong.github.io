@@ -48,7 +48,7 @@ Aug 25, 2015
 
 - recommendation system
     - content base recommendation system
-
+    - collaborative filtering
 
 255 - 256
 
