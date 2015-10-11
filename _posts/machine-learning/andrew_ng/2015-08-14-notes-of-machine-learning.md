@@ -46,6 +46,10 @@ Aug 25, 2015
 - DIMENSIONALITY REDUCTION
     - Principal Component Analysis(PCA)
 
+- recommendation system
+    - content base recommendation system
+
+
 255 - 256
 
 13.14
