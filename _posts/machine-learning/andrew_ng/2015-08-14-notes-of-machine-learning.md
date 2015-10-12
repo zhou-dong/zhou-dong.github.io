@@ -53,6 +53,9 @@ Aug 25, 2015
 - Online Learning
 - Map reduce
 
+- Photo OCR
+- Pipline in machine learning
+
 255 - 256
 
 13.14
