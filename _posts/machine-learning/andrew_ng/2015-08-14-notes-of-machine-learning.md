@@ -66,4 +66,5 @@ A and B
 - CPI (cycle per instruction)
 - MIPS (millions of instructions per second)
 - Throughput
+- artifical data synthesis
 
