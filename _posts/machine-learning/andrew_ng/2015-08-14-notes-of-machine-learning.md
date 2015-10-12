@@ -50,6 +50,9 @@ Aug 25, 2015
     - content base recommendation system
     - collaborative filtering
 
+- Online Learning
+- Map reduce
+
 255 - 256
 
 13.14
