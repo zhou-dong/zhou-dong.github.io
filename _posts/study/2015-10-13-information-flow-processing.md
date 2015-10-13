@@ -47,6 +47,10 @@ describes a framework to model and analyze the different aspects that are releva
     3. At the end of this phase we have a set of rules that have to be executed.
 
 2. Processing Model
+    Together with the last information item entering the Decider, the set of deployed rules, and the information stored in the History and in the Knowledge Base, three additional concepts concur at uniquely determining the output of a single detection- production cycle: the selection, consumption, and load shedding policies adopted by the system.
+    1. 
+
+
 ---
 
 ##### Section 4 
