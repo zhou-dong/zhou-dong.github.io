@@ -65,7 +65,10 @@ describes a framework to model and analyze the different aspects that are releva
     - In many IFP scenarios, in fact, information received from sources has an associated degree of uncertainty. As an example, if sources were only able to provide rounded data [Wasserkrug et al. 2008], the system could associate such data with a level of uncertainty instead of accepting it as a precise information.
     - Engines allow different types of information items in the same flow.
 
+6. Time Model
 
+    - With the term time model we refer to the relationship between the information items flowing into the IFP engine and the passing of time. More precisely, we refer to the ability of the IFP system of associating some kind of happened-before relationship to information items.
+    - There is the case of systems that associate items with an interval, i.e., two timestamps taken from a global time, usually representing: the time when the related event started, the time when it ended. In this case, depending on the semantics associated with intervals, a total or a partial ordering among items can be defined.
 
 ---
 
