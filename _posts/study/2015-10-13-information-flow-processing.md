@@ -103,7 +103,17 @@ We use this framework in Section 4 to describe and compare the state of the art 
     + Usually, these systems are designed for application domains in which the timeliness requirement is less critical, like for example Internet updates monitoring. On the contrary, all remaining systems are heavily tailored for the processing of high rate streams.
 - Commercial Systems
     + The platform is designed to scale by exploiting multiple cores on a single ma- chine or multiple machines in a clustered environment. 
-
+    + Aleri Streaming Platform.
+    + Coral8 CEP Engine.
+    + StreamBase. 
+    + Oracle CEP. 
+    + Esper.
+    + Tibco Business Events.
+    + IBM System S. 
+    + Other commercial systems. 
+    + IBM WebSphere Business Events.
+    + Event Zero.
+    + Progress Apama Event Processing Platform.
 
 ---
 
