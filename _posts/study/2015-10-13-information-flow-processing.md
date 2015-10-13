@@ -60,7 +60,10 @@ describes a framework to model and analyze the different aspects that are releva
     - In a pull observation model, the IFP engine is the initiator of the interaction to bring information from sources to the engine; otherwise we have a push observation model.
  
 5. Data Model
-    - 
+    - Former manipulate generic data items
+    - While the latter manipulates event notifications
+    - In many IFP scenarios, in fact, information received from sources has an associated degree of uncertainty. As an example, if sources were only able to provide rounded data [Wasserkrug et al. 2008], the system could associate such data with a level of uncertainty instead of accepting it as a precise information.
+    - Engines allow different types of information items in the same flow.
 
 
 
