@@ -41,6 +41,12 @@ There are several tools classified as active database systems, with different so
 
 describes a framework to model and analyze the different aspects that are relevant for an IFP engine from its functional architecture, to its data and processing models, to the language it provides to express how information has to be processed, to its run-time architecture. 
 
+1. Functional Model
+    1. Each time a new item (including those periodically produced by the Clock) enters the engine through the Receiver
+    2. Evaluates all the rules currently present in the Rules store to find those whose condition part is true.
+    3. At the end of this phase we have a set of rules that have to be executed.
+
+2. Processing Model
 ---
 
 ##### Section 4 
