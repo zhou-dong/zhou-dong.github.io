@@ -5,7 +5,9 @@ tagline:
 
 ---
 
-#### Information Flow Processing(IFP)
+#### Section 1
+
+- Information Flow Processing(IFP)
 
 - Information of Data no need to be stored into Database systems
     + Not deal with persistent data
