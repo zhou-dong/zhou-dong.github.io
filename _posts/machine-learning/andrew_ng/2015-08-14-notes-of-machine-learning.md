@@ -56,6 +56,10 @@ Aug 25, 2015
 - Photo OCR
 - Pipline in machine learning
 
+- finish the course
+
+--- 
+
 255 - 256
 
 13.14
