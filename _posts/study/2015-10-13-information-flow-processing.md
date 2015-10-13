@@ -33,7 +33,8 @@ describes the IFP domain in more detail, provides an initial description of the 
 
 ##### Active database system
 
-There are several tools classified as active database systems, with different soft- ware architectures, functionality, and oriented toward different application domains
+- Something origial DB can not do
+- There are several tools classified as active database systems, with different software architectures, functionality, and oriented toward different application domains
 
 ---
 
@@ -77,6 +78,8 @@ describes a framework to model and analyze the different aspects that are releva
 8. Language Model
     - It is worth mentioning that existing systems sometime allow users to express rules using more than one paradigm. For example, many commercial systems offer both a declarative language for rule creation, and a graphical tool for connecting defined rules in an imperative way. Moreover, some existing declarative languages embed simple operators for pattern detection, blurring the distinction between transform- ing and detecting languages.
     - SQL
+    - Available Operators
+    - Logistic Operators 
     - COMMAND ( A && B, A || B)
 
 ---
