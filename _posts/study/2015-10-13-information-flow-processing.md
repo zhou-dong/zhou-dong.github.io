@@ -76,7 +76,8 @@ describes a framework to model and analyze the different aspects that are releva
 
 8. Language Model
     - It is worth mentioning that existing systems sometime allow users to express rules using more than one paradigm. For example, many commercial systems offer both a declarative language for rule creation, and a graphical tool for connecting defined rules in an imperative way. Moreover, some existing declarative languages embed simple operators for pattern detection, blurring the distinction between transform- ing and detecting languages.
-
+    - SQL
+    - COMMAND ( A && B, A || B)
 
 ---
 
@@ -86,13 +87,13 @@ We use this framework in Section 4 to describe and compare the state of the art 
 
 ---
 
-##### Section 5
+#### Section 5
 
 Discussing the results of such classification in Section 5. 
 
 ---
 
-##### Section 6
+#### Section 6
 
 Finally, Section 6 reviews related work, while Section 7 provides some conclusive remarks and a list of open issues.
 
