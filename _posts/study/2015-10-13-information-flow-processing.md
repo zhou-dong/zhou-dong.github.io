@@ -127,6 +127,13 @@ Discussing the results of such classification in Section 5.
 
 Finally, Section 6 reviews related work, while Section 7 provides some conclusive remarks and a list of open issues.
 
+- In this section we briefly discuss the results of on-going or past research which aims at providing a more complete understanding of the IFP domain. In particular we cover four different aspects: 
+
+1. we present work that studies general mechanisms for IFP; 
+2. we review specific models used to describe various classes of systems, or to address single issues; 
+3. we provide an overview of systems presenting similarities with IFP systems; 
+4. we discuss existing attempts to create a standard for the IFP domain.
+
 ---
 
 #### Online Machine Learning
