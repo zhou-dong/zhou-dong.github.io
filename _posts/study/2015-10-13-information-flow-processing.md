@@ -27,7 +27,7 @@ tagline:
 May be come from the publish-subsribe domain
 
 
-##### Section 2 
+#### Section 2 
 
 describes the IFP domain in more detail, provides an initial description of the different technologies that have been developed to support it, and explains the need for combining the best of different worlds to fully support IFP applications. 
 
@@ -37,7 +37,7 @@ There are several tools classified as active database systems, with different so
 
 ---
 
-##### Section 3 
+#### Section 3 
 
 describes a framework to model and analyze the different aspects that are relevant for an IFP engine from its functional architecture, to its data and processing models, to the language it provides to express how information has to be processed, to its run-time architecture. 
 
@@ -53,7 +53,7 @@ describes a framework to model and analyze the different aspects that are releva
 
 ---
 
-##### Section 4 
+#### Section 4 
 
 We use this framework in Section 4 to describe and compare the state of the art in the field.
 
