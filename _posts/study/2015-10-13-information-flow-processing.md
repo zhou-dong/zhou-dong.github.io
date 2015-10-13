@@ -74,6 +74,10 @@ describes a framework to model and analyze the different aspects that are releva
 
     - Rules are much more complex entities than data. Looking at existing systems we can find many different approaches to represent rules, which depend on the adopted rule language. However, we can roughly classify them in two macro classes: transforming rules and detecting rules.
 
+8. Language Model
+    - It is worth mentioning that existing systems sometime allow users to express rules using more than one paradigm. For example, many commercial systems offer both a declarative language for rule creation, and a graphical tool for connecting defined rules in an imperative way. Moreover, some existing declarative languages embed simple operators for pattern detection, blurring the distinction between transform- ing and detecting languages.
+
+
 ---
 
 #### Section 4 
