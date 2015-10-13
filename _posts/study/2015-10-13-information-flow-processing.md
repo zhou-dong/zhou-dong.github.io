@@ -134,6 +134,22 @@ Finally, Section 6 reviews related work, while Section 7 provides some conclusiv
 3. we provide an overview of systems presenting similarities with IFP systems; 
 4. we discuss existing attempts to create a standard for the IFP domain.
 
+- Many researchers focused on developing general mechanisms for IFP by studying (i) rule processing strategies, (ii) operator placement and load balancing algorithms, (iii) communication protocols for distributed rule processing, (iv) techniques to provide adequate levels of QoS, and (v) mechanisms for high availability and fault tolerance.
+- In distributed scenarios it is of primary importance to define efficient communica- tion strategies between the different actors (sources, processors, and sinks).
+- Different contributions, primarily from people working on stream processing, fo- cused on the problem of bursty arrival of data 
+- Recently, a few works coming from the event-based community
+- Finally, a few works have focused on high-availability and fault tolerance for dis- tributed stream processing. 
+
+##### Other Models
+
+- As we have seen, IFP is a large domain, including many systems. Although the literature misses a unifying model, which is able to capture and classify all existing works, various contributions are worth mentioning. 
+
+- System Models. 
+    + As described in Section 2, two main models for IFP have emerged, one coming from the database community and one coming from the event- processing community.
+
+- Models for Single Aspects of IFP.
+    + A relevant part of our classification focuses on the data representations and rule definition languages adopted by IFP systems, and on the underlying time model assumed for processing. 
+
 ---
 
 #### Online Machine Learning
