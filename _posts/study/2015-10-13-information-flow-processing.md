@@ -88,6 +88,23 @@ describes a framework to model and analyze the different aspects that are releva
 
 We use this framework in Section 4 to describe and compare the state of the art in the field.
 
+- In the following we use the concepts introduced in Section 3 to present and classify existing IFP systems. We provide a brief description of each system and summarize its characteristics by compiling four tables.
+
+1. Table I focuses on the functional and processing models of each system: it shows if a system includes the Clock (i.e., it supports periodic processing) and the Knowl- edge Base, and if the maximum size of the sequences (Seq) that the Decider sends to the Producer is bounded or unbounded, given the set of deployed rules. Then, it analyzes if information items produced by fired rules may re-enter the system (recursion), and if the rule set can be changed by fired actions at run-time. Fi- nally, it presents the processing model of each system, by showing its selection, consumption, and load shedding policies.
+
+2. Table II focuses on the deployment and interaction models, by showing the type of deployment supported by each system, and the interaction styles allowed in the observation, notification, and forwarding models.
+
+3. Table III focuses on the data, time, and rule models, presenting the nature of the items processed by each systems (generic data or event notifications), the format of data, the support for data uncertainty, and the nature of flows (homogeneous or heterogeneous). It also introduces how the notion of time is captured and rep- resented by each system, the type of rules adopted, and the possibility to define probabilistic rules.
+
+3. Finally, Table IV focuses on the language adopted by each system, by listing its type and the set of operators available.
+
+- Active databases
+- Data Stream Management Systems
+    + Usually, these systems are designed for application domains in which the timeliness requirement is less critical, like for example Internet updates monitoring. On the contrary, all remaining systems are heavily tailored for the processing of high rate streams.
+- Commercial Systems
+    + The platform is designed to scale by exploiting multiple cores on a single ma- chine or multiple machines in a clustered environment. 
+
+
 ---
 
 #### Section 5
