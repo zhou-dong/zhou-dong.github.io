@@ -150,6 +150,12 @@ Finally, Section 6 reviews related work, while Section 7 provides some conclusiv
 - Models for Single Aspects of IFP.
     + A relevant part of our classification focuses on the data representations and rule definition languages adopted by IFP systems, and on the underlying time model assumed for processing. 
 
+- Related Systems
+    + Besides the systems described in Section 4, other tools exist, which share many similarities with IFP systems.
+    + Runtime Verification Tools.
+    + Runtime Monitoring Tools.
+    + Scalable Distributed Information Management Systems. 
+
 ---
 
 #### Online Machine Learning
