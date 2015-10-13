@@ -47,8 +47,21 @@ describes a framework to model and analyze the different aspects that are releva
     3. At the end of this phase we have a set of rules that have to be executed.
 
 2. Processing Model
-    Together with the last information item entering the Decider, the set of deployed rules, and the information stored in the History and in the Knowledge Base, three additional concepts concur at uniquely determining the output of a single detection- production cycle: the selection, consumption, and load shedding policies adopted by the system.
-    1. 
+    - Together with the last information item entering the Decider, the set of deployed rules, and the information stored in the History and in the Knowledge Base, three additional concepts concur at uniquely determining the output of a single detection- production cycle: the selection, consumption, and load shedding policies adopted by the system.
+    - some systems offer a programmable policy, by including special language constructs that enable users to decide, often rule by rule, if they have to fire once or more than once at each detection-production cycle, and in the former case, which elements have to be actually selected among the different possible combinations. 
+    - Load shedding. Load shedding is a technique adopted by some IFP systems to deal with bursty inputs. It can be described as an automatic drop of information items when the input rate becomes too high for the processing capabilities of the engine.
+
+3. Deployment Model
+
+    - A networked IFP engine focuses on minimizing network usage by dispersing processors over a wide area network, with the goal of `processing information as close as possible to the sources`.
+    - In summary, in their seek for better scalability, clustered and networked engines focus on different aspects: the former on increasing the available processing power by sharing the workload among a set of well connected machines, the latter on minimizing bandwidth usage by processing information as close as possible to the sources.
+
+4. Interaction Model 
+    - In a pull observation model, the IFP engine is the initiator of the interaction to bring information from sources to the engine; otherwise we have a push observation model.
+ 
+5. Data Model
+    - 
+
 
 
 ---
