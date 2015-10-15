@@ -101,6 +101,11 @@ tagline:
     - Standford University
     - Andrwe Ng
 
+19. 机器学习基础：案例研究
+    - Start Date: 10/15 2015
+    - End Date:
+    - 华盛顿大学
+
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
