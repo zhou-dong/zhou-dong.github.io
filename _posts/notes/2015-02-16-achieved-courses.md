@@ -180,11 +180,15 @@ tagline:
     - 2015 Summer Semester
     - Dr. Mago
 
-5. cs6649
+5. Computer Architecture CS-5545-TXAA
+    - 2015 Fall Semester
 
-6. cs6649 probality graphy
+6. Special Topics CS-6649-TRAB (Advantaged Networking)
+    - 2015 Fall Semester
 
-7. cs
+7. Special Topics CS6649-TRAA (Probabilistic Graphical Models)
+    - 2015 Fall Semester
+
 145-146-413:1234
 
 singer-eminme
