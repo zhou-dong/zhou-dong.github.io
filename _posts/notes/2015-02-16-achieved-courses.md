@@ -182,12 +182,15 @@ tagline:
 
 5. Computer Architecture CS-5545-TXAA
     - 2015 Fall Semester
+    - Dr. Zhong
 
 6. Special Topics CS-6649-TRAB (Advantaged Networking)
     - 2015 Fall Semester
+    - Dr. Kumar
 
 7. Special Topics CS6649-TRAA (Probabilistic Graphical Models)
     - 2015 Fall Semester
+    - Dr. Karen Hovsepian
 
 145-146-413:1234
 
