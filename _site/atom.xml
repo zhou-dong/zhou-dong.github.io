@@ -4,13 +4,253 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-10-09T16:22:42-05:00</updated>
+ <updated>2015-10-18T12:48:23-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Information Flow Processing</title>
+   <link href="http://zhou-dong.github.io/2015/10/13/information-flow-processing"/>
+   <updated>2015-10-13T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/10/13/information-flow-processing</id>
+   <content type="html">&lt;h4 id=&quot;section-1&quot;&gt;Section 1&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Information Flow Processing(IFP)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Information of Data no need to be stored into Database systems
+    &lt;ul&gt;
+      &lt;li&gt;Not deal with persistent data&lt;/li&gt;
+      &lt;li&gt;Deal with transient data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data from different source 
+    &lt;ul&gt;
+      &lt;li&gt;Device sensors&lt;/li&gt;
+      &lt;li&gt;Mobile phones&lt;/li&gt;
+      &lt;li&gt;Web servers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Contributions to this model come from different communities
+    &lt;ul&gt;
+      &lt;li&gt;distributed information systems&lt;/li&gt;
+      &lt;li&gt;nusiness process automation&lt;/li&gt;
+      &lt;li&gt;control systems&lt;/li&gt;
+      &lt;li&gt;network monitoring&lt;/li&gt;
+      &lt;li&gt;sensor networks&lt;/li&gt;
+      &lt;li&gt;middleware in general&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;May be come from the publish-subsribe domain&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;Section 2&lt;/h4&gt;
+
+&lt;p&gt;describes the IFP domain in more detail, provides an initial description of the different technologies that have been developed to support it, and explains the need for combining the best of different worlds to fully support IFP applications. &lt;/p&gt;
+
+&lt;h5 id=&quot;active-database-system&quot;&gt;Active database system&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Something origial DB can not do&lt;/li&gt;
+  &lt;li&gt;There are several tools classified as active database systems, with different software architectures, functionality, and oriented toward different application domains&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;Section 3&lt;/h4&gt;
+
+&lt;p&gt;describes a framework to model and analyze the different aspects that are relevant for an IFP engine from its functional architecture, to its data and processing models, to the language it provides to express how information has to be processed, to its run-time architecture. &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Functional Model
+    &lt;ol&gt;
+      &lt;li&gt;Each time a new item (including those periodically produced by the Clock) enters the engine through the Receiver&lt;/li&gt;
+      &lt;li&gt;Evaluates all the rules currently present in the Rules store to find those whose condition part is true.&lt;/li&gt;
+      &lt;li&gt;At the end of this phase we have a set of rules that have to be executed.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Processing Model
+    &lt;ul&gt;
+      &lt;li&gt;Together with the last information item entering the Decider, the set of deployed rules, and the information stored in the History and in the Knowledge Base, three additional concepts concur at uniquely determining the output of a single detection- production cycle: the selection, consumption, and load shedding policies adopted by the system.&lt;/li&gt;
+      &lt;li&gt;some systems offer a programmable policy, by including special language constructs that enable users to decide, often rule by rule, if they have to fire once or more than once at each detection-production cycle, and in the former case, which elements have to be actually selected among the different possible combinations. &lt;/li&gt;
+      &lt;li&gt;Load shedding. Load shedding is a technique adopted by some IFP systems to deal with bursty inputs. It can be described as an automatic drop of information items when the input rate becomes too high for the processing capabilities of the engine.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deployment Model&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;A networked IFP engine focuses on minimizing network usage by dispersing processors over a wide area network, with the goal of &lt;code&gt;processing information as close as possible to the sources&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;In summary, in their seek for better scalability, clustered and networked engines focus on different aspects: the former on increasing the available processing power by sharing the workload among a set of well connected machines, the latter on minimizing bandwidth usage by processing information as close as possible to the sources.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Interaction Model 
+    &lt;ul&gt;
+      &lt;li&gt;In a pull observation model, the IFP engine is the initiator of the interaction to bring information from sources to the engine; otherwise we have a push observation model.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data Model
+    &lt;ul&gt;
+      &lt;li&gt;Former manipulate generic data items&lt;/li&gt;
+      &lt;li&gt;While the latter manipulates event notifications&lt;/li&gt;
+      &lt;li&gt;In many IFP scenarios, in fact, information received from sources has an associated degree of uncertainty. As an example, if sources were only able to provide rounded data [Wasserkrug et al. 2008], the system could associate such data with a level of uncertainty instead of accepting it as a precise information.&lt;/li&gt;
+      &lt;li&gt;Engines allow different types of information items in the same flow.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Time Model&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;With the term time model we refer to the relationship between the information items flowing into the IFP engine and the passing of time. More precisely, we refer to the ability of the IFP system of associating some kind of happened-before relationship to information items.&lt;/li&gt;
+      &lt;li&gt;There is the case of systems that associate items with an interval, i.e., two timestamps taken from a global time, usually representing: the time when the related event started, the time when it ended. In this case, depending on the semantics associated with intervals, a total or a partial ordering among items can be defined.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Rule Model&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Rules are much more complex entities than data. Looking at existing systems we can find many different approaches to represent rules, which depend on the adopted rule language. However, we can roughly classify them in two macro classes: transforming rules and detecting rules.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Language Model
+    &lt;ul&gt;
+      &lt;li&gt;It is worth mentioning that existing systems sometime allow users to express rules using more than one paradigm. For example, many commercial systems offer both a declarative language for rule creation, and a graphical tool for connecting defined rules in an imperative way. Moreover, some existing declarative languages embed simple operators for pattern detection, blurring the distinction between transform- ing and detecting languages.&lt;/li&gt;
+      &lt;li&gt;SQL&lt;/li&gt;
+      &lt;li&gt;Available Operators&lt;/li&gt;
+      &lt;li&gt;Logistic Operators &lt;/li&gt;
+      &lt;li&gt;
+        &lt;table&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;COMMAND ( A &amp;amp;&amp;amp; B, A&lt;/td&gt;
+              &lt;td&gt; &lt;/td&gt;
+              &lt;td&gt;B)&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;Section 4&lt;/h4&gt;
+
+&lt;p&gt;We use this framework in Section 4 to describe and compare the state of the art in the field.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In the following we use the concepts introduced in Section 3 to present and classify existing IFP systems. We provide a brief description of each system and summarize its characteristics by compiling four tables.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Table I focuses on the functional and processing models of each system: it shows if a system includes the Clock (i.e., it supports periodic processing) and the Knowl- edge Base, and if the maximum size of the sequences (Seq) that the Decider sends to the Producer is bounded or unbounded, given the set of deployed rules. Then, it analyzes if information items produced by fired rules may re-enter the system (recursion), and if the rule set can be changed by fired actions at run-time. Fi- nally, it presents the processing model of each system, by showing its selection, consumption, and load shedding policies.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Table II focuses on the deployment and interaction models, by showing the type of deployment supported by each system, and the interaction styles allowed in the observation, notification, and forwarding models.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Table III focuses on the data, time, and rule models, presenting the nature of the items processed by each systems (generic data or event notifications), the format of data, the support for data uncertainty, and the nature of flows (homogeneous or heterogeneous). It also introduces how the notion of time is captured and rep- resented by each system, the type of rules adopted, and the possibility to define probabilistic rules.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finally, Table IV focuses on the language adopted by each system, by listing its type and the set of operators available.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Active databases&lt;/li&gt;
+  &lt;li&gt;Data Stream Management Systems
+    &lt;ul&gt;
+      &lt;li&gt;Usually, these systems are designed for application domains in which the timeliness requirement is less critical, like for example Internet updates monitoring. On the contrary, all remaining systems are heavily tailored for the processing of high rate streams.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Commercial Systems
+    &lt;ul&gt;
+      &lt;li&gt;The platform is designed to scale by exploiting multiple cores on a single ma- chine or multiple machines in a clustered environment. &lt;/li&gt;
+      &lt;li&gt;Aleri Streaming Platform.&lt;/li&gt;
+      &lt;li&gt;Coral8 CEP Engine.&lt;/li&gt;
+      &lt;li&gt;StreamBase. &lt;/li&gt;
+      &lt;li&gt;Oracle CEP. &lt;/li&gt;
+      &lt;li&gt;Esper.&lt;/li&gt;
+      &lt;li&gt;Tibco Business Events.&lt;/li&gt;
+      &lt;li&gt;IBM System S. &lt;/li&gt;
+      &lt;li&gt;Other commercial systems. &lt;/li&gt;
+      &lt;li&gt;IBM WebSphere Business Events.&lt;/li&gt;
+      &lt;li&gt;Event Zero.&lt;/li&gt;
+      &lt;li&gt;Progress Apama Event Processing Platform.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;Section 5&lt;/h4&gt;
+
+&lt;p&gt;Discussing the results of such classification in Section 5. &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-6&quot;&gt;Section 6&lt;/h4&gt;
+
+&lt;p&gt;Finally, Section 6 reviews related work, while Section 7 provides some conclusive remarks and a list of open issues.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In this section we briefly discuss the results of on-going or past research which aims at providing a more complete understanding of the IFP domain. In particular we cover four different aspects: &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;we present work that studies general mechanisms for IFP; &lt;/li&gt;
+  &lt;li&gt;we review specific models used to describe various classes of systems, or to address single issues; &lt;/li&gt;
+  &lt;li&gt;we provide an overview of systems presenting similarities with IFP systems; &lt;/li&gt;
+  &lt;li&gt;we discuss existing attempts to create a standard for the IFP domain.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Many researchers focused on developing general mechanisms for IFP by studying (i) rule processing strategies, (ii) operator placement and load balancing algorithms, (iii) communication protocols for distributed rule processing, (iv) techniques to provide adequate levels of QoS, and (v) mechanisms for high availability and fault tolerance.&lt;/li&gt;
+  &lt;li&gt;In distributed scenarios it is of primary importance to define efficient communica- tion strategies between the different actors (sources, processors, and sinks).&lt;/li&gt;
+  &lt;li&gt;Different contributions, primarily from people working on stream processing, fo- cused on the problem of bursty arrival of data &lt;/li&gt;
+  &lt;li&gt;Recently, a few works coming from the event-based community&lt;/li&gt;
+  &lt;li&gt;Finally, a few works have focused on high-availability and fault tolerance for dis- tributed stream processing. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;other-models&quot;&gt;Other Models&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;As we have seen, IFP is a large domain, including many systems. Although the literature misses a unifying model, which is able to capture and classify all existing works, various contributions are worth mentioning. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;System Models. 
+    &lt;ul&gt;
+      &lt;li&gt;As described in Section 2, two main models for IFP have emerged, one coming from the database community and one coming from the event- processing community.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Models for Single Aspects of IFP.
+    &lt;ul&gt;
+      &lt;li&gt;A relevant part of our classification focuses on the data representations and rule definition languages adopted by IFP systems, and on the underlying time model assumed for processing. &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Related Systems
+    &lt;ul&gt;
+      &lt;li&gt;Besides the systems described in Section 4, other tools exist, which share many similarities with IFP systems.&lt;/li&gt;
+      &lt;li&gt;Runtime Verification Tools.&lt;/li&gt;
+      &lt;li&gt;Runtime Monitoring Tools.&lt;/li&gt;
+      &lt;li&gt;Scalable Distributed Information Management Systems. &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;online-machine-learning&quot;&gt;Online Machine Learning&lt;/h4&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Install Hadoop for Computer Lab</title>
@@ -645,9 +885,33 @@ mohammed.alsafi313@gmail.com&lt;/p&gt;
   &lt;li&gt;如果有多个“隐含层”，那各个隐含层的变量数目相同。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Support Vector machine&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support Vector machine&lt;/li&gt;
+  &lt;li&gt;Nerual Networks&lt;/li&gt;
+  &lt;li&gt;K-Means&lt;/li&gt;
+  &lt;li&gt;DIMENSIONALITY REDUCTION
+    &lt;ul&gt;
+      &lt;li&gt;Principal Component Analysis(PCA)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;recommendation system
+    &lt;ul&gt;
+      &lt;li&gt;content base recommendation system&lt;/li&gt;
+      &lt;li&gt;collaborative filtering&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Online Learning&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Map reduce&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Photo OCR&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Pipline in machine learning&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;finish the course&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;无监督学习&lt;/p&gt;
+&lt;hr /&gt;
 
 &lt;p&gt;255 - 256&lt;/p&gt;
 
@@ -659,7 +923,9 @@ mohammed.alsafi313@gmail.com&lt;/p&gt;
   &lt;li&gt;CPI (cycle per instruction)&lt;/li&gt;
   &lt;li&gt;MIPS (millions of instructions per second)&lt;/li&gt;
   &lt;li&gt;Throughput&lt;/li&gt;
+  &lt;li&gt;artifical data synthesis&lt;/li&gt;
 &lt;/ul&gt;
+
 </content>
  </entry>
  
@@ -682,6 +948,28 @@ mohammed.alsafi313@gmail.com&lt;/p&gt;
     &lt;p&gt;Traffic aware rescource allocation and scheduring over GEO distribution cloud.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;Dashboard
+- analysis&lt;/p&gt;
+
+&lt;p&gt;Application 场景&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;interface
+    &lt;ul&gt;
+      &lt;li&gt;在android&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;分析场景&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;删除一些属性，加一些属性&lt;/p&gt;
+
+&lt;p&gt;增加功能&lt;/p&gt;
+
+&lt;p&gt;这些东西的性能&lt;/p&gt;
+
+&lt;p&gt;查一下，哪些watch比较好&lt;/p&gt;
 </content>
  </entry>
  
@@ -4569,6 +4857,13 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;Andrwe Ng&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;机器学习基础：案例研究
+    &lt;ul&gt;
+      &lt;li&gt;Start Date: 10/15 2015&lt;/li&gt;
+      &lt;li&gt;End Date:&lt;/li&gt;
+      &lt;li&gt;华盛顿大学&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
@@ -4681,6 +4976,24 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
     &lt;ul&gt;
       &lt;li&gt;2015 Summer Semester&lt;/li&gt;
       &lt;li&gt;Dr. Mago&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Computer Architecture CS-5545-TXAA
+    &lt;ul&gt;
+      &lt;li&gt;2015 Fall Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Zhong&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Special Topics CS-6649-TRAB (Advantaged Networking)
+    &lt;ul&gt;
+      &lt;li&gt;2015 Fall Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Kumar&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Special Topics CS6649-TRAA (Probabilistic Graphical Models)
+    &lt;ul&gt;
+      &lt;li&gt;2015 Fall Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Karen Hovsepian&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;

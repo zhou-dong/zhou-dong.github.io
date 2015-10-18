@@ -1,0 +1,281 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Elementary Matrix Operations and Elementary Matrix</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Elementary Matrix Operations and Elementary Matrix </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<h4 id="elementary-matrix-operations-and-systems-of-linear-equations">Elementary Matrix operations and Systems of Linear Equations</h4>
+<p><script type="math/tex"> A_{m \times n} x_{n \times 1} = b_{m \times 1} </script></p>
+
+<h4 id="elementary-rowcolumn-operations">Elementary row(column) operations:</h4>
+<ol>
+  <li>列（行）交换</li>
+  <li>列（行）乘 - 非0纯量</li>
+  <li>某列（行）非0纯量加到另一列（行）</li>
+</ol>
+
+<h4 id="ex">EX:</h4>
+<p><script type="math/tex">% <![CDATA[
+
+A = \begin{pmatrix} 1 & 3 & 5 \\ 2 & 4 & 6 \end{pmatrix} \\
+A_1 = \begin{pmatrix} 2 & 4 & 6 \\ 1 & 3 & 5 \end{pmatrix} \\
+A_2 = \begin{pmatrix} -2 & -6 & -10 \\ 2 & 4 & 6 \end{pmatrix}
+ %]]></script></p>
+
+<h4 id="elementary-matrix-from-wikipedia">Elementary matrix (From Wikipedia):</h4>
+<p>In mathematics, an elementary matrix is a matrix which differs from the identity matrix by one single elementary row operation. The elementary matrices generate the general linear group of invertible matrices. Left multiplication (pre-multiplication) by an elementary matrix represents elementary row operations, while right multiplication (post-multiplication) represents elementary column operations. </p>
+
+<h4 id="section">基本矩阵或者初等矩阵</h4>
+<p>线性代数中，初等矩阵（又称为基本矩阵）是一个与单位矩阵只有微小区别的矩阵。具体来说，一个n阶单位矩阵E经过一次初等行变换或一次初等列变换所得矩阵称为n阶初等矩阵。</p>
+
+<ul>
+  <li>若一矩陣可由單位矩陣經過一次基本列運算而得，則稱此矩陣為基本矩陣。</li>
+  <li>必須進行超過1次基本列運算才能得到的矩陣，就不算是基本矩陣了。</li>
+  <li>它是由<code>單位矩陣</code>來的，所以必須是個 n*n 的方陣。</li>
+</ul>
+
+<h4 id="operations">Operations:</h4>
+<p>初等矩阵分为3种类型，分别对应着3种不同的行/列变换。</p>
+
+<ol>
+  <li>两行（列）互换: (<script type="math/tex"> R_i \leftrightarrow R_j </script>)</li>
+  <li>把某行（列）乘以一非零常数: (<script type="math/tex"> kR_i \rightarrow R_i \ \  k \ne 0 </script>)</li>
+  <li>把第i行（列）加上第j行（列）的k倍(<script type="math/tex"> R_i + kR_j = R_i </script>)</li>
+</ol>
+
+<h4 id="operation-one-">Operation One 性质：</h4>
+<ul>
+  <li>逆矩阵即自身：<script type="math/tex"> T_{ij}^{-1} = T_{ij} </script>。</li>
+  <li>因为单位矩阵的行列式为1，故 <script type="math/tex"> \vert T_{ij}\vert =-1</script>。与其他相同大小的方阵A亦有一下性质：<script type="math/tex"> \vert T_{ij}A \vert = - \vert A \vert  </script>。</li>
+</ul>
+
+<h4 id="operation-two-">Operation Two 性质：</h4>
+<ul>
+  <li>逆矩阵为<script type="math/tex"> T_{i}(m)^{-1} = T_{i}(\frac{1}{m})</script>。</li>
+  <li>此矩阵及其逆矩阵均为对角矩阵。</li>
+  <li>其行列式<script type="math/tex"> \vert T_{i}(m) \vert =m</script>。故对于一等大方阵A有<script type="math/tex"> \vert T_{i}(m)A \vert =m \vert A \vert</script>。</li>
+</ul>
+
+<h4 id="operation-three-">Operation Three 性质：</h4>
+<ul>
+  <li>逆矩阵具有性质<script type="math/tex">T_{ij}(m)^{-1}=T_{ij}(-m)</script>。</li>
+  <li>此矩阵及其逆矩阵均为三角矩阵。</li>
+  <li><script type="math/tex"> \vert T_{ij}(m)\vert=1</script>。故对于一等大方阵A有：<script type="math/tex"> \vert T_{ij}(m)A \vert = \vert A \vert </script>。</li>
+</ul>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

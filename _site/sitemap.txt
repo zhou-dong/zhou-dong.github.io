@@ -1,14 +1,15 @@
 
-http://zhou-dong.github.io/archive.html
+http://zhou-dong.github.io/archive
 http://zhou-dong.github.io/atom.xml
-http://zhou-dong.github.io/categories.html
-http://zhou-dong.github.io/index.html
-http://zhou-dong.github.io/pages.html
-http://zhou-dong.github.io/reading.html
+http://zhou-dong.github.io/categories
+http://zhou-dong.github.io/
+http://zhou-dong.github.io/pages
+http://zhou-dong.github.io/reading
 http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
-http://zhou-dong.github.io/tags.html
+http://zhou-dong.github.io/tags
 
+http://zhou-dong.github.io/2015/10/13/information-flow-processing
 http://zhou-dong.github.io/2015/10/07/install-hadoop
 http://zhou-dong.github.io/2015/10/05/data-stream
 http://zhou-dong.github.io/2015/08/26/android-study

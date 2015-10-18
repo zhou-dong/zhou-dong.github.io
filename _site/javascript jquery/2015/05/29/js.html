@@ -1,0 +1,366 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Javascript Notes</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Javascript Notes </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<p>javascript:</p>
+
+<ol>
+  <li>ECMAscript</li>
+  <li>DOM</li>
+  <li>BOM</li>
+</ol>
+
+<p>defer=’defer’: 立即下载，但是页面渲染完以后再执行
+asyn=’asyn’: 立即下载，但是不阻断页面的渲染，也不能保证javascript的执行顺序</p>
+
+<p>JQuery</p>
+
+<p>Javascript原生的方法就是可以把function当做参数来传递，jquery继承了这个方式</p>
+
+<pre><code>
+$(document).ready(function(){
+    $('div').click(function(){
+        $(this).hover(
+            function(){
+                //do some thing
+            };
+            function(){
+                //do some thing
+            } ;
+        );
+    });
+});
+</code></pre>
+
+<p>JQuery selector</p>
+
+<ul>
+  <li>原生的DOM对象直接用引号</li>
+  <li>. # 选择class和id</li>
+  <li>可以使用CSS的选择器</li>
+</ul>
+
+<pre><code>
+var $p = $("p");
+var $div = $('div');
+var $ol = $('ol') ;
+var $cls = $(".class-name") ;
+var $id = $("#id-name");
+var $name = $('input[name=name-attr]')
+</code></pre>
+
+<p>JQuery UI</p>
+
+<p>JQuery UI添加了各种动画效果的实现和更多的内置样式。</p>
+
+<p>JavaScript变量可以用来保存两种类型的值：基本类型和引用类型。</p>
+
+<p>基本类型：</p>
+
+<ol>
+  <li>Undefined</li>
+  <li>Null</li>
+  <li>Boolean</li>
+  <li>Number</li>
+  <li>String</li>
+</ol>
+
+<ul>
+  <li>基本类型在内存中占据固定大小的空间，因此会被保存在栈内存中</li>
+  <li>从一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本</li>
+  <li>引用类型的值是对象，会保存在堆中</li>
+  <li>包含引用类型值的变量实际上包含的并不是对象本身，而是指向该对象的一个指针</li>
+  <li>从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两个变量最终指向同一个对象</li>
+  <li>确定一个值是哪种基本类型可以使用typeof，而确定一个值是哪种引用类型可以使用instanceof</li>
+</ul>
+
+<p>JavaScript 可以使用变量来访问属性</p>
+
+<pre><code>
+    var propertyName = "name" ;
+    console.log(person[propertyName]) ;
+</code></pre>
+
+<p>Function在javascript中也是一个对象，所以Function在Javascript中有了更多神奇的使用方法</p>
+
+<ol>
+  <li>function作为一个对象，可以作为属性，在其它对象之间传递</li>
+  <li>可以return function</li>
+  <li>javascript的function没有重载，因为后一个会替换前一个对象的引用</li>
+</ol>
+
+<p>在JavaScript中，Array有更多的内置方法，可以更加方便的操作array</p>
+
+<p>Global对象跟Java中的global对象是不一样的：</p>
+
+<ul>
+  <li>Java中global对象是全局的父对象</li>
+  <li>而JavaScript中，global对象只是有别于其它对象的一个对象，所以不属于其它对象的属性，都属于global对象</li>
+  <li>在浏览器中，常常使用window对象来实现global对象</li>
+</ul>
+
+<p>在JavaScript中，也有针对基本类型的包装类型，包装类型在处理完操作以后，就会被释放</p>
+
+<p>eval() 是个特别强大的函数，会把里面的字符串当做javascript语法来处理，所以使用eval()时需要特别小心，防止被代码注入!</p>
+
+<p>越来越感觉到，JavaScript、Ruby这些语言比Java要更符合“万物皆对象！”</p>
+
+<ul>
+  <li>在Java中，有string、function、class这些东西都不放在heap中，而在“永久带”中</li>
+  <li>但是JavaScript中，向function、prototype，都是对象。（连构造函数本身也对对象）</li>
+</ul>
+
+<p>JavaScript没有块级作用域的概念。如：</p>
+<pre><code>
+for (var i=0; i&lt;10; i++){
+    console.log(i);
+}
+console.log(i) //9
+</code></pre>
+
+<p>但是可以使用另一种方法来模拟块级作用域</p>
+
+<pre><code>
+(function(){
+    for (var i=0; i&lt;10; i++){
+        console.log(i)
+    }
+})() ;
+console.log(i) //error
+</code></pre>
+
+<p>上面代码的意思是：创建一个匿名函数，并且立即调用它。</p>
+
+<p>JavaScript的闭包真的是个比较有趣的概念！</p>
+
+<p>用了那么就的JSON，今天在明白了JSON的由来。</p>
+
+<p>JSON: (JavaScript object notation)</p>
+
+<ul>
+  <li>JSON的格式，就是javascript定义对象的格式</li>
+  <li>只是JSON对象的属性也在引号里面</li>
+  <li>所以在一开始的时候，才用eval()来解析json对象（会有安全问题，不建议使用）</li>
+  <li>使用JSON.stringify(object,”数组”/函数,”缩进”)来javascript对象转成成JSON对象</li>
+  <li>使用JSON.parse(object,函数) 来把JSON对象转换成javascript对象</li>
+</ul>
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

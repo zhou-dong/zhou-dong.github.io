@@ -2,6 +2,10 @@
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +30,14 @@
     <!-- Custom styles -->
     <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
     <!--google code prettify -->
+
+
+
+    <!--
     <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
     <style>
 	.operative { font-weight: bold; border:1px solid yellow }
     </style>
@@ -77,7 +88,7 @@
     
       
       	
-      	<li><a href="/archive.html">Archive</a></li>
+      	<li><a href="/archive">Archive</a></li>
       	
       
     
@@ -89,7 +100,7 @@
     
       
       	
-      	<li><a href="/categories.html">Categories</a></li>
+      	<li><a href="/categories">Categories</a></li>
       	
       
     
@@ -101,7 +112,7 @@
     
       
       	
-      	<li><a href="/pages.html">Pages</a></li>
+      	<li><a href="/pages">Pages</a></li>
       	
       
     
@@ -109,12 +120,8 @@
     
       
       	
-      	<li class="active"><a href="/reading.html" class="active">Reading</a></li>
+      	<li class="active"><a href="/reading" class="active">Reading</a></li>
       	
-      
-    
-  
-    
       
     
   
@@ -124,8 +131,12 @@
   
     
       
+    
+  
+    
+      
       	
-      	<li><a href="/tags.html">Tags</a></li>
+      	<li><a href="/tags">Tags</a></li>
       	
       
     
@@ -163,7 +174,7 @@
     
       
       	
-      	<li><a href="/archive.html">Archive</a></li>
+      	<li><a href="/archive">Archive</a></li>
       	
       
     
@@ -179,7 +190,7 @@
     
       
       	
-      	<li><a href="/categories.html">Categories</a></li>
+      	<li><a href="/categories">Categories</a></li>
       	
       
     
@@ -187,7 +198,7 @@
     
       
       	
-      	<li><a href="/index.html">Hi</a></li>
+      	<li><a href="/">Hi</a></li>
       	
       
     
@@ -195,7 +206,7 @@
     
       
       	
-      	<li><a href="/pages.html">Pages</a></li>
+      	<li><a href="/pages">Pages</a></li>
       	
       
     
@@ -203,7 +214,7 @@
     
       
       	
-      	<li class="active"><a href="/reading.html" class="active">Reading</a></li>
+      	<li class="active"><a href="/reading" class="active">Reading</a></li>
       	
       
     
@@ -227,7 +238,7 @@
     
       
       	
-      	<li><a href="/tags.html">Tags</a></li>
+      	<li><a href="/tags">Tags</a></li>
       	
       
     
@@ -260,14 +271,28 @@
     <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
     <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
     <!--google code prettify -->
+    <!--
     <script src="/assets/themes/google-code-prettify/prettify.js"></script>
     <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
 
 <!--
     <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
 -->
+<!--
     <script type="text/javascript">
     	$(function() {
   		window.prettyPrint && prettyPrint();
@@ -276,6 +301,7 @@
   		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
 	});
     </script>
+    -->
   </body>
 </html>
 

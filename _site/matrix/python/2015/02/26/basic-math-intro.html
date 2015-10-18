@@ -1,0 +1,325 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>The Function and the Field</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>The Function and the Field  <small>Note One of Coding the Matrix</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<h4 id="set-terminology-and-notation">Set terminology and Notation</h4>
+
+<ul>
+  <li>Set: and unordered collection of objects. Example: <script type="math/tex"> \{ X, Y, Z \}</script></li>
+  <li><script type="math/tex"> \in </script>: indicates than an object belong to a set (equivalently, that the set contains the object). For example, <script type="math/tex"> X \in \{X, Y, Z\}</script></li>
+  <li><script type="math/tex"> A \subseteq B </script>: Read this as “A is a subset of B”. This measn A and B are sets, and every element of A is aslo an element of B.</li>
+  <li>A = B: Two sets are equal if they contain the exactly the same elements. (There is no order among elements of a set.)
+    <ul>
+      <li>A convenient way to prove that A and B are equal is to prove that each is a subset of the other. The proof often consists two parts:
+        <ol>
+          <li>a proof that <script type="math/tex"> A \subseteq B, </script> and</li>
+          <li>a proof that <script type="math/tex"> B \subseteq A </script>.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="set-expressions">Set expressions:</h4>
+
+<p>In Mathese, we could write “the set of nonegative numbers” like that: <script type="math/tex"> \{ x \in R: \  x \ge 0 \} </script></p>
+
+<ul>
+  <li>The colon(“:”) stands for “such that”.</li>
+  <li>There are two parts of this expression:
+    <ul>
+      <li>the part before the colon: This part specifies where the elements of the set come from, and introduces a variable or variables that can be used in the second part.</li>
+      <li>the part after the colon: This gives a rule that restricts which elements specified in the first part actually get to make it into the set. </li>
+    </ul>
+  </li>
+  <li>The analogous python expression is set <code>comprehension</code>:</li>
+  <li>Python code:</li>
+</ul>
+
+<pre class="prettyprint linenums">
+    S = {-4, 4, -3, 3, -2, 2, -1, 1, 0}
+    result = {x for x in S if x &gt;= 0}
+    print result
+    result: set([0, 1, 2, 3, 4])
+</pre>
+
+<ul>
+  <li>you might see just <script type="math/tex"> \{ x: x \ge 0 \}</script>. For example: 
+    <ul>
+      <li><script type="math/tex"> \{ x: (x+1)(x-2) = 0 \}</script>.</li>
+      <li>This time, the set consists of just two numbers, -1 and 2.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="set-terminology-and-notation-cartesian-product">Set terminology and notation: Cartesian product</h4>
+
+<p><script type="math/tex"> A \times B</script> is the set of all pairs <script type="math/tex"> (a, b) </script> where <script type="math/tex"> a \in A</script> and <script type="math/tex"> b \in B</script><br />
+Example: for <script type="math/tex"> A = \{ 1, 2 \}</script> and <script type="math/tex"> B = \{ x, y \}, A \times B</script> is <script type="math/tex">\{(1,x),(2,x)(1,y)(2,y)\} </script>.</p>
+
+<h4 id="tuples-in-set-expressions">Tuples in set expressions</h4>
+
+<ul>
+  <li><script type="math/tex"> \{ (x,y) \in R \times R: y = x^2 </script> } <code>equal</code> <script type="math/tex"> \{ (x,y): y = x^2\} </script>.</li>
+  <li><script type="math/tex"> \{(x,y,z) \in R \times R \times R: x \ge 0, y \ge 0, z \ge 0 \} </script>. <code>equal</code> <script type="math/tex"> \{(x,y,z): x \ge 0, y \ge 0, z \ge 0\} </script>.</li>
+</ul>
+
+<h4 id="the-function">The function</h4>
+
+<p>Informally, for each input element in a set A, a function assigns a single output element from another set B.</p>
+
+<ul>
+  <li>A is called the <code>domain</code> of the function</li>
+  <li>B is called the <code>co-domain</code></li>
+</ul>
+
+<p><strong>Definition</strong>: The output of a given input is called the <em>image</em> of the input. The image of <em>q</em> under <em>a</em> function <em>f</em> is denoted <em>f(q)</em>.<br />
+If <em>f(q) = r</em>, we say <em>q</em> maps to <em>r</em> under <em>f</em>. In Mathese, we write this as <script type="math/tex"> q \mapsto r </script>.</p>
+
+<p>The set from which all the outputs are chosen is called the co-domain.<br />
+We write: <script type="math/tex"> f: D \to F </script><br />
+when we want to say that <strong>f</strong> is a function with domain <strong>D</strong> and co-domain <strong>F</strong>.</p>
+
+<p><strong>Definition</strong>: The <em>image</em> of a function is the set of all images of inputs. Mathese: Im <em>f</em>.<br />
+Example: Cosine Function <strong>cos(x)</strong></p>
+
+<p>cos: <script type="math/tex"> R \to R </script>, which means that domain is <script type="math/tex">R</script> and the co-domain is <script type="math/tex">R</script><br />
+The image of <em>cos(x)</em>, Im <em>cos</em>, is <script type="math/tex"> \{ x \in R: -1 \le x \le 1\}</script> </p>
+
+<p><strong>Definition</strong>: For sets F and D, <script type="math/tex">F^D</script> denotes all functions from D to F.</p>
+
+<h4 id="identity-function-and-composition">Identity function and composition</h4>
+
+<p>Indentity function: for any domain <script type="math/tex"> D, id_D: D \to D</script>, maps each domain element <em>d</em> to itself.</p>
+
+<p><strong>Definition</strong>: For functions <script type="math/tex"> f: A \to B </script> and <script type="math/tex"> g: B \to C </script>, the <em>functional composition</em> of <em>f</em> and <em>g</em> is the function:<br />
+<script type="math/tex"> (g \ o \ f) : A \to C </script> defined by <script type="math/tex"> (g \ o \ f)(x) = g(f(x))</script>.<br />
+Example: Composition of <script type="math/tex"> g(y) = y^2 </script> and <script type="math/tex"> f(x) = x +1 </script> is <script type="math/tex"> (g \ o \ f)(x) = (x+1)^2</script>.<br />
+Proposition: <script type="math/tex"> h \ o \ (g \ o \ f) = (h \ o \ g ) \ o \ f</script></p>
+
+<h4 id="functional-inverse">Functional inverse</h4>
+
+<p><strong>Definition</strong>: Functions <em>f</em> and <em>g</em> are functional inverses if <em>f o g</em> and <em>g o f</em> are defined and are indentity functions.<br />
+Invertible functions are <strong>one-to-one</strong>.<br />
+Invertible functions are <strong>onto</strong>.<br />
+<strong>Function Invertibility Theorem:</strong> A function <em>f</em> is invertible if and only if it is one-to-one and onto.</p>
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

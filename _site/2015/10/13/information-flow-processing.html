@@ -1,0 +1,454 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Information Flow Processing</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Information Flow Processing </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h4 id="section-1">Section 1</h4>
+
+<ul>
+  <li>
+    <p>Information Flow Processing(IFP)</p>
+  </li>
+  <li>Information of Data no need to be stored into Database systems
+    <ul>
+      <li>Not deal with persistent data</li>
+      <li>Deal with transient data</li>
+    </ul>
+  </li>
+  <li>Data from different source 
+    <ul>
+      <li>Device sensors</li>
+      <li>Mobile phones</li>
+      <li>Web servers</li>
+    </ul>
+  </li>
+  <li>Contributions to this model come from different communities
+    <ul>
+      <li>distributed information systems</li>
+      <li>nusiness process automation</li>
+      <li>control systems</li>
+      <li>network monitoring</li>
+      <li>sensor networks</li>
+      <li>middleware in general</li>
+    </ul>
+  </li>
+</ul>
+
+<p>May be come from the publish-subsribe domain</p>
+
+<h4 id="section-2">Section 2</h4>
+
+<p>describes the IFP domain in more detail, provides an initial description of the different technologies that have been developed to support it, and explains the need for combining the best of different worlds to fully support IFP applications. </p>
+
+<h5 id="active-database-system">Active database system</h5>
+
+<ul>
+  <li>Something origial DB can not do</li>
+  <li>There are several tools classified as active database systems, with different software architectures, functionality, and oriented toward different application domains</li>
+</ul>
+
+<hr />
+
+<h4 id="section-3">Section 3</h4>
+
+<p>describes a framework to model and analyze the different aspects that are relevant for an IFP engine from its functional architecture, to its data and processing models, to the language it provides to express how information has to be processed, to its run-time architecture. </p>
+
+<ol>
+  <li>Functional Model
+    <ol>
+      <li>Each time a new item (including those periodically produced by the Clock) enters the engine through the Receiver</li>
+      <li>Evaluates all the rules currently present in the Rules store to find those whose condition part is true.</li>
+      <li>At the end of this phase we have a set of rules that have to be executed.</li>
+    </ol>
+  </li>
+  <li>Processing Model
+    <ul>
+      <li>Together with the last information item entering the Decider, the set of deployed rules, and the information stored in the History and in the Knowledge Base, three additional concepts concur at uniquely determining the output of a single detection- production cycle: the selection, consumption, and load shedding policies adopted by the system.</li>
+      <li>some systems offer a programmable policy, by including special language constructs that enable users to decide, often rule by rule, if they have to fire once or more than once at each detection-production cycle, and in the former case, which elements have to be actually selected among the different possible combinations. </li>
+      <li>Load shedding. Load shedding is a technique adopted by some IFP systems to deal with bursty inputs. It can be described as an automatic drop of information items when the input rate becomes too high for the processing capabilities of the engine.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Deployment Model</p>
+
+    <ul>
+      <li>A networked IFP engine focuses on minimizing network usage by dispersing processors over a wide area network, with the goal of <code>processing information as close as possible to the sources</code>.</li>
+      <li>In summary, in their seek for better scalability, clustered and networked engines focus on different aspects: the former on increasing the available processing power by sharing the workload among a set of well connected machines, the latter on minimizing bandwidth usage by processing information as close as possible to the sources.</li>
+    </ul>
+  </li>
+  <li>Interaction Model 
+    <ul>
+      <li>In a pull observation model, the IFP engine is the initiator of the interaction to bring information from sources to the engine; otherwise we have a push observation model.</li>
+    </ul>
+  </li>
+  <li>Data Model
+    <ul>
+      <li>Former manipulate generic data items</li>
+      <li>While the latter manipulates event notifications</li>
+      <li>In many IFP scenarios, in fact, information received from sources has an associated degree of uncertainty. As an example, if sources were only able to provide rounded data [Wasserkrug et al. 2008], the system could associate such data with a level of uncertainty instead of accepting it as a precise information.</li>
+      <li>Engines allow different types of information items in the same flow.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Time Model</p>
+
+    <ul>
+      <li>With the term time model we refer to the relationship between the information items flowing into the IFP engine and the passing of time. More precisely, we refer to the ability of the IFP system of associating some kind of happened-before relationship to information items.</li>
+      <li>There is the case of systems that associate items with an interval, i.e., two timestamps taken from a global time, usually representing: the time when the related event started, the time when it ended. In this case, depending on the semantics associated with intervals, a total or a partial ordering among items can be defined.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Rule Model</p>
+
+    <ul>
+      <li>Rules are much more complex entities than data. Looking at existing systems we can find many different approaches to represent rules, which depend on the adopted rule language. However, we can roughly classify them in two macro classes: transforming rules and detecting rules.</li>
+    </ul>
+  </li>
+  <li>Language Model
+    <ul>
+      <li>It is worth mentioning that existing systems sometime allow users to express rules using more than one paradigm. For example, many commercial systems offer both a declarative language for rule creation, and a graphical tool for connecting defined rules in an imperative way. Moreover, some existing declarative languages embed simple operators for pattern detection, blurring the distinction between transform- ing and detecting languages.</li>
+      <li>SQL</li>
+      <li>Available Operators</li>
+      <li>Logistic Operators </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>COMMAND ( A &amp;&amp; B, A</td>
+              <td> </td>
+              <td>B)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h4 id="section-4">Section 4</h4>
+
+<p>We use this framework in Section 4 to describe and compare the state of the art in the field.</p>
+
+<ul>
+  <li>In the following we use the concepts introduced in Section 3 to present and classify existing IFP systems. We provide a brief description of each system and summarize its characteristics by compiling four tables.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Table I focuses on the functional and processing models of each system: it shows if a system includes the Clock (i.e., it supports periodic processing) and the Knowl- edge Base, and if the maximum size of the sequences (Seq) that the Decider sends to the Producer is bounded or unbounded, given the set of deployed rules. Then, it analyzes if information items produced by fired rules may re-enter the system (recursion), and if the rule set can be changed by fired actions at run-time. Fi- nally, it presents the processing model of each system, by showing its selection, consumption, and load shedding policies.</p>
+  </li>
+  <li>
+    <p>Table II focuses on the deployment and interaction models, by showing the type of deployment supported by each system, and the interaction styles allowed in the observation, notification, and forwarding models.</p>
+  </li>
+  <li>
+    <p>Table III focuses on the data, time, and rule models, presenting the nature of the items processed by each systems (generic data or event notifications), the format of data, the support for data uncertainty, and the nature of flows (homogeneous or heterogeneous). It also introduces how the notion of time is captured and rep- resented by each system, the type of rules adopted, and the possibility to define probabilistic rules.</p>
+  </li>
+  <li>
+    <p>Finally, Table IV focuses on the language adopted by each system, by listing its type and the set of operators available.</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Active databases</li>
+  <li>Data Stream Management Systems
+    <ul>
+      <li>Usually, these systems are designed for application domains in which the timeliness requirement is less critical, like for example Internet updates monitoring. On the contrary, all remaining systems are heavily tailored for the processing of high rate streams.</li>
+    </ul>
+  </li>
+  <li>Commercial Systems
+    <ul>
+      <li>The platform is designed to scale by exploiting multiple cores on a single ma- chine or multiple machines in a clustered environment. </li>
+      <li>Aleri Streaming Platform.</li>
+      <li>Coral8 CEP Engine.</li>
+      <li>StreamBase. </li>
+      <li>Oracle CEP. </li>
+      <li>Esper.</li>
+      <li>Tibco Business Events.</li>
+      <li>IBM System S. </li>
+      <li>Other commercial systems. </li>
+      <li>IBM WebSphere Business Events.</li>
+      <li>Event Zero.</li>
+      <li>Progress Apama Event Processing Platform.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="section-5">Section 5</h4>
+
+<p>Discussing the results of such classification in Section 5. </p>
+
+<hr />
+
+<h4 id="section-6">Section 6</h4>
+
+<p>Finally, Section 6 reviews related work, while Section 7 provides some conclusive remarks and a list of open issues.</p>
+
+<ul>
+  <li>In this section we briefly discuss the results of on-going or past research which aims at providing a more complete understanding of the IFP domain. In particular we cover four different aspects: </li>
+</ul>
+
+<ol>
+  <li>we present work that studies general mechanisms for IFP; </li>
+  <li>we review specific models used to describe various classes of systems, or to address single issues; </li>
+  <li>we provide an overview of systems presenting similarities with IFP systems; </li>
+  <li>we discuss existing attempts to create a standard for the IFP domain.</li>
+</ol>
+
+<ul>
+  <li>Many researchers focused on developing general mechanisms for IFP by studying (i) rule processing strategies, (ii) operator placement and load balancing algorithms, (iii) communication protocols for distributed rule processing, (iv) techniques to provide adequate levels of QoS, and (v) mechanisms for high availability and fault tolerance.</li>
+  <li>In distributed scenarios it is of primary importance to define efficient communica- tion strategies between the different actors (sources, processors, and sinks).</li>
+  <li>Different contributions, primarily from people working on stream processing, fo- cused on the problem of bursty arrival of data </li>
+  <li>Recently, a few works coming from the event-based community</li>
+  <li>Finally, a few works have focused on high-availability and fault tolerance for dis- tributed stream processing. </li>
+</ul>
+
+<h5 id="other-models">Other Models</h5>
+
+<ul>
+  <li>
+    <p>As we have seen, IFP is a large domain, including many systems. Although the literature misses a unifying model, which is able to capture and classify all existing works, various contributions are worth mentioning. </p>
+  </li>
+  <li>System Models. 
+    <ul>
+      <li>As described in Section 2, two main models for IFP have emerged, one coming from the database community and one coming from the event- processing community.</li>
+    </ul>
+  </li>
+  <li>Models for Single Aspects of IFP.
+    <ul>
+      <li>A relevant part of our classification focuses on the data representations and rule definition languages adopted by IFP systems, and on the underlying time model assumed for processing. </li>
+    </ul>
+  </li>
+  <li>Related Systems
+    <ul>
+      <li>Besides the systems described in Section 4, other tools exist, which share many similarities with IFP systems.</li>
+      <li>Runtime Verification Tools.</li>
+      <li>Runtime Monitoring Tools.</li>
+      <li>Scalable Distributed Information Management Systems. </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="online-machine-learning">Online Machine Learning</h4>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+
