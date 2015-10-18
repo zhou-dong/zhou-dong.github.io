@@ -7,7 +7,8 @@ tagline: -- details of router.sh
 {% include JB/setup %}
 
 #### router.sh
-<pre class="prettyprint linenums"> 
+
+<pre><code class="Bash">
 #!/bin/sh
 
 RUNNING_USER=root
@@ -130,4 +131,4 @@ exit 1
 esac
 exit 0
 
-</pre>
+</code></pre>

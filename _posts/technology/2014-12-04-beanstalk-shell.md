@@ -7,7 +7,7 @@ tagline: -- details of beanstalk.sh
 {% include JB/setup %}
 
 #### start.sh
-<pre class="prettyprint linenums">
+<pre><code class="Bash">
 #!/bin/sh
 
 LOG_DIR=/app/logs/beanstalk
@@ -73,4 +73,4 @@ case "$1" in
 	exit 1
 esac
 
-</pre>
+</code></pre>

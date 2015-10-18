@@ -6,7 +6,8 @@ tagline: -- details of  appserer.sh
 {% include JB/setup %}
 
 #### appserver.sh
-<pre class="prettyprint linenums"> 
+
+<pre><code class="Bash">
 #!/bin/sh
 
 UNNING_USER=root
@@ -135,5 +136,5 @@ echo "Usage: $0 {start|stop|restart|status|info}"
 exit 1
 esac
 exit 0
-</pre>
+</code></pre>
 
