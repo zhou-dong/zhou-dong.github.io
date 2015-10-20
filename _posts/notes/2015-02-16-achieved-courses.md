@@ -106,6 +106,8 @@ tagline:
     - End Date:
     - 华盛顿大学
 
+20. Machine Learning in Practise
+
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
@@ -191,6 +193,7 @@ tagline:
 7. Special Topics CS6649-TRAA (Probabilistic Graphical Models)
     - 2015 Fall Semester
     - Dr. Karen Hovsepian
+
 
 145-146-413:1234
 
