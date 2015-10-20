@@ -5,10 +5,40 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-10-18T12:48:23-05:00</lastBuildDate>
-        <pubDate>2015-10-18T12:48:23-05:00</pubDate>
+        <lastBuildDate>2015-10-20T13:07:26-05:00</lastBuildDate>
+        <pubDate>2015-10-20T13:07:26-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Example of the Machine Learning Steps</title>
+                <description>&lt;p&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;收集数据&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;清洗数据&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;确定feature&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;归一化&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;训练模型&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;交叉验证&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/10/20/example-steps</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/10/20/example-steps</guid>
+                <pubDate>2015-10-20T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Information Flow Processing</title>
@@ -821,6 +851,14 @@ http://link.springer.com/chapter/10.1007/3-540-45726-7_1&lt;/p&gt;
   &lt;li&gt;Log the monitor debug info into Eclipse&lt;/li&gt;
   &lt;li&gt;Send message into monitor&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;
+
+public static void main(String args[]){
+    System.out.println(&quot;Hello world!&quot;) ;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/08/26/android-study</link>
                 <guid>http://zhou-dong.github.io/2015/08/26/android-study</guid>
@@ -4859,6 +4897,7 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;华盛顿大学&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;Machine Learning in Practise&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
@@ -7119,7 +7158,8 @@ f + g = h &lt;==&gt; h(x) = f(x) + g(x);
                 <title>Shell of Totem Router</title>
                 <description>
 &lt;h4 id=&quot;routersh&quot;&gt;router.sh&lt;/h4&gt;
-&lt;pre class=&quot;prettyprint linenums&quot;&gt; 
+
+&lt;pre&gt;&lt;code class=&quot;Bash&quot;&gt;
 #!/bin/sh
 
 RUNNING_USER=root
@@ -7242,7 +7282,7 @@ exit 1
 esac
 exit 0
 
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
                 <link>http://zhou-dong.github.io/2014/12/04/totem-router-shell</link>
                 <guid>http://zhou-dong.github.io/2014/12/04/totem-router-shell</guid>
@@ -7253,7 +7293,8 @@ exit 0
                 <title>Shell of Totem Appserver</title>
                 <description>
 &lt;h4 id=&quot;appserversh&quot;&gt;appserver.sh&lt;/h4&gt;
-&lt;pre class=&quot;prettyprint linenums&quot;&gt; 
+
+&lt;pre&gt;&lt;code class=&quot;Bash&quot;&gt;
 #!/bin/sh
 
 UNNING_USER=root
@@ -7382,7 +7423,7 @@ echo &quot;Usage: $0 {start|stop|restart|status|info}&quot;
 exit 1
 esac
 exit 0
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 </description>
                 <link>http://zhou-dong.github.io/2014/12/04/totem-appserver-shell</link>
@@ -7394,7 +7435,7 @@ exit 0
                 <title>Shell of Totem Beanstalk</title>
                 <description>
 &lt;h4 id=&quot;startsh&quot;&gt;start.sh&lt;/h4&gt;
-&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+&lt;pre&gt;&lt;code class=&quot;Bash&quot;&gt;
 #!/bin/sh
 
 LOG_DIR=/app/logs/beanstalk
@@ -7460,7 +7501,7 @@ case &quot;$1&quot; in
 	exit 1
 esac
 
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
                 <link>http://zhou-dong.github.io/2014/12/04/beanstalk-shell</link>
                 <guid>http://zhou-dong.github.io/2014/12/04/beanstalk-shell</guid>
