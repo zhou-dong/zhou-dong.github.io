@@ -7,6 +7,12 @@ categories: machine-learning
 
 {% include JB/setup %}
 
+Example: The project steps of "Detect Stree" with sensor. It is a project in: Mobile Sensor Data-to-knowledge
+
+Reference website: https://md2k.org/
+
+---
+
 #### 1. 收集数据
 
 以收集用户“情绪紧张”的数据为例：
