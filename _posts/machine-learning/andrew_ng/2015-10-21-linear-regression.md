@@ -8,8 +8,6 @@ categories: machine-learning
 
 #### Model Representation
 
-<img src="/images/linear-regression-1.png">
-
 <pre clas="r language"><code>
 # Use R language to create plot
 
@@ -20,11 +18,47 @@ plot(main="Plot Recent House Sale", xlab="square feet (sq.ft.)", ylab="price ($)
 
 </code></pre>
 
+<img src="/images/linear-regression-1.png">
+
+We have a dataset:
+
+$$
+d_1 = \{1, 1\} \\
+d_2 = \{2, 2\} \\
+d_3 = \{3, 3\} \\
+d_4 = \{4, 4\} \\
+d_5 = \{5, 5\} \\
+d_6 = \{6, 6\}
+$$
+
+We can find a line can fitting all these data, which is:
+
+$$
+f(x) = w_0 + w_1x
+$$
+
+---
+
+<pre clas="r language"><code>
+model <- lm(y~x)
+
+plot(main="Plot Recent House Sale", xlab="square feet (sq.ft.)", ylab="price ($)", pch=19, col="red", col.axis="brown", fg="purple", bg="yellow", col.sub="orange", sub="Relation between size and price", x,y,col.main="blue",col.lab="brown", xlim=c(0,7), ylim=c(0,7))
+
+abline(model, col="blue")
+
+</code></pre>
+
+<img src="/images/linear-regression-2.png">
+
+In this plot, the scope is:
+
+$$
+f(x) = 0 + 1 \cdot x
+$$
+
 ---
 
 #### Cost Function
-
-<img src="/images/linear-regression-3.png">
 
 <pre clas="r language"><code>
 plot(main="Plot Recent House Sale", xlab="square feet (sq.ft.)", ylab="price ($)", pch=19, col="red", col.axis="brown", fg="purple", bg="yellow", col.sub="orange", sub="Relation between size and price", x,y,col.main="blue",col.lab="brown", xlim=c(0,7), ylim=c(0,7))
@@ -36,18 +70,17 @@ abline(a=0,b=1, col="black")
 
 </code></pre>
 
----
+<img src="/images/linear-regression-3.png">
 
-<img src="/images/linear-regression-2.png">
+$$
 
-<pre clas="r language"><code>
-model <- lm(y~x)
-
-plot(main="Plot Recent House Sale", xlab="square feet (sq.ft.)", ylab="price ($)", pch=19, col="red", col.axis="brown", fg="purple", bg="yellow", col.sub="orange", sub="Relation between size and price", x,y,col.main="blue",col.lab="brown", xlim=c(0,7), ylim=c(0,7))
-
-abline(model, col="blue")
-
-</code></pre>
+total \ deviation \ is: \ \sum_{x=1}^6 (f_{\theta}(x)-y)^2 \\
+to \ general \ is: \ \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+we \ can \ rewrite \ to: \frac{1}{m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+also \ we \ can \ rewrite \ to: \frac{1}{2m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+we \ define: \ J_{\theta} = \frac{1}{2m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+we \ wanna \ minimize \ J_{\theta} : \theta = \operatorname{arg} \min{(J_{\theta})}
+$$
 
 ---
 
