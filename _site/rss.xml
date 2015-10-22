@@ -5,35 +5,128 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-10-20T13:07:26-05:00</lastBuildDate>
-        <pubDate>2015-10-20T13:07:26-05:00</pubDate>
+        <lastBuildDate>2015-10-22T01:24:18-05:00</lastBuildDate>
+        <pubDate>2015-10-22T01:24:18-05:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
+                <title>Linear Regression</title>
+                <description>&lt;h4 id=&quot;model-representation&quot;&gt;Model Representation&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;./img/linear-regression.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;cost-function&quot;&gt;Cost Function&lt;/h4&gt;
+
+&lt;h4 id=&quot;gradient-descent&quot;&gt;Gradient Descent&lt;/h4&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/10/21/linear-regression</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/10/21/linear-regression</guid>
+                <pubDate>2015-10-21T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
                 <title>Example of the Machine Learning Steps</title>
-                <description>&lt;p&gt;:&lt;/p&gt;
+                <description>
+&lt;p&gt;Example: The project steps of “Detect Stree” with sensor. It is a project in: Mobile Sensor Data-to-knowledge&lt;/p&gt;
+
+&lt;p&gt;Reference website: https://md2k.org/&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;1. 收集数据&lt;/h4&gt;
+
+&lt;p&gt;以收集用户“情绪紧张”的数据为例：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;主动收集（实验室收集）效果90%
+    &lt;ul&gt;
+      &lt;li&gt;让参与者模拟当众“演讲”，来收集当时的参数&lt;/li&gt;
+      &lt;li&gt;让参与者“把手放入冰水中”，来收集用户参数&lt;/li&gt;
+      &lt;li&gt;让参与者考试：“做一份难度很大的测试”，来收集参数&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;被动收集（参与者主动汇报）效果75%
+    &lt;ul&gt;
+      &lt;li&gt;不是让用户“情绪紧张的时候汇报”，而是&lt;/li&gt;
+      &lt;li&gt;随机在不同的时间，让用户填一份收集信息的表格，并检查当时的数据&lt;/li&gt;
+      &lt;li&gt;被动收集数据的时候，可能用户的紧张情绪已经过了，但是用户仍然会认为还处在紧张情绪中，但是身体的各个指标已经恢复正常了，所以&lt;code&gt;由于每个人对紧张情绪理解的不一样，会造成数据和结果的偏差&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;2. 清洗数据&lt;/h4&gt;
+
+&lt;p&gt;收集数据的时候，会不可避免的出现一些数据的异常，比如：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;由于sensor的性能影响，有时候传入“收集系统”的数据时间间隔会不一样&lt;/li&gt;
+  &lt;li&gt;由于sensor没有佩戴好，所以导致数据的异常&lt;/li&gt;
+  &lt;li&gt;sensor本身可能会出现故障&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;由于上面的原因，需要对收集到的数据做清洗&lt;/p&gt;
+
+&lt;h4 id=&quot;feature&quot;&gt;3. 确定feature&lt;/h4&gt;
+
+&lt;p&gt;一次数据收集，可能会收集到很多的数据，供多个实验，这就需要找出不同实现需要的数据了。同一组数据收集，对应的实验：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;压力测试&lt;/li&gt;
+  &lt;li&gt;饮酒测试&lt;/li&gt;
+  &lt;li&gt;抽烟测试&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;4. 归一化&lt;/h4&gt;
+
+&lt;p&gt;不同的人，收集的到底数据样本是不一样的，比如：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;模型人的心跳速度本来就会快些&lt;/li&gt;
+  &lt;li&gt;有些人的体温本来就比正常人高或者低些&lt;/li&gt;
+  &lt;li&gt;每个人对相同的压力，或者刺激，数据&lt;code&gt;变化的幅度&lt;/code&gt;也不一样。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们需要训练出来的数据，是“普遍”意义上的数据，所以需要“normalize”&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;收集数据&lt;/p&gt;
+  &lt;li&gt;min-max标准化（Min-Max Normalization）也称为离差标准化，是对原始数据的线性变换，使结果值映射到[0 - 1]之间。&lt;/li&gt;
+  &lt;li&gt;Z-score标准化方法. 这种方法给予原始数据的均值（mean）和标准差（standard deviation）进行数据的标准化。经过处理的数据符合标准正态分布，即均值为0，标准差为1。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;5. 训练模型&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;可是使用传入的二分算法训练模型，如：
+    &lt;ul&gt;
+      &lt;li&gt;Support Vector Machine&lt;/li&gt;
+      &lt;li&gt;Logistic Regression&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;清洗数据&lt;/p&gt;
+  &lt;li&gt;可以使用二分算法，来就出各种结果的可能性，如：
+    &lt;ul&gt;
+      &lt;li&gt;Support Vector Machine
+        &lt;ul&gt;
+          &lt;li&gt;可以通过计算，测试节点&lt;code&gt;离&lt;/code&gt;分界线的&lt;code&gt;距离&lt;/code&gt;，来计算“百分比”&lt;/li&gt;
+          &lt;li&gt;Logistic Regression，本来就可以计算“百分比”。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;确定feature&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;归一化&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;训练模型&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;交叉验证&lt;/p&gt;
+  &lt;li&gt;可以使用一些算法，来分析模型，分析每个feature的权重。如：
+    &lt;ul&gt;
+      &lt;li&gt;Decision Tree
+        &lt;ul&gt;
+          &lt;li&gt;它本来就是训练每个branch的重要性的。&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;6. 交叉验证&lt;/h4&gt;
+
+&lt;p&gt;通过cross validation多次运算，计算结果。&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/machine-learning/2015/10/20/example-steps</link>
                 <guid>http://zhou-dong.github.io/machine-learning/2015/10/20/example-steps</guid>
