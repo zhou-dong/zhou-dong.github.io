@@ -86,8 +86,6 @@ $$
 
 #### Gradient Descent
 
-<img src="/images/linear-regression-4.png">
-
 <pre clas="r language"><code>
 x <- seq(-6,6,0.5)
 f <- function(x)x^2
@@ -97,4 +95,32 @@ lines(loess.smooth(x,y),col='red',lwd=2)
 
 </code></pre>
 
+<img src="/images/linear-regression-4.png">
+
+#### Partial Derivative
+
+$$
+J_{(\theta_0, \ \theta_1)} = (f_{\theta}(x)-y)^2 = (f_{\theta}(x))^2 - 2f_{\theta}(x)y- y^2 =
+(w_0 + w_1x)^2 - 2(w_0+w_1x)y - y^2 =
+w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
+$$
+
+$$
+J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
+$$
+
+$$
+\frac{\partial J_{(w_0, \ w_1)}}{\partial w_0} = 2w_0 + 2w_1x -2y = 2(w_0 + w_1x - y) = 2(f_{\theta}(x) - y) \\
+\frac{\partial J_{(w_0, \ w_1)}}{\partial w_1} = 2w_0x + 2w_1x^2 - 2xy = 2x(w_0 + w_1x - y) = 2x(f_{\theta}(x) - y)
+$$
+
 ---
+
+$$
+\theta := \theta - \alpha \frac{\partial J_{\theta}}{\partial \theta} \\
+\theta_0 := \theta_0 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_0} \\
+\theta_1 := \theta_1 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_1} \\
+
+\theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y) \\
+\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y)x
+$$

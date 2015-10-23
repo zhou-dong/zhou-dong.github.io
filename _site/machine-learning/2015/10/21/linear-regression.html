@@ -238,8 +238,6 @@ we \ wanna \ minimize \ J_{\theta} : \theta = \operatorname{arg} \min{(J_{\theta
 
 <h4 id="gradient-descent">Gradient Descent</h4>
 
-<p><img src="/images/linear-regression-4.png" /></p>
-
 <pre clas="r language"><code>
 x &lt;- seq(-6,6,0.5)
 f &lt;- function(x)x^2
@@ -249,7 +247,35 @@ lines(loess.smooth(x,y),col='red',lwd=2)
 
 </code></pre>
 
+<p><img src="/images/linear-regression-4.png" /></p>
+
+<h4 id="partial-derivative">Partial Derivative</h4>
+
+<script type="math/tex; mode=display">
+J_{(\theta_0, \ \theta_1)} = (f_{\theta}(x)-y)^2 = (f_{\theta}(x))^2 - 2f_{\theta}(x)y- y^2 =
+(w_0 + w_1x)^2 - 2(w_0+w_1x)y - y^2 =
+w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
+</script>
+
+<script type="math/tex; mode=display">
+J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
+</script>
+
+<script type="math/tex; mode=display">
+\frac{\partial J_{(w_0, \ w_1)}}{\partial w_0} = 2w_0 + 2w_1x -2y = 2(w_0 + w_1x - y) = 2(f_{\theta}(x) - y) \\
+\frac{\partial J_{(w_0, \ w_1)}}{\partial w_1} = 2w_0x + 2w_1x^2 - 2xy = 2x(w_0 + w_1x - y) = 2x(f_{\theta}(x) - y)
+</script>
+
 <hr />
+
+<script type="math/tex; mode=display">
+\theta := \theta - \alpha \frac{\partial J_{\theta}}{\partial \theta} \\
+\theta_0 := \theta_0 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_0} \\
+\theta_1 := \theta_1 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_1} \\
+
+\theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y) \\
+\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y)x
+</script>
 
   </div>
 </div>
