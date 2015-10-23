@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-10-22T01:24:18-05:00</updated>
+ <updated>2015-10-23T12:23:02-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,17 +13,173 @@
 
  
  <entry>
+   <title>Normal Equation</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/10/23/normal-equation"/>
+   <updated>2015-10-23T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/10/23/normal-equation</id>
+   <content type="html">&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+J_{(\theta)} = \alpha 
+
+&lt;/script&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Logistic Regression</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/10/23/logistic-regression"/>
+   <updated>2015-10-23T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/10/23/logistic-regression</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
    <title>Linear Regression</title>
    <link href="http://zhou-dong.github.io/machine-learning/2015/10/21/linear-regression"/>
    <updated>2015-10-21T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/10/21/linear-regression</id>
    <content type="html">&lt;h4 id=&quot;model-representation&quot;&gt;Model Representation&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;./img/linear-regression.png&quot; /&gt;&lt;/p&gt;
+&lt;pre clas=&quot;r language&quot;&gt;&lt;code&gt;
+# Use R language to create plot
+
+x &amp;lt;- c(1:6)
+y &amp;lt;- c(1:6)
+
+plot(main=&quot;Plot Recent House Sale&quot;, xlab=&quot;square feet (sq.ft.)&quot;, ylab=&quot;price ($)&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;white&quot;, col.sub=&quot;orange&quot;, sub=&quot;Relation between size and price&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(0,7), ylim=c(0,7))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/linear-regression-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We have a dataset:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+d_1 = \{1, 1\} \\
+d_2 = \{2, 2\} \\
+d_3 = \{3, 3\} \\
+d_4 = \{4, 4\} \\
+d_5 = \{5, 5\} \\
+d_6 = \{6, 6\}
+&lt;/script&gt;
+
+&lt;p&gt;We can find a line can fitting all these data, which is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+f(x) = w_0 + w_1x
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;pre clas=&quot;r language&quot;&gt;&lt;code&gt;
+model &amp;lt;- lm(y~x)
+
+plot(main=&quot;Plot Recent House Sale&quot;, xlab=&quot;square feet (sq.ft.)&quot;, ylab=&quot;price ($)&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;yellow&quot;, col.sub=&quot;orange&quot;, sub=&quot;Relation between size and price&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(0,7), ylim=c(0,7))
+
+abline(model, col=&quot;blue&quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/linear-regression-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this plot, the scope is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+f(x) = 0 + 1 \cdot x
+&lt;/script&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;cost-function&quot;&gt;Cost Function&lt;/h4&gt;
 
+&lt;pre clas=&quot;r language&quot;&gt;&lt;code&gt;
+plot(main=&quot;Plot Recent House Sale&quot;, xlab=&quot;square feet (sq.ft.)&quot;, ylab=&quot;price ($)&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;yellow&quot;, col.sub=&quot;orange&quot;, sub=&quot;Relation between size and price&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(0,7), ylim=c(0,7))
+
+abline(a=1,b=3, col=&quot;blue&quot;)
+abline(a=1,b=2, col=&quot;green&quot;)
+abline(a=1,b=1, col=&quot;red&quot;)
+abline(a=0,b=1, col=&quot;black&quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/linear-regression-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+total \ deviation \ is: \ \sum_{x=1}^6 (f_{\theta}(x)-y)^2 \\
+to \ general \ is: \ \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+we \ can \ rewrite \ to: \frac{1}{m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+also \ we \ can \ rewrite \ to: \frac{1}{2m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+we \ define: \ J_{\theta} = \frac{1}{2m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
+we \ wanna \ minimize \ J_{\theta} : \theta = \operatorname{arg} \min{(J_{\theta})}
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
 &lt;h4 id=&quot;gradient-descent&quot;&gt;Gradient Descent&lt;/h4&gt;
+
+&lt;pre clas=&quot;r language&quot;&gt;&lt;code&gt;
+x &amp;lt;- seq(-6,6,0.5)
+f &amp;lt;- function(x)x^2
+y &amp;lt;- f(x)
+plot(main=&quot;Gradient Descent&quot;, x,y)
+lines(loess.smooth(x,y),col=&#39;red&#39;,lwd=2)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/linear-regression-4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;partial-derivative&quot;&gt;Partial Derivative&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J_{(\theta_0, \ \theta_1)} = (f_{\theta}(x)-y)^2 = (f_{\theta}(x))^2 - 2f_{\theta}(x)y- y^2 =
+(w_0 + w_1x)^2 - 2(w_0+w_1x)y - y^2 =
+w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\frac{\partial J_{(w_0, \ w_1)}}{\partial w_0} = 2w_0 + 2w_1x -2y = 2(w_0 + w_1x - y) = 2(f_{\theta}(x) - y) \\
+\frac{\partial J_{(w_0, \ w_1)}}{\partial w_1} = 2w_0x + 2w_1x^2 - 2xy = 2x(w_0 + w_1x - y) = 2x(f_{\theta}(x) - y)
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\theta := \theta - \alpha \frac{\partial J_{\theta}}{\partial \theta} \\
+\theta_0 := \theta_0 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_0} \\
+\theta_1 := \theta_1 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_1} \\
+
+\theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y) \\
+\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y)x
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;feature-scaling&quot;&gt;Feature Scaling&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Mean normalization:
+    &lt;ul&gt;
+      &lt;li&gt;replace &lt;script type=&quot;math/tex&quot;&gt; x_i &lt;/script&gt; with &lt;script type=&quot;math/tex&quot;&gt; x_i - u_i &lt;/script&gt;, Example:&lt;/li&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;x_i = \frac{x_i - u_i}{s_i}&lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Average house size is: 1000, and maxima house size: 2000, then&lt;/li&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;x_1 = \frac{size-1000}{2000} &lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Average bedroom is: 2, and maxima bedroom is: 5, then&lt;/li&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt; x_2 = \frac{\#bedrooms-2}{5} &lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </content>
  </entry>
  
