@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Linear Regression
-tagline: Model Representation, Cost Function, Gradient Descent
+tagline: Model Representation, Cost Function, Gradient Descent, Partial Derivative
 categories: machine-learning
 
 ---
