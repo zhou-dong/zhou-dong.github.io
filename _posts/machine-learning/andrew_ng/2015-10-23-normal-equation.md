@@ -87,7 +87,7 @@ y^{(3)} \\
 \vdots  \\
 y^{(m)}
 \end{bmatrix}
-\in R^{m+1}
+\in R^{m}
 $$
 
 $$
