@@ -124,3 +124,15 @@ $$
 \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y) \\
 \theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y)x
 $$
+
+---
+
+#### Feature Scaling
+
+1. Mean normalization:
+  - replace $$ x_i $$ with $$ x_i - u_i $$, Example:
+  - $$x_i = \frac{x_i - u_i}{s_i}$$
+  - Average house size is: 1000, and maxima house size: 2000, then
+  - $$x_1 = \frac{size-1000}{2000} $$
+  - Average bedroom is: 2, and maxima bedroom is: 5, then
+  - $$ x_2 = \frac{\#bedrooms-2}{5} $$

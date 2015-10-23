@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Linear Regression</title>
+    <title>Logistic Regression</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -153,152 +153,12 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Linear Regression  <small>Model Representation, Cost Function, Gradient Descent, Partial Derivative</small></h1>
+  <h1>Logistic Regression </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h4 id="model-representation">Model Representation</h4>
-
-<pre clas="r language"><code>
-# Use R language to create plot
-
-x &lt;- c(1:6)
-y &lt;- c(1:6)
-
-plot(main="Plot Recent House Sale", xlab="square feet (sq.ft.)", ylab="price ($)", pch=19, col="red", col.axis="brown", fg="purple", bg="white", col.sub="orange", sub="Relation between size and price", x,y,col.main="blue",col.lab="brown", xlim=c(0,7), ylim=c(0,7))
-
-</code></pre>
-
-<p><img src="/images/linear-regression-1.png" /></p>
-
-<p>We have a dataset:</p>
-
-<script type="math/tex; mode=display">
-d_1 = \{1, 1\} \\
-d_2 = \{2, 2\} \\
-d_3 = \{3, 3\} \\
-d_4 = \{4, 4\} \\
-d_5 = \{5, 5\} \\
-d_6 = \{6, 6\}
-</script>
-
-<p>We can find a line can fitting all these data, which is:</p>
-
-<script type="math/tex; mode=display">
-f(x) = w_0 + w_1x
-</script>
-
-<hr />
-
-<pre clas="r language"><code>
-model &lt;- lm(y~x)
-
-plot(main="Plot Recent House Sale", xlab="square feet (sq.ft.)", ylab="price ($)", pch=19, col="red", col.axis="brown", fg="purple", bg="yellow", col.sub="orange", sub="Relation between size and price", x,y,col.main="blue",col.lab="brown", xlim=c(0,7), ylim=c(0,7))
-
-abline(model, col="blue")
-
-</code></pre>
-
-<p><img src="/images/linear-regression-2.png" /></p>
-
-<p>In this plot, the scope is:</p>
-
-<script type="math/tex; mode=display">
-f(x) = 0 + 1 \cdot x
-</script>
-
-<hr />
-
-<h4 id="cost-function">Cost Function</h4>
-
-<pre clas="r language"><code>
-plot(main="Plot Recent House Sale", xlab="square feet (sq.ft.)", ylab="price ($)", pch=19, col="red", col.axis="brown", fg="purple", bg="yellow", col.sub="orange", sub="Relation between size and price", x,y,col.main="blue",col.lab="brown", xlim=c(0,7), ylim=c(0,7))
-
-abline(a=1,b=3, col="blue")
-abline(a=1,b=2, col="green")
-abline(a=1,b=1, col="red")
-abline(a=0,b=1, col="black")
-
-</code></pre>
-
-<p><img src="/images/linear-regression-3.png" /></p>
-
-<script type="math/tex; mode=display">
-
-total \ deviation \ is: \ \sum_{x=1}^6 (f_{\theta}(x)-y)^2 \\
-to \ general \ is: \ \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
-we \ can \ rewrite \ to: \frac{1}{m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
-also \ we \ can \ rewrite \ to: \frac{1}{2m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
-we \ define: \ J_{\theta} = \frac{1}{2m} \sum_{x=i}^m (f_{\theta}(x)-y)^2 \\
-we \ wanna \ minimize \ J_{\theta} : \theta = \operatorname{arg} \min{(J_{\theta})}
-</script>
-
-<hr />
-
-<h4 id="gradient-descent">Gradient Descent</h4>
-
-<pre clas="r language"><code>
-x &lt;- seq(-6,6,0.5)
-f &lt;- function(x)x^2
-y &lt;- f(x)
-plot(main="Gradient Descent", x,y)
-lines(loess.smooth(x,y),col='red',lwd=2)
-
-</code></pre>
-
-<p><img src="/images/linear-regression-4.png" /></p>
-
-<h4 id="partial-derivative">Partial Derivative</h4>
-
-<script type="math/tex; mode=display">
-J_{(\theta_0, \ \theta_1)} = (f_{\theta}(x)-y)^2 = (f_{\theta}(x))^2 - 2f_{\theta}(x)y- y^2 =
-(w_0 + w_1x)^2 - 2(w_0+w_1x)y - y^2 =
-w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
-</script>
-
-<script type="math/tex; mode=display">
-J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
-</script>
-
-<script type="math/tex; mode=display">
-\frac{\partial J_{(w_0, \ w_1)}}{\partial w_0} = 2w_0 + 2w_1x -2y = 2(w_0 + w_1x - y) = 2(f_{\theta}(x) - y) \\
-\frac{\partial J_{(w_0, \ w_1)}}{\partial w_1} = 2w_0x + 2w_1x^2 - 2xy = 2x(w_0 + w_1x - y) = 2x(f_{\theta}(x) - y)
-</script>
-
-<hr />
-
-<script type="math/tex; mode=display">
-\theta := \theta - \alpha \frac{\partial J_{\theta}}{\partial \theta} \\
-\theta_0 := \theta_0 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_0} \\
-\theta_1 := \theta_1 - \alpha \frac{\partial J_{(\theta_0, \ \theta_1)}}{\partial \theta_1} \\
-
-\theta_0 := \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y) \\
-\theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^m(f_{\theta}(x) - y)x
-</script>
-
-<hr />
-
-<h4 id="feature-scaling">Feature Scaling</h4>
-
-<ol>
-  <li>Mean normalization:
-    <ul>
-      <li>replace <script type="math/tex"> x_i </script> with <script type="math/tex"> x_i - u_i </script>, Example:</li>
-      <li>
-        <script type="math/tex; mode=display">x_i = \frac{x_i - u_i}{s_i}</script>
-      </li>
-      <li>Average house size is: 1000, and maxima house size: 2000, then</li>
-      <li>
-        <script type="math/tex; mode=display">x_1 = \frac{size-1000}{2000} </script>
-      </li>
-      <li>Average bedroom is: 2, and maxima bedroom is: 5, then</li>
-      <li>
-        <script type="math/tex; mode=display"> x_2 = \frac{\#bedrooms-2}{5} </script>
-      </li>
-    </ul>
-  </li>
-</ol>
+    
 
   </div>
 </div>
