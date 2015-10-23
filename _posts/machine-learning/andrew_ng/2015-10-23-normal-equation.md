@@ -95,5 +95,18 @@ X_{m \times n} \theta_{n \times 1} = y_{m \times 1} \\
 X \theta = y \\
 X^T X \theta = X^T y \\
 (X^T X)^{-1} (X^T X) \theta = (X^T X)^{-1} X^T y \\
-\theta = (X^T X)^{-1} X^T y 
+\theta = (X^T X)^{-1} X^T y
 $$
+
+---
+
+#### Normal Equation VS Gradient Descent
+
+1. Gradient Descent
+  - need to choose $$\alpha$$.
+  - need many iterations.
+  - works well even when $$n$$ is large.
+2. Normal Equation
+  - no need to choose choose $$\alpha$$.
+  - do not need to iterate.
+  - slow is $$n$$ is very large.

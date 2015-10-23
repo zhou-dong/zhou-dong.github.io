@@ -247,8 +247,29 @@ X_{m \times n} \theta_{n \times 1} = y_{m \times 1} \\
 X \theta = y \\
 X^T X \theta = X^T y \\
 (X^T X)^{-1} (X^T X) \theta = (X^T X)^{-1} X^T y \\
-\theta = (X^T X)^{-1} X^T y 
+\theta = (X^T X)^{-1} X^T y
 </script>
+
+<hr />
+
+<h4 id="normal-equation-vs-gradient-descent">Normal Equation VS Gradient Descent</h4>
+
+<ol>
+  <li>Gradient Descent
+    <ul>
+      <li>need to choose <script type="math/tex">\alpha</script>.</li>
+      <li>need many iterations.</li>
+      <li>works well even when <script type="math/tex">n</script> is large.</li>
+    </ul>
+  </li>
+  <li>Normal Equation
+    <ul>
+      <li>no need to choose choose <script type="math/tex">\alpha</script>.</li>
+      <li>do not need to iterate.</li>
+      <li>slow is <script type="math/tex">n</script> is very large.</li>
+    </ul>
+  </li>
+</ol>
 
   </div>
 </div>
