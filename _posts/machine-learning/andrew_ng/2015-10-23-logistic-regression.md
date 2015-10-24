@@ -30,3 +30,16 @@ $$
 h_{\theta}(x) = g(\theta^Tx) =
 \frac{1}{1 + e^{-(\theta^Tx)}}
 $$
+
+Decision Boundary
+
+$$
+h_{\theta}(x) = g(\theta^Tx) = p(y=1 \ | \ x, \theta)
+$$
+
+predict:
+
+$$
+y=1 \ \ \text{if} \ h_{\theta} \ge 0.5 \\
+y=0 \ \ \text{if} \ h_{\theta} < 0.5
+$$
