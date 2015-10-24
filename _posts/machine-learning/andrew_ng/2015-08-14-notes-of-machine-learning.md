@@ -5,10 +5,10 @@ categories: machine-learning
 ---
 
 1. Linear Regression
-2. Gradient Descent
-3. Multivariate Linear Regression
-4. Normal Equation
-5. Logstic Regression
+  - Gradient Descent
+  - Normal Equation
+
+2. Logstic Regression
 6. 在计算logistic Regression的cost function的时候，需要使用极大似然
 
 7. Regularzation
@@ -58,7 +58,7 @@ Aug 25, 2015
 
 - finish the course
 
---- 
+---
 
 255 - 256
 
@@ -71,4 +71,3 @@ A and B
 - MIPS (millions of instructions per second)
 - Throughput
 - artifical data synthesis
-
