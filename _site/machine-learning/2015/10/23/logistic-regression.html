@@ -253,7 +253,7 @@ h_{\theta}(x) = \theta_0 + \theta_1x \ \ (\text{其中}\theta_0 \text{是截距,
 
 <script type="math/tex; mode=display">
 h_{\theta}(x) \in (-\infty, +\infty) \\
-y \in (0, 1)
+y = (0, 1)
 </script>
 
 <ul>
@@ -267,7 +267,7 @@ y \in (0, 1)
  %]]></script>
 
 <ul>
-  <li>为了优化上面的结果，我们想到了：<script type="math/tex">e^x</script>曲线，它的所有值，都大于0，但是它的值会&gt;1。带入公式得到：</li>
+  <li>为了优化（平滑）上面的结果，我们想到了：<script type="math/tex">e^x</script>曲线，它的所有值，都大于0，但是它的值会&gt;1。带入公式得到：</li>
 </ul>
 
 <script type="math/tex; mode=display">
@@ -294,6 +294,18 @@ h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{(\theta_0
  %]]></script>
 
 <h4 id="cost-function">逻辑回归的Cost Function：</h4>
+
+<ul>
+  <li>我们可以像“线性回归”一样，使用方差的和，来表示“期望函数”与“真实值之间的偏差”。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (h_{\theta}(x)^{i} - y^{i})^2 \\
+h_{\theta}(x) - y = \frac{e^x}{e^x + 1} - 1 = \frac{e^x}{e^x + 1} - \frac{e^x+1}{e^x+1} = \frac{-1}{e^x+1}  \ (\text{if} \ y = 1)\\
+h_{\theta}(x) - y = \frac{e^x}{e^x + 1} - 0 = \frac{e^x}{e^x + 1} =  \frac{1}{e^x+1}  \ (\text{if} \ y = 0)\\
+(h_{\theta}(x) - y)^2 = (\frac{1}{e^x+1})^2 = (e^x+1)^{-2} \ \text{where} \ y = (0,1) \\
+J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (e^x+1)^{-2}
+</script>
 
   </div>
 </div>
