@@ -65,17 +65,14 @@ $$
 
 Predict:
 
----
-
 $$
+(1) \\
 y=1 \ \ \text{if} \ h_{\theta} \ge 0.5 \\
 \Rightarrow g(z) \ge 0.5 \\
 \Rightarrow g(z) = g({\theta^Tx}) \\
 \Rightarrow g(\theta^Tx) \ge 0.5 \\
-\Rightarrow \theta^Tx \ge 0
-$$
-
-$$
+\Rightarrow \theta^Tx \ge 0 \\
+(2) \\
 y=0 \ \ \text{if} \ h_{\theta} < 0.5 \\
 \Rightarrow g(z) < 0.5 \\
 \Rightarrow g(z) = g({\theta^Tx}) \\

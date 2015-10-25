@@ -219,18 +219,15 @@ h_{\theta}(x) = g(\theta^Tx) = p(y=1 \ | \ x, \theta)
 
 <p>Predict:</p>
 
-<hr />
+<script type="math/tex; mode=display">% <![CDATA[
 
-<script type="math/tex; mode=display">
+(1) \\
 y=1 \ \ \text{if} \ h_{\theta} \ge 0.5 \\
 \Rightarrow g(z) \ge 0.5 \\
 \Rightarrow g(z) = g({\theta^Tx}) \\
 \Rightarrow g(\theta^Tx) \ge 0.5 \\
-\Rightarrow \theta^Tx \ge 0
-</script>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
+\Rightarrow \theta^Tx \ge 0 \\
+(2) \\
 y=0 \ \ \text{if} \ h_{\theta} < 0.5 \\
 \Rightarrow g(z) < 0.5 \\
 \Rightarrow g(z) = g({\theta^Tx}) \\
