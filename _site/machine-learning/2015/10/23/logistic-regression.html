@@ -240,6 +240,66 @@ y=0 \ \ \text{if} \ h_{\theta} < 0.5 \\
 \Rightarrow \theta^Tx < 0
  %]]></script>
 
+<hr />
+
+<h4 id="section">逻辑回归的推导过程：</h4>
+
+<ul>
+  <li>首先“逻辑回归”是“线性回归”的延续。其中<script type="math/tex">\theta_0</script>是截距，<script type="math/tex">\theta_1</script>是斜率。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) = \theta_0 + \theta_1x \ \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率})
+</script>
+
+<ul>
+  <li>线性回归也是可以拟合（0，1）问题的，但是线性回归的值y，可能会&gt;1,或者&lt;0: { y&lt;0 or y<script type="math/tex">\in</script>{0,1} or y&gt;1 }。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) \in (-\infty, +\infty) \\
+y \in (0, 1)
+</script>
+
+<ul>
+  <li>我们希望“线性回归”的区间在（0，1）之间。首先想到的是：使所有&lt;0的值，都==0；所有&gt;1的值，都==1。</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\text{if} \ h_{\theta}(x) < 0 \ \text{then} \ h_{\theta}(x) = 0 \\
+\text{if} \ h_{\theta}(x) > 1 \ \text{then} \ h_{\theta}(x) = 1
+ %]]></script>
+
+<ul>
+  <li>为了优化上面的结果，我们想到了：<script type="math/tex">e^x</script>曲线，它的所有值，都大于0，但是它的值会&gt;1。带入公式得到：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) = e^x = e^{(\theta_0 + \theta_1x)} > 0
+</script>
+
+<ul>
+  <li>我们再对上面的结果，做优化：<script type="math/tex">\frac{e^x}{e^x+1}</script>，这样就得到了“逻辑回归”函数，也叫Sigmoid Function。</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{(\theta_0 + \theta_1x)}} < 1
+ %]]></script>
+
+<ul>
+  <li>最后我们得到一个大于0，小于1的，平滑的函数：Sigmoid Function或者叫做：Logistic Function。</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+0 < \frac{1}{1+e^{(\theta_0 + \theta_1x)}} < 1 \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率}) \\
+0 < h_{\theta}(x) < 1
+ %]]></script>
+
+<h4 id="cost-function">逻辑回归的Cost Function：</h4>
+
   </div>
 </div>
 
