@@ -75,8 +75,6 @@ y=1 \ \ \text{if} \ h_{\theta} \ge 0.5 \\
 \Rightarrow \theta^Tx \ge 0
 $$
 
----
-
 $$
 y=0 \ \ \text{if} \ h_{\theta} < 0.5 \\
 \Rightarrow g(z) < 0.5 \\
