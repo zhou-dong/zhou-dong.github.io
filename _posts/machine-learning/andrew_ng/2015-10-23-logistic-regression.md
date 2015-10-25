@@ -139,5 +139,9 @@ $$
 - 需要用其它的思路来minimize cost function：“极大似然”。
 
 $$
-
+Cost(h_{\theta}(x), y) =
+\begin{cases}
+-\log(h_{\theta}(x)) \ \text{if} \ y = 1 \\
+-\log(1- h_{\theta}(x)) \ \text{if} \ y = 0
+\end{cases}
 $$

@@ -313,7 +313,11 @@ J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (e^x+1)^{-2}
 </ul>
 
 <script type="math/tex; mode=display">
-
+Cost(h_{\theta}(x), y) =
+\begin{cases}
+-\log(h_{\theta}(x)) \ \text{if} \ y = 1 \\
+-\log(1- h_{\theta}(x)) \ \text{if} \ y = 0
+\end{cases}
 </script>
 
   </div>
