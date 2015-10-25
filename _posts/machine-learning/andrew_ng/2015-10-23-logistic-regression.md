@@ -134,3 +134,6 @@ h_{\theta}(x) - y = \frac{e^x}{e^x + 1} - 0 = \frac{e^x}{e^x + 1} =  \frac{1}{e^
 (h_{\theta}(x) - y)^2 = (\frac{1}{e^x+1})^2 = (e^x+1)^{-2} \ \text{where} \ y = (0,1) \\
 J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (e^x+1)^{-2}
 $$
+
+- 对上面的函数是一个“非凸函数”，有很多局部最优解，所以不能使用“梯度下降”。
+- 需要用其它的思路来minimize cost function：“极大似然”。
