@@ -145,3 +145,5 @@ Cost(h_{\theta}(x), y) =
 -\log(1- h_{\theta}(x)) \ \text{if} \ y = 0
 \end{cases}
 $$
+
+- 把上面的公式，写到同一个公式中。
