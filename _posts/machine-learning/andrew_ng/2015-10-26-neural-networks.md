@@ -10,3 +10,6 @@ categories: machine-learning
 
 
 #### Steps
+
+
+#### Cost Function
