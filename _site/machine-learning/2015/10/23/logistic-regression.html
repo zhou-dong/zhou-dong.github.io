@@ -293,6 +293,15 @@ h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{(\theta_0
 0 < h_{\theta}(x) < 1
  %]]></script>
 
+<ul>
+  <li>在这里<script type="math/tex">h_{\theta}(x) </script> 有特殊的含义：它表示x对应的f(x)取值为1的概率。所以对于输入的x，结果为1和0的概率分别是：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+p(y=1 \ | \ x;\theta) = h_{\theta}(x) \\
+p(y=0 \ | \ x;\theta) = 1 - h_{\theta}
+</script>
+
 <h4 id="cost-function">逻辑回归的Cost Function：</h4>
 
 <ul>
@@ -323,6 +332,12 @@ Cost(h_{\theta}(x), y) =
 <ul>
   <li>把上面的公式，写到同一个公式中。</li>
 </ul>
+
+<hr />
+
+<h4 id="reference">Reference：</h4>
+
+<p>http://blog.csdn.net/dongtingzhizi/article/details/15962797</p>
 
   </div>
 </div>

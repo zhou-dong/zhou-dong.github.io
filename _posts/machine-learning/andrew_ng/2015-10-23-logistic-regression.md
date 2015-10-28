@@ -123,6 +123,13 @@ $$
 0 < h_{\theta}(x) < 1
 $$
 
+- 在这里$$h_{\theta}(x) $$ 有特殊的含义：它表示x对应的f(x)取值为1的概率。所以对于输入的x，结果为1和0的概率分别是：
+
+$$
+p(y=1 \ | \ x;\theta) = h_{\theta}(x) \\
+p(y=0 \ | \ x;\theta) = 1 - h_{\theta}
+$$
+
 #### 逻辑回归的Cost Function：
 
 - 我们可以像“线性回归”一样，使用方差的和，来表示“期望函数”与“真实值之间的偏差”。
@@ -147,3 +154,10 @@ Cost(h_{\theta}(x), y) =
 $$
 
 - 把上面的公式，写到同一个公式中。
+
+
+---
+
+#### Reference：
+
+http://blog.csdn.net/dongtingzhizi/article/details/15962797
