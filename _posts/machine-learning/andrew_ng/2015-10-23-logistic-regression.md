@@ -168,10 +168,42 @@ L_{\theta} = \prod_{i=1}^m p(y^{(i)}|x^{(i)};\theta)
 = \prod_{i=1}^m (h_{\theta}(x^{(i)}))^{y^{(i)}} (1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}
 $$
 
-\\
+- 为了简化计算量，为似然函数取log，取对数可以得到对数似然度：
+
+$$
+l(\theta) = \log(L(\theta)) =
+\sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+$$
+
+- 现在我们要求的就是可以是$$l(\theta)$$的值，为最大的$$\theta$$的值。
+
+$$
+\text{We wanna find } \theta \text{ let } l(\theta) \text{ to be maximized: } \\
+\theta = \operatorname{arg} \max(l(\theta))
+$$
+
+- 这里我们要求最大值，可以用梯度上升法来求，也可以先对$$l(\theta)$$取负数，然后用梯度下降法来求最小值。
+
+$$
+J(\theta) = -\frac{1}{m} l(\theta)
+$$
+
+- 所以这里还用梯度下降法来最小值：
+
+$$
+\theta = \operatorname{arg} \min(l(\theta))
+$$
+
+#### 用“梯度下降”求使$$J(\theta)$$为最小值的$$\theta$$
+
+
+
+
 
 ---
 
 #### Reference：
 
 http://blog.csdn.net/dongtingzhizi/article/details/15962797
+
+http://tech.meituan.com/intro_to_logistic_regression.html
