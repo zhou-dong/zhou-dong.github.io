@@ -330,8 +330,28 @@ Cost(h_{\theta}(x), y) =
 </script>
 
 <ul>
-  <li>把上面的公式，写到同一个公式中。</li>
+  <li>
+    <p>把上面的公式，写到同一个公式中。</p>
+  </li>
+  <li>
+    <p>使用“极大似然”推导cost function的过程</p>
+  </li>
 </ul>
+
+<script type="math/tex; mode=display">
+p(y|x;\theta) = (h_{\theta}(x))^y(1-h_{\theta}(x))^{1-y} \\
+</script>
+
+<ul>
+  <li>取似然函数为：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+L_{\theta} = \prod_{i=1}^m p(y^{(i)}|x^{(i)};\theta)
+= \prod_{i=1}^m (h_{\theta}(x^{(i)}))^{y^{(i)}} (1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}
+</script>
+
+<p>\</p>
 
 <hr />
 
