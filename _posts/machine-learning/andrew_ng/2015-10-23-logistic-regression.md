@@ -196,7 +196,9 @@ $$
 
 #### 用“梯度下降”求使$$J(\theta)$$为最小值的$$\theta$$
 
-
+$$
+\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J_{(\theta)} \ (j=0...n)
+$$
 
 
 
