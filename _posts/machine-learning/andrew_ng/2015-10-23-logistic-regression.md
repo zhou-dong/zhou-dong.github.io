@@ -150,7 +150,8 @@ Cost(h_{\theta}(x), y) =
 \begin{cases}
 -\log(h_{\theta}(x)) \ \text{if} \ y = 1 \\
 -\log(1- h_{\theta}(x)) \ \text{if} \ y = 0
-\end{cases}
+\end{cases} \\
+= (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
 $$
 
 - 把上面的公式，写到同一个公式中。
@@ -201,6 +202,14 @@ $$
 $$
 
 
+- Partial Derivative
+
+$$\frac{\partial}{\partial x} (\log_ax) = \frac{1}{x \ln a} $$
+
+$$
+\frac{\partial}{\partial \theta_j} J_{(\theta)} =
+\frac{\partial}{\partial \theta_j} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+$$
 
 ---
 
