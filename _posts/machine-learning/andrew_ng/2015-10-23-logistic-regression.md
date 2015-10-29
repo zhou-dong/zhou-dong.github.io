@@ -207,8 +207,10 @@ $$
 $$\frac{\partial}{\partial x} (\log_ax) = \frac{1}{x \ln a} $$
 
 $$
-\frac{\partial}{\partial \theta_j} J_{(\theta)} =
-\frac{\partial}{\partial \theta_j} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+\frac{\partial}{\partial \theta_i} J_{(\theta)} =
+\frac{\partial}{\partial \theta_i} (-\frac{1}{m} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))) \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_i}(h_{\theta}(x^{(i)})) + (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_i}(1-h_{\theta}(x^{(i)})))
 $$
 
 ---
