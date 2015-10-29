@@ -202,15 +202,65 @@ $$
 $$
 
 
-- Partial Derivative
-
-$$\frac{\partial}{\partial x} (\log_ax) = \frac{1}{x \ln a} $$
+- Partial Derivative (1)
 
 $$
-\frac{\partial}{\partial \theta_i} J_{(\theta)} =
-\frac{\partial}{\partial \theta_i} (-\frac{1}{m} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))) \\
+\frac{\partial}{\partial x} (\log_ax) = \frac{1}{x \ln a}
+$$
 
-= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_i}(h_{\theta}(x^{(i)})) + (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_i}(1-h_{\theta}(x^{(i)})))
+- Partial Derivative (2)
+
+$$
+\frac{\partial}{\partial x} e^x = e^x
+$$
+
+- Partial Derivative (3)
+
+$$
+h_{\theta}(x^{(i)}) = g(\theta^Tx^{(i)})  \\
+
+\frac{\partial}{\partial x_i} g(\theta^Tx^{(i)}) =
+\frac{\partial}{\partial x_i} (\frac{1}{1+e^{(\theta^Tx^{(i)})}}) \\
+= (\frac{1}{1+e^{(\theta^Tx^{(i)})}})^2 e^{(\theta^Tx^{(i)})} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+
+= \frac{1}{1+e^{(\theta^Tx^{(i)})}} \frac{e^{(\theta^Tx^{(i)})}}{1+e^{(\theta^Tx^{(i)})}} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+
+= \frac{1}{1+e^{(\theta^Tx^{(i)})}} \frac{e^{(\theta^Tx^{(i)})}}{1+e^{(\theta^Tx^{(i)})}} x^{(i)}\\
+
+= g(\theta^Tx^{(i)})(1-g(\theta^Tx^{(i)}))x^{(i)} \\
+
+= h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x^{(i)}
+$$
+
+---
+
+$$
+\frac{\partial}{\partial x_i} J_{(\theta)} =
+\frac{\partial}{\partial x_i} (-\frac{1}{m} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) - (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))) \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} \frac{\partial}{\partial x_i}(h_{\theta}(x^{(i)})) - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} \frac{\partial}{\partial x_i}(h_{\theta}(x^{(i)}))) \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ） \frac{\partial}{\partial x_i}(h_{\theta}(x^{(i)})） \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ）h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x^{(i)} \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} (1-h_{\theta}(x^{(i)})) - (1-y^{(i)}) h_{\theta}(x^{(i)})）x^{(i)} \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} - h_{\theta}(x^{(i)})) x^{(i)} \\
+
+= \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x^{(i)} \\
+$$
+
+$$
+\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J_{(\theta)} \ (j=0...n) \\
+\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x_j^{(i)}) - y^{(i)}) x_j^{(i)}  \ (j=0...n) \\
+\theta_j := \theta_j - \alpha \sum_{i=1}^m (h_{\theta}(x_j^{(i)}) - y^{(i)}) x_j^{(i)}  \ (j=0...n)
+$$
+
+- 如果“梯度上升”的话，与“梯度下降”的原理一样，公式可以改写为：
+
+$$
+\theta_j := \theta_j + \alpha \sum_{i=1}^m (y^{(i)} - h_{\theta}(x_j^{(i)})) x_j^{(i)}  \ (j=0...n)
 $$
 
 ---
