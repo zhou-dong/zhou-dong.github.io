@@ -235,20 +235,20 @@ $$
 ---
 
 $$
-\frac{\partial}{\partial x_i} J_{(\theta)} =
-\frac{\partial}{\partial x_i} (-\frac{1}{m} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) - (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))) \\
+\frac{\partial}{\partial \theta_j} J_{(\theta)} =
+\frac{\partial}{\partial \theta_j} (-\frac{1}{m} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) - (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))) \\
 
-= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} \frac{\partial}{\partial x_i}(h_{\theta}(x^{(i)})) - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} \frac{\partial}{\partial x_i}(h_{\theta}(x^{(i)}))) \\
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)})) - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)}))) \\
 
-= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ） \frac{\partial}{\partial x_i}(h_{\theta}(x^{(i)})） \\
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ） \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)})） \\
 
-= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ）h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x^{(i)} \\
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ）h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x_j^{(i)} \\
 
-= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} (1-h_{\theta}(x^{(i)})) - (1-y^{(i)}) h_{\theta}(x^{(i)})）x^{(i)} \\
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} (1-h_{\theta}(x^{(i)})) - (1-y^{(i)}) h_{\theta}(x^{(i)})）x_j^{(i)} \\
 
-= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} - h_{\theta}(x^{(i)})) x^{(i)} \\
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} - h_{\theta}(x^{(i)})) x_j^{(i)} \\
 
-= \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x^{(i)} \\
+= \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)} \\
 $$
 
 $$
