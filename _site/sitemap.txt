@@ -9,6 +9,8 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags
 
+http://zhou-dong.github.io/machine-learning/2015/10/26/neural-networks
+http://zhou-dong.github.io/machine-learning/2015/10/25/solve-overfitting
 http://zhou-dong.github.io/machine-learning/2015/10/23/normal-equation
 http://zhou-dong.github.io/machine-learning/2015/10/23/logistic-regression
 http://zhou-dong.github.io/machine-learning/2015/10/21/linear-regression

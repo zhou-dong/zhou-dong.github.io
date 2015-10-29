@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-10-23T12:23:02-05:00</updated>
+ <updated>2015-10-28T17:30:29-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,15 +13,159 @@
 
  
  <entry>
+   <title>Neural Networks</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/10/26/neural-networks"/>
+   <updated>2015-10-26T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/10/26/neural-networks</id>
+   <content type="html">&lt;h4 id=&quot;introduction&quot;&gt;Introduction&lt;/h4&gt;
+
+&lt;h4 id=&quot;steps&quot;&gt;Steps&lt;/h4&gt;
+
+&lt;h4 id=&quot;cost-function&quot;&gt;Cost Function&lt;/h4&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Solving Overfitting</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/10/25/solve-overfitting"/>
+   <updated>2015-10-25T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/10/25/solve-overfitting</id>
+   <content type="html">&lt;h4 id=&quot;cross-validation&quot;&gt;Cross Validation&lt;/h4&gt;
+
+&lt;p&gt;Teatched by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Karen Hovsepian, Troy University&lt;/li&gt;
+  &lt;li&gt;Emily Fox, University of Washington&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;regularization&quot;&gt;Regularization&lt;/h4&gt;
+
+&lt;p&gt;Teatched by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Androw NG, Stanford University&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Normal Equation</title>
    <link href="http://zhou-dong.github.io/machine-learning/2015/10/23/normal-equation"/>
    <updated>2015-10-23T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/10/23/normal-equation</id>
-   <content type="html">&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+   <content type="html">&lt;h3 id=&quot;theta--xtx-1xty&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta = (X^TX)^{-1}X^Ty&lt;/script&gt;&lt;/h3&gt;
 
-J_{(\theta)} = \alpha 
+&lt;hr /&gt;
 
+&lt;h4 id=&quot;theta-in-r-&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \theta \in R &lt;/script&gt;&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J_{(\theta)} = a \theta^2 + b \theta + c \\
+\frac{\partial}{\partial \theta} J_{(\theta)} = 0 \\
+\text{solve for } \theta
 &lt;/script&gt;
+
+&lt;h4 id=&quot;theta-in-rn1-&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt; \theta \in R^{n+1} &lt;/script&gt;&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+J_{(\theta_0, \theta_1, ... , \theta_m)} = \frac{1}{2m} \sum_{i=1}^m (h_{\theta} (x^{(i)}) - y^{(i)})^2 \\
+\frac{\partial}{\partial \theta} J_{(\theta)} = \cdots = 0 \ \text{(for every j)} \\
+\text{solve for } \theta_0, \theta_1, ... , \theta_n \\
+\theta = (X^TX)^{-1}X^Ty
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+x^{(i)} =
+\begin{bmatrix}
+x_0^{(i)} \\
+x_1^{(i)} \\
+x_2^{(i)} \\
+\vdots  \\
+x_n^{(i)}
+\end{bmatrix}
+\in R^{n+1}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+(x^{(i)})^T =
+\begin{bmatrix}
+x_0^{(i)}, x_1^{(i)}, \cdots, x_n^{(i)}
+\end{bmatrix}
+\in R^{n+1}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+X_{m \times n} =
+\begin{bmatrix}
+(x^{(i)})^T
+\end{bmatrix}
+=
+\begin{bmatrix}
+(x^{(1)})^T \\
+(x^{(2)})^T \\
+(x^{(3)})^T \\
+\vdots  \\
+(x^{(m)})^T
+\end{bmatrix}
+\in R^{m}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\theta_{n \times 1} =
+\begin{bmatrix}
+\theta_0 \\
+\theta_1 \\
+\theta_2 \\
+\vdots  \\
+\theta_n
+\end{bmatrix}
+\in R^{n+1}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y_{m \times 1} =
+\begin{bmatrix}
+y^{(1)} \\
+y^{(2)} \\
+y^{(3)} \\
+\vdots  \\
+y^{(m)}
+\end{bmatrix}
+\in R^{m}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+X_{m \times n} \theta_{n \times 1} = y_{m \times 1} \\
+X \theta = y \\
+X^T X \theta = X^T y \\
+(X^T X)^{-1} (X^T X) \theta = (X^T X)^{-1} X^T y \\
+\theta = (X^T X)^{-1} X^T y
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;normal-equation-vs-gradient-descent&quot;&gt;Normal Equation VS Gradient Descent&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Gradient Descent
+    &lt;ul&gt;
+      &lt;li&gt;need to choose &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;need many iterations.&lt;/li&gt;
+      &lt;li&gt;works well even when &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is large.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Normal Equation
+    &lt;ul&gt;
+      &lt;li&gt;no need to choose choose &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt;.&lt;/li&gt;
+      &lt;li&gt;do not need to iterate.&lt;/li&gt;
+      &lt;li&gt;slow is &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; is very large.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 </content>
  </entry>
  
@@ -30,7 +174,247 @@ J_{(\theta)} = \alpha
    <link href="http://zhou-dong.github.io/machine-learning/2015/10/23/logistic-regression"/>
    <updated>2015-10-23T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/10/23/logistic-regression</id>
-   <content type="html">
+   <content type="html">&lt;pre&gt;&lt;code&gt;
+x &amp;lt;- runif(100, 0, 10)
+y &amp;lt;- runif(100, 0, 10)
+
+plot(main=&quot;Tumour Or Not&quot;, xlab=&quot;tumour size&quot;, ylab=&quot;tumour or not&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;white&quot;, col.sub=&quot;orange&quot;, sub=&quot;Logistic Regression&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(0,10), ylim=c(0,10))
+
+abline(a=10, b=-1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/logistic-regression-2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border: 1px solid purple&quot; src=&quot;/images/logistic-regression-3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+h_{\theta} = \theta^Tx \\
+y = 1 \ \text{if} \ \theta^Tx \ge 0 \\
+y = 0 \ \text{if} \ \theta^Tx &lt;0
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Take into Logistic Regression:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+g(h_{\theta}) = g(\theta^Tx) = 0.5 \\
+y = 1 \ \text{if} \ \theta^Tx \ge 0 \\
+y = 0 \ \text{if} \ \theta^Tx &lt;0
+ %]]&gt;&lt;/script&gt;
+
+&lt;pre&gt;&lt;code&gt;
+y &amp;lt;- c(0,0,0,0,1,1,1,1)
+x &amp;lt;- c(-4,-3,-2,-1,1,2,3,4)
+plot(main=&quot;Tumour Or Not&quot;, xlab=&quot;tumour size&quot;, ylab=&quot;tumour or not&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;white&quot;, col.sub=&quot;orange&quot;, sub=&quot;Logistic Regression&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(-4,4), ylim=c(0,1.1))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/logistic-regression-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In Linear Regression, the hypothesis function is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; h_{\theta}(x) = \theta^Tx &lt;/script&gt;
+
+&lt;p&gt;Sigmoid Function is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt; g(z) = \frac{1}{1+ e^{-z}} &lt;/script&gt;
+
+&lt;p&gt;Logistic Regression, the hypothesis function is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h_{\theta}(x) = g(\theta^Tx) =
+\frac{1}{1 + e^{-(\theta^Tx)}}
+&lt;/script&gt;
+
+&lt;p&gt;Decision Boundary&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h_{\theta}(x) = g(\theta^Tx) = p(y=1 \ | \ x, \theta)
+&lt;/script&gt;
+
+&lt;p&gt;Predict:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+(1) \\
+y=1 \ \ \text{if} \ h_{\theta} \ge 0.5 \\
+\Rightarrow g(z) \ge 0.5 \\
+\Rightarrow g(z) = g({\theta^Tx}) \\
+\Rightarrow g(\theta^Tx) \ge 0.5 \\
+\Rightarrow \theta^Tx \ge 0 \\
+(2) \\
+y=0 \ \ \text{if} \ h_{\theta} &lt; 0.5 \\
+\Rightarrow g(z) &lt; 0.5 \\
+\Rightarrow g(z) = g({\theta^Tx}) \\
+\Rightarrow g(\theta^Tx) &lt; 0.5 \\
+\Rightarrow \theta^Tx &lt; 0
+ %]]&gt;&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;逻辑回归的推导过程：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先“逻辑回归”是“线性回归”的延续。其中&lt;script type=&quot;math/tex&quot;&gt;\theta_0&lt;/script&gt;是截距，&lt;script type=&quot;math/tex&quot;&gt;\theta_1&lt;/script&gt;是斜率。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h_{\theta}(x) = \theta_0 + \theta_1x \ \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率})
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;线性回归也是可以拟合（0，1）问题的，但是线性回归的值y，可能会&amp;gt;1,或者&amp;lt;0: { y&amp;lt;0 or y&lt;script type=&quot;math/tex&quot;&gt;\in&lt;/script&gt;{0,1} or y&amp;gt;1 }。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h_{\theta}(x) \in (-\infty, +\infty) \\
+y = (0, 1)
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;我们希望“线性回归”的区间在（0，1）之间。首先想到的是：使所有&amp;lt;0的值，都==0；所有&amp;gt;1的值，都==1。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\text{if} \ h_{\theta}(x) &lt; 0 \ \text{then} \ h_{\theta}(x) = 0 \\
+\text{if} \ h_{\theta}(x) &gt; 1 \ \text{then} \ h_{\theta}(x) = 1
+ %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;为了优化（平滑）上面的结果，我们想到了：&lt;script type=&quot;math/tex&quot;&gt;e^x&lt;/script&gt;曲线，它的所有值，都大于0，但是它的值会&amp;gt;1。带入公式得到：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h_{\theta}(x) = e^x = e^{(\theta_0 + \theta_1x)} &gt; 0
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;我们再对上面的结果，做优化：&lt;script type=&quot;math/tex&quot;&gt;\frac{e^x}{e^x+1}&lt;/script&gt;，这样就得到了“逻辑回归”函数，也叫Sigmoid Function。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{(\theta_0 + \theta_1x)}} &lt; 1
+ %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;最后我们得到一个大于0，小于1的，平滑的函数：Sigmoid Function或者叫做：Logistic Function。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+0 &lt; \frac{1}{1+e^{(\theta_0 + \theta_1x)}} &lt; 1 \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率}) \\
+0 &lt; h_{\theta}(x) &lt; 1
+ %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在这里&lt;script type=&quot;math/tex&quot;&gt;h_{\theta}(x) &lt;/script&gt; 有特殊的含义：它表示x对应的f(x)取值为1的概率。所以对于输入的x，结果为1和0的概率分别是：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+p(y=1 \ | \ x;\theta) = h_{\theta}(x) \\
+p(y=0 \ | \ x;\theta) = 1 - h_{\theta}
+&lt;/script&gt;
+
+&lt;h4 id=&quot;cost-function&quot;&gt;逻辑回归的Cost Function：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;我们可以像“线性回归”一样，使用方差的和，来表示“期望函数”与“真实值之间的偏差”。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (h_{\theta}(x)^{i} - y^{i})^2 \\
+h_{\theta}(x) - y = \frac{e^x}{e^x + 1} - 1 = \frac{e^x}{e^x + 1} - \frac{e^x+1}{e^x+1} = \frac{-1}{e^x+1}  \ (\text{if} \ y = 1)\\
+h_{\theta}(x) - y = \frac{e^x}{e^x + 1} - 0 = \frac{e^x}{e^x + 1} =  \frac{1}{e^x+1}  \ (\text{if} \ y = 0)\\
+(h_{\theta}(x) - y)^2 = (\frac{1}{e^x+1})^2 = (e^x+1)^{-2} \ \text{where} \ y = (0,1) \\
+J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (e^x+1)^{-2}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对上面的函数是一个“非凸函数”，有很多局部最优解，所以不能使用“梯度下降”。&lt;/li&gt;
+  &lt;li&gt;需要用其它的思路来minimize cost function：“极大似然”。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+Cost(h_{\theta}(x), y) =
+\begin{cases}
+-\log(h_{\theta}(x)) \ \text{if} \ y = 1 \\
+-\log(1- h_{\theta}(x)) \ \text{if} \ y = 0
+\end{cases} \\
+= (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;把上面的公式，写到同一个公式中。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用“极大似然”推导cost function的过程&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+p(y|x;\theta) = (h_{\theta}(x))^y(1-h_{\theta}(x))^{1-y} \\
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;取似然函数为：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+L_{\theta} = \prod_{i=1}^m p(y^{(i)}|x^{(i)};\theta)
+= \prod_{i=1}^m (h_{\theta}(x^{(i)}))^{y^{(i)}} (1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;为了简化计算量，为似然函数取log，取对数可以得到对数似然度：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+l(\theta) = \log(L(\theta)) =
+\sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;现在我们要求的就是可以是&lt;script type=&quot;math/tex&quot;&gt;l(\theta)&lt;/script&gt;的值，为最大的&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;的值。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\text{We wanna find } \theta \text{ let } l(\theta) \text{ to be maximized: } \\
+\theta = \operatorname{arg} \max(l(\theta))
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;这里我们要求最大值，可以用梯度上升法来求，也可以先对&lt;script type=&quot;math/tex&quot;&gt;l(\theta)&lt;/script&gt;取负数，然后用梯度下降法来求最小值。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J(\theta) = -\frac{1}{m} l(\theta)
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;所以这里还用梯度下降法来最小值：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\theta = \operatorname{arg} \min(l(\theta))
+&lt;/script&gt;
+
+&lt;h4 id=&quot;jthetatheta&quot;&gt;用“梯度下降”求使&lt;script type=&quot;math/tex&quot;&gt;J(\theta)&lt;/script&gt;为最小值的&lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J_{(\theta)} \ (j=0...n)
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;reference&quot;&gt;Reference：&lt;/h4&gt;
+
+&lt;p&gt;http://blog.csdn.net/dongtingzhizi/article/details/15962797&lt;/p&gt;
+
+&lt;p&gt;http://tech.meituan.com/intro_to_logistic_regression.html&lt;/p&gt;
 </content>
  </entry>
  
@@ -1122,10 +1506,12 @@ public static void main(String args[]){
    <updated>2015-08-14T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/08/14/notes-of-machine-learning</id>
    <content type="html">&lt;ol&gt;
-  &lt;li&gt;Linear Regression&lt;/li&gt;
-  &lt;li&gt;Gradient Descent&lt;/li&gt;
-  &lt;li&gt;Multivariate Linear Regression&lt;/li&gt;
-  &lt;li&gt;Normal Equation&lt;/li&gt;
+  &lt;li&gt;Linear Regression
+    &lt;ul&gt;
+      &lt;li&gt;Gradient Descent&lt;/li&gt;
+      &lt;li&gt;Normal Equation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;Logstic Regression&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;在计算logistic Regression的cost function的时候，需要使用极大似然&lt;/p&gt;
@@ -1212,7 +1598,6 @@ mohammed.alsafi313@gmail.com&lt;/p&gt;
   &lt;li&gt;Throughput&lt;/li&gt;
   &lt;li&gt;artifical data synthesis&lt;/li&gt;
 &lt;/ul&gt;
-
 </content>
  </entry>
  
