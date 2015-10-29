@@ -9,7 +9,7 @@ categories: machine-learning
 #### 1. Regularization
 
 $$
-J(\theta) = \frac{1}{2m} \Biggr[\sum_{i=1}^m (h_{\theta}x^{(i)}-y^{(i)})^2 - \lambda \sum_{j=1}^m \theta_j^2 \Biggr]
+J(\theta) = \frac{1}{2m} \Biggr[\sum_{i=1}^m (h_{\theta}x^{(i)}-y^{(i)})^2 - \lambda \sum_{j=1}^n \theta_j^2 \Biggr]
 $$
 
 #### 2. Cross Validation
