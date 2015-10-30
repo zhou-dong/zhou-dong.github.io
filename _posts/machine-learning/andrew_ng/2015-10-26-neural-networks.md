@@ -64,12 +64,8 @@ $$
 - 输出层
 
 $$
-
+h(x)=g(\theta_0^{(2)} a_0^{(2)} + \theta_1^{(2)} a_1^{(2)} + \cdots + \theta_n^{(2)} a_n^{(2)})
 $$
-
-
-#### Steps
-
 
 #### Cost Function
 
