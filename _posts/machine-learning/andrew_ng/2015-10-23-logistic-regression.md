@@ -91,13 +91,13 @@ $$
 - 我们再对上面的结果，做优化：$$\frac{e^x}{e^x+1}$$，这样就得到了“逻辑回归”函数，也叫Sigmoid Function。
 
 $$
-h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{(\theta_0 + \theta_1x)}} < 1
+h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{-(\theta_0 + \theta_1x)}} < 1
 $$
 
 - 最后我们得到一个大于0，小于1的，平滑的函数：Sigmoid Function或者叫做：Logistic Function。
 
 $$
-0 < \frac{1}{1+e^{(\theta_0 + \theta_1x)}} < 1 \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率}) \\
+0 < \frac{1}{1+e^{-(\theta_0 + \theta_1x)}} < 1 \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率}) \\
 0 < h_{\theta}(x) < 1
 $$
 
@@ -198,12 +198,12 @@ $$
 h_{\theta}(x^{(i)}) = g(\theta^Tx^{(i)})  \\
 
 \frac{\partial}{\partial x_i} g(\theta^Tx^{(i)}) =
-\frac{\partial}{\partial x_i} (\frac{1}{1+e^{(\theta^Tx^{(i)})}}) \\
-= (\frac{1}{1+e^{(\theta^Tx^{(i)})}})^2 e^{(\theta^Tx^{(i)})} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+\frac{\partial}{\partial x_i} (\frac{1}{1+e^{-(\theta^Tx^{(i)})}}) \\
+= (\frac{1}{1+e^{-(\theta^Tx^{(i)})}})^2 e^{-(\theta^Tx^{(i)})} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
 
-= \frac{1}{1+e^{(\theta^Tx^{(i)})}} \frac{e^{(\theta^Tx^{(i)})}}{1+e^{(\theta^Tx^{(i)})}} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+= \frac{1}{1+e^{-(\theta^Tx^{(i)})}} \frac{e^{-(\theta^Tx^{(i)})}}{1+e^{-(\theta^Tx^{(i)})}} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
 
-= \frac{1}{1+e^{(\theta^Tx^{(i)})}} \frac{e^{(\theta^Tx^{(i)})}}{1+e^{(\theta^Tx^{(i)})}} x^{(i)}\\
+= \frac{1}{1+e^{-(\theta^Tx^{(i)})}} \frac{e^{-(\theta^Tx^{(i)})}}{1+e^{-(\theta^Tx^{(i)})}} x^{(i)}\\
 
 = g(\theta^Tx^{(i)})(1-g(\theta^Tx^{(i)}))x^{(i)} \\
 
