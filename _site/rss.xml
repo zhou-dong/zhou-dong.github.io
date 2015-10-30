@@ -5,18 +5,101 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-10-28T17:30:29-05:00</lastBuildDate>
-        <pubDate>2015-10-28T17:30:29-05:00</pubDate>
+        <lastBuildDate>2015-10-30T12:59:45-05:00</lastBuildDate>
+        <pubDate>2015-10-30T12:59:45-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Support Vector Machines</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/10/30/svm</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/10/30/svm</guid>
+                <pubDate>2015-10-30T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Neural Networks</title>
                 <description>&lt;h4 id=&quot;introduction&quot;&gt;Introduction&lt;/h4&gt;
 
-&lt;h4 id=&quot;steps&quot;&gt;Steps&lt;/h4&gt;
+&lt;p&gt;总的来说，人工神经网络，可以看做分为3层：输入层、隐含层、输出层&lt;/p&gt;
+
+&lt;p&gt;下面以最简单的三层神经网络为例来描述人工神经网络：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Neural Model: Logistic Unit&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+g(z) = \frac{1}{1+e^{-(\theta^Tx)}}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输入层&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+x =
+\begin{bmatrix}
+x_0 \\
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix} \ \ \
+
+\theta =
+\begin{bmatrix}
+\theta_0 \\
+\theta_1 \\
+\vdots \\
+\theta_n
+\end{bmatrix}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;隐含层&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+z^{(2)} =
+\begin{bmatrix}
+z_0^{(2)} \\
+z_1^{(2)} \\
+\vdots \\
+z_n^{(2)}
+\end{bmatrix} \\
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+a_1^{(2)} = g(\theta_{10}^{(1)}x_0 + \theta_{11}^{(1)}x_1 + \cdots + \theta_{1n}^{(1)}x_n) \\
+
+a_2^{(2)} = g(\theta_{20}^{(1)}x_0 + \theta_{21}^{(1)}x_1 + \cdots + \theta_{2n}^{(1)}x_n) \\
+
+\vdots \\
+
+a_m^{(2)} = g(\theta_{m0}^{(1)}x_0 + \theta_{m1}^{(1)}x_1 + \cdots + \theta_{mn}^{(1)}x_n)
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;输出层&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h(x)=g(\theta_0^{(2)} a_0^{(2)} + \theta_1^{(2)} a_1^{(2)} + \cdots + \theta_n^{(2)} a_n^{(2)})
+&lt;/script&gt;
 
 &lt;h4 id=&quot;cost-function&quot;&gt;Cost Function&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;reference&quot;&gt;Reference：&lt;/h4&gt;
+
+&lt;p&gt;http://tieba.baidu.com/p/3013551686&lt;/p&gt;
+
+&lt;p&gt;http://www.cnblogs.com/heaad/archive/2011/03/07/1976443.html&lt;/p&gt;
+
+&lt;p&gt;https://github.com/ty4z2008/Qix/blob/master/dl.md&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/machine-learning/2015/10/26/neural-networks</link>
                 <guid>http://zhou-dong.github.io/machine-learning/2015/10/26/neural-networks</guid>
@@ -25,22 +108,17 @@
 
         <item>
                 <title>Solving Overfitting</title>
-                <description>&lt;h4 id=&quot;cross-validation&quot;&gt;Cross Validation&lt;/h4&gt;
+                <description>&lt;h4 id=&quot;regularization&quot;&gt;1. Regularization&lt;/h4&gt;
 
-&lt;p&gt;Teatched by:&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J(\theta) = \frac{1}{2m} \Biggr[\sum_{i=1}^m (h_{\theta}x^{(i)}-y^{(i)})^2 - \lambda \sum_{j=1}^n \theta_j^2 \Biggr]
+&lt;/script&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Karen Hovsepian, Troy University&lt;/li&gt;
-  &lt;li&gt;Emily Fox, University of Washington&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;cross-validation&quot;&gt;2. Cross Validation&lt;/h4&gt;
 
-&lt;h4 id=&quot;regularization&quot;&gt;Regularization&lt;/h4&gt;
+&lt;p&gt;Cross-validation for detecting and preventing overfitting&lt;/p&gt;
 
-&lt;p&gt;Teatched by:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Androw NG, Stanford University&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://qph.is.quoracdn.net/main-qimg-33774ab551d31370fbe2a4fa57286781?convert_to_webp=true&quot; /&gt;&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/machine-learning/2015/10/25/solve-overfitting</link>
                 <guid>http://zhou-dong.github.io/machine-learning/2015/10/25/solve-overfitting</guid>
@@ -169,20 +247,7 @@ X^T X \theta = X^T y \\
 
         <item>
                 <title>Logistic Regression</title>
-                <description>&lt;pre&gt;&lt;code&gt;
-x &amp;lt;- runif(100, 0, 10)
-y &amp;lt;- runif(100, 0, 10)
-
-plot(main=&quot;Tumour Or Not&quot;, xlab=&quot;tumour size&quot;, ylab=&quot;tumour or not&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;white&quot;, col.sub=&quot;orange&quot;, sub=&quot;Logistic Regression&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(0,10), ylim=c(0,10))
-
-abline(a=10, b=-1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/logistic-regression-2.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img style=&quot;border: 1px solid purple&quot; src=&quot;/images/logistic-regression-3.png&quot; /&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+                <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
 h_{\theta} = \theta^Tx \\
 y = 1 \ \text{if} \ \theta^Tx \ge 0 \\
@@ -197,15 +262,6 @@ g(h_{\theta}) = g(\theta^Tx) = 0.5 \\
 y = 1 \ \text{if} \ \theta^Tx \ge 0 \\
 y = 0 \ \text{if} \ \theta^Tx &lt;0
  %]]&gt;&lt;/script&gt;
-
-&lt;pre&gt;&lt;code&gt;
-y &amp;lt;- c(0,0,0,0,1,1,1,1)
-x &amp;lt;- c(-4,-3,-2,-1,1,2,3,4)
-plot(main=&quot;Tumour Or Not&quot;, xlab=&quot;tumour size&quot;, ylab=&quot;tumour or not&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;white&quot;, col.sub=&quot;orange&quot;, sub=&quot;Logistic Regression&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(-4,4), ylim=c(0,1.1))
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/logistic-regression-1.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In Linear Regression, the hypothesis function is:&lt;/p&gt;
 
@@ -291,7 +347,7 @@ h_{\theta}(x) = e^x = e^{(\theta_0 + \theta_1x)} &gt; 0
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
-h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{(\theta_0 + \theta_1x)}} &lt; 1
+h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{-(\theta_0 + \theta_1x)}} &lt; 1
  %]]&gt;&lt;/script&gt;
 
 &lt;ul&gt;
@@ -300,7 +356,7 @@ h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{(\theta_0
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
-0 &lt; \frac{1}{1+e^{(\theta_0 + \theta_1x)}} &lt; 1 \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率}) \\
+0 &lt; \frac{1}{1+e^{-(\theta_0 + \theta_1x)}} &lt; 1 \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率}) \\
 0 &lt; h_{\theta}(x) &lt; 1
  %]]&gt;&lt;/script&gt;
 
@@ -403,7 +459,92 @@ J(\theta) = -\frac{1}{m} l(\theta)
 \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J_{(\theta)} \ (j=0...n)
 &lt;/script&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;Partial Derivative (1)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\frac{\partial}{\partial x} (\log_ax) = \frac{1}{x \ln a}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Partial Derivative (2)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\frac{\partial}{\partial x} e^x = e^x
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Partial Derivative (3)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h_{\theta}(x^{(i)}) = g(\theta^Tx^{(i)})  \\
+
+\frac{\partial}{\partial x_i} g(\theta^Tx^{(i)}) =
+\frac{\partial}{\partial x_i} (\frac{1}{1+e^{-(\theta^Tx^{(i)})}}) \\
+= (\frac{1}{1+e^{-(\theta^Tx^{(i)})}})^2 e^{-(\theta^Tx^{(i)})} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+
+= \frac{1}{1+e^{-(\theta^Tx^{(i)})}} \frac{e^{-(\theta^Tx^{(i)})}}{1+e^{-(\theta^Tx^{(i)})}} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+
+= \frac{1}{1+e^{-(\theta^Tx^{(i)})}} \frac{e^{-(\theta^Tx^{(i)})}}{1+e^{-(\theta^Tx^{(i)})}} x^{(i)}\\
+
+= g(\theta^Tx^{(i)})(1-g(\theta^Tx^{(i)}))x^{(i)} \\
+
+= h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x^{(i)}
+&lt;/script&gt;
+
 &lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\frac{\partial}{\partial \theta_j} J_{(\theta)} =
+\frac{\partial}{\partial \theta_j} (-\frac{1}{m} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))) \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)})) - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)}))) \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ） \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)})） \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ）h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x_j^{(i)} \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} (1-h_{\theta}(x^{(i)})) - (1-y^{(i)}) h_{\theta}(x^{(i)})）x_j^{(i)} \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} - h_{\theta}(x^{(i)})) x_j^{(i)} \\
+
+= \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)} \\
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J_{(\theta)} \ (j=0...n) \\
+\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x_j^{(i)}) - y^{(i)}) x_j^{(i)}  \ (j=0...n) \\
+\theta_j := \theta_j - \alpha \sum_{i=1}^m (h_{\theta}(x_j^{(i)}) - y^{(i)}) x_j^{(i)}  \ (j=0...n)
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果“梯度上升”的话，与“梯度下降”的原理一样，公式可以改写为：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\theta_j := \theta_j + \alpha \sum_{i=1}^m (y^{(i)} - h_{\theta}(x_j^{(i)})) x_j^{(i)}  \ (j=0...n)
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;
+x &amp;lt;- runif(100, 0, 10)
+y &amp;lt;- runif(100, 0, 10)
+
+plot(main=&quot;Tumour Or Not&quot;, xlab=&quot;tumour size&quot;, ylab=&quot;tumour or not&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;white&quot;, col.sub=&quot;orange&quot;, sub=&quot;Logistic Regression&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(0,10), ylim=c(0,10))
+
+abline(a=10, b=-1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;
+y &amp;lt;- c(0,0,0,0,1,1,1,1)
+x &amp;lt;- c(-4,-3,-2,-1,1,2,3,4)
+plot(main=&quot;Tumour Or Not&quot;, xlab=&quot;tumour size&quot;, ylab=&quot;tumour or not&quot;, pch=19, col=&quot;red&quot;, col.axis=&quot;brown&quot;, fg=&quot;purple&quot;, bg=&quot;white&quot;, col.sub=&quot;orange&quot;, sub=&quot;Logistic Regression&quot;, x,y,col.main=&quot;blue&quot;,col.lab=&quot;brown&quot;, xlim=c(-4,4), ylim=c(0,1.1))
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&quot;reference&quot;&gt;Reference：&lt;/h4&gt;
 
