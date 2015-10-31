@@ -162,6 +162,53 @@
 \min_{\theta} = C \sum_{i=1}^m \biggr[ y^{(i)} \operatorname{cost}_1 (\theta^Tx^{(i)}) + (1-y^{(i)})\operatorname{cost}_0 (\theta^Tx^{(i)}) \biggr] + \frac{1}{2} \sum_{j=1}^n \theta_j^2
 </script>
 
+<hr />
+
+<h4 id="section">从不同的角度解释“向量相乘”</h4>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+u =
+\begin{bmatrix}
+u_0 \\
+u_1
+\end{bmatrix}
+
+\ \ \ \
+
+v =
+\begin{bmatrix}
+v_0 \\
+v_1
+\end{bmatrix} \\
+
+u^Tv =
+\begin{bmatrix}
+u_0 & u_1
+\end{bmatrix}
+
+\begin{bmatrix}
+v_0 \\
+v_1
+\end{bmatrix}
+
+= u_0 v_0 + u_1 v_1 \\
+ %]]></script>
+
+<p><img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dot_Product.svg/2000px-Dot_Product.svg.png" /></p>
+
+<script type="math/tex; mode=display">
+\parallel u \parallel = \sqrt{(u_0^2 + u_1^2)} \\
+p = \text{length of projection of v onto u} \\
+u^Tv = p \times \parallel u \parallel \\
+</script>
+
+<p><img src="http://cdn1.askiitians.com/Images/2014108-144310695-8606-dot-product-image.PNG" /></p>
+
+<script type="math/tex; mode=display">
+u \times v = \parallel u \parallel \parallel v \parallel \cos(\theta)
+</script>
+
   </div>
 </div>
 
