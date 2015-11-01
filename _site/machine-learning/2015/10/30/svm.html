@@ -168,15 +168,102 @@
 
 <ul>
   <li>向量u的模 <script type="math/tex">\times</script> 向量v在向量u上的投影。</li>
-  <li><script type="math/tex">u \times v = \| u \| \cdot \| v \| \cos(\theta)</script>。</li>
+  <li>
+    <p><script type="math/tex">u \times v = \| u \| \cdot \| v \| \cos(\theta)</script>。</p>
+  </li>
   <li>向量相乘，可以表示<code>一个向量在另一个向量方向上投影的距离</code>。</li>
 </ul>
 
-<p>如果一个向量空间中有两个向量：一个正向量，一个负向量。</p>
+<h4 id="section-1">支撑向量机的推理过程：</h4>
+
+<ul>
+  <li>如果一个向量空间中有两个向量：一个正向量u，一个负向量v，一个分割平面c。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+w \cdot u \geqslant c \\
+w \cdot v \leqslant c
+</script>
+
+<ul>
+  <li>如果要在间隔的话，即：margin</li>
+</ul>
+
+<script type="math/tex; mode=display">
+w \cdot u - b \geqslant c \\
+w \cdot v + b \leqslant c
+</script>
+
+<ul>
+  <li>如果把c平面看做0平面的话，即：平面上面的大于等于0，下面的小于等于0</li>
+</ul>
+
+<script type="math/tex; mode=display">
+w \cdot u - b \geqslant 0 \ \ \ \text{positive} \\
+w \cdot v + b \leqslant 0 \ \ \ \text{negative}
+</script>
+
+<ul>
+  <li>如果是间隔为1，并且normalization公式的话：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+w \cdot x_+ - 1 \geqslant 0 \ \ \ \text{positive} \\
+w \cdot x_- + 1 \leqslant 0 \ \ \ \text{negative} \\
+\\
+w \cdot x_+ \geqslant 1 \ \ \ \text{positive} \\
+w \cdot x_- \leqslant -1 \ \ \ \text{negative}
+</script>
+
+<ul>
+  <li>引入一个y，到上面的式子中</li>
+</ul>
+
+<script type="math/tex; mode=display">
+y =
+\begin{cases}
++1 \ \ \ \text{positive sample}\\
+-1 \ \ \ \text{negative sample}
+\end{cases}
+</script>
+
+<script type="math/tex; mode=display">
+w \cdot x_+ \geqslant 1 \ \ \ \text{positive} \\
+w \cdot x_- \leqslant -1 \ \ \ \text{negative}
+</script>
+
+<script type="math/tex; mode=display">
+y_+ w \cdot x_+ \geqslant 1 \ \ \ \text{positive} \\
+y_- w \cdot x_- \geqslant 1 \ \ \ \text{negative}
+</script>
+
+<script type="math/tex; mode=display">
+y \cdot w \cdot x \geqslant 1
+</script>
+
+<script type="math/tex; mode=display">
+y w x -1 \geqslant 0
+</script>
+
+<ul>
+  <li>我们可以加上一个阀值：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+y (w x + b)  -1 \geqslant 0
+</script>
+
+<ul>
+  <li><code>找出支撑点来</code>，即在支撑线上的点</li>
+</ul>
+
+<script type="math/tex; mode=display">
+y (w x + b)  -1 = 0
+</script>
 
 <hr />
 
-<h4 id="section-1">从不同的角度解释“向量相乘”</h4>
+<h4 id="section-2">从不同的角度解释“向量相乘”</h4>
 
 <script type="math/tex; mode=display">% <![CDATA[
 
