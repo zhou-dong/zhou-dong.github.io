@@ -367,17 +367,107 @@ a_1z_1 + a_2z_2 + a_3z_3+a_4z_4+a_5z_5+a_6 = 0 \\
 \sum_{i=1}^5 a_iz_i + a_6 = 0
 </script>
 
+<script type="math/tex; mode=display">
+\mathcal{L}(w,b,\alpha) = \sum_i \alpha_i - \sum_i \sum_j \alpha_i \alpha_j y_i y_j z_i^T z_j
+</script>
+
 <ul>
-  <li>
-    <p>关于新的坐标z，这正是一个 hyper plane 的方程！也就是说，如果我们做一个映射 ϕ:ℝ2→ℝ5 ，将 X 按照上面的规则映射为 Z ，那么在新的空间中原来的数据将变成线性可分的，从而使用之前我们推导的线性分类算法就可以进行处理了。这正是 Kernel 方法处理非线性问题的基本思想。</p>
-  </li>
-  <li>这种kernel的叫做“多项式核”</li>
+  <li>关于新的坐标z，这正是一个 hyper plane 的方程！也就是说，如果我们做一个映射 ϕ:ℝ2→ℝ5 ，将 X 按照上面的规则映射为 Z ，那么在新的空间中原来的数据将变成线性可分的，从而使用之前我们推导的线性分类算法就可以进行处理了。这正是 Kernel 方法处理非线性问题的基本思想。</li>
+  <li>这种kernel的叫做“多项式核”。</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+f(x) = a_1x_1 + a_2x_1^2 + a_3x_2+a_4x_2^2+a_5x_1x_2+a_6 = 0 \\
+f(x) = a_1z_1 + a_2z_2 + a_3z_3+a_4z_4+a_5z_5+a_6 = 0 \\
+z = \begin{bmatrix}
+1 \\x_1 \\ x_1^2 \\ x_2 \\x_2^2 \\x_1x_2
+\end{bmatrix}
+\\
+z^T = \begin{bmatrix}
+1 & x_1' & x_1'^2 & x_2' & x_2'^2 &x_1'x_2'
+\end{bmatrix}
+\\
+z^Tz = 1 + x_1'x_1 + x_1'^2x_1^2 + x_2'x_2 + x_2'^2x_2^2 + x_1'x_2'x_1x_2 \ \ \ (1)
+\\
+x_i = \begin{bmatrix}
+x_1 \\ x_1^2
+\end{bmatrix}
+\\
+x_j = \begin{bmatrix}
+x_1' \\ x_1'^2
+\end{bmatrix}
+\\
+(1+x^Tx')^2 = (1+x_1x_1'+x_2x_2')^2 = \\
+1+ 2x_1'x_1 + x_1'^2x_1^2 + 2x_2'x_2 + x_2'^2x_2^2 + 2x_1'x_2'x_1x_2 \ \ \ (2)
+ %]]></script>
+
+<ul>
   <li>由上面的例子可以看出，把低维度空间数据映射到高维空间数据，理论上是可行的。但是如果用这种方法的话，2个维度，映射到高维以后会变成5个维度；</li>
-  <li>
-    <p>3个维度映射到高维空间以后会变成19个维度，所以维度的增加会是指数级的，如果维度变大的话，计算量会指数级的变大。</p>
-  </li>
+  <li>3个维度映射到高维空间以后会变成19个维度，所以维度的增加会是指数级的，如果维度变大的话，计算量会指数级的变大。</li>
   <li>我们发现两个向量相加的平方与两个向量映射到高维空间的复杂度是一样的。这样我们相当于在低维运算出高维的结果。计算量会大大减小。</li>
 </ul>
+
+<script type="math/tex; mode=display">
+z^Tz' = 1 + x_1'x_1 + x_1'^2x_1^2 + x_2'x_2 + x_2'^2x_2^2 + x_1'x_2'x_1x_2 \ \ \ (1) \\
+(1+x^Tx')^2 = 1+ 2x_1'x_1 + x_1'^2x_1^2 + 2x_2'x_2 + x_2'^2x_2^2 + 2x_1'x_2'x_1x_2 \ \ \ (2)
+</script>
+
+<ul>
+  <li>第一个是现在高维空间展开，然后再做内积</li>
+  <li>第二个是直接在低维空间做内积，得到的值再平方，相当于在低维运算出高维的结果。</li>
+  <li>随着维度的增加，第二种方法的计算量会远小于第一种。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\max_\alpha \sum_i^n \alpha_i - \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j k(x_i, x_j) \\
+s.t., \alpha \geqslant 0, i=1,2,...n \\
+\sum_i^n \alpha_i y_i = 0
+</script>
+
+<ol>
+  <li>Polynomial Kernel
+    <ul>
+      <li>
+        <script type="math/tex; mode=display">% <![CDATA[
+ k(x_1,x_2) = (<x_1,x_2> + R)^d %]]></script>
+      </li>
+    </ul>
+  </li>
+  <li>Gaussian Kernel
+    <ul>
+      <li>
+        <script type="math/tex; mode=display"> k(x_1,x_2) = \text{exp} \Bigl(-\frac{\|x_1 - x_2 \|^2}{2\sigma^2} \Bigl)</script>
+      </li>
+      <li>如果 σ 选得很大的话，高次特征上的权重实际上衰减得非常快，所以实际上相当于一个低维的子空间；反过来，如果 σ 选得很小，则可以将任意的数据映射为线性可分——当然，这并不一定是好事，因为随之而来的可能是非常严重的过拟合问题。不过，总的来说，通过调控参数 σ ，高斯核实际上具有相当高的灵活性，也是使用最广泛的核函数之一。</li>
+    </ul>
+  </li>
+  <li>Linear Kernel
+    <ul>
+      <li>
+        <script type="math/tex; mode=display">% <![CDATA[
+ k(x_1,x_2) = <x_1,x_2>  %]]></script>
+      </li>
+      <li>这实际上就是原始空间中的内积。这个核存在的主要目的是使得“映射后空间中的问题”和“映射前空间中的问题”两者在形式上统一起来了。</li>
+    </ul>
+  </li>
+</ol>
+
+<p><em>除了 SVM 之外，任何将计算表示为数据点的内积的方法，都可以使用核方法进行非线性扩展。</em></p>
+
+<h4 id="soft-margin-svm-outliers">Soft-margin SVM (Outliers)</h4>
+
+<script type="math/tex; mode=display">
+y_i (w^T x_i + b) \geqslant 1 \\
+
+y_i (w^T x_i + b) \geqslant 1 - \xi_i
+</script>
+
+<p>其中 ξi≥0 称为松弛变量 (slack variable) ，对应数据点 x 允许偏离的 functional margin 的量。当然，如果我们运行 ξi 任意大的话，那任意的超平面都是符合条件的了。所以，我们在原来的目标函数后面加上一项，使得这些 ξi 的总和也要最小：</p>
+
+<script type="math/tex; mode=display">
+\min(\frac{1}{2}\| w \|^2) + C\sum_{i=1}^n \xi_i
+ </script>
 
 <hr />
 
@@ -429,6 +519,8 @@ u \times v = \parallel u \parallel \parallel v \parallel \cos(\theta)
 <hr />
 
 <h4 id="reference">Reference：</h4>
+
+<p>sth</p>
 
 <p>https://www.youtube.com/watch?v=_PwhiWxHK8o</p>
 
