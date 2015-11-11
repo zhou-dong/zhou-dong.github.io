@@ -5,14 +5,514 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-10-30T12:59:45-05:00</lastBuildDate>
-        <pubDate>2015-10-30T12:59:45-05:00</pubDate>
+        <lastBuildDate>2015-11-11T12:46:54-06:00</lastBuildDate>
+        <pubDate>2015-11-11T12:46:54-06:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
+                <title>Recommender Systems</title>
+                <description>&lt;p&gt;Content-based Recommender Systems&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/11/09/recommender-systems</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/11/09/recommender-systems</guid>
+                <pubDate>2015-11-09T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Lose Weight</title>
+                <description>&lt;h4 id=&quot;section&quot;&gt;11/07 2015&lt;/h4&gt;
+
+&lt;p&gt;平板支撑：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;1.21.94&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;俯卧撑: 5 * 15&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;11/08 2015&lt;/h4&gt;
+
+&lt;p&gt;早餐&lt;/p&gt;
+
+&lt;p&gt;中餐&lt;/p&gt;
+
+&lt;p&gt;晚餐&lt;/p&gt;
+
+&lt;p&gt;锻炼&lt;/p&gt;
+
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/11/07/first-week</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/11/07/first-week</guid>
+                <pubDate>2015-11-07T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Viterbi Algorithm</title>
+                <description>&lt;p&gt;Description&lt;/p&gt;
+
+&lt;p&gt;Equation&lt;/p&gt;
+
+&lt;p&gt;View&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/11/06/viterbi</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/11/06/viterbi</guid>
+                <pubDate>2015-11-06T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Photo OCR</title>
+                <description>&lt;h4 id=&quot;photo-ocr-pipeline&quot;&gt;Photo OCR pipeline&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Text dection
+    &lt;ul&gt;
+      &lt;li&gt;Find where is location of the text in the picture.&lt;/li&gt;
+      &lt;li&gt;比例从小到大逐帧扫描整个图片。&lt;/li&gt;
+      &lt;li&gt;用每个比例逐帧扫描一次。&lt;/li&gt;
+      &lt;li&gt;每次用神经网络或者其他的算法判断当次扫描中是否有出现目标图像。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Character segmentation
+    &lt;ul&gt;
+      &lt;li&gt;Read the text in the regions. &lt;/li&gt;
+      &lt;li&gt;在某个区域内的字母，合并为一个group&lt;/li&gt;
+      &lt;li&gt;把Word分成一个一个小的character。&lt;/li&gt;
+      &lt;li&gt;通过查看每个image patch里面是一个character还是多个&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Character classification(recognition)
+    &lt;ul&gt;
+      &lt;li&gt;Read single character in a word.&lt;/li&gt;
+      &lt;li&gt;通过机器学习的方法辨识每一个字母 &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;scenario&quot;&gt;Scenario&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Help blend person to read the content is the real life.&lt;/li&gt;
+  &lt;li&gt;Car navigation system.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;artifical-data-synthesis&quot;&gt;Artifical data synthesis&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use small set of data to generate large data.
+    &lt;ul&gt;
+      &lt;li&gt;数据 + noise 合成新的数据&lt;/li&gt;
+      &lt;li&gt;distort原始数据，成新的数据&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Collect/label it yourself
+    &lt;ul&gt;
+      &lt;li&gt;如果label的代价不是很大的话，其实自己label有时候效率是不差的。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;“Crowd source”
+    &lt;ul&gt;
+      &lt;li&gt;一些数据label的平台（网站），可以在上面label data。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;ceilling-analysis&quot;&gt;Ceilling Analysis&lt;/h4&gt;
+
+&lt;p&gt;Find what part of pipline should pay more effort&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/11/05/photo-ocr</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/11/05/photo-ocr</guid>
+                <pubDate>2015-11-05T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>K-Means</title>
+                <description>&lt;p&gt;Input:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;K (number of clusters)&lt;/li&gt;
+  &lt;li&gt;Training set {&lt;script type=&quot;math/tex&quot;&gt;x^{(1)},x^{(2)},...,x^{(m)} &lt;/script&gt;}&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/11/05/k-means</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/11/05/k-means</guid>
+                <pubDate>2015-11-05T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
                 <title>Support Vector Machines</title>
-                <description>
+                <description>&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\min_{\theta} = C \sum_{i=1}^m \biggr[ y^{(i)} \operatorname{cost}_1 (\theta^Tx^{(i)}) + (1-y^{(i)})\operatorname{cost}_0 (\theta^Tx^{(i)}) \biggr] + \frac{1}{2} \sum_{j=1}^n \theta_j^2
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;要了解支撑向量机，首先要弄明白：向量相乘的几何意义。&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;向量u的模 &lt;script type=&quot;math/tex&quot;&gt;\times&lt;/script&gt; 向量v在向量u上的投影。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;u \times v = \| u \| \cdot \| v \| \cos(\theta)&lt;/script&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;向量相乘，可以表示&lt;code&gt;一个向量在另一个向量方向上投影的距离&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;支撑向量机的推理过程：&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果一个向量空间中有两个向量：一个正向量u，一个负向量v，一个分割平面c。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+w \cdot u \geqslant c \\
+w \cdot v \leqslant c
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果要在间隔的话，即：margin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+w \cdot u - b \geqslant c \\
+w \cdot v + b \leqslant c
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果把c平面看做0平面的话，即：平面上面的大于等于0，下面的小于等于0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+w \cdot u - b \geqslant 0 \ \ \ \text{positive} \\
+w \cdot v + b \leqslant 0 \ \ \ \text{negative}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果是间隔为1，并且normalization公式的话：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+w \cdot x_+ - 1 \geqslant 0 \ \ \ \text{positive} \\
+w \cdot x_- + 1 \leqslant 0 \ \ \ \text{negative} \\
+\\
+w \cdot x_+ \geqslant 1 \ \ \ \text{positive} \\
+w \cdot x_- \leqslant -1 \ \ \ \text{negative}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;引入一个y，到上面的式子中&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y =
+\begin{cases}
++1 \ \ \ \text{positive sample}\\
+-1 \ \ \ \text{negative sample}
+\end{cases}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+w \cdot x_+ \geqslant 1 \ \ \ \text{positive} \\
+w \cdot x_- \leqslant -1 \ \ \ \text{negative}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y_+ w \cdot x_+ \geqslant 1 \ \ \ \text{positive} \\
+y_- w \cdot x_- \geqslant 1 \ \ \ \text{negative}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y \cdot w \cdot x \geqslant 1
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y w x -1 \geqslant 0
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;我们可以加上一个阀值：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y (w x + b)  -1 \geqslant 0
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;找出支撑点来&lt;/code&gt;，即在支撑线上的点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y (w x + b)  -1 = 0
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;求支撑线之间的宽度：在+支撑线上的&lt;script type=&quot;math/tex&quot;&gt;x_+&lt;/script&gt;，与在-支撑线上的&lt;script type=&quot;math/tex&quot;&gt;x_-&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\text{WIDTH} =  (x_+ - x_-) \cdot \frac{w}{\| w \|}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+x_+ = \frac{1-b}{w} \\
+x_- = -\frac{1+b}{w} \\
+x_+ - x_- = \frac{1-b-(-1-b)}{w} = \frac{2}{w} \\
+\text{WIDTH} =  (x_+ - x_-) \cdot \frac{w}{\| w \|} = \frac{2}{w} \cdot \frac{w}{\| w \|}  = \frac{2}{\| w \|} \\
+w = \operatorname{arg} \max(\frac{2}{\| w \|}) \\
+= \operatorname{arg} \max(\frac{1}{\| w \|}) \\
+= \operatorname{arg} \min(\| w \|) \\
+= \operatorname{arg} \min(\frac{1}{2}\| w \|^2)
+&lt;/script&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;得到支撑向量机的公式表示：&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y =
+\begin{cases}
++1 \ \ \ \text{positive sample}\\
+-1 \ \ \ \text{negative sample}
+\end{cases}
+\ \ \ (1) \\
+
+y (w x + b)  -1 \geqslant 0
+\ \ \ (2) \\
+
+w = \operatorname{arg} \min(\frac{1}{2}\| w \|^2)
+\ \ \ (3)
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\min(\frac{1}{2}\| w \|^2) \ \  \Bigl\{\text{subject to} \ \ \ y (w x + b) \geqslant 1 \Bigl\}
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;这个其实是一个带约束的二次规划(quadratic-programming, QP)问题；&lt;/li&gt;
+  &lt;li&gt;是一个凸问题，凸问题就是指的不会有局部最优解；&lt;/li&gt;
+  &lt;li&gt;可以想象一个漏斗，不管我们开始的时候将一个小球放在漏斗的什么位置，这个小球最终一定可以掉出漏斗，也就是得到全局最优解。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;lagrange-equation&quot;&gt;使用“拉格朗日”函数，来求解支撑向量机（Lagrange equation）&lt;/h4&gt;
+
+&lt;p&gt;关于 Lagrange duality 简单地来说，通过给每一个约束条件加上一个 Lagrange multiplier，我们可以将它们融和到目标函数里去：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\mathcal{L}(w,b,\alpha) = \frac{1}{2}\| w \|^2 - \sum \alpha_i \Bigl[y_i(wx_i + b) - 1 \Bigl] \\
+\frac{\partial L}{\partial w} = w - \sum \alpha_i y_i x_i = 0\\
+w = \sum_i \alpha_i y_i x_i \\
+\frac{\partial L}{\partial b} = - \sum_i \alpha_i y_i = 0 \\
+\sum_i \alpha_i y_i = 0
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\mathcal{L}(w,b,\alpha) = \frac{1}{2} w^Tw - \sum_i \alpha_i \Bigl[y_i(w^Tx_i + b) - 1 \Bigl] \\
+\mathcal{L}(w,b,\alpha) = \frac{1}{2} w^Tw - \sum_i \alpha_i y_i x_i w^T - \sum_i \alpha_i y_i b + \sum_i \alpha_i\\
+\mathcal{L}(w,b,\alpha) = \frac{1}{2} w^Tw - ww^T - 0 + \sum_i \alpha_i\\
+\mathcal{L}(w,b,\alpha) = \sum_i \alpha_i - \frac{1}{2} w^Tw \\
+\mathcal{L}(w,b,\alpha) = \sum_i \alpha_i - \sum_i \sum_j \alpha_i y_i x_i^T  \alpha_j y_j x_j \\
+\mathcal{L}(w,b,\alpha) = \sum_i \alpha_i - \sum_i \sum_j \alpha_i \alpha_j y_i y_j x_i^T x_j
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;新问题加上其限制条件是（对偶问题）:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\max_\alpha \sum_i^n \alpha_i - \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j x_i^T x_j \\
+s.t., \alpha \geqslant 0, i=1,2,...n \\
+\sum_i^n \alpha_i y_i = 0
+&lt;/script&gt;
+
+&lt;h4 id=&quot;kernel&quot;&gt;Kernel&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;用一个哲学例子来说：世界上本来没有两个完全一样的物体，对于所有的两个物体，我们可以通过增加维度来让他们最终有所区别，比如说两本书，从(颜色，内容)两个维度来说，可能是一样的，我们可以加上 作者 这个维度，是在不行我们还可以加入 页码，可以加入 拥有者，可以加入 购买地点，可以加入 笔记内容等等。&lt;code&gt;当维度增加到无限维的时候，一定可以让任意的两个物体可分了&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果用 &lt;script type=&quot;math/tex&quot;&gt;x_1,x_2&lt;/script&gt; 来表示二维平面的两个坐标的话，我们知道一条二次曲线（圆圈是二次曲线的一种特殊情况）的方程可以写作这样的形式：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+a_1x_1 + a_2x_1^2 + a_3x_2+a_4x_2^2+a_5x_1x_2+a_6 = 0
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果我们构造另外一个五维的空间，其中五个坐标的值分别为 &lt;script type=&quot;math/tex&quot;&gt; z_1=x_1, z_2=x_1^2, z_3=x_2, z_4=x_2^2, z_5=x_1x_2 &lt;/script&gt; 那么显然，上面的方程在新的坐标系下可以写作：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+a_1z_1 + a_2z_2 + a_3z_3+a_4z_4+a_5z_5+a_6 = 0 \\
+
+\sum_{i=1}^5 a_iz_i + a_6 = 0
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\mathcal{L}(w,b,\alpha) = \sum_i \alpha_i - \sum_i \sum_j \alpha_i \alpha_j y_i y_j z_i^T z_j
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;关于新的坐标z，这正是一个 hyper plane 的方程！也就是说，如果我们做一个映射 ϕ:ℝ2→ℝ5 ，将 X 按照上面的规则映射为 Z ，那么在新的空间中原来的数据将变成线性可分的，从而使用之前我们推导的线性分类算法就可以进行处理了。这正是 Kernel 方法处理非线性问题的基本思想。&lt;/li&gt;
+  &lt;li&gt;这种kernel的叫做“多项式核”。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+f(x) = a_1x_1 + a_2x_1^2 + a_3x_2+a_4x_2^2+a_5x_1x_2+a_6 = 0 \\
+f(x) = a_1z_1 + a_2z_2 + a_3z_3+a_4z_4+a_5z_5+a_6 = 0 \\
+z = \begin{bmatrix}
+1 \\x_1 \\ x_1^2 \\ x_2 \\x_2^2 \\x_1x_2
+\end{bmatrix}
+\\
+z^T = \begin{bmatrix}
+1 &amp; x_1&#39; &amp; x_1&#39;^2 &amp; x_2&#39; &amp; x_2&#39;^2 &amp;x_1&#39;x_2&#39;
+\end{bmatrix}
+\\
+z^Tz = 1 + x_1&#39;x_1 + x_1&#39;^2x_1^2 + x_2&#39;x_2 + x_2&#39;^2x_2^2 + x_1&#39;x_2&#39;x_1x_2 \ \ \ (1)
+\\
+x_i = \begin{bmatrix}
+x_1 \\ x_1^2
+\end{bmatrix}
+\\
+x_j = \begin{bmatrix}
+x_1&#39; \\ x_1&#39;^2
+\end{bmatrix}
+\\
+(1+x^Tx&#39;)^2 = (1+x_1x_1&#39;+x_2x_2&#39;)^2 = \\
+1+ 2x_1&#39;x_1 + x_1&#39;^2x_1^2 + 2x_2&#39;x_2 + x_2&#39;^2x_2^2 + 2x_1&#39;x_2&#39;x_1x_2 \ \ \ (2)
+ %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;由上面的例子可以看出，把低维度空间数据映射到高维空间数据，理论上是可行的。但是如果用这种方法的话，2个维度，映射到高维以后会变成5个维度；&lt;/li&gt;
+  &lt;li&gt;3个维度映射到高维空间以后会变成19个维度，所以维度的增加会是指数级的，如果维度变大的话，计算量会指数级的变大。&lt;/li&gt;
+  &lt;li&gt;我们发现两个向量相加的平方与两个向量映射到高维空间的复杂度是一样的。这样我们相当于在低维运算出高维的结果。计算量会大大减小。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+z^Tz&#39; = 1 + x_1&#39;x_1 + x_1&#39;^2x_1^2 + x_2&#39;x_2 + x_2&#39;^2x_2^2 + x_1&#39;x_2&#39;x_1x_2 \ \ \ (1) \\
+(1+x^Tx&#39;)^2 = 1+ 2x_1&#39;x_1 + x_1&#39;^2x_1^2 + 2x_2&#39;x_2 + x_2&#39;^2x_2^2 + 2x_1&#39;x_2&#39;x_1x_2 \ \ \ (2)
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一个是现在高维空间展开，然后再做内积&lt;/li&gt;
+  &lt;li&gt;第二个是直接在低维空间做内积，得到的值再平方，相当于在低维运算出高维的结果。&lt;/li&gt;
+  &lt;li&gt;随着维度的增加，第二种方法的计算量会远小于第一种。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\max_\alpha \sum_i^n \alpha_i - \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j k(x_i, x_j) \\
+s.t., \alpha \geqslant 0, i=1,2,...n \\
+\sum_i^n \alpha_i y_i = 0
+&lt;/script&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Polynomial Kernel
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+ k(x_1,x_2) = (&lt;x_1,x_2&gt; + R)^d %]]&gt;&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Gaussian Kernel
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt; k(x_1,x_2) = \text{exp} \Bigl(-\frac{\|x_1 - x_2 \|^2}{2\sigma^2} \Bigl)&lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;如果 σ 选得很大的话，高次特征上的权重实际上衰减得非常快，所以实际上相当于一个低维的子空间；反过来，如果 σ 选得很小，则可以将任意的数据映射为线性可分——当然，这并不一定是好事，因为随之而来的可能是非常严重的过拟合问题。不过，总的来说，通过调控参数 σ ，高斯核实际上具有相当高的灵活性，也是使用最广泛的核函数之一。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Linear Kernel
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+ k(x_1,x_2) = &lt;x_1,x_2&gt;  %]]&gt;&lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;这实际上就是原始空间中的内积。这个核存在的主要目的是使得“映射后空间中的问题”和“映射前空间中的问题”两者在形式上统一起来了。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;除了 SVM 之外，任何将计算表示为数据点的内积的方法，都可以使用核方法进行非线性扩展。&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;soft-margin-svm-outliers&quot;&gt;Soft-margin SVM (Outliers)&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y_i (w^T x_i + b) \geqslant 1 \\
+
+y_i (w^T x_i + b) \geqslant 1 - \xi_i
+&lt;/script&gt;
+
+&lt;p&gt;其中 ξi≥0 称为松弛变量 (slack variable) ，对应数据点 x 允许偏离的 functional margin 的量。当然，如果我们运行 ξi 任意大的话，那任意的超平面都是符合条件的了。所以，我们在原来的目标函数后面加上一项，使得这些 ξi 的总和也要最小：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\min(\frac{1}{2}\| w \|^2) + C\sum_{i=1}^n \xi_i
+ &lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;从不同的角度解释“向量相乘”&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+u =
+\begin{bmatrix}
+u_0 \\
+u_1
+\end{bmatrix}
+
+\ \ \ \
+
+v =
+\begin{bmatrix}
+v_0 \\
+v_1
+\end{bmatrix} \\
+
+u^Tv =
+\begin{bmatrix}
+u_0 &amp; u_1
+\end{bmatrix}
+
+\begin{bmatrix}
+v_0 \\
+v_1
+\end{bmatrix}
+
+= u_0 v_0 + u_1 v_1 \\
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;img height=&quot;200px&quot; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Dot_Product.svg/2000px-Dot_Product.svg.png&quot; /&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\parallel u \parallel = \sqrt{(u_0^2 + u_1^2)} \\
+p = \text{length of projection of v onto u} \\
+u^Tv = p \times \parallel u \parallel \\
+&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cdn1.askiitians.com/Images/2014108-144310695-8606-dot-product-image.PNG&quot; /&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+u \times v = \parallel u \parallel \parallel v \parallel \cos(\theta)
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;reference&quot;&gt;Reference：&lt;/h4&gt;
+
+&lt;p&gt;sth&lt;/p&gt;
+
+&lt;p&gt;https://www.youtube.com/watch?v=_PwhiWxHK8o&lt;/p&gt;
+
+&lt;p&gt;http://www.cnblogs.com/LeftNotEasy/archive/2011/05/02/basic-of-svm.html&lt;/p&gt;
+
+&lt;p&gt;http://www.cnblogs.com/jerrylead/archive/2011/03/13/1982684.html&lt;/p&gt;
+
+&lt;p&gt;http://blog.pluskid.org/?page_id=683&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/machine-learning/2015/10/30/svm</link>
                 <guid>http://zhou-dong.github.io/machine-learning/2015/10/30/svm</guid>
@@ -1177,8 +1677,10 @@ J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
 &lt;ul&gt;
   &lt;li&gt;docker images：列出所有镜像(images)&lt;/li&gt;
   &lt;li&gt;docker ps：列出正在运行的(容器)containers&lt;/li&gt;
+  &lt;li&gt;docker ps -a: 列出所有的容器，包括不运行的容器。&lt;/li&gt;
   &lt;li&gt;docker pull ubuntu：下载镜像&lt;/li&gt;
   &lt;li&gt;docker run -i -t ubuntu /bin/bash：运行ubuntu镜像&lt;/li&gt;
+  &lt;li&gt;docker restart master: 重启已经停止的container，但start不能够再指定容器启动时运行的指令，因为docker只能有一个前台进程。&lt;/li&gt;
   &lt;li&gt;docker commit 3a09b2588478 ubuntu:mynewimage：提交你的变更，并且把容器保存成Tag为mynewimage的新的ubuntu镜像.(注意，这里提交只是提交到本地仓库，类似git)&lt;/li&gt;
 &lt;/ul&gt;
 

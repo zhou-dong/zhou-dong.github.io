@@ -9,6 +9,11 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags
 
+http://zhou-dong.github.io/machine-learning/2015/11/09/recommender-systems
+http://zhou-dong.github.io/machine-learning/2015/11/07/first-week
+http://zhou-dong.github.io/machine-learning/2015/11/06/viterbi
+http://zhou-dong.github.io/machine-learning/2015/11/05/photo-ocr
+http://zhou-dong.github.io/machine-learning/2015/11/05/k-means
 http://zhou-dong.github.io/machine-learning/2015/10/30/svm
 http://zhou-dong.github.io/machine-learning/2015/10/26/neural-networks
 http://zhou-dong.github.io/machine-learning/2015/10/25/solve-overfitting
