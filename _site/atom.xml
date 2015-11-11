@@ -4,13 +4,22 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-11-11T12:46:54-06:00</updated>
+ <updated>2015-11-11T13:53:52-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Recommender Systems</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/11/11/pca"/>
+   <updated>2015-11-11T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/11/11/pca</id>
+   <content type="html">&lt;p&gt;Content-based Recommender Systems&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Recommender Systems</title>
@@ -138,6 +147,41 @@
 &lt;ul&gt;
   &lt;li&gt;K (number of clusters)&lt;/li&gt;
   &lt;li&gt;Training set {&lt;script type=&quot;math/tex&quot;&gt;x^{(1)},x^{(2)},...,x^{(m)} &lt;/script&gt;}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x^{(i)} \in R^n&lt;/script&gt; (drop &lt;script type=&quot;math/tex&quot;&gt;x_0 = 1&lt;/script&gt; convention)&lt;/p&gt;
+
+&lt;p&gt;Step:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Randomly initialize K cluster centroid &lt;script type=&quot;math/tex&quot;&gt;\mu_1, \mu_2, ..., \mu_k \in R^n &lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Repeat
+    &lt;ul&gt;
+      &lt;li&gt;for i=1 to m &lt;script type=&quot;math/tex&quot;&gt;c^{(i)} := &lt;/script&gt; index (from 1 to K) of cluster centroid closest to &lt;script type=&quot;math/tex&quot;&gt;x_{(i)}, \text{which means find: } \min_k \|x^{(i)}-\mu_k\|&lt;/script&gt;&lt;/li&gt;
+      &lt;li&gt;for k=1 to K &lt;script type=&quot;math/tex&quot;&gt;\mu_k := &lt;/script&gt; average (mean) of points assigned to cluster k&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Optimization objective:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J(c^{(1)},...,c^{(m)},\mu_1,...,\mu_k) = \frac{1}{m} \sum_{i=1}^m \| x^{(i)}-\mu_{c^{(i)}}\|^2 \\
+\min_{c^{(1)},...,c^{(m)},\ \mu_1,...,\mu_k} J(c^{(1)},...,c^{(m)},\mu_1,...,\mu_k)
+&lt;/script&gt;
+
+&lt;p&gt;Choosing the Number of Clusters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Choosing more numbers of clusters could reduce local Optimization&lt;/li&gt;
+  &lt;li&gt;Use “Elbow method” to find the K which is the numbers of clusters&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Elbow method&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;K值越大，各个点到centroid的距离之和越小&lt;/li&gt;
+  &lt;li&gt;当随着K值的增加，距离之和下降的不明显的话，就没有必要再增加K值了&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -4902,7 +4946,7 @@ console.log(person2.gender) //female
  </entry>
  
  <entry>
-   <title>Achieved Courses</title>
+   <title>Jekyll Steps</title>
    <link href="http://zhou-dong.github.io/2015/03/13/jekyll-steps"/>
    <updated>2015-03-13T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/2015/03/13/jekyll-steps</id>
