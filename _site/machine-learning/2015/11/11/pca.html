@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Principal Component Analysis</title>
+    <title>Principal Component Analysis (PCA)</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -153,7 +153,7 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Principal Component Analysis  <small>Dimensionality Reduction</small></h1>
+  <h1>Principal Component Analysis (PCA)  <small>Dimensionality Reduction</small></h1>
 </div>
 
 <div class="row">
@@ -165,7 +165,37 @@
   <li>Data Visualization</li>
 </ol>
 
-<p>Principal Component Analysis Problem Formulation</p>
+<h4 id="pca-problem-formulation">PCA Problem Formulation</h4>
+
+<ul>
+  <li>Minimize the projection error.</li>
+  <li>PCA is not linear regression.</li>
+</ul>
+
+<h4 id="pca-algorithm">PCA Algorithm</h4>
+
+<ol>
+  <li>Mean normalization</li>
+  <li>covariance matrix</li>
+</ol>
+
+<script type="math/tex; mode=display">
+\Sigma = \frac{1}{m}\sum_{i=1}^n(x^{(i)})(x^{(i)})^T
+</script>
+
+<p>Compute “eigenvector” of matrix <script type="math/tex">\Sigma</script></p>
+
+<p>[U,S,V] = svd(Sigma)</p>
+
+<p><code>SVD</code>: singular value decomposition</p>
+
+<script type="math/tex; mode=display">
+U \in R^{n \times n}
+</script>
+
+<p>Reconstruction from compressed representation</p>
+
+<hr />
 
 <p>降维：把多个类似的维度合并成一个。</p>
 
