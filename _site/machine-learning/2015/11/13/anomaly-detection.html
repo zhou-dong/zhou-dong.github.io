@@ -174,6 +174,31 @@ p(x) = p(x_1| \mu_1, \sigma_1^2)p(x_2| \mu_2, \sigma_2^2)p(x_3| \mu_3, \sigma_3^
 =\prod_{j=1}^n p(x_j| \mu_j, \sigma_j^2)
 </script>
 
+<h4 id="anomaly-detection-algorithm">Anomaly Detection Algorithm</h4>
+
+<ol>
+  <li>Choose features <script type="math/tex">x_i</script> that you think might be indicative of anomalous example.</li>
+  <li>Fit parameters <script type="math/tex">\mu_1,...,\mu_n, \ \sigma_1^2,...,\sigma_n^2</script>
+    <ul>
+      <li>
+        <script type="math/tex; mode=display">\mu_j = \frac{1}{m} \sum_{i=1}^m x_j^{(i)}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">\sigma_j^2 = \frac{1}{m} \sum_{i=1}^m (x_j^{(i)} - \mu)^2 </script>
+      </li>
+    </ul>
+  </li>
+  <li>Given new example x,  compute p(x):
+    <ul>
+      <li>
+        <script type="math/tex; mode=display">p(x)=\prod_{j=1}^n p(x_j| \mu_j, \sigma_j^2)</script>
+      </li>
+    </ul>
+  </li>
+  <li>Anomaly if <script type="math/tex">% <![CDATA[
+ p(x) < \varepsilon  %]]></script></li>
+</ol>
+
   </div>
 </div>
 
