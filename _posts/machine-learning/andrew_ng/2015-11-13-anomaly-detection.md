@@ -35,6 +35,20 @@ $$
 
 ---
 
+#### Multivariate Gaussian Distribution
+
+- Don't model $$p(x_1) \ , p(x_2), \  p(x_n)$$ one by one.
+- Model $$p(x)$$ all in one go.
+- parameters:
+  + $$\mu \in R^n$$ vector
+  + $$\Sigma \in R^{n \times n}$$ Covariance Matrix
+
+在统计学与概率论中，协方差矩阵（也称离差矩阵、方差-协方差矩阵）是一个矩阵，其 i, j 位置的元素是第 i 个与第 j 个随机向量（即随机变量构成的向量）之间的协方差。这是从标量随机变量到高维度随机向量的自然推广。
+
+**original model is the special case of multivariate Gaussian Model**
+
+---
+
 #### Gaussian Distribution
 
 Say $$x \in R$$ if x is a distributed Gaussian with mean $$\mu$$, variance $$\sigma^2$$
@@ -57,15 +71,3 @@ $$
 x_2 \leftarrow log(x_2 + c)\\
 x_3 \leftarrow \sqrt{x_2}
 $$
-
----
-
-#### Multivariate Gaussian Distribution
-
-- Don't model $$p(x_1) \ , p(x_2), \  p(x_n)$$ one by one.
-- Model $$p(x)$$ all in one go.
-- parameters:
-  + $$\mu \in R^n$$ vector
-  + $$\Sigma \in R^{n \times n}$$ Covariance Matrix
-
-在统计学与概率论中，协方差矩阵（也称离差矩阵、方差-协方差矩阵）是一个矩阵，其 i, j 位置的元素是第 i 个与第 j 个随机向量（即随机变量构成的向量）之间的协方差。这是从标量随机变量到高维度随机向量的自然推广。
