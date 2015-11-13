@@ -153,7 +153,7 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Anomaly Detection  <small>Density Estimation</small></h1>
+  <h1>Anomaly Detection  <small>Density Estimation, Gaussian Distribution</small></h1>
 </div>
 
 <div class="row">
@@ -198,6 +198,52 @@ p(x) = p(x_1| \mu_1, \sigma_1^2)p(x_2| \mu_2, \sigma_2^2)p(x_3| \mu_3, \sigma_3^
   <li>Anomaly if <script type="math/tex">% <![CDATA[
  p(x) < \varepsilon  %]]></script></li>
 </ol>
+
+<hr />
+
+<h4 id="multivariate-gaussian-distribution">Multivariate Gaussian Distribution</h4>
+
+<ul>
+  <li>Don’t model <script type="math/tex">p(x_1) \ , p(x_2), \  p(x_n)</script> one by one.</li>
+  <li>Model <script type="math/tex">p(x)</script> all in one go.</li>
+  <li>parameters:
+    <ul>
+      <li><script type="math/tex">\mu \in R^n</script> vector</li>
+      <li><script type="math/tex">\Sigma \in R^{n \times n}</script> Covariance Matrix</li>
+    </ul>
+  </li>
+</ul>
+
+<p>在统计学与概率论中，协方差矩阵（也称离差矩阵、方差-协方差矩阵）是一个矩阵，其 i, j 位置的元素是第 i 个与第 j 个随机向量（即随机变量构成的向量）之间的协方差。这是从标量随机变量到高维度随机向量的自然推广。</p>
+
+<p><strong>original model is the special case of multivariate Gaussian Model</strong></p>
+
+<hr />
+
+<h4 id="gaussian-distribution">Gaussian Distribution</h4>
+
+<p>Say <script type="math/tex">x \in R</script> if x is a distributed Gaussian with mean <script type="math/tex">\mu</script>, variance <script type="math/tex">\sigma^2</script></p>
+
+<ul>
+  <li>其中<script type="math/tex">\mu</script>是控制曲线的中心点，<script type="math/tex">\mu</script> standard deviation</li>
+  <li><script type="math/tex">\sigma</script>是控制曲线的宽度</li>
+</ul>
+
+<script type="math/tex; mode=display">
+
+P(x| \mu, \sigma^2) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\\
+\mu = \frac{1}{m} \sum_{i=1}^m x^{(i)}
+\\
+\sigma^2 = \frac{1}{m} \sum_{i=1}^m (x^{(i)}-\mu)^2
+</script>
+
+<h4 id="transform-other-data-distribution-to-gaussian-distribution">Transform other data distribution to Gaussian Distribution</h4>
+
+<script type="math/tex; mode=display">
+x_2 \leftarrow log(x_2 + c)\\
+x_3 \leftarrow \sqrt{x_2}
+</script>
 
   </div>
 </div>
