@@ -5,14 +5,74 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-11-11T13:53:52-06:00</lastBuildDate>
-        <pubDate>2015-11-11T13:53:52-06:00</pubDate>
+        <lastBuildDate>2015-11-13T12:37:55-06:00</lastBuildDate>
+        <pubDate>2015-11-13T12:37:55-06:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
-                <title>Recommender Systems</title>
-                <description>&lt;p&gt;Content-based Recommender Systems&lt;/p&gt;
+                <title>Gaussian Distribution</title>
+                <description>&lt;p&gt;Say &lt;script type=&quot;math/tex&quot;&gt;x\R&lt;/script&gt; if x is a distributed Gaussian with mean &lt;script type=&quot;math/tex&quot;&gt;\u&lt;/script&gt;, variance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt;&lt;/p&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/11/13/gaussian-distribution</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/11/13/gaussian-distribution</guid>
+                <pubDate>2015-11-13T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Principal Component Analysis (PCA)</title>
+                <description>&lt;h4 id=&quot;should-apply-pca-only-on-training-set&quot;&gt;Should apply PCA only on training set.&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;motivation&quot;&gt;Motivation:&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Data Compression&lt;/li&gt;
+  &lt;li&gt;Data Visualization&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;在图片识别中，可以使用PCA来对图片做降维&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;pca-problem-formulation&quot;&gt;PCA Problem Formulation&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Minimize the projection error.&lt;/li&gt;
+  &lt;li&gt;PCA is not linear regression.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;pca-algorithm&quot;&gt;PCA Algorithm&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Mean normalization&lt;/li&gt;
+  &lt;li&gt;covariance matrix&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Sigma = \frac{1}{m}\sum_{i=1}^n(x^{(i)})(x^{(i)})^T
+&lt;/script&gt;
+
+&lt;p&gt;Compute “eigenvector” of matrix &lt;script type=&quot;math/tex&quot;&gt;\Sigma&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;[U,S,V] = svd(Sigma)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;SVD&lt;/code&gt;: singular value decomposition&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+U \in R^{n \times n}
+&lt;/script&gt;
+
+&lt;p&gt;Reconstruction from compressed representation&lt;/p&gt;
+
+&lt;p&gt;Choosing K:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;99% of variance is retained&lt;/li&gt;
+  &lt;li&gt;from k=1 to k=m&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;降维：把多个类似的维度合并成一个。&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/machine-learning/2015/11/11/pca</link>
                 <guid>http://zhou-dong.github.io/machine-learning/2015/11/11/pca</guid>
