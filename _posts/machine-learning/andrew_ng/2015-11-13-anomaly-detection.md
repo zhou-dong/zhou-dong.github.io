@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Anomaly Detection
-tagline: Density Estimation
+tagline: Density Estimation, Gaussian Distribution
 categories: machine-learning
 
 ---
@@ -50,3 +50,20 @@ P(x| \mu, \sigma^2) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\sigma
 \\
 \sigma^2 = \frac{1}{m} \sum_{i=1}^m (x^{(i)}-\mu)^2
 $$
+
+#### Transform other data distribution to Gaussian Distribution
+
+$$
+x_2 \leftarrow log(x_2 + c)\\
+x_3 \leftarrow \sqrt{x_2}
+$$
+
+---
+
+#### Multivariate Gaussian Distribution
+
+- Don't model $$p(x_1) \ , p(x_2), \  p(x_n)$$ one by one.
+- Model $$p(x)$$ all in one go.
+- parameters:
+  + $$\mu \in R^n$$ vector
+  + $$\Sigma \in R^{n \times n}$$ Covariance Matrix
