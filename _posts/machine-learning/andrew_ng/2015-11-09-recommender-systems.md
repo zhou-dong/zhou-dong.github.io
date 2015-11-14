@@ -7,3 +7,11 @@ categories: machine-learning
 ---
 
 Content-based Recommender Systems
+
+
+Collaborative Filtering
+
+Vectorization: Low Rank Matrix Factorization
+
+
+Implement Detail: Mean Normalization
