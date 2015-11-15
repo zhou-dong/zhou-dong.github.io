@@ -158,7 +158,11 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h4 id="problem-formulation">Problem Formulation</h4>
+    <h4 id="content-based-recommender-systems-">Content-based Recommender Systems （基于内容的商品推荐）</h4>
+
+<h5 id="section">相当于对每个人的记录做线性回归</h5>
+
+<h5 id="problem-formulation">Problem Formulation</h5>
 
 <script type="math/tex; mode=display">
 (1) \\
@@ -175,12 +179,41 @@ x_n = xxx \\
 (3)\\
 \text{weight} = (\theta_1, \theta_2, ... , \theta_n) \\
 \text{value} = y = \text{5/4/3/2/1} \\
-\theta^Tx = y
+\theta^Tx = y \\
+(4)\\
+\text{to learn} \ \theta^{(j)} \\
+(5)\\
+\min_{\theta^{(j)}} = \frac{1}{2m^{(j)}} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2\\
+(6) \\
+\min_{\theta^{(j)}} = \frac{1}{2m^{(j)}} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2m^j} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
+(7) \\
+\min_{\theta^{(j)}} = \frac{1}{2} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
 </script>
 
-<p>Collaborative Filtering</p>
+<h5 id="optimization-algorithm">Optimization Algorithm</h5>
 
-<p>Content-based Recommender Systems （基于内容的商品推荐）</p>
+<script type="math/tex; mode=display">
+\min_{\theta^{(1)},...,\theta^{(n_u)}} = \frac{1}{2} \sum_{j=1}^{n_u} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
+</script>
+
+<h5 id="then-use-gradient-or-normal-equation">Then Use Gradient or Normal Equation</h5>
+
+<hr />
+
+<h4 id="collaborative-filtering">Collaborative Filtering</h4>
+
+<p>Given <script type="math/tex"> \theta^{(1)}, ... , \theta^{(n_u)} </script> to learn <script type="math/tex"> x^{(i)} </script></p>
+
+<script type="math/tex; mode=display">
+\min_{x^{(i)}} = \frac{1}{2} \sum_{j:r(i,j)=1} ( (x^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{k=1}^n (x^{(i)})^2 \\
+
+\min_{x^{(1)},...,x^{(n_m)}} = \frac{1}{2} \sum_{j=1}^{n_m} \sum_{j:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x^{(i)})^2 \\
+</script>
 
 <p>Vectorization: Low Rank Matrix Factorization</p>
 
