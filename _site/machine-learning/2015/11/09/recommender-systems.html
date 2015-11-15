@@ -226,12 +226,16 @@ x_n = xxx \\
 
 <script type="math/tex; mode=display">
 J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u}) = \frac{1}{2} \sum_{(i,j):r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2  + \frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 + \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2  \\
-\min_{(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})} = J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u}) 
+\min_{(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})} = J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})
 </script>
 
-<p>Vectorization: Low Rank Matrix Factorization</p>
+<h4 id="low-rank-matrix-factorization-vectorization-of-collaborative-filtering">Low Rank Matrix Factorization (Vectorization of Collaborative Filtering)</h4>
 
-<p>Implement Detail: Mean Normalization</p>
+<p>协同过滤的向量化</p>
+
+<p>Finding related movies: find movies with the smallest: <script type="math/tex">\| x^{(i)} - x^{(j)} \|</script></p>
+
+<h4 id="implement-detail-mean-normalization">Implement Detail: Mean Normalization</h4>
 
   </div>
 </div>

@@ -75,9 +75,14 @@ $$
 
 $$
 J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u}) = \frac{1}{2} \sum_{(i,j):r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2  + \frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 + \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2  \\
-\min_{(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})} = J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u}) 
+\min_{(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})} = J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})
 $$
 
-Vectorization: Low Rank Matrix Factorization
+#### Low Rank Matrix Factorization (Vectorization of Collaborative Filtering)
 
-Implement Detail: Mean Normalization
+协同过滤的向量化
+
+Finding related movies: find movies with the smallest: $$\| x^{(i)} - x^{(j)} \|$$
+
+
+#### Implement Detail: Mean Normalization
