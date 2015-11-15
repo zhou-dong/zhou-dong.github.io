@@ -6,12 +6,10 @@ categories: machine-learning
 
 ---
 
-Content-based Recommender Systems
-
-
 Collaborative Filtering
 
-Vectorization: Low Rank Matrix Factorization
+Content-based Recommender Systems （基于内容的商品推荐）
 
+Vectorization: Low Rank Matrix Factorization
 
 Implement Detail: Mean Normalization
