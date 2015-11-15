@@ -61,7 +61,21 @@ $$
 \frac{\lambda}{2} \sum_{k=1}^n (x^{(i)})^2 \\
 
 \min_{x^{(1)},...,x^{(n_m)}} = \frac{1}{2} \sum_{j=1}^{n_m} \sum_{j:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
-\frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x^{(i)})^2 \\
+\frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2 \\
+$$
+
+Given $$ x^{(1)}, ... , x^{(n_u)} $$ to learn $$ \theta^{(i)} $$
+
+$$
+\min_{\theta^{(1)},...,\theta^{(n_u)}} = \frac{1}{2} \sum_{j=1}^{n_u} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
+$$
+
+利用上面两个公式，同时计算出$$x, \theta$$
+
+$$
+J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u}) = \frac{1}{2} \sum_{(i,j):r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2  + \frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 + \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2  \\
+\min_{(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})} = J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u}) 
 $$
 
 Vectorization: Low Rank Matrix Factorization
