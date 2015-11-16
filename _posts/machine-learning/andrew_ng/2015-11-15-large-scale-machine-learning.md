@@ -40,7 +40,7 @@ $$
   + One time process
   + 随着时间的变化，不同的feature的权重会发生变化。（比如以前买汽车的话，马力比比重高，现在是否节能的比重更高）。
 
-##### 在搜索中使用online learning
+##### 在搜索中使用online learning (CTR: CLICK THROUGH RATE)
 
 1. features choose
   - 关键字与query的匹配程度
@@ -49,5 +49,11 @@ $$
 2. Implement Online Learning
   - 根据用户的query返回用户搜素的结果
   - 统计用户对搜索结果的点击结果
-  - 根据用户的点击为（0/1），来训练不同feature的权重。
+  - 根据用户的点击为（0/1），来训练不同feature的weight。
   - 可以使用Mini-Batch Gradient Descent
+
+---
+
+#### Map Reduce and Data Parallelism
+
+可以使用Map-Reduce来实现Mini-Batch Gradient Descent

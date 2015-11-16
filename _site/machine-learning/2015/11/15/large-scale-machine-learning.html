@@ -206,7 +206,7 @@
   </li>
 </ul>
 
-<h5 id="online-learning-1">在搜索中使用online learning</h5>
+<h5 id="online-learning-ctr-click-through-rate">在搜索中使用online learning (CTR: CLICK THROUGH RATE)</h5>
 
 <ol>
   <li>features choose
@@ -220,11 +220,17 @@
     <ul>
       <li>根据用户的query返回用户搜素的结果</li>
       <li>统计用户对搜索结果的点击结果</li>
-      <li>根据用户的点击为（0/1），来训练不同feature的权重。</li>
+      <li>根据用户的点击为（0/1），来训练不同feature的weight。</li>
       <li>可以使用Mini-Batch Gradient Descent</li>
     </ul>
   </li>
 </ol>
+
+<hr />
+
+<h4 id="map-reduce-and-data-parallelism">Map Reduce and Data Parallelism</h4>
+
+<p>可以使用Map-Reduce来实现Mini-Batch Gradient Descent</p>
 
   </div>
 </div>
