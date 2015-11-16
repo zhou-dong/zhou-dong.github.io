@@ -184,7 +184,47 @@
 \alpha = \frac{const1}{iterationNumner + const2}
 </script>
 
-<p>Online Learning</p>
+<hr />
+
+<h4 id="online-learning">Online Learning</h4>
+
+<ul>
+  <li>method：
+    <ul>
+      <li>可以借鉴Stochastic Gradient Descent（随机梯度下降）的思想。</li>
+    </ul>
+  </li>
+  <li>scenario:
+    <ul>
+      <li>Large data streaming coming into the application</li>
+      <li>Calculate one time then throw away</li>
+      <li>weight of different features were changed with times</li>
+      <li>大量的数据源源不断的流入系统中</li>
+      <li>One time process</li>
+      <li>随着时间的变化，不同的feature的权重会发生变化。（比如以前买汽车的话，马力比比重高，现在是否节能的比重更高）。</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="online-learning-1">在搜索中使用online learning</h5>
+
+<ol>
+  <li>features choose
+    <ul>
+      <li>关键字与query的匹配程度</li>
+      <li>用户的搜索历史</li>
+      <li>facets</li>
+    </ul>
+  </li>
+  <li>Implement Online Learning
+    <ul>
+      <li>根据用户的query返回用户搜素的结果</li>
+      <li>统计用户对搜索结果的点击结果</li>
+      <li>根据用户的点击为（0/1），来训练不同feature的权重。</li>
+      <li>可以使用Mini-Batch Gradient Descent</li>
+    </ul>
+  </li>
+</ol>
 
   </div>
 </div>

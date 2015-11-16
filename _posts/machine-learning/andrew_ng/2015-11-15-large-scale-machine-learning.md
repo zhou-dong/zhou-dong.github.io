@@ -26,4 +26,28 @@ $$
 \alpha = \frac{const1}{iterationNumner + const2}
 $$
 
-Online Learning
+---
+
+#### Online Learning
+
+- method：
+  + 可以借鉴Stochastic Gradient Descent（随机梯度下降）的思想。
+- scenario:
+  + Large data streaming coming into the application
+  + Calculate one time then throw away
+  + weight of different features were changed with times
+  + 大量的数据源源不断的流入系统中
+  + One time process
+  + 随着时间的变化，不同的feature的权重会发生变化。（比如以前买汽车的话，马力比比重高，现在是否节能的比重更高）。
+
+##### 在搜索中使用online learning
+
+1. features choose
+  - 关键字与query的匹配程度
+  - 用户的搜索历史
+  - facets
+2. Implement Online Learning
+  - 根据用户的query返回用户搜素的结果
+  - 统计用户对搜索结果的点击结果
+  - 根据用户的点击为（0/1），来训练不同feature的权重。
+  - 可以使用Mini-Batch Gradient Descent
