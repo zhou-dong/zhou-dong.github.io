@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-11-13T12:37:55-06:00</updated>
+ <updated>2015-11-15T19:30:40-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,11 +13,112 @@
 
  
  <entry>
-   <title>Gaussian Distribution</title>
-   <link href="http://zhou-dong.github.io/machine-learning/2015/11/13/gaussian-distribution"/>
+   <title>Large Scale Machine Learning</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/11/15/large-scale-machine-learning"/>
+   <updated>2015-11-15T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/11/15/large-scale-machine-learning</id>
+   <content type="html">&lt;p&gt;Stochastic Gradient Descent&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Randomly shuffle dataset&lt;/li&gt;
+  &lt;li&gt;Repeat for {i := 1,…,m} update the &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Batch Gradient Descent&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Anomaly Detection</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/11/13/anomaly-detection"/>
    <updated>2015-11-13T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/machine-learning/2015/11/13/gaussian-distribution</id>
-   <content type="html">&lt;p&gt;Say &lt;script type=&quot;math/tex&quot;&gt;x\R&lt;/script&gt; if x is a distributed Gaussian with mean &lt;script type=&quot;math/tex&quot;&gt;\u&lt;/script&gt;, variance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt;&lt;/p&gt;
+   <id>http://zhou-dong.github.io/machine-learning/2015/11/13/anomaly-detection</id>
+   <content type="html">&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+x_1 \approx N(\mu_1, \sigma_1^2)
+\\
+x_2 \approx N(\mu_2, \sigma_2^2)
+\\
+x_3 \approx N(\mu_3, \sigma_3^2)
+\\
+\vdots
+\\
+x_n \approx N(\mu_n, \sigma_n^2)
+\\
+p(x) = p(x_1| \mu_1, \sigma_1^2)p(x_2| \mu_2, \sigma_2^2)p(x_3| \mu_3, \sigma_3^2) \cdots p(x_n| \mu_n, \sigma_n^2)
+\\
+=\prod_{j=1}^n p(x_j| \mu_j, \sigma_j^2)
+&lt;/script&gt;
+
+&lt;h4 id=&quot;anomaly-detection-algorithm&quot;&gt;Anomaly Detection Algorithm&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Choose features &lt;script type=&quot;math/tex&quot;&gt;x_i&lt;/script&gt; that you think might be indicative of anomalous example.&lt;/li&gt;
+  &lt;li&gt;Fit parameters &lt;script type=&quot;math/tex&quot;&gt;\mu_1,...,\mu_n, \ \sigma_1^2,...,\sigma_n^2&lt;/script&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu_j = \frac{1}{m} \sum_{i=1}^m x_j^{(i)}&lt;/script&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;\sigma_j^2 = \frac{1}{m} \sum_{i=1}^m (x_j^{(i)} - \mu)^2 &lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Given new example x,  compute p(x):
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;p(x)=\prod_{j=1}^n p(x_j| \mu_j, \sigma_j^2)&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Anomaly if &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+ p(x) &lt; \varepsilon  %]]&gt;&lt;/script&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;multivariate-gaussian-distribution&quot;&gt;Multivariate Gaussian Distribution&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Don’t model &lt;script type=&quot;math/tex&quot;&gt;p(x_1) \ , p(x_2), \  p(x_n)&lt;/script&gt; one by one.&lt;/li&gt;
+  &lt;li&gt;Model &lt;script type=&quot;math/tex&quot;&gt;p(x)&lt;/script&gt; all in one go.&lt;/li&gt;
+  &lt;li&gt;parameters:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\mu \in R^n&lt;/script&gt; vector&lt;/li&gt;
+      &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\Sigma \in R^{n \times n}&lt;/script&gt; Covariance Matrix&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在统计学与概率论中，协方差矩阵（也称离差矩阵、方差-协方差矩阵）是一个矩阵，其 i, j 位置的元素是第 i 个与第 j 个随机向量（即随机变量构成的向量）之间的协方差。这是从标量随机变量到高维度随机向量的自然推广。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;original model is the special case of multivariate Gaussian Model&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;gaussian-distribution&quot;&gt;Gaussian Distribution&lt;/h4&gt;
+
+&lt;p&gt;Say &lt;script type=&quot;math/tex&quot;&gt;x \in R&lt;/script&gt; if x is a distributed Gaussian with mean &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt;, variance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;其中&lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt;是控制曲线的中心点，&lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt; standard deviation&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt;是控制曲线的宽度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+
+P(x| \mu, \sigma^2) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\\
+\mu = \frac{1}{m} \sum_{i=1}^m x^{(i)}
+\\
+\sigma^2 = \frac{1}{m} \sum_{i=1}^m (x^{(i)}-\mu)^2
+&lt;/script&gt;
+
+&lt;h4 id=&quot;transform-other-data-distribution-to-gaussian-distribution&quot;&gt;Transform other data distribution to Gaussian Distribution&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+x_2 \leftarrow log(x_2 + c)\\
+x_3 \leftarrow \sqrt{x_2}
+&lt;/script&gt;
 </content>
  </entry>
  
@@ -86,7 +187,84 @@ U \in R^{n \times n}
    <link href="http://zhou-dong.github.io/machine-learning/2015/11/09/recommender-systems"/>
    <updated>2015-11-09T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/11/09/recommender-systems</id>
-   <content type="html">&lt;p&gt;Content-based Recommender Systems&lt;/p&gt;
+   <content type="html">&lt;h4 id=&quot;content-based-recommender-systems-&quot;&gt;Content-based Recommender Systems （基于内容的商品推荐）&lt;/h4&gt;
+
+&lt;h5 id=&quot;section&quot;&gt;相当于对每个人的记录做线性回归&lt;/h5&gt;
+
+&lt;h5 id=&quot;problem-formulation&quot;&gt;Problem Formulation&lt;/h5&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+(1) \\
+n_u \ \text{no.users} \\
+n_m \ \text{no.movies} \\
+r_{(i,j)} = 1 \ \text{if user j has rated movie i} \\
+y^{(i,j)} = \ \text{rating given by user j to movie i} \\
+(2)\\
+\text{features} = (x_1, x_2, ... , x_n) \\
+x_1 = romance \\
+x_2 = action \\
+\vdots \\
+x_n = xxx \\
+(3)\\
+\text{weight} = (\theta_1, \theta_2, ... , \theta_n) \\
+\text{value} = y = \text{5/4/3/2/1} \\
+\theta^Tx = y \\
+(4)\\
+\text{to learn} \ \theta^{(j)} \\
+(5)\\
+\min_{\theta^{(j)}} = \frac{1}{2m^{(j)}} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2\\
+(6) \\
+\min_{\theta^{(j)}} = \frac{1}{2m^{(j)}} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2m^j} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
+(7) \\
+\min_{\theta^{(j)}} = \frac{1}{2} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
+&lt;/script&gt;
+
+&lt;h5 id=&quot;optimization-algorithm&quot;&gt;Optimization Algorithm&lt;/h5&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\min_{\theta^{(1)},...,\theta^{(n_u)}} = \frac{1}{2} \sum_{j=1}^{n_u} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
+&lt;/script&gt;
+
+&lt;h5 id=&quot;then-use-gradient-or-normal-equation&quot;&gt;Then Use Gradient or Normal Equation&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;collaborative-filtering&quot;&gt;Collaborative Filtering&lt;/h4&gt;
+
+&lt;p&gt;Given &lt;script type=&quot;math/tex&quot;&gt; \theta^{(1)}, ... , \theta^{(n_u)} &lt;/script&gt; to learn &lt;script type=&quot;math/tex&quot;&gt; x^{(i)} &lt;/script&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\min_{x^{(i)}} = \frac{1}{2} \sum_{j:r(i,j)=1} ( (x^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{k=1}^n (x^{(i)})^2 \\
+
+\min_{x^{(1)},...,x^{(n_m)}} = \frac{1}{2} \sum_{j=1}^{n_m} \sum_{j:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2 \\
+&lt;/script&gt;
+
+&lt;p&gt;Given &lt;script type=&quot;math/tex&quot;&gt; x^{(1)}, ... , x^{(n_u)} &lt;/script&gt; to learn &lt;script type=&quot;math/tex&quot;&gt; \theta^{(i)} &lt;/script&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\min_{\theta^{(1)},...,\theta^{(n_u)}} = \frac{1}{2} \sum_{j=1}^{n_u} \sum_{i:r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2 +
+\frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 \\
+&lt;/script&gt;
+
+&lt;p&gt;利用上面两个公式，同时计算出&lt;script type=&quot;math/tex&quot;&gt;x, \theta&lt;/script&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u}) = \frac{1}{2} \sum_{(i,j):r(i,j)=1} ( (\theta^{(j)})^Tx^{(i)} - y^{(i,j)} )^2  + \frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(i)})^2 + \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2  \\
+\min_{(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})} = J(x^1,...,x^{n_m}, \theta^1,...,\theta^{n_u})
+&lt;/script&gt;
+
+&lt;h4 id=&quot;low-rank-matrix-factorization-vectorization-of-collaborative-filtering&quot;&gt;Low Rank Matrix Factorization (Vectorization of Collaborative Filtering)&lt;/h4&gt;
+
+&lt;p&gt;协同过滤的向量化&lt;/p&gt;
+
+&lt;p&gt;Finding related movies: find movies with the smallest: &lt;script type=&quot;math/tex&quot;&gt;\| x^{(i)} - x^{(j)} \|&lt;/script&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;implement-detail-mean-normalization&quot;&gt;Implement Detail: Mean Normalization&lt;/h4&gt;
 </content>
  </entry>
  
