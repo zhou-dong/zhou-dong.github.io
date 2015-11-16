@@ -275,4 +275,8 @@ Ip Address: 10.33.1.74
 
 /home/hadoop/workspace/authorized_keyspub
 
+使用Eclipse编译运行MapReduce程序 Hadoop2.6.0/Ubuntu
+
+http://www.powerxing.com/hadoop-build-project-using-eclipse/
+
 Thank you!
