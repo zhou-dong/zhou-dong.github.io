@@ -23,7 +23,7 @@ Mini-Batch Gradient Descent
 Stochastic Gradient Descent Convergence
 
 $$
-\alpha = \frac{const1}{iterationNumner + const2}
+\alpha = \frac{const1}{iterationNumber + const2}
 $$
 
 ---
