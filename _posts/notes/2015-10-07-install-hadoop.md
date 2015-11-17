@@ -282,6 +282,8 @@ Ip Address: 10.33.1.74
 
 ---
 
+Add file from disk to HDFS, then run map-reduce on Hadoop
+
 - hadoop fs -mkdir /user
 - hadoop fs -mkdir /user/hadoop
 - hadoop fs -ls /user/hadoop
