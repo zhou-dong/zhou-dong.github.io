@@ -292,4 +292,15 @@ Add file from disk to HDFS, then run map-reduce on Hadoop
 
 ---
 
+root@master:~/data# hadoop fs -mkdir /user/mingyang
+
+
+
+
+
+
+root@master:~/data# hadoop fs -mkdir /user/dongxu  
+
+
+
 Thank you!
