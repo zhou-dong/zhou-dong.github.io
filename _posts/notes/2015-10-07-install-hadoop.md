@@ -12,7 +12,7 @@ Set up hadoop Reference
 
  http://tashan10.com/yong-dockerda-jian-hadoopwei-fen-bu-shi-ji-qun/
 
-Operating System: 
+Operating System:
 
 - Ubuntu 14.04.1 LTS
 
@@ -138,7 +138,7 @@ Ip Address: 10.33.1.74
     - mkdir namenode
     - mkdir datanode
 
-2. Config 
+2. Config
     - cd $HADOOP_CONFIG_HOME/
     - cp mapred-site.xml.template mapred-site.xml
     - .core-site.xml
@@ -278,5 +278,14 @@ Ip Address: 10.33.1.74
 使用Eclipse编译运行MapReduce程序 Hadoop2.6.0/Ubuntu
 
 http://www.powerxing.com/hadoop-build-project-using-eclipse/
+
+---
+
+- hadoop fs -mkdir /user
+- hadoop fs -mkdir /user/hadoop
+- hadoop fs -ls /user/hadoop
+- hadoop fs -put shakes.txt /user/hadoop/shakes.txt
+
+---
 
 Thank you!
