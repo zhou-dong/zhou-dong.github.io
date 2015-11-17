@@ -285,6 +285,7 @@ http://www.powerxing.com/hadoop-build-project-using-eclipse/
 - hadoop fs -mkdir /user/hadoop
 - hadoop fs -ls /user/hadoop
 - hadoop fs -put shakes.txt /user/hadoop/shakes.txt
+- hadoop jar wordcount.jar org.dongzhou.hadoop.WordCount /user/hadoop/shakes.txt /user/hadoop/shakeResult
 
 ---
 
