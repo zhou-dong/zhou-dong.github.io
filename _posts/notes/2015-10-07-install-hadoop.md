@@ -277,14 +277,18 @@ Ip Address: 10.33.1.74
 
 使用Eclipse编译运行MapReduce程序 Hadoop2.6.0/Ubuntu
 
-http://www.powerxing.com/hadoop-build-project-using-eclipse/
+- http://www.powerxing.com/hadoop-build-project-using-eclipse/
+- https://github.com/winghc/hadoop2x-eclipse-plugin
 
 ---
+
+Add file from disk to HDFS, then run map-reduce on Hadoop
 
 - hadoop fs -mkdir /user
 - hadoop fs -mkdir /user/hadoop
 - hadoop fs -ls /user/hadoop
 - hadoop fs -put shakes.txt /user/hadoop/shakes.txt
+- hadoop jar wordcount.jar org.dongzhou.hadoop.WordCount /user/hadoop/shakes.txt /user/hadoop/shakeResult
 
 ---
 
