@@ -596,15 +596,21 @@
 
 <p>使用Eclipse编译运行MapReduce程序 Hadoop2.6.0/Ubuntu</p>
 
-<p>http://www.powerxing.com/hadoop-build-project-using-eclipse/</p>
+<ul>
+  <li>http://www.powerxing.com/hadoop-build-project-using-eclipse/</li>
+  <li>https://github.com/winghc/hadoop2x-eclipse-plugin</li>
+</ul>
 
 <hr />
+
+<p>Add file from disk to HDFS, then run map-reduce on Hadoop</p>
 
 <ul>
   <li>hadoop fs -mkdir /user</li>
   <li>hadoop fs -mkdir /user/hadoop</li>
   <li>hadoop fs -ls /user/hadoop</li>
   <li>hadoop fs -put shakes.txt /user/hadoop/shakes.txt</li>
+  <li>hadoop jar wordcount.jar org.dongzhou.hadoop.WordCount /user/hadoop/shakes.txt /user/hadoop/shakeResult</li>
 </ul>
 
 <hr />
