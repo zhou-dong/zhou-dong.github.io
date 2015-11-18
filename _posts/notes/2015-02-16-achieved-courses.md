@@ -97,7 +97,8 @@ tagline:
     - University of Maryland, College Park
 
 18. Machine Learning
-    - Start Date: 08/15 2015
+    - Start Date: 15/08 2015
+    - End Date: 18/11 2015
     - Standford University
     - Andrwe Ng
 
