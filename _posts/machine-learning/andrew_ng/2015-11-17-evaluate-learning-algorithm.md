@@ -27,3 +27,12 @@ Split data into three pieces (Train/Validation/Test Sets)
 ---
 
 Bias vs. Variance
+
+- Bias (underfit)
+  + $$J_{cv} (\theta) \approx J_{train} (\theta)$$
+- Variance (overfit)
+  + $$J_{cv} (\theta) >> J_{train} (\theta)$$
+
+Regularization and Bias/Variance
+
+- choose different $$\lambda$$ in cost function
