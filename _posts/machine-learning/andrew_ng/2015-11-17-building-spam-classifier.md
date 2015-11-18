@@ -38,3 +38,6 @@ Trading Off Precision and Recall
 - F score: $$2\frac{PR}{P+R}$$
 
 Data For Machine Learning
+
+- Not only need more data, but also need more features
+- If with limited features, even the data set is large, could be under fitting.
