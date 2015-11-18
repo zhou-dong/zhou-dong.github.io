@@ -615,6 +615,19 @@
 
 <hr />
 
+<ul>
+  <li>hadoop fs -mkdir /user/mingyang</li>
+  <li>hadoop fs -put shakes.txt /user/mingyang/</li>
+  <li>
+    <p>hadoop jar wordcount.jar org.mingyang.hadoop.WordCount /user/mingyang/shakes.txt /user/dongxu/shakeResult</p>
+  </li>
+  <li>hadoop fs -mkdir /user/dongxu  </li>
+  <li>hadoop fs -put shakes.txt /user/dongxu/</li>
+  <li>hadoop jar wordcount.jar com.dongxu.hadoop.WordCount /user/dongxu/shakes.txt /user/dongxu/shakeResult</li>
+</ul>
+
+<hr />
+
 <p>Thank you!</p>
 
   </div>
