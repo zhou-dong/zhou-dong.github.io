@@ -292,4 +292,14 @@ Add file from disk to HDFS, then run map-reduce on Hadoop
 
 ---
 
+- hadoop fs -mkdir /user/mingyang
+- hadoop fs -put shakes.txt /user/mingyang/
+- hadoop jar wordcount.jar org.mingyang.hadoop.WordCount /user/mingyang/shakes.txt /user/dongxu/shakeResult
+
+- hadoop fs -mkdir /user/dongxu  
+- hadoop fs -put shakes.txt /user/dongxu/
+- hadoop jar wordcount.jar com.dongxu.hadoop.WordCount /user/dongxu/shakes.txt /user/dongxu/shakeResult
+
+---
+
 Thank you!
