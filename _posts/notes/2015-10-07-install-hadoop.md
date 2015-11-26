@@ -302,4 +302,26 @@ Add file from disk to HDFS, then run map-reduce on Hadoop
 
 ---
 
+complie java file use command line
+
+http://www.cnblogs.com/myresearch/p/mapreduce-compile-jar-run.html
+
+- $HADOOP_HOME/share/hadoop/common/hadoop-common-2.6.0.jar
+- $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar
+- $HADOOP_HOME/share/hadoop/common/lib/commons-cli-1.2.jar
+
+vim /etc/profile
+
+- export CLASSPATH="$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/lib/commons-cli-1.2.jar:$CLASSPATH"
+
+complile
+
+- javac WordCount.java
+
+
+makr jar file
+
+- jar -cvf WordCount.jar ./WordCount*.class
+
+
 Thank you!
