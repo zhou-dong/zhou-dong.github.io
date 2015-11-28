@@ -27,3 +27,6 @@ pipeline in operating system and big data, example: photo OCR
 GPU plus Mapreduce
 
 In our area, every part they always have same idea, if we can master one of the idea, I believe we can make our selves better.
+
+
+From operation system, hardware of computer to the cloud, there are some many commons ideas between. And these ideas are the basic knowledge of computer science.
