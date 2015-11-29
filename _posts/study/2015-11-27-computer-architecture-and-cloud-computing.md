@@ -2,11 +2,14 @@
 layout: page
 title: Techonology From Computer Architecture to Cloud Computing
 tagline: 
+
 ---
 {% include JB/setup %}
 
 #### 1. Same knowledge
 
+- Abstraction
+    + Abstraction is always the most important idea in building the system.
 - CPU
 - GPU
 - MEMORY
