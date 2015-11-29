@@ -628,6 +628,34 @@
 
 <hr />
 
+<p>complie java file use command line</p>
+
+<p>http://www.cnblogs.com/myresearch/p/mapreduce-compile-jar-run.html</p>
+
+<ul>
+  <li>$HADOOP_HOME/share/hadoop/common/hadoop-common-2.6.0.jar</li>
+  <li>$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar</li>
+  <li>$HADOOP_HOME/share/hadoop/common/lib/commons-cli-1.2.jar</li>
+</ul>
+
+<p>vim /etc/profile</p>
+
+<ul>
+  <li>export CLASSPATH=”$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/lib/commons-cli-1.2.jar:$CLASSPATH”</li>
+</ul>
+
+<p>complile</p>
+
+<ul>
+  <li>javac WordCount.java</li>
+</ul>
+
+<p>makr jar file</p>
+
+<ul>
+  <li>jar -cvf WordCount.jar ./WordCount*.class</li>
+</ul>
+
 <p>Thank you!</p>
 
   </div>

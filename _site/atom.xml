@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-11-15T19:30:40-06:00</updated>
+ <updated>2015-11-29T00:53:27-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,18 +13,310 @@
 
  
  <entry>
+   <title>Technology From Computer Architecture to Cloud Computing</title>
+   <link href="http://zhou-dong.github.io/2015/11/27/computer-architecture-and-cloud-computing"/>
+   <updated>2015-11-27T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/11/27/computer-architecture-and-cloud-computing</id>
+   <content type="html">
+&lt;h4 id=&quot;same-knowledge&quot;&gt;1. Same knowledge&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Abstraction
+    &lt;ul&gt;
+      &lt;li&gt;Abstraction is always the most important idea in building the system.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CPU&lt;/li&gt;
+  &lt;li&gt;GPU&lt;/li&gt;
+  &lt;li&gt;MEMORY&lt;/li&gt;
+  &lt;li&gt;MASTER BOARD&lt;/li&gt;
+  &lt;li&gt;File System&lt;/li&gt;
+  &lt;li&gt;Multiply thread&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;thread control in operation system and Queue in balance and control&lt;/p&gt;
+
+&lt;p&gt;pipeline in operating system and big data, example: photo OCR&lt;/p&gt;
+
+&lt;p&gt;数据的同步，在内存和数据库&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;2.&lt;/h4&gt;
+
+&lt;h4 id=&quot;join-them-together&quot;&gt;3. Join them together&lt;/h4&gt;
+
+&lt;p&gt;GPU plus Mapreduce&lt;/p&gt;
+
+&lt;p&gt;In our area, every part they always have same idea, if we can master one of the idea, I believe we can make our selves better.&lt;/p&gt;
+
+&lt;p&gt;From operation system, hardware of computer to the cloud, there are some many commons ideas between. And these ideas are the basic knowledge of computer science.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Prepared For Jobs</title>
+   <link href="http://zhou-dong.github.io/2015/11/19/find-jobs"/>
+   <updated>2015-11-19T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/11/19/find-jobs</id>
+   <content type="html">&lt;p&gt;Basic Algorithm&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sort&lt;/li&gt;
+  &lt;li&gt;Tree&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cracking the code interview&lt;/p&gt;
+
+&lt;p&gt;LeetCode&lt;/p&gt;
+
+&lt;p&gt;Java&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Basic&lt;/li&gt;
+  &lt;li&gt;Java 8 Feature&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Effective Java&lt;/p&gt;
+
+&lt;p&gt;Clean Code&lt;/p&gt;
+
+&lt;p&gt;Refactoring&lt;/p&gt;
+
+&lt;p&gt;Design pattern&lt;/p&gt;
+
+&lt;p&gt;Architecture&lt;/p&gt;
+
+&lt;p&gt;Machine Learning&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Linear Regression&lt;/li&gt;
+  &lt;li&gt;Logistic Regression&lt;/li&gt;
+  &lt;li&gt;Normal Equation&lt;/li&gt;
+  &lt;li&gt;Overfitting vs. Under fitting&lt;/li&gt;
+  &lt;li&gt;Support Vector Machine (SVM)&lt;/li&gt;
+  &lt;li&gt;Neural Network&lt;/li&gt;
+  &lt;li&gt;K-Means&lt;/li&gt;
+  &lt;li&gt;Principal Component Analysis (PCA)&lt;/li&gt;
+  &lt;li&gt;Evaluating Learning Algorithm&lt;/li&gt;
+  &lt;li&gt;Anomaly Detection&lt;/li&gt;
+  &lt;li&gt;Collaborative Filtering&lt;/li&gt;
+  &lt;li&gt;Photo OCR&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Evaluating Learning Algorithm</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/11/17/evaluate-learning-algorithm"/>
+   <updated>2015-11-17T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/11/17/evaluate-learning-algorithm</id>
+   <content type="html">&lt;p&gt;Cross Validation&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;randomly shuffle or reorder the data&lt;/li&gt;
+  &lt;li&gt;partial data into training set and test set&lt;/li&gt;
+  &lt;li&gt;learn parameter from training data&lt;/li&gt;
+  &lt;li&gt;computer test set error&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Model Selection (choose polynomial degree)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;use different polynomial degree to train data&lt;/li&gt;
+  &lt;li&gt;use test set to find which degree is most fit the data&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Split data into three pieces (Train/Validation/Test Sets)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Training Set (60%)&lt;/li&gt;
+  &lt;li&gt;Cross Validation Set (20%)&lt;/li&gt;
+  &lt;li&gt;Test Set (20%)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Bias vs. Variance&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bias (underfit)
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;J_{cv} (\theta) \approx J_{train} (\theta)&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Variance (overfit)
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;J_{cv} (\theta) &gt;&gt; J_{train} (\theta)&lt;/script&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Regularization and Bias/Variance&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;choose different &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; in cost function&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cross-validation for detecting and preventing overfitting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://qph.is.quoracdn.net/main-qimg-33774ab551d31370fbe2a4fa57286781?convert_to_webp=true&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Training size and Cross-validation Size&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/-ii5sPXFN0K4/T9Wrs34LiHI/AAAAAAAAAwI/K6Eu-97LY1A/s1600/p2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If Learning Algorithm is suffer from overfitting(high Variance), getting more data is likely to help.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://4.bp.blogspot.com/-uWXoQpZpdOs/T9WvcIcjpCI/AAAAAAAAAwc/Hr3pn8RPQz4/s1600/p3.png&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building a Spam Classifier</title>
+   <link href="http://zhou-dong.github.io/machine-learning/2015/11/17/building-spam-classifier"/>
+   <updated>2015-11-17T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/machine-learning/2015/11/17/building-spam-classifier</id>
+   <content type="html">&lt;p&gt;How to spend your time to make it have low error?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Collect lots of data&lt;/li&gt;
+  &lt;li&gt;Develop sophisticated features based on email routing information (for email header)&lt;/li&gt;
+  &lt;li&gt;Develop sophisticated features for message body. e.g. (should “discount” or “discounts” be treated as same word)?&lt;/li&gt;
+  &lt;li&gt;Develop sophisticated algorithm to detect misspelling.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Error Analysis&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Start with a simple algorithm that you can improve quickly. Implement it and test it on cross-validation data.&lt;/li&gt;
+  &lt;li&gt;Plot learning curves to decide if more data, more features, etc. are likely to help.&lt;/li&gt;
+  &lt;li&gt;Error Analysis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Error Analysis:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;manually examine the errors.&lt;/li&gt;
+  &lt;li&gt;what cues you think would have helped the algorithm classifier them correctly.&lt;/li&gt;
+  &lt;li&gt;can use “Porter stemmer”?&lt;/li&gt;
+  &lt;li&gt;Distinguish upper vs. lower case?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Error Metrics for Skewed Classes&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;precision/recall&lt;/li&gt;
+  &lt;li&gt;precision 查准率&lt;/li&gt;
+  &lt;li&gt;recall 查全率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Trading Off Precision and Recall&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在precision和recall之间找到平衡点。&lt;/li&gt;
+  &lt;li&gt;F score: &lt;script type=&quot;math/tex&quot;&gt;2\frac{PR}{P+R}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Data For Machine Learning&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Not only need more data, but also need more features&lt;/li&gt;
+  &lt;li&gt;If with limited features, even the data set is large, could be under fitting.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Large Scale Machine Learning</title>
    <link href="http://zhou-dong.github.io/machine-learning/2015/11/15/large-scale-machine-learning"/>
    <updated>2015-11-15T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/11/15/large-scale-machine-learning</id>
-   <content type="html">&lt;p&gt;Stochastic Gradient Descent&lt;/p&gt;
+   <content type="html">&lt;p&gt;Batch Gradient Descent&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;classic way to do gradient descent&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Stochastic Gradient Descent&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Randomly shuffle dataset&lt;/li&gt;
   &lt;li&gt;Repeat for {i := 1,…,m} update the &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Batch Gradient Descent&lt;/p&gt;
+&lt;p&gt;Mini-Batch Gradient Descent&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Randomly shuffle dataset&lt;/li&gt;
+  &lt;li&gt;Repeat for {i := 1,11,21,..,m}, every time use b items to update the &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Stochastic Gradient Descent Convergence&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\alpha = \frac{const1}{iterationNumber + const2}
+&lt;/script&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;online-learning&quot;&gt;Online Learning&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;method：
+    &lt;ul&gt;
+      &lt;li&gt;可以借鉴Stochastic Gradient Descent（随机梯度下降）的思想。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;scenario:
+    &lt;ul&gt;
+      &lt;li&gt;Large data streaming coming into the application&lt;/li&gt;
+      &lt;li&gt;Calculate one time then throw away&lt;/li&gt;
+      &lt;li&gt;weight of different features were changed with times&lt;/li&gt;
+      &lt;li&gt;大量的数据源源不断的流入系统中&lt;/li&gt;
+      &lt;li&gt;One time process&lt;/li&gt;
+      &lt;li&gt;随着时间的变化，不同的feature的权重会发生变化。（比如以前买汽车的话，马力比比重高，现在是否节能的比重更高）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;online-learning-ctr-click-through-rate&quot;&gt;在搜索中使用online learning (CTR: CLICK THROUGH RATE)&lt;/h5&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;features choose
+    &lt;ul&gt;
+      &lt;li&gt;关键字与query的匹配程度&lt;/li&gt;
+      &lt;li&gt;用户的搜索历史&lt;/li&gt;
+      &lt;li&gt;facets&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Implement Online Learning
+    &lt;ul&gt;
+      &lt;li&gt;根据用户的query返回用户搜素的结果&lt;/li&gt;
+      &lt;li&gt;统计用户对搜索结果的点击结果&lt;/li&gt;
+      &lt;li&gt;根据用户的点击为（0/1），来训练不同feature的weight。&lt;/li&gt;
+      &lt;li&gt;可以使用Mini-Batch Gradient Descent&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;map-reduce-and-data-parallelism&quot;&gt;Map Reduce and Data Parallelism&lt;/h4&gt;
+
+&lt;p&gt;可以使用Map-Reduce来实现Mini-Batch Gradient Descent&lt;/p&gt;
+
+&lt;p&gt;可利用多核的优势在一台电脑上运行Map-Reduce，效果也会不错，因为现在的电脑都是多核的.&lt;/p&gt;
 </content>
  </entry>
  
@@ -906,6 +1198,22 @@ J(\theta) = \frac{1}{2m} \Biggr[\sum_{i=1}^m (h_{\theta}x^{(i)}-y^{(i)})^2 - \la
 &lt;p&gt;Cross-validation for detecting and preventing overfitting&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://qph.is.quoracdn.net/main-qimg-33774ab551d31370fbe2a4fa57286781?convert_to_webp=true&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;choose-data-size&quot;&gt;choose data size&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Training size and Cross-validation Size&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://1.bp.blogspot.com/-ii5sPXFN0K4/T9Wrs34LiHI/AAAAAAAAAwI/K6Eu-97LY1A/s1600/p2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If Learning Algorithm is suffer from overfitting(high Variance), getting more data is likely to help.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://4.bp.blogspot.com/-uWXoQpZpdOs/T9WvcIcjpCI/AAAAAAAAAwc/Hr3pn8RPQz4/s1600/p3.png&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -1851,7 +2159,7 @@ J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
 
 &lt;p&gt;http://tashan10.com/yong-dockerda-jian-hadoopwei-fen-bu-shi-ji-qun/&lt;/p&gt;
 
-&lt;p&gt;Operating System: &lt;/p&gt;
+&lt;p&gt;Operating System:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Ubuntu 14.04.1 LTS&lt;/li&gt;
@@ -2046,7 +2354,7 @@ J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
       &lt;li&gt;mkdir datanode&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Config 
+  &lt;li&gt;Config
     &lt;ul&gt;
       &lt;li&gt;cd $HADOOP_CONFIG_HOME/&lt;/li&gt;
       &lt;li&gt;cp mapred-site.xml.template mapred-site.xml&lt;/li&gt;
@@ -2278,6 +2586,68 @@ J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
 &lt;hr /&gt;
 
 &lt;p&gt;/home/hadoop/workspace/authorized_keyspub&lt;/p&gt;
+
+&lt;p&gt;使用Eclipse编译运行MapReduce程序 Hadoop2.6.0/Ubuntu&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;http://www.powerxing.com/hadoop-build-project-using-eclipse/&lt;/li&gt;
+  &lt;li&gt;https://github.com/winghc/hadoop2x-eclipse-plugin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Add file from disk to HDFS, then run map-reduce on Hadoop&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;hadoop fs -mkdir /user&lt;/li&gt;
+  &lt;li&gt;hadoop fs -mkdir /user/hadoop&lt;/li&gt;
+  &lt;li&gt;hadoop fs -ls /user/hadoop&lt;/li&gt;
+  &lt;li&gt;hadoop fs -put shakes.txt /user/hadoop/shakes.txt&lt;/li&gt;
+  &lt;li&gt;hadoop jar wordcount.jar org.dongzhou.hadoop.WordCount /user/hadoop/shakes.txt /user/hadoop/shakeResult&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;hadoop fs -mkdir /user/mingyang&lt;/li&gt;
+  &lt;li&gt;hadoop fs -put shakes.txt /user/mingyang/&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hadoop jar wordcount.jar org.mingyang.hadoop.WordCount /user/mingyang/shakes.txt /user/dongxu/shakeResult&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;hadoop fs -mkdir /user/dongxu  &lt;/li&gt;
+  &lt;li&gt;hadoop fs -put shakes.txt /user/dongxu/&lt;/li&gt;
+  &lt;li&gt;hadoop jar wordcount.jar com.dongxu.hadoop.WordCount /user/dongxu/shakes.txt /user/dongxu/shakeResult&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;complie java file use command line&lt;/p&gt;
+
+&lt;p&gt;http://www.cnblogs.com/myresearch/p/mapreduce-compile-jar-run.html&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$HADOOP_HOME/share/hadoop/common/hadoop-common-2.6.0.jar&lt;/li&gt;
+  &lt;li&gt;$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar&lt;/li&gt;
+  &lt;li&gt;$HADOOP_HOME/share/hadoop/common/lib/commons-cli-1.2.jar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;vim /etc/profile&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;export CLASSPATH=”$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/lib/commons-cli-1.2.jar:$CLASSPATH”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;complile&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;javac WordCount.java&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;makr jar file&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jar -cvf WordCount.jar ./WordCount*.class&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Thank you!&lt;/p&gt;
 </content>
@@ -6449,7 +6819,8 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;/li&gt;
   &lt;li&gt;Machine Learning
     &lt;ul&gt;
-      &lt;li&gt;Start Date: 08/15 2015&lt;/li&gt;
+      &lt;li&gt;Start Date: 15/08 2015&lt;/li&gt;
+      &lt;li&gt;End Date: 18/11 2015&lt;/li&gt;
       &lt;li&gt;Standford University&lt;/li&gt;
       &lt;li&gt;Andrwe Ng&lt;/li&gt;
     &lt;/ul&gt;

@@ -9,6 +9,10 @@ http://zhou-dong.github.io/rss.xml
 http://zhou-dong.github.io/sitemap.txt
 http://zhou-dong.github.io/tags
 
+http://zhou-dong.github.io/2015/11/27/computer-architecture-and-cloud-computing
+http://zhou-dong.github.io/2015/11/19/find-jobs
+http://zhou-dong.github.io/machine-learning/2015/11/17/evaluate-learning-algorithm
+http://zhou-dong.github.io/machine-learning/2015/11/17/building-spam-classifier
 http://zhou-dong.github.io/machine-learning/2015/11/15/large-scale-machine-learning
 http://zhou-dong.github.io/machine-learning/2015/11/13/anomaly-detection
 http://zhou-dong.github.io/machine-learning/2015/11/11/pca
