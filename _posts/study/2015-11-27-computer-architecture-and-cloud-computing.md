@@ -20,14 +20,25 @@ There are lots of same technology ideas between single computer architecture and
 #### Same knowledge
 
 - Abstraction
+    + How people use abstraction to define different lays of the system.
     + Abstraction is always the most important idea in building the system, not only computer architecture, but all the things, by the way I believe the humans' history is the abstractions history, we abstract the nature and the world.  
 - Queue implemented in the threads control and balance control in the cloud.
+    + how queue be implemented in the thread control of the CPU
+    + How important the queue in cloud computing, include MapReduce control and balance the use request and so on.
+    + Example: Fafka in Linkedin
 - File system of the Linux system and distribution system(HDFS, GFS).
+    + Hadoop system use the same idea of the Linux system.
+    + use all most same command to deal with the File system.
+    + Hadoop fs -ls /home/
+    + ls /home/
 - Data communication between GPU, memory and project, database.
+    + gaga
+    + CRUD
 - notify idea in thread control and zookeeper in Hadoop system.
 - pipeline in CPU and big data, example: photo OCR
-
-thread control in operation system and Queue in balance and control
+    + shopping cart steps
+    + order steps
+    + photo OCR
 
 #### Future
 
