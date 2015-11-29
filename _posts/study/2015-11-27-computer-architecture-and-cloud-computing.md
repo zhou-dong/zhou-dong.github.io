@@ -11,6 +11,7 @@ tagline:
 - GPU
 - MEMORY
 - MASTERBOARD
+- File System
 
 thread control in operation system and Queue in balance and control 
 
