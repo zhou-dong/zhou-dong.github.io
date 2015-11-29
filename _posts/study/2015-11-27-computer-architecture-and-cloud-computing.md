@@ -21,7 +21,6 @@ There are lots of same technology ideas between single computer architecture and
 
 - Abstraction
     + Abstraction is always the most important idea in building the system, not only computer architecture, but all the things, by the way I believe the humans' history is the abstractions history, we abstract the nature and the world.  
-- Abstractions of the computer system and the abstractions of the distribution system.
 - Queue implemented in the threads control and balance control in the cloud.
 - File system of the Linux system and distribution system(HDFS, GFS).
 - Data communication between GPU, memory and project, database.
