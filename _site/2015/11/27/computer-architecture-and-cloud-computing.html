@@ -180,33 +180,62 @@
   <li>Abstraction
     <ul>
       <li>How people use abstraction to define different lays of the system.</li>
-      <li>Abstraction is always the most important idea in building the system, not only computer architecture, but all the things, by the way I believe the humans’ history is the abstractions history, we abstract the nature and the world.  </li>
+      <li>Abstraction is always the most important idea in building the system, not only computer architecture, but all the things, by the way I believe the humans’ history is the abstractions history, we abstract the nature and the world. We abstract more level of the nature, humans become more intelligent.</li>
+      <li>In the computer system, we abstract the computer into:
+        <ol>
+          <li>hardware</li>
+          <li>operating system</li>
+          <li>software</li>
+        </ol>
+      </li>
+      <li>other way the abstract computer
+        <ol>
+          <li>instruction set</li>
+          <li>operating system api</li>
+          <li>virtual machine api</li>
+          <li>modern language</li>
+        </ol>
+      </li>
+      <li>Clouding computing system
+        <ol>
+          <li>File system(HDFS,GFS)</li>
+          <li>Database: HBase, Bigtable</li>
+          <li>Database API</li>
+          <li>Service API</li>
+        </ol>
+      </li>
     </ul>
   </li>
   <li>Queue implemented in the threads control and balance control in the cloud.
     <ul>
+      <li>thread control is one of the most important part in CPU development, it has been evolved several methods.</li>
+      <li>Now we use the priority queue to control the “context switch”.</li>
       <li>how queue be implemented in the thread control of the CPU</li>
-      <li>How important the queue in cloud computing, include MapReduce control and balance the use request and so on.</li>
-      <li>Example: Fafka in Linkedin</li>
+      <li>In Clouding computing, queue also very very important, queue is implemented in every where.</li>
+      <li>balance the request: Facebook’s beanstalk</li>
+      <li>balance the log system: Fafka in Linkedin</li>
+      <li>zookeeper in Hadoop</li>
+      <li>control the command: MapReduce command control</li>
     </ul>
   </li>
   <li>File system of the Linux system and distribution system(HDFS, GFS).
     <ul>
       <li>Hadoop system use the same idea of the Linux system.</li>
-      <li>use all most same command to deal with the File system.</li>
+      <li>Even use all most the same command to operate.</li>
       <li>Hadoop fs -ls /home/</li>
       <li>ls /home/</li>
     </ul>
   </li>
   <li>Data communication between GPU, memory and project, database.
     <ul>
-      <li>gaga</li>
-      <li>CRUD</li>
+      <li>We been discuss so much during the class.</li>
+      <li>But in the database system, people use the same ideas to Create, Read, Update, Delete the data.</li>
     </ul>
   </li>
-  <li>notify idea in thread control and zookeeper in Hadoop system.</li>
   <li>pipeline in CPU and big data, example: photo OCR
     <ul>
+      <li>We beed discuss how important the pipeline in operating system.</li>
+      <li>pipeline also very important in distributed system.</li>
       <li>shopping cart steps</li>
       <li>order steps</li>
       <li>photo OCR</li>
@@ -222,11 +251,13 @@
   <li>HDFS is based on Linux file system.</li>
 </ul>
 
+<p>The use the same ideas to build different level of the system, and then combine them to a large system, to make the system more powerful.</p>
+
+<h4 id="conclusion">Conclusion</h4>
+
 <p>In our area, every part they always have same idea, if we can master one of the idea, I believe we can make our selves better.</p>
 
 <p>From operation system, hardware of computer to the cloud, there are some many commons ideas between. And these ideas are the basic knowledge of computer science.</p>
-
-<h4 id="conclusion">Conclusion</h4>
 
 <p>The ideas between computer architecture and cloud Computing or distributed system. More I think all the ideas between technology are same. If we like or interest something, just word hard for it.</p>
 
