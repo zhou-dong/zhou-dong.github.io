@@ -8,14 +8,16 @@ tagline:
 
 #### ABSTRACT
 
-There are lots of same technology ideas between single computer architecture and cloud Computing system. We will discuss these ideas in these area:
+There are lots of same technology ideas between single computer architecture and cloud Computing system(Distributed system). We will discuss these ideas in these area:
 
 - Abstractions of the computer system and the abstractions of the distribution system.
-- Queue implemented in the threads control and balance control in the cloud.
-- File system of the Linux system and distribution system(HDFS, GFS).
+- How Queue implemented both the threads control in the single computer and balance control in the cloud computing.
+- The ideas of the File system between the Linux system and distribution system(HDFS, GFS).
 - Data communication between GPU, memory and project, database.
 - notify idea in thread control and zookeeper in Hadoop system.
 - pipeline in CPU and big data, example: photo OCR
+
+No matter build a single computer or cloud system, basically people use the same idea.  
 
 #### Same knowledge
 
@@ -53,3 +55,7 @@ From operation system, hardware of computer to the cloud, there are some many co
 #### Conclusion
 
 The ideas between computer architecture and cloud Computing or distributed system. More I think all the ideas between technology are same. If we like or interest something, just word hard for it.
+
+Computer science is an great major, it's not only need thinking things logically but also need us do it manually which is by our hand.
+
+The creative is not only invent the totally new things, but standing on the shoulders of giants and step forward. Wish after we leaned the basic ideas, we could create our own cool things, to make the world a little different.
