@@ -38,6 +38,10 @@ No matter build a single computer or cloud system, basically people use the same
       2. Database: HBase, Bigtable
       3. Database API
       4. Service API
+-  Add cache to every level to optimize system.
+    + We been study that there are several levels cache in the computer system, like L1, L2, L3, Main Memory.
+    + In the cloud computing also need several level cache to optimize the system.
+    + Cache in project(Ehcache), Embedded Cache(LevelDB), distributed Cache(Redis), and so on...
 - Queue implemented in the threads control and balance control in the cloud.
     + thread control is one of the most important part in CPU development, it has been evolved several methods.
     + Now we use the priority queue to control the "context switch".
@@ -69,6 +73,8 @@ No matter build a single computer or cloud system, basically people use the same
 - HDFS is based on Linux file system.
 
 The use the same ideas to build different level of the system, and then combine them to a large system, to make the system more powerful.
+
+No matter which level have good ideas or solutions will be implemented in other level. Future is join all these ideas together to optimize the whole system, like GPU plus Map Reduce, HDFS with Linux file system(ext3).
 
 #### Conclusion
 
