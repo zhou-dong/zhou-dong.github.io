@@ -87,3 +87,5 @@ The ideas between computer architecture and cloud Computing or distributed syste
 Computer science is an great major, it's not only need thinking things logically but also need us do it manually which is by our hand.
 
 The creative is not only invent the totally new things, but standing on the shoulders of giants and step forward. Wish after we leaned the basic ideas, we could create our own cool things, to make the world a little different.
+
+Add more informatino of Computer Architecture.
