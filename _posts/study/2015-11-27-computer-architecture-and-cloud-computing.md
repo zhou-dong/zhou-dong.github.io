@@ -74,9 +74,7 @@ No matter build a single computer or cloud system, basically people use the same
 
 The use the same ideas to build different level of the system, and then combine them to a large system, to make the system more powerful.
 
-No matter which level have good ideas or solutions will be implemented in other level. Future is join all these ideas together to optimize the whole system, like GPU plus Map Reduce, HDFS with Linux file system(ext3).
-
-Future is join all these ideas together to optimize the whole system, like GPU plus Map Reduce, HDFS with Linux file system(ext3). Because of abstraction, people in different levels to optimize the system, they are not disturbed each other, but they can use ideas from the other levels to optimize their work. So no matter which level have good ideas or solutions will be implemented in other level.
+Future is join all these ideas together to optimize the whole system, like GPU plus Map Reduce, HDFS with Linux file system(ext3). Because of abstraction, people in different levels to optimize the system, they are not disturbed each other, but they can use ideas from the other levels to optimize their work. So no matter which level have good ideas or solutions will be implemented in other level. 
 
 #### Conclusion
 
