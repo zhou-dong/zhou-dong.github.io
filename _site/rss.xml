@@ -5,45 +5,156 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-11-29T00:53:27-06:00</lastBuildDate>
-        <pubDate>2015-11-29T00:53:27-06:00</pubDate>
+        <lastBuildDate>2015-12-04T13:22:36-06:00</lastBuildDate>
+        <pubDate>2015-12-04T13:22:36-06:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
+                <title>Data Stream Analyze</title>
+                <description>&lt;pre&gt;
+&lt;code&gt;
+
+
+Socket.prototype.onevent = function(packet){
+  var args = packet.data || [];
+  debug(&#39;emitting event %j&#39;, args);
+
+  if (null != packet.id) {
+    debug(&#39;attaching ack callback to event&#39;);
+    args.push(this.ack(packet.id));
+  }
+
+  emit.apply(this, args);
+};
+
+&lt;/code&gt;
+&lt;/pre&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/12/04/code</link>
+                <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
+                <pubDate>2015-12-04T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
                 <title>Technology From Computer Architecture to Cloud Computing</title>
                 <description>
-&lt;h4 id=&quot;same-knowledge&quot;&gt;1. Same knowledge&lt;/h4&gt;
+&lt;h4 id=&quot;abstract&quot;&gt;ABSTRACT&lt;/h4&gt;
+
+&lt;p&gt;There are lots of same technology ideas between single computer architecture and cloud Computing system(Distributed system). We will discuss these ideas in these area:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Abstractions of the computer system and the abstractions of the distribution system.&lt;/li&gt;
+  &lt;li&gt;How Queue implemented both the threads control in the single computer and balance control in the cloud computing.&lt;/li&gt;
+  &lt;li&gt;The ideas of the File system between the Linux system and distribution system(HDFS, GFS).&lt;/li&gt;
+  &lt;li&gt;Data communication between GPU, memory and project, database.&lt;/li&gt;
+  &lt;li&gt;notify idea in thread control and zookeeper in Hadoop system.&lt;/li&gt;
+  &lt;li&gt;pipeline in CPU and big data, example: photo OCR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;No matter build a single computer or cloud system, basically people use the same idea.  &lt;/p&gt;
+
+&lt;h4 id=&quot;same-knowledge&quot;&gt;Same knowledge&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Abstraction
     &lt;ul&gt;
-      &lt;li&gt;Abstraction is always the most important idea in building the system.&lt;/li&gt;
+      &lt;li&gt;How people use abstraction to define different lays of the system.&lt;/li&gt;
+      &lt;li&gt;Abstraction is always the most important idea in building the system, not only computer architecture, but all the things, by the way I believe the humans’ history is the abstractions history, we abstract the nature and the world. We abstract more level of the nature, humans become more intelligent.&lt;/li&gt;
+      &lt;li&gt;In the computer system, we abstract the computer into:
+        &lt;ol&gt;
+          &lt;li&gt;hardware&lt;/li&gt;
+          &lt;li&gt;operating system&lt;/li&gt;
+          &lt;li&gt;software&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;other way the abstract computer
+        &lt;ol&gt;
+          &lt;li&gt;instruction set&lt;/li&gt;
+          &lt;li&gt;operating system api&lt;/li&gt;
+          &lt;li&gt;virtual machine api&lt;/li&gt;
+          &lt;li&gt;modern language&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Clouding computing system
+        &lt;ol&gt;
+          &lt;li&gt;File system(HDFS,GFS)&lt;/li&gt;
+          &lt;li&gt;Database: HBase, Bigtable&lt;/li&gt;
+          &lt;li&gt;Database API&lt;/li&gt;
+          &lt;li&gt;Service API&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;CPU&lt;/li&gt;
-  &lt;li&gt;GPU&lt;/li&gt;
-  &lt;li&gt;MEMORY&lt;/li&gt;
-  &lt;li&gt;MASTER BOARD&lt;/li&gt;
-  &lt;li&gt;File System&lt;/li&gt;
-  &lt;li&gt;Multiply thread&lt;/li&gt;
+  &lt;li&gt;Add cache to every level to optimize system.
+    &lt;ul&gt;
+      &lt;li&gt;We been study that there are several levels cache in the computer system, like L1, L2, L3, Main Memory.&lt;/li&gt;
+      &lt;li&gt;In the cloud computing also need several level cache to optimize the system.&lt;/li&gt;
+      &lt;li&gt;Cache in project(Ehcache), Embedded Cache(LevelDB), distributed Cache(Redis), and so on…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Queue implemented in the threads control and balance control in the cloud.
+    &lt;ul&gt;
+      &lt;li&gt;thread control is one of the most important part in CPU development, it has been evolved several methods.&lt;/li&gt;
+      &lt;li&gt;Now we use the priority queue to control the “context switch”.&lt;/li&gt;
+      &lt;li&gt;how queue be implemented in the thread control of the CPU&lt;/li&gt;
+      &lt;li&gt;In Clouding computing, queue also very very important, queue is implemented in every where.&lt;/li&gt;
+      &lt;li&gt;balance the request: Facebook’s beanstalk&lt;/li&gt;
+      &lt;li&gt;balance the log system: Fafka in Linkedin&lt;/li&gt;
+      &lt;li&gt;zookeeper in Hadoop&lt;/li&gt;
+      &lt;li&gt;control the command: MapReduce command control&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;File system of the Linux system and distribution system(HDFS, GFS).
+    &lt;ul&gt;
+      &lt;li&gt;Hadoop system use the same idea of the Linux system.&lt;/li&gt;
+      &lt;li&gt;Even use all most the same command to operate.&lt;/li&gt;
+      &lt;li&gt;Hadoop fs -ls /home/&lt;/li&gt;
+      &lt;li&gt;ls /home/&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data communication between GPU, memory and project, database.
+    &lt;ul&gt;
+      &lt;li&gt;We been discuss so much during the class.&lt;/li&gt;
+      &lt;li&gt;But in the database system, people use the same ideas to Create, Read, Update, Delete the data.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pipeline in CPU and big data, example: photo OCR
+    &lt;ul&gt;
+      &lt;li&gt;We beed discuss how important the pipeline in operating system.&lt;/li&gt;
+      &lt;li&gt;pipeline also very important in distributed system.&lt;/li&gt;
+      &lt;li&gt;shopping cart steps&lt;/li&gt;
+      &lt;li&gt;order steps&lt;/li&gt;
+      &lt;li&gt;photo OCR&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;thread control in operation system and Queue in balance and control&lt;/p&gt;
+&lt;h4 id=&quot;future&quot;&gt;Future&lt;/h4&gt;
 
-&lt;p&gt;pipeline in operating system and big data, example: photo OCR&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;GPU plus Map Reduce&lt;/li&gt;
+  &lt;li&gt;Low level of mongoDB let operating system control the thread for it.&lt;/li&gt;
+  &lt;li&gt;HDFS is based on Linux file system.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;数据的同步，在内存和数据库&lt;/p&gt;
+&lt;p&gt;The use the same ideas to build different level of the system, and then combine them to a large system, to make the system more powerful.&lt;/p&gt;
 
-&lt;h4 id=&quot;section&quot;&gt;2.&lt;/h4&gt;
+&lt;p&gt;Future is join all these ideas together to optimize the whole system, like GPU plus Map Reduce, HDFS with Linux file system(ext3). Because of abstraction, people in different levels to optimize the system, they are not disturbed each other, but they can use ideas from the other levels to optimize their work. So no matter which level have good ideas or solutions will be implemented in other level. &lt;/p&gt;
 
-&lt;h4 id=&quot;join-them-together&quot;&gt;3. Join them together&lt;/h4&gt;
-
-&lt;p&gt;GPU plus Mapreduce&lt;/p&gt;
+&lt;h4 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h4&gt;
 
 &lt;p&gt;In our area, every part they always have same idea, if we can master one of the idea, I believe we can make our selves better.&lt;/p&gt;
 
 &lt;p&gt;From operation system, hardware of computer to the cloud, there are some many commons ideas between. And these ideas are the basic knowledge of computer science.&lt;/p&gt;
+
+&lt;p&gt;The ideas between computer architecture and cloud Computing or distributed system. More I think all the ideas between technology are same. If we like or interest something, just word hard for it.&lt;/p&gt;
+
+&lt;p&gt;Computer science is an great major, it’s not only need thinking things logically but also need us do it manually which is by our hand.&lt;/p&gt;
+
+&lt;p&gt;The creative is not only invent the totally new things, but standing on the shoulders of giants and step forward. Wish after we leaned the basic ideas, we could create our own cool things, to make the world a little different.&lt;/p&gt;
+
+&lt;p&gt;Add more informatino of Computer Architecture.&lt;/p&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/11/27/computer-architecture-and-cloud-computing</link>
                 <guid>http://zhou-dong.github.io/2015/11/27/computer-architecture-and-cloud-computing</guid>
