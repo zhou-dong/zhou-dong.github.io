@@ -114,6 +114,10 @@ tagline:
     - Start Date: 12/11 2015
     - End Date:
 
+21. Machine Learning: Regression
+    - 华盛顿大学
+    - Start Date: 2015年11月30日
+    - End Date: 
 #### Edex:
 
 1. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
