@@ -60,54 +60,59 @@ tagline:
     - Use Ruby on rails to implement Web server
     - The University of New Mexico
 
-11. Text Retrieval and Search Engines
+10. Text Retrieval and Search Engines
     - Start Date: 04/15 2015
     - End Date: 04/18 2015
     - I like this course, easily understand.
     - The University of Illinois at Urbana-Champaign
 
-12. Introduction to Recommender Systems
+11. Introduction to Recommender Systems
     - Start Date: 05/11 2015
     - End Date: 05/11 2015
     - No coding thing, just basic thing of Recommender System
     - The University of Minnesota 
 
-13. Practical Machine Learning
+12. Practical Machine Learning
     - Start Date: 17/07 2015
     - End Date: 18/07 2015
 
-14. Data Visualization
+13. Data Visualization
     - Start Date: 23/07 2015
     - End Date:
 
-15. 计算导论与C语言基础
+14. 计算导论与C语言基础
     - Start Date: 07/24 2015
     - End Date:08/09 2015
     - 确实是非常好的一门课程,尤其是刚开始对计算机的历史的介绍，和图灵机院里的介绍！
     - 授课学校：北京大学
 
-16. C程序设计进阶
+15. C程序设计进阶
     - Start Date: 08/06 2015
     - End Date: 08/09/2015
     - 授课学校：北京大学
 
-17. Android 手持系统的移动应用
+16. Android 手持系统的移动应用
     - Start Date: 08/18 2015
     - End Date: 08/20 2015
     - University of Maryland, College Park
 
-18. Machine Learning
+17. Machine Learning
     - Start Date: 15/08 2015
     - End Date: 18/11 2015
     - Standford University
     - Andrwe Ng
 
-19. 机器学习基础：案例研究
+18. 机器学习基础：案例研究
     - Start Date: 10/15 2015
     - End Date:
     - 华盛顿大学
 
-20. Machine Learning in Practise
+19. Machine Learning in Practise
+
+20. The Data Scientist’s Toolbox
+    - Johns Hopkins
+    - Start Date: 12/11 2015
+    - End Date:
 
 #### Edex:
 
