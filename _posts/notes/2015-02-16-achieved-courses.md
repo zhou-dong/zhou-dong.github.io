@@ -204,6 +204,9 @@ tagline:
     - 2015 Fall Semester
     - Dr. Karen Hovsepian
 
+8. Computer Vision CS-6632-TXAA
+    - 2016 Spring Semester
+    - Dr. Karen Hovsepian
 
 145-146-413:1234
 
