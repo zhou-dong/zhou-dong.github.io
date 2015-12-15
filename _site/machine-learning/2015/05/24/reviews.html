@@ -159,6 +159,190 @@
 <div class="row">
   <div class="col-xs-12">
     
+<h4 id="advantage-knndisadvantage">回归模型的advantage 和KNN的disadvantage</h4>
+
+<p>使用回归模型，可以使用所有的数据来为模型服务！</p>
+
+<p>如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。</p>
+
+<p>KNN的劣势：</p>
+
+<ol>
+  <li>计算复杂度高，每次都要遍历整个数据集。</li>
+  <li>只有最接近的K个数据参与到最后的分类或者预测中。</li>
+</ol>
+
+<hr />
+
+<h4 id="linear-classifiers">Linear classifiers</h4>
+
+<ol>
+  <li>Score the weight of the each word (训练每个词的权重) 比如：
+    <ul>
+      <li>good: 1.0</li>
+      <li>beautiful: 1.3</li>
+      <li>awesome: 1.5</li>
+      <li>bad: -1.0</li>
+      <li>suck: -2.0</li>
+      <li>car: 0.0</li>
+      <li>house: 0.0</li>
+    </ul>
+  </li>
+  <li>把句子中的每个词的权重相加算出得分：
+    <ul>
+      <li>大于0，positive</li>
+      <li>小于0，negative</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h4 id="section">基于商品的协同过滤</h4>
+
+<p>看来华盛顿大学的机器学习课程，才发现协同过滤真的很简单！这门课太棒了！</p>
+
+<p>最简单的product-to-product推荐系统</p>
+
+<ul>
+  <li>首先他是一个<code>对角矩阵</code></li>
+  <li>行和列一样的商品</li>
+  <li>这样的话，就能知道，两两商品同时出现的次数</li>
+  <li>这也就可以做协同过滤了</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X & 从一到无穷大 & 深入浅出设计模式 & Effective Java & 三体 & 时间简史 \\
+\hline
+从一到无穷大     & 20 & 1  & 2  & 100 & 15 \\
+\hline
+深入浅出设计模式 & 1  & 30 & 16 & 110 & 3  \\
+\hline
+Effective Java   & 2  & 16 & 40 & 150 &  4  \\
+\hline
+三体             & 100 & 110 & 150 & 10000 & 250 \\
+\hline
+时间简史         & 15 & 3  & 4  & 250 & 70 \\
+\hline
+\end{array}
+ %]]></script>
+
+<h5 id="normalizing-co-occurrence-matrices">Normalizing co-occurrence matrices</h5>
+
+<p>Jaccard similarity，因为有些商品购买的特别多，无论买那个商品都会推荐它</p>
+
+<p>who purchased <code>i and j</code> divided by who purchased <code>i or j</code></p>
+
+<script type="math/tex; mode=display">
+\frac{\text{# purchased } i \text{ and }  j }{\text{# purchased } i \text{ or }  j}
+</script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X & 从一到无穷大 & 深入浅出设计模式 & Effective Java & 三体 & 时间简史 \\
+\hline
+从一到无穷大     & 1     & 0.05  & 0.10  & 0.05 & 0.75 \\
+\hline
+深入浅出设计模式 & 0.05  & 1     & 0.53  & 0.27 & 0.10  \\
+\hline
+Effective Java   & 0.10  & 0.53  & 1     & 0.27 &0.10  \\
+\hline
+三体             & 0.05  & 0.27  & 0.27  & 1 & 0.25 \\
+\hline
+时间简史         & 0.75  & 0.10  & 0.10  & 0.25 & 1 \\
+\hline
+\end{array}
+ %]]></script>
+
+<p>如果用户同时购买了两件商品，或者更多的商品，可以想搜素引擎打分一样，给商品打分</p>
+
+<ol>
+  <li>分别找出为这两个商品推荐的商品</li>
+  <li>分别把这些权重相加，找出得分最高的商品</li>
+</ol>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X & 从一到无穷大 & 深入浅出设计模式 & Effective Java & 三体 & 时间简史 \\
+\hline
+从一到无穷大     & 1     & 0.05  & 0.10  & 0.05 & 0.75 \\
+\hline
+Effective Java   & 0.10  & 0.53  & 1     & 0.27 &0.10  \\
+\hline
+Result           & 1.10  & 0.58  & 1.10  & 0.32 & 0.85 \\
+\hline
+\end{array}
+ %]]></script>
+
+<p>所以推荐的顺序是：时间简史、深入浅出审计模式、三体</p>
+
+<hr />
+
+<h4 id="section-1">基于内容的协同过滤</h4>
+
+<ul>
+  <li>user     有多个features</li>
+  <li>
+    <p>movie  也有多个feature</p>
+  </li>
+  <li>user = (f1,f2,f3,…,fn)</li>
+  <li>
+    <p>movie = (k1,k2,k3,…,kn)</p>
+  </li>
+  <li>user * movie = score(positve, negative)</li>
+  <li>用这种方法可以求出各个feature和weight</li>
+  <li>然后再用使用基于内容的协同过滤</li>
+</ul>
+
+<h5 id="matrix-factorization">matrix factorization</h5>
+
+<hr />
+
+<h4 id="section-2">评价系统的推荐系统</h4>
+
+<p>Recall</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\frac{\text{# liked & shown}}{\text{ # liked}}
+ %]]></script>
+
+<p>Precision</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\frac{\text{# liked & shown}}{\text{# shown}}
+ %]]></script>
+
+<p>Optimal recommenders</p>
+
+<script type="math/tex; mode=display">
+Recall = 1 \\
+Precision = 1
+</script>
+
+<p>Precision-recall curves</p>
+
+<ul>
+  <li>We can use Area Under the Curve(AUC) method to evluate with curve is better.</li>
+</ul>
+
+<p><img width="40%" src="http://ivrl.epfl.ch/files/content/sites/ivrg/files/supplementary_material/RK_ICIP2010/images/MSSSvsOthers.jpg" alt="Precision-recall curves" /></p>
+
+<hr />
+
+<h4 id="word-count-document-representation">Word count document representation</h4>
+
+<h5 id="bag-of-words-model">Bag of words model</h5>
+
+<ul>
+  <li>Ignore order of words</li>
+  <li>Count # of instances of each word in vocabulary</li>
+</ul>
+
+<p>原来比较两个文章的相似度，比我想的还要简单</p>
+
 <h4 id="supervised-learning-method">Supervised Learning method</h4>
 
 <ul>
