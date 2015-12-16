@@ -22,3 +22,11 @@ Some useful papers on computer vision:
 - SURF [Bay et al. '06](http://www.vision.ee.ethz.ch/~surf/eccv06.pdf)
 - ImageNet [Krizhevsky '12](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf)
 
+---
+
+#### Neutral Network
+
+<img src="http://www.intechopen.com/source/html/11772/media/image29.jpg" alt="neural network"/>
+
+- 神经网络的每个部分其实就是Logistic Regression，很多个Logistic Regression组合在一个就是神经网络的一个layer
+- 多个layer组合在一个构成一个神经网络
