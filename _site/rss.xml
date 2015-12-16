@@ -5,16 +5,79 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2015-12-04T13:22:36-06:00</lastBuildDate>
-        <pubDate>2015-12-04T13:22:36-06:00</pubDate>
+        <lastBuildDate>2015-12-16T01:20:53-06:00</lastBuildDate>
+        <pubDate>2015-12-16T01:20:53-06:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Prepare Computer Vision</title>
+                <description>
+&lt;p&gt;For those interested, the slides presented in the videos for this module can be downloaded here: &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://d396qusza40orc.cloudfront.net/phoenixassets/ml-foundations/deeplearning-annotated.pdf&quot;&gt;deeplearning-annotated.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Some useful papers on computer vision:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SIFT &lt;a href=&quot;http://www.cs.ubc.ca/~lowe/papers/iccv99.pdf&quot;&gt;Lowe ‘99&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spin Images &lt;a href=&quot;https://www.ri.cmu.edu/pub_files/pub2/johnson_andrew_1997_3/johnson_andrew_1997_3.pdf&quot;&gt;Johnson &amp;amp; Herbert ‘99&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Textons &lt;a href=&quot;http://www.cs.berkeley.edu/~malik/papers/LM-3dtexton.pdf&quot;&gt;Malik et al. ‘99&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;RIFT &lt;a href=&quot;https://hal.inria.fr/inria-00548530/document&quot;&gt;Lazebnik ‘04&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;GLOH &lt;a href=&quot;http://lear.inrialpes.fr/pubs/2005/MS05/mikolajczyk_pami05.pdf&quot;&gt;Mikolajczyk &amp;amp; Schmid ‘05&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;HoG &lt;a href=&quot;http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf&quot;&gt;Dalal &amp;amp; Triggs ‘05&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;SURF &lt;a href=&quot;http://www.vision.ee.ethz.ch/~surf/eccv06.pdf&quot;&gt;Bay et al. ‘06&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;ImageNet &lt;a href=&quot;http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf&quot;&gt;Krizhevsky ‘12&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;neutral-network&quot;&gt;Neutral Network&lt;/h4&gt;
+
+&lt;p&gt;&amp;lt;img src=”http://www.intechopen.com/source/html/11772/media/image29.jpg” alt”neural network”/&amp;gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;神经网络的每个部分其实就是Logistic Regression，很多个Logistic Regression组合在一个就是神经网络的一个layer&lt;/li&gt;
+  &lt;li&gt;多个layer组合在一个构成一个神经网络&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/machine-learning/2015/12/15/prepare_computer_vision</link>
+                <guid>http://zhou-dong.github.io/machine-learning/2015/12/15/prepare_computer_vision</guid>
+                <pubDate>2015-12-15T00:00:00-06:00</pubDate>
+        </item>
 
         <item>
                 <title>Data Stream Analyze</title>
                 <description>&lt;pre&gt;
 &lt;code&gt;
 
+Socket.prototype.onpacket = function(packet){
+  debug(&#39;got packet %j&#39;, packet);
+  switch (packet.type) {
+    case parser.EVENT:
+      this.onevent(packet);
+      break;
+
+    case parser.BINARY_EVENT:
+      this.onevent(packet);
+      break;
+
+    case parser.ACK:
+      this.onack(packet);
+      break;
+
+    case parser.BINARY_ACK:
+      this.onack(packet);
+      break;
+
+    case parser.DISCONNECT:
+      this.ondisconnect();
+      break;
+
+    case parser.ERROR:
+      this.emit(&#39;error&#39;, packet.data);
+  }
+};
 
 Socket.prototype.onevent = function(packet){
   var args = packet.data || [];
@@ -27,6 +90,20 @@ Socket.prototype.onevent = function(packet){
 
   emit.apply(this, args);
 };
+
+
+function Client(server, conn){
+  this.server = server;
+  this.conn = conn;
+  this.encoder = new parser.Encoder();
+  this.decoder = new parser.Decoder();
+  this.id = conn.id;
+  this.request = conn.request;
+  this.setup();
+  this.sockets = {};
+  this.nsps = {};
+  this.connectBuffer = [];
+}
 
 &lt;/code&gt;
 &lt;/pre&gt;
@@ -192,6 +269,8 @@ Socket.prototype.onevent = function(packet){
 &lt;p&gt;Architecture&lt;/p&gt;
 
 &lt;p&gt;Machine Learning&lt;/p&gt;
+
+&lt;p&gt;Search Engineering technology&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Linear Regression&lt;/li&gt;
@@ -3575,6 +3654,190 @@ console.log(person2.gender) //female
         <item>
                 <title>Review Machine learning in action</title>
                 <description>
+&lt;h4 id=&quot;advantage-knndisadvantage&quot;&gt;回归模型的advantage 和KNN的disadvantage&lt;/h4&gt;
+
+&lt;p&gt;使用回归模型，可以使用所有的数据来为模型服务！&lt;/p&gt;
+
+&lt;p&gt;如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。&lt;/p&gt;
+
+&lt;p&gt;KNN的劣势：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;计算复杂度高，每次都要遍历整个数据集。&lt;/li&gt;
+  &lt;li&gt;只有最接近的K个数据参与到最后的分类或者预测中。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;linear-classifiers&quot;&gt;Linear classifiers&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Score the weight of the each word (训练每个词的权重) 比如：
+    &lt;ul&gt;
+      &lt;li&gt;good: 1.0&lt;/li&gt;
+      &lt;li&gt;beautiful: 1.3&lt;/li&gt;
+      &lt;li&gt;awesome: 1.5&lt;/li&gt;
+      &lt;li&gt;bad: -1.0&lt;/li&gt;
+      &lt;li&gt;suck: -2.0&lt;/li&gt;
+      &lt;li&gt;car: 0.0&lt;/li&gt;
+      &lt;li&gt;house: 0.0&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;把句子中的每个词的权重相加算出得分：
+    &lt;ul&gt;
+      &lt;li&gt;大于0，positive&lt;/li&gt;
+      &lt;li&gt;小于0，negative&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;基于商品的协同过滤&lt;/h4&gt;
+
+&lt;p&gt;看来华盛顿大学的机器学习课程，才发现协同过滤真的很简单！这门课太棒了！&lt;/p&gt;
+
+&lt;p&gt;最简单的product-to-product推荐系统&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先他是一个&lt;code&gt;对角矩阵&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;行和列一样的商品&lt;/li&gt;
+  &lt;li&gt;这样的话，就能知道，两两商品同时出现的次数&lt;/li&gt;
+  &lt;li&gt;这也就可以做协同过滤了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X &amp; 从一到无穷大 &amp; 深入浅出设计模式 &amp; Effective Java &amp; 三体 &amp; 时间简史 \\
+\hline
+从一到无穷大     &amp; 20 &amp; 1  &amp; 2  &amp; 100 &amp; 15 \\
+\hline
+深入浅出设计模式 &amp; 1  &amp; 30 &amp; 16 &amp; 110 &amp; 3  \\
+\hline
+Effective Java   &amp; 2  &amp; 16 &amp; 40 &amp; 150 &amp;  4  \\
+\hline
+三体             &amp; 100 &amp; 110 &amp; 150 &amp; 10000 &amp; 250 \\
+\hline
+时间简史         &amp; 15 &amp; 3  &amp; 4  &amp; 250 &amp; 70 \\
+\hline
+\end{array}
+ %]]&gt;&lt;/script&gt;
+
+&lt;h5 id=&quot;normalizing-co-occurrence-matrices&quot;&gt;Normalizing co-occurrence matrices&lt;/h5&gt;
+
+&lt;p&gt;Jaccard similarity，因为有些商品购买的特别多，无论买那个商品都会推荐它&lt;/p&gt;
+
+&lt;p&gt;who purchased &lt;code&gt;i and j&lt;/code&gt; divided by who purchased &lt;code&gt;i or j&lt;/code&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\frac{\text{# purchased } i \text{ and }  j }{\text{# purchased } i \text{ or }  j}
+&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X &amp; 从一到无穷大 &amp; 深入浅出设计模式 &amp; Effective Java &amp; 三体 &amp; 时间简史 \\
+\hline
+从一到无穷大     &amp; 1     &amp; 0.05  &amp; 0.10  &amp; 0.05 &amp; 0.75 \\
+\hline
+深入浅出设计模式 &amp; 0.05  &amp; 1     &amp; 0.53  &amp; 0.27 &amp; 0.10  \\
+\hline
+Effective Java   &amp; 0.10  &amp; 0.53  &amp; 1     &amp; 0.27 &amp;0.10  \\
+\hline
+三体             &amp; 0.05  &amp; 0.27  &amp; 0.27  &amp; 1 &amp; 0.25 \\
+\hline
+时间简史         &amp; 0.75  &amp; 0.10  &amp; 0.10  &amp; 0.25 &amp; 1 \\
+\hline
+\end{array}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;如果用户同时购买了两件商品，或者更多的商品，可以想搜素引擎打分一样，给商品打分&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;分别找出为这两个商品推荐的商品&lt;/li&gt;
+  &lt;li&gt;分别把这些权重相加，找出得分最高的商品&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X &amp; 从一到无穷大 &amp; 深入浅出设计模式 &amp; Effective Java &amp; 三体 &amp; 时间简史 \\
+\hline
+从一到无穷大     &amp; 1     &amp; 0.05  &amp; 0.10  &amp; 0.05 &amp; 0.75 \\
+\hline
+Effective Java   &amp; 0.10  &amp; 0.53  &amp; 1     &amp; 0.27 &amp;0.10  \\
+\hline
+Result           &amp; 1.10  &amp; 0.58  &amp; 1.10  &amp; 0.32 &amp; 0.85 \\
+\hline
+\end{array}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;所以推荐的顺序是：时间简史、深入浅出审计模式、三体&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;基于内容的协同过滤&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;user     有多个features&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;movie  也有多个feature&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;user = (f1,f2,f3,…,fn)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;movie = (k1,k2,k3,…,kn)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;user * movie = score(positve, negative)&lt;/li&gt;
+  &lt;li&gt;用这种方法可以求出各个feature和weight&lt;/li&gt;
+  &lt;li&gt;然后再用使用基于内容的协同过滤&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;matrix-factorization&quot;&gt;matrix factorization&lt;/h5&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;评价系统的推荐系统&lt;/h4&gt;
+
+&lt;p&gt;Recall&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\frac{\text{# liked &amp; shown}}{\text{ # liked}}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Precision&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\frac{\text{# liked &amp; shown}}{\text{# shown}}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Optimal recommenders&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+Recall = 1 \\
+Precision = 1
+&lt;/script&gt;
+
+&lt;p&gt;Precision-recall curves&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We can use Area Under the Curve(AUC) method to evluate with curve is better.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img width=&quot;40%&quot; src=&quot;http://ivrl.epfl.ch/files/content/sites/ivrg/files/supplementary_material/RK_ICIP2010/images/MSSSvsOthers.jpg&quot; alt=&quot;Precision-recall curves&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;word-count-document-representation&quot;&gt;Word count document representation&lt;/h4&gt;
+
+&lt;h5 id=&quot;bag-of-words-model&quot;&gt;Bag of words model&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ignore order of words&lt;/li&gt;
+  &lt;li&gt;Count # of instances of each word in vocabulary&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;原来比较两个文章的相似度，比我想的还要简单&lt;/p&gt;
+
 &lt;h4 id=&quot;supervised-learning-method&quot;&gt;Supervised Learning method&lt;/h4&gt;
 
 &lt;ul&gt;
@@ -6938,12 +7201,24 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;华盛顿大学&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Machine Learning in Practise&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
-
-&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Machine Learning in Practise&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The Data Scientist’s Toolbox
+    &lt;ul&gt;
+      &lt;li&gt;Johns Hopkins&lt;/li&gt;
+      &lt;li&gt;Start Date: 12/11 2015&lt;/li&gt;
+      &lt;li&gt;End Date:&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Machine Learning: Regression
+    &lt;ul&gt;
+      &lt;li&gt;华盛顿大学&lt;/li&gt;
+      &lt;li&gt;Start Date: 2015年11月30日&lt;/li&gt;
+      &lt;li&gt;End Date: 
+#### Edex:&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
     &lt;ul&gt;
       &lt;li&gt;Start Date: 01/07 2015&lt;/li&gt;
@@ -7068,6 +7343,12 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;li&gt;Special Topics CS6649-TRAA (Probabilistic Graphical Models)
     &lt;ul&gt;
       &lt;li&gt;2015 Fall Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Karen Hovsepian&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Computer Vision CS-6632-TXAA
+    &lt;ul&gt;
+      &lt;li&gt;2016 Spring Semester&lt;/li&gt;
       &lt;li&gt;Dr. Karen Hovsepian&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
