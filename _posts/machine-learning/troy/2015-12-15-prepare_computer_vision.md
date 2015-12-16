@@ -30,3 +30,7 @@ Some useful papers on computer vision:
 
 - 神经网络的每个部分其实就是Logistic Regression，很多个Logistic Regression组合在一个就是神经网络的一个layer
 - 多个layer组合在一个构成一个神经网络
+
+computer vision
+
+- 找出图片中的pattern或者是特征
