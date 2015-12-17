@@ -177,6 +177,14 @@ y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12 - \Phi ) + \epsilon_i
 y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12) + w_3 \cos (2 \pi t_i / 12) + \epsilon_i
 </script>
 
+<p>Generic basis expansion</p>
+
+<script type="math/tex; mode=display">
+y_i = w_0h_0(x_i) + w_1h_1(x_i) + w_2 h_2(x_i)  + \cdots + w_D h_D(x_i)  + \epsilon_i \\
+
+= \sum_{j=0}^D w_j h_j(x_i) + \epsilon_i
+</script>
+
 <p>如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。</p>
 
 <p>KNN的劣势：</p>
