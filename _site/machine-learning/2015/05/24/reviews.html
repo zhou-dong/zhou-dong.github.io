@@ -163,6 +163,20 @@
 
 <p>使用回归模型，可以使用所有的数据来为模型服务！</p>
 
+<p>使用回归模型，不但可以用x，预测y；也可以用y，预测x</p>
+
+<p>在回归模型中，需要加入随着x轴的变化，周期变化的参数：</p>
+
+<script type="math/tex; mode=display">
+y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12 - \Phi ) + \epsilon_i
+</script>
+
+<p>Equivalently</p>
+
+<script type="math/tex; mode=display">
+y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12) + w_3 \cos (2 \pi t_i / 12) + \epsilon_i
+</script>
+
 <p>如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。</p>
 
 <p>KNN的劣势：</p>
