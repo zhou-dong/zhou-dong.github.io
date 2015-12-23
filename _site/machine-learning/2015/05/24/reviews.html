@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Review Machine learning in action</title>
+    <title>Review Machine Learning in Action</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -153,19 +153,45 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Review Machine learning in action </h1>
+  <h1>Review Machine Learning in Action </h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     
+<h4 id="machine-learning-regression">Machine Learning: Regression</h4>
+
+<ul>
+  <li>使用回归模型，可以使用所有的数据来为模型服务！</li>
+  <li>如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。</li>
+  <li>使用回归模型，不但可以用x，预测y；也可以用y，预测x</li>
+</ul>
+
+<ol>
+  <li>Simple linear regression</li>
+  <li>Multiple Regression</li>
+  <li>Assessing performance
+    <ul>
+      <li>Remember that all models are wrong; the practical question is how wrong do they have to be to not be useful.</li>
+    </ul>
+  </li>
+  <li>Ridge Regression</li>
+  <li>Feature Selection &amp; Lasso</li>
+  <li>Nearest Neighbors &amp; Kernel Regression</li>
+</ol>
+
+<hr />
+
 <h4 id="advantage-knndisadvantage">回归模型的advantage 和KNN的disadvantage</h4>
 
-<p>使用回归模型，可以使用所有的数据来为模型服务！</p>
+<p>KNN的劣势：</p>
 
-<p>使用回归模型，不但可以用x，预测y；也可以用y，预测x</p>
+<ol>
+  <li>计算复杂度高，每次都要遍历整个数据集。</li>
+  <li>只有最接近的K个数据参与到最后的分类或者预测中。</li>
+</ol>
 
-<p>在回归模型中，需要加入随着x轴的变化，周期变化的参数：</p>
+<h4 id="x">在回归模型中，加入随着x轴的变化，周期变化的参数：</h4>
 
 <script type="math/tex; mode=display">
 y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12 - \Phi ) + \epsilon_i
@@ -185,14 +211,115 @@ y_i = w_0h_0(x_i) + w_1h_1(x_i) + w_2 h_2(x_i)  + \cdots + w_D h_D(x_i)  + \epsi
 = \sum_{j=0}^D w_j h_j(x_i) + \epsilon_i
 </script>
 
-<p>如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。</p>
+<h4 id="section">向量和矩阵 计算梯度</h4>
 
-<p>KNN的劣势：</p>
+<ul>
+  <li>Since the derivative of a sum is the sum of the derivatives we can compute the derivative for a single data point and then sum over data points. We can write the squared difference between the observed output and predicted output for a single point as follows:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+(w[0]*[CONSTANT] + w[1]*[feature_1] + ... + w[i] *[feature_i] + ... + w[k]*[feature_k] - output)^2
+</script>
+
+<ul>
+  <li>Where we have k features and a constant. So the derivative with respect to weight w[i] by the chain rule is:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+2*(w[0]*[CONSTANT] + w[1]*[feature_1] + ... + w[i] *[feature_i] + ... + w[k]*[feature_k] - output)* [feature_i]
+</script>
+
+<ul>
+  <li>The term inside the paranethesis is just the error (difference between prediction and output). So we can re-write this as:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+2*error*[feature_i]
+</script>
+
+<ul>
+  <li>That is, the derivative for the weight for feature i is the sum (over data points) of 2 times the product of the error and the feature itself. In the case of the constant then this is just twice the sum of the errors!
+Recall that twice the sum of the product of two vectors is just twice the dot product of the two vectors. Therefore the derivative for the weight for feature[i] is just two times the dot product between the values of feature[i] and the current errors.</li>
+</ul>
+
+<h4 id="assessing-loss-on-the-training-set">Assessing loss on the training set</h4>
+
+<ul>
+  <li>RMSE: root mean square error:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\sqrt{ \frac{1}{N} \sum_{i=1}^N (y_i-f(x_i))^2 }
+</script>
+
+<ul>
+  <li>Generalization error vs model complexity
+    <ul>
+      <li><strong>判断结果是不是符合正态分布</strong></li>
+      <li>define overfitting
+        <ol>
+          <li>training error less than other parameter</li>
+          <li>test error larger than other parameter</li>
+        </ol>
+      </li>
+      <li>split train and test data
+        <ol>
+          <li>留下足够的测试数据</li>
+          <li>然后使用剩下的所有数据做training</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">
+\frac{1}{N \text{test}} \sum_{i=1}^N L(y_i-f(x_i))
+</script>
+
+<ul>
+  <li>3 sources of error
+    <ul>
+      <li>Noise</li>
+      <li>Bias</li>
+      <li>Variance</li>
+    </ul>
+  </li>
+  <li>Bias-variance tradeoff
+    <ul>
+      <li>High-complexity has low bias</li>
+      <li>High-complexity has high variance </li>
+    </ul>
+  </li>
+  <li>Bias of function estimator
+    <ul>
+      <li>使用交叉验证</li>
+      <li>在每个数据集上训练数据</li>
+      <li>把每个数据集得到的结果求平均值</li>
+    </ul>
+  </li>
+  <li>Mean squre error = bias * bias + variance * variance</li>
+</ul>
+
+<h4 id="choose-model-complexity">Choose model complexity</h4>
 
 <ol>
-  <li>计算复杂度高，每次都要遍历整个数据集。</li>
-  <li>只有最接近的K个数据参与到最后的分类或者预测中。</li>
+  <li>split data set to:
+    <ul>
+      <li>Training Set</li>
+      <li>Validation Set</li>
+      <li>Test Set</li>
+    </ul>
+  </li>
+  <li>use the training set to train different polynomial degrees of function</li>
+  <li>use validation set to find the best model complexity (degree of polynomial)</li>
+  <li>use test set to test the result</li>
 </ol>
+
+<p>加入调节的参数</p>
+
+<script type="math/tex; mode=display">
+
+</script>
 
 <hr />
 
@@ -220,7 +347,7 @@ y_i = w_0h_0(x_i) + w_1h_1(x_i) + w_2 h_2(x_i)  + \cdots + w_D h_D(x_i)  + \epsi
 
 <hr />
 
-<h4 id="section">基于商品的协同过滤</h4>
+<h4 id="section-1">基于商品的协同过滤</h4>
 
 <p>看来华盛顿大学的机器学习课程，才发现协同过滤真的很简单！这门课太棒了！</p>
 
@@ -301,7 +428,7 @@ Result           & 1.10  & 0.58  & 1.10  & 0.32 & 0.85 \\
 
 <hr />
 
-<h4 id="section-1">基于内容的协同过滤</h4>
+<h4 id="section-2">基于内容的协同过滤</h4>
 
 <ul>
   <li>user     有多个features</li>
@@ -321,7 +448,7 @@ Result           & 1.10  & 0.58  & 1.10  & 0.32 & 0.85 \\
 
 <hr />
 
-<h4 id="section-2">评价系统的推荐系统</h4>
+<h4 id="section-3">评价系统的推荐系统</h4>
 
 <p>Recall</p>
 
