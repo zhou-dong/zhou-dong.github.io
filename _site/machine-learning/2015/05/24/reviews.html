@@ -315,6 +315,29 @@ Recall that twice the sum of the product of two vectors is just twice the dot pr
   <li>use test set to test the result</li>
 </ol>
 
+<h4 id="ridge-regression">Ridge Regression</h4>
+
+<ol>
+  <li>Coefficients 越大，模型越fit data set.</li>
+  <li>If coefficients 太大的话，会overfitting</li>
+  <li>We expect model，fit data set， but not overfit</li>
+</ol>
+
+<h5 id="which-means">Which means:</h5>
+
+<ul>
+  <li>如果一个模型overfitting的话，一般情况下coefficients会特别大</li>
+  <li>which means we wanna model fit data set, but coefficients do not to be too large.</li>
+  <li>We wanna balance between model fit and the magnitude of coefficients</li>
+</ul>
+
+<h5 id="total-cost--measure-of-fit--measure-of-magnitude-of-coefficients">Total cost = measure of fit + measure of magnitude of coefficients</h5>
+
+<ul>
+  <li>Regularization <script type="math/tex"> \text{minimize: } RSS(w) + \lambda \| w \|^2 </script></li>
+  <li><script type="math/tex"> \lambda </script> tunning parameter = balance of fit and magnitude</li>
+</ul>
+
 <p>加入调节的参数</p>
 
 <script type="math/tex; mode=display">
