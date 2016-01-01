@@ -323,6 +323,10 @@ Recall that twice the sum of the product of two vectors is just twice the dot pr
   <li>We expect model，fit data set， but not overfit</li>
 </ol>
 
+<h5 id="ridge-regression-comes-to-rescue">Ridge regression comes to rescue</h5>
+
+<p>Generally, whenever we see weights change so much in response to change in data, we believe the variance of our estimate to be large. Ridge regression aims to address this issue by penalizing “large” weights. </p>
+
 <h5 id="which-means">Which means:</h5>
 
 <ul>
@@ -338,11 +342,153 @@ Recall that twice the sum of the product of two vectors is just twice the dot pr
   <li><script type="math/tex"> \lambda </script> tunning parameter = balance of fit and magnitude</li>
 </ul>
 
-<p>加入调节的参数</p>
+<script type="math/tex; mode=display">
+\text{arg}_{(w, \lambda)} \min \Bigr[\sum_{i=1}^N (y_i-f_{w}(x_i))^2 + \lambda \sum_{j=i}^D w_j^2 \Bigr] 
+</script>
+
+<h5 id="cross-validation">Cross Validation</h5>
+
+<ul>
+  <li>Leave one cross validation</li>
+  <li>K-fold cross validation</li>
+</ul>
+
+<h4 id="features-selection">Features selection</h4>
+
+<ul>
+  <li>All subsets
+    <ol>
+      <li>Find feature which reduce RSS most.</li>
+      <li>Fine the combination of two fearues which reduce RSS most. (Do not need to contain the step one feature).</li>
+      <li>Find the combination of three features which most reduce RSS. (do not need to contain step one or step two features).</li>
+      <li>repeat until convergence.</li>
+    </ol>
+  </li>
+  <li>How many choice?
+    <ul>
+      <li>total: <script type="math/tex">2^D</script></li>
+    </ul>
+  </li>
+  <li>Greedy Algorithm
+    <ol>
+      <li>Start at them trainning errors as all subsets(no features).</li>
+      <li>Choose the one feature which reduce the RSS most.</li>
+      <li>在第一个feature的基础上，find the next feaure which reduce RSS most.</li>
+      <li>repeat until convergence.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Example of All Subsets VS. Greedy Algorithm:</p>
+
+<ol>
+  <li>First step:
+    <ul>
+      <li>All subsets: sq.ft. living</li>
+      <li>Greedy algorithm: sq.ft. living</li>
+    </ul>
+  </li>
+  <li>Second step:
+    <ul>
+      <li>All subsets: 
+        <ul>
+          <li>No. bedrooms</li>
+          <li>No. bathrooms</li>
+        </ul>
+      </li>
+      <li>Greedy Algorithm: 
+        <ul>
+          <li>sq.ft. living</li>
+          <li>year renovated</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Third step:
+    <ul>
+      <li>…</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Lasso algorithm</p>
+
+<ul>
+  <li>Use regularization for feature selection</li>
+</ul>
+
+<p>为什么不能在ridge regression的基础上做降维：不能直接删除weight小的feature。</p>
+
+<ul>
+  <li>如果几个features表示类似的属性，如：bathroom、showers，那么这两个feature的weight在ridge中，都会被降低。</li>
+  <li>如果同时删除几个类似的属性。那么可能会删除相关有用的信息。</li>
+</ul>
+
+<h5 id="difference-between-ridge-regression-and-lasso-regression">Difference between Ridge Regression and Lasso Regression</h5>
+
+<p>Formula:</p>
+
+<ul>
+  <li>Ridge regression: <script type="math/tex">\text{arg}_w \min RSS + \lambda \| w \|_2^2</script></li>
+  <li>Lasso Regression: <script type="math/tex">\text{arg}_w \min RSS + \lambda \| w \|_1</script></li>
+</ul>
+
+<p>Specific:</p>
+
+<ul>
+  <li>Ridge regression: 
+    <ul>
+      <li>weight occupy bigger part in whole cost than Lasso regression</li>
+      <li>so every weight will shrink quickly</li>
+      <li>harder to find which weight is 0 when others are not.</li>
+    </ul>
+  </li>
+  <li>Lasso regression:
+    <ul>
+      <li>weight not occupy larger part in whole cost then Lasso regression</li>
+      <li>some weight will shrink quickly but some not</li>
+      <li>easier to sepeare 0 weight and none 0 weight </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="coordinate-descent">Coordinate descent</h4>
+
+<p>Coordinate descent的思想在Lasso regression中非常重要。Often hard to find all minimum of all coordinates, but for each coordinate.</p>
+
+<ul>
+  <li>坐标下降法（英语：coordinate descent）是一种非梯度优化算法。算法在每次迭代中，在当前点处沿一个坐标方向进行一维搜索以求得一个函数的局部极小值。在整个过程中循环使用不同的坐标方向。</li>
+  <li>对于不可拆分的函数而言，算法可能无法在较小的迭代步数中求得最优解。为了加速收敛，可以采用一个适当的坐标系，例如通过主成分分析获得一个坐标间尽可能不相互关联的新坐标系</li>
+  <li>coordinate descent不是梯度下降，它每次计算函数在一个坐标方向上的局部极小值。而不是逐步递进！</li>
+  <li>每次迭代，要在一个weight上做迭代，如果在这个weight上算出的梯度为0，那么说明：
+    <ul>
+      <li>说明这个weight不重要</li>
+      <li>已经达到了函数的极小值</li>
+    </ul>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\hat{w}_j = \rho_j \\
+
+\hat{w}_j = \begin{cases}
+\rho_j + \lambda/2 & \text{if } \rho_j < -\lambda/2 \\
+0 & \text{if } \rho_j \in [-\lambda/2, \lambda/2] \\
+\rho_j - \lambda/2 & \text{if } \rho_j > \lambda / 2
+\end{cases}
+ %]]></script>
+
+<h4 id="normalizing-features">Normalizing features</h4>
 
 <script type="math/tex; mode=display">
-
+h_j(x_k) = \frac{h_j(x_k)}{\sqrt{\sum_{i=1}^N h_j (x_i)^2 }}
 </script>
+
+<ul>
+  <li>Scale training columns (not rows!)</li>
+  <li><code>Apply same training scale factors in test data!</code></li>
+</ul>
 
 <hr />
 
