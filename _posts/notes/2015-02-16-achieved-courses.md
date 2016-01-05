@@ -192,7 +192,7 @@ tagline:
     - 2015 Summer Semester
     - Dr. Mago
 
-5. Computer Architecture CS-5545-TXAA
+5. CS-5545-TXAA (Computer Architecture)
     - 2015 Fall Semester
     - Dr. Zhong
 
