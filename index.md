@@ -6,6 +6,10 @@ tagline: 读书、旅行、坚定、自信
 
 {% include JB/setup %}
 
+#### 2016
+
+- 欲速则不达
+
 #### 2015
 
 ##### 找个事情, Do It, Make You Become Better You, 跟它一起成长。
