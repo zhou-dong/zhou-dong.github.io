@@ -7,6 +7,9 @@ categories: machine-learning
 
 {% include JB/setup %}
 
+### Image and video compress
+
+
 For those interested, the slides presented in the videos for this module can be downloaded here: 
 
 [deeplearning-annotated.pdf](https://d396qusza40orc.cloudfront.net/phoenixassets/ml-foundations/deeplearning-annotated.pdf)
