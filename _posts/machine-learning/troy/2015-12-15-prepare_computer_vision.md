@@ -7,10 +7,10 @@ categories: machine-learning
 
 {% include JB/setup %}
 
-### Image and video compress
-
 - sampleing: choose or delete pixels
 - quantization: quantize the pixels
+
+### Image and video compress
 
 For those interested, the slides presented in the videos for this module can be downloaded here: 
 
