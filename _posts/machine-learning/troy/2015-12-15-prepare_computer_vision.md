@@ -7,8 +7,12 @@ categories: machine-learning
 
 {% include JB/setup %}
 
+resolution: 分辨率
+
 - sampleing: choose or delete pixels
 - quantization: quantize the pixels
+
+- noise: different from its neighbors
 
 ### Image and video compress
 
