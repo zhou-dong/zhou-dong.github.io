@@ -7,7 +7,7 @@ categories: machine-learning
 
 {% include JB/setup %}
 
-resolution: 分辨率
+- resolution: 分辨率
 
 - sampleing: choose or delete pixels
 - quantization: quantize the pixels
