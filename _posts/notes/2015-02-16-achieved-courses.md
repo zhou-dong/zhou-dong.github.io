@@ -209,6 +209,14 @@ tagline:
     - 2016 Spring Semester
     - Dr. Karen Hovsepian
 
+9. Computer Graphics CS-6666-TXAA
+    - 2016 Spring Semester
+    - Dr. Yanjun Zhao
+
+10. Operating Systems Principles
+    - 2016 Spring Semester
+    - Dr. Karen Hovsepian
+
 145-146-413:1234
 
 singer-eminme
