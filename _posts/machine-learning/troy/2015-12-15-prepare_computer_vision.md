@@ -18,6 +18,7 @@ Computer Vision Videos:
  
  
 Other Computer Vision course pages:
+
 -http://www.cs.ucf.edu/~bagci/teaching/computervision15.html
 - http://www.cs.cornell.edu/courses/cs4670/2013fa/lectures/lectures.html
 - http://alumni.media.mit.edu/~maov/classes/vision09/syllabus.html
