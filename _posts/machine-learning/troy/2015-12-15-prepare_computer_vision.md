@@ -7,6 +7,11 @@ categories: machine-learning
 
 {% include JB/setup %}
 
+Linear Algebra Resources
+
+- http://joshua.smcvt.edu/linearalgebra/book.pdf
+- http://www.cns.nyu.edu/~eero/NOTES/geomLinAlg.pdf
+- http://alumni.media.mit.edu/~maov/classes/vision09/lect/02_LinearAlgebraReview.pdf
 
 Computer Vision Videos:
  
@@ -19,7 +24,7 @@ Computer Vision Videos:
  
 Other Computer Vision course pages:
 
--http://www.cs.ucf.edu/~bagci/teaching/computervision15.html
+- http://www.cs.ucf.edu/~bagci/teaching/computervision15.html
 - http://www.cs.cornell.edu/courses/cs4670/2013fa/lectures/lectures.html
 - http://alumni.media.mit.edu/~maov/classes/vision09/syllabus.html
 
