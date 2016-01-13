@@ -7,6 +7,23 @@ categories: machine-learning
 
 {% include JB/setup %}
 
+
+Computer Vision Videos:
+ 
+- https://www.youtube.com/watch?v=715uLCHt4jE
+- http://videolectures.net/ssll09_hartley_covi/
+- http://videolectures.net/mlss08au_lucey_linv/
+- http://videolectures.net/mlss04_blake_cv/
+- http://videolectures.net/aop09_farinella_pricv/
+ 
+ 
+Other Computer Vision course pages:
+-http://www.cs.ucf.edu/~bagci/teaching/computervision15.html
+- http://www.cs.cornell.edu/courses/cs4670/2013fa/lectures/lectures.html
+- http://alumni.media.mit.edu/~maov/classes/vision09/syllabus.html
+
+
+
 - resolution: 分辨率
 
 - sampleing: choose or delete pixels
