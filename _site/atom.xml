@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2016-02-01T17:42:53-06:00</updated>
+ <updated>2016-02-01T17:53:18-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -25,10 +25,15 @@
   &lt;li&gt;
     &lt;p&gt;image resulatuon&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;-&lt;/li&gt;
+  &lt;li&gt;chessborad distance &lt;/li&gt;
+  &lt;li&gt;city block distance&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;distance measure&lt;/p&gt;
+
+&lt;p&gt;course project&lt;/p&gt;
+
+&lt;p&gt;donogzhou&lt;/p&gt;
 </content>
  </entry>
  
