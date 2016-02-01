@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2015-12-16T01:20:53-06:00</updated>
+ <updated>2016-02-01T17:42:53-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -13,11 +13,69 @@
 
  
  <entry>
+   <title>Digital Image Fundamentals</title>
+   <link href="http://zhou-dong.github.io/2016/01/25/intro"/>
+   <updated>2016-01-25T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2016/01/25/intro</id>
+   <content type="html">&lt;ul&gt;
+  &lt;li&gt;Sampling: digitizing the coordinate values &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Quantization: digitizing the amplitude values&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;image resulatuon&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;-&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;distance measure&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Prepare Computer Vision</title>
    <link href="http://zhou-dong.github.io/machine-learning/2015/12/15/prepare_computer_vision"/>
    <updated>2015-12-15T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/12/15/prepare_computer_vision</id>
    <content type="html">
+&lt;p&gt;Linear Algebra Resources&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;http://joshua.smcvt.edu/linearalgebra/book.pdf&lt;/li&gt;
+  &lt;li&gt;http://www.cns.nyu.edu/~eero/NOTES/geomLinAlg.pdf&lt;/li&gt;
+  &lt;li&gt;http://alumni.media.mit.edu/~maov/classes/vision09/lect/02_LinearAlgebraReview.pdf&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Computer Vision Videos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://www.youtube.com/watch?v=715uLCHt4jE&lt;/li&gt;
+  &lt;li&gt;http://videolectures.net/ssll09_hartley_covi/&lt;/li&gt;
+  &lt;li&gt;http://videolectures.net/mlss08au_lucey_linv/&lt;/li&gt;
+  &lt;li&gt;http://videolectures.net/mlss04_blake_cv/&lt;/li&gt;
+  &lt;li&gt;http://videolectures.net/aop09_farinella_pricv/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other Computer Vision course pages:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;http://www.cs.ucf.edu/~bagci/teaching/computervision15.html&lt;/li&gt;
+  &lt;li&gt;http://www.cs.cornell.edu/courses/cs4670/2013fa/lectures/lectures.html&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;http://alumni.media.mit.edu/~maov/classes/vision09/syllabus.html&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;resolution: 分辨率&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sampleing: choose or delete pixels&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;quantization: quantize the pixels&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;noise: different from its neighbors&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;image-and-video-compress&quot;&gt;Image and video compress&lt;/h3&gt;
+
 &lt;p&gt;For those interested, the slides presented in the videos for this module can be downloaded here: &lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://d396qusza40orc.cloudfront.net/phoenixassets/ml-foundations/deeplearning-annotated.pdf&quot;&gt;deeplearning-annotated.pdf&lt;/a&gt;&lt;/p&gt;
@@ -39,11 +97,30 @@
 
 &lt;h4 id=&quot;neutral-network&quot;&gt;Neutral Network&lt;/h4&gt;
 
-&lt;p&gt;&amp;lt;img src=”http://www.intechopen.com/source/html/11772/media/image29.jpg” alt”neural network”/&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.intechopen.com/source/html/11772/media/image29.jpg&quot; alt=&quot;neural network&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;神经网络的每个部分其实就是Logistic Regression，很多个Logistic Regression组合在一个就是神经网络的一个layer&lt;/li&gt;
   &lt;li&gt;多个layer组合在一个构成一个神经网络&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;computer vision&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;找出图片中的pattern或者是特征&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Data Image Compression</title>
+   <link href="http://zhou-dong.github.io/2015/12/04/code"/>
+   <updated>2015-12-04T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/12/04/code</id>
+   <content type="html">&lt;p&gt;Huffman coding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -248,8 +325,14 @@ function Client(server, conn){
    <content type="html">&lt;p&gt;Basic Algorithm&lt;/p&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;string&lt;/li&gt;
+  &lt;li&gt;array&lt;/li&gt;
+  &lt;li&gt;linked list&lt;/li&gt;
+  &lt;li&gt;stack&lt;/li&gt;
+  &lt;li&gt;queue&lt;/li&gt;
   &lt;li&gt;Sort&lt;/li&gt;
   &lt;li&gt;Tree&lt;/li&gt;
+  &lt;li&gt;graph&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Cracking the code interview&lt;/p&gt;
@@ -3654,16 +3737,35 @@ console.log(person2.gender) //female
  </entry>
  
  <entry>
-   <title>Review Machine learning in action</title>
+   <title>Review Machine Learning in Action</title>
    <link href="http://zhou-dong.github.io/machine-learning/2015/05/24/reviews"/>
    <updated>2015-05-24T00:00:00-05:00</updated>
    <id>http://zhou-dong.github.io/machine-learning/2015/05/24/reviews</id>
    <content type="html">
+&lt;h4 id=&quot;machine-learning-regression&quot;&gt;Machine Learning: Regression&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;使用回归模型，可以使用所有的数据来为模型服务！&lt;/li&gt;
+  &lt;li&gt;如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。&lt;/li&gt;
+  &lt;li&gt;使用回归模型，不但可以用x，预测y；也可以用y，预测x&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Simple linear regression&lt;/li&gt;
+  &lt;li&gt;Multiple Regression&lt;/li&gt;
+  &lt;li&gt;Assessing performance
+    &lt;ul&gt;
+      &lt;li&gt;Remember that all models are wrong; the practical question is how wrong do they have to be to not be useful.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ridge Regression&lt;/li&gt;
+  &lt;li&gt;Feature Selection &amp;amp; Lasso&lt;/li&gt;
+  &lt;li&gt;Nearest Neighbors &amp;amp; Kernel Regression&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
 &lt;h4 id=&quot;advantage-knndisadvantage&quot;&gt;回归模型的advantage 和KNN的disadvantage&lt;/h4&gt;
-
-&lt;p&gt;使用回归模型，可以使用所有的数据来为模型服务！&lt;/p&gt;
-
-&lt;p&gt;如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。&lt;/p&gt;
 
 &lt;p&gt;KNN的劣势：&lt;/p&gt;
 
@@ -3671,6 +3773,347 @@ console.log(person2.gender) //female
   &lt;li&gt;计算复杂度高，每次都要遍历整个数据集。&lt;/li&gt;
   &lt;li&gt;只有最接近的K个数据参与到最后的分类或者预测中。&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h4 id=&quot;x&quot;&gt;在回归模型中，加入随着x轴的变化，周期变化的参数：&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12 - \Phi ) + \epsilon_i
+&lt;/script&gt;
+
+&lt;p&gt;Equivalently&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12) + w_3 \cos (2 \pi t_i / 12) + \epsilon_i
+&lt;/script&gt;
+
+&lt;p&gt;Generic basis expansion&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+y_i = w_0h_0(x_i) + w_1h_1(x_i) + w_2 h_2(x_i)  + \cdots + w_D h_D(x_i)  + \epsilon_i \\
+
+= \sum_{j=0}^D w_j h_j(x_i) + \epsilon_i
+&lt;/script&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;向量和矩阵 计算梯度&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Since the derivative of a sum is the sum of the derivatives we can compute the derivative for a single data point and then sum over data points. We can write the squared difference between the observed output and predicted output for a single point as follows:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+(w[0]*[CONSTANT] + w[1]*[feature_1] + ... + w[i] *[feature_i] + ... + w[k]*[feature_k] - output)^2
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Where we have k features and a constant. So the derivative with respect to weight w[i] by the chain rule is:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+2*(w[0]*[CONSTANT] + w[1]*[feature_1] + ... + w[i] *[feature_i] + ... + w[k]*[feature_k] - output)* [feature_i]
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The term inside the paranethesis is just the error (difference between prediction and output). So we can re-write this as:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+2*error*[feature_i]
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;That is, the derivative for the weight for feature i is the sum (over data points) of 2 times the product of the error and the feature itself. In the case of the constant then this is just twice the sum of the errors!
+Recall that twice the sum of the product of two vectors is just twice the dot product of the two vectors. Therefore the derivative for the weight for feature[i] is just two times the dot product between the values of feature[i] and the current errors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;assessing-loss-on-the-training-set&quot;&gt;Assessing loss on the training set&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RMSE: root mean square error:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\sqrt{ \frac{1}{N} \sum_{i=1}^N (y_i-f(x_i))^2 }
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Generalization error vs model complexity
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;判断结果是不是符合正态分布&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;define overfitting
+        &lt;ol&gt;
+          &lt;li&gt;training error less than other parameter&lt;/li&gt;
+          &lt;li&gt;test error larger than other parameter&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;split train and test data
+        &lt;ol&gt;
+          &lt;li&gt;留下足够的测试数据&lt;/li&gt;
+          &lt;li&gt;然后使用剩下的所有数据做training&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\frac{1}{N \text{test}} \sum_{i=1}^N L(y_i-f(x_i))
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3 sources of error
+    &lt;ul&gt;
+      &lt;li&gt;Noise&lt;/li&gt;
+      &lt;li&gt;Bias&lt;/li&gt;
+      &lt;li&gt;Variance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bias-variance tradeoff
+    &lt;ul&gt;
+      &lt;li&gt;High-complexity has low bias&lt;/li&gt;
+      &lt;li&gt;High-complexity has high variance &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bias of function estimator
+    &lt;ul&gt;
+      &lt;li&gt;使用交叉验证&lt;/li&gt;
+      &lt;li&gt;在每个数据集上训练数据&lt;/li&gt;
+      &lt;li&gt;把每个数据集得到的结果求平均值&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mean squre error = bias * bias + variance * variance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;choose-model-complexity&quot;&gt;Choose model complexity&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;split data set to:
+    &lt;ul&gt;
+      &lt;li&gt;Training Set&lt;/li&gt;
+      &lt;li&gt;Validation Set&lt;/li&gt;
+      &lt;li&gt;Test Set&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;use the training set to train different polynomial degrees of function&lt;/li&gt;
+  &lt;li&gt;use validation set to find the best model complexity (degree of polynomial)&lt;/li&gt;
+  &lt;li&gt;use test set to test the result&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;ridge-regression&quot;&gt;Ridge Regression&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Coefficients 越大，模型越fit data set.&lt;/li&gt;
+  &lt;li&gt;If coefficients 太大的话，会overfitting&lt;/li&gt;
+  &lt;li&gt;We expect model，fit data set， but not overfit&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;ridge-regression-comes-to-rescue&quot;&gt;Ridge regression comes to rescue&lt;/h5&gt;
+
+&lt;p&gt;Generally, whenever we see weights change so much in response to change in data, we believe the variance of our estimate to be large. Ridge regression aims to address this issue by penalizing “large” weights. &lt;/p&gt;
+
+&lt;h5 id=&quot;which-means&quot;&gt;Which means:&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果一个模型overfitting的话，一般情况下coefficients会特别大&lt;/li&gt;
+  &lt;li&gt;which means we wanna model fit data set, but coefficients do not to be too large.&lt;/li&gt;
+  &lt;li&gt;We wanna balance between model fit and the magnitude of coefficients&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;total-cost--measure-of-fit--measure-of-magnitude-of-coefficients&quot;&gt;Total cost = measure of fit + measure of magnitude of coefficients&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Regularization &lt;script type=&quot;math/tex&quot;&gt; \text{minimize: } RSS(w) + \lambda \| w \|^2 &lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt; \lambda &lt;/script&gt; tunning parameter = balance of fit and magnitude&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\text{arg}_{(w, \lambda)} \min \Bigr[\sum_{i=1}^N (y_i-f_{w}(x_i))^2 + \lambda \sum_{j=i}^D w_j^2 \Bigr] 
+&lt;/script&gt;
+
+&lt;h5 id=&quot;cross-validation&quot;&gt;Cross Validation&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Leave one cross validation&lt;/li&gt;
+  &lt;li&gt;K-fold cross validation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;features-selection&quot;&gt;Features selection&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All subsets
+    &lt;ol&gt;
+      &lt;li&gt;Find feature which reduce RSS most.&lt;/li&gt;
+      &lt;li&gt;Fine the combination of two fearues which reduce RSS most. (Do not need to contain the step one feature).&lt;/li&gt;
+      &lt;li&gt;Find the combination of three features which most reduce RSS. (do not need to contain step one or step two features).&lt;/li&gt;
+      &lt;li&gt;repeat until convergence.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How many choice?
+    &lt;ul&gt;
+      &lt;li&gt;total: &lt;script type=&quot;math/tex&quot;&gt;2^D&lt;/script&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Greedy Algorithm
+    &lt;ol&gt;
+      &lt;li&gt;Start at them trainning errors as all subsets(no features).&lt;/li&gt;
+      &lt;li&gt;Choose the one feature which reduce the RSS most.&lt;/li&gt;
+      &lt;li&gt;在第一个feature的基础上，find the next feaure which reduce RSS most.&lt;/li&gt;
+      &lt;li&gt;repeat until convergence.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example of All Subsets VS. Greedy Algorithm:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First step:
+    &lt;ul&gt;
+      &lt;li&gt;All subsets: sq.ft. living&lt;/li&gt;
+      &lt;li&gt;Greedy algorithm: sq.ft. living&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Second step:
+    &lt;ul&gt;
+      &lt;li&gt;All subsets: 
+        &lt;ul&gt;
+          &lt;li&gt;No. bedrooms&lt;/li&gt;
+          &lt;li&gt;No. bathrooms&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Greedy Algorithm: 
+        &lt;ul&gt;
+          &lt;li&gt;sq.ft. living&lt;/li&gt;
+          &lt;li&gt;year renovated&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Third step:
+    &lt;ul&gt;
+      &lt;li&gt;…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lasso algorithm&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use regularization for feature selection&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;为什么不能在ridge regression的基础上做降维：不能直接删除weight小的feature。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果几个features表示类似的属性，如：bathroom、showers，那么这两个feature的weight在ridge中，都会被降低。&lt;/li&gt;
+  &lt;li&gt;如果同时删除几个类似的属性。那么可能会删除相关有用的信息。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;difference-between-ridge-regression-and-lasso-regression&quot;&gt;Difference between Ridge Regression and Lasso Regression&lt;/h5&gt;
+
+&lt;p&gt;Formula:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ridge regression: &lt;script type=&quot;math/tex&quot;&gt;\text{arg}_w \min RSS + \lambda \| w \|_2^2&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;Lasso Regression: &lt;script type=&quot;math/tex&quot;&gt;\text{arg}_w \min RSS + \lambda \| w \|_1&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Specific:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ridge regression: 
+    &lt;ul&gt;
+      &lt;li&gt;weight occupy bigger part in whole cost than Lasso regression&lt;/li&gt;
+      &lt;li&gt;so every weight will shrink quickly&lt;/li&gt;
+      &lt;li&gt;harder to find which weight is 0 when others are not.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Lasso regression:
+    &lt;ul&gt;
+      &lt;li&gt;weight not occupy larger part in whole cost then Lasso regression&lt;/li&gt;
+      &lt;li&gt;some weight will shrink quickly but some not&lt;/li&gt;
+      &lt;li&gt;easier to sepeare 0 weight and none 0 weight &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;coordinate-descent&quot;&gt;Coordinate descent&lt;/h4&gt;
+
+&lt;p&gt;Coordinate descent的思想在Lasso regression中非常重要。Often hard to find all minimum of all coordinates, but for each coordinate.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;坐标下降法（英语：coordinate descent）是一种非梯度优化算法。算法在每次迭代中，在当前点处沿一个坐标方向进行一维搜索以求得一个函数的局部极小值。在整个过程中循环使用不同的坐标方向。&lt;/li&gt;
+  &lt;li&gt;对于不可拆分的函数而言，算法可能无法在较小的迭代步数中求得最优解。为了加速收敛，可以采用一个适当的坐标系，例如通过主成分分析获得一个坐标间尽可能不相互关联的新坐标系&lt;/li&gt;
+  &lt;li&gt;coordinate descent不是梯度下降，它每次计算函数在一个坐标方向上的局部极小值。而不是逐步递进！&lt;/li&gt;
+  &lt;li&gt;每次迭代，要在一个weight上做迭代，如果在这个weight上算出的梯度为0，那么说明：
+    &lt;ul&gt;
+      &lt;li&gt;说明这个weight不重要&lt;/li&gt;
+      &lt;li&gt;已经达到了函数的极小值&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\hat{w}_j = \rho_j \\
+
+\hat{w}_j = \begin{cases}
+\rho_j + \lambda/2 &amp; \text{if } \rho_j &lt; -\lambda/2 \\
+0 &amp; \text{if } \rho_j \in [-\lambda/2, \lambda/2] \\
+\rho_j - \lambda/2 &amp; \text{if } \rho_j &gt; \lambda / 2
+\end{cases}
+ %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;normalizing-features&quot;&gt;Normalizing features&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h_j(x_k) = \frac{h_j(x_k)}{\sqrt{\sum_{i=1}^N h_j (x_i)^2 }}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Scale training columns (not rows!)&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;Apply same training scale factors in test data!&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;nearest-neighbors-and-kernal-regression&quot;&gt;Nearest Neighbors and Kernal Regression&lt;/h4&gt;
+
+&lt;p&gt;Nearest neighbor regression&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;normalize features first&lt;/li&gt;
+  &lt;li&gt;compute distance with query and all data set&lt;/li&gt;
+  &lt;li&gt;find the closest data to this query.&lt;/li&gt;
+  &lt;li&gt;predict result base on the closet data.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;k-Nearest neighbors&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;find the k-nearest neighbors&lt;/li&gt;
+  &lt;li&gt;average the neighbors price&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;weighted k-nearest neighbors&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;different neighbors have the different distances, so should have different weights&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Kernel regression&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Implement of weighted k-nearest neighbors&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gaussian distribution to compute the weight of the neighbors&lt;/li&gt;
+  &lt;li&gt;closest k neighbors&lt;/li&gt;
+  &lt;li&gt;average their value&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Local weighted linear regression&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;use linear regression with the k neighbors&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
@@ -3698,7 +4141,7 @@ console.log(person2.gender) //female
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;section&quot;&gt;基于商品的协同过滤&lt;/h4&gt;
+&lt;h4 id=&quot;section-1&quot;&gt;基于商品的协同过滤&lt;/h4&gt;
 
 &lt;p&gt;看来华盛顿大学的机器学习课程，才发现协同过滤真的很简单！这门课太棒了！&lt;/p&gt;
 
@@ -3779,7 +4222,7 @@ Result           &amp; 1.10  &amp; 0.58  &amp; 1.10  &amp; 0.32 &amp; 0.85 \\
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;section-1&quot;&gt;基于内容的协同过滤&lt;/h4&gt;
+&lt;h4 id=&quot;section-2&quot;&gt;基于内容的协同过滤&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;user     有多个features&lt;/li&gt;
@@ -3799,7 +4242,7 @@ Result           &amp; 1.10  &amp; 0.58  &amp; 1.10  &amp; 0.32 &amp; 0.85 \\
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;section-2&quot;&gt;评价系统的推荐系统&lt;/h4&gt;
+&lt;h4 id=&quot;section-3&quot;&gt;评价系统的推荐系统&lt;/h4&gt;
 
 &lt;p&gt;Recall&lt;/p&gt;
 
@@ -7219,11 +7662,15 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
   &lt;li&gt;Machine Learning: Regression
     &lt;ul&gt;
       &lt;li&gt;华盛顿大学&lt;/li&gt;
-      &lt;li&gt;Start Date: 2015年11月30日&lt;/li&gt;
-      &lt;li&gt;End Date: 
-#### Edex:&lt;/li&gt;
+      &lt;li&gt;Start Date: 11/30/2015&lt;/li&gt;
+      &lt;li&gt;End Date: 12/31/2015&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;edex&quot;&gt;Edex:&lt;/h4&gt;
+
+&lt;ol&gt;
   &lt;li&gt;MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
     &lt;ul&gt;
       &lt;li&gt;Start Date: 01/07 2015&lt;/li&gt;
@@ -7333,7 +7780,7 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
       &lt;li&gt;Dr. Mago&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Computer Architecture CS-5545-TXAA
+  &lt;li&gt;CS-5545-TXAA (Computer Architecture)
     &lt;ul&gt;
       &lt;li&gt;2015 Fall Semester&lt;/li&gt;
       &lt;li&gt;Dr. Zhong&lt;/li&gt;
@@ -7352,6 +7799,18 @@ Invertible functions are &lt;strong&gt;onto&lt;/strong&gt;.&lt;br /&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Computer Vision CS-6632-TXAA
+    &lt;ul&gt;
+      &lt;li&gt;2016 Spring Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Karen Hovsepian&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Computer Graphics CS-6666-TXAA
+    &lt;ul&gt;
+      &lt;li&gt;2016 Spring Semester&lt;/li&gt;
+      &lt;li&gt;Dr. Yanjun Zhao&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Operating Systems Principles
     &lt;ul&gt;
       &lt;li&gt;2016 Spring Semester&lt;/li&gt;
       &lt;li&gt;Dr. Karen Hovsepian&lt;/li&gt;

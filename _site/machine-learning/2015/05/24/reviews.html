@@ -490,6 +490,48 @@ h_j(x_k) = \frac{h_j(x_k)}{\sqrt{\sum_{i=1}^N h_j (x_i)^2 }}
   <li><code>Apply same training scale factors in test data!</code></li>
 </ul>
 
+<h4 id="nearest-neighbors-and-kernal-regression">Nearest Neighbors and Kernal Regression</h4>
+
+<p>Nearest neighbor regression</p>
+
+<ol>
+  <li>normalize features first</li>
+  <li>compute distance with query and all data set</li>
+  <li>find the closest data to this query.</li>
+  <li>predict result base on the closet data.</li>
+</ol>
+
+<p>k-Nearest neighbors</p>
+
+<ol>
+  <li>find the k-nearest neighbors</li>
+  <li>average the neighbors price</li>
+</ol>
+
+<p>weighted k-nearest neighbors</p>
+
+<ul>
+  <li>different neighbors have the different distances, so should have different weights</li>
+</ul>
+
+<p>Kernel regression</p>
+
+<ul>
+  <li>Implement of weighted k-nearest neighbors</li>
+</ul>
+
+<ol>
+  <li>gaussian distribution to compute the weight of the neighbors</li>
+  <li>closest k neighbors</li>
+  <li>average their value</li>
+</ol>
+
+<p>Local weighted linear regression</p>
+
+<ul>
+  <li>use linear regression with the k neighbors</li>
+</ul>
+
 <hr />
 
 <h4 id="linear-classifiers">Linear classifiers</h4>
@@ -756,7 +798,7 @@ Precision = 1
 
     <div id="footer">
       <div class="container">
-        <p>&copy; 2015 Dong Zhou
+        <p>&copy; 2016 Dong Zhou
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
