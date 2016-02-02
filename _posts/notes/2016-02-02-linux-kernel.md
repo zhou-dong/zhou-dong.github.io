@@ -74,7 +74,7 @@ sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_32.h
 cd  /usr/src/linux-3.2.76
 sudo apt-get install libncurses5-dev
 sudo make localmodconfig
-sudo make -j N
+sudo make -j N(optimize compile speed, core number + 1)
 sudo make modules_install
 sudo make install
 sudo reboot
