@@ -6,7 +6,8 @@ category: Linux
 ---
 {% include JB/setup %}
 
-Machine: Apple Mac
+- Machine: Apple Mac
+- OS: OS X EL Capitan
 
 #### Full Screen of Elementary  OS in Vitual Box
 
