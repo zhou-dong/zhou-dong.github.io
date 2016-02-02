@@ -18,15 +18,13 @@ sudo mkdir /cdrom/
 sudo mount /dev/sr0 /media/cdrom
 cd /media/cdrom
 sudo ./VBoxLinuxAdditions.run
+sudo reboot
 </code></pre>
-
-- restart system
 
 #### Add System Call
 
-1. download linux kernel in [kernel.org](https://www.kernel.org/)
-    - My version is: 3.2.76
-2. Move and Unzip File
+- download linux kernel in [kernel.org](https://www.kernel.org/)
+    + My version is: 3.2.76
 
 <pre><code class="bash">
 cd /Downloads
@@ -86,10 +84,9 @@ sudo make install
 sudo reboot
 </code></pre>
 
-Test
+#### Test
 
 <pre><code class="c">
-
 #include<stdio.h>
 #include<errno.h>
 
