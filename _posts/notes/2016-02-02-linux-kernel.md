@@ -23,8 +23,7 @@ sudo reboot
 
 #### Add System Call
 
-- download linux kernel in [kernel.org](https://www.kernel.org/)
-    + My version is: 3.2.76
+- download linux kernel in [kernel.org](https://www.kernel.org/)  (my version is: 3.2.76)
 
 <pre><code class="bash">
 cd /Downloads
@@ -56,19 +55,16 @@ sudo vim usr/src/linux-3.2.76/arch/x86/kernel/syscall_table_32.S
 
 - Add system call parameter
 
-<pre><code class="bash">
-sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_64.h
-</code></pre>
-
 <pre><code class="c">
+sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_64.h
+
 #define __NR_add2           xxx (update numer +=1)
 __SYSCALL(__NR_add2, sys_add2)
 </code></pre>
 
-<pre><code class="bash">
-sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_32.h
-</code></pre>
 <pre><code class="c">
+sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_32.h
+
 #define __NR_add2           xxx (update numer +=1)
 </code></pre>
 
