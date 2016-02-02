@@ -4,13 +4,43 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2016-02-01T18:19:24-06:00</updated>
+ <updated>2016-02-02T01:50:46-06:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
    <email>82224165@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Add System Call In Linux (Elementary)</title>
+   <link href="http://zhou-dong.github.io/linux/2016/02/02/linux-kernel"/>
+   <updated>2016-02-02T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/linux/2016/02/02/linux-kernel</id>
+   <content type="html">
+&lt;p&gt;Machine: Apple Mac&lt;/p&gt;
+
+&lt;h3 id=&quot;full-screen-of-elementary--os-in-vitual-box&quot;&gt;Full Screen of Elementary  OS in Vitual Box&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;run code:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;
+cd /media/
+sudo mkdir /cdrom/
+sudo mount /dev/sr0 /media/cdrom
+cd /media/cdrom
+sudo ./VBoxLinuxAdditions.run
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;restart system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;#&lt;/h2&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Digital Image Fundamentals</title>
@@ -110,19 +140,6 @@
  </entry>
  
  <entry>
-   <title>Data Image Compression</title>
-   <link href="http://zhou-dong.github.io/2015/12/04/code"/>
-   <updated>2015-12-04T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/12/04/code</id>
-   <content type="html">&lt;p&gt;Huffman coding&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
-&lt;/ul&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Data Stream Analyze</title>
    <link href="http://zhou-dong.github.io/2015/12/04/code"/>
    <updated>2015-12-04T00:00:00-06:00</updated>
@@ -186,6 +203,19 @@ function Client(server, conn){
 
 &lt;/code&gt;
 &lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Data Image Compression</title>
+   <link href="http://zhou-dong.github.io/2015/12/04/code"/>
+   <updated>2015-12-04T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/12/04/code</id>
+   <content type="html">&lt;p&gt;Huffman coding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  

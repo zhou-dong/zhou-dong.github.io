@@ -5,10 +5,40 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2016-02-01T18:19:24-06:00</lastBuildDate>
-        <pubDate>2016-02-01T18:19:24-06:00</pubDate>
+        <lastBuildDate>2016-02-02T01:50:46-06:00</lastBuildDate>
+        <pubDate>2016-02-02T01:50:46-06:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Add System Call In Linux (Elementary)</title>
+                <description>
+&lt;p&gt;Machine: Apple Mac&lt;/p&gt;
+
+&lt;h3 id=&quot;full-screen-of-elementary--os-in-vitual-box&quot;&gt;Full Screen of Elementary  OS in Vitual Box&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;run code:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;
+cd /media/
+sudo mkdir /cdrom/
+sudo mount /dev/sr0 /media/cdrom
+cd /media/cdrom
+sudo ./VBoxLinuxAdditions.run
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;restart system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;#&lt;/h2&gt;
+</description>
+                <link>http://zhou-dong.github.io/linux/2016/02/02/linux-kernel</link>
+                <guid>http://zhou-dong.github.io/linux/2016/02/02/linux-kernel</guid>
+                <pubDate>2016-02-02T00:00:00-06:00</pubDate>
+        </item>
 
         <item>
                 <title>Digital Image Fundamentals</title>
@@ -108,19 +138,6 @@
         </item>
 
         <item>
-                <title>Data Image Compression</title>
-                <description>&lt;p&gt;Huffman coding&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <link>http://zhou-dong.github.io/2015/12/04/code</link>
-                <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
-                <pubDate>2015-12-04T00:00:00-06:00</pubDate>
-        </item>
-
-        <item>
                 <title>Data Stream Analyze</title>
                 <description>&lt;pre&gt;
 &lt;code&gt;
@@ -181,6 +198,19 @@ function Client(server, conn){
 
 &lt;/code&gt;
 &lt;/pre&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/12/04/code</link>
+                <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
+                <pubDate>2015-12-04T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Data Image Compression</title>
+                <description>&lt;p&gt;Huffman coding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/12/04/code</link>
                 <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
