@@ -93,17 +93,17 @@ Test
 #include<stdio.h>
 #include<errno.h>
 
-#define __NR_add2  312   /(N是刚才自己+1填的调用号)
+#define __NR_add2  312   //(xxx updated number)
 
 int main()
 {
-int a,b;
-printf(“Input Two Number To Kernel Space\n”);
-printf(“Input a  ”);
-scanf(“%d”,&a);
-printf(“Input b  ”);
-scanf(“%d”,&b);
-printf("%d\n", syscall(__NR_add2, a,b)) ;
-return 0;
+    int a,b;
+    printf(“Input Two Number To Kernel Space\n”);
+    printf(“Input a  ”);
+    scanf(“%d”,&a);
+    printf(“Input b  ”);
+    scanf(“%d”,&b);
+    printf("%d\n", syscall(__NR_add2, a,b)) ;
+    return 0;
 }
 </code></pre>
