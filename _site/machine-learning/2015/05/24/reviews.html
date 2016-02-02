@@ -1,0 +1,847 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Review Machine Learning in Action</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Review Machine Learning in Action </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<h4 id="machine-learning-regression">Machine Learning: Regression</h4>
+
+<ul>
+  <li>使用回归模型，可以使用所有的数据来为模型服务！</li>
+  <li>如果只是找到最相近的几个数据点，然后来求他们的分类或者预测属性的话，那整个数据集中，只有几个点参与到的预测和分类中，其它的数据都几乎没有用到。</li>
+  <li>使用回归模型，不但可以用x，预测y；也可以用y，预测x</li>
+</ul>
+
+<ol>
+  <li>Simple linear regression</li>
+  <li>Multiple Regression</li>
+  <li>Assessing performance
+    <ul>
+      <li>Remember that all models are wrong; the practical question is how wrong do they have to be to not be useful.</li>
+    </ul>
+  </li>
+  <li>Ridge Regression</li>
+  <li>Feature Selection &amp; Lasso</li>
+  <li>Nearest Neighbors &amp; Kernel Regression</li>
+</ol>
+
+<hr />
+
+<h4 id="advantage-knndisadvantage">回归模型的advantage 和KNN的disadvantage</h4>
+
+<p>KNN的劣势：</p>
+
+<ol>
+  <li>计算复杂度高，每次都要遍历整个数据集。</li>
+  <li>只有最接近的K个数据参与到最后的分类或者预测中。</li>
+</ol>
+
+<h4 id="x">在回归模型中，加入随着x轴的变化，周期变化的参数：</h4>
+
+<script type="math/tex; mode=display">
+y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12 - \Phi ) + \epsilon_i
+</script>
+
+<p>Equivalently</p>
+
+<script type="math/tex; mode=display">
+y_i = w_0 + w_1t_i + w_2 \sin (2 \pi t_i / 12) + w_3 \cos (2 \pi t_i / 12) + \epsilon_i
+</script>
+
+<p>Generic basis expansion</p>
+
+<script type="math/tex; mode=display">
+y_i = w_0h_0(x_i) + w_1h_1(x_i) + w_2 h_2(x_i)  + \cdots + w_D h_D(x_i)  + \epsilon_i \\
+
+= \sum_{j=0}^D w_j h_j(x_i) + \epsilon_i
+</script>
+
+<h4 id="section">向量和矩阵 计算梯度</h4>
+
+<ul>
+  <li>Since the derivative of a sum is the sum of the derivatives we can compute the derivative for a single data point and then sum over data points. We can write the squared difference between the observed output and predicted output for a single point as follows:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+(w[0]*[CONSTANT] + w[1]*[feature_1] + ... + w[i] *[feature_i] + ... + w[k]*[feature_k] - output)^2
+</script>
+
+<ul>
+  <li>Where we have k features and a constant. So the derivative with respect to weight w[i] by the chain rule is:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+2*(w[0]*[CONSTANT] + w[1]*[feature_1] + ... + w[i] *[feature_i] + ... + w[k]*[feature_k] - output)* [feature_i]
+</script>
+
+<ul>
+  <li>The term inside the paranethesis is just the error (difference between prediction and output). So we can re-write this as:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+2*error*[feature_i]
+</script>
+
+<ul>
+  <li>That is, the derivative for the weight for feature i is the sum (over data points) of 2 times the product of the error and the feature itself. In the case of the constant then this is just twice the sum of the errors!
+Recall that twice the sum of the product of two vectors is just twice the dot product of the two vectors. Therefore the derivative for the weight for feature[i] is just two times the dot product between the values of feature[i] and the current errors.</li>
+</ul>
+
+<h4 id="assessing-loss-on-the-training-set">Assessing loss on the training set</h4>
+
+<ul>
+  <li>RMSE: root mean square error:</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\sqrt{ \frac{1}{N} \sum_{i=1}^N (y_i-f(x_i))^2 }
+</script>
+
+<ul>
+  <li>Generalization error vs model complexity
+    <ul>
+      <li><strong>判断结果是不是符合正态分布</strong></li>
+      <li>define overfitting
+        <ol>
+          <li>training error less than other parameter</li>
+          <li>test error larger than other parameter</li>
+        </ol>
+      </li>
+      <li>split train and test data
+        <ol>
+          <li>留下足够的测试数据</li>
+          <li>然后使用剩下的所有数据做training</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">
+\frac{1}{N \text{test}} \sum_{i=1}^N L(y_i-f(x_i))
+</script>
+
+<ul>
+  <li>3 sources of error
+    <ul>
+      <li>Noise</li>
+      <li>Bias</li>
+      <li>Variance</li>
+    </ul>
+  </li>
+  <li>Bias-variance tradeoff
+    <ul>
+      <li>High-complexity has low bias</li>
+      <li>High-complexity has high variance </li>
+    </ul>
+  </li>
+  <li>Bias of function estimator
+    <ul>
+      <li>使用交叉验证</li>
+      <li>在每个数据集上训练数据</li>
+      <li>把每个数据集得到的结果求平均值</li>
+    </ul>
+  </li>
+  <li>Mean squre error = bias * bias + variance * variance</li>
+</ul>
+
+<h4 id="choose-model-complexity">Choose model complexity</h4>
+
+<ol>
+  <li>split data set to:
+    <ul>
+      <li>Training Set</li>
+      <li>Validation Set</li>
+      <li>Test Set</li>
+    </ul>
+  </li>
+  <li>use the training set to train different polynomial degrees of function</li>
+  <li>use validation set to find the best model complexity (degree of polynomial)</li>
+  <li>use test set to test the result</li>
+</ol>
+
+<h4 id="ridge-regression">Ridge Regression</h4>
+
+<ol>
+  <li>Coefficients 越大，模型越fit data set.</li>
+  <li>If coefficients 太大的话，会overfitting</li>
+  <li>We expect model，fit data set， but not overfit</li>
+</ol>
+
+<h5 id="ridge-regression-comes-to-rescue">Ridge regression comes to rescue</h5>
+
+<p>Generally, whenever we see weights change so much in response to change in data, we believe the variance of our estimate to be large. Ridge regression aims to address this issue by penalizing “large” weights. </p>
+
+<h5 id="which-means">Which means:</h5>
+
+<ul>
+  <li>如果一个模型overfitting的话，一般情况下coefficients会特别大</li>
+  <li>which means we wanna model fit data set, but coefficients do not to be too large.</li>
+  <li>We wanna balance between model fit and the magnitude of coefficients</li>
+</ul>
+
+<h5 id="total-cost--measure-of-fit--measure-of-magnitude-of-coefficients">Total cost = measure of fit + measure of magnitude of coefficients</h5>
+
+<ul>
+  <li>Regularization <script type="math/tex"> \text{minimize: } RSS(w) + \lambda \| w \|^2 </script></li>
+  <li><script type="math/tex"> \lambda </script> tunning parameter = balance of fit and magnitude</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\text{arg}_{(w, \lambda)} \min \Bigr[\sum_{i=1}^N (y_i-f_{w}(x_i))^2 + \lambda \sum_{j=i}^D w_j^2 \Bigr] 
+</script>
+
+<h5 id="cross-validation">Cross Validation</h5>
+
+<ul>
+  <li>Leave one cross validation</li>
+  <li>K-fold cross validation</li>
+</ul>
+
+<h4 id="features-selection">Features selection</h4>
+
+<ul>
+  <li>All subsets
+    <ol>
+      <li>Find feature which reduce RSS most.</li>
+      <li>Fine the combination of two fearues which reduce RSS most. (Do not need to contain the step one feature).</li>
+      <li>Find the combination of three features which most reduce RSS. (do not need to contain step one or step two features).</li>
+      <li>repeat until convergence.</li>
+    </ol>
+  </li>
+  <li>How many choice?
+    <ul>
+      <li>total: <script type="math/tex">2^D</script></li>
+    </ul>
+  </li>
+  <li>Greedy Algorithm
+    <ol>
+      <li>Start at them trainning errors as all subsets(no features).</li>
+      <li>Choose the one feature which reduce the RSS most.</li>
+      <li>在第一个feature的基础上，find the next feaure which reduce RSS most.</li>
+      <li>repeat until convergence.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Example of All Subsets VS. Greedy Algorithm:</p>
+
+<ol>
+  <li>First step:
+    <ul>
+      <li>All subsets: sq.ft. living</li>
+      <li>Greedy algorithm: sq.ft. living</li>
+    </ul>
+  </li>
+  <li>Second step:
+    <ul>
+      <li>All subsets: 
+        <ul>
+          <li>No. bedrooms</li>
+          <li>No. bathrooms</li>
+        </ul>
+      </li>
+      <li>Greedy Algorithm: 
+        <ul>
+          <li>sq.ft. living</li>
+          <li>year renovated</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Third step:
+    <ul>
+      <li>…</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Lasso algorithm</p>
+
+<ul>
+  <li>Use regularization for feature selection</li>
+</ul>
+
+<p>为什么不能在ridge regression的基础上做降维：不能直接删除weight小的feature。</p>
+
+<ul>
+  <li>如果几个features表示类似的属性，如：bathroom、showers，那么这两个feature的weight在ridge中，都会被降低。</li>
+  <li>如果同时删除几个类似的属性。那么可能会删除相关有用的信息。</li>
+</ul>
+
+<h5 id="difference-between-ridge-regression-and-lasso-regression">Difference between Ridge Regression and Lasso Regression</h5>
+
+<p>Formula:</p>
+
+<ul>
+  <li>Ridge regression: <script type="math/tex">\text{arg}_w \min RSS + \lambda \| w \|_2^2</script></li>
+  <li>Lasso Regression: <script type="math/tex">\text{arg}_w \min RSS + \lambda \| w \|_1</script></li>
+</ul>
+
+<p>Specific:</p>
+
+<ul>
+  <li>Ridge regression: 
+    <ul>
+      <li>weight occupy bigger part in whole cost than Lasso regression</li>
+      <li>so every weight will shrink quickly</li>
+      <li>harder to find which weight is 0 when others are not.</li>
+    </ul>
+  </li>
+  <li>Lasso regression:
+    <ul>
+      <li>weight not occupy larger part in whole cost then Lasso regression</li>
+      <li>some weight will shrink quickly but some not</li>
+      <li>easier to sepeare 0 weight and none 0 weight </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="coordinate-descent">Coordinate descent</h4>
+
+<p>Coordinate descent的思想在Lasso regression中非常重要。Often hard to find all minimum of all coordinates, but for each coordinate.</p>
+
+<ul>
+  <li>坐标下降法（英语：coordinate descent）是一种非梯度优化算法。算法在每次迭代中，在当前点处沿一个坐标方向进行一维搜索以求得一个函数的局部极小值。在整个过程中循环使用不同的坐标方向。</li>
+  <li>对于不可拆分的函数而言，算法可能无法在较小的迭代步数中求得最优解。为了加速收敛，可以采用一个适当的坐标系，例如通过主成分分析获得一个坐标间尽可能不相互关联的新坐标系</li>
+  <li>coordinate descent不是梯度下降，它每次计算函数在一个坐标方向上的局部极小值。而不是逐步递进！</li>
+  <li>每次迭代，要在一个weight上做迭代，如果在这个weight上算出的梯度为0，那么说明：
+    <ul>
+      <li>说明这个weight不重要</li>
+      <li>已经达到了函数的极小值</li>
+    </ul>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\hat{w}_j = \rho_j \\
+
+\hat{w}_j = \begin{cases}
+\rho_j + \lambda/2 & \text{if } \rho_j < -\lambda/2 \\
+0 & \text{if } \rho_j \in [-\lambda/2, \lambda/2] \\
+\rho_j - \lambda/2 & \text{if } \rho_j > \lambda / 2
+\end{cases}
+ %]]></script>
+
+<h4 id="normalizing-features">Normalizing features</h4>
+
+<script type="math/tex; mode=display">
+h_j(x_k) = \frac{h_j(x_k)}{\sqrt{\sum_{i=1}^N h_j (x_i)^2 }}
+</script>
+
+<ul>
+  <li>Scale training columns (not rows!)</li>
+  <li><code>Apply same training scale factors in test data!</code></li>
+</ul>
+
+<h4 id="nearest-neighbors-and-kernal-regression">Nearest Neighbors and Kernal Regression</h4>
+
+<p>Nearest neighbor regression</p>
+
+<ol>
+  <li>normalize features first</li>
+  <li>compute distance with query and all data set</li>
+  <li>find the closest data to this query.</li>
+  <li>predict result base on the closet data.</li>
+</ol>
+
+<p>k-Nearest neighbors</p>
+
+<ol>
+  <li>find the k-nearest neighbors</li>
+  <li>average the neighbors price</li>
+</ol>
+
+<p>weighted k-nearest neighbors</p>
+
+<ul>
+  <li>different neighbors have the different distances, so should have different weights</li>
+</ul>
+
+<p>Kernel regression</p>
+
+<ul>
+  <li>Implement of weighted k-nearest neighbors</li>
+</ul>
+
+<ol>
+  <li>gaussian distribution to compute the weight of the neighbors</li>
+  <li>closest k neighbors</li>
+  <li>average their value</li>
+</ol>
+
+<p>Local weighted linear regression</p>
+
+<ul>
+  <li>use linear regression with the k neighbors</li>
+</ul>
+
+<hr />
+
+<h4 id="linear-classifiers">Linear classifiers</h4>
+
+<ol>
+  <li>Score the weight of the each word (训练每个词的权重) 比如：
+    <ul>
+      <li>good: 1.0</li>
+      <li>beautiful: 1.3</li>
+      <li>awesome: 1.5</li>
+      <li>bad: -1.0</li>
+      <li>suck: -2.0</li>
+      <li>car: 0.0</li>
+      <li>house: 0.0</li>
+    </ul>
+  </li>
+  <li>把句子中的每个词的权重相加算出得分：
+    <ul>
+      <li>大于0，positive</li>
+      <li>小于0，negative</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h4 id="section-1">基于商品的协同过滤</h4>
+
+<p>看来华盛顿大学的机器学习课程，才发现协同过滤真的很简单！这门课太棒了！</p>
+
+<p>最简单的product-to-product推荐系统</p>
+
+<ul>
+  <li>首先他是一个<code>对角矩阵</code></li>
+  <li>行和列一样的商品</li>
+  <li>这样的话，就能知道，两两商品同时出现的次数</li>
+  <li>这也就可以做协同过滤了</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X & 从一到无穷大 & 深入浅出设计模式 & Effective Java & 三体 & 时间简史 \\
+\hline
+从一到无穷大     & 20 & 1  & 2  & 100 & 15 \\
+\hline
+深入浅出设计模式 & 1  & 30 & 16 & 110 & 3  \\
+\hline
+Effective Java   & 2  & 16 & 40 & 150 &  4  \\
+\hline
+三体             & 100 & 110 & 150 & 10000 & 250 \\
+\hline
+时间简史         & 15 & 3  & 4  & 250 & 70 \\
+\hline
+\end{array}
+ %]]></script>
+
+<h5 id="normalizing-co-occurrence-matrices">Normalizing co-occurrence matrices</h5>
+
+<p>Jaccard similarity，因为有些商品购买的特别多，无论买那个商品都会推荐它</p>
+
+<p>who purchased <code>i and j</code> divided by who purchased <code>i or j</code></p>
+
+<script type="math/tex; mode=display">
+\frac{\text{# purchased } i \text{ and }  j }{\text{# purchased } i \text{ or }  j}
+</script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X & 从一到无穷大 & 深入浅出设计模式 & Effective Java & 三体 & 时间简史 \\
+\hline
+从一到无穷大     & 1     & 0.05  & 0.10  & 0.05 & 0.75 \\
+\hline
+深入浅出设计模式 & 0.05  & 1     & 0.53  & 0.27 & 0.10  \\
+\hline
+Effective Java   & 0.10  & 0.53  & 1     & 0.27 &0.10  \\
+\hline
+三体             & 0.05  & 0.27  & 0.27  & 1 & 0.25 \\
+\hline
+时间简史         & 0.75  & 0.10  & 0.10  & 0.25 & 1 \\
+\hline
+\end{array}
+ %]]></script>
+
+<p>如果用户同时购买了两件商品，或者更多的商品，可以想搜素引擎打分一样，给商品打分</p>
+
+<ol>
+  <li>分别找出为这两个商品推荐的商品</li>
+  <li>分别把这些权重相加，找出得分最高的商品</li>
+</ol>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{array}{|c|c|c|c|c|c|c|} \hline X & 从一到无穷大 & 深入浅出设计模式 & Effective Java & 三体 & 时间简史 \\
+\hline
+从一到无穷大     & 1     & 0.05  & 0.10  & 0.05 & 0.75 \\
+\hline
+Effective Java   & 0.10  & 0.53  & 1     & 0.27 &0.10  \\
+\hline
+Result           & 1.10  & 0.58  & 1.10  & 0.32 & 0.85 \\
+\hline
+\end{array}
+ %]]></script>
+
+<p>所以推荐的顺序是：时间简史、深入浅出审计模式、三体</p>
+
+<hr />
+
+<h4 id="section-2">基于内容的协同过滤</h4>
+
+<ul>
+  <li>user     有多个features</li>
+  <li>
+    <p>movie  也有多个feature</p>
+  </li>
+  <li>user = (f1,f2,f3,…,fn)</li>
+  <li>
+    <p>movie = (k1,k2,k3,…,kn)</p>
+  </li>
+  <li>user * movie = score(positve, negative)</li>
+  <li>用这种方法可以求出各个feature和weight</li>
+  <li>然后再用使用基于内容的协同过滤</li>
+</ul>
+
+<h5 id="matrix-factorization">matrix factorization</h5>
+
+<hr />
+
+<h4 id="section-3">评价系统的推荐系统</h4>
+
+<p>Recall</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\frac{\text{# liked & shown}}{\text{ # liked}}
+ %]]></script>
+
+<p>Precision</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\frac{\text{# liked & shown}}{\text{# shown}}
+ %]]></script>
+
+<p>Optimal recommenders</p>
+
+<script type="math/tex; mode=display">
+Recall = 1 \\
+Precision = 1
+</script>
+
+<p>Precision-recall curves</p>
+
+<ul>
+  <li>We can use Area Under the Curve(AUC) method to evluate with curve is better.</li>
+</ul>
+
+<p><img width="40%" src="http://ivrl.epfl.ch/files/content/sites/ivrg/files/supplementary_material/RK_ICIP2010/images/MSSSvsOthers.jpg" alt="Precision-recall curves" /></p>
+
+<hr />
+
+<h4 id="word-count-document-representation">Word count document representation</h4>
+
+<h5 id="bag-of-words-model">Bag of words model</h5>
+
+<ul>
+  <li>Ignore order of words</li>
+  <li>Count # of instances of each word in vocabulary</li>
+</ul>
+
+<p>原来比较两个文章的相似度，比我想的还要简单</p>
+
+<h4 id="supervised-learning-method">Supervised Learning method</h4>
+
+<ul>
+  <li>KNN (k nearest neighbor)
+    <ol>
+      <li>Calculate the distance will all the data.</li>
+      <li>Find the nearest k data</li>
+      <li>From this k nearest data find the most frequent category</li>
+    </ol>
+  </li>
+  <li>Decision Tree
+    <ol>
+      <li>Find the most efficient propercity to divided the datas</li>
+      <li>Check if all the sub tree has been divied</li>
+      <li>If not recurive steps 1 and 2</li>
+    </ol>
+  </li>
+  <li>Naive Bayes
+    <ul>
+      <li>根据朴素贝叶斯概率模型来计算一个目标可能出现在哪个分类中</li>
+      <li>如果出现在分来A的概率大于出现在分类B的概率，则结果为A反之为B</li>
+    </ul>
+  </li>
+  <li>Regression
+    <ul>
+      <li>找出或者画出一条可以拟合数据走向的线</li>
+      <li>最小二乘</li>
+      <li>logistic regression</li>
+      <li>CART Classification-and-Regression-Trees</li>
+    </ul>
+  </li>
+  <li>SVM (support vector machine)
+    <ul>
+      <li>找出支撑点</li>
+      <li>利用kernel把地位的数据映射到高维求解</li>
+    </ul>
+  </li>
+  <li>Adaboost
+    <ul>
+      <li>可以多次重复同一函数，也可用不同函数</li>
+      <li>每次计算以后，增加错误数据的权重，减小正确数据的权重</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="unsupervised-learning-method">Unsupervised Learning method</h4>
+
+<ul>
+  <li>K means
+    <ul>
+      <li>首先定义K个中心店，然后计算所有点到这些点的距离</li>
+      <li>把里这些点最近的点合成一簇，</li>
+      <li>找出簇内的中心店，继续迭代</li>
+    </ul>
+  </li>
+  <li>Apriori
+    <ul>
+      <li>原理是认为如果一项不频繁，那些包含它的集合也不是频繁项</li>
+    </ul>
+  </li>
+  <li>FP-Growth
+    <ul>
+      <li>先构建FP tree</li>
+      <li>扫描FP tree，获得频繁项</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="other-optimize">Other optimize</h4>
+
+<ul>
+  <li>PCA
+    <ul>
+      <li>找出最能表现数据的维度作为坐标轴</li>
+      <li>通过这种方式来降维</li>
+    </ul>
+  </li>
+  <li>SVD
+    <ul>
+      <li>把一个大的系数矩阵，切分为几个矩阵来运算</li>
+      <li>通过上面的方法来达到降维的目的</li>
+    </ul>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

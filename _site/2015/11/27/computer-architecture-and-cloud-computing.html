@@ -1,0 +1,335 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Technology From Computer Architecture to Cloud Computing</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Technology From Computer Architecture to Cloud Computing </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<h4 id="abstract">ABSTRACT</h4>
+
+<p>There are lots of same technology ideas between single computer architecture and cloud Computing system(Distributed system). We will discuss these ideas in these area:</p>
+
+<ul>
+  <li>Abstractions of the computer system and the abstractions of the distribution system.</li>
+  <li>How Queue implemented both the threads control in the single computer and balance control in the cloud computing.</li>
+  <li>The ideas of the File system between the Linux system and distribution system(HDFS, GFS).</li>
+  <li>Data communication between GPU, memory and project, database.</li>
+  <li>notify idea in thread control and zookeeper in Hadoop system.</li>
+  <li>pipeline in CPU and big data, example: photo OCR</li>
+</ul>
+
+<p>No matter build a single computer or cloud system, basically people use the same idea.  </p>
+
+<h4 id="same-knowledge">Same knowledge</h4>
+
+<ul>
+  <li>Abstraction
+    <ul>
+      <li>How people use abstraction to define different lays of the system.</li>
+      <li>Abstraction is always the most important idea in building the system, not only computer architecture, but all the things, by the way I believe the humans’ history is the abstractions history, we abstract the nature and the world. We abstract more level of the nature, humans become more intelligent.</li>
+      <li>In the computer system, we abstract the computer into:
+        <ol>
+          <li>hardware</li>
+          <li>operating system</li>
+          <li>software</li>
+        </ol>
+      </li>
+      <li>other way the abstract computer
+        <ol>
+          <li>instruction set</li>
+          <li>operating system api</li>
+          <li>virtual machine api</li>
+          <li>modern language</li>
+        </ol>
+      </li>
+      <li>Clouding computing system
+        <ol>
+          <li>File system(HDFS,GFS)</li>
+          <li>Database: HBase, Bigtable</li>
+          <li>Database API</li>
+          <li>Service API</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>Add cache to every level to optimize system.
+    <ul>
+      <li>We been study that there are several levels cache in the computer system, like L1, L2, L3, Main Memory.</li>
+      <li>In the cloud computing also need several level cache to optimize the system.</li>
+      <li>Cache in project(Ehcache), Embedded Cache(LevelDB), distributed Cache(Redis), and so on…</li>
+    </ul>
+  </li>
+  <li>Queue implemented in the threads control and balance control in the cloud.
+    <ul>
+      <li>thread control is one of the most important part in CPU development, it has been evolved several methods.</li>
+      <li>Now we use the priority queue to control the “context switch”.</li>
+      <li>how queue be implemented in the thread control of the CPU</li>
+      <li>In Clouding computing, queue also very very important, queue is implemented in every where.</li>
+      <li>balance the request: Facebook’s beanstalk</li>
+      <li>balance the log system: Fafka in Linkedin</li>
+      <li>zookeeper in Hadoop</li>
+      <li>control the command: MapReduce command control</li>
+    </ul>
+  </li>
+  <li>File system of the Linux system and distribution system(HDFS, GFS).
+    <ul>
+      <li>Hadoop system use the same idea of the Linux system.</li>
+      <li>Even use all most the same command to operate.</li>
+      <li>Hadoop fs -ls /home/</li>
+      <li>ls /home/</li>
+    </ul>
+  </li>
+  <li>Data communication between GPU, memory and project, database.
+    <ul>
+      <li>We been discuss so much during the class.</li>
+      <li>But in the database system, people use the same ideas to Create, Read, Update, Delete the data.</li>
+    </ul>
+  </li>
+  <li>pipeline in CPU and big data, example: photo OCR
+    <ul>
+      <li>We beed discuss how important the pipeline in operating system.</li>
+      <li>pipeline also very important in distributed system.</li>
+      <li>shopping cart steps</li>
+      <li>order steps</li>
+      <li>photo OCR</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="future">Future</h4>
+
+<ul>
+  <li>GPU plus Map Reduce</li>
+  <li>Low level of mongoDB let operating system control the thread for it.</li>
+  <li>HDFS is based on Linux file system.</li>
+</ul>
+
+<p>The use the same ideas to build different level of the system, and then combine them to a large system, to make the system more powerful.</p>
+
+<p>Future is join all these ideas together to optimize the whole system, like GPU plus Map Reduce, HDFS with Linux file system(ext3). Because of abstraction, people in different levels to optimize the system, they are not disturbed each other, but they can use ideas from the other levels to optimize their work. So no matter which level have good ideas or solutions will be implemented in other level. </p>
+
+<h4 id="conclusion">Conclusion</h4>
+
+<p>In our area, every part they always have same idea, if we can master one of the idea, I believe we can make our selves better.</p>
+
+<p>From operation system, hardware of computer to the cloud, there are some many commons ideas between. And these ideas are the basic knowledge of computer science.</p>
+
+<p>The ideas between computer architecture and cloud Computing or distributed system. More I think all the ideas between technology are same. If we like or interest something, just word hard for it.</p>
+
+<p>Computer science is an great major, it’s not only need thinking things logically but also need us do it manually which is by our hand.</p>
+
+<p>The creative is not only invent the totally new things, but standing on the shoulders of giants and step forward. Wish after we leaned the basic ideas, we could create our own cool things, to make the world a little different.</p>
+
+<p>Add more informatino of Computer Architecture.</p>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

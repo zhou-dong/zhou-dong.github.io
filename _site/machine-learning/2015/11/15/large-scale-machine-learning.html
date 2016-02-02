@@ -1,0 +1,293 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Large Scale Machine Learning</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Large Scale Machine Learning </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Batch Gradient Descent</p>
+
+<ul>
+  <li>classic way to do gradient descent</li>
+</ul>
+
+<p>Stochastic Gradient Descent</p>
+
+<ol>
+  <li>Randomly shuffle dataset</li>
+  <li>Repeat for {i := 1,…,m} update the <script type="math/tex">\theta</script></li>
+</ol>
+
+<p>Mini-Batch Gradient Descent</p>
+
+<ol>
+  <li>Randomly shuffle dataset</li>
+  <li>Repeat for {i := 1,11,21,..,m}, every time use b items to update the <script type="math/tex">\theta</script></li>
+</ol>
+
+<p>Stochastic Gradient Descent Convergence</p>
+
+<script type="math/tex; mode=display">
+\alpha = \frac{const1}{iterationNumber + const2}
+</script>
+
+<hr />
+
+<h4 id="online-learning">Online Learning</h4>
+
+<ul>
+  <li>method：
+    <ul>
+      <li>可以借鉴Stochastic Gradient Descent（随机梯度下降）的思想。</li>
+    </ul>
+  </li>
+  <li>scenario:
+    <ul>
+      <li>Large data streaming coming into the application</li>
+      <li>Calculate one time then throw away</li>
+      <li>weight of different features were changed with times</li>
+      <li>大量的数据源源不断的流入系统中</li>
+      <li>One time process</li>
+      <li>随着时间的变化，不同的feature的权重会发生变化。（比如以前买汽车的话，马力比比重高，现在是否节能的比重更高）。</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="online-learning-ctr-click-through-rate">在搜索中使用online learning (CTR: CLICK THROUGH RATE)</h5>
+
+<ol>
+  <li>features choose
+    <ul>
+      <li>关键字与query的匹配程度</li>
+      <li>用户的搜索历史</li>
+      <li>facets</li>
+    </ul>
+  </li>
+  <li>Implement Online Learning
+    <ul>
+      <li>根据用户的query返回用户搜素的结果</li>
+      <li>统计用户对搜索结果的点击结果</li>
+      <li>根据用户的点击为（0/1），来训练不同feature的weight。</li>
+      <li>可以使用Mini-Batch Gradient Descent</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h4 id="map-reduce-and-data-parallelism">Map Reduce and Data Parallelism</h4>
+
+<p>可以使用Map-Reduce来实现Mini-Batch Gradient Descent</p>
+
+<p>可利用多核的优势在一台电脑上运行Map-Reduce，效果也会不错，因为现在的电脑都是多核的.</p>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

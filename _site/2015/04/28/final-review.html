@@ -1,0 +1,414 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CS-5549 Final Review</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>CS-5549 Final Review </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<p>Greddy Algorithm</p>
+
+<ul>
+  <li>Description:
+    <ul>
+      <li>是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。比如在旅行推销员问题中，如果旅行员每次都选择最近的城市，那这就是一种贪心算法。</li>
+    </ul>
+  </li>
+  <li>用在哪些地方：
+    <ul>
+      <li>贪心法可以解决一些最优化问题，如：求图中的最小生成树、求哈夫曼编码……对于其他问题。</li>
+      <li>贪心法一般不能得到我们所要求的答案。一旦一个问题可以通过贪心法来解决，那么贪心法一般是解决这个问题的最好办法。</li>
+      <li>由于贪心法的高效性以及其所求得的答案比较接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。</li>
+    </ul>
+  </li>
+  <li>我们学过的贪心算法：
+    <ul>
+      <li>Prime</li>
+      <li>Kruskal</li>
+      <li>Dijkstra</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Search Tree or Map</p>
+
+<ol>
+  <li>Breadth First Search
+    <ul>
+      <li>先建立priori queue</li>
+      <li>先进先出，然后遍历所有的的结点。</li>
+    </ul>
+  </li>
+  <li>Depth First Search
+    <ul>
+      <li>朝一个方向深度遍历。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Minimum Spanning Tree</p>
+
+<ul>
+  <li>最小生成树的边，应该是顶点总数减一：(total_vertex-1)。</li>
+</ul>
+
+<ol>
+  <li>Prime
+    <ul>
+      <li>Description: 由一条最短的边，逐渐扩展成一棵树</li>
+      <li>Steps:
+        <ol>
+          <li>随便找一个顶点，然后找出与这个顶点相连的最的边。把这条变加入到树中。</li>
+          <li>找出与这棵树相连的最短的边，加入树中。</li>
+          <li>重复步骤2，直到所有的定点都加入到树中。</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>Kruskal
+    <ul>
+      <li>Description: 找出最短的边，以每个边为基础，生成多个tree，然后这些tree合并成一个tree。</li>
+      <li>Steps:
+        <ol>
+          <li>首先按边进行排序，并放在queue中。</li>
+          <li>新建一个key-value set，来标记这些点是否已经在set中。</li>
+          <li>依次中queue中取出边，如果两个顶点都不在set中，这个边加入到set中。</li>
+          <li>重复第二步，直到所有的点都加入到set中。</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>Single Source Shortest Path</p>
+
+<ol>
+  <li>Bellman Ford
+    <ul>
+      <li>Specical: can work on negative edge weight graph</li>
+      <li>Description: 多次松弛。</li>
+      <li>Steps:
+        <ol>
+          <li>设置开始结点离所有点的距离都为无穷大。</li>
+          <li>遍历所开始结点相邻的所有点，并且更新距离。</li>
+          <li>依次遍历，剩下的结点，如果通过剩下的结点，可以使到开始结点的距离变短，更新结点，并更新父结点。</li>
+          <li>重复上面的步骤n(结点的个数)次。</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>Dijkstra:
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=5GT5hYzjNoo">教学视频</a></li>
+      <li>Description: 找到最短的路径，然后逐渐的松弛每条边，然后找出单点到其它点的最短路径。</li>
+      <li>Stepson：
+        <ol>
+          <li>找出与起始点相连的所有点，然后找出其中距离最短的点</li>
+          <li>通过最短的点来做松弛。并标记松弛点的来源。</li>
+          <li>在剩下的点中，找出最短的点，并通过这个点做松弛。</li>
+          <li>重复第3步，直到使用完所有的点做松弛。</li>
+        </ol>
+      </li>
+      <li>More：
+        <ul>
+          <li>可以用堆做优化，来找出距离最短的电</li>
+          <li>可以继续优化成斐波那契堆，可以更高的提高效率。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>Multiple Source Shortest Path</p>
+
+<ol>
+  <li>Floyd Warshall
+    <ul>
+      <li>时间复杂度是n的立方</li>
+      <li>Steps: 所有点依次通过每个点，到其它点的距离做松弛。</li>
+    </ul>
+  </li>
+  <li>Johnson’s Algorithm
+    <ol>
+      <li>在图的外边添加另一个顶点q，并初始化q到其它点的距离为0</li>
+      <li>使用Bellman Ford算法，求q到其它点的距离。</li>
+      <li>reweight各个点之间的距离。</li>
+      <li>使用Dijkstra算法，分别求出每个点到其它点的最短距离。</li>
+    </ol>
+  </li>
+</ol>
+
+<p>NP-complete</p>
+
+<p><strong>简单来说，P = NP问题问道：如果是／不是问题的正面答案可以很快验证，其答案是否也可以很快计算？</strong></p>
+
+<p><strong>不严格的讲，NP完全问题是NP类中“最难”的问题，也就是说它们是最可能不属于P类的。</strong></p>
+
+<ul>
+  <li>Some problems are intractable: as they grow large, we are unable to solve them in reasonable time.</li>
+  <li>
+    <p>What constitutes <code>reasonable time</code>? Standard working definition: <code>polynomial time</code>.</p>
+  </li>
+  <li>Polynomial time: <script type="math/tex"> O(n^2), O(n^3), O(1), O(n \log n) </script></li>
+  <li>Not in polynomial time: <script type="math/tex"> O(2^n), O(n^n), O(n!) </script></li>
+</ul>
+
+<p>Polynomial-Time Algorithms</p>
+
+<ul>
+  <li>We define P to be the class of problems solvable in polynomial time.</li>
+</ul>
+
+<p>NP-Complete Problems</p>
+
+<ul>
+  <li>The NP-Complete problems are an interesting class of problems whose status is unknown.</li>
+  <li>NP (nondeterministic polynomial time) is the set of problems that can be solved in polynomial time by a nondeterministic computer.</li>
+  <li>NP-hard Problem：对于这一类问题，用一句话概括他们的特征就是“at least as hard as the hardest problems in NP Problem”， 就是NP-hard问题至少和NP问题一样难。</li>
+  <li>NP-complete Problem: 对于这一类问题，他们满足两个性质:
+    <ol>
+      <li><strong>一个就是在polynomial时间内可以验证一个candidate answer是不是真正的解。</strong></li>
+      <li><strong>另一个性质就是我们可以把任何一个NP问题在polynomial的时间内把他的input转化，使之成为一个NP-complete问题。</strong></li>
+    </ol>
+  </li>
+  <li>NP = problems verifiable in polynomial time</li>
+</ul>
+
+<ol>
+  <li>
+    <p>P: problems that can be solved in polynomial time</p>
+  </li>
+  <li>
+    <p>NP: problems for which a solution can be verified in polynomial time</p>
+  </li>
+  <li>
+    <p>Unknown whether P = NP (most suspect not)</p>
+  </li>
+</ol>
+
+<p>Example: Hamiltonian-cycle problem is in NP:</p>
+
+<ul>
+  <li>Cannot solve in polynomial time</li>
+  <li>
+    <p>Easy to verify solution in polynomial time (How?)</p>
+  </li>
+  <li>All the P problem is NP problem.</li>
+  <li>Not all the NP problem are p problem.</li>
+</ul>
+
+<p>NP-Complete problems are the “hardest” problems in NP.</p>
+
+<p>NP-Complete可以简单地理解为：那些在NP中，同时最不可能在P中的问题。</p>
+
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

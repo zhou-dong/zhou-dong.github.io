@@ -1,0 +1,325 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Data Stream Analyze</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Data Stream Analyze  <small>-- Thinking of the Data Analyze</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h4 id="section">流式计算的特殊性:</h4>
+
+<ol>
+  <li>数据实时到达;</li>
+  <li>数据到达次序独立,不受应用系统所控制;</li>
+  <li>数据规模宏大且不能预知其最大值;</li>
+  <li>数据一经处理,除非特意保存,否则不能被再次取出处理,或者再次提取数据代价昂贵(one pass).</li>
+</ol>
+
+<hr />
+
+<h4 id="section-1">我们觉得流计算的技术难点不是算法：</h4>
+
+<ol>
+  <li>而是怎样在低成本、高可用的环境下快速的处理和存储流数据。</li>
+  <li>在不同的应用场景之下，使用一些经过优化以后的数据挖掘算法，或者普通的算法。</li>
+</ol>
+
+<ul>
+  <li>首先所有的算法，只要效率够高，都可以使用在流计算中。</li>
+  <li>而真正的问题是分布式该工程的实现上。</li>
+</ul>
+
+<hr />
+
+<p>算法的关键在于设计一个远小于数据集规模的结构,从而可以在内存中处理数据.相对于数据流的规模而言,这种名为概要数据结构(synopsis data structure)的规模至多应该是次线性的.即如果流的长度为 N,则概要数据结构大小不超过 O(polylog(N)),并且处理流上每一组数据的时间不超过 O(polylog(N)).</p>
+
+<h4 id="section-2">可以用到一些方法或者是指导思想:</h4>
+
+<ol>
+  <li>Histogram
+    <ul>
+      <li>直方图技术就是将一个大数据集划分为很多个连续的桶(bucket),也就是小数据集,每个桶都由一个数字来代表其特征</li>
+    </ul>
+  </li>
+  <li>Sampling
+    <ul>
+      <li>抽样方法也是生成概要数据结构的常用手段.它从数据集中抽取小部分数据代表整个数据集,并根据该样本集合获得查询结果.抽样方法可以分成均匀抽样(uniform sampling)和偏倚抽样(biased sampling)两种.</li>
+      <li>(Wavelet)小波分析方法是一种通用的数字信号处理技术.类似于傅立叶变换,小波分析根据输入的模拟量,变换成一系列的小波参数,并且少数几个小波参数就拥有大部分能量</li>
+    </ul>
+  </li>
+  <li>Hash Method
+    <ul>
+      <li>Bloom Filter</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h4 id="section-3">科研界的成果：</h4>
+
+<p>Data stream managerment system(DSMS)</p>
+
+<ol>
+  <li>STREAM [Stanford University] http://infolab.stanford.edu/stream/</li>
+  <li>Telegraph [berkeley] http://telegraph.cs.berkeley.edu/</li>
+  <li>Aurora [Brown University] http://cs.brown.edu/research/aurora/</li>
+</ol>
+
+<hr />
+
+<h4 id="section-4">工业界的成果：</h4>
+
+<p>PlatForm for Data Strem:</p>
+
+<ul>
+  <li>Apache Storm https://storm.apache.org/
+    <ul>
+      <li>在Storm中，先要设计一个用于实时计算的图状结构，我们称之为拓扑（topology）。这个拓扑将会被提交给集群，由集群中的主控节点（master node）分发代码，将任务分配给工作节点（worker node）执行。</li>
+    </ul>
+  </li>
+  <li>Apache Spark https://spark.apache.org/streaming/
+    <ul>
+      <li>Spark Streaming是核心Spark API的一个扩展，它并不会像Storm那样一次一个地处理数据流，而是在处理前按时间间隔预先将其切分为一段一段的批处理作业。Spark针对持续性数据流的抽象称为DStream（DiscretizedStream），一个DStream是一个微批处理（micro-batching）的RDD（弹性分布式数据集）；而RDD则是一种分布式数据集，能够以两种方式并行运作，分别是任意函数和滑动窗口数据的转换。</li>
+    </ul>
+  </li>
+  <li>Apache Samza http://samza.apache.org/
+    <ul>
+      <li>Samza处理数据流时，会分别按次处理每条收到的消息。Samza的流单位既不是元组，也不是Dstream，而是一条条消息。在Samza中，数据流被切分开来，每个部分都由一组只读消息的有序数列构成，而这些消息每条都有一个特定的ID（offset）。该系统还支持批处理，即逐次处理同一个数据流分区的多条消息。Samza的执行与数据流模块都是可插拔式的，尽管Samza的特色是依赖Hadoop的Yarn（另一种资源调度器）和Apache Kafka。</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="section-5">流式应用的相关组件</h4>
+
+<p>Distributed Queue:</p>
+
+<ul>
+  <li>Apache Kafka http://kafka.apache.org/</li>
+  <li>Beanstalkd http://kr.github.io/beanstalkd/</li>
+  <li>Apache Flume https://flume.apache.org/</li>
+</ul>
+
+<hr />
+
+<p>Reference</p>
+
+<p>Finding frequent items in data streams
+http://www.sciencedirect.com/science/article/pii/S0304397503004006</p>
+
+<p>Counting Distinct Elements in a Data Stream
+http://link.springer.com/chapter/10.1007/3-540-45726-7_1</p>
+
+<p>http://www.jos.org.cn/ch/reader/create_pdf.aspx?file_no=20040809&amp;journal_id=jos</p>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

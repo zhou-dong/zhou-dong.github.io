@@ -1,0 +1,522 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Logistic Regression</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Logistic Regression </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <script type="math/tex; mode=display">% <![CDATA[
+
+h_{\theta} = \theta^Tx \\
+y = 1 \ \text{if} \ \theta^Tx \ge 0 \\
+y = 0 \ \text{if} \ \theta^Tx <0
+ %]]></script>
+
+<p>Take into Logistic Regression:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+g(h_{\theta}) = g(\theta^Tx) = 0.5 \\
+y = 1 \ \text{if} \ \theta^Tx \ge 0 \\
+y = 0 \ \text{if} \ \theta^Tx <0
+ %]]></script>
+
+<p>In Linear Regression, the hypothesis function is:</p>
+
+<script type="math/tex; mode=display"> h_{\theta}(x) = \theta^Tx </script>
+
+<p>Sigmoid Function is:</p>
+
+<script type="math/tex; mode=display"> g(z) = \frac{1}{1+ e^{-z}} </script>
+
+<p>Logistic Regression, the hypothesis function is:</p>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) = g(\theta^Tx) =
+\frac{1}{1 + e^{-(\theta^Tx)}}
+</script>
+
+<p>Decision Boundary</p>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) = g(\theta^Tx) = p(y=1 \ | \ x, \theta)
+</script>
+
+<p>Predict:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+(1) \\
+y=1 \ \ \text{if} \ h_{\theta} \ge 0.5 \\
+\Rightarrow g(z) \ge 0.5 \\
+\Rightarrow g(z) = g({\theta^Tx}) \\
+\Rightarrow g(\theta^Tx) \ge 0.5 \\
+\Rightarrow \theta^Tx \ge 0 \\
+(2) \\
+y=0 \ \ \text{if} \ h_{\theta} < 0.5 \\
+\Rightarrow g(z) < 0.5 \\
+\Rightarrow g(z) = g({\theta^Tx}) \\
+\Rightarrow g(\theta^Tx) < 0.5 \\
+\Rightarrow \theta^Tx < 0
+ %]]></script>
+
+<hr />
+
+<h4 id="section">逻辑回归的推导过程：</h4>
+
+<ul>
+  <li>首先“逻辑回归”是“线性回归”的延续。其中<script type="math/tex">\theta_0</script>是截距，<script type="math/tex">\theta_1</script>是斜率。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) = \theta_0 + \theta_1x \ \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率})
+</script>
+
+<ul>
+  <li>线性回归也是可以拟合（0，1）问题的，但是线性回归的值y，可能会&gt;1,或者&lt;0: { y&lt;0 or y<script type="math/tex">\in</script>{0,1} or y&gt;1 }。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) \in (-\infty, +\infty) \\
+y = (0, 1)
+</script>
+
+<ul>
+  <li>我们希望“线性回归”的区间在（0，1）之间。首先想到的是：使所有&lt;0的值，都==0；所有&gt;1的值，都==1。</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\text{if} \ h_{\theta}(x) < 0 \ \text{then} \ h_{\theta}(x) = 0 \\
+\text{if} \ h_{\theta}(x) > 1 \ \text{then} \ h_{\theta}(x) = 1
+ %]]></script>
+
+<ul>
+  <li>为了优化（平滑）上面的结果，我们想到了：<script type="math/tex">e^x</script>曲线，它的所有值，都大于0，但是它的值会&gt;1。带入公式得到：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x) = e^x = e^{(\theta_0 + \theta_1x)} > 0
+</script>
+
+<ul>
+  <li>我们再对上面的结果，做优化：<script type="math/tex">\frac{e^x}{e^x+1}</script>，这样就得到了“逻辑回归”函数，也叫Sigmoid Function。</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+h_{\theta}(x) = \frac{e^x}{e^x+1} = \frac{1}{1+e^{-x}} = \frac{1}{1+e^{-(\theta_0 + \theta_1x)}} < 1
+ %]]></script>
+
+<ul>
+  <li>最后我们得到一个大于0，小于1的，平滑的函数：Sigmoid Function或者叫做：Logistic Function。</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+0 < \frac{1}{1+e^{-(\theta_0 + \theta_1x)}} < 1 \ (\text{其中}\theta_0 \text{是截距, } \theta_1 \text{是斜率}) \\
+0 < h_{\theta}(x) < 1
+ %]]></script>
+
+<ul>
+  <li>在这里<script type="math/tex">h_{\theta}(x) </script> 有特殊的含义：它表示x对应的f(x)取值为1的概率。所以对于输入的x，结果为1和0的概率分别是：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+p(y=1 \ | \ x;\theta) = h_{\theta}(x) \\
+p(y=0 \ | \ x;\theta) = 1 - h_{\theta}
+</script>
+
+<h4 id="cost-function">逻辑回归的Cost Function：</h4>
+
+<ul>
+  <li>我们可以像“线性回归”一样，使用方差的和，来表示“期望函数”与“真实值之间的偏差”。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (h_{\theta}(x)^{i} - y^{i})^2 \\
+h_{\theta}(x) - y = \frac{e^x}{e^x + 1} - 1 = \frac{e^x}{e^x + 1} - \frac{e^x+1}{e^x+1} = \frac{-1}{e^x+1}  \ (\text{if} \ y = 1)\\
+h_{\theta}(x) - y = \frac{e^x}{e^x + 1} - 0 = \frac{e^x}{e^x + 1} =  \frac{1}{e^x+1}  \ (\text{if} \ y = 0)\\
+(h_{\theta}(x) - y)^2 = (\frac{1}{e^x+1})^2 = (e^x+1)^{-2} \ \text{where} \ y = (0,1) \\
+J_{\theta} = \frac{1}{2m} \sum_{i=1}^m (e^x+1)^{-2}
+</script>
+
+<ul>
+  <li>对上面的函数是一个“非凸函数”，有很多局部最优解，所以不能使用“梯度下降”。</li>
+  <li>需要用其它的思路来minimize cost function：“极大似然”。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+Cost(h_{\theta}(x), y) =
+\begin{cases}
+-\log(h_{\theta}(x)) \ \text{if} \ y = 1 \\
+-\log(1- h_{\theta}(x)) \ \text{if} \ y = 0
+\end{cases} \\
+= (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+</script>
+
+<ul>
+  <li>
+    <p>把上面的公式，写到同一个公式中。</p>
+  </li>
+  <li>
+    <p>使用“极大似然”推导cost function的过程</p>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">
+p(y|x;\theta) = (h_{\theta}(x))^y(1-h_{\theta}(x))^{1-y} \\
+</script>
+
+<ul>
+  <li>取似然函数为：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+L_{\theta} = \prod_{i=1}^m p(y^{(i)}|x^{(i)};\theta)
+= \prod_{i=1}^m (h_{\theta}(x^{(i)}))^{y^{(i)}} (1-h_{\theta}(x^{(i)}))^{1-y^{(i)}}
+</script>
+
+<ul>
+  <li>为了简化计算量，为似然函数取log，取对数可以得到对数似然度：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+l(\theta) = \log(L(\theta)) =
+\sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))
+</script>
+
+<ul>
+  <li>现在我们要求的就是可以是<script type="math/tex">l(\theta)</script>的值，为最大的<script type="math/tex">\theta</script>的值。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\text{We wanna find } \theta \text{ let } l(\theta) \text{ to be maximized: } \\
+\theta = \operatorname{arg} \max(l(\theta))
+</script>
+
+<ul>
+  <li>这里我们要求最大值，可以用梯度上升法来求，也可以先对<script type="math/tex">l(\theta)</script>取负数，然后用梯度下降法来求最小值。</li>
+</ul>
+
+<script type="math/tex; mode=display">
+J(\theta) = -\frac{1}{m} l(\theta)
+</script>
+
+<ul>
+  <li>所以这里还用梯度下降法来最小值：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\theta = \operatorname{arg} \min(l(\theta))
+</script>
+
+<h4 id="jthetatheta">用“梯度下降”求使<script type="math/tex">J(\theta)</script>为最小值的<script type="math/tex">\theta</script></h4>
+
+<script type="math/tex; mode=display">
+\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J_{(\theta)} \ (j=0...n)
+</script>
+
+<ul>
+  <li>Partial Derivative (1)</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial x} (\log_ax) = \frac{1}{x \ln a}
+</script>
+
+<ul>
+  <li>Partial Derivative (2)</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial x} e^x = e^x
+</script>
+
+<ul>
+  <li>Partial Derivative (3)</li>
+</ul>
+
+<script type="math/tex; mode=display">
+h_{\theta}(x^{(i)}) = g(\theta^Tx^{(i)})  \\
+
+\frac{\partial}{\partial x_i} g(\theta^Tx^{(i)}) =
+\frac{\partial}{\partial x_i} (\frac{1}{1+e^{-(\theta^Tx^{(i)})}}) \\
+= (\frac{1}{1+e^{-(\theta^Tx^{(i)})}})^2 e^{-(\theta^Tx^{(i)})} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+
+= \frac{1}{1+e^{-(\theta^Tx^{(i)})}} \frac{e^{-(\theta^Tx^{(i)})}}{1+e^{-(\theta^Tx^{(i)})}} \frac{\partial}{\partial x_i} (\theta^Tx^{(i)}) \\
+
+= \frac{1}{1+e^{-(\theta^Tx^{(i)})}} \frac{e^{-(\theta^Tx^{(i)})}}{1+e^{-(\theta^Tx^{(i)})}} x^{(i)}\\
+
+= g(\theta^Tx^{(i)})(1-g(\theta^Tx^{(i)}))x^{(i)} \\
+
+= h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x^{(i)}
+</script>
+
+<hr />
+
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial \theta_j} J_{(\theta)} =
+\frac{\partial}{\partial \theta_j} (-\frac{1}{m} \sum_{i=1}^m (y^{(i)} \log(h_{\theta}(x^{(i)})) + (1-y^{(i)})\log(1-h_{\theta}(x^{(i)})))) \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)})) - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)}))) \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ） \frac{\partial}{\partial \theta_j}(h_{\theta}(x^{(i)})） \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} \frac{1}{h_{\theta}(x^{(i)})} - (1-y^{(i)}) \frac{1}{1-h_{\theta}(x^{(i)})} ）h_{\theta}(x^{(i)})(1-h_{\theta}(x^{(i)}))x_j^{(i)} \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} (1-h_{\theta}(x^{(i)})) - (1-y^{(i)}) h_{\theta}(x^{(i)})）x_j^{(i)} \\
+
+= -\frac{1}{m} \sum_{i=1}^m (y^{(i)} - h_{\theta}(x^{(i)})) x_j^{(i)} \\
+
+= \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)} \\
+</script>
+
+<script type="math/tex; mode=display">
+\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J_{(\theta)} \ (j=0...n) \\
+\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x_j^{(i)}) - y^{(i)}) x_j^{(i)}  \ (j=0...n) \\
+\theta_j := \theta_j - \alpha \sum_{i=1}^m (h_{\theta}(x_j^{(i)}) - y^{(i)}) x_j^{(i)}  \ (j=0...n)
+</script>
+
+<ul>
+  <li>如果“梯度上升”的话，与“梯度下降”的原理一样，公式可以改写为：</li>
+</ul>
+
+<script type="math/tex; mode=display">
+\theta_j := \theta_j + \alpha \sum_{i=1}^m (y^{(i)} - h_{\theta}(x_j^{(i)})) x_j^{(i)}  \ (j=0...n)
+</script>
+
+<hr />
+
+<pre><code>
+x &lt;- runif(100, 0, 10)
+y &lt;- runif(100, 0, 10)
+
+plot(main="Tumour Or Not", xlab="tumour size", ylab="tumour or not", pch=19, col="red", col.axis="brown", fg="purple", bg="white", col.sub="orange", sub="Logistic Regression", x,y,col.main="blue",col.lab="brown", xlim=c(0,10), ylim=c(0,10))
+
+abline(a=10, b=-1)
+</code></pre>
+
+<pre><code>
+y &lt;- c(0,0,0,0,1,1,1,1)
+x &lt;- c(-4,-3,-2,-1,1,2,3,4)
+plot(main="Tumour Or Not", xlab="tumour size", ylab="tumour or not", pch=19, col="red", col.axis="brown", fg="purple", bg="white", col.sub="orange", sub="Logistic Regression", x,y,col.main="blue",col.lab="brown", xlim=c(-4,4), ylim=c(0,1.1))
+
+</code></pre>
+
+<h4 id="reference">Reference：</h4>
+
+<p>http://blog.csdn.net/dongtingzhizi/article/details/15962797</p>
+
+<p>http://tech.meituan.com/intro_to_logistic_regression.html</p>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

@@ -1,0 +1,309 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Pattern Mining Methods</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Pattern Mining Methods  <small>Apriori Eclat FPgrowth</small></h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    
+<h3 id="apriori">Apriori</h3>
+
+<p>Basic Knowledge:</p>
+
+<ul>
+  <li>Other name: Down Closure Property of Frequent Patterns</li>
+  <li>Discription: Any subset of frequent itemset must be frequent</li>
+  <li>Then: If any subset of itemset S is infrequent, then there is no change for S to be frequent</li>
+</ul>
+
+<p>Steps:</p>
+
+<ul>
+  <li>先在所有的数据集中找出每个item出现的频率</li>
+  <li>删除频率低的</li>
+  <li>
+    <p>我们就得到了出现频率大于某个阀值的items</p>
+  </li>
+  <li>通过第一次得到的数据，再去数据集中去查询同时出现2个商品，并记录他们的频率</li>
+  <li>删除其中出现频率低的</li>
+  <li>
+    <p>这样我们就得到了出现频率大于某个阀值的一对items</p>
+  </li>
+  <li>通过第二次得到的数据，再去数据集中查询同时出现的3个商品，并记录他们的频率</li>
+  <li>删除其中频率低的</li>
+  <li>
+    <p>这样我们就得到了一组频率大于某个阀值的3个同时出现的items</p>
+  </li>
+  <li>通过上面的算法，继续计算更多商品同时出现的频率。</li>
+</ul>
+
+<p>Improvements:</p>
+
+<ol>
+  <li>Reduce passes of transaction database scans
+    <ul>
+      <li>Partitioning: Scan database only twice</li>
+      <li>Partition database and find local frequent patterns</li>
+      <li>Consilidate global frequent patterns</li>
+    </ul>
+  </li>
+  <li>Shrink the number of candidates</li>
+  <li>Exploring special data structure</li>
+</ol>
+
+<hr />
+
+<h3 id="eclat">Eclat</h3>
+
+<p>Basic info</p>
+
+<ul>
+  <li>Theory: Exploring vertical Data Format</li>
+  <li>Whole NameEquivalence Class Transformation</li>
+</ul>
+
+<p>Method:</p>
+
+<ul>
+  <li>给每个item建立索引，然后做并集</li>
+</ul>
+
+<p>Improvement：</p>
+
+<ul>
+  <li>如果他们的并集很大的话，可以用他们的并集取反来来存贮结果，这样存贮和计算效率会更高。</li>
+</ul>
+
+<hr />
+
+<h3 id="fpgrowth">FPgrowth</h3>
+
+<p>Basic info</p>
+
+<ul>
+  <li>FP-tree</li>
+  <li>Mine each conditional pattern-base recursively</li>
+</ul>
+
+<p>Steps:</p>
+
+<ul>
+  <li>需要扫描两次数据集</li>
+  <li>第一次统计所有items的出现频率，删除频率较低的，然后对所有items按出现频率排序</li>
+  <li>第二次扫描，把所有的数据生成一棵树</li>
+  <li>
+    <p>相同商品，在不同的分支之间，应该关联起来。这样在第二部分的统计的时候会方便。</p>
+  </li>
+  <li>分析生成的FP-tree，然后从下向上统计出与每个商品同时出现的商品。</li>
+</ul>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+

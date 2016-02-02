@@ -1,0 +1,717 @@
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Install Hadoop for Computer Lab</title>
+    
+    <meta name="author" content="Dong Zhou">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!--google code prettify -->
+
+
+
+    <!--
+    <link href="/assets/themes/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" media="all" >
+    -->
+
+
+    <style>
+	.operative { font-weight: bold; border:1px solid yellow }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Dong</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/reading">Reading</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Install Hadoop for Computer Lab </h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Universal USB Installer</p>
+
+<p>http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/#button</p>
+
+<p>Set up hadoop Reference</p>
+
+<p>http://tashan10.com/yong-dockerda-jian-hadoopwei-fen-bu-shi-ji-qun/</p>
+
+<p>Operating System:</p>
+
+<ul>
+  <li>Ubuntu 14.04.1 LTS</li>
+</ul>
+
+<p>User:</p>
+
+<ul>
+  <li>Username: hadoop</li>
+  <li>Password: hadoop</li>
+</ul>
+
+<p>Ip Address: 10.33.1.74</p>
+
+<h4 id="configurate-ubuntu">Configurate Ubuntu</h4>
+
+<ol>
+  <li>Install SSH
+    <ul>
+      <li>sudo apt-get install openssh-server</li>
+      <li>sudo apt-get install openssh-client</li>
+    </ul>
+  </li>
+  <li>Update
+    <ul>
+      <li>sudo apt-get update</li>
+    </ul>
+  </li>
+  <li>Update vim
+    <ul>
+      <li>sudo apt-get install vim</li>
+    </ul>
+  </li>
+  <li>Create folder of workspace
+    <ul>
+      <li>mkdir workspace</li>
+    </ul>
+  </li>
+  <li>Install Java
+    <ol>
+      <li>Download JDK
+        <ul>
+          <li>http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</li>
+        </ul>
+      </li>
+      <li>copy to ubuntu
+        <ul>
+          <li>scp ~/Downloads/jdk-8u60-linux-x64.gz hadoop@10.33.1.74:/home/hadoop/workspace/download/.</li>
+        </ul>
+      </li>
+      <li>upzip jdk
+        <ul>
+          <li>tar -xzvf jdk-8u60-linux-x64.gz</li>
+        </ul>
+      </li>
+      <li>config jdk environment
+        <ul>
+          <li>vim ~/.profile</li>
+          <li>export JAVA_HOME=/home/hadoop/workspace/jdk1.8.0_60</li>
+          <li>export PATH=$JAVA_HOME/bin:$PATH</li>
+          <li>source ~/.profile</li>
+          <li>java -version</li>
+          <li>javac -version</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h4 id="install-docker">Install Docker</h4>
+
+<ul>
+  <li>sudo apt-get install apt-transport-https</li>
+  <li>sudo apt-key adv <code>--keyserver</code> hkp://keyserver.ubuntu.com:80 <code>--recv-keys</code> 36A1D7869245C8950F966E92D8576A8BA88D21E9</li>
+  <li>sudo bash -c “echo deb https://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list”</li>
+  <li>sudo apt-get update</li>
+  <li>
+    <p>sudo apt-get install lxc-docker</p>
+  </li>
+  <li>sudo service docker start</li>
+</ul>
+
+<h5 id="add-user-into-docker">Add user into docker</h5>
+
+<ul>
+  <li>Create a docker group
+    <ul>
+      <li>sudo groupadd docker</li>
+    </ul>
+  </li>
+  <li>Adding user <code>hadoop</code> to group docker
+    <ul>
+      <li>sudo gpasswd -a hadoop docker</li>
+    </ul>
+  </li>
+  <li>Restart Docker
+    <ul>
+      <li>sudo service docker restart</li>
+    </ul>
+  </li>
+  <li>Test Docker
+    <ul>
+      <li>docker version</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="docker-common-command">Docker common command</h5>
+
+<ul>
+  <li>docker images：列出所有镜像(images)</li>
+  <li>docker ps：列出正在运行的(容器)containers</li>
+  <li>docker ps -a: 列出所有的容器，包括不运行的容器。</li>
+  <li>docker pull ubuntu：下载镜像</li>
+  <li>docker run -i -t ubuntu /bin/bash：运行ubuntu镜像</li>
+  <li>docker restart master: 重启已经停止的container，但start不能够再指定容器启动时运行的指令，因为docker只能有一个前台进程。</li>
+  <li>docker commit 3a09b2588478 ubuntu:mynewimage：提交你的变更，并且把容器保存成Tag为mynewimage的新的ubuntu镜像.(注意，这里提交只是提交到本地仓库，类似git)</li>
+</ul>
+
+<h5 id="download-ubuntu-mirror-by-docker">Download ubuntu mirror by docker</h5>
+
+<ul>
+  <li>docker pull ubuntu:14.04</li>
+</ul>
+
+<h5 id="start-ubuntu-in-docker">start ubuntu in docker</h5>
+
+<ul>
+  <li>docker run -ti ubuntu</li>
+  <li>docker run -ti ubuntu:14.04</li>
+</ul>
+
+<h5 id="test-docker-then-exit">Test docker then exit</h5>
+
+<ul>
+  <li>docker run ubuntu /bin/echo ‘Hello world’</li>
+</ul>
+
+<h5 id="install-ssh-in-docker">Install SSH In docker</h5>
+
+<ul>
+  <li>sudo apt-get install openssh-server</li>
+  <li>sudo apt-get install openssh-client</li>
+</ul>
+
+<h5 id="install-java-in-docker">Install Java In docker</h5>
+
+<ul>
+  <li>vim ~/.bashrc</li>
+  <li>export JAVA_HOME=/workspace/jdk1.8.0_60</li>
+  <li>export PATH=$JAVA_HOME/bin:$PATH</li>
+  <li>source ~/.bashrc</li>
+</ul>
+
+<h5 id="commit-change-of-docker">Commit change of docker</h5>
+
+<ul>
+  <li>docker commit -m “java install” 122a2cecdd14 ubuntu:java</li>
+</ul>
+
+<h4 id="install-hadoop">Install Hadoop</h4>
+
+<h5 id="install-wget">Install wget</h5>
+<ul>
+  <li>apt-get install wget</li>
+</ul>
+
+<h5 id="download-hadoop">Download Hadoop</h5>
+
+<ul>
+  <li>mkdir -p soft/apache/hadoop</li>
+  <li>cd /root/soft/apache/hadoop</li>
+  <li>wget http://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-2.7.1/hadoop-2.7.1.tar.gz</li>
+</ul>
+
+<h5 id="config-hadoop-in-bashrc">Config Hadoop in ./bashrc</h5>
+
+<ul>
+  <li>export HADOOP_HOME=/root/soft/apache/hadoop/hadoop-2.6.0</li>
+  <li>export HADOOP_CONFIG_HOME=$HADOOP_HOME/etc/hadoop</li>
+  <li>export PATH=$PATH:$HADOOP_HOME/bin</li>
+  <li>export PATH=$PATH:$HADOOP_HOME/sbin</li>
+</ul>
+
+<h5 id="config-hadoop">Config Hadoop</h5>
+
+<ol>
+  <li>Create three folder
+    <ul>
+      <li>mkdir tmp</li>
+      <li>mkdir namenode</li>
+      <li>mkdir datanode</li>
+    </ul>
+  </li>
+  <li>Config
+    <ul>
+      <li>cd $HADOOP_CONFIG_HOME/</li>
+      <li>cp mapred-site.xml.template mapred-site.xml</li>
+      <li>.core-site.xml</li>
+      <li>.hdfs-site.xml</li>
+      <li>.mapred-site.xml</li>
+      <li>hadoop-env.sh (export JAVA_HOME=/workspace/jdk1.8.0_60)</li>
+    </ul>
+  </li>
+  <li>Format namenode
+    <ul>
+      <li>hadoop namenode -format</li>
+    </ul>
+  </li>
+  <li>Install ssh
+    <ul>
+      <li>apt-get install ssh</li>
+      <li>/var/run/sshd</li>
+    </ul>
+  </li>
+  <li>Add ssh to barshrc
+    <ul>
+      <li>vim ~/.bashrc</li>
+      <li>/usr/sbin/sshd</li>
+    </ul>
+  </li>
+  <li>Create key
+    <ul>
+      <li>ssh-keygen -t rsa -P ‘’ -f ~/.ssh/id_dsa</li>
+      <li>cd .ssh</li>
+      <li>cat id_dsa.pub » authorized_keys</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="config-master-and-slave">Config Master and Slave</h4>
+
+<ol>
+  <li>Start up all the master and slave
+    <ul>
+      <li>docker run -ti -h master ubuntu</li>
+      <li>docker run -ti -h slave1 ubuntu</li>
+      <li>docker run -ti -h slave2 ubuntu</li>
+    </ul>
+  </li>
+  <li>check the ip of the machine
+    <ul>
+      <li>ifconfig</li>
+    </ul>
+  </li>
+  <li>config host
+    <ul>
+      <li>vim /etc/hosts</li>
+      <li>172.17.0.15 master</li>
+      <li>172.17.0.16 slave1</li>
+      <li>172.17.0.17 slave2</li>
+    </ul>
+  </li>
+  <li>Config slave
+    <ol>
+      <li>go to master machine</li>
+      <li>cd $HADOOP_CONFIG_HOME/</li>
+      <li>vim slaves
+        <ul>
+          <li>slave1</li>
+          <li>slave2</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>Start Hadoop
+    <ul>
+      <li>start-dfs.sh</li>
+    </ul>
+  </li>
+  <li>Check run status in master
+    <ul>
+      <li>hdfs dfsadmin -report</li>
+    </ul>
+  </li>
+  <li>stop hadoop
+    <ul>
+      <li>stop-dfs.sh</li>
+    </ul>
+  </li>
+  <li>Start stop docker
+    <ul>
+      <li>docker start bob_the_container</li>
+      <li>docker start aa3f365f0f4e</li>
+    </ul>
+  </li>
+  <li>Start demaon docker
+    <ul>
+      <li>docker run -ti -d ubuntu</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="section">运行镜像，并让生成的容器一直在后台运行：</h4>
+
+<ul>
+  <li>第一个-d表示让容器在后台运行</li>
+  <li>
+    <p>末尾的-D表示启动ssh的daemon模式，不然容器启动后立刻就变为停止状态了</p>
+  </li>
+  <li>docker run -d NAME/VERSION /etc/init.d/ssh start -D</li>
+</ul>
+
+<h4 id="ssh">现在，便可以ssh登陆容器了。</h4>
+
+<ul>
+  <li>查询容器IP
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>docker inspect CONTAINER_ID</td>
+              <td>grep IP</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>登入
+    <ul>
+      <li>ssh root@IP</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h5 id="start-docker-as-deman">start docker as deman</h5>
+
+<ul>
+  <li>docker run -d <code>--name master</code> <code>-h master</code> ubuntu /etc/init.d/ssh start -D</li>
+  <li>docker run -d <code>--name slave1</code> <code>-h slave1</code> ubuntu /etc/init.d/ssh start -D</li>
+  <li>docker run -d <code>--name slave2</code> <code>-h slave2</code> ubuntu /etc/init.d/ssh start -D</li>
+</ul>
+
+<h5 id="find-ip-of-docker">Find IP of docker</h5>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>docker inspect master</td>
+          <td>grep IP</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>docker inspect slave1</td>
+          <td>grep IP</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>docker inspect slave2</td>
+          <td>grep IP</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>ssh root@172.17.0.29</li>
+</ul>
+
+<h5 id="add-user-into-server">add user into server</h5>
+
+<ul>
+  <li>sudo useradd userone</li>
+  <li>sudo passwd userone</li>
+</ul>
+
+<h5 id="create-foler-of-userone">create foler of userone</h5>
+<ul>
+  <li>
+    <p>sudo mkdir /home/userone</p>
+  </li>
+  <li>
+    <p>sudo useradd -d /home/usertwo -m usertwo</p>
+  </li>
+</ul>
+
+<h5 id="add-user-to-docker-group">Add user to docker group</h5>
+
+<ul>
+  <li>sudo gpasswd -a userone docker</li>
+</ul>
+
+<h5 id="password-of-user">password of user</h5>
+
+<ul>
+  <li>userone 157432</li>
+  <li>usertwo 17728</li>
+  <li>userthree 15062</li>
+  <li>userfour 17743</li>
+  <li>userfive 96574</li>
+  <li>usersix 45732</li>
+  <li>userseven 66843</li>
+  <li>usereight 57832</li>
+  <li>usernine 44573</li>
+  <li>userten 35762</li>
+  <li>usereleven 24876</li>
+  <li>usertwelve 567432</li>
+  <li>userthirteen 13249</li>
+</ul>
+
+<hr />
+
+<h5 id="virtual-machine-ip-is">Virtual Machine IP is:</h5>
+
+<ul>
+  <li>master: 172.17.0.33</li>
+  <li>slave1: 172.17.0.34</li>
+  <li>slave2: 172.17.0.35</li>
+</ul>
+
+<hr />
+
+<p>/home/hadoop/workspace/authorized_keyspub</p>
+
+<p>使用Eclipse编译运行MapReduce程序 Hadoop2.6.0/Ubuntu</p>
+
+<ul>
+  <li>http://www.powerxing.com/hadoop-build-project-using-eclipse/</li>
+  <li>https://github.com/winghc/hadoop2x-eclipse-plugin</li>
+</ul>
+
+<hr />
+
+<p>Add file from disk to HDFS, then run map-reduce on Hadoop</p>
+
+<ul>
+  <li>hadoop fs -mkdir /user</li>
+  <li>hadoop fs -mkdir /user/hadoop</li>
+  <li>hadoop fs -ls /user/hadoop</li>
+  <li>hadoop fs -put shakes.txt /user/hadoop/shakes.txt</li>
+  <li>hadoop jar wordcount.jar org.dongzhou.hadoop.WordCount /user/hadoop/shakes.txt /user/hadoop/shakeResult</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>hadoop fs -mkdir /user/mingyang</li>
+  <li>hadoop fs -put shakes.txt /user/mingyang/</li>
+  <li>
+    <p>hadoop jar wordcount.jar org.mingyang.hadoop.WordCount /user/mingyang/shakes.txt /user/dongxu/shakeResult</p>
+  </li>
+  <li>hadoop fs -mkdir /user/dongxu  </li>
+  <li>hadoop fs -put shakes.txt /user/dongxu/</li>
+  <li>hadoop jar wordcount.jar com.dongxu.hadoop.WordCount /user/dongxu/shakes.txt /user/dongxu/shakeResult</li>
+</ul>
+
+<hr />
+
+<p>complie java file use command line</p>
+
+<p>http://www.cnblogs.com/myresearch/p/mapreduce-compile-jar-run.html</p>
+
+<ul>
+  <li>$HADOOP_HOME/share/hadoop/common/hadoop-common-2.6.0.jar</li>
+  <li>$HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar</li>
+  <li>$HADOOP_HOME/share/hadoop/common/lib/commons-cli-1.2.jar</li>
+</ul>
+
+<p>vim /etc/profile</p>
+
+<ul>
+  <li>export CLASSPATH=”$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.6.0.jar:$HADOOP_HOME/home/hadoop/opt/hadoop-2.6.0/share/hadoop/common/lib/commons-cli-1.2.jar:$CLASSPATH”</li>
+</ul>
+
+<p>complile</p>
+
+<ul>
+  <li>javac WordCount.java</li>
+</ul>
+
+<p>makr jar file</p>
+
+<ul>
+  <li>jar -cvf WordCount.jar ./WordCount*.class</li>
+</ul>
+
+<p>Thank you!</p>
+
+  </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2016 Dong Zhou
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstra:p.min.js"></script>
+    -->
+    <!--google code prettify -->
+    <!--
+    <script src="/assets/themes/google-code-prettify/prettify.js"></script>
+    <script src="/assets/themes/google-code-prettify/jquery.min.js"></script>
+    -->
+
+    <!-- Highlight.js -->
+    <!--
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    -->
+    <link href="/stylesheets/highlight/monokai_sublime.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+<!--
+    <script src="/assets/themes/google-code-prettify/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer""></script>
+-->
+<!--
+    <script type="text/javascript">
+    	$(function() {
+  		window.prettyPrint && prettyPrint();
+        });
+	$(function() {
+  		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto');
+	});
+    </script>
+    -->
+  </body>
+</html>
+
