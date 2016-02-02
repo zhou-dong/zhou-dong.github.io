@@ -92,7 +92,6 @@ Test
 
 #include<stdio.h>
 #include<errno.h>
-#include<asm/unistd.h>
 
 #define __NR_add2  312   /(N是刚才自己+1填的调用号)
 
