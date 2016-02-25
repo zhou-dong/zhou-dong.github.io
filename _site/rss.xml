@@ -5,35 +5,131 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2016-02-02T01:50:46-06:00</lastBuildDate>
-        <pubDate>2016-02-02T01:50:46-06:00</pubDate>
+        <lastBuildDate>2016-02-24T21:57:05-06:00</lastBuildDate>
+        <pubDate>2016-02-24T21:57:05-06:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
+                <title>GO WEST</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2016/02/24/go-west</link>
+                <guid>http://zhou-dong.github.io/2016/02/24/go-west</guid>
+                <pubDate>2016-02-24T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
                 <title>Add System Call In Linux (Elementary)</title>
                 <description>
-&lt;p&gt;Machine: Apple Mac&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Machine: Apple Mac&lt;/li&gt;
+  &lt;li&gt;OS: OS X EL Capitan&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h3 id=&quot;full-screen-of-elementary--os-in-vitual-box&quot;&gt;Full Screen of Elementary  OS in Vitual Box&lt;/h3&gt;
+&lt;h4 id=&quot;full-screen-of-elementary--os-in-vitual-box&quot;&gt;Full Screen of Elementary  OS in Vitual Box&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;run code:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
 cd /media/
 sudo mkdir /cdrom/
 sudo mount /dev/sr0 /media/cdrom
 cd /media/cdrom
 sudo ./VBoxLinuxAdditions.run
-&lt;/code&gt;&lt;/p&gt;
+sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;add-system-call&quot;&gt;Add System Call&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;restart system&lt;/li&gt;
+  &lt;li&gt;download linux kernel in &lt;a href=&quot;https://www.kernel.org/&quot;&gt;kernel.org&lt;/a&gt;  (my version is: 3.2.76)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;#&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
+cd /Downloads
+sudo mv linux-3.2.76.tar.xz /usr/src/.
+cd /usr/src/
+sudo xz -d linux-3.2.76.tar.xz
+sudo tar -xvf linux-3.2.76.tar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add system call function&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
+sudo vim /usr/src/linux-3.2.76/kernel/sys.c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
+asmlinkage int sys_add2(int i, int j)
+{
+    return i + j;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Regist on system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
+sudo vim usr/src/linux-3.2.76/arch/x86/kernel/syscall_table_32.S
+    .long sys_add2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add system call parameter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
+sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_64.h
+
+#define __NR_add2           xxx (update numer +=1)
+__SYSCALL(__NR_add2, sys_add2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
+sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_32.h
+
+#define __NR_add2           xxx (update numer +=1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;complie&quot;&gt;complie&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
+cd  /usr/src/linux-3.2.76
+sudo apt-get install libncurses5-dev
+sudo make localmodconfig
+sudo make -j N(optimize compile speed, core number + 1)
+sudo make modules_install
+sudo make install
+sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;test&quot;&gt;Test&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;c&quot;&gt;
+#include&lt;stdio.h&gt;
+#include&lt;errno.h&gt;
+
+#define __NR_add2  312   //(xxx updated number)
+
+int main()
+{
+    int a,b;
+    printf(“Input Two Number To Kernel Space\n”);
+    printf(“Input a  ”);
+    scanf(“%d”,&amp;amp;a);
+    printf(“Input b  ”);
+    scanf(“%d”,&amp;amp;b);
+    printf(&quot;%d\n&quot;, syscall(__NR_add2, a,b)) ;
+    return 0;
+}
+
+&lt;/errno.h&gt;&lt;/stdio.h&gt;&lt;/code&gt;&lt;/pre&gt;
 </description>
                 <link>http://zhou-dong.github.io/linux/2016/02/02/linux-kernel</link>
                 <guid>http://zhou-dong.github.io/linux/2016/02/02/linux-kernel</guid>
@@ -42,7 +138,9 @@ sudo ./VBoxLinuxAdditions.run
 
         <item>
                 <title>Digital Image Fundamentals</title>
-                <description>&lt;ul&gt;
+                <description>&lt;p&gt;Computer vision is a field that includes methods for acquiring, processing, analyzing, and understanding images and, in general, high-dimensional data from the real world in order to produce numerical or symbolic information, e.g., in the forms of decisions.&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;Sampling: digitizing the coordinate values &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Quantization: digitizing the amplitude values&lt;/p&gt;
@@ -51,6 +149,16 @@ sudo ./VBoxLinuxAdditions.run
   &lt;li&gt;Intensity resolution: the smallest discernible change in intensity level, usually refer to the number of bits used to quantize intensity&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;Histograms&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A histogram is a graph. A graph that shows frequency of anything. Usually histogram have bars that represent frequency of occurring of data in the whole data set.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Histogram of an image, like other histograms also shows frequency. But an image histogram, shows frequency of pixels intensity values. In an image histogram, the x axis shows the gray level intensities and the y axis shows the frequency of these intensities.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/2016/01/25/intro</link>
                 <guid>http://zhou-dong.github.io/2016/01/25/intro</guid>
@@ -138,6 +246,19 @@ sudo ./VBoxLinuxAdditions.run
         </item>
 
         <item>
+                <title>Data Image Compression</title>
+                <description>&lt;p&gt;Huffman coding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/12/04/code</link>
+                <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
+                <pubDate>2015-12-04T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
                 <title>Data Stream Analyze</title>
                 <description>&lt;pre&gt;
 &lt;code&gt;
@@ -198,19 +319,6 @@ function Client(server, conn){
 
 &lt;/code&gt;
 &lt;/pre&gt;
-</description>
-                <link>http://zhou-dong.github.io/2015/12/04/code</link>
-                <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
-                <pubDate>2015-12-04T00:00:00-06:00</pubDate>
-        </item>
-
-        <item>
-                <title>Data Image Compression</title>
-                <description>&lt;p&gt;Huffman coding&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
-&lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/12/04/code</link>
                 <guid>http://zhou-dong.github.io/2015/12/04/code</guid>

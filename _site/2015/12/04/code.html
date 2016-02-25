@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Data Image Compression</title>
+    <title>Data Stream Analyze</title>
     
     <meta name="author" content="Dong Zhou">
 
@@ -166,16 +166,70 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Data Image Compression  <small>Computer vision</small></h1>
+  <h1>Data Stream Analyze  <small>-- Thinking of the Data Analyze</small></h1>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <p>Huffman coding</p>
+    <pre>
+<code>
 
-<ul>
-  <li>Are all pixels equal?</li>
-</ul>
+Socket.prototype.onpacket = function(packet){
+  debug('got packet %j', packet);
+  switch (packet.type) {
+    case parser.EVENT:
+      this.onevent(packet);
+      break;
+
+    case parser.BINARY_EVENT:
+      this.onevent(packet);
+      break;
+
+    case parser.ACK:
+      this.onack(packet);
+      break;
+
+    case parser.BINARY_ACK:
+      this.onack(packet);
+      break;
+
+    case parser.DISCONNECT:
+      this.ondisconnect();
+      break;
+
+    case parser.ERROR:
+      this.emit('error', packet.data);
+  }
+};
+
+Socket.prototype.onevent = function(packet){
+  var args = packet.data || [];
+  debug('emitting event %j', args);
+
+  if (null != packet.id) {
+    debug('attaching ack callback to event');
+    args.push(this.ack(packet.id));
+  }
+
+  emit.apply(this, args);
+};
+
+
+function Client(server, conn){
+  this.server = server;
+  this.conn = conn;
+  this.encoder = new parser.Encoder();
+  this.decoder = new parser.Decoder();
+  this.id = conn.id;
+  this.request = conn.request;
+  this.setup();
+  this.sockets = {};
+  this.nsps = {};
+  this.connectBuffer = [];
+}
+
+</code>
+</pre>
 
   </div>
 </div>

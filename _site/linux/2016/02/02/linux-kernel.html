@@ -172,7 +172,10 @@
 <div class="row">
   <div class="col-xs-12">
     
-<p>Machine: Apple Mac</p>
+<ul>
+  <li>Machine: Apple Mac</li>
+  <li>OS: OS X EL Capitan</li>
+</ul>
 
 <h4 id="full-screen-of-elementary--os-in-vitual-box">Full Screen of Elementary  OS in Vitual Box</h4>
 
@@ -186,22 +189,14 @@ sudo mkdir /cdrom/
 sudo mount /dev/sr0 /media/cdrom
 cd /media/cdrom
 sudo ./VBoxLinuxAdditions.run
+sudo reboot
 </code></pre>
-
-<ul>
-  <li>restart system</li>
-</ul>
 
 <h4 id="add-system-call">Add System Call</h4>
 
-<ol>
-  <li>download linux kernel in <a href="https://www.kernel.org/">kernel.org</a>
-    <ul>
-      <li>My version is: 3.2.76</li>
-    </ul>
-  </li>
-  <li>Move and Unzip File</li>
-</ol>
+<ul>
+  <li>download linux kernel in <a href="https://www.kernel.org/">kernel.org</a>  (my version is: 3.2.76)</li>
+</ul>
 
 <pre><code class="bash">
 cd /Downloads
@@ -239,19 +234,16 @@ sudo vim usr/src/linux-3.2.76/arch/x86/kernel/syscall_table_32.S
   <li>Add system call parameter</li>
 </ul>
 
-<pre><code class="bash">
-sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_64.h
-</code></pre>
-
 <pre><code class="c">
+sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_64.h
+
 #define __NR_add2           xxx (update numer +=1)
 __SYSCALL(__NR_add2, sys_add2)
 </code></pre>
 
-<pre><code class="bash">
-sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_32.h
-</code></pre>
 <pre><code class="c">
+sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_32.h
+
 #define __NR_add2           xxx (update numer +=1)
 </code></pre>
 
@@ -261,31 +253,30 @@ sudo vim /usr/src/linux-3.2.76/arch/x86/include/asm/unistd_32.h
 cd  /usr/src/linux-3.2.76
 sudo apt-get install libncurses5-dev
 sudo make localmodconfig
-sudo make -j N
+sudo make -j N(optimize compile speed, core number + 1)
 sudo make modules_install
 sudo make install
 sudo reboot
 </code></pre>
 
-<p>Test</p>
+<h4 id="test">Test</h4>
 
 <pre><code class="c">
-
 #include<stdio.h>
 #include<errno.h>
 
-#define __NR_add2  312   /(N是刚才自己+1填的调用号)
+#define __NR_add2  312   //(xxx updated number)
 
 int main()
 {
-int a,b;
-printf(“Input Two Number To Kernel Space\n”);
-printf(“Input a  ”);
-scanf(“%d”,&amp;a);
-printf(“Input b  ”);
-scanf(“%d”,&amp;b);
-printf("%d\n", syscall(__NR_add2, a,b)) ;
-return 0;
+    int a,b;
+    printf(“Input Two Number To Kernel Space\n”);
+    printf(“Input a  ”);
+    scanf(“%d”,&amp;a);
+    printf(“Input b  ”);
+    scanf(“%d”,&amp;b);
+    printf("%d\n", syscall(__NR_add2, a,b)) ;
+    return 0;
 }
 
 </errno.h></stdio.h></code></pre>
