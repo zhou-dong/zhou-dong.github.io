@@ -4,7 +4,7 @@
  <title>Dong</title>
  <link href="http://zhou-dong.github.io/" rel="self"/>
  <link href="http://zhou-dong.github.io"/>
- <updated>2016-02-24T21:57:05-06:00</updated>
+ <updated>2016-03-16T09:33:06-05:00</updated>
  <id>http://zhou-dong.github.io</id>
  <author>
    <name>Dong Zhou</name>
@@ -18,6 +18,50 @@
    <updated>2016-02-24T00:00:00-06:00</updated>
    <id>http://zhou-dong.github.io/2016/02/24/go-west</id>
    <content type="html">
+&lt;p&gt;from troy to uhta!&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;抵抗组织&lt;/h3&gt;
+
+&lt;h2 id=&quot;player&quot;&gt;Player&lt;/h2&gt;
+
+&lt;h3 id=&quot;role&quot;&gt;Role&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;captain&lt;/li&gt;
+  &lt;li&gt;allies&lt;/li&gt;
+  &lt;li&gt;spy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TO DO LIST:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;整个流程过一遍&lt;/li&gt;
+  &lt;li&gt;设计数据库&lt;/li&gt;
+  &lt;li&gt;整体框架搭建&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;frontend&quot;&gt;FrontEnd&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Bootstrap&lt;/li&gt;
+  &lt;li&gt;AngularJs&lt;/li&gt;
+  &lt;li&gt;JQuery&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;backend&quot;&gt;BackEnd&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Spring&lt;/li&gt;
+  &lt;li&gt;Struts&lt;/li&gt;
+  &lt;li&gt;Hibernate&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;database&quot;&gt;Database&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MySql&lt;/li&gt;
+  &lt;li&gt;MongoDB&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
@@ -248,19 +292,6 @@ int main()
  </entry>
  
  <entry>
-   <title>Data Image Compression</title>
-   <link href="http://zhou-dong.github.io/2015/12/04/code"/>
-   <updated>2015-12-04T00:00:00-06:00</updated>
-   <id>http://zhou-dong.github.io/2015/12/04/code</id>
-   <content type="html">&lt;p&gt;Huffman coding&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
-&lt;/ul&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Data Stream Analyze</title>
    <link href="http://zhou-dong.github.io/2015/12/04/code"/>
    <updated>2015-12-04T00:00:00-06:00</updated>
@@ -324,6 +355,19 @@ function Client(server, conn){
 
 &lt;/code&gt;
 &lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Data Image Compression</title>
+   <link href="http://zhou-dong.github.io/2015/12/04/code"/>
+   <updated>2015-12-04T00:00:00-06:00</updated>
+   <id>http://zhou-dong.github.io/2015/12/04/code</id>
+   <content type="html">&lt;p&gt;Huffman coding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
@@ -6473,6 +6517,15 @@ Precision = 1
   &lt;/li&gt;
 &lt;/ol&gt;
 
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Western Travel Cost</title>
+   <link href="http://zhou-dong.github.io/2015/03/16/travel-cost"/>
+   <updated>2015-03-16T00:00:00-05:00</updated>
+   <id>http://zhou-dong.github.io/2015/03/16/travel-cost</id>
+   <content type="html">
 </content>
  </entry>
  

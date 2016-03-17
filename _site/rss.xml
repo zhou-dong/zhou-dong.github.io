@@ -5,14 +5,58 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2016-02-24T21:57:05-06:00</lastBuildDate>
-        <pubDate>2016-02-24T21:57:05-06:00</pubDate>
+        <lastBuildDate>2016-03-16T09:33:06-05:00</lastBuildDate>
+        <pubDate>2016-03-16T09:33:06-05:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
                 <title>GO WEST</title>
                 <description>
+&lt;p&gt;from troy to uhta!&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;抵抗组织&lt;/h3&gt;
+
+&lt;h2 id=&quot;player&quot;&gt;Player&lt;/h2&gt;
+
+&lt;h3 id=&quot;role&quot;&gt;Role&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;captain&lt;/li&gt;
+  &lt;li&gt;allies&lt;/li&gt;
+  &lt;li&gt;spy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TO DO LIST:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;整个流程过一遍&lt;/li&gt;
+  &lt;li&gt;设计数据库&lt;/li&gt;
+  &lt;li&gt;整体框架搭建&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;frontend&quot;&gt;FrontEnd&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Bootstrap&lt;/li&gt;
+  &lt;li&gt;AngularJs&lt;/li&gt;
+  &lt;li&gt;JQuery&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;backend&quot;&gt;BackEnd&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Spring&lt;/li&gt;
+  &lt;li&gt;Struts&lt;/li&gt;
+  &lt;li&gt;Hibernate&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;database&quot;&gt;Database&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MySql&lt;/li&gt;
+  &lt;li&gt;MongoDB&lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/2016/02/24/go-west</link>
                 <guid>http://zhou-dong.github.io/2016/02/24/go-west</guid>
@@ -246,19 +290,6 @@ int main()
         </item>
 
         <item>
-                <title>Data Image Compression</title>
-                <description>&lt;p&gt;Huffman coding&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-                <link>http://zhou-dong.github.io/2015/12/04/code</link>
-                <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
-                <pubDate>2015-12-04T00:00:00-06:00</pubDate>
-        </item>
-
-        <item>
                 <title>Data Stream Analyze</title>
                 <description>&lt;pre&gt;
 &lt;code&gt;
@@ -319,6 +350,19 @@ function Client(server, conn){
 
 &lt;/code&gt;
 &lt;/pre&gt;
+</description>
+                <link>http://zhou-dong.github.io/2015/12/04/code</link>
+                <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
+                <pubDate>2015-12-04T00:00:00-06:00</pubDate>
+        </item>
+
+        <item>
+                <title>Data Image Compression</title>
+                <description>&lt;p&gt;Huffman coding&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Are all pixels equal?&lt;/li&gt;
+&lt;/ul&gt;
 </description>
                 <link>http://zhou-dong.github.io/2015/12/04/code</link>
                 <guid>http://zhou-dong.github.io/2015/12/04/code</guid>
@@ -6472,6 +6516,15 @@ Precision = 1
                 <link>http://zhou-dong.github.io/machine/learning/svm/2015/03/18/SVM</link>
                 <guid>http://zhou-dong.github.io/machine/learning/svm/2015/03/18/SVM</guid>
                 <pubDate>2015-03-18T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Western Travel Cost</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2015/03/16/travel-cost</link>
+                <guid>http://zhou-dong.github.io/2015/03/16/travel-cost</guid>
+                <pubDate>2015-03-16T00:00:00-05:00</pubDate>
         </item>
 
         <item>
