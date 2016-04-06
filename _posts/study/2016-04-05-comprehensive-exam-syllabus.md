@@ -168,3 +168,6 @@ Gantt Chart:
 
 
 #### Page replacement algorithms
+
+
+http://spectrum.troy.edu/csclub/SampleCompExam.pdf
