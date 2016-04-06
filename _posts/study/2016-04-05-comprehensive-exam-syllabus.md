@@ -69,3 +69,47 @@ Process can have one of the following five states at a time.
 
 
 #### CPU scheduling
+
+
+#### FCFS
+
+
+#### SJF
+
+#### Priority scheduling
+
+
+#### RR scheduling
+
+
+#### Process synchronization
+
+
+#### Critical section
+
+
+#### Semaphore
+
+
+#### Deadlock
+
+
+#### Starvation
+
+
+#### Dinning philosopher
+
+
+#### Monitor
+
+
+#### Deadlock prevention and avoidance
+
+
+#### Paging
+
+
+#### Virtual memory
+
+
+#### Page replacement algorithms
