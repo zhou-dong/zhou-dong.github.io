@@ -105,6 +105,19 @@ Gantt Chart:
 
 #### Priority scheduling
 
+|Process| Burst Time | Priority | Waiting Time |
+|:---:|:---:|:---:| :---: |
+| p1 | 10 | 3 | 6 |
+| p2 | 1 | 1 | 0  |
+| p3 | 2 | 4 | 16 |
+| p4 | 1 | 5 | 18 |
+| p5 | 5 | 2 | 1  |
+
+Gantt Chart:
+
+| p2 | p5 | p1 | p3 | p4 |
+| ---: | ---: | ---: | ---: | ---: |
+| ---1 | ---6 | ---16 | ---18 | --- 19 |
 
 #### RR scheduling (Round-robin scheduling)
 
