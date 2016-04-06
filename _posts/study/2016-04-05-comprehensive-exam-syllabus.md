@@ -121,6 +121,24 @@ Gantt Chart:
 
 #### RR scheduling (Round-robin scheduling)
 
+|Process| Arrival Time | Burst Time | Round1 | Round2 | Round3 |
+|:---:|:---:|:---:| ---:| ---:| ---: |
+| p1 | 0 | 4 | \| 2 | 0 | - |
+| p2 | 1 | 5 | \| 3 | 1 | 0 |
+| p3 | 2 | 6 | \| 4 | 2 | 0 |
+| p4 | 4 | 1 | \| 0 | - | - |
+| p5 | 6 | 3 | \| 1 | 0 | - |
+| p6 | 7 | 2 | \| 0 | - | - |
+
+Time quantum = 2
+
+Request Queue p1-p2-p3-p1-p4-p2-p5-p3-p6-p2-p5-p3
+
+Gantt Chart:
+
+| p1   | p2   | p3   | p1   | p4   | p2   | p5    | p3    | p6    | p2    | p5     | p3     |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---:  | ---:  | ---:  | ---:  | ---:   | ---:   |
+| ---2 | ---4 | ---6 | ---8 | ---9 | ---11 | ---13| ---15 | ---17 | ---18 | --- 19 | --- 21 |
 
 #### Process synchronization
 
