@@ -65,21 +65,48 @@ Process can have one of the following five states at a time.
 
 #### Inter-process communication
 
+
 #### Thread
 
 
 #### CPU scheduling
 
 
-#### FCFS
+#### FCFS (First Come First Served)
 
+|Process| Burst Time | Arrival Time | Waiting Time |
+|:---:|:---:|:---:| :---: |
+| p1 | 5 | 0 | 0        |
+| p2 | 4 | 2 | 3 (5-2)  | 
+| p3 | 3 | 4 | 5 (9-4)  |
+| p4 | 6 | 6 | 6 (12-6) |
 
-#### SJF
+Gantt Chart:
+
+| p1 | p2 | p3 | p4 |
+| ---: | ---: | ---: | ---: |
+| ---5 | ---9 | ---12 | ---18 |
+
+#### SJF (Non-Preemptive Shortest Job First)
+
+|Process| Arrival Time | Burst Time | Waiting Time | Turnaround Time |
+|:---:|:---:|:---:| :---: | :---: |
+| p1 | 0 | 5 | 0  | 5 |
+| p2 | 2 | 3 | 6  | 9 |
+| p3 | 4 | 2 | 1  | 3 |
+| p4 | 6 | 4 | 5  | 9 |
+| p5 | 7 | 1 | 0  | 1 |
+
+Gantt Chart:
+
+| p1 | p3 | p5 | p2 | p4 |
+| ---: | ---: | ---: | ---: | ---: |
+| ---5 | ---7 | ---8 | ---11 | --- 15 |
 
 #### Priority scheduling
 
 
-#### RR scheduling
+#### RR scheduling (Round-robin scheduling)
 
 
 #### Process synchronization
@@ -106,10 +133,7 @@ Process can have one of the following five states at a time.
 #### Deadlock prevention and avoidance
 
 
-#### Paging
-
-
-#### Virtual memory
+#### Paging Virtual memory
 
 
 #### Page replacement algorithms
