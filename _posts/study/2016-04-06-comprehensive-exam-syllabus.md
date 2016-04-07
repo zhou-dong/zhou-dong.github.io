@@ -8,6 +8,7 @@ tagline: Analysis of Algorithm, Computer Organization and Architecture, Operatin
 
 ### CPI
 
+In computer architecture, cycles per instruction (aka clock cycles per instruction, clocks per instruction, or CPI) is one aspect of a processor's performance: the average number of clock cycles per instruction for a program or program fragment. It is the multiplicative inverse of instructions per cycle.
 
 ### Operating System
 
