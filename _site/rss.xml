@@ -5,10 +5,19 @@
         <description>Dong - Dong Zhou</description>
         <link>http://zhou-dong.github.io</link>
         <link>http://zhou-dong.github.io</link>
-        <lastBuildDate>2016-03-16T09:33:06-05:00</lastBuildDate>
-        <pubDate>2016-03-16T09:33:06-05:00</pubDate>
+        <lastBuildDate>2016-04-05T20:56:05-05:00</lastBuildDate>
+        <pubDate>2016-04-05T20:56:05-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Comprehensive Exam Syllabus</title>
+                <description>
+</description>
+                <link>http://zhou-dong.github.io/2016/04/05/comprehensive-exam-syllabus</link>
+                <guid>http://zhou-dong.github.io/2016/04/05/comprehensive-exam-syllabus</guid>
+                <pubDate>2016-04-05T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>GO WEST</title>
@@ -3018,6 +3027,7 @@ J_{(w_0, \ w_1)} = w_0^2 + 2w_0w_1x + w_1^2x^2 - 2w_0y - 2w_1xy - y^2
   &lt;li&gt;usereleven 24876&lt;/li&gt;
   &lt;li&gt;usertwelve 567432&lt;/li&gt;
   &lt;li&gt;userthirteen 13249&lt;/li&gt;
+  &lt;li&gt;userfourteen 09178&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -6521,6 +6531,91 @@ Precision = 1
         <item>
                 <title>Western Travel Cost</title>
                 <description>
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Items&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Price&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Location&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Date&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;房租&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$265.15&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Online&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/03/2016 00:00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GAS&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$27.75&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;FOX FUELS DALLAS, TX&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/06/2016 05:18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GAS&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$29.35&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;LOVES#614&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/06/2016 18:10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Walmart&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$12.40&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;PAGE&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/07/2016 20:43&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GAS&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$15.40&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;701 Tunnel Rd, Page, Arizona&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/08/2016 09:42&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;中餐&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$39.44&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Mandarin GOURMET, PAGE&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/09/2016 11:54&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Walmart&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$15.08&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;PAGE&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/10/2016 19:27&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GAS&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$35.38&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SAMCO KANAB, UT&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/11/2016 09:31&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GAS&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$23.16&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SHELL US 89 &amp;amp; HWY 9 MT CARMEL, UT&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/12/2016 12:10&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Walmart&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$6.06&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ALBUQUERQUE&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/13/2016 20:54&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GAS&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$26.35&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;没有发票，手机拍照&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/14/2016 11:24&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GAS&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;$32.74&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;SELMA HWY MARATHON&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;03/14/2016 19:43&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
 </description>
                 <link>http://zhou-dong.github.io/2015/03/16/travel-cost</link>
                 <guid>http://zhou-dong.github.io/2015/03/16/travel-cost</guid>
