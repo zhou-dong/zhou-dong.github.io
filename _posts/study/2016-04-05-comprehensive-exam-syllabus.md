@@ -4,6 +4,11 @@ title: Comprehensive Exam Syllabus
 tagline: Analysis of Algorithm, Computer Organization and Architecture, Operating System
 ---
 
+### Computer Orgination and Architecture
+
+### CPI
+
+
 ### Operating System
 
 #### Process
