@@ -6,9 +6,17 @@ tagline: Analysis of Algorithm, Computer Organization and Architecture, Operatin
 
 ### Computer Orgination and Architecture
 
-### CPI
+#### CPI
 
 In computer architecture, cycles per instruction (aka clock cycles per instruction, clocks per instruction, or CPI) is one aspect of a processor's performance: the average number of clock cycles per instruction for a program or program fragment. It is the multiplicative inverse of instructions per cycle.
+
+#### MIPS
+
+Millions of instructions per second
+
+#### Pipeline
+
+Pipelining is an implementation technique where multiple instructions are overlapped in execution. The computer pipeline is divided in stages. Each stage completes a part of an instruction in parallel.
 
 ### Operating System
 
