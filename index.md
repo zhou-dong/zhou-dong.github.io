@@ -8,6 +8,18 @@ tagline: 读书、旅行、坚定、自信
 
 #### 2016
 
+OTHER:
+
+- 学而不思则罔，思而不学则殆。
+- He who learns but does not think, is lost! He who thinks but does not learn is in great danger!
+
+- 不闻不若闻之，闻之不若见之，见之不若知之，知之不若行之，学至于行之而止矣。(《荀子·儒效》)
+- "What I hear, I forget. What I see, I remember. What I do, I understand." - Xunzi
+
+罗辑思维:
+
+- 人是悬挂在由他们自己编织的意义之网中的动物。- 韦伯
+
 什么叫可悲：
 
 - 用自己战术上的勤奋，掩盖自己战略上的懒惰！
