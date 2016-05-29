@@ -8,7 +8,7 @@ tagline: 读书、旅行、坚定、自信
 
 #### 2016
 
-OTHER:
+Other:
 
 - 学而不思则罔，思而不学则殆。
 - He who learns but does not think, is lost! He who thinks but does not learn is in great danger!
