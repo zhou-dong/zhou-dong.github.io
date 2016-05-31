@@ -5,6 +5,11 @@ title: GO WEST
 ---
 {% include JB/setup %}
 
+- National Gallery of Art
+- 国会山
+- 方尖碑
+- 白宫
+
 1. 大都会艺术博物馆
 2. 纽约现代艺术博物馆
 3. 所罗门.R.古根海姆美术馆
