@@ -8,6 +8,9 @@ tagline: 读书、旅行、坚定、自信
 
 #### 2016
 
+- 过程即是奖励。- 乔布斯
+- The journey is the reward. - Steve Jobs
+
 理论是灰色的，生命之树常青！--- 歌德《浮士德》
 
 Other:
