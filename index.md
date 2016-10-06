@@ -8,10 +8,16 @@ tagline: 读书、旅行、坚定、自信
 
 #### 201
 
+“In any given moment we have two options: to step forward into growth or to step back into safety.”
+
+— Abraham Maslow
+
 从我自己的个人经历来看：
+
 - 我所受的教育和周围环境的影响都在告诉我：我是一个普通人
 
 突然觉得成长至少应该包这些：
+
 - 有勇气追求自己想要的生活
 - 有能力追求自己想要的生活
 - 有信心做最好的自己
