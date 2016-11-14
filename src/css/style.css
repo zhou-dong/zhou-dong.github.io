@@ -1,0 +1,27 @@
+.jumbotron h1, .jumbotron .h1{
+	font-size: 28px;
+}
+
+.jumbotron{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.col-center-block {  
+    float: none;  
+    display: block;  
+    margin-left: auto;  
+    margin-right: auto;  
+} 
+
+h1 span {
+	vertical-align: middle;
+}
+
+.tip-number {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0 10px;
+  margin-right: 10px;
+  display: inline-block;
+}

@@ -6,9 +6,13 @@ var Jumbotron = React.createClass({
 		return (
 			<div className="jumbotron">
 		     	<div className="container">
-		        	<h1>{this.props.title}</h1>
+		        	<h1>
+		        		<span className="tip-number">
+							453   
+						</span>
+		        		{this.props.title}
+		        	</h1>
 		        	<p>{this.props.content}</p>
-		        	<p><a className="btn btn-primary btn-lg" href="{this.props.link}" role="button">Learn more &raquo;</a></p>
 		      	</div>
 		    </div>
 		) ;

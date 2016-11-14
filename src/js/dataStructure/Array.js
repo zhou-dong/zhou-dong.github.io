@@ -3,10 +3,9 @@ var Dispatcher = require('flux').Dispatcher ;
 var assign = require('object-assign');
 var EventEmitter = require('events').EventEmitter;
 
-var dispatcher = new Dispatcher() ;
-
 var store = assign({}, EventEmitter.prototype, {items:[]}) ;
 
+var dispatcher = new Dispatcher() ;
 dispatcher.register(function(eventName){
 	if(eventName === 'change'){
 		store.emit('change');
