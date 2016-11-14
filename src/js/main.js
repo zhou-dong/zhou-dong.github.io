@@ -16,11 +16,44 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var AppAPI = require('./utils/appAPI.js');
 
-var i = 0 ;
+var a = [1,2,3,4]
 
-for(i = 0 ; i < 10 ; i++){
-	array.add(i);
-}
+array.init(a) ; 
+
+var sum = array.sum();
+
+var min = array.min() ;
+
+var len = array.length() ;
+
+
+console.log(array.sum()) ;
+console.log(array.min()) ;
+console.log(array.length()) ;
+
+console.log(sum - min*len) ;
+
+console.log(array.maxIndex()) ;
+console.log(array.minIndex()) ;
+
+var View = React.createClass({
+	getInitialState: function(){
+		var self = this;
+		array.store.on('change', function(){
+			self.setState({data: array.store.items}) ;
+		});
+		return {data: array.store.items} ;
+	},
+	render: function(){
+		return (
+			<div className="btn-group" role="group" aria-label="stack">{
+				this.state.data.map(function(element, index){
+					return ( <button type="button" key={index} className="btn btn-default">{element}</button>);
+				})
+			}</div>
+		) ;
+	}
+});
 
 ReactDOM.render(
 	<App />,
@@ -28,7 +61,7 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-	<array.view />,
+	<View />,
 	document.getElementById('array')
 );
 

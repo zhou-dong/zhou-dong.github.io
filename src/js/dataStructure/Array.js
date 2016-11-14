@@ -28,29 +28,72 @@ var remove = function(index){
 	dispatcher.dispatch('change') ;
 }
 
-var View = React.createClass({
-	getInitialState: function(){
-		var self = this;
-		store.on('change', function(){
-			self.setState({data: store.items}) ;
-		});
-		return {data: store.items} ;
-	},
-	render: function(){
-		return (
-			<div className="btn-group" role="group" aria-label="stack">{
-				this.state.data.map(function(element){
-					return ( <button type="button" key={element} className="btn btn-default">{element}</button>);
-				})
-			}</div>
-		) ;
+var init = function(items){
+	for(var i = 0 ; i < items.length; i++){
+		this.add(items[i]);
 	}
-});
+	dispatcher.dispatch('change') ;
+}
+
+var sum = function(){
+	return store.items.reduce(function(a,b){return a+b;}, 0) ;
+}
+
+var min = function(){
+	return Math.min.apply(null, store.items) ;
+}
+
+var length = function(){
+	return store.items.length;
+}
+
+var max = function(){
+	return Math.max.apply(null, store.items);
+}
+
+var maxIndex = function(){
+	var temp = store.items;
+	if(temp.length === 0){
+		return -1; 
+	}
+	var max = temp[0] ;
+	var maxIndex = 0;
+	for(var i = 1; i <temp.length; i++){
+		if(temp[i] > max){
+			max = temp[i] ;
+			maxIndex = i ;
+		}
+	}
+	return maxIndex;
+}
+
+var minIndex = function(){
+	var temp = store.items ;
+	if(temp.length === 0){
+		return -1;
+	}
+	var min = temp[0];
+	var minIndex = 0 ;
+	for(var i = 1 ; i<temp.length; i++){
+		if(temp[i] < min){
+			min = temp[i] ;
+			minIndex = i;
+		}
+	}
+	return minIndex ;
+}
 
 var array = new Object() ;
-array.view = View ;
+array.store = store ;
 array.add = add ;
 array.remove = remove ;
 array.update = update ;
+array.init = init ;
+array.sum = sum;
+array.min = min;
+array.max = max;
+array.maxIndex = maxIndex ;
+array.minIndex = minIndex ;
+array.length = length ;
 
 module.exports = array ;
