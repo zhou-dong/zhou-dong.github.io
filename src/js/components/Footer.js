@@ -5,18 +5,25 @@ var Footer = React.createClass({
 	getInitialState: function(){
 		return {
 			year: new Date().getFullYear(),
-			company: 'DongZhou'
+			link: 'http://zhou-dong.github.io/',
+			github: 'https://github.com/zhou-dong' 
 		} ;
 	},
 
 	render: function(){
 		return (
-			<div>
-				<hr />
-				<footer>
-					<p>&copy; {this.state.year} {this.state.company}, Inc.</p>
-				</footer>
-			</div>
+			<footer className='footer'>
+				<div className='container'>
+					<ul>
+						<li><a href={this.state.link}>Home</a></li>
+						<li><a href={this.state.link}>About</a></li>
+						<li className='github'>
+							<a href={this.state.github}><img src='./img/github.svg'/></a>
+						</li>
+					</ul>
+					
+				</div>
+			</footer>
 		);
 	}
 

@@ -1,3 +1,53 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: "Roboto", Helvetica, Aria, sans-serif;
+}
+
+.footer {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #767676;
+    border-top: 1px solid #eee;
+}
+
+.footer ul, footer ul {
+    max-width: 900px;
+    width: 100%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0px;
+    text-align: center;
+}
+
+footer ul li, .footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul .github img {
+    width: 20px;
+    height: 20px;
+    margin: -4px;
+}
+
+footer ul li a {
+    color: #000;
+    font-size: 13px;
+}
+
+code {
+  font-size: 80%;
+}
+
 .jumbotron h1, .jumbotron .h1{
 	font-size: 28px;
 }
@@ -5,14 +55,9 @@
 .jumbotron{
 	padding-top: 0px;
 	padding-bottom: 0px;
+	margin-bottom: 0px;
+	background-color: white;
 }
-
-.col-center-block {  
-    float: none;  
-    display: block;  
-    margin-left: auto;  
-    margin-right: auto;  
-} 
 
 h1 span {
 	vertical-align: middle;
@@ -21,7 +66,22 @@ h1 span {
 .tip-number {
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
-  padding: 0 10px;
+  padding: 10px 10px;
   margin-right: 10px;
   display: inline-block;
+}
+
+#array {
+	text-align:center;
+}
+
+.solution-tag {
+    font-size: 22px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 41px;
+}
+
+.row .title{
+	line-height: 34px;
 }

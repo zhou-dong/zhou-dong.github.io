@@ -18,6 +18,8 @@ gulp.task('copy', function(){
 		.pipe(gulp.dest('dist/css'));
 	gulp.src('src/js/vendors/*.*')
 		.pipe(gulp.dest('dist/js'));
+	gulp.src('src/img/*.*')
+		.pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('default', ['browserify', 'copy'], function(){
