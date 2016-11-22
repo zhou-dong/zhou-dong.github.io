@@ -3,7 +3,7 @@ layout: page
 title: Study List
 tagline: -- Just do it, it will pay!
 ---
-{% include JB/setup %}
+
 
 ### Program Language
 - C

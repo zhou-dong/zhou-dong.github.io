@@ -6,7 +6,7 @@ categories:
 
 ---
 
-{% include JB/setup %}
+
 
 1. Simultaneously inferring phrases and topics
     - Bigram Topic Model

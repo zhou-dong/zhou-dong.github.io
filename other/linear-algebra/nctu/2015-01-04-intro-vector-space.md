@@ -4,7 +4,7 @@ title: Introduction of Linear Algebra and Vector space
 tagline:
 categories: linear-algebra vector-space
 ---
-{% include JB/setup %}
+
 
 
 #### Definiton of Linear algebra

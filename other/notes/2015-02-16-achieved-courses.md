@@ -3,7 +3,7 @@ layout: page
 title: Achieved Courses
 tagline:
 ---
-{% include JB/setup %}
+
 
 ### Online Courses
 

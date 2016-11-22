@@ -4,7 +4,7 @@ title: Introduction of ML Course
 tagline: Theory Oriented 
 categories: machine-learning
 ---
-{% include JB/setup %}
+
 
 #### Study Informantion:
 - Begin with Basic knowledge and mixture of:

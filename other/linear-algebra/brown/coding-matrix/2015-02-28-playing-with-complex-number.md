@@ -5,7 +5,7 @@ tagline: Note three of Coding the Matrix
 categories: python matrix
 ---
 
-{% include JB/setup %}
+
 
 #### Complex number as points in the complex plane
 

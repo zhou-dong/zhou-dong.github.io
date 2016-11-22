@@ -3,7 +3,7 @@ layout: page
 title: QuickSort Performance
 tagline: QuickSort, Master Theorem
 ---
-{% include JB/setup %}
+
 
 #### Description of QuickSort:   
 1. Find a pivot.

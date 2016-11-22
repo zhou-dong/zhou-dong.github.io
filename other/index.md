@@ -4,7 +4,7 @@ title: Hi
 tagline: 读书、旅行、坚定、自信
 ---
 
-{% include JB/setup %}
+
 
 #### 2016
 

@@ -4,7 +4,7 @@ title: Linear and Nonlinear Classification
 tagline: 
 categories: machine-learning linear classification
 ---
-{% include JB/setup %}
+
 
 #### Linear Classification
 

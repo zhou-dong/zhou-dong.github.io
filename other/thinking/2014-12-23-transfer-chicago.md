@@ -3,7 +3,7 @@ layout: page
 title: First day in USA
 tagline: -- 感想和文明之光
 ---
-{% include JB/setup %}
+
 
 
 ### First arrived USA

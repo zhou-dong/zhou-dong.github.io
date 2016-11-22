@@ -3,7 +3,7 @@ layout: page
 title: Stuck in Dallas
 tagline: -- 塞翁失马
 ---
-{% include JB/setup %}
+
 
 
 ### Stuck in Dallas

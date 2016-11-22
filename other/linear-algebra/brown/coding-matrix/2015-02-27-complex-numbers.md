@@ -5,7 +5,7 @@ tagline: Note Two of Coding the Matrix
 categories: python matrix
 ---
 
-{% include JB/setup %}
+
 
 Solutions to $$ x^2 = -1 $$ ?  
 Mathematicians invented *i* to be one solution.

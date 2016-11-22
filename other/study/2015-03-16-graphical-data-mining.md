@@ -4,7 +4,7 @@ title: Neumann Kernal
 categories: Graphical Data Mining
 tagline: 
 ---
-{% include JB/setup %}
+
 
 
 Neumann Kernal

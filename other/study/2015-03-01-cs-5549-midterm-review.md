@@ -3,7 +3,7 @@ layout: page
 title: CS-5549 Midterm Review
 tagline: Sort method, Recursion, Dynamic Programming 
 ---
-{% include JB/setup %}
+
 
 ## Sorting Method
 

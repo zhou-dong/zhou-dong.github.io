@@ -3,7 +3,7 @@ layout: page
 title: HeapSort Performance
 tagline: HeapSort, Master Theorem
 ---
-{% include JB/setup %}
+
 
 #### Steps of HeapSort:  
 1. Create a CompleteBinaryTree Meanwhile heapify the tree.

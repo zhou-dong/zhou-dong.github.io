@@ -3,7 +3,7 @@ layout: page
 title: I am back
 tagline: --
 ---
-{% include JB/setup %}
+
 
 ### New life begin
 

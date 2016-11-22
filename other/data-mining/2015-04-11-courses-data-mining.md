@@ -6,7 +6,7 @@ categories: data-mining
 
 ---
 
-{% include JB/setup %}
+
 
 - Pattern Discovery in Data Mining
     1. A Brief Introduction to Data Mining

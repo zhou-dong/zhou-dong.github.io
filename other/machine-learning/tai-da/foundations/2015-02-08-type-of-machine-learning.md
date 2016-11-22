@@ -4,7 +4,7 @@ title: Machine Learning Type
 tagline: 
 categories: machine-learning
 ---
-{% include JB/setup %}
+
 
 #### Learning with Different Output Space
 1. **Binary Classification**

@@ -5,7 +5,7 @@ tagline:
 categories: coordinate
 ---
 
-{% include JB/setup %}
+
 
 #### 个人的理解：
 - 我自己的理解是，在同一个向量空间中，使用`不同的基底`来表示同一个`线性函数`或者`向量`。

@@ -5,7 +5,7 @@ tagline:
 categories: protein
 ---
 
-{% include JB/setup %}
+
 
 Protein Structure:
 

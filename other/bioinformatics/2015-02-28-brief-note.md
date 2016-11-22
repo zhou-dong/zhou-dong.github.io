@@ -3,7 +3,7 @@ layout: page
 title: CS-6649 Brief Note of Bioinformatics Project
 tagline: 
 ---
-{% include JB/setup %}
+
 
 1. [SciPy](http://www.scipy.org/)
     - Description: [SciPy](http://www.scipy.org/) (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering. Some core packages: 

@@ -4,7 +4,7 @@ title: Machine Learning with Other Fields
 tagline: Data Mining, Artifical Intelligence, Statistics
 categories: machine-learning
 ---
-{% include JB/setup %}
+
 
 ##### Definition of Machine Learning:
 **Use `data` to compute `hypothesis` $$g$$ that approximates `target` $$\ f$$**

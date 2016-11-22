@@ -4,7 +4,7 @@ title: Shell of Totem Router
 tagline: -- details of router.sh
 
 ---
-{% include JB/setup %}
+
 
 #### router.sh
 

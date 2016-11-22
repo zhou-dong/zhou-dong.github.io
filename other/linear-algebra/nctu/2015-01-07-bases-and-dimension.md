@@ -4,7 +4,7 @@ title: Basis and Dimension
 tagline:  
 categories: basis dimension
 ---
-{% include JB/setup %}
+
 
 #### Linearly dependent
 $$

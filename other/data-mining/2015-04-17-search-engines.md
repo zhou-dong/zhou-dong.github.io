@@ -6,7 +6,7 @@ categories: data-mining
 
 ---
 
-{% include JB/setup %}
+
 
 ### Vector Space Model
 

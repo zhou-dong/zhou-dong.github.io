@@ -5,7 +5,7 @@ tagline:
 categories: matric vector linear set gaussian
 ---
 
-{% include JB/setup %}
+
 
 **零矩阵 != 零矩阵**
 

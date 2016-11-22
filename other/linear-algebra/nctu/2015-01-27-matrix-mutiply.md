@@ -3,7 +3,7 @@ layout: page
 title: Matrices
 tagline: Matrix Multiply, Matrix Transpose 
 ---
-{% include JB/setup %}
+
 
 #### Definition:  
 $$

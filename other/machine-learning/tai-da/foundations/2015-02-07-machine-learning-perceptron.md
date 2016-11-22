@@ -4,7 +4,7 @@ title: Perceptron Hypothesis
 tagline: Machine Learning, Linear Classifier, Perceptron Learning Algorithm 
 categories: machine-learning perceptron
 ---
-{% include JB/setup %}
+
 
 #### Lecture 1: The learning problem
 - $$ A $$ takes $$ D $$ and $$ H $$ to get $$ g $$

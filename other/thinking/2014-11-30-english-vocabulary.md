@@ -3,7 +3,7 @@ layout: page
 title: English Vocabulary Thinking
 tagline: -- 背单词的过程也是一个了解西方文化的过程。
 ---
-{% include JB/setup %}
+
 
 #### 不只是长篇的文学作品，`文字`或者`单词`才是一个名族文化的浓缩和核心。如：
 

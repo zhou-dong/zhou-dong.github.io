@@ -5,7 +5,7 @@ tagline:
 categories: elementary matrix
 ---
 
-{% include JB/setup %}
+
 
 #### Elementary Matrix operations and Systems of Linear Equations
 $$ A_{m \times n} x_{n \times 1} = b_{m \times 1} $$

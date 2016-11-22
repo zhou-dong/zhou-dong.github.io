@@ -6,7 +6,7 @@ categories: apriori Eclat fpgrowth
 
 ---
 
-{% include JB/setup %}
+
 
 ### Apriori
 

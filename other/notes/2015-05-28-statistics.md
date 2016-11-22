@@ -3,7 +3,7 @@ layout: page
 title: Statistics
 
 ---
-{% include JB/setup %}
+
 
 ## 统计学习方法笔记
 

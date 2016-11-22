@@ -5,7 +5,7 @@ tagline:
 
 ---
 
-{% include JB/setup %}
+
 
 
 Activity: Like JavaScript

@@ -3,7 +3,7 @@ layout: page
 title: Machine Learning
 tagline: -- Just do it, it will pay!
 ---
-{% include JB/setup %}
+
 
 
 [UFLDL](http://ufldl.stanford.edu/wiki/index.php/UFLDL_Tutorial)

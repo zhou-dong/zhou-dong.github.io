@@ -4,7 +4,7 @@ title: Revised Course
 tagline: Power of Three
 categories: machine-learning
 ---
-{% include JB/setup %}
+
 
 #### Three Related Fields 
 1. Data mining

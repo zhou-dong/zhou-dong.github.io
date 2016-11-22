@@ -4,7 +4,7 @@ title: Technology From Computer Architecture to Cloud Computing
 tagline:
 
 ---
-{% include JB/setup %}
+
 
 #### ABSTRACT
 

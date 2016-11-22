@@ -3,7 +3,7 @@ layout: page
 title: Shell of Totem Appserver
 tagline: -- details of  appserer.sh
 ---
-{% include JB/setup %}
+
 
 #### appserver.sh
 

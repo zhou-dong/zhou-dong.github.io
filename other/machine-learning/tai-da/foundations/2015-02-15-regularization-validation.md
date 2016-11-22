@@ -4,7 +4,7 @@ title: Regularization, Validation
 tagline:
 categories: regularization validation 
 ---
-{% include JB/setup %}
+
 
 ### Regularization
 

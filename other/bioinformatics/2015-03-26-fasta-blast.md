@@ -4,7 +4,7 @@ title: FASTA AND BLAST
 tagline: 
 categories: FASTA BLAST bioinformatics
 ---
-{% include JB/setup %}
+
 
 Pairwise alignment
 

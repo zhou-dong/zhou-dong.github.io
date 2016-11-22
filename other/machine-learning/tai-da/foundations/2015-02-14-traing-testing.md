@@ -4,7 +4,7 @@ title: Training, Generaliztion, VC
 tagline: Effective Lines, Dichotomy, VC Dimension
 categories: machine-learning vc-dimension
 ---
-{% include JB/setup %}
+
 
 #### 1. Traing versus Testing
 

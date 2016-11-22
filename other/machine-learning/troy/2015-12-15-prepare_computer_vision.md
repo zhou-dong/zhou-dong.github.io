@@ -5,7 +5,7 @@ categories: machine-learning
 
 ---
 
-{% include JB/setup %}
+
 
 Linear Algebra Resources
 

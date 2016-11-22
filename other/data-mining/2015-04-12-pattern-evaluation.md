@@ -6,7 +6,7 @@ categories:
 
 ---
 
-{% include JB/setup %}
+
 
 在同一个系统的中：
 

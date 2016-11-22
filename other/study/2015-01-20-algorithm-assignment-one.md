@@ -3,7 +3,7 @@ layout: page
 title: Algorithm Assignment One
 tagline: Class 5549, Recursion, Big O Notation, Logarithm
 ---
-{% include JB/setup %}
+
 
 #### Notations:   
  - $$ O $$ : Less than (Worst Situation)

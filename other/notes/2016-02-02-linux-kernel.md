@@ -4,7 +4,7 @@ title: Add System Call In Linux (Elementary)
 category: Linux
 
 ---
-{% include JB/setup %}
+
 
 - Machine: Apple Mac
 - OS: OS X EL Capitan

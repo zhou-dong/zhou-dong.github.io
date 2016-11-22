@@ -3,7 +3,7 @@ layout: page
 title: Notes for people-to-people
 tagline: 
 ---
-{% include JB/setup %}
+
 
 #### Natural Language Processing:
 1. Stop word(should we eliminate stop word)

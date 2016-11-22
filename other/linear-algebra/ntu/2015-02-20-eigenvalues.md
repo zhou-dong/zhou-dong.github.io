@@ -4,7 +4,7 @@ title: Eigenvalues, Eigenvectors, and Diagonaliztion
 categories: eigenvalue eigenvector
 ---
 
-{% include JB/setup %}
+
 
 (A - XI_n)v = 0
 

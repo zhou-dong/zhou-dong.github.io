@@ -5,7 +5,7 @@ tagline:
 
 ---
 
-{% include JB/setup %}
+
 
 Greddy Algorithm
 

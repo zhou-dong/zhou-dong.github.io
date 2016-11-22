@@ -3,7 +3,7 @@ layout: page
 title: Western Travel Cost
 tagline:
 ---
-{% include JB/setup %}
+
 
 | Items          | Price         | Location | Date  |
 | :------------- | -------------:| :-----:  | -----:|

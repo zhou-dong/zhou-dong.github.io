@@ -4,7 +4,7 @@ title: Orthogonality
 tagline:
 ---
 
-{% include JB/setup %}
+
 
 正交，也就是在二维空间或者三维空间的垂直
 

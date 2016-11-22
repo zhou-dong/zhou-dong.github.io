@@ -4,7 +4,7 @@ title: Three Learning Principles
 tagline:
 categories: machine-learning 
 ---
-{% include JB/setup %}
+
 
 #### Occam's Razor
 

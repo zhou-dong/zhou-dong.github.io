@@ -4,7 +4,7 @@ title: What is Machine Learning
 tagline: 
 categories: machine-learning
 ---
-{% include JB/setup %}
+
 
 
 #### Machine Learning: acquiring skill

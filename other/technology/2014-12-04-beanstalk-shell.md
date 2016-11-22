@@ -4,7 +4,7 @@ title: Shell of Totem Beanstalk
 tagline: -- details of beanstalk.sh
 
 ---
-{% include JB/setup %}
+
 
 #### start.sh
 <pre><code class="Bash">

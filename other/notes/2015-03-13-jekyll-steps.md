@@ -4,7 +4,7 @@ title: Jekyll Steps
 tagline:
 paination : 7
 ---
-{% include JB/setup %}
+
 
 
 Create an jekyll project:

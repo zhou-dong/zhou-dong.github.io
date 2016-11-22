@@ -4,7 +4,7 @@ title: Bioinformatics
 tagline: Introduction Amino Protein Database Nucleotide
 categories: bioinformatics
 ---
-{% include JB/setup %}
+
 
 Analysis of: 
 

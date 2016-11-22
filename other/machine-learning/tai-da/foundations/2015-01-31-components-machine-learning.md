@@ -4,7 +4,7 @@ title: Compontents of Machine Learning
 tagline: Basic Notation, Hypothsis
 categories: machine-learning
 ---
-{% include JB/setup %}
+
 
 #### Basic Notations:
 - input: $$ x \in X$$ (customer application)

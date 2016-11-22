@@ -5,7 +5,7 @@ tagline:
 
 ---
 
-{% include JB/setup %}
+
 
 1. Dong's Question: Do I need have the right to use the AWS of PHINet application?
     - Richard suggested Dong should has him own AWS test account.

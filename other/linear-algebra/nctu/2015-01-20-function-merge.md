@@ -4,7 +4,7 @@ title: Function Merge
 tagline: Ordered Basis, Matrix Repretation
 categories: basis
 ---
-{% include JB/setup %}
+
 
 #### Ordered Basis
 $$ \beta $$ is an `ordered basis` for V, which means that: 

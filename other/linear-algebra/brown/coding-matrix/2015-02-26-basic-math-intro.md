@@ -5,7 +5,7 @@ tagline: Note One of Coding the Matrix
 categories: matrix python
 ---
 
-{% include JB/setup %}
+
 
 #### Set terminology and Notation
 

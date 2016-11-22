@@ -5,7 +5,7 @@ tagline:
 categories: matrix
 ---
 
-{% include JB/setup %}
+
 
 对角矩阵： (diagonal matrix)
 
