@@ -1,14 +1,10 @@
-var React = require('react');
+import React from "react";
+import Helmet from "react-helmet";
 
-var Header = React.createClass({
-
-	render: function(){
-
-		return (
-			<div> good 11111</div>
-		);
-	}
-
-}) ;
-
-module.exports = Header;
+export default function Application(){
+	return (
+		<div className="application">
+			<Helmet title="Index page"/>
+		</div>
+	);
+}

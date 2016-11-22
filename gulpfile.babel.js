@@ -1,25 +1,29 @@
 var gulp = require('gulp');
+var babel = require('gulp-babel');
 var browserify = require('browserify');
 var reactify = require('reactify'); // Converts jsx to js
 var source = require('vinyl-source-stream'); // Converts string to a stream
 
 gulp.task('browserify', function(){
-	browserify('./src/js/main.js')
+	browserify('./src/js/pages/index.js')
+		.transform("babelify", {presets: ["es2015", "react"]})	
 		.transform('reactify')
 		.bundle()
-		.pipe(source('main.js'))
-		.pipe(gulp.dest('dist/js'));
+		.pipe(source('index.js'))
+		.pipe(gulp.dest('./js'));
 });
 
 gulp.task('copy', function(){
 	gulp.src('src/index.html')
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('.'));
 	gulp.src('src/css/*.*')
-		.pipe(gulp.dest('dist/css'));
+		.pipe(gulp.dest('./css'));
 	gulp.src('src/js/vendors/*.*')
-		.pipe(gulp.dest('dist/js'));
+		.pipe(gulp.dest('./js'));
 	gulp.src('src/img/*.*')
-		.pipe(gulp.dest('dist/img'));
+		.pipe(gulp.dest('./img'));
+	gulp.src('src/fonts/*.*')
+		.pipe(gulp.dest('./fonts'));
 });
 
 gulp.task('default', ['browserify', 'copy'], function(){

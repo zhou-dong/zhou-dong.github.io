@@ -3,7 +3,7 @@ var Header = require('./components/Header');
 var Footer = require('./components/Footer');
 var Jumbotron = require('./components/Jumbotron');
 
-var NavBar = require('./components/NavBar');
+import NavBar from './components/NavBar';
 var array = require('./dataStructure/Array') ;
 
 var React = require('react');
