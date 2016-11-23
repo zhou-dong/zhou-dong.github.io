@@ -18,7 +18,7 @@ var Footer = React.createClass({
 						<li><a href={this.state.link}>Home</a></li>
 						<li><a href={this.state.link}>About</a></li>
 						<li className='github'>
-							<a href={this.state.github}><img src='./img/github.svg'/></a>
+							<a href={this.state.github}><img src='https://zhou-dong.github.io/img/github.svg'/></a>
 						</li>
 					</ul>
 					
