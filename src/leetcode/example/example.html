@@ -12,27 +12,24 @@
 </head>
 <body>
 
+<div id="header"></div>
 
+<div class="container">
+	<div id="disqus_thread"></div>	
+</div>
 
-
-
-
+<div id="footer"></div>
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/example.js"></script>
 <script id="dsq-count-scr" src="https://zhou-dong.disqus.com/count.js" async></script>
-
-<div id="disqus_thread"></div>
 <script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
 var disqus_config = function () {
 // Replace PAGE_URL with your page's canonical URL variable
 this.page.url = "https://zhou-dong.github.io/"; 
 
 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
-
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
 s.src = 'https://zhou-dong.disqus.com/embed.js';
@@ -43,9 +40,5 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-	<div id= "footer" class="container"></div>
-	<script src="../js/jquery-2.2.4.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/example.js"></script>
 </body>
 </html>

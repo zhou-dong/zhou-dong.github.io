@@ -27,5 +27,5 @@ gulp.task('copy', function(){
 });
 
 gulp.task('default', ['browserify', 'copy'], function(){
-	return gulp.watch('./*.*', ['browserify', 'copy']);
+	return gulp.watch('src/**/*.*', ['browserify', 'copy']);
 });
