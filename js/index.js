@@ -19174,7 +19174,7 @@ var Footer = React.createClass({
 						React.createElement(
 							'a',
 							{ href: this.state.github },
-							React.createElement('img', { src: './img/github.svg' })
+							React.createElement('img', { src: 'https://zhou-dong.github.io/img/github.svg' })
 						)
 					)
 				)
