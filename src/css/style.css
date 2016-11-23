@@ -79,6 +79,11 @@ h1 span {
   display: inline-block;
 }
 
+.jumbotron a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
 #array {
 	text-align:center;
 }

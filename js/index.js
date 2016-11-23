@@ -19126,59 +19126,6 @@ module.exports = require('./lib/React');
 },{"./lib/React":53}],159:[function(require,module,exports){
 'use strict';
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Panel = _react2.default.createClass({
-	displayName: 'Panel',
-
-	render: function render() {
-		return _react2.default.createElement(
-			'div',
-			{ className: 'panel panel-default' },
-			_react2.default.createElement(
-				'div',
-				{ className: 'panel-body' },
-				this.props.content
-			)
-		);
-	}
-});
-
-var Blockquote = _react2.default.createClass({
-	displayName: 'Blockquote',
-
-	render: function render() {
-		return _react2.default.createElement(
-			'blockquote',
-			null,
-			_react2.default.createElement(
-				'p',
-				null,
-				this.props.content
-			),
-			_react2.default.createElement(
-				'footer',
-				null,
-				this.props.author
-			)
-		);
-	}
-});
-
-var instance = new Object();
-instance.Panel = Panel;
-instance.Blockquote = Blockquote;
-
-module.exports = instance;
-
-
-},{"react":158}],160:[function(require,module,exports){
-'use strict';
-
 var React = require('react');
 
 var Footer = React.createClass({
@@ -19240,6 +19187,47 @@ var Footer = React.createClass({
 module.exports = Footer;
 
 
+},{"react":158}],160:[function(require,module,exports){
+"use strict";
+
+var React = require("react");
+
+var Header = React.createClass({
+  displayName: "Header",
+
+
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "jumbotron" },
+      React.createElement(
+        "div",
+        { className: "container" },
+        React.createElement(
+          "h1",
+          null,
+          React.createElement(
+            "a",
+            { href: "./", className: "tip-number" },
+            "DZ"
+          ),
+          React.createElement(
+            "span",
+            null,
+            "\u8BFB\u4E66\u3001\u65C5\u884C"
+          )
+        ),
+        React.createElement("p", null),
+        React.createElement("hr", null)
+      )
+    );
+  }
+
+});
+
+module.exports = Header;
+
+
 },{"react":158}],161:[function(require,module,exports){
 'use strict';
 
@@ -19255,13 +19243,15 @@ var _Footer = require('../components/Footer');
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _BootUtil = require('../components/BootUtil');
+var _Header = require('../components/Header');
 
-var _BootUtil2 = _interopRequireDefault(_BootUtil);
+var _Header2 = _interopRequireDefault(_Header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_Header2.default, null), document.getElementById('header'));
 
 _reactDom2.default.render(_react2.default.createElement(_Footer2.default, null), document.getElementById('footer'));
 
 
-},{"../components/BootUtil":159,"../components/Footer":160,"react":158,"react-dom":29}]},{},[161]);
+},{"../components/Footer":159,"../components/Header":160,"react":158,"react-dom":29}]},{},[161]);
