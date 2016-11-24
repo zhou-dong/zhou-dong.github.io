@@ -17,6 +17,7 @@
     "flux": "*",
     "gulp": "*",
     "gulp-babel": "^6.1.2",
+    "gulp-ejs": "^2.2.1",
     "object-assign": "*",
     "reactify": "*",
     "vinyl-source-stream": "*"
