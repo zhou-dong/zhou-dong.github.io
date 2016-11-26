@@ -23,7 +23,6 @@ var push = function push(item) {
 
 var pop = function pop() {
 	var top = store.array.pop();
-	console.log(top);
 	dispatcher.dispatch('change');
 	return top;
 };
@@ -49,8 +48,8 @@ var view = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			{ className: 'btn-group', role: 'group', 'aria-label': 'stack' },
-			this.state.data.map(function (element, index) {
+			{ className: 'btn-group-vertical', role: 'group', 'aria-label': 'stack' },
+			this.state.data.slice(0).reverse().map(function (element, index) {
 				return React.createElement(
 					'button',
 					{ type: 'button', key: element + index, className: 'btn btn-default btn-lg' },
@@ -19840,19 +19839,46 @@ var index = 0;
 var pushId = setInterval(function () {
 	if (index === array.length) {
 		clearInterval(pushId);
-		var popId = setInterval(function () {
-			if (stack.isEmpty()) {
-				clearInterval(popId);
-			} else {
-				stack.pop();
-			}
-		}, 3000);
+		// var popId = setInterval(function() {
+		// 	if (stack.isEmpty()) {
+		// 		clearInterval(popId);
+		// 	} else {
+		// 		stack.pop();
+		// 	}
+		// }, 1000);
 	} else {
 		stack.push(array[index++]);
 	}
-}, 3000);
+}, 1000);
+
+var Input = React.createClass({
+	displayName: 'Input',
+
+	render: function render() {
+		return React.createElement(
+			'form',
+			{ className: 'form-inline' },
+			React.createElement(
+				'div',
+				{ className: 'input-group' },
+				React.createElement(
+					'span',
+					{ className: 'input-group-addon', id: 'basic-addon1' },
+					'Input'
+				),
+				React.createElement('input', { type: 'text', className: 'form-control', placeholder: 'hello' })
+			),
+			React.createElement(
+				'button',
+				{ type: 'submit', className: 'btn btn-default' },
+				' Start'
+			)
+		);
+	}
+});
 
 ReactDOM.render(React.createElement(stack.view, null), document.getElementById('stack'));
+ReactDOM.render(React.createElement(Input, null), document.getElementById('input'));
 
 
 },{"../../../components/Stack":1,"react":164,"react-dom":35}]},{},[165]);

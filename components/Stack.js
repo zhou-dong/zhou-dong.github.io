@@ -20,7 +20,6 @@ var push = function(item){
 
 var pop = function(){
 	var top = store.array.pop() ;
-console.log(top);
 	dispatcher.dispatch('change') ;
 	return top ;
 }
@@ -43,8 +42,8 @@ var view = React.createClass({
 	},
 	render: function(){
 		return (
-			<div className="btn-group" role="group" aria-label="stack">{
-				this.state.data.map(function(element, index){
+			<div className="btn-group-vertical" role="group" aria-label="stack">{
+				this.state.data.slice(0).reverse().map(function(element, index){
 					return ( <button type="button" key={element+index} className="btn btn-default btn-lg">{element}</button>);
 				})
 			}</div>

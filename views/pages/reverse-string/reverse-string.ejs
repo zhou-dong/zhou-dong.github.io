@@ -2,16 +2,21 @@
 <html lang="en">
 	<head>
 		<% include ../../partials/head %>
-
+		<style type="text/css">
+			#stack {
+				margin: 20px 0;
+			}
+			.btn-group-vertical .btn{
+				width: 100px;
+			}
+		</style>
 	</head>
 	<body>
 		<% include ../../partials/header %>
-	<div class="container">
-
-	<div id="stack"></div>
-
-
-	</div>
+		<div class="container">
+			<div  class="text-right" id="input"></div>
+			<div class="text-center" id="stack"></div>
+		</div>
 		<script src="../js/reverse-string.js"></script>
 		<% include ../../partials/footer %>
 	</body>
