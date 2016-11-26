@@ -23,7 +23,7 @@ gulp.task('about', function(){
 	gulp.src('./about.ejs')
 		.pipe(ejs({head: head, page: page}))
 		.pipe(rename('../../about/about.html'))
-		.pipe(gulp.dest('./'));
+		.pipe(gulp.dest('../../about/about.html'));
 }) ;
 
 gulp.task('reverse-string', function(){
@@ -37,12 +37,12 @@ gulp.task('reverse-string', function(){
 		.pipe(rename('../../leetcode/reverse-string.html'))
 		.pipe(gulp.dest('./'));
 
-	browserify('./src/js/pages/index.js')
+	browserify('./reverse-string/reverse-string.js')
 		.transform("babelify", {presets: ["es2015", "react"]})	
 		.transform('reactify')
 		.bundle()
-		.pipe(source('index.js'))
-		.pipe(gulp.dest('./js'));
+		.pipe(source('reverse-string.js'))
+		.pipe(gulp.dest('../../js'));
 });
 
 gulp.task('default', ['reverse-string'], function(){
