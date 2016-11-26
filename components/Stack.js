@@ -20,8 +20,9 @@ var push = function(item){
 
 var pop = function(){
 	var top = store.array.pop() ;
+console.log(top);
 	dispatcher.dispatch('change') ;
-	return pop() ;
+	return top ;
 }
 
 var peek = function(){
@@ -29,22 +30,22 @@ var peek = function(){
 }
 
 var isEmpty = function(){
-	return store.items.length === 0;
+	return store.array.length === 0;
 }
 
-var View = React.createClass({
+var view = React.createClass({
 	getInitialState: function(){
 		var self = this;
 		store.on('change', function(){
-			self.setState({data: store.items});
+			self.setState({data: store.array});
 		}) ;
-		return { data: store.items } ;
+		return { data: store.array } ;
 	},
 	render: function(){
 		return (
 			<div className="btn-group" role="group" aria-label="stack">{
-				this.state.data.map(function(element){
-					return ( <button type="button" key={element} className="btn btn-default">{element}</button>);
+				this.state.data.map(function(element, index){
+					return ( <button type="button" key={element+index} className="btn btn-default">{element}</button>);
 				})
 			}</div>
 		) ;
