@@ -45,7 +45,7 @@ var view = React.createClass({
 		return (
 			<div className="btn-group" role="group" aria-label="stack">{
 				this.state.data.map(function(element, index){
-					return ( <button type="button" key={element+index} className="btn btn-default">{element}</button>);
+					return ( <button type="button" key={element+index} className="btn btn-default btn-lg">{element}</button>);
 				})
 			}</div>
 		) ;

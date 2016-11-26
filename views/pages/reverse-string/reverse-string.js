@@ -21,4 +21,5 @@ var pushId = setInterval(function() {
 	}
 }, 3000);
 
+
 ReactDOM.render( < stack.view / > , document.getElementById('stack'));

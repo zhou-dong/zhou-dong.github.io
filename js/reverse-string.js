@@ -53,7 +53,7 @@ var view = React.createClass({
 			this.state.data.map(function (element, index) {
 				return React.createElement(
 					'button',
-					{ type: 'button', key: element + index, className: 'btn btn-default' },
+					{ type: 'button', key: element + index, className: 'btn btn-default btn-lg' },
 					element
 				);
 			})
