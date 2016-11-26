@@ -19,30 +19,17 @@ var config = function(path) {
 }
 
 gulp.task('about', function() {
-	var page = {
-		url: domain + "/about/ahout.html",
-		identifier: "identifier"
-	};
-	var head = {
-		title: 'ABOUT DONG',
-		keywords: '读书体验、人生思考',
-		description: '周动的读书体验、人生经历、生活感想',
-		author: '周动'
-	};
-	gulp.src('./about.ejs')
-		.pipe(ejs({
-			head: head,
-			page: page
-		}))
-		.pipe(rename('../../about/about.html'))
-		.pipe(gulp.dest('../../about/about.html'));
+	var page = new NewPage.About('about');
+	console.log(page);
+	gulp.src(page.template)
+		.pipe(ejs(page))
+		.pipe(rename(page.dest))
+		.pipe(gulp.dest(page.dest));
 });
 
 var name = 'reverse-string';
 gulp.task(name, function() {
 	var page = new NewPage.Leetcode(name);
-
-console.log(page);
 	gulp.src(page.template)
 		.pipe(ejs(page))
 		.pipe(rename(page.dest))
@@ -59,5 +46,5 @@ console.log(page);
 });
 
 gulp.task('default', [name], function() {
-	return gulp.watch('reverse-string/*.*', [name]);
+	return gulp.watch(name + '/*.*', [name]);
 });

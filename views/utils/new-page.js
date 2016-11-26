@@ -43,8 +43,8 @@ function Leetcode(name) {
 };
 
 function About(name) {
-	var page = Page(name);
-	extendCopy(this.page);
+	var page = new Page(name);
+	extendCopy(this, page);
 	this.url = path(this.domain, "about", name);
 	this.dest = path(this.dest, "about", name);
 };
