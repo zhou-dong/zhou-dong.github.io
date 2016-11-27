@@ -19833,44 +19833,63 @@ var React = require('react');
 
 var stack = require('../../../components/Stack');
 
-var array = "hello".split("");
-var index = 0;
+function popAll() {
+	var popId = setInterval(function () {
+		if (stack.isEmpty()) {
+			clearInterval(popId);
+		} else {
+			stack.pop();
+		}
+	}, 1000);
+}
 
-var pushId = setInterval(function () {
-	if (index === array.length) {
-		clearInterval(pushId);
-		// var popId = setInterval(function() {
-		// 	if (stack.isEmpty()) {
-		// 		clearInterval(popId);
-		// 	} else {
-		// 		stack.pop();
-		// 	}
-		// }, 1000);
-	} else {
-		stack.push(array[index++]);
-	}
-}, 1000);
+function addToStack(str) {
+	var array = str.split("");
+	var index = 0;
+	var pushId = setInterval(function () {
+		if (index === array.length) {
+			clearInterval(pushId);
+			popAll();
+		} else {
+			stack.push(array[index++]);
+		}
+	}, 1000);
+}
 
 var Input = React.createClass({
 	displayName: 'Input',
 
+
+	getInitialState: function getInitialState() {
+		return { value: 'hello' };
+	},
+
+	handleChange: function handleChange(event) {
+		this.setState({ value: event.target.value });
+	},
+
+	handleSubmit: function handleSubmit(e) {
+		addToStack(this.state.value);
+		e.preventDefault();
+	},
+
 	render: function render() {
 		return React.createElement(
 			'form',
-			{ className: 'form-inline' },
+			{ className: 'form-inline', onSubmit: this.handleSubmit },
 			React.createElement(
 				'div',
 				{ className: 'input-group' },
 				React.createElement(
 					'span',
-					{ className: 'input-group-addon', id: 'basic-addon1' },
+					{ className: 'input-group-addon' },
 					'Input'
 				),
-				React.createElement('input', { type: 'text', className: 'form-control', placeholder: 'hello' })
+				React.createElement('input', { type: 'text', onChange: this.handleChange, className: 'form-control', placeholder: this.state.value })
 			),
 			React.createElement(
 				'button',
-				{ type: 'submit', className: 'btn btn-default' },
+				{ className: 'btn btn-default' },
 				' Start'
 			)
 		);

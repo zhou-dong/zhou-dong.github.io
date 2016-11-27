@@ -3,34 +3,52 @@ var React = require('react');
 
 var stack = require('../../../components/Stack');
 
-var array = "hello".split("");
-var index = 0;
-
-var pushId = setInterval(function() {
-	if (index === array.length) {
-		clearInterval(pushId);
-		// var popId = setInterval(function() {
-		// 	if (stack.isEmpty()) {
-		// 		clearInterval(popId);
-		// 	} else {
-		// 		stack.pop();
-		// 	}
-		// }, 1000);
+function popAll(){
+	var popId = setInterval(function() {
+	if (stack.isEmpty()) {
+		clearInterval(popId);
 	} else {
-		stack.push(array[index++]);
+		stack.pop();
 	}
-}, 1000);
+	}, 1000);
+}
 
+function addToStack(str){
+	var array = str.split("") ;
+	var index = 0 ;
+	var pushId = setInterval(function() {
+		if (index === array.length) {
+			clearInterval(pushId);
+			popAll();
+		} else {
+			stack.push(array[index++]);
+		}
+	}, 1000);
+}
 
 var Input = React.createClass({
+
+	getInitialState: function(){
+		return { value: 'hello' } ;
+	},
+
+	handleChange: function(event){
+		this.setState({value: event.target.value}) ;
+	},
+
+	handleSubmit: function(e){
+		addToStack(this.state.value);
+		e.preventDefault();
+	},
+
 	render: function() {
 		return (
-			<form className='form-inline'>
-				<div className="input-group">
-						<span className="input-group-addon" id="basic-addon1">Input</span>
-						<input type="text" className="form-control" placeholder="hello"/>
+			<form className='form-inline' onSubmit={this.handleSubmit}>
+				<div className='input-group'>
+					<span className='input-group-addon'>Input</span>
+					<input type='text' onChange={this.handleChange} className='form-control' placeholder={this.state.value}/>
 				</div>
-  				<button type='submit' className='btn btn-default'> Start</button>
+  				<button className='btn btn-default'> Start</button>
 			</form>
 		);
 	}
