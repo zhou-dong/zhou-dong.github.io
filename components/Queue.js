@@ -3,7 +3,7 @@ var Dispatcher = require('flux').Dispatcher;
 var assign = require('object-assign');
 var EventEmitter = require('events').EventEmitter;
 
-function Stack() {
+function Queue() {
 	var self = this;
 	this.store = assign({}, EventEmitter.prototype, {
 		array: []
@@ -18,31 +18,31 @@ function Stack() {
 
 }
 
-Stack.prototype.push = function push(item) {
+Queue.prototype.push = function push(item) {
 	this.store.array.push(item);
 	this.dispatcher.dispatch('change');
 };
 
-Stack.prototype.pop = function pop() {
-	var top = this.store.array.pop();
+Queue.prototype.poll = function poll() {
+	var last = this.store.array.shift();
 	this.dispatcher.dispatch('change');
-	return top;
+	return last;
 };
 
-Stack.prototype.peek = function peek() {
+Queue.prototype.peek = function peek() {
 	return this.store.array[this.store.array.length - 1];
 };
 
-Stack.prototype.isEmpty = function isEmpty() {
+Queue.prototype.isEmpty = function isEmpty() {
 	return this.store.array.length === 0;
 };
 
-Stack.prototype.empty = function empty(){
+Queue.prototype.empty = function empty(){
 	this.store.array = [] ;
 	this.dispatcher.dispatch('change');
 };
 
-Stack.prototype.view = React.createClass({
+Queue.prototype.view = React.createClass({
 	getViewClass: function(){
 		return (this.props.isVertical) ? "btn-group-vertical" : "btn-group" ;
 	},
@@ -56,8 +56,8 @@ Stack.prototype.view = React.createClass({
 	},
 	render: function(){
 		return (
-			<div className={this.getViewClass()} role="group" aria-label="stack">{
-				this.state.data.slice(0).reverse().map(function(element, index){
+			<div className={this.getViewClass()} role="group" aria-label="Queue">{
+				this.state.data.map(function(element, index){
 					return ( <button type="button" key={element+index} className="btn btn-default btn-lg">{element}</button>);
 				})
 			}</div>
@@ -65,4 +65,4 @@ Stack.prototype.view = React.createClass({
 	}
 }) ;
 
-module.exports = Stack;
+module.exports = Queue;
