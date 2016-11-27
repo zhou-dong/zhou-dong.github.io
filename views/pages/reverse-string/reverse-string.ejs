@@ -23,8 +23,25 @@
 			<h4>Stack Solution</h4>
 			<div class="text-center" id="input"></div>
 			<div class="text-left" id="queue"></div>
-			<div class="text-center" id="stack"></div>
+			<div class="text-center" id="stack"></div>				
+
+
+<pre><code class="java">
+public String reverseString(String s) {
+	Stack<Character> stack = new Stack<>();
+	for (char c : s.toCharArray())
+		stack.add(c);
+	char[] result = new char[stack.size()];
+	for (int i = 0; i < result.length; i++)
+		result[i] = stack.pop();
+	return new String(result);
+}
+</code></pre>
+
+			</div>
+
 		</div>
+
 		<script src="../js/reverse-string.js"></script>
 		<% include ../../partials/footer %>
 	</body>
