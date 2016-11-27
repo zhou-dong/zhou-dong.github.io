@@ -18,11 +18,17 @@
 			#stack {
 				margin: 20px 0;
 			}
+			#queue {
+				margin: 20px 0;
+			}
 			.btn-group-vertical .btn{
 				width: 100px;
 			}
-			#input .btn{
-				margin: 10px 0 10px 10px;
+			.row .btn{
+				margin: 10px 10px 10px 0;
+			}
+			.well{
+				font-size: 20px;
 			}
 		</style>
 	</head>
@@ -35,7 +41,10 @@
 	</div>
 </div>
 		<div class="container">
-			<div  class="text-right" id="input"></div>
+			<div class="row container">
+				<div class="col-sm-4 well">Stack Solution</div>
+				<div class="col-sm-8 text-center" id="input"></div>
+			</div>
 			<div class="text-left" id="queue"></div>
 			<div class="text-center" id="stack"></div>
 		</div>
