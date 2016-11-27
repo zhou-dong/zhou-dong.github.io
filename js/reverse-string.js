@@ -19964,7 +19964,7 @@ var Input = React.createClass({
 			{ className: 'form-inline', onSubmit: this.handleSubmit },
 			React.createElement(
 				'div',
-				{ className: 'input-group' },
+				{ className: 'input-group input-group-lg' },
 				React.createElement(
 					'span',
 					{ className: 'input-group-addon' },
@@ -19974,7 +19974,7 @@ var Input = React.createClass({
 			),
 			React.createElement(
 				'button',
-				{ className: 'btn btn-default' },
+				{ className: 'btn btn-default btn-lg' },
 				' Start'
 			)
 		);
