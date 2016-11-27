@@ -98,3 +98,7 @@ h1 span {
 .row .title{
 	line-height: 34px;
 }
+
+pre{
+  padding: 0;
+}

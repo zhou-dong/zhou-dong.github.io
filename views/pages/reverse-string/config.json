@@ -1,7 +1,7 @@
 {
 	"id": "344",
 	"title": "Reverse String",
-	"description": "reverse string, using stack, two-pointer, dfs or backtrack",
-	"keywords": "reverse string stack two-pointer dfs",
+	"description": "10 methods of java solution for reverse string, using stack, two-pointer, dfs or backtrack",
+	"keywords": "reverse string stack two-pointer dfs java solution",
 	"content": "Write a function that takes a string as input and returns the string reversed. <p>Example: Given s = 'hello', return 'olleh'.</p>"
 }
