@@ -1,0 +1,10 @@
+{
+	"id" : "DZ" ,
+	"title": "algorithm Visualization",
+	"keywords": "leetcode visualization",
+	"description": "Using JavaScript, Bootstrap to visualize the algorithms' solution in leetcode.",
+	"author": "DONG Zhou",
+	"content": "Using ReactJS, Bootstrap to visualize the algorithms' solution in leetcode",
+	"url": "https://zhou-dong.github.io/",
+	"identifier": "identifier"
+}
