@@ -1,8 +1,12 @@
+var fs = require('fs');
 var gulp = require('gulp');
+var ejs = require('gulp-ejs');
+var rename = require('gulp-rename');
 var babel = require('gulp-babel');
 var browserify = require('browserify');
 var reactify = require('reactify'); // Converts jsx to js
 var source = require('vinyl-source-stream'); // Converts string to a stream
+var NewPage = require('../utils/new-page');
 
 gulp.task('browserify', function(){
 	browserify('./src/js/pages/index.js')
@@ -25,6 +29,9 @@ gulp.task('copy', function(){
 	gulp.src('src/fonts/*.*')
 		.pipe(gulp.dest('./fonts'));
 });
+
+
+
 
 gulp.task('default', ['browserify', 'copy'], function(){
 	return gulp.watch('src/**/*.*', ['browserify', 'copy']);
