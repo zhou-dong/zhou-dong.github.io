@@ -45,11 +45,11 @@ var Input = React.createClass({
 	render: function() {
 		return (
 			<form className='form-inline' onSubmit={this.handleSubmit}>
-				<div className='input-group input-group-lg'>
+				<div className='input-group input-group-md'>
 					<span className='input-group-addon'>Input</span>
 					<input type='text' onChange={this.handleChange} className='form-control' placeholder={this.state.value}/>
 				</div>
-  				<button className='btn btn-default btn-lg'> Start</button>
+  				<button className='btn btn-info btn-md'> Start</button>
 			</form>
 		);
 	}
