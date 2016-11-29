@@ -5,9 +5,8 @@ var EventEmitter = require('events').EventEmitter;
 
 function Table(row, col) {
 	var self = this;
-	var table = new CreateTable(row, col);
 	this.store = assign({}, EventEmitter.prototype, {
-		table: table
+		table: new CreateTable(row, col)
 	});
 	this.dispatcher = new Dispatcher();
 	this.dispatcher.register(function(eventName) {
@@ -42,6 +41,11 @@ Table.prototype.lens = function lens(){
 
 Table.prototype.get = function get(row, col){
 	return this.store.table[row][col] ;
+}
+
+Table.prototype.reload = function reload(row, col){
+	this.store.table = new CreateTable(row, col);
+	this.dispatcher.dispatch('change');
 }
 
 Table.prototype.view = React.createClass({

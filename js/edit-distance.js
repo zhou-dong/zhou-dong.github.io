@@ -34,6 +34,11 @@ Obj.prototype.instance = function instance() {
 	return this.store.instance;
 };
 
+Obj.prototype.clear = function clear() {
+	this.store.instance = {};
+	this.dispatcher.dispatch('change');
+};
+
 module.exports = Obj;
 
 
@@ -47,9 +52,8 @@ var EventEmitter = require('events').EventEmitter;
 
 function Table(row, col) {
 	var self = this;
-	var table = new CreateTable(row, col);
 	this.store = assign({}, EventEmitter.prototype, {
-		table: table
+		table: new CreateTable(row, col)
 	});
 	this.dispatcher = new Dispatcher();
 	this.dispatcher.register(function (eventName) {
@@ -84,6 +88,11 @@ Table.prototype.lens = function lens() {
 
 Table.prototype.get = function get(row, col) {
 	return this.store.table[row][col];
+};
+
+Table.prototype.reload = function reload(row, col) {
+	this.store.table = new CreateTable(row, col);
+	this.dispatcher.dispatch('change');
 };
 
 Table.prototype.view = React.createClass({
@@ -19898,74 +19907,105 @@ var React = require('react');
 var Obj = require('../../../components/Obj');
 var Table = require('../../../components/Table');
 
-var w1 = "abcdefg";
-var w2 = "bdeabg";
-
-var table = new Table(w1.length + 2, w2.length + 2);
+var w1, w2, rowLen, colLen, row;
+var table = new Table(0, 0);
 var obj = new Obj();
 
-var rowLen = table.lens()[0];
-var colLen = table.lens()[1];
+var initDpTable = function initDpTable() {
+	table.insert(0, 0, '-');
+	table.insert(0, 1, '-');
+	table.insert(1, 0, '-');
+	table.insert(1, 1, 0);
+	for (var row = 2; row < rowLen; row++) {
+		table.insert(row, 0, w1.charAt(row - 2));
+	}
+	for (var row = 2; row < rowLen; row++) {
+		table.insert(row, 1, row - 1);
+	}
+	for (var col = 2; col < colLen; col++) {
+		table.insert(0, col, w2.charAt(col - 2));
+	}
+	for (var col = 2; col < colLen; col++) {
+		table.insert(1, col, col - 1);
+	}
+};
 
-table.insert(0, 0, '-');
-table.insert(0, 1, '-');
-table.insert(1, 0, '-');
-table.insert(1, 1, 0);
-
-for (var row = 2; row < rowLen; row++) {
-	table.insert(row, 0, w1.charAt(row - 2));
-}
-
-for (var row = 2; row < rowLen; row++) {
-	table.insert(row, 1, row - 1);
-}
-
-for (var col = 2; col < colLen; col++) {
-	table.insert(0, col, w2.charAt(col - 2));
-}
-
-for (var col = 2; col < colLen; col++) {
-	table.insert(1, col, col - 1);
-}
-
-var row = 2;
-
-function execute() {
+var execute = function execute() {
 	if (row >= rowLen) {
 		return;
 	}
 	var col = 2;
 	var intervalId = setInterval(function () {
+		var ch1, ch2, pre, add, del, min, same;
 		if (col >= colLen) {
 			clearInterval(intervalId);
 			row++;
 			execute();
 		} else {
-			var a = w1.charAt(row - 2);
-			var b = w2.charAt(col - 2);
-			var pre = table.get(row - 1, col - 1);
-			obj.add('ch1', a);
-			obj.add('ch2', b);
-			obj.add('pre', pre);
+			ch1 = w1.charAt(row - 2);
+			ch2 = w2.charAt(col - 2);
+			pre = table.get(row - 1, col - 1);
 			if (w1.charAt(row - 2) === w2.charAt(col - 2)) {
 				table.insert(row, col, pre);
-				obj.add('same', true);
+				same = true;
 			} else {
-				var add = table.get(row - 1, col);
-				var del = table.get(row, col - 1);
-				var min = Math.min(pre, del, add) + 1;
-				obj.add('add', add);
-				obj.add('del', del);
-				obj.add('min', min);
-				obj.add('same', false);
-				table.insert(row, col, min);
+				add = table.get(row - 1, col);
+				del = table.get(row, col - 1);
+				min = Math.min(pre, del, add);
+				same = false;
+				table.insert(row, col, min + 1);
 			}
 			col++;
+			obj.add('ch1', ch1);
+			obj.add('ch2', ch2);
+			obj.add('pre', pre);
+			obj.add('add', add);
+			obj.add('del', del);
+			obj.add('min', min);
+			obj.add('same', same);
 		}
 	}, 3000);
-}
+};
 
-execute(row);
+var Input = React.createClass({
+	displayName: 'Input',
+
+	getInitialState: function getInitialState() {
+		return { word1: "word1", word2: "word2" };
+	},
+	handleChange1: function handleChange1(event) {
+		this.setState({ word1: event.target.value });
+	},
+	handleChange2: function handleChange2(event) {
+		this.setState({ word2: event.target.value });
+	},
+	handleSubmit: function handleSubmit(event) {
+		console.log("&&&&&&");
+		w1 = this.state.word1;
+		w2 = this.state.word2;
+		table.reload(w1.length + 2, w2.length + 2);
+		obj.clear();
+		rowLen = table.lens()[0];
+		colLen = table.lens()[1];
+		row = 2;
+		initDpTable();
+		execute(row);
+		event.preventDefault();
+	},
+	render: function render() {
+		return React.createElement(
+			'form',
+			{ className: 'input-group' },
+			React.createElement('input', { type: 'text', onChange: this.handleChange1, className: 'form-control', placeholder: this.state.word1 }),
+			React.createElement('input', { type: 'text', onChange: this.handleChange2, className: 'form-control', placeholder: this.state.word2 }),
+			React.createElement(
+				'span',
+				{ type: 'button', onClick: this.handleSubmit, className: 'input-group-addon', id: 'basic-addon2' },
+				'START'
+			)
+		);
+	}
+});
 
 var Dashboard = React.createClass({
 	displayName: 'Dashboard',
@@ -19984,20 +20024,27 @@ var Dashboard = React.createClass({
 	},
 
 	render: function render() {
-		console.log(this.state.data);
-		return React.createElement(
-			'div',
-			null,
-			' ',
-			this.state.data['ch1'],
-			' '
-		);
+		if (!this.state.data || !this.state.data['ch1']) return React.createElement('div', null);
+		var equalOrNot = this.state.data['same'] ? " == " : " != ";
+		var msg = "char1 = <code>" + this.state.data['ch1'] + "</code> ";
+		msg += "char2 = <code>" + this.state.data['ch2'] + "</code> ";
+		msg += ", because <code> " + this.state.data['ch1'] + equalOrNot + this.state.data['ch2'];
+		msg += "</code> so <br/>";
+		msg += "<code>dp[row][col] = ";
+		if (this.state.data["same"]) {
+			msg += 'dp[row-1][col-1]</code> = ' + this.state.data["pre"];
+		} else {
+			msg += 'Math.min(dp[row-1][col-1], dp[row-1][col], dp[row][col-1]) + 1</code> = ' + (this.state.data['min'] + 1);
+		}
+		var _h = { __html: msg };
+		return React.createElement('div', { className: 'alert alert-info', role: 'alert', dangerouslySetInnerHTML: _h });
 	}
+
 });
 
-ReactDOM.render(React.createElement(table.view, { parent: table
-}), document.getElementById('table'));
+ReactDOM.render(React.createElement(table.view, { parent: table }), document.getElementById('table'));
 ReactDOM.render(React.createElement(Dashboard, null), document.getElementById('dashboard'));
+ReactDOM.render(React.createElement(Input, null), document.getElementById('input'));
 
 
 },{"../../../components/Obj":1,"../../../components/Table":2,"react":165,"react-dom":36}]},{},[166]);

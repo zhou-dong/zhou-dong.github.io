@@ -31,4 +31,9 @@ Obj.prototype.instance = function instance() {
 	return this.store.instance;
 }
 
+Obj.prototype.clear = function clear() {
+	this.store.instance = {};
+	this.dispatcher.dispatch('change');
+}
+
 module.exports = Obj;
