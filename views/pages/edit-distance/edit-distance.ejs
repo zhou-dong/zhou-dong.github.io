@@ -2,6 +2,11 @@
 <html lang="en">
 	<head>
 		<% include ../../partials/head %>
+		<style type="text/css">
+			#input{
+				margin: 20px 0;
+			}
+		</style>
 	</head>
 	<body>
 		<% include ../../partials/header %>
@@ -9,6 +14,7 @@
 			<div class="text-center" id="dashboard"></div>
 			<div class="text-center" id="table"></div>
 			<div class="text-center" id="input"></div>
+			<%include ./code %>
 		</div>
 		<script src="../js/edit-distance.js"></script>
 		<% include ../../partials/footer %>
