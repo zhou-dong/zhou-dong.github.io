@@ -74,7 +74,6 @@ var Input = React.createClass({
 		this.setState({word2: event.target.value});
 	},
 	handleSubmit: function(event){
-		console.log("&&&&&&");
 		w1 = this.state.word1 ;
 		w2 = this.state.word2 ;
 		table.reload(w1.length + 2, w2.length + 2);

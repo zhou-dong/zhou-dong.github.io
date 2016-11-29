@@ -53,7 +53,9 @@ var EventEmitter = require('events').EventEmitter;
 function Table(row, col) {
 	var self = this;
 	this.store = assign({}, EventEmitter.prototype, {
-		table: new CreateTable(row, col)
+		table: new CreateTable(row, col),
+		currentRow: 0,
+		currentCol: 0
 	});
 	this.dispatcher = new Dispatcher();
 	this.dispatcher.register(function (eventName) {
@@ -74,11 +76,8 @@ function CreateTable(row, col) {
 
 Table.prototype.insert = function insert(row, col, val) {
 	this.store.table[row][col] = val;
-	this.dispatcher.dispatch('change');
-};
-
-Table.prototype.empty = function empty(row, col) {
-	this.store.table = new CreateTable(row, col);
+	this.store.currentRow = row;
+	this.store.currentCol = col;
 	this.dispatcher.dispatch('change');
 };
 
@@ -92,6 +91,8 @@ Table.prototype.get = function get(row, col) {
 
 Table.prototype.reload = function reload(row, col) {
 	this.store.table = new CreateTable(row, col);
+	this.store.currentRow = 0;
+	this.store.currentCol = 0;
 	this.dispatcher.dispatch('change');
 };
 
@@ -104,20 +105,26 @@ Table.prototype.view = React.createClass({
 		var parent = this.props.parent;
 		parent.store.on('change', function () {
 			self.setState({
-				data: parent.store.table
+				data: parent.store.table,
+				row: parent.store.currentRow,
+				col: parent.store.currentCol
 			});
 		});
 		return {
-			data: parent.store.table
+			data: parent.store.table,
+			row: parent.store.currentRow,
+			col: parent.store.currentCol
 		};
 	},
 
 	render: function render() {
+		var self = this;
 		var rows = this.state.data.map(function (row, rowIndex) {
 			var cols = row.map(function (col, colIndex) {
+				var className = rowIndex === self.state.row && colIndex === 0 || colIndex === self.state.col && rowIndex === 0 ? "danger" : "";;
 				return React.createElement(
 					'td',
-					{ key: colIndex },
+					{ className: className, key: colIndex },
 					col
 				);
 			});
@@ -131,7 +138,7 @@ Table.prototype.view = React.createClass({
 		});
 		return React.createElement(
 			'table',
-			{ className: 'table table-bordered' },
+			{ className: 'table table-bordered table-hover' },
 			React.createElement(
 				'tbody',
 				null,
@@ -19980,7 +19987,6 @@ var Input = React.createClass({
 		this.setState({ word2: event.target.value });
 	},
 	handleSubmit: function handleSubmit(event) {
-		console.log("&&&&&&");
 		w1 = this.state.word1;
 		w2 = this.state.word2;
 		table.reload(w1.length + 2, w2.length + 2);
