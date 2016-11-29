@@ -16,7 +16,6 @@ function Table(row, col) {
 		}
 		return true;
 	});
-
 }
 
 function CreateTable(row, col) {
