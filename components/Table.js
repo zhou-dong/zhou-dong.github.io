@@ -41,6 +41,10 @@ Table.prototype.lens = function lens(){
 	return [this.store.table.length, this.store.table[0].length] ;
 }
 
+Table.prototype.get = function get(row, col){
+	return this.store.table[row][col] ;
+}
+
 Table.prototype.view = React.createClass({
 
 	getInitialState: function() {
