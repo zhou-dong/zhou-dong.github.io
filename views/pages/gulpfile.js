@@ -16,7 +16,7 @@ gulp.task('about', function() {
 		.pipe(gulp.dest(page.dest));
 });
 
-var name = 'reverse-string';
+var name = 'edit-distance';
 gulp.task(name, function() {
 	var page = new NewPage.Leetcode(name);
 	gulp.src(page.template)

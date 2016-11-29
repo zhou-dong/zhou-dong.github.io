@@ -1,0 +1,7 @@
+{
+	"id": "72",
+	"title": "Edit Distance",
+	"description": "Animation of Edit Distance for LeetCode question",
+	"keywords": "Edit Distance, Dynamic Programming, LeetCode Leet Code Java Animation",
+	"content": "Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2."
+}
