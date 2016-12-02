@@ -73,7 +73,7 @@ Table.prototype.view = React.createClass({
 		var rows = this.state.data.map(function(row, rowIndex){
 			var cols = row.map(function(col, colIndex){
 				var className =  ((rowIndex === self.state.row && colIndex === 0) ||
-					(colIndex === self.state.col && rowIndex === 0)) ? "warning" : "" ;;
+					(colIndex === self.state.col && rowIndex === 0)) ? "success" : "" ;;
 				return <td className={className} key={colIndex}>{col}</td>;
 			});
 			return (<tr key={rowIndex}> {cols} </tr>);
