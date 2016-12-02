@@ -121,7 +121,7 @@ Table.prototype.view = React.createClass({
 		var self = this;
 		var rows = this.state.data.map(function (row, rowIndex) {
 			var cols = row.map(function (col, colIndex) {
-				var className = rowIndex === self.state.row && colIndex === 0 || colIndex === self.state.col && rowIndex === 0 ? "warning" : "";;
+				var className = rowIndex === self.state.row && colIndex === 0 || colIndex === self.state.col && rowIndex === 0 ? "success" : "";;
 				return React.createElement(
 					'td',
 					{ className: className, key: colIndex },

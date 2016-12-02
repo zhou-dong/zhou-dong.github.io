@@ -34,6 +34,7 @@
 			<div class="text-center" id="input"></div>
 			
 <pre><code class="java">// Dynamic Programming Solution (Java)
+
 public int minDistance(String word1, String word2) {
 	int[][] table = createAndInitDpTable(word1.length() + 1, word2.length() + 1);
 	runningDP(table, word1, word2);
