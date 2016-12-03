@@ -6,17 +6,33 @@
 
 function Node(name) {
 	this.name = name;
-	this.children = {};
+	this.children = [];
 }
 
-Node.prototype.contains = function(name) {
-	return name in this.children;
+Node.prototype.childIndex = function(name) {
+	var result = -1;
+	this.children.forEach(function(element, index) {
+		if (element["name"] === name) {
+			result = index;
+			return;
+		}
+	});
+	return result;
 }
 
 Node.prototype.addChild = function(name) {
-	if (!this.contains(name))
-		this.children[name] = {};
-	return this.children[name];
+	if (this.childIndex(name) === -1)
+		this.children.push(new Node(name));
+	return this.children[this.childIndex(name)];
+}
+
+Node.prototype.getChild = function(name) {
+	var index = this.childIndex(name);
+	return index === -1 ? null : this.children[index];
+}
+
+Node.prototype.isEmpty = function() {
+	return this.children.length === 0;
 }
 
 function Trie() {
@@ -42,14 +58,21 @@ Trie.prototype.add = function(word) {
 
 Trie.prototype.remove = function(word) {
 	this.validate(word);
-	this._remove(this.root, word);
-}
+	_remove(this.root, word);
 
-Trie.prototype._remove = function(node, word) {
-	if (!node || !word) {
-		return;
+	function _remove(node, word) {
+		if (!node || !word) {
+			return;
+		}
+		var current = word.charAt(0);
+		if (node.childIndex(current) === -1) {
+			return;
+		}
+		_remove(node.getChild(current), word.substring(1));
+		if (node.getChild(current).isEmpty()) {
+			delete node.children[current];
+		}
 	}
-
-	_remove(node, word);
-
 }
+
+module.exports.Trie = Trie;
