@@ -31,6 +31,10 @@ Node.prototype.getChild = function(name) {
 	return index === -1 ? null : this.children[index];
 }
 
+Node.prototype.remove = function(index) {
+	this.children.splice(index, 1);
+}
+
 Node.prototype.isEmpty = function() {
 	return this.children.length === 0;
 }
@@ -70,7 +74,7 @@ Trie.prototype.remove = function(word) {
 		}
 		_remove(node.getChild(current), word.substring(1));
 		if (node.getChild(current).isEmpty()) {
-			delete node.children[current];
+			node.remove(node.childIndex(current))
 		}
 	}
 }
