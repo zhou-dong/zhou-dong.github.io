@@ -97,7 +97,7 @@ trie.add("world");
 
 trie.add("hxllo");
 
-trie.remove("hello");
+trie.remove("hell");
 
 trie.add("wolld");
 
