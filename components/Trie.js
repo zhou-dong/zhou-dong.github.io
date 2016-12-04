@@ -109,6 +109,7 @@ Trie.prototype.addWords = function(words, callback) {
 	_addWord(words[0], 0);
 
 	function _addWord(word, wordIndex) {
+		word = word.trim();
 		self.validate(word);
 		if (!self._addToLengthTable(word)) {
 			return;
@@ -167,4 +168,4 @@ Trie.prototype.remove = function(word) {
 	}
 }
 
-module.exports.Trie = Trie;
+module.exports = Trie;
