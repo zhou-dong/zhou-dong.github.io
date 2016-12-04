@@ -104,17 +104,43 @@ Trie.prototype.add = function(word) {
 	}
 }
 
-Trie.prototype.addSlow = function(word, callback) {
+Trie.prototype.addWords = function(words, callback) {
+	var self = this;
+	_addWord(words[0], 0);
+
+	function _addWord(word, wordIndex) {
+		self.validate(word);
+		if (!self._addToLengthTable(word)) {
+			return;
+		}
+		var current = self.root;
+		var index = 0;
+		var id = setInterval(function() {
+			if (index === word.length) {
+				clearInterval(id);
+				wordIndex++;
+				if (wordIndex < words.length) {
+					_addWord(words[wordIndex], wordIndex);
+				}
+			} else {
+				current = current.addChild(word[index++]);
+				callback();
+			}
+		}, 1000);
+	}
+}
+
+Trie.prototype.addSlow = function(word, callback, nextFunction) {
 	this.validate(word);
 	if (!this._addToLengthTable(word)) {
 		return;
 	}
-	var self = this;
 	var current = this.root;
 	var index = 0;
 	var id = setInterval(function() {
 		if (index === word.length) {
 			clearInterval(id);
+			nextFunction();
 		} else {
 			current = current.addChild(word[index++]);
 			callback();
