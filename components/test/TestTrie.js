@@ -9,7 +9,7 @@ trie.add("world");
 
 trie.add("hxllo");
 
-trie.remove("hell");
+//trie.remove("hello");
 
 trie.add("wolld");
 
@@ -21,5 +21,5 @@ console.log(datasource);
 
 $('#chart-container').orgchart({
 	'data': datasource,
-	'depth': 6
+	'depth': trie.depth()
 });

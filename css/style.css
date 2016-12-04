@@ -103,3 +103,20 @@ pre{
   padding: 0;
   background-color: white;
 }
+
+.orgchart{
+  background-image: none;;
+}
+.orgchart .node .title{
+  border-radius: 20px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: normal;
+}
+.orgchart .node {
+  width: 50px;
+}
+
+#input{
+  margin: 20px 0;
+}

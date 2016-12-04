@@ -43,7 +43,13 @@ Node.prototype.isEmpty = function () {
 
 function Trie() {
 	this.root = new Node("root");
+	this.lengthTable = {};
+	this._depth = 0;
 }
+
+Trie.prototype.depth = function () {
+	return this._depth + 1;
+};
 
 Trie.prototype.validate = function (word) {
 	if (word === undefined || word === null) {
@@ -54,9 +60,59 @@ Trie.prototype.validate = function (word) {
 	}
 };
 
+Trie.prototype._addToLengthTable = function (word) {
+	var len = word.length;
+	if (!(len in this.lengthTable)) {
+		this.lengthTable[len] = [];
+	}
+	if (this.lengthTable[len].includes(word)) {
+		return false;
+	}
+	this.lengthTable[len].push(word);
+	this._depth = Math.max(this._depth, len);
+	return true;
+};
+
+Trie.prototype._removeFromLengthTable = function (word) {
+	var len = word.length;
+	if (!(len in this.lengthTable)) {
+		return false;
+	}
+	var index = this.lengthTable[len].indexOf(word);
+	if (index === -1) {
+		return false;
+	}
+	if (this.lengthTable[len].length === 1) {
+		delete this.lengthTable[len];
+	} else {
+		this.lengthTable[len].splice(index, 1);
+	}
+	var max = 0;
+	this.lengthTable.forEach(function (element) {
+		max = Math.max(max, element.length);
+	});
+	this._depth = max;
+	return true;
+};
+
 Trie.prototype.add = function (word) {
 	this.validate(word);
+	if (!this._addToLengthTable(word)) {
+		return;
+	}
 	var current = this.root;
+	for (var i = 0; i < word.length; i++) {
+		current = current.addChild(word[i]);
+	}
+};
+
+Trie.prototype.addSlow = function (word) {
+	this.validate(word);
+	if (!this._addToLengthTable(word)) {
+		return;
+	}
+	var current = this.root;
+	var index = 0;
 	for (var i = 0; i < word.length; i++) {
 		current = current.addChild(word[i]);
 	}
@@ -97,7 +153,7 @@ trie.add("world");
 
 trie.add("hxllo");
 
-trie.remove("hell");
+//trie.remove("hello");
 
 trie.add("wolld");
 
@@ -109,7 +165,7 @@ console.log(datasource);
 
 $('#chart-container').orgchart({
 	'data': datasource,
-	'depth': 6
+	'depth': trie.depth()
 });
 
 

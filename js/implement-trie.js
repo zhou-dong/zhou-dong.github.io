@@ -1,3 +1,6 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+
 /**
  * Trie structure for OrgChart
  *
@@ -9,35 +12,34 @@ function Node(name) {
 	this.children = [];
 }
 
-Node.prototype.childIndex = function(name) {
+Node.prototype.childIndex = function (name) {
 	var result = -1;
-	this.children.forEach(function(element, index) {
+	this.children.forEach(function (element, index) {
 		if (element["name"] === name) {
 			result = index;
 			return;
 		}
 	});
 	return result;
-}
+};
 
-Node.prototype.addChild = function(name) {
-	if (this.childIndex(name) === -1)
-		this.children.push(new Node(name));
+Node.prototype.addChild = function (name) {
+	if (this.childIndex(name) === -1) this.children.push(new Node(name));
 	return this.children[this.childIndex(name)];
-}
+};
 
-Node.prototype.getChild = function(name) {
+Node.prototype.getChild = function (name) {
 	var index = this.childIndex(name);
 	return index === -1 ? null : this.children[index];
-}
+};
 
-Node.prototype.remove = function(index) {
+Node.prototype.remove = function (index) {
 	this.children.splice(index, 1);
-}
+};
 
-Node.prototype.isEmpty = function() {
+Node.prototype.isEmpty = function () {
 	return this.children.length === 0;
-}
+};
 
 function Trie() {
 	this.root = new Node("root");
@@ -45,20 +47,20 @@ function Trie() {
 	this._depth = 0;
 }
 
-Trie.prototype.depth = function() {
+Trie.prototype.depth = function () {
 	return this._depth + 1;
-}
+};
 
-Trie.prototype.validate = function(word) {
+Trie.prototype.validate = function (word) {
 	if (word === undefined || word === null) {
 		throw "The given word is invalid";
 	}
 	if (typeof word !== "string") {
 		throw "The given word is not a string";
 	}
-}
+};
 
-Trie.prototype._addToLengthTable = function(word) {
+Trie.prototype._addToLengthTable = function (word) {
 	var len = word.length;
 	if (!(len in this.lengthTable)) {
 		this.lengthTable[len] = [];
@@ -69,9 +71,9 @@ Trie.prototype._addToLengthTable = function(word) {
 	this.lengthTable[len].push(word);
 	this._depth = Math.max(this._depth, len);
 	return true;
-}
+};
 
-Trie.prototype._removeFromLengthTable = function(word) {
+Trie.prototype._removeFromLengthTable = function (word) {
 	var len = word.length;
 	if (!(len in this.lengthTable)) {
 		return false;
@@ -86,14 +88,14 @@ Trie.prototype._removeFromLengthTable = function(word) {
 		this.lengthTable[len].splice(index, 1);
 	}
 	var max = 0;
-	this.lengthTable.forEach(function(element) {
+	this.lengthTable.forEach(function (element) {
 		max = Math.max(max, element.length);
 	});
 	this._depth = max;
 	return true;
-}
+};
 
-Trie.prototype.add = function(word) {
+Trie.prototype.add = function (word) {
 	this.validate(word);
 	if (!this._addToLengthTable(word)) {
 		return;
@@ -102,9 +104,9 @@ Trie.prototype.add = function(word) {
 	for (var i = 0; i < word.length; i++) {
 		current = current.addChild(word[i]);
 	}
-}
+};
 
-Trie.prototype.addSlow = function(word, callback) {
+Trie.prototype.addSlow = function (word, callback) {
 	this.validate(word);
 	if (!this._addToLengthTable(word)) {
 		return;
@@ -112,7 +114,7 @@ Trie.prototype.addSlow = function(word, callback) {
 	var self = this;
 	var current = this.root;
 	var index = 0;
-	var id = setInterval(function() {
+	var id = setInterval(function () {
 		if (index === word.length) {
 			clearInterval(id);
 		} else {
@@ -120,9 +122,9 @@ Trie.prototype.addSlow = function(word, callback) {
 			callback();
 		}
 	}, 1000);
-}
+};
 
-Trie.prototype.remove = function(word) {
+Trie.prototype.remove = function (word) {
 	this.validate(word);
 	_remove(this.root, word);
 
@@ -136,9 +138,48 @@ Trie.prototype.remove = function(word) {
 		}
 		_remove(node.getChild(current), word.substring(1));
 		if (node.getChild(current).isEmpty()) {
-			node.remove(node.childIndex(current))
+			node.remove(node.childIndex(current));
 		}
 	}
-}
+};
 
 module.exports.Trie = Trie;
+
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
+var Trie = require('../../../components/Trie').Trie;
+
+var show = function show() {
+	$('.orgchart').remove();
+	$('#chart-container').orgchart({
+		'data': trie.root,
+		'depth': trie.depth()
+	});
+};
+
+var trie = new Trie();
+
+//trie.add("hello");
+trie.add("world");
+trie.add("hxllo");
+trie.remove("hxllo");
+var words = ["hello", "world", "troy", "university"];
+//trie.addSlow("wolld", show);
+
+
+var index = 0;
+var len = words.length;
+
+var intervalId = setInterval(function () {
+	if (index === len) {
+		clearInterval(intervalId);
+	} else {
+		trie.addSlow(words[index++], show);
+	}
+}, 1000);
+trie.addSlow("hello", show);
+
+
+},{"../../../components/Trie":1}]},{},[2]);

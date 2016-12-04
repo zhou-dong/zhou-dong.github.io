@@ -16,7 +16,7 @@ gulp.task('about', function() {
 		.pipe(gulp.dest(page.dest));
 });
 
-var name = 'edit-distance';
+var name = 'implement-trie';
 gulp.task(name, function() {
 	var page = new NewPage.Leetcode(name);
 	gulp.src(page.template)
