@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="description" content="Using JavaScript, Bootstrap to visualize the algorithms&#39; solution in leetcode.">
+		<meta name="keywords" content="leetcode visualization">
+		<meta name="author" content="DONG Zhou">
+
+		<title>Algorithm Visualization</title>
+
+		<link rel="stylesheet" href="./css/bootstrap.css">
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/atom-one-light.css"> <!-- https://highlightjs.org/ -->
+	</head>
+	
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+			<h1><a href="https://zhou-dong.github.io/" class="tip-number"> DZ </a><span>Algorithm Visualization</span></h1>
+				<p> Visualize the algorithms' solution in LeetCode.</p>
+			<hr />
+			</div>
+		</div>
+		
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="panel panel-success">
+						<div class="panel-heading">72. Edit Distance</div>
+						<div class="panel-body">
+							<a href="./leetcode/edit-distance.html">Min steps convert word1 to word2</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">344. Reverse String</div>
+						<div class="panel-body">
+							<a href="./leetcode/reverse-string.html">hello -> olleh</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-info">
+						<div class="panel-heading">208. Implement Trie</div>
+						<div class="panel-body">
+						    <a href="./leetcode/implement-trie.html">Prefix Tree</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">Panel heading without title</div>
+						<div class="panel-body">
+						    Panel content
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-warning">
+						<div class="panel-heading">Panel heading without title</div>
+						<div class="panel-body">
+						    Panel content
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Panel heading without title</div>
+						<div class="panel-body">
+						    Panel content
+						</div>
+					</div>
+				</div>
+			</div>
+			-->
+
+		</div>
+
+		<div class="container">
+			<div id="disqus_thread"></div>	
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<ul>
+					<li><a href="http://zhou-dong.github.io">Home</a></li>
+					<li><a href="http://zhou-dong.github.io/about/about.html">About</a></li>
+					<li class='github'><a href="https://github.com/zhou-dong"/><img src="./img/github.svg"/></a></li>
+				</ul>
+			</div>
+		</footer>
+
+<script src="./js/jquery-2.2.4.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src='index.js'></script>
+
+<!-- google analyze -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87957513-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- google analyze -->
+<!-- disqus comments-->
+<script id="dsq-count-scr" src="https://zhou-dong.disqus.com/count.js" async></script>
+<script>
+var disqus_config = function () {
+// Replace PAGE_URL with your page's canonical URL variable
+this.page.url = "https://zhou-dong.github.io/"; 
+// Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = "identifier"; 
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://zhou-dong.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>
+Please enable JavaScript to view the 
+<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<!-- disqus comments-->
+</body>
+</html>
