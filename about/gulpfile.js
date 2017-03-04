@@ -5,7 +5,7 @@ var babel = require('gulp-babel');
 var browserify = require('browserify');
 
 
-var dest = './dist/';
+var dest = './pages/';
 var views = './views/';
 
 gulp.task('intro', function() {
