@@ -4,27 +4,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Introduction = React.createClass({
-	displayName: 'Introduction',
-
-	render: function render() {
-		return React.createElement(
-			'div',
-			{ className: 'panel panel-info' },
-			React.createElement(
-				'div',
-				{ className: 'panel-heading' },
-				'03/04/2017 Self Introduction'
-			),
-			React.createElement(
-				'div',
-				{ className: 'panel-body' },
-				intro
-			)
-		);
-	}
-});
-
 var Challenge = React.createClass({
 	displayName: 'Challenge',
 
@@ -40,36 +19,11 @@ var Challenge = React.createClass({
 			React.createElement(
 				'div',
 				{ className: 'panel-body' },
-				challenge
+				'hello world!'
 			)
 		);
 	}
 });
-
-var WorkFlow = React.createClass({
-	displayName: 'WorkFlow',
-
-	render: function render() {
-		return React.createElement(
-			'div',
-			{ className: 'panel panel-warning' },
-			React.createElement(
-				'div',
-				{ className: 'panel-heading' },
-				'03/04/2017 WorkFlow'
-			),
-			React.createElement(
-				'div',
-				{ className: 'panel-body' },
-				workflow
-			)
-		);
-	}
-});
-
-ReactDOM.render(React.createElement(Introduction, null), document.getElementById('introduction'));
-ReactDOM.render(React.createElement(Challenge, null), document.getElementById('challenge'));
-ReactDOM.render(React.createElement(WorkFlow, null), document.getElementById('workflow'));
 
 
 },{"react":159,"react-dom":30}],2:[function(require,module,exports){

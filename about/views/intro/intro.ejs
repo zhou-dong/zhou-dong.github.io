@@ -7,17 +7,25 @@
 <% include ../partials/header %>
 
 <div class="container">
-	<article id="introduction"></article>
-	<article id="challenge"></article>
-	<article id="workflow"></article>
+
+	<div class="panel panel-info">
+		<div class="panel-heading">Self Introduction</div>
+		<div class="panel-body"><%- intro %></div>
+	</div>
+
+	<article class="panel panel-success">
+		<div class="panel-heading">Biggest Challenge</div>
+	  	<div class="panel-body"><%- challenge %></div>
+	</article>
+	
+	<article class="panel panel-warning">
+		<div class="panel-heading">Work Flow</div>
+	  	<div class="panel-body"><%- workflow %></div>
+	</article>
+	
 </div>
 
-<script type="text/javascript">
-	var workflow = "<%= workflow %>";
-	var challenge = "<%= challenge %>";
-	var intro = "<%= intro%>";
-</script>
-<script src="intro.js"></script>
-<% include ../partials/footer %>	
+<% include ../partials/footer %>
+<script src="intro.js"></script>	
 </body>
 </html>
