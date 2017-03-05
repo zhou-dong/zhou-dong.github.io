@@ -7,12 +7,6 @@ var ReactDOM = require('react-dom');
 var Introduction = React.createClass({
 	displayName: 'Introduction',
 
-	getInitialState: function getInitialState() {
-		return {
-			content: this.props.content,
-			heading: this.props.heading
-		};
-	},
 	render: function render() {
 		return React.createElement(
 			'div',
@@ -20,19 +14,62 @@ var Introduction = React.createClass({
 			React.createElement(
 				'div',
 				{ className: 'panel-heading' },
-				heading
+				'03/04/2017 Self Introduction'
 			),
 			React.createElement(
 				'div',
 				{ className: 'panel-body' },
-				content
+				intro
 			)
 		);
 	}
 });
 
-var target = document.getElementById('self-introduction');
-ReactDOM.render(React.createElement(Introduction, { content: content, heading: heading }), target);
+var Challenge = React.createClass({
+	displayName: 'Challenge',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ className: 'panel panel-success' },
+			React.createElement(
+				'div',
+				{ className: 'panel-heading' },
+				'03/04/2017 Bigest Challenge'
+			),
+			React.createElement(
+				'div',
+				{ className: 'panel-body' },
+				challenge
+			)
+		);
+	}
+});
+
+var WorkFlow = React.createClass({
+	displayName: 'WorkFlow',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			{ className: 'panel panel-warning' },
+			React.createElement(
+				'div',
+				{ className: 'panel-heading' },
+				'03/04/2017 WorkFlow'
+			),
+			React.createElement(
+				'div',
+				{ className: 'panel-body' },
+				workflow
+			)
+		);
+	}
+});
+
+ReactDOM.render(React.createElement(Introduction, null), document.getElementById('introduction'));
+ReactDOM.render(React.createElement(Challenge, null), document.getElementById('challenge'));
+ReactDOM.render(React.createElement(WorkFlow, null), document.getElementById('workflow'));
 
 
 },{"react":159,"react-dom":30}],2:[function(require,module,exports){
