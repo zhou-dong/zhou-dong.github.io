@@ -1,6 +1,5 @@
+When I just joined my second company in China, the company provided the pre-training for the new employee. At the time, I just knew my wife, and I thought I knew all the technologies the company used, and I don't need to training. So I didn't pay attention for the training. But after I joined the team and start to work, I found the technologies were so different with my previous job.
 
-stay hungray, stay foolish
+Those times were very hard to me, I even didn’t know which way to start to catch up with other colleagues, I took very long time to read the document, and google all the ideas by myself. I thought I should pay attention on the training.
 
-prepared as earlier as possible
-
-people shoud never stop in same place.
+After that I realized I too arrogant, which make my foolish. I should stay humble. Like Steve Jobs said: Stay hungry, stay foolish. And If you know something going to be happen in the future, please prepared as earlier as possible. And respect to other people's work.
