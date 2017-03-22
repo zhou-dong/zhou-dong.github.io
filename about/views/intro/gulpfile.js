@@ -20,7 +20,8 @@ var content = {
 	'title': 'Prepared Interview Quesions',
 	'challenge': getDataContent('challenge.md'),
 	'workflow': getDataContent('workflow.md'),
-	'intro': getDataContent('intro.md')
+	'intro': getDataContent('intro.md'),
+	'future': getDataContent('future.md')
 }
 
 var ejsToHtml = function() {
