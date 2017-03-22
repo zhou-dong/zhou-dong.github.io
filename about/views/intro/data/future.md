@@ -1,1 +1,1 @@
-xxxx
+At first, I like some technologies, like Machine Learning or Data Mining. Cause I been worked for serval years and learned many technologies, like front end, back end, database, machine learning. I realized that technology is not that important to me, the more important thing to me is to make something interested and useful to the society or world. I want to join a company that has a great team and trying to make something cool and something useful to the world.
