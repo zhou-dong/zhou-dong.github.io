@@ -1,6 +1,8 @@
 # Efficient Column Pruning in Delta Lake with Apache Spark
 
-Background
+### Background
+
+I encountered trouble when migrating the streaming ad-stats data from Parquet to Delta Lake. The transition revealed several unexpected behaviors, particularly around schema inference, deeply nested arrays, and unnecessary column reads. I wrote this wiki as a personal reference and in hopes that it might help others facing similar challenges.
 
 Delta Lake, built on top of Apache Spark, is a powerful storage layer that provides ACID transactions and schema enforcement for big data workloads. 
 However, one key challenge when working with Delta tables is ensuring efficient column pruning, especially when dealing with deeply nested structures. 
