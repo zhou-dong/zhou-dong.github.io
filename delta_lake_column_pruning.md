@@ -87,6 +87,20 @@ session
   .withColumn("adUnitId", $"adUnitId".cast(LongType))
 ```
 
+#### Reduce the batch size to avoid OOM, default is 4096 
+
+```
+"spark.sql.parquet.columnarReaderBatchSize" = "1024"
+```
+
+####  if you want to read the whole row with all columns, disable the vectorized reader.
+
+for instance: copy the prod data to Dev and QA.
+
+```
+ "spark.sql.parquet.enableVectorizedReader" = false
+```
+
 ### Checking the Query Plan is Essential
 
 #### Debugging: Use explain() to inspect query plans and ensure that:
