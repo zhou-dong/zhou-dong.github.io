@@ -85,7 +85,9 @@ session
   .withColumn("adUnitId", $"adUnitId".cast(LongType))
 ```
 
-#### Debugging
+### Checking the Query Plan is Essential
+
+#### Debugging: Use explain() to inspect query plans and ensure that:
 
 ```
 (1) Scan parquet 
