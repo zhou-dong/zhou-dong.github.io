@@ -113,8 +113,12 @@ Location: PreparedDeltaFileIndex [file:/Users/dozhou/workspace/forecasting-magni
 PartitionFilters: [isnotnull(dateHour#44), (dateHour#44 = 2025-01-30-01)]
 PushedFilters: [IsNotNull(requestId)]
 ReadSchema: struct<requestId:string,eventTimestamp:timestamp,ipAddress:string,seatId:int,publisherId:int,brandId:int,supplyId:int,adUnitId:int,customValue1:string,customValue2:string,customValue3:string,customValue4:string,geo:struct<country:string,region:string,postalCode:string,dmaCode:int>,vid:struct<videoId:string>,dev:struct<os:string,platformId:int>,app:struct<deviceId:string,bundleId:string>,site:struct<siteDomain:string>,waterfallAttempts:array<struct<waterfallAttemptId:string>>,ads:array<struct<marketplaceId:int>>,beacons:array<struct<type:string>>>
+
+(2) ColumnarToRow [codegen id : 1]
+Input [22]: [requestId#46, eventTimestamp#47, ipAddress#54, seatId#69, publisherId#70, brandId#71, supplyId#72, adUnitId#73, customValue1#76, customValue2#77, customValue3#78, customValue4#79, geo#87, vid#88, dev#89, app#90, site#91, waterfallAttempts#98, ads#101, beacons#102, dateHour#44, minuteWindow#45]
 ```
 
 - checking for ***Batched: true***
 - proper `PartitionFilters` and `PushedFilters`
-- ensuring ReadSchema ***only*** includes necessary fields. 
+- ensuring ReadSchema ***only*** includes necessary fields.
+- ColumnarToRow means vectorized reader than transfer to row.
