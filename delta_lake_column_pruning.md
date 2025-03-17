@@ -55,7 +55,6 @@ root
  |    |    |    |    |    |    |-- bidId: string (nullable = true)
  |    |    |    |    |    |    |-- bidType: string (nullable = true)
  |    |    |    |    |    |    |-- bidResult: integer (nullable = true)
-
 ```
 
 Instead of:
@@ -65,6 +64,25 @@ df.withColumn("slotCount", size($"waterfallAttempts"))
 Use:
 ```
 df.withColumn("slotCount", size($"waterfallAttempts.waterfallAttemptId"))
+```
+
+#### Explicitly select the required columns
+
+```
+session
+  .read
+  .format("delta")
+  .load(deltaTableRoot)
+  .filter(col("dateHour") === dateHour)
+  .filter(col("requestId").isNotNull)
+  .withColumn("slotCount", size($"waterfallAttempts.waterfallAttemptId"))
+  .withColumn("impressionCount", countImpsUDF($"beacons.type"))
+  .withColumn("marketplaceIds", extractMarketplaceIdsUDF($"ads.marketplaceId"))
+  .withColumn("deviceId", $"app".getItem("deviceId"))
+  .withColumn("timestamp", getTimestampUDF($"eventTimestamp"))
+  .withColumn("supplyId", $"supplyId".cast(LongType))
+  .withColumn("brandId", $"brandId".cast(LongType))
+  .withColumn("adUnitId", $"adUnitId".cast(LongType))
 ```
 
 #### Debugging
