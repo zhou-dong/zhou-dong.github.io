@@ -21,7 +21,7 @@ which can result in reading more columns than necessary, especially when dealing
 #### 1. Delta Struggles with Deeply Nested Arrays
 - Delta Lake efficiently prunes columns for single-level nested arrays.
 - However, when dealing with deeply nested arrays, Spark may read the entire parent structure instead of just the selected fields.
-- For example, if a column is accessed inside a deeply nested array of structs, Spark may load all sibling fields, leading to performance overhead.
+- For example, if a column is accessed inside a deeply nested array of structs, Spark may load all sibling fields and its children fields, leading to performance overhead.
 - A workaround is to read the shallow fields instead of deeply nested fileds.
 
 #### 2. Impact of spark.sql.codegen.maxFields.
